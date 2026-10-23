@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# house-hunter
+.venv/
+__pycache__/
+scratch/
+dist/
+data/ai_pending/
+data/run.log

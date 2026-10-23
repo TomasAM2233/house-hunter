@@ -1,0 +1,378 @@
+<title>House Hunter</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working list on the left, the open house on the right; a street map of the zone up top. */
+:root {
+  --bg: #f6f5f8;
+  --surface: #ffffff;
+  --sunk: #eeecf2;
+  --line: #dcd8e3;
+  --fg: #1d1a24;
+  --muted: #6b6578;
+  --accent: #6a46b8;        /* jacarandá */
+  --accent-soft: #ece6f8;
+  --good: #1f7a4d;
+  --warn: #a76a00;
+  --bad: #b3322d;
+  --good-soft: #e3f2ea;
+  --warn-soft: #f8eed9;
+  --bad-soft: #f8e3e1;
+  --maipu: #c9a227;
+  --font-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15131a; --surface: #1e1b25; --sunk: #26222f; --line: #363143; --fg: #ece9f2; --muted: #a39cb2;
+  --accent: #b39af0; --accent-soft: #2e2645; --good: #5fcf96; --warn: #e6b24a; --bad: #f07a72;
+  --good-soft: #1b3328; --warn-soft: #3a2f17; --bad-soft: #3d201e; --maipu: #e2c157; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #15131a; --surface: #1e1b25; --sunk: #26222f; --line: #363143; --fg: #ece9f2; --muted: #a39cb2;
+  --accent: #b39af0; --accent-soft: #2e2645; --good: #5fcf96; --warn: #e6b24a; --bad: #f07a72;
+  --good-soft: #1b3328; --warn-soft: #3a2f17; --bad-soft: #3d201e; --maipu: #e2c157; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 14px/1.5 var(--font-body); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-block: 20px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+header.top h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+header.top .sub { color: var(--muted); max-width: 62ch; }
+.status { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: 999px; font-size: 12px; background: var(--sunk); color: var(--muted); white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good); }
+.pill.err { background: var(--bad-soft); color: var(--bad); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.acc { background: var(--accent-soft); color: var(--accent); }
+
+.summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px; margin-top: 20px; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; align-self: start; }
+.stat { background: var(--surface); padding: 12px 14px; }
+.stat b { display: block; font: 600 24px/1.2 var(--font-display); }
+.stat span { font-size: 12px; color: var(--muted); }
+.weights { grid-column: 1 / -1; background: var(--surface); padding: 12px 14px; }
+.weights h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.wbar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; gap: 2px; }
+.wlegend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.wlegend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
+
+.map { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px; min-width: 0; }
+.map svg { width: 100%; height: auto; display: block; }
+.map .cap { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); padding: 4px 6px 0; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 24px 0 12px; }
+.tabs { display: inline-flex; background: var(--sunk); border-radius: 8px; padding: 3px; }
+.tabs button { border: 0; background: transparent; padding: 5px 12px; border-radius: 6px; cursor: pointer; color: var(--muted); }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+.toolbar select, .toolbar input { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; }
+.toolbar input[type=search] { min-width: 0; flex: 1 1 160px; max-width: 280px; }
+.toolbar input[type=checkbox] { padding: 0; margin: 0; }
+.toolbar label { white-space: nowrap; display: inline-flex; gap: 6px; align-items: center; color: var(--muted); }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
+.list { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card { display: grid; grid-template-columns: 34px 96px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; text-align: left; width: 100%; }
+.card:hover { border-color: var(--accent); }
+.card[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.card .rank { font: 500 13px var(--font-data); color: var(--muted); text-align: center; }
+.card img, .card .noimg { width: 96px; height: 72px; object-fit: cover; border-radius: 6px; background: var(--sunk); display: block; }
+.card .t { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.card .price { font: 600 16px var(--font-display); }
+.card .meta { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.card .chips .pill { font-size: 11px; padding: 0 7px; }
+.mini { display: flex; height: 5px; border-radius: 3px; overflow: hidden; background: var(--sunk); gap: 1px; }
+.badge { font: 700 20px/1 var(--font-display); width: 54px; height: 54px; border-radius: 10px; display: grid; place-items: center; }
+.badge.hi { background: var(--good-soft); color: var(--good); }
+.badge.mid { background: var(--warn-soft); color: var(--warn); }
+.badge.lo { background: var(--bad-soft); color: var(--bad); }
+.badge.out { background: var(--sunk); color: var(--muted); font-size: 16px; }
+.empty { padding: 32px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; }
+
+.detail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; min-width: 0; max-height: calc(100vh - 24px); overflow-y: auto; }
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 120px 120px; gap: 2px; background: var(--sunk); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery img:first-child { grid-row: 1 / 3; }
+.dbody { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 16px; }
+.dhead { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.dhead h2 { font-size: 22px; }
+.dhead .addr { color: var(--muted); }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+.fact { background: var(--sunk); border-radius: 8px; padding: 7px 10px; }
+.fact span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.fact b { font: 500 15px var(--font-data); }
+.section h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; margin-bottom: 8px; font-family: var(--font-body); }
+.breakdown { display: grid; grid-template-columns: 110px minmax(0, 1fr) 54px; gap: 6px 10px; align-items: center; font-size: 13px; }
+.breakdown .bar { height: 8px; background: var(--sunk); border-radius: 4px; overflow: hidden; }
+.breakdown .bar i { display: block; height: 100%; border-radius: 4px; }
+.breakdown .why { grid-column: 2 / 4; color: var(--muted); font-size: 12px; margin-top: -4px; }
+.breakdown .pts { text-align: right; }
+.ai { background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; }
+.ai p { margin: 0 0 6px; }
+.ai ul { margin: 6px 0 0; padding-left: 18px; }
+.ai .tag { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.discard { background: var(--bad-soft); color: var(--bad); border-radius: 10px; padding: 10px 14px; }
+.desc { white-space: pre-line; color: var(--muted); font-size: 13px; max-height: 220px; overflow: auto; border-top: 1px solid var(--line); padding-top: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); padding: 6px 12px; border-radius: 8px; cursor: pointer; text-decoration: none; color: var(--fg); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.back { display: none; }
+footer { margin-top: 32px; color: var(--muted); font-size: 12px; max-width: 80ch; }
+
+@media (max-width: 900px) {
+  .summary, .main { grid-template-columns: minmax(0, 1fr); }
+  .detail { position: static; max-height: none; }
+  .main.open .list { display: none; }
+  .main:not(.open) .detail { display: none; }
+  .back { display: inline-flex; }
+}
+@media (max-width: 480px) {
+  .card { grid-template-columns: 72px minmax(0, 1fr) auto; }
+  .card .rank { display: none; }
+  .card img, .card .noimg { width: 72px; height: 60px; }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 90px; }
+  .gallery img:first-child { grid-row: auto; grid-column: 1 / 3; }
+  .gallery img:nth-child(n+4) { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>House Hunter</h1>
+      <div class="sub" id="sub">Casas y PH en Olivos, Florida y La Lucila, puntuadas con nuestro algoritmo.</div>
+    </div>
+    <div class="status" id="status"></div>
+  </header>
+
+  <section class="summary">
+    <div class="stats" id="stats"></div>
+    <div class="map" id="map"></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-v="short" aria-selected="true">Candidatas</button>
+      <button role="tab" data-v="fav" aria-selected="false">Favoritas</button>
+      <button role="tab" data-v="out" aria-selected="false">Descartadas</button>
+      <button role="tab" data-v="all" aria-selected="false">Todas</button>
+    </div>
+    <select id="sort" aria-label="Ordenar">
+      <option value="score">Mejor puntaje</option>
+      <option value="price">Menor precio</option>
+      <option value="ppm2">Menor USD/m²</option>
+      <option value="m2">Más m² totales</option>
+      <option value="new">Más nuevas</option>
+    </select>
+    <input id="q" type="search" placeholder="Buscar calle, palabra…" aria-label="Buscar">
+    <label><input type="checkbox" id="onlyai"> Solo con análisis IA</label>
+  </div>
+
+  <div class="main" id="main">
+    <div class="list" id="list"></div>
+    <article class="detail" id="detail"></article>
+  </div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script type="application/json" id="hh-data">__HH_DATA__</script>
+<script>
+const LABELS = { price: "Precio", space: "Espacio", location: "Ubicación", condition: "Estado", patio: "Patio",
+  vertical: "Crecer arriba", credit: "Apto crédito", garage: "Cochera", quiet: "Tranquilidad", light: "Luz" };
+const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condition: "#1f8a6a", patio: "#4fa35a",
+  vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
+const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop" };
+const $ = s => document.querySelector(s);
+const usd = n => n == null ? "?" : "USD " + Math.round(n).toLocaleString("es-AR");
+const fmt = n => n == null ? "?" : (Math.round(n * 10) / 10).toLocaleString("es-AR");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+let DATA, view = "short", sel = null, favs = new Set(store.get("hh-favs", []));
+
+function band(s, l) { if (l.discard?.length) return "out"; return s >= 62 ? "hi" : s >= 50 ? "mid" : "lo"; }
+function img(l, i) { return (l.thumbs && l.thumbs[i]) || (l.photos && l.photos[i]) || null; }
+function ppm2(l) { return l.price_usd && l.total_m2 ? Math.round(l.price_usd / l.total_m2) : null; }
+
+function rows() {
+  let r = DATA.listings.filter(l => l.active !== false);
+  if (view === "short") r = r.filter(l => !l.discard.length);
+  if (view === "out") r = r.filter(l => l.discard.length);
+  if (view === "fav") r = DATA.listings.filter(l => favs.has(l.id));
+  if ($("#onlyai").checked) r = r.filter(l => l.ai);
+  const q = $("#q").value.trim().toLowerCase();
+  if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description).toLowerCase().includes(q));
+  const k = $("#sort").value;
+  const key = { score: l => -l.score, price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
+    m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0) }[k];
+  return r.sort((a, b) => key(a) - key(b));
+}
+
+function miniBar(l) {
+  return `<div class="mini" title="Aporte de cada criterio">${Object.entries(l.components).map(([k, c]) =>
+    `<i style="width:${c.points}%;background:${COLORS[k]}"></i>`).join("")}</div>`;
+}
+
+function renderList() {
+  const r = rows();
+  $("#list").innerHTML = r.length ? r.map((l, i) => {
+    const b = band(l.score, l);
+    const chips = [`<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span>`, `<span class="pill">${SRC[l.source] || l.source}</span>`]
+      .concat(l.ai ? [`<span class="pill acc">IA</span>`] : [])
+      .concat(favs.has(l.id) ? [`<span class="pill acc">★</span>`] : [])
+      .concat((l.flags || []).filter(f => f !== "sin análisis IA").map(f => `<span class="pill warn">${esc(f)}</span>`))
+      .concat(l.discard.length ? [`<span class="pill err">${esc(l.discard[0])}</span>`] : []);
+    const src = img(l, 0);
+    return `<button class="card" data-id="${l.id}" aria-current="${sel === l.id}">
+      <span class="rank">${i + 1}</span>
+      ${src ? `<img loading="lazy" src="${esc(src)}" alt="">` : `<span class="noimg"></span>`}
+      <span class="t">
+        <span class="price num">${usd(l.price_usd)}</span>
+        <span class="meta">${fmt(l.total_m2)} m² tot · ${fmt(l.covered_m2)} cub · ${fmt(l.ambientes)} amb · ${esc(l.zone || "")}${l.geo ? ` · ${fmt(l.geo.maipu_blocks)} cdas a Maipú` : ""}</span>
+        ${miniBar(l)}
+        <span class="chips">${chips.join("")}</span>
+      </span>
+      <span class="badge ${b}">${l.discard.length ? "—" : Math.round(l.score)}</span>
+    </button>`;
+  }).join("") : `<div class="empty">${view === "fav" ? "Marcá casas con ★ Favorita para verlas acá." : "Nada con estos filtros."}</div>`;
+  if (!sel && r.length) select(r[0].id, false);
+}
+
+function select(id, open = true) {
+  sel = id;
+  const l = DATA.listings.find(x => x.id === id);
+  document.querySelectorAll(".card").forEach(c => c.setAttribute("aria-current", c.dataset.id === id));
+  if (open) $("#main").classList.add("open");
+  renderDetail(l);
+  renderMap();
+}
+
+function renderDetail(l) {
+  if (!l) { $("#detail").innerHTML = ""; return; }
+  const pics = [0, 1, 2, 3, 4].map(i => img(l, i)).filter(Boolean);
+  const comp = Object.entries(l.components).map(([k, c]) => `
+    <span>${LABELS[k]}</span>
+    <span class="bar"><i style="width:${c.value * 100}%;background:${COLORS[k]}"></i></span>
+    <span class="pts num">${fmt(c.points)}/${c.max}</span>
+    <span class="why">${esc(c.why)}</span>`).join("");
+  const a = l.ai;
+  const aiBox = a ? `<div class="ai">
+      <div class="tag">Lectura de IA · fotos y texto</div>
+      <p>${esc(a.summary)}</p>
+      <p class="num" style="font-size:13px">Estado ${a.condition}/5 · reforma ~${usd(a.reform_usd)} · patio ${esc(a.patio)}${a.patio_m2_est ? ` ~${a.patio_m2_est} m²` : ""} · luz ${a.natural_light}/5</p>
+      ${a.reform_notes ? `<p style="font-size:13px">${esc(a.reform_notes)}</p>` : ""}
+      ${a.highlights?.length ? `<ul>${a.highlights.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+      ${a.red_flags?.length ? `<ul style="color:var(--bad)">${a.red_flags.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+    </div>` : `<div class="ai"><div class="tag">Sin análisis IA todavía</div><p>Se puntúa con lo que dice el aviso; estado, patio y luz quedan estimados.</p></div>`;
+  const hist = (l.price_history || []).length > 1 ? `<div class="section"><h3>Historial de precio</h3><div class="num">${l.price_history.map(([d, p]) => `${d}: ${usd(p)}`).join(" → ")}</div></div>` : "";
+  $("#detail").innerHTML = `
+    ${pics.length ? `<div class="gallery">${pics.map(p => `<img src="${esc(p)}" alt="">`).join("")}</div>` : ""}
+    <div class="dbody">
+      <button class="btn back" id="back">← Volver a la lista</button>
+      <div class="dhead">
+        <div>
+          <h2>${esc(l.title)}</h2>
+          <div class="addr">${esc(l.address)} · ${SRC[l.source] || l.source} · visto desde ${esc(l.first_seen)}</div>
+        </div>
+        <span class="badge ${band(l.score, l)}">${l.discard.length ? "—" : Math.round(l.score)}</span>
+      </div>
+      ${l.discard.length ? `<div class="discard"><b>Descartada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
+      <div class="facts">
+        <div class="fact"><span>Precio</span><b>${usd(l.price_usd)}</b></div>
+        <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
+        <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
+        <div class="fact"><span>Cubierta</span><b>${fmt(l.covered_m2)} m²</b></div>
+        <div class="fact"><span>Ambientes</span><b>${fmt(l.ambientes)}</b></div>
+        <div class="fact"><span>Antigüedad</span><b>${l.age_years != null ? fmt(l.age_years) + " años" : "?"}</b></div>
+        <div class="fact"><span>A Maipú</span><b>${l.geo ? fmt(l.geo.maipu_blocks) + " cdas" : "?"}</b></div>
+        <div class="fact"><span>Tren</span><b>${l.geo ? fmt(l.geo.station.blocks) + " cdas" : "?"}</b></div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso en ${SRC[l.source] || l.source} ↗</a>
+        <button class="btn" id="fav" aria-pressed="${favs.has(l.id)}">★ Favorita</button>
+      </div>
+      ${aiBox}
+      <div class="section"><h3>Por qué este puntaje · ${fmt(l.score)} / 100</h3><div class="breakdown">${comp}</div></div>
+      ${hist}
+      <div class="section"><h3>Descripción del aviso</h3><div class="desc">${esc(l.description)}</div></div>
+    </div>`;
+  $("#back").onclick = () => $("#main").classList.remove("open");
+  $("#fav").onclick = () => {
+    favs.has(l.id) ? favs.delete(l.id) : favs.add(l.id);
+    store.set("hh-favs", [...favs]);
+    renderList(); renderDetail(l);
+  };
+}
+
+function renderMap() {
+  const ref = DATA.reference; if (!ref) { $("#map").hidden = true; return; }
+  const W = 640, H = 300, b = { s: -34.545, n: -34.49, w: -58.525, e: -58.465 };
+  const k = Math.cos(34.52 * Math.PI / 180);
+  const sx = W / ((b.e - b.w) * k), sy = H / (b.n - b.s), s = Math.min(sx, sy);
+  const ox = (W - (b.e - b.w) * k * s) / 2, oy = (H - (b.n - b.s) * s) / 2;
+  const P = (lat, lon) => [ox + (lon - b.w) * k * s, oy + (b.n - lat) * s];
+  const line = ref.maipu.map(w => `<polyline points="${w.map(p => P(...p).map(v => v.toFixed(1)).join(",")).join(" ")}" fill="none" stroke="var(--maipu)" stroke-width="3" stroke-linecap="round"/>`).join("");
+  const st = Object.entries(ref.stations).map(([n, [la, lo, , net]]) => { const [x, y] = P(la, lo);
+    return `<g><rect x="${x - 4}" y="${y - 4}" width="8" height="8" fill="var(--surface)" stroke="var(--fg)" stroke-width="1.5"/><text x="${x + 7}" y="${y + 4}" font-size="10" fill="var(--muted)">${esc(n)}</text></g>`; }).join("");
+  const [px, py] = P(...ref.puente);
+  const pts = rows().filter(l => l.lat).map(l => { const [x, y] = P(l.lat, l.lng);
+    const c = l.discard.length ? "var(--muted)" : band(l.score, l) === "hi" ? "var(--good)" : band(l.score, l) === "mid" ? "var(--warn)" : "var(--bad)";
+    const on = l.id === sel;
+    return `<circle data-id="${l.id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${on ? 8 : 5}" fill="${c}" fill-opacity="${l.discard.length ? .35 : .85}" stroke="${on ? "var(--fg)" : "var(--surface)"}" stroke-width="${on ? 2.5 : 1}" style="cursor:pointer"><title>${esc(l.address)} · ${Math.round(l.score)}</title></circle>`; });
+  $("#map").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa de la zona con Av. Maipú, estaciones y casas">
+    <rect width="${W}" height="${H}" fill="var(--sunk)" rx="6"/>
+    ${line}${st}
+    <g><circle cx="${px}" cy="${py}" r="5" fill="var(--bad)"/><text x="${px + 8}" y="${py + 4}" font-size="10" fill="var(--bad)">Puente Saavedra</text></g>
+    ${pts.join("")}
+    <text x="10" y="${H - 10}" font-size="10" fill="var(--muted)">↑ Río de la Plata al noreste · 1 cdra ≈ 100 m</text>
+  </svg>
+  <div class="cap"><span><i style="display:inline-block;width:14px;height:3px;background:var(--maipu);vertical-align:middle"></i> Av. Maipú</span><span>□ estación</span><span style="color:var(--good)">● 62+</span><span style="color:var(--warn)">● 50–61</span><span style="color:var(--bad)">● &lt;50</span><span>● descartada</span></div>`;
+  $("#map").querySelectorAll("circle[data-id]").forEach(c => c.onclick = () => { select(c.dataset.id); document.querySelector(`.card[data-id="${c.dataset.id}"]`)?.scrollIntoView({ block: "nearest" }); });
+}
+
+function renderHeader() {
+  const act = DATA.listings.filter(l => l.active !== false);
+  const short = act.filter(l => !l.discard.length);
+  $("#stats").innerHTML = `
+    <div class="stat"><b class="num">${short.length}</b><span>candidatas</span></div>
+    <div class="stat"><b class="num">${short.filter(l => l.ai).length}</b><span>con análisis IA</span></div>
+    <div class="stat"><b class="num">${act.length - short.length}</b><span>descartadas</span></div>
+    <div class="weights"><h3>Cómo puntuamos</h3>
+      <div class="wbar">${Object.entries(DATA.weights).map(([k, w]) => `<i style="flex:${w};background:${COLORS[k]}"></i>`).join("")}</div>
+      <div class="wlegend">${Object.entries(DATA.weights).map(([k, w]) => `<span><i style="background:${COLORS[k]}"></i>${LABELS[k]} ${w}</span>`).join("")}</div>
+    </div>`;
+  $("#status").innerHTML = `<span class="pill">Actualizado ${esc(DATA.generated_at)}</span>` +
+    Object.entries(DATA.status || {}).map(([k, s]) => `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " avisos" : "bloqueado"}</span>`).join("");
+  const S = DATA.search;
+  $("#sub").textContent = `Casas y PH en ${S.zones.join(", ")} · USD ${S.price_min / 1000}k–${S.price_max / 1000}k · ${S.ppm2_min}–${S.ppm2_max} USD/m² · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.`;
+  $("#foot").textContent = "Puntaje sobre 100. Descartadas = no cumplen algún filtro duro. La IA mira hasta 12 fotos y el texto de cada aviso. Las favoritas se guardan solo en este navegador.";
+}
+
+function boot(d) {
+  DATA = d;
+  renderHeader(); renderList(); renderMap();
+  $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
+    view = b.dataset.v; document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x === b)); sel = null; renderList(); renderMap(); };
+  ["#sort", "#onlyai"].forEach(s => $(s).onchange = () => { renderList(); renderMap(); });
+  $("#q").oninput = () => { renderList(); renderMap(); };
+  $("#list").onclick = e => { const c = e.target.closest(".card"); if (c) select(c.dataset.id); };
+}
+
+const inline = $("#hh-data").textContent.trim();
+if (inline && !inline.startsWith("__")) boot(JSON.parse(inline));
+else fetch("listings.json").then(r => r.json()).then(boot).catch(() => { $("#list").innerHTML = `<div class="empty">No pude cargar listings.json.</div>`; });
+</script>
