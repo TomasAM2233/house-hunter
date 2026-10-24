@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-10-24 03:17",
+ "generated_at": "2026-10-24 03:38",
  "status": {
   "zonaprop": {
    "ok": false,
-   "error": "GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-140000-210000-dolar.html failed: HTTP 403",
-   "at": "2026-10-24 03:15"
+   "error": "GET https%3A%2F%2Fwww.zonaprop.com.ar%2Fcasas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-140000-210000-dolar.html failed: HTTP 500",
+   "at": "2026-10-24 03:36"
   },
   "tokko": {
    "ok": true,
    "count": 75,
    "complete": true,
-   "at": "2026-10-24 03:16"
+   "at": "2026-10-24 03:37"
   },
   "mercadolibre": {
    "ok": true,
    "count": 294,
    "complete": true,
-   "at": "2026-10-24 03:17"
+   "at": "2026-10-24 03:37"
   }
  },
  "weights": {
@@ -89870,18 +89870,7 @@
      205000.0
     ]
    ],
-   "last_seen": "2026-10-24",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 13.8,
-    "puente_blocks": 39.8,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 16.0,
-     "effective_blocks": 16.0
-    }
-   },
+   "enriched": true,
    "features_text": [
     "Superficie total: 103 m²",
     "Superficie cubierta: 94 m²",
@@ -89901,7 +89890,18 @@
     "Cocina: Sí",
     "Con lavadero: Sí"
    ],
-   "enriched": true,
+   "last_seen": "2026-10-24",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 13.8,
+    "puente_blocks": 39.8,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 16.0,
+     "effective_blocks": 16.0
+    }
+   },
    "ai": {
     "condition": 5,
     "reform_usd": 0,
