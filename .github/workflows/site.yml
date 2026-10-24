@@ -1,0 +1,36 @@
+name: site
+
+# Publish the web app as it is on main, without scraping. Runs on its own so a long hunt run doesn't hold it up.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["web/app.html", "build.py"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow requests
+      - run: python build.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deploy
+        uses: actions/deploy-pages@v4

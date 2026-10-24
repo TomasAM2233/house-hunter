@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["web/app.html", "hh/**", "run.py", "build.py"]
+    paths: ["hh/**", "run.py"]   # app-only changes are published by site.yml
 
 permissions:
   contents: write
