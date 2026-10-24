@@ -68,14 +68,14 @@
   "at": "2026-10-24"
  },
  "ap-20090489": {
-  "score": 52,
-  "brief": "Casa esquina de 3 amb (72 m² cubiertos sobre 170 m² totales) a USD 170.000 (USD 1.000/m²). Tiene cochera y potencial, pero es esquina y las fotos no muestran el patio, algo que descartás por regla.",
+  "score": 53,
+  "brief": "Casa esquina de 170 m² totales y 72 cubiertos a USD 170.000 (muy buen precio por m²). Tiene jardín y cochera, pero es esquina y las fotos no muestran el patio, lo que incumple tu regla.",
   "reasons": [
-   "Es casa en esquina y las fotos no muestran el patio, violando tu regla obligatoria.",
-   "Tiene solo 72 m² cubiertos, quedando justo en el límite de lo que buscás.",
-   "La ubicación exacta sobre España y Borges está muy cerca de Maipú pero el aviso no detalla la distancia exacta."
+   "Es casa en esquina y las fotos no muestran el patio, lo que choca con tu regla obligatoria.",
+   "El algoritmo sobreestimó la ubicación al no detectar la distancia exacta a Maipú o al tren.",
+   "Espacio cubierto algo justo (72 m²) aunque tiene potencial para ampliar."
   ],
-  "input_key": "e32eb777648a",
+  "input_key": "4c0d25ba360c",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  },
@@ -580,6 +580,53 @@
    "Espacio muy acotado: aunque el lote es amplio, la superficie cubierta es de apenas 57 m² para 3 ambientes."
   ],
   "input_key": "4cc28c73897c",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-20294878": {
+  "score": 52,
+  "brief": "Excelente precio (USD 165.000 y 743 USD/m²) y amplio jardín, pero está sobre Panamericana (le resta tranquilidad) y la planta baja es un taller industrial a reciclar.",
+  "reasons": [
+   "Ubicación muy cerca de Panamericana, afectando la tranquilidad exigida.",
+   "Planta baja configurada como taller industrial que requiere fuerte readecUación.",
+   "Falta de datos precisos sobre distancia a Maipú o tren en el aviso."
+  ],
+  "input_key": "2c30e47dfdd2",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-20523367": {
+  "score": 62,
+  "brief": "Casa en Olivos a USD 135.000 (631 USD/m²), 214 m² totales y 138 cubiertos. 6 ambientes, 3 dorm, 2 cocheras y pileta. Muy buen precio y espacio con patio. Resta confirmar cercanía exacta a Maipú o tren.",
+  "reasons": [
+   "Bajo la ubicación de 6.0 a 3.0 porque el aviso no detalla las cuadras exactas a Av. Maipú o estación.",
+   "Bajo el puntaje general porque, a pesar del gran precio y tamaño, la falta de datos precisos de distancia impide asegurar el cumplimiento del filtro obligatorio."
+  ],
+  "input_key": "703523f190d7",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-19224619": {
+  "score": 78,
+  "brief": "Excelente precio de USD 135.000 (US$ 611/m²) para un lote propio de 221 m² con 120 m² libres, 3 ambientes, cochera y potencial para ampliar arriba.",
+  "reasons": [
+   "El precio por m² y total es sumamente bajo y atractivo, cumpliendo con creces la prioridad económica de Tomás.",
+   "Tiene un enorme patio a nivel del suelo de 120 m², superando ampliamente lo esperado.",
+   "Cuenta con cochera y losa apta para construir arriba, sumando puntos clave en las preferencias de Tomás."
+  ],
+  "input_key": "b7acd722ad55",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-18986681": {
+  "score": 52,
+  "brief": "Excelente precio (USD 155.000, 738 USD/m²), lote propio de 210 m² con 4 ambientes y cochera. A favor: gran espacio y local comercial al frente. En contra: ubicación sobre la zona Panamericana (lejos de Maipú/tren y con ruido) y el aviso no aclara…",
+  "reasons": [
+   "Baja fuerte de puntaje por estar pegado a Panamericana, alejándose del requisito de cercanía a Maipú o tren.",
+   "Resté puntos por la ubicación poco clara respecto al límite de las 15 cuadras de Maipú y la tranquilidad afectada por la autopista.",
+   "Ajuste en la puntuación general porque la zona (Ozal/Panamericana) no es la ideal dentro de Olivos para el criterio de tranquilidad de Tomás."
+  ],
+  "input_key": "208ca399d90a",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  }

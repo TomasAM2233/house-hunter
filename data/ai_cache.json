@@ -2813,5 +2813,129 @@
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "ap-20294878": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización de cocina y baños viejos, adecuación del taller de PB para uso residencial y revisión general de instalaciones (agua, gas, electricidad).",
+  "patio": "large",
+  "patio_m2_est": 70,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Lote propio con jardín al fondo y orientación Norte",
+   "Apto crédito bancario",
+   "Superficie cubierta amplia (202 m2) con terraza propia"
+  ],
+  "red_flags": [
+   "PB configurada como taller industrial/depósito",
+   "Instalaciones y acabados con 50 años de antigüedad",
+   "Posible ruido por cercanía a Panamericana"
+  ],
+  "summary": "Buena opción en lote propio con gran jardín, pero vas a consumir casi todo tu presupuesto de USD 20.000 para reciclar instalaciones viejas y transformar el taller de planta baja en espacios habitables.",
+  "photos_key": "3f65db5c338f",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "ap-20523367": {
+  "condition": 3,
+  "reform_usd": 18500,
+  "reform_notes": "Actualización de instalaciones eléctricas y sanitarias (45 años), pintura integral, hidrolaqueado de pisos y modernización estética de cocina y baños.",
+  "patio": "large",
+  "patio_m2_est": 77,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio con pileta",
+   "Excelente ubicación en Olivos",
+   "Potencial de crecimiento vertical"
+  ],
+  "red_flags": [
+   "Instalaciones originales de 45 años",
+   "Galería cerrada con posible humedad",
+   "Distribución interna algo fragmentada"
+  ],
+  "summary": "Es una casa de época sólida con el jardín y pileta que buscan; el presupuesto de 20k alcanza justo para dejarla funcional y prolija sin lujos.",
+  "photos_key": "b259f93440eb",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "ap-19224619": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización de baño y cocina, revisión de instalaciones eléctricas y cañerías originales de 50 años, pintura general y pulido de pisos.",
+  "patio": "large",
+  "patio_m2_est": 111,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio en excelente ubicación de Olivos",
+   "Gran superficie descubierta de 120m2 con parrilla",
+   "Techo de losa que permite construcción de planta alta"
+  ],
+  "red_flags": [
+   "Instalaciones de agua y luz con 50 años de antigüedad",
+   "Necesita modernización estética integral en áreas húmedas",
+   "Posible humedad ascendente típica en construcciones de esta época"
+  ],
+  "summary": "Es una oportunidad sólida en Olivos con un patio bárbaro y potencial para crecer, ideal para entrar con una lavada de cara y actualizar de a poco.",
+  "photos_key": "c0cac0a07682",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "ap-18986681": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización integral de cocina y baños, pintura general, revisión de instalaciones eléctricas y sanitarias viejas, y puesta a punto del patio.",
+  "patio": "small",
+  "patio_m2_est": 17,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Lote propio en planta baja con jardín y parrilla",
+   "Terraza de losa con potencial de ampliación",
+   "Local o depósito independiente de gran versatilidad"
+  ],
+  "red_flags": [
+   "Antigüedad de 60 años con instalaciones originales a reciclar",
+   "Posibles humedades de cimientos o techos por los años",
+   "Cercanía a Panamericana que puede generar ruidos molestos"
+  ],
+  "summary": "Es una buena oportunidad con lote propio y potencial, pero requiere meterle mano y plata para dejarla habitable.",
+  "photos_key": "bde03534017c",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  }
 }
