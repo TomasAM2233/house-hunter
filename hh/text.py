@@ -23,6 +23,13 @@ def lot_dims(text):
     return (a, b)
 
 
+def usd_price(text):
+    """Asking price written in the description ('antes U$D 187.000 ahora U$D 178.000' -> 178000): the last one wins."""
+    found = [int(m.replace(".", "")) for m in re.findall(r"(?:u\$[sd]|usd|us\$)\s*(\d{2,3}\.\d{3})\b", norm(text))]
+    found = [v for v in found if 30_000 <= v <= 900_000]
+    return found[-1] if found else None
+
+
 def uncovered_m2(text):
     m = re.search(r"(\d{2,4})\s*m(?:2|²|ts2| ?cuadrados)?\s*(?:de\s+)?(?:descubiert|libres|de (?:patio|jardin|parque))", norm(text))
     return int(m.group(1)) if m else None
@@ -53,3 +60,14 @@ def single_storey(text):
 
 def own_lot(text):
     return bool(re.search(r"(lote propio|terreno propio|sobre lote)", norm(text)))
+
+
+def corner(text):
+    return bool(re.search(r"\b(en esquina|esquina|lote esquina|ochava)\b", norm(text)))
+
+
+def ph_stacked(text):
+    """A PH upstairs (or with another unit on top): the kind Tomás rules out."""
+    t = norm(text)
+    return bool(re.search(r"((ph|unidad)[^.]{0,40}(en planta alta|en (el )?primer piso|en (el )?1 ?(er|°|º)? piso|en altura|superpuest)"
+                          r"|(se accede|acceso|ingreso)[^.]{0,20}por escalera|ph de altos|ph en pa\b)", t))

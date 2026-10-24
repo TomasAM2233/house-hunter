@@ -1,10 +1,9 @@
 """Search criteria and scoring weights. Edit this file to change what the hunter looks for."""
 
 SEARCH = {
-    "price_min": 140_000,      # USD
+    "price_min": 80_000,       # USD; only bounds what the portals return, never discards (a cheap house is a find)
     "price_max": 210_000,      # USD
-    "ppm2_min": 1_000,         # USD per total m2
-    "ppm2_max": 2_000,
+    "ppm2_max": 2_000,         # USD per total m2; no floor, for the same reason
     "min_ambientes": 3,
     "min_total_m2": 100,
     "types": ["casa", "ph"],
@@ -25,6 +24,14 @@ STATION_LINE_PENALTY_BLOCKS = {"Mitre": 0, "Belgrano Norte": 1, "Belgrano": 1, "
 TREN_DE_LA_COSTA = {"Avenida Maipú", "Borges", "Libertador"}
 
 REFORM_BUDGET_USD = 20_000
+
+# AI photo reads only for the best-ranked candidates (ranked by score before the AI read), to save quota.
+AI_TOP_N = 40
+BRIEF_MAX_CHARS = 250
+
+# Phone alerts (ntfy.sh) for new listings at or above either threshold.
+ALERT_PERCENTILE = 90
+ALERT_AI_SCORE = 70
 
 # Weights add up to 100, in the order of importance Tomás gave.
 WEIGHTS = {
@@ -50,4 +57,12 @@ AGENCIES = [
     {"name": "Caneva Propiedades", "site": "https://www.canevaprop.com"},
     {"name": "Álvarez Dupot Propiedades", "site": "https://www.alvarezdupot.com.ar"},
     {"name": "Real Props", "site": "https://www.realprops.com.ar"},
+    {"name": "O'Duch Negocios Inmobiliarios", "site": "https://www.o-duch.com.ar"},
+    {"name": "Martín Propiedades", "site": "https://www.martinprop.com.ar"},
+    {"name": "Estudio García", "site": "https://www.estudio-garcia.ar"},
+    {"name": "Molinari Propiedades", "site": "https://www.molinariprop.com.ar"},
+    {"name": "Jorge Becco Bienes Raíces", "site": "https://www.beccopropiedades.com"},
+    {"name": "Darío Martínez Propiedades", "site": "https://www.dmartinezpropiedades.com.ar"},
+    {"name": "Basilio Inmobiliaria", "site": "https://www.basilioinmobiliaria.com"},
+    {"name": "Bellagamba", "key": "dd0e6daf8ddc52df5b91f3f57224ac4d752c9db7", "site": "https://bellagamba.com"},
 ]

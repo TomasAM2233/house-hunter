@@ -3,14 +3,18 @@
 python run.py                 # scrape everything enabled and rescore
 python run.py --no-scrape     # just rescore what we already have (e.g. after editing weights or AI results)
 """
-import argparse, json, os, re, shutil, sys, time, traceback
-from hh import ai, config, geo, http, score
-from hh.sources import zonaprop, mercadolibre, tokko
+import argparse, bisect, json, os, re, shutil, sys, time, traceback
+import requests
+from hh import ai, config, geo, http, score, text
+from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data", "listings.json")
+PREFS = os.path.join(ROOT, "data", "preferences.md")   # Tomás's own words; edited from the app or on GitHub
+SETTINGS = os.path.join(ROOT, "data", "settings.json")  # alert thresholds, saved by the app
+TAGS = os.path.join(ROOT, "data", "tags.json")         # favourite / visited / dismissed + notes, saved by the app
 WEB_DATA = os.path.join(ROOT, "web", "listings.json")
-SOURCES = {"zonaprop": zonaprop, "mercadolibre": mercadolibre, "tokko": tokko}
+SOURCES = {"zonaprop": zonaprop, "argenprop": argenprop, "mercadolibre": mercadolibre, "tokko": tokko}
 TODAY = time.strftime("%Y-%m-%d")
 
 
@@ -33,13 +37,20 @@ def merge(old, fresh):
             if l.get("price_usd") and (not hist or hist[-1][1] != l["price_usd"]):
                 hist.append([TODAY, l["price_usd"]])
             l["price_history"] = hist
-            if prev.get("enriched") and not l.get("enriched"):
+            if (prev.get("enriched") and not l.get("enriched")) or l.get("card_only"):
+                # keep the richer copy: an enriched one, or (for card-only scrapes) the longer description
                 for k in ("enriched", "description", "photos", "features_text", "partial_data"):
-                    if k in prev:
+                    if k not in prev:
+                        continue
+                    longer = k == "description" and len(prev[k] or "") > len(l.get(k) or "")
+                    if prev.get("enriched") or not l.get(k) or longer:
                         l[k] = prev[k]
-                for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact"):
+                for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact", "publisher", "modified"):
                     if l.get(k) is None and prev.get(k) is not None:
                         l[k] = prev[k]
+            for k in ("pct", "pct_score", "pct_n"):
+                if k in prev:
+                    l[k] = prev[k]
             if l.get("lat") is None and prev.get("lat") is not None:
                 l["lat"], l["lng"] = prev["lat"], prev["lng"]
         else:
@@ -83,38 +94,77 @@ def dedupe(listings):
             kept.append(l)
 
 
+def alert(new):
+    """Push a phone notification (ntfy.sh, topic in NTFY_TOPIC) for each new listing that ranks near the top."""
+    topic = os.environ.get("NTFY_TOPIC")
+    st = json.load(open(SETTINGS)) if os.path.exists(SETTINGS) else {}   # thresholds edited in the app
+    min_pct = st.get("alert_percentile", config.ALERT_PERCENTILE)
+    min_ai = st.get("alert_ai_score", config.ALERT_AI_SCORE)
+    for l in sorted(new, key=lambda l: -l["score"]):
+        good = l.get("pct", 0) >= min_pct or (l.get("ai_final") or {}).get("score", 0) >= min_ai
+        if not good:
+            continue
+        g = l.get("geo") or {}
+        title = f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
+        body = (brief if (brief := (l.get("ai_final") or {}).get("brief")) else
+                f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {g.get('maipu_blocks', '?')} cdas a Maipú. {l.get('address', '')}")
+        log(f"ALERT {l['id']}: {title}")
+        if not topic:
+            continue
+        try:
+            requests.post("https://ntfy.sh/", timeout=20, json={"topic": topic, "title": title, "message": body,
+                                                                  "click": l["url"], "priority": 4, "tags": ["house"]})
+        except Exception as e:
+            log(f"alert failed: {e}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-scrape", action="store_true")
-    ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,tokko,mercadolibre"))
+    ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,argenprop,tokko,mercadolibre"))
     ap.add_argument("--max-enrich", type=int, default=150)
+    ap.add_argument("--quick", action="store_true", help="only the newest pages of the sites that support it, to catch new listings fast")
     args = ap.parse_args()
 
     listings = load()
+    known = set(listings)
+    tags = json.load(open(TAGS)) if os.path.exists(TAGS) else {}
     status = {}
     prev = json.load(open(DATA)).get("status", {}) if os.path.exists(DATA) else {}
     if not args.no_scrape:
         for name in args.sources.split(","):
-            every = getattr(SOURCES[name], "API_EVERY_HOURS", None)
-            last = prev.get(name, {})
-            if every and http.API_KEY and last.get("ok") and time.time() - time.mktime(time.strptime(last["at"], "%Y-%m-%d %H:%M")) < every * 3600:
-                log(f"{name}: scraped at {last['at']}, skipping to save API quota")
-                continue
+            src, last = SOURCES[name], prev.get(name, {})
+            age = lambda t: (time.time() - time.mktime(time.strptime(t, "%Y-%m-%d %H:%M"))) / 3600 if t else 1e9
+            if args.quick:
+                if not hasattr(src, "NEW_PAGES"):
+                    continue
+                if name == "zonaprop" and not http.ANT_KEY and age(last.get("at")) < 20:
+                    continue  # ScraperAPI renders cost 10 credits: once a day is all the free plan allows
+                newest = True
+            else:
+                # with only ScraperAPI (render = 10 credits a page) full sweeps are spaced out; ScrapingAnt has room for every run
+                every = getattr(src, "FULL_EVERY_HOURS", None) if http.API_KEY and not http.ANT_KEY else None
+                newest = bool(every and age(last.get("full_at")) < every)
             try:
-                fresh = SOURCES[name].search(log=log)
+                fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
                 seen = {l["id"] for l in fresh}
-                complete = not getattr(SOURCES[name].search, "failed_pages", None)
+                complete = not newest and not getattr(SOURCES[name].search, "failed_pages", None)
                 for l in listings.values():
                     if complete and l["source"] == name and l["id"] not in seen:
-                        l["active"] = False
+                        l["active"] = False  # kept for the percentile history; shown as "Reservada"
+                        l.setdefault("gone_at", TODAY)
                 listings = merge(listings, fresh)
-                status[name] = {"ok": True, "count": len(fresh), "complete": complete, "at": time.strftime("%Y-%m-%d %H:%M")}
+                now = time.strftime("%Y-%m-%d %H:%M")
+                status[name] = {"ok": True, "count": len(fresh) if not newest else last.get("count"), "complete": complete, "at": now,
+                                "mode": "newest" if newest else "full", "full_at": now if complete else last.get("full_at")}
             except Exception as e:
                 traceback.print_exc()
                 status[name] = {"ok": False, "error": str(e)[:200], "at": time.strftime("%Y-%m-%d %H:%M")}
 
     # geography
     for l in listings.values():
+        if not l.get("price_usd") and text.usd_price(l.get("description")):
+            l["price_usd"] = text.usd_price(l["description"])  # cards that only say "consultar" or show pesos
         if l.get("lat") is None and l.get("geocode_query"):
             ll = geo.geocode(l["geocode_query"])
             if ll:
@@ -125,7 +175,7 @@ def main():
     cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
     cands.sort(key=lambda l: -score.score(l)["score"])
     enriched = 0
-    for l in cands:
+    for rank, l in enumerate(cands):
         src = SOURCES.get(l["source"])
         if hasattr(src, "enrich") and not l.get("enriched") and enriched < args.max_enrich:
             try:
@@ -137,6 +187,8 @@ def main():
                 log(f"enrich failed {l['id']}: {e}")
             if score.hard_filters(l):  # full data can rule it out before spending an AI read
                 continue
+        if rank >= config.AI_TOP_N or tags.get(l["id"], {}).get("dismissed"):
+            continue  # photo reads only for the top candidates, and never for houses Tomás dismissed
         cache = ai._load()
         if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
             continue  # same property already read under another source; dedupe keeps that one
@@ -151,7 +203,31 @@ def main():
         l["ai"] = res
         l.update(score.score(l, res))
 
+
     dedupe(listings.values())
+    # Final AI verdict for the top candidates: reads everything, including Tomás's preferences and notes,
+    # and its score overrides ours. Listings he dismissed in the app are skipped.
+    prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
+    top = sorted((l for l in listings.values() if l.get("active") and l.get("ai") and not l["discard"]
+                  and not tags.get(l["id"], {}).get("dismissed")), key=lambda l: -l["score"])[:config.AI_TOP_N]
+    top_ids = {l["id"] for l in top}
+    for l in listings.values():
+        l["score_calc"] = l["score"]
+        if not l.get("ai") or l["discard"]:
+            continue
+        v = ai.final(l, prefs, tags.get(l["id"], {}).get("note", ""), compute=l["id"] in top_ids, log=log)
+        if v:
+            l["ai_final"] = {k: v[k] for k in ("score", "brief", "reasons", "at")}
+            l["score"] = v["score"]
+    # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
+    # Frozen the first time a listing gets a score; the app can recompute all of them on demand.
+    # Ranked on the algorithm's score, which every listing has on the same scale (the AI verdict covers only the top).
+    hist = sorted(l["score_calc"] for l in listings.values())
+    for l in listings.values():
+        if l.get("pct") is None or l.get("pct_score") != l["score_calc"]:
+            l["pct"] = round(100 * bisect.bisect_left(hist, l["score_calc"]) / max(1, len(hist)))
+            l["pct_score"], l["pct_n"] = l["score_calc"], len(hist)
+    alert(l for l in listings.values() if l["id"] not in known and l.get("active") and not l["discard"] and not l.get("duplicate_of"))
     if os.path.exists(DATA):
         status = {**json.load(open(DATA)).get("status", {}), **status}
     out = sorted(listings.values(), key=lambda l: (not l.get("active"), bool(l["discard"]), -l["score"]))

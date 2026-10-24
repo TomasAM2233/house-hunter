@@ -3,7 +3,7 @@
 Provider: Google Gemini free tier (set GEMINI_API_KEY). Without a key, listings are queued in
 data/ai_pending/ as a photo contact sheet + text, so any vision model (or a human) can fill them in
 and save the answer with save_result()."""
-import base64, hashlib, io, json, os, time
+import base64, hashlib, io, json, os, re, time
 import requests
 from PIL import Image
 from . import config
@@ -12,16 +12,27 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "ai_cache.json")
 PENDING = os.path.join(ROOT, "data", "ai_pending")
 MAX_PHOTOS = 12
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# Gemini's free tier allows ~20 requests a day *per model*, so calls walk down this list as each model's daily
+# quota runs out (best first). GEMINI_MODEL is whichever one answered last.
+MODELS = os.environ.get("GEMINI_MODELS", "gemini-flash-latest,gemini-3.7-flash,gemini-3.6-flash,gemini-3.5-flash,"
+                        "gemini-3-flash-preview,gemini-flash-lite-latest,gemini-3.5-flash-lite,gemini-3.1-flash-lite").split(",")
+GEMINI_MODEL = MODELS[0]
 
+PROMPT_VERSION = 2
 PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte). Analizá esta publicación de venta
 (fotos + texto) para una pareja que quiere mudarse pronto y puede invertir como máximo
-USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Respondé SOLO un JSON con estas claves:
+USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Un patio o jardín propio a nivel del suelo es
+obligatorio para ellos: miralo en las fotos con mucho cuidado. Respondé SOLO un JSON con estas claves:
 - "condition": 1-5 (1 = ruina / a demoler, 3 = habitable con arreglos, 5 = impecable / a estrenar)
 - "reform_usd": estimación en USD de lo necesario para que quede habitable y digna (no lujos)
 - "reform_notes": qué habría que hacer, breve
-- "patio": "none" | "small" | "medium" | "large"  (small < 15 m2, medium 15-40, large > 40)
+- "patio": "none" | "small" | "medium" | "large"  (small < 15 m2, medium 15-40, large > 40). Solo patio o
+  jardín propio en planta baja; una terraza o balcón NO cuenta como patio
 - "patio_m2_est": número o null
+- "patio_seen": true solo si en las fotos se ve efectivamente el patio o jardín de la propiedad
+- "terrace": true si tiene terraza o azotea propia
+- "corner": true si la casa está en una esquina (fotos de fachada en ochava o el texto lo dice)
+- "ph_stacked": true si es un PH en planta alta, con otra unidad arriba o abajo (superpuesto); false si es en planta baja con todo el lote propio
 - "pasillo_ph": true si es un PH al fondo por pasillo largo o una unidad muy alargada y angosta
 - "natural_light": 1-5
 - "quiet": 1-5 (según lo que se vea de la calle y el texto; 3 si no se sabe)
@@ -30,10 +41,17 @@ USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Respondé SOLO un 
 - "highlights": hasta 3 puntos fuertes cortos
 - "red_flags": hasta 3 problemas (humedad, grietas, techo de chapa, instalaciones viejas, etc.)
 - "summary": una frase en castellano rioplatense
-Sé escéptico con las fotos de inmobiliaria: ángulos abiertos y filtros esconden problemas."""
+Sé escéptico con las fotos de inmobiliaria: ángulos abiertos y filtros esconden problemas. Las casas en
+esquina casi nunca tienen patio: si no lo ves en las fotos, poné "patio": "none" y "patio_seen": false."""
 
-KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "pasillo_ph", "natural_light",
-        "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
+KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "patio_seen", "terrace", "corner", "ph_stacked",
+        "pasillo_ph", "natural_light", "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
+
+
+def _text(resp):
+    """The answer text, skipping the thinking parts newer models return first."""
+    parts = resp["candidates"][0]["content"]["parts"]
+    return "".join(p.get("text", "") for p in parts if not p.get("thought"))
 
 
 def _load():
@@ -44,15 +62,18 @@ def _photos_key(listing):
     return hashlib.sha1("|".join(listing["photos"][:MAX_PHOTOS]).encode()).hexdigest()[:12]
 
 
-def cached(listing):
+def cached(listing, current=False):
+    """current=True also requires a read made with the current prompt."""
     hit = _load().get(listing["id"])
-    return hit if hit and hit.get("photos_key") == _photos_key(listing) else None
+    if not hit or hit.get("photos_key") != _photos_key(listing):
+        return None
+    return hit if not current or hit.get("prompt_version", 1) >= PROMPT_VERSION else None
 
 
 def save_result(listing_id, result, photos_key, analyst):
     cache = _load()
     result = {k: result.get(k) for k in KEYS}
-    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"))
+    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"), prompt_version=PROMPT_VERSION)
     cache[listing_id] = result
     json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
     return result
@@ -62,7 +83,11 @@ def _download(urls):
     imgs = []
     for u in urls[:MAX_PHOTOS]:
         try:
-            r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+            if "argenprop.com/" in u:  # its WAF blocks cloud IPs for photos too
+                from . import http
+                r = http.get(u, via_api=True, binary=True)
+            else:
+                r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
             im.thumbnail((768, 768))
             imgs.append(im)
@@ -104,28 +129,112 @@ def _gemini(listing):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
         parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(buf.getvalue()).decode()}})
-    body = {"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
-    for attempt in range(4):
-        r = requests.post(url, json=body, timeout=120)
-        if r.status_code == 429:
-            time.sleep(30 * (attempt + 1))
-            continue
-        r.raise_for_status()
-        return json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
-    raise RuntimeError("Gemini rate limit")
+    return _call({"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 120)
+
+
+EXHAUSTED = None  # set to the error once the free quota runs out, so the rest of the run doesn't wait on it
+
+
+def _call(body, timeout):
+    global EXHAUSTED, GEMINI_MODEL
+    while True:
+        if EXHAUSTED:
+            raise RuntimeError(EXHAUSTED)
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={os.environ['GEMINI_API_KEY']}"
+        for attempt in range(3):
+            r = requests.post(url, json=body, timeout=timeout)
+            if r.status_code == 429 and "PerDay" in r.text:
+                break  # this model is done for today; try the next one
+            if r.status_code == 429:
+                wait = re.search(r'"retryDelay":\s*"(\d+)', r.text)
+                time.sleep(min(65, int(wait.group(1)) + 1 if wait else 20))
+                continue
+            if r.status_code == 404 or r.status_code >= 500:
+                time.sleep(5 if r.status_code >= 500 else 0)
+                if r.status_code == 404:
+                    break
+                continue
+            r.raise_for_status()
+            out = json.loads(_text(r.json()))
+            return out[0] if isinstance(out, list) and out else out
+        i = MODELS.index(GEMINI_MODEL)
+        if i + 1 >= len(MODELS):
+            EXHAUSTED = "Gemini free quota used up for today on every model"
+        else:
+            GEMINI_MODEL = MODELS[i + 1]
+
+
+FINAL = os.path.join(ROOT, "data", "ai_final.json")
+FINAL_PROMPT = f"""Sos el asesor inmobiliario de Tomás. Abajo están sus preferencias escritas por él, sus notas sobre
+esta casa (si las hay), los datos del aviso, la lectura de las fotos y el puntaje que calculó nuestro algoritmo
+con su desglose. Tu evaluación final reemplaza a ese puntaje, así que tené en cuenta todo: sus criterios en orden
+de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algoritmo no ve. Si algo choca con un
+requisito obligatorio suyo, bajá mucho el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
+que pasan los filtros, 45 es floja, 55 buena, 65 muy buena y 75 o más solo para una oportunidad excepcional que
+Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con motivos concretos (cada motivo
+vale entre 3 y 15 puntos). Sé exigente: la mayoría de los avisos no son excepcionales. Respondé SOLO un JSON:
+{{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
+rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
+inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"]}}"""
+
+
+def _final_text(l, prefs, note):
+    a, g = l.get("ai") or {}, l.get("geo") or {}
+    st = g.get("station") or {}
+    ppm2 = round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
+    comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
+    return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
+            f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
+            f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} ({st.get('line')}) a {st.get('blocks')} cuadras | "
+            f"Cuadras a Puente Saavedra: {g.get('puente_blocks')}\n"
+            f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
+            f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
+
+
+def final(listing, prefs, note="", compute=True, log=print):
+    """The overall AI verdict: score 0-100 that overrides ours, a <=250 char brief and the reasons.
+    Cached per listing and keyed by everything it reads, so it reruns only when something changed."""
+    text = _final_text(listing, prefs, note)
+    h = hashlib.sha1((FINAL_PROMPT + text).encode()).hexdigest()[:12]
+    cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
+    hit = cache.get(listing["id"])
+    if hit and hit.get("input_key") == h:
+        return hit
+    key = os.environ.get("GEMINI_API_KEY")
+    if not compute or not key:
+        return hit  # stale verdict is better than none until the next run with a key
+    try:
+        res = _call({"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
+                     "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 90)
+        brief = str(res.get("brief") or "").strip()
+        if len(brief) > config.BRIEF_MAX_CHARS:
+            brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
+        out = {"score": max(0, min(100, int(round(float(res["score"]))))), "brief": brief,
+               "reasons": [str(x) for x in (res.get("reasons") or [])][:3], "input_key": h,
+               "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d")}
+    except Exception as e:
+        log(f"final verdict failed for {listing['id']}: {e}")
+        return hit
+    cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
+    cache[listing["id"]] = out
+    json.dump(cache, open(FINAL, "w"), ensure_ascii=False, indent=1)
+    time.sleep(4)
+    return out
 
 
 def analyse(listing, log=print):
-    hit = cached(listing)
+    hit = cached(listing, current=True)
     if hit:
         return hit
     if os.environ.get("GEMINI_API_KEY"):
+        if EXHAUSTED:
+            return None  # quota's gone for this run; don't spend photo downloads on it
         try:
             res = _gemini(listing)
             time.sleep(6)  # stay under the free tier's requests-per-minute
             return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}")
         except Exception as e:
             log(f"AI failed for {listing['id']}: {e}")
-    queue(listing)
+        return None
+    queue(listing)  # no key: leave a contact sheet for a human or another model
     return None
