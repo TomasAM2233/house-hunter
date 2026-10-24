@@ -3,12 +3,14 @@
 python run.py                 # scrape everything enabled and rescore
 python run.py --no-scrape     # just rescore what we already have (e.g. after editing weights or AI results)
 """
-import argparse, json, os, re, shutil, sys, time, traceback
+import argparse, bisect, json, os, re, shutil, sys, time, traceback
 from hh import ai, config, geo, http, score
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data", "listings.json")
+PREFS = os.path.join(ROOT, "data", "preferences.md")   # Tomás's own words; edited from the app or on GitHub
+TAGS = os.path.join(ROOT, "data", "tags.json")         # favourite / visited / dismissed + notes, saved by the app
 WEB_DATA = os.path.join(ROOT, "web", "listings.json")
 SOURCES = {"zonaprop": zonaprop, "argenprop": argenprop, "mercadolibre": mercadolibre, "tokko": tokko}
 TODAY = time.strftime("%Y-%m-%d")
@@ -44,6 +46,9 @@ def merge(old, fresh):
                 for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact", "publisher", "modified"):
                     if l.get(k) is None and prev.get(k) is not None:
                         l[k] = prev[k]
+            for k in ("pct", "pct_score", "pct_n"):
+                if k in prev:
+                    l[k] = prev[k]
             if l.get("lat") is None and prev.get("lat") is not None:
                 l["lat"], l["lng"] = prev["lat"], prev["lng"]
         else:
@@ -95,6 +100,7 @@ def main():
     args = ap.parse_args()
 
     listings = load()
+    tags = json.load(open(TAGS)) if os.path.exists(TAGS) else {}
     status = {}
     prev = json.load(open(DATA)).get("status", {}) if os.path.exists(DATA) else {}
     if not args.no_scrape:
@@ -141,8 +147,8 @@ def main():
                 log(f"enrich failed {l['id']}: {e}")
             if score.hard_filters(l):  # full data can rule it out before spending an AI read
                 continue
-        if rank >= config.AI_TOP_N:
-            continue  # photo reads only for the top candidates
+        if rank >= config.AI_TOP_N or tags.get(l["id"], {}).get("dismissed"):
+            continue  # photo reads only for the top candidates, and never for houses Tomás dismissed
         cache = ai._load()
         if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
             continue  # same property already read under another source; dedupe keeps that one
@@ -155,20 +161,31 @@ def main():
             twin = next((o for o in listings.values() if o["id"] in cache and _twins(l, o)), None)
             res = cache[twin["id"]] if twin else None
         l["ai"] = res
-        l["ai_key"] = l["id"] if l["id"] in cache else (twin["id"] if res else None)
         l.update(score.score(l, res))
 
 
     dedupe(listings.values())
-    # a short brief for each top candidate, written once its photos are read and its score is known
-    top = sorted((l for l in listings.values() if l.get("active") and l.get("ai") and not l["discard"]), key=lambda l: -l["score"])
-    for l in top[:config.AI_TOP_N]:
-        if not l["ai"].get("brief"):
-            b = ai.brief(l, log=log)
-            if b:
-                l["ai"]["brief"] = b
+    # Final AI verdict for the top candidates: reads everything, including Tomás's preferences and notes,
+    # and its score overrides ours. Listings he dismissed in the app are skipped.
+    prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
+    top = sorted((l for l in listings.values() if l.get("active") and l.get("ai") and not l["discard"]
+                  and not tags.get(l["id"], {}).get("dismissed")), key=lambda l: -l["score"])[:config.AI_TOP_N]
+    top_ids = {l["id"] for l in top}
     for l in listings.values():
-        l.pop("ai_key", None)
+        l["score_calc"] = l["score"]
+        if not l.get("ai") or l["discard"]:
+            continue
+        v = ai.final(l, prefs, tags.get(l["id"], {}).get("note", ""), compute=l["id"] in top_ids, log=log)
+        if v:
+            l["ai_final"] = {k: v[k] for k in ("score", "brief", "reasons", "at")}
+            l["score"] = v["score"]
+    # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
+    # Frozen the first time a listing gets a score; the app can recompute all of them on demand.
+    hist = sorted(l["score"] for l in listings.values())
+    for l in listings.values():
+        if l.get("pct") is None or l.get("pct_score") != l["score"]:
+            l["pct"] = round(100 * bisect.bisect_left(hist, l["score"]) / max(1, len(hist)))
+            l["pct_score"], l["pct_n"] = l["score"], len(hist)
     if os.path.exists(DATA):
         status = {**json.load(open(DATA)).get("status", {}), **status}
     out = sorted(listings.values(), key=lambda l: (not l.get("active"), bool(l["discard"]), -l["score"]))

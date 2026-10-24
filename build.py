@@ -32,6 +32,11 @@ def main():
     args = ap.parse_args()
     app = open(APP).read()
     if not args.embed:
+        # the app reads tags and preferences next to listings.json when it has no GitHub token
+        for name in ("tags.json", "preferences.md"):
+            src = os.path.join(ROOT, "data", name)
+            if os.path.exists(src):
+                open(os.path.join(ROOT, "web", name), "w").write(open(src).read())
         page = app.replace("__HH_DATA__", "")
         head, rest = page.split("</style>", 1)
         open(os.path.join(ROOT, "web", "index.html"), "w").write(HEAD + head + "</style>\n</head><body>\n" + rest + "\n</body></html>\n")

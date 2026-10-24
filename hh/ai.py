@@ -14,14 +14,21 @@ PENDING = os.path.join(ROOT, "data", "ai_pending")
 MAX_PHOTOS = 12
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
+PROMPT_VERSION = 2
 PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte). Analizá esta publicación de venta
 (fotos + texto) para una pareja que quiere mudarse pronto y puede invertir como máximo
-USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Respondé SOLO un JSON con estas claves:
+USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Un patio o jardín propio a nivel del suelo es
+obligatorio para ellos: miralo en las fotos con mucho cuidado. Respondé SOLO un JSON con estas claves:
 - "condition": 1-5 (1 = ruina / a demoler, 3 = habitable con arreglos, 5 = impecable / a estrenar)
 - "reform_usd": estimación en USD de lo necesario para que quede habitable y digna (no lujos)
 - "reform_notes": qué habría que hacer, breve
-- "patio": "none" | "small" | "medium" | "large"  (small < 15 m2, medium 15-40, large > 40)
+- "patio": "none" | "small" | "medium" | "large"  (small < 15 m2, medium 15-40, large > 40). Solo patio o
+  jardín propio en planta baja; una terraza o balcón NO cuenta como patio
 - "patio_m2_est": número o null
+- "patio_seen": true solo si en las fotos se ve efectivamente el patio o jardín de la propiedad
+- "terrace": true si tiene terraza o azotea propia
+- "corner": true si la casa está en una esquina (fotos de fachada en ochava o el texto lo dice)
+- "ph_stacked": true si es un PH en planta alta, con otra unidad arriba o abajo (superpuesto); false si es en planta baja con todo el lote propio
 - "pasillo_ph": true si es un PH al fondo por pasillo largo o una unidad muy alargada y angosta
 - "natural_light": 1-5
 - "quiet": 1-5 (según lo que se vea de la calle y el texto; 3 si no se sabe)
@@ -30,10 +37,11 @@ USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Respondé SOLO un 
 - "highlights": hasta 3 puntos fuertes cortos
 - "red_flags": hasta 3 problemas (humedad, grietas, techo de chapa, instalaciones viejas, etc.)
 - "summary": una frase en castellano rioplatense
-Sé escéptico con las fotos de inmobiliaria: ángulos abiertos y filtros esconden problemas."""
+Sé escéptico con las fotos de inmobiliaria: ángulos abiertos y filtros esconden problemas. Las casas en
+esquina casi nunca tienen patio: si no lo ves en las fotos, poné "patio": "none" y "patio_seen": false."""
 
-KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "pasillo_ph", "natural_light",
-        "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
+KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "patio_seen", "terrace", "corner", "ph_stacked",
+        "pasillo_ph", "natural_light", "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
 
 
 def _load():
@@ -44,15 +52,18 @@ def _photos_key(listing):
     return hashlib.sha1("|".join(listing["photos"][:MAX_PHOTOS]).encode()).hexdigest()[:12]
 
 
-def cached(listing):
+def cached(listing, current=False):
+    """current=True also requires a read made with the current prompt."""
     hit = _load().get(listing["id"])
-    return hit if hit and hit.get("photos_key") == _photos_key(listing) else None
+    if not hit or hit.get("photos_key") != _photos_key(listing):
+        return None
+    return hit if not current or hit.get("prompt_version", 1) >= PROMPT_VERSION else None
 
 
 def save_result(listing_id, result, photos_key, analyst):
     cache = _load()
     result = {k: result.get(k) for k in KEYS}
-    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"))
+    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"), prompt_version=PROMPT_VERSION)
     cache[listing_id] = result
     json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
     return result
@@ -120,60 +131,74 @@ def _gemini(listing):
     raise RuntimeError("Gemini rate limit")
 
 
-BRIEF_PROMPT = f"""Escribí un resumen de esta casa para Tomás, en castellano rioplatense, de {config.BRIEF_MAX_CHARS} caracteres
-como máximo. Tomás busca casa o PH en Olivos/Florida/La Lucila y le importa, en este orden: precio y USD/m²,
-espacio (m² totales, ambientes), caminar a Av. Maipú o al tren, estado (puede gastar hasta USD {config.REFORM_BUDGET_USD:,}
-en reformas), patio o jardín (obligatorio), poder construir hacia arriba, apto crédito, tranquilidad y luz.
-Decí lo que más pesa a favor y en contra según esos criterios, con números concretos. Nada de adjetivos de
-inmobiliaria ni repetir la dirección. Respondé SOLO un JSON: {{"brief": "..."}}"""
+FINAL = os.path.join(ROOT, "data", "ai_final.json")
+FINAL_PROMPT = f"""Sos el asesor inmobiliario de Tomás. Abajo están sus preferencias escritas por él, sus notas sobre
+esta casa (si las hay), los datos del aviso, la lectura de las fotos y el puntaje que calculó nuestro algoritmo
+con su desglose. Tu evaluación final reemplaza a ese puntaje, así que tené en cuenta todo: sus criterios en orden
+de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algoritmo no ve. Si algo choca con un
+requisito obligatorio suyo, bajá mucho el puntaje. Respondé SOLO un JSON:
+{{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
+rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
+inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"]}}"""
 
 
-def _brief_text(l):
+def _final_text(l, prefs, note):
     a, g = l.get("ai") or {}, l.get("geo") or {}
     st = g.get("station") or {}
     ppm2 = round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
     comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
-    return (_listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
-            f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} a {st.get('blocks')} cuadras | Apto crédito: {l.get('apto_credito_field')}\n"
-            f"Lectura de fotos: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
-            f"Puntaje {l.get('score')}/100 — {comps}")
+    return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
+            f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
+            f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} ({st.get('line')}) a {st.get('blocks')} cuadras | "
+            f"Cuadras a Puente Saavedra: {g.get('puente_blocks')}\n"
+            f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
+            f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
 
 
-def brief(listing, log=print):
-    """Text-only call: a <=250 char brief built from the listing, its photo read, location and score.
-    Saved in the cache entry the photo read lives in, so it's written once."""
+def final(listing, prefs, note="", compute=True, log=print):
+    """The overall AI verdict: score 0-100 that overrides ours, a <=250 char brief and the reasons.
+    Cached per listing and keyed by everything it reads, so it reruns only when something changed."""
+    text = _final_text(listing, prefs, note)
+    h = hashlib.sha1(text.encode()).hexdigest()[:12]
+    cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
+    hit = cache.get(listing["id"])
+    if hit and hit.get("input_key") == h:
+        return hit
     key = os.environ.get("GEMINI_API_KEY")
-    if not key or not listing.get("ai_key"):
-        return None
-    body = {"contents": [{"parts": [{"text": BRIEF_PROMPT + "\n\n" + _brief_text(listing)}]}],
-            "generationConfig": {"response_mime_type": "application/json", "temperature": 0.3}}
+    if not compute or not key:
+        return hit  # stale verdict is better than none until the next run with a key
+    body = {"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
+            "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
     try:
         for attempt in range(4):
-            r = requests.post(url, json=body, timeout=60)
+            r = requests.post(url, json=body, timeout=90)
             if r.status_code == 429:
                 time.sleep(30 * (attempt + 1))
                 continue
             r.raise_for_status()
-            text = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])["brief"].strip()
+            res = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
             break
         else:
             raise RuntimeError("Gemini rate limit")
+        brief = str(res.get("brief") or "").strip()
+        if len(brief) > config.BRIEF_MAX_CHARS:
+            brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
+        out = {"score": max(0, min(100, int(round(float(res["score"]))))), "brief": brief,
+               "reasons": [str(x) for x in (res.get("reasons") or [])][:3], "input_key": h,
+               "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d")}
     except Exception as e:
-        log(f"brief failed for {listing['id']}: {e}")
-        return None
-    if len(text) > config.BRIEF_MAX_CHARS:
-        text = text[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
-    cache = _load()
-    if listing["ai_key"] in cache:
-        cache[listing["ai_key"]]["brief"] = text
-        json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
+        log(f"final verdict failed for {listing['id']}: {e}")
+        return hit
+    cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
+    cache[listing["id"]] = out
+    json.dump(cache, open(FINAL, "w"), ensure_ascii=False, indent=1)
     time.sleep(4)
-    return text
+    return out
 
 
 def analyse(listing, log=print):
-    hit = cached(listing)
+    hit = cached(listing, current=True)
     if hit:
         return hit
     if os.environ.get("GEMINI_API_KEY"):

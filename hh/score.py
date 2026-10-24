@@ -45,6 +45,13 @@ def hard_filters(l, ai=None):
             r.append(f"a {g['maipu_blocks']} cuadras de Maipú (muy lejos)")
         if g["puente_blocks"] < config.PUENTE_MIN_BLOCKS:
             r.append(f"a {g['puente_blocks']} cuadras de Puente Saavedra")
+    desc = (l.get("description") or "") + " " + (l.get("title") or "")
+    if l.get("type") == "ph":
+        stacked = ai.get("ph_stacked") if ai and ai.get("ph_stacked") is not None else text.ph_stacked(desc)
+        if stacked:
+            r.append("PH en altura / superpuesto")
+    if ai and (ai.get("corner") or text.corner(desc)) and ai.get("patio_seen") is False:
+        r.append("esquina sin patio visible en las fotos")
     if ai:
         if ai.get("patio") == "none":
             r.append("sin patio ni jardín")

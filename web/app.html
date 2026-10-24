@@ -3,6 +3,8 @@
 <meta name="theme-color" content="#6a46b8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
 /* Mobile first: one column of photo cards, a full-screen sheet for the open house.
    From 1000px up the sheet becomes a sticky panel beside the list. */
@@ -61,8 +63,9 @@ button, select, input { font: inherit; color: inherit; }
 .icon[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); }
 .dot.err { background: var(--bad); }
-.tabs { display: flex; background: var(--sunk); border-radius: 10px; padding: 3px; }
-.tabs button { flex: 1; border: 0; background: transparent; padding: 7px 4px; border-radius: 8px; cursor: pointer; color: var(--muted); font-size: 14px; white-space: nowrap; }
+.tabs { display: flex; background: var(--sunk); border-radius: 10px; padding: 3px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button { flex: 1 0 auto; border: 0; background: transparent; padding: 7px 4px; border-radius: 8px; cursor: pointer; color: var(--muted); font-size: 14px; white-space: nowrap; }
 .tabs button[aria-selected="true"] { background: var(--surface); color: var(--fg); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
 .tabs .n { font: 500 12px var(--font-data); opacity: .8; margin-left: 3px; }
 .tools { display: flex; gap: 8px; }
@@ -85,9 +88,16 @@ button, select, input { font: inherit; color: inherit; }
 .wlegend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
 
 /* ── map ── */
-.map { margin: 12px var(--gutter-r) 0 var(--gutter-l); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
-.map svg { width: 100%; height: auto; display: block; touch-action: manipulation; }
-.map .cap { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); padding: 4px 6px 2px; }
+.map { margin: 12px var(--gutter-r) 0 var(--gutter-l); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+#lmap { height: 62vh; min-height: 320px; max-height: 640px; background: var(--sunk); }
+.map .cap { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); padding: 8px 10px; }
+.map .cap i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 4px; }
+.leaflet-container { font: 12px var(--font-body); }
+.ref-label { background: transparent; border: 0; box-shadow: none; font: 600 11px var(--font-body); color: #3b3546; text-shadow: 0 0 3px #fff, 0 0 3px #fff; padding: 0; }
+.ref-label::before { display: none; }
+.pin { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 700 11px var(--font-display); color: #fff; border: 2px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / .35); }
+.pin.hi { background: #1f7a4d; } .pin.mid { background: #a76a00; } .pin.lo { background: #b3322d; } .pin.out { background: #8a8494; opacity: .7; }
+.pin.on { outline: 3px solid var(--accent); outline-offset: 1px; }
 
 /* ── list ── */
 .layout { padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: 12px calc(32px + env(safe-area-inset-bottom, 0px)); }
@@ -116,6 +126,16 @@ button, select, input { font: inherit; color: inherit; }
 .badge.mid { background: var(--warn-soft); color: var(--warn); }
 .badge.lo { background: var(--bad-soft); color: var(--bad); }
 .badge.out { background: var(--sunk); color: var(--muted); font-size: 16px; }
+.badge { flex-direction: column; gap: 1px; }
+.badge small { font: 500 10px var(--font-data); opacity: .85; }
+.mine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.mine .btn { padding: 0 8px; font-size: 14px; }
+.note { width: 100%; min-height: 72px; resize: vertical; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--bg); font: 14px/1.45 var(--font-body); }
+.saved { font-size: 12px; color: var(--muted); min-height: 1em; }
+.prefs { width: 100%; min-height: 220px; resize: vertical; border: 1px solid var(--line); border-radius: 10px; padding: 10px; background: var(--bg); font: 13px/1.5 var(--font-data); }
+.row2 { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.row2 input { flex: 1 1 200px; min-width: 0; height: 38px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--bg); }
+.reasons { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; }
 .empty { padding: 32px 16px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; }
 .more { align-self: center; }
 
@@ -192,10 +212,12 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
     <button class="icon" id="infobtn" aria-pressed="false" aria-label="Fuentes y puntaje"><span class="dot" id="dot"></span>Info</button>
   </div>
   <div class="tabs" role="tablist" id="tabs">
-    <button role="tab" data-v="short" aria-selected="true">Candidatas</button>
-    <button role="tab" data-v="fav" aria-selected="false">★</button>
-    <button role="tab" data-v="out" aria-selected="false">Descartadas</button>
-    <button role="tab" data-v="all" aria-selected="false">Todas</button>
+    <button role="tab" data-v="short" aria-selected="true"></button>
+    <button role="tab" data-v="fav" aria-selected="false"></button>
+    <button role="tab" data-v="visited" aria-selected="false"></button>
+    <button role="tab" data-v="mine" aria-selected="false"></button>
+    <button role="tab" data-v="out" aria-selected="false"></button>
+    <button role="tab" data-v="all" aria-selected="false"></button>
   </div>
   <div class="tools">
     <input id="q" type="search" placeholder="Calle, palabra…" aria-label="Buscar" enterkeyhint="search">
@@ -210,7 +232,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
 </header>
 
 <section class="info" id="info" hidden></section>
-<div class="map" id="map" hidden></div>
+<div class="map" id="map" hidden><div id="lmap"></div><div class="cap" id="mapcap"></div></div>
 
 <main class="layout">
   <div>
@@ -228,11 +250,12 @@ const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condit
   vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
+const TABS = { short: "Candidatas", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas por mí", out: "Filtradas", all: "Todas" };
+const REPO = "TomasAM2233/house-hunter";   // where tags and preferences are saved
 const PAGE = 30;
 const srcName = l => l.source === "tokko" ? (l.publisher || "Inmobiliaria") : (SRC[l.source] || l.source);
 const $ = s => document.querySelector(s);
 const usd = n => n == null ? "?" : "USD " + Math.round(n).toLocaleString("es-AR");
-const k$ = n => n == null ? "?" : "USD " + Math.round(n / 1000) + "k";
 const fmt = n => n == null ? "?" : (Math.round(n * 10) / 10).toLocaleString("es-AR");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const wide = matchMedia("(min-width: 1000px)");
@@ -240,31 +263,111 @@ const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-let DATA, view = "short", sel = null, shown = PAGE, favs = new Set(store.get("hh-favs", []));
+let DATA, view = "short", sel = null, shown = PAGE;
+let TAGS = store.get("hh-tags", {});           // {id: {fav, visited, dismissed, note, at}}
+let PREFS = "", pctMode = "saved";
+for (const id of store.get("hh-favs", [])) (TAGS[id] ||= {}).fav = true;   // favourites from the first version
 
-function band(s, l) { if (l.discard?.length) return "out"; return s >= 62 ? "hi" : s >= 50 ? "mid" : "lo"; }
+/* ── tags, synced through the repo when a GitHub token is set ── */
+const gh = {
+  token: () => store.get("hh-token", ""),
+  shas: {},
+  async get(path) {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}?ref=main`, { headers: { Authorization: `Bearer ${gh.token()}`, Accept: "application/vnd.github+json" }, cache: "no-store" });
+    if (r.status === 404) return null;
+    if (!r.ok) throw new Error(`GitHub ${r.status}`);
+    const j = await r.json(); gh.shas[path] = j.sha;
+    return new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\n/g, "")), c => c.charCodeAt(0)));
+  },
+  async put(path, text, msg) {
+    const body = { message: msg, content: btoa(String.fromCharCode(...new TextEncoder().encode(text))), branch: "main" };
+    if (gh.shas[path]) body.sha = gh.shas[path];
+    let r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { method: "PUT", headers: { Authorization: `Bearer ${gh.token()}`, Accept: "application/vnd.github+json" }, body: JSON.stringify(body) });
+    if (r.status === 409 || r.status === 422) { await gh.get(path); body.sha = gh.shas[path]; r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { method: "PUT", headers: { Authorization: `Bearer ${gh.token()}`, Accept: "application/vnd.github+json" }, body: JSON.stringify(body) }); }
+    if (!r.ok) throw new Error(`GitHub ${r.status}`);
+    gh.shas[path] = (await r.json()).content.sha;
+  },
+};
+let syncTimer = null, syncState = "";
+function setSync(t) { syncState = t; const e = $("#syncstate"); if (e) e.textContent = t; const d = $("#saved"); if (d) d.textContent = t; }
+function saveTags() {
+  store.set("hh-tags", TAGS);
+  if (!gh.token()) { setSync("Guardado en este dispositivo"); return; }
+  setSync("Guardando…");
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(async () => {
+    try {
+      const remote = JSON.parse(await gh.get("data/tags.json") || "{}");
+      for (const [id, t] of Object.entries(remote)) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
+      await gh.put("data/tags.json", JSON.stringify(TAGS, null, 1), "app: tags");
+      store.set("hh-tags", TAGS); setSync("Sincronizado ✓");
+    } catch (e) { setSync("No pude sincronizar (" + e.message + "); quedó guardado en este dispositivo"); }
+  }, 900);
+}
+function tag(id) { return TAGS[id] || {}; }
+function setTag(id, k, v) {
+  const t = TAGS[id] = { ...tag(id), [k]: v, at: new Date().toISOString() };
+  if (k === "dismissed" && v) t.fav = false;
+  if (k === "fav" && v) t.dismissed = false;
+  saveTags();
+}
+async function loadShared() {
+  try {
+    let tags, prefs;
+    if (gh.token()) { tags = await gh.get("data/tags.json"); prefs = await gh.get("data/preferences.md"); setSync("Sincronizado ✓"); }
+    else { tags = await fetch("tags.json", { cache: "no-store" }).then(r => r.ok ? r.text() : null).catch(() => null);
+           prefs = await fetch("preferences.md", { cache: "no-store" }).then(r => r.ok ? r.text() : "").catch(() => ""); }
+    for (const [id, t] of Object.entries(JSON.parse(tags || "{}"))) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
+    store.set("hh-tags", TAGS);
+    PREFS = prefs || "";
+  } catch (e) { setSync("No pude leer GitHub: " + e.message); }
+  renderList(); renderInfo();
+  if (sel) renderDetail(DATA.listings.find(x => x.id === sel));
+}
+
+/* ── data helpers ── */
+function band(s, l) { if (l.discard?.length || tag(l.id).dismissed) return "out"; return s >= 62 ? "hi" : s >= 50 ? "mid" : "lo"; }
 function img(l, i) { return (l.thumbs && l.thumbs[i]) || (l.photos && l.photos[i]) || null; }
 function ppm2(l) { return l.price_usd && l.total_m2 ? Math.round(l.price_usd / l.total_m2) : null; }
-const brief = l => l.ai?.brief || l.ai?.summary || "";
+const brief = l => l.ai_final?.brief || l.ai?.brief || l.ai?.summary || "";
+const pct = l => pctMode === "now" ? l.pct_now : l.pct;
+
+function recalcPct() {
+  const all = DATA.listings.map(l => l.score).sort((a, b) => a - b);
+  const lo = x => { let a = 0, b = all.length; while (a < b) { const m = (a + b) >> 1; all[m] < x ? a = m + 1 : b = m; } return a; };
+  for (const l of DATA.listings) l.pct_now = Math.round(100 * lo(l.score) / all.length);
+  pctMode = "now"; DATA.pct_n_now = all.length;
+}
 
 function base() {
-  const act = DATA.listings.filter(l => l.active !== false);
-  return { short: act.filter(l => !l.discard.length), out: act.filter(l => l.discard.length), all: act, fav: DATA.listings.filter(l => favs.has(l.id)) };
+  const act = DATA.listings.filter(l => l.active !== false && !l.duplicate_of);
+  return {
+    short: act.filter(l => !l.discard.length && !tag(l.id).dismissed),
+    fav: DATA.listings.filter(l => tag(l.id).fav),
+    visited: DATA.listings.filter(l => tag(l.id).visited),
+    mine: DATA.listings.filter(l => tag(l.id).dismissed),
+    out: act.filter(l => l.discard.length),
+    all: act,
+  };
 }
 function rows() {
   let r = base()[view];
   const q = $("#q").value.trim().toLowerCase();
-  if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description + " " + brief(l)).toLowerCase().includes(q));
+  if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description + " " + brief(l) + " " + (tag(l.id).note || "")).toLowerCase().includes(q));
   const key = { score: l => -l.score, price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
     m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0) }[$("#sort").value];
   return r.slice().sort((a, b) => key(a) - key(b));
 }
 
+/* ── list ── */
 function miniBar(l) {
   return `<div class="mini" title="Aporte de cada criterio">${Object.entries(l.components).map(([k, c]) =>
     `<i style="width:${c.points}%;background:${COLORS[k]}"></i>`).join("")}</div>`;
 }
-
+function badge(l, cls = "") {
+  const p = pct(l);
+  return `<span class="badge ${band(l.score, l)} ${cls}" title="${l.ai_final ? "Puntaje de la IA" : "Puntaje del algoritmo"}${p != null ? ` · percentil ${p}` : ""}">${l.discard.length ? "—" : Math.round(l.score)}${!l.discard.length && p != null ? `<small>P${p}</small>` : ""}</span>`;
+}
 function specs(l) {
   const g = l.geo;
   return `<div class="specs">
@@ -274,43 +377,41 @@ function specs(l) {
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
 }
-
 function card(l, i) {
-  const b = band(l.score, l), src = img(l, 0);
+  const t = tag(l.id), src = img(l, 0);
   const chips = (l.flags || []).filter(f => f !== "sin análisis IA").map(f => `<span class="pill warn">${esc(f)}</span>`)
-    .concat(l.discard.length ? [`<span class="pill err">${esc(l.discard[0])}</span>`] : []);
+    .concat(l.discard.length ? [`<span class="pill err">${esc(l.discard[0])}</span>`] : [])
+    .concat(t.note ? [`<span class="pill acc">✎ ${esc(t.note.slice(0, 40))}${t.note.length > 40 ? "…" : ""}</span>`] : []);
   const text = brief(l);
   return `<button class="card" data-id="${l.id}" aria-current="${sel === l.id}">
     <div class="ph">
       ${src ? `<img loading="lazy" decoding="async" src="${esc(src)}" alt="">` : ""}
-      <div class="tl"><span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${favs.has(l.id) ? `<span class="pill">★</span>` : ""}</div>
-      <span class="badge ${b}">${l.discard.length ? "—" : Math.round(l.score)}</span>
+      <div class="tl"><span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}</div>
+      ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
     </div>
     <div class="cbody">
       <div class="cprice"><b class="num">${usd(l.price_usd)}</b><span class="num">${ppm2(l) ? ppm2(l).toLocaleString("es-AR") + " USD/m²" : ""}</span></div>
       ${specs(l)}
-      ${text ? `<p class="brief">${esc(text)}</p>` : `<p class="brief none">${l.discard.length ? "" : "Todavía sin lectura de fotos: el puntaje sale solo del aviso."}</p>`}
+      ${text ? `<p class="brief">${esc(text)}</p>` : `<p class="brief none">${l.discard.length ? "" : "Todavía sin evaluación de la IA: el puntaje sale solo del aviso."}</p>`}
       ${miniBar(l)}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
     </div>
   </button>`;
 }
-
 function renderList() {
-  const r = rows();
-  const counts = base();
-  document.querySelectorAll("#tabs button").forEach(b => {
-    const n = counts[b.dataset.v].length;
-    b.innerHTML = `${b.dataset.v === "fav" ? "★" : { short: "Candidatas", out: "Descartadas", all: "Todas" }[b.dataset.v]}<span class="n">${n}</span>`;
-  });
+  const r = rows(), counts = base();
+  document.querySelectorAll("#tabs button").forEach(b => { b.innerHTML = `${TABS[b.dataset.v]}<span class="n">${counts[b.dataset.v].length}</span>`; });
+  const empty = { fav: "Tocá ★ en una casa para guardarla acá.", visited: "Marcá las casas que fuiste a ver.", mine: "Las que descartes van a aparecer acá." }[view] || "Nada con estos filtros.";
   $("#list").innerHTML = r.length
     ? r.slice(0, shown).map(card).join("") + (r.length > shown ? `<button class="btn more" id="more">Ver ${Math.min(PAGE, r.length - shown)} más de ${r.length - shown}</button>` : "")
-    : `<div class="empty">${view === "fav" ? "Tocá ★ en una casa para guardarla acá." : "Nada con estos filtros."}</div>`;
+    : `<div class="empty">${empty}</div>`;
   const m = $("#more"); if (m) m.onclick = e => { e.stopPropagation(); shown += PAGE; renderList(); };
   if (wide.matches && r.length && !r.some(l => l.id === sel)) select(r[0].id, false);
+  if (!$("#map").hidden) renderMap();
 }
 
+/* ── detail ── */
 function select(id, push = true) {
   sel = id;
   const l = DATA.listings.find(x => x.id === id);
@@ -324,15 +425,13 @@ function select(id, push = true) {
     if (push) try { history.pushState({ open: id }, ""); } catch {}
   }
 }
-function closeDetail() {
-  $("#detail").hidden = true;
-  document.body.classList.remove("locked");
-}
+function closeDetail() { $("#detail").hidden = true; document.body.classList.remove("locked"); }
 
 function renderDetail(l) {
   if (!l) { $("#detail").innerHTML = ""; return; }
+  const t = tag(l.id);
   const pics = (l.photos?.length ? l.photos : l.thumbs || []).slice(0, 12);
-  const a = l.ai, g = l.geo;
+  const a = l.ai, g = l.geo, f = l.ai_final;
   const comp = Object.entries(l.components).map(([k, c]) => `
     <span>${LABELS[k]}</span>
     <span class="bar"><i style="width:${c.value * 100}%;background:${COLORS[k]}"></i></span>
@@ -340,25 +439,31 @@ function renderDetail(l) {
     <span class="why">${esc(c.why)}</span>`).join("");
   const aiBox = a ? `<div class="section ai">
       <span class="label">Lectura de fotos</span>
-      <p class="num">Estado ${a.condition}/5 · reforma ~${usd(a.reform_usd)} · ${PATIO[a.patio] || esc(a.patio)}${a.patio_m2_est ? ` ~${a.patio_m2_est} m²` : ""} · luz ${a.natural_light}/5 · tranquilidad ${a.quiet}/5</p>
+      <p class="num">Estado ${a.condition}/5 · reforma ~${usd(a.reform_usd)} · ${PATIO[a.patio] || esc(a.patio)}${a.patio_m2_est ? ` ~${a.patio_m2_est} m²` : ""}${a.patio_seen === false ? " (no se ve en fotos)" : ""} · luz ${a.natural_light}/5 · tranquilidad ${a.quiet}/5${a.corner ? " · esquina" : ""}</p>
       ${a.reform_notes ? `<p>${esc(a.reform_notes)}</p>` : ""}
       ${a.highlights?.length ? `<ul>${a.highlights.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
       ${a.red_flags?.length ? `<ul style="color:var(--bad)">${a.red_flags.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
     </div>` : "";
   const hist = (l.price_history || []).length > 1 ? `<div class="section"><span class="label">Historial de precio</span><div class="num" style="font-size:13.5px">${l.price_history.map(([d, p]) => `${d}: ${usd(p)}`).join(" → ")}</div></div>` : "";
-  const text = brief(l);
+  const text = brief(l), p = pct(l), n = pctMode === "now" ? DATA.pct_n_now : l.pct_n;
   $("#detail").innerHTML = `
     <div class="dtop">
       <button class="icon close" id="back" aria-label="Volver a la lista">←</button>
       <div class="t"><b class="num">${usd(l.price_usd)}</b><span>${esc(l.zone || "")} · ${l.type === "ph" ? "PH" : "Casa"} · ${esc(srcName(l))}</span></div>
-      <button class="icon" id="fav" aria-pressed="${favs.has(l.id)}" aria-label="Favorita">★</button>
-      <span class="badge ${band(l.score, l)}">${l.discard.length ? "—" : Math.round(l.score)}</span>
+      ${badge(l)}
     </div>
     ${pics.length ? `<div class="gallery" id="gal">${pics.map((p, i) => `<img ${i ? 'loading="lazy"' : ""} src="${esc(p)}" alt="Foto ${i + 1}">`).join("")}</div><div class="gcount num" id="gcount">1 / ${pics.length}</div>` : ""}
     <div class="dbody">
       <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · visto desde ${esc(l.first_seen)}</div></div>
-      ${l.discard.length ? `<div class="discard"><b>Descartada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
-      ${text ? `<div class="lead"><span class="label">Resumen para vos</span><p>${esc(text)}</p></div>` : ""}
+      <div class="mine">
+        <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
+        <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">Visitada</button>
+        <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">Descartar</button>
+      </div>
+      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa (la IA las tiene en cuenta en la próxima corrida)">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
+      ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
+      ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
+        ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}</div>` : ""}
       <div class="facts">
         <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
         <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
@@ -367,82 +472,116 @@ function renderDetail(l) {
         <div class="fact"><span>A Maipú</span><b>${g ? fmt(g.maipu_blocks) + " cdas" : "?"}</b></div>
         <div class="fact"><span>${g ? esc(g.station.name) : "Tren"}</span><b>${g ? fmt(g.station.blocks) + " cdas" : "?"}</b></div>
         <div class="fact"><span>Cochera</span><b>${l.garage ? fmt(l.garage) : "no"}</b></div>
-        <div class="fact"><span>Antigüedad</span><b>${l.age_years != null ? fmt(l.age_years) + " años" : "?"}</b></div>
+        <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
       </div>
       <div class="actions">
         <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso en ${esc(srcName(l))} ↗</a>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + ", Vicente López")}" target="_blank" rel="noopener">Mapa ↗</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + ", Vicente López")}" target="_blank" rel="noopener">Maps ↗</a>
       </div>
       ${aiBox}
-      <div class="section"><span class="label">Por qué ${fmt(l.score)} / 100</span><div class="breakdown">${comp}</div></div>
+      <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
       ${hist}
       <div class="section"><span class="label">Descripción del aviso</span><div class="desc clamp" id="desc">${esc(l.description)}</div>
         <button class="linkish" id="descmore">Leer todo</button></div>
     </div>`;
   $("#back").onclick = () => history.state?.open ? history.back() : closeDetail();
-  $("#fav").onclick = () => {
-    favs.has(l.id) ? favs.delete(l.id) : favs.add(l.id);
-    store.set("hh-favs", [...favs]);
-    $("#fav").setAttribute("aria-pressed", favs.has(l.id));
-    renderList();
-  };
+  $("#detail").querySelectorAll("[data-tag]").forEach(b => b.onclick = () => {
+    setTag(l.id, b.dataset.tag, !tag(l.id)[b.dataset.tag]);
+    renderDetail(l); renderList();
+  });
+  $("#note").onchange = e => { setTag(l.id, "note", e.target.value.trim()); renderList(); };
   $("#descmore").onclick = e => { $("#desc").classList.remove("clamp"); e.target.remove(); };
   const gal = $("#gal");
   if (gal) gal.onscroll = () => { $("#gcount").textContent = `${Math.round(gal.scrollLeft / gal.clientWidth) + 1} / ${pics.length}`; };
 }
 
+/* ── map: OpenStreetMap streets + Tomás's reference points ── */
+let MAP = null, MARKERS = null;
+function initMap() {
+  if (MAP || !window.L) return;
+  const ref = DATA.reference || {};
+  MAP = L.map("lmap", { zoomControl: true, attributionControl: true }).setView([-34.515, -58.49], 14);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+    maxZoom: 19, subdomains: "abcd", attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>' }).addTo(MAP);
+  const lines = (ws, style, name) => (ws || []).forEach((w, i) => { const pl = L.polyline(w, style).addTo(MAP); if (i === 0 && name) pl.bindTooltip(name, { sticky: true }); });
+  lines(ref.general_paz, { color: "#6b6578", weight: 6, opacity: .55 }, "Av. General Paz");
+  lines(ref.panamericana, { color: "#6b6578", weight: 6, opacity: .55 }, "Panamericana");
+  lines(ref.belgrano, { color: "#2e7fa8", weight: 2.5, opacity: .7, dashArray: "6 5" }, "Belgrano Norte");
+  lines(ref.mitre, { color: "#b3322d", weight: 3, opacity: .85, dashArray: "8 5" }, "Tren Mitre");
+  lines(ref.maipu, { color: "#c9a227", weight: 5, opacity: .9 }, "Av. Maipú");
+  (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(MAP).bindTooltip("Cementerio de Olivos"));
+  const place = (ll, name, color) => L.circleMarker(ll, { radius: 6, color: "#fff", weight: 2, fillColor: color, fillOpacity: 1 }).addTo(MAP)
+    .bindTooltip(name, { permanent: true, direction: "right", className: "ref-label", offset: [6, 0] });
+  for (const [n, [la, lo]] of Object.entries(ref.stations || {})) L.circleMarker([la, lo], { radius: 4, color: "#1d1a24", weight: 1.5, fillColor: "#fff", fillOpacity: 1 }).addTo(MAP)
+    .bindTooltip(n, { permanent: true, direction: "right", className: "ref-label", offset: [4, 0] });
+  for (const [n, ll] of Object.entries(ref.points || {})) place(ll, n === "Municipalidad" ? "Municipalidad de Vicente López" : n, "#6a46b8");
+  if (ref.puente) place(ref.puente, "Puente Saavedra", "#b3322d");
+  if (ref.cementerio?.[0]) { const c = ref.cementerio[0]; place(c[Math.floor(c.length / 2)], "Cementerio de Olivos", "#4fa35a"); }
+  MARKERS = L.layerGroup().addTo(MAP);
+  $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
+}
 function renderMap() {
-  const ref = DATA.reference; if (!ref) { $("#mapbtn").hidden = true; return; }
-  // fit the frame to the houses on screen (plus a margin), so the dots don't huddle in a corner
-  const ll = rows().filter(l => l.lat).map(l => [l.lat, l.lng]).concat([ref.puente]);
-  const lats = ll.map(p => p[0]), lons = ll.map(p => p[1]), pad = 0.004;
-  const b = { s: Math.min(...lats) - pad, n: Math.max(...lats) + pad, w: Math.min(...lons) - pad, e: Math.max(...lons) + pad };
-  const k = Math.cos(34.52 * Math.PI / 180);
-  const W = 640, H = Math.round(Math.min(560, Math.max(300, W * (b.n - b.s) / ((b.e - b.w) * k))));
-  const s = Math.min(W / ((b.e - b.w) * k), H / (b.n - b.s));
-  const ox = (W - (b.e - b.w) * k * s) / 2, oy = (H - (b.n - b.s) * s) / 2;
-  const P = (lat, lon) => [ox + (lon - b.w) * k * s, oy + (b.n - lat) * s];
-  const line = ref.maipu.map(w => `<polyline points="${w.map(p => P(...p).map(v => v.toFixed(1)).join(",")).join(" ")}" fill="none" stroke="var(--maipu)" stroke-width="3" stroke-linecap="round"/>`).join("");
-  const st = Object.entries(ref.stations).map(([n, [la, lo]]) => { const [x, y] = P(la, lo);
-    return `<g><rect x="${x - 4}" y="${y - 4}" width="8" height="8" fill="var(--surface)" stroke="var(--fg)" stroke-width="1.5"/><text x="${x + 7}" y="${y + 4}" font-size="11" fill="var(--muted)">${esc(n)}</text></g>`; }).join("");
-  const [px, py] = P(...ref.puente);
-  const pts = rows().filter(l => l.lat).map(l => { const [x, y] = P(l.lat, l.lng);
-    const c = l.discard.length ? "var(--muted)" : { hi: "var(--good)", mid: "var(--warn)", lo: "var(--bad)" }[band(l.score, l)];
-    const on = l.id === sel;
-    return `<circle data-id="${l.id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${on ? 10 : 7}" fill="${c}" fill-opacity="${l.discard.length ? .35 : .85}" stroke="${on ? "var(--fg)" : "var(--surface)"}" stroke-width="${on ? 2.5 : 1.2}" style="cursor:pointer"><title>${esc(l.address)} · ${Math.round(l.score)}</title></circle>`; });
-  $("#map").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa de la zona con Av. Maipú, estaciones y casas">
-    <rect width="${W}" height="${H}" fill="var(--sunk)" rx="8"/>
-    ${line}${st}
-    <g><circle cx="${px}" cy="${py}" r="5" fill="var(--bad)"/><text x="${px + 8}" y="${py + 4}" font-size="11" fill="var(--bad)">Puente Saavedra</text></g>
-    ${pts.join("")}
-    <text x="10" y="${H - 10}" font-size="11" fill="var(--muted)">↑ Río al noreste · 1 cdra ≈ 100 m</text>
-  </svg>
-  <div class="cap"><span><i style="display:inline-block;width:14px;height:3px;background:var(--maipu);vertical-align:middle"></i> Maipú</span><span>□ estación</span><span style="color:var(--good)">● 62+</span><span style="color:var(--warn)">● 50–61</span><span style="color:var(--bad)">● &lt;50</span><span>● descartada</span></div>`;
-  $("#map").querySelectorAll("circle[data-id]").forEach(c => c.onclick = () => select(c.dataset.id));
+  if (!window.L) { $("#lmap").innerHTML = `<div class="empty">El mapa necesita conexión a internet.</div>`; return; }
+  initMap();
+  MARKERS.clearLayers();
+  const pts = rows().filter(l => l.lat);
+  for (const l of pts) {
+    const b = band(l.score, l);
+    L.marker([l.lat, l.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${b}${l.id === sel ? " on" : ""}">${l.discard.length ? "" : Math.round(l.score)}</div>`, iconSize: [28, 28], iconAnchor: [14, 14] }),
+      zIndexOffset: l.id === sel ? 1000 : b === "hi" ? 500 : 0 })
+      .addTo(MARKERS).bindTooltip(`${usd(l.price_usd)} · ${esc(l.address)}`).on("click", () => select(l.id));
+  }
+  setTimeout(() => {
+    MAP.invalidateSize();
+    if (!MAP._fitted && pts.length) { MAP.fitBounds(pts.map(l => [l.lat, l.lng]), { padding: [24, 24], maxZoom: 16 }); MAP._fitted = true; }
+  }, 50);
 }
 
+/* ── info panel: sources, scoring, preferences, sync ── */
 function renderInfo() {
   const S = DATA.search, bad = Object.values(DATA.status || {}).some(s => !s.ok);
   $("#dot").classList.toggle("err", bad);
   $("#sub").textContent = `Actualizado ${DATA.generated_at}`;
+  const tok = gh.token();
   $("#info").innerHTML = `
     <p>Casas y PH en ${S.zones.join(", ")} · USD ${S.price_min / 1000}k–${S.price_max / 1000}k · ${S.ppm2_min}–${S.ppm2_max} USD/m² · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
     <div><span class="label">Fuentes</span><div class="status" style="margin-top:6px">${Object.entries(DATA.status || {}).map(([k, s]) =>
-      `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc(s.at.slice(5)) : "falló " + esc(s.at.slice(5))}</span>`).join("")}</div></div>
-    <div><span class="label">Cómo puntuamos (sobre 100)</span>
+      `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc((s.at || "").slice(5)) : "falló " + esc((s.at || "").slice(5))}</span>`).join("")}</div></div>
+    <div><span class="label">Cómo puntúa el algoritmo (sobre 100)</span>
       <div class="wbar">${Object.entries(DATA.weights).map(([k, w]) => `<i style="flex:${w};background:${COLORS[k]}"></i>`).join("")}</div>
-      <div class="wlegend">${Object.entries(DATA.weights).map(([k, w]) => `<span><i style="background:${COLORS[k]}"></i>${LABELS[k]} ${w}</span>`).join("")}</div></div>`;
-  $("#foot").textContent = "Descartadas = no cumplen algún filtro duro. La IA mira las fotos solo de las mejores candidatas y escribe el resumen. Las favoritas se guardan en este navegador.";
+      <div class="wlegend">${Object.entries(DATA.weights).map(([k, w]) => `<span><i style="background:${COLORS[k]}"></i>${LABELS[k]} ${w}</span>`).join("")}</div>
+      <p style="margin-top:8px">Para las mejores candidatas, la IA lee fotos, datos, tus preferencias y tus notas, y su puntaje reemplaza al del algoritmo.</p></div>
+    <div class="section"><span class="label">Percentiles</span>
+      <p>${pctMode === "now" ? `Recalculados con las ${DATA.pct_n_now} casas puntuadas hasta hoy.` : "Cada percentil se calculó contra todas las casas puntuadas hasta ese momento."}</p>
+      <div class="row2"><button class="btn" id="pctbtn">Recalcular con todos los datos</button>${pctMode === "now" ? `<button class="btn" id="pctback">Volver a los originales</button>` : ""}</div></div>
+    <div class="section"><span class="label">Tus preferencias (la IA las lee)</span>
+      <textarea class="prefs" id="prefs" ${tok ? "" : "readonly"}>${esc(PREFS)}</textarea>
+      ${tok ? `<div class="row2"><button class="btn primary" id="prefsave">Guardar preferencias</button></div>` : `<p>Para editarlas desde acá, conectá GitHub abajo.</p>`}</div>
+    <div class="section"><span class="label">Sincronizar entre dispositivos</span>
+      <p>Tus marcas y notas se guardan en este dispositivo. Para tenerlas en el celu y la compu, y para que la IA lea tus notas, pegá un token de GitHub con permiso de escritura en <b>${REPO}</b> (Settings → Developer settings → Fine-grained tokens → Contents: Read and write).</p>
+      <div class="row2"><input id="tok" type="password" autocomplete="off" placeholder="github_pat_…" value="${tok ? "••••••••" : ""}"><button class="btn" id="toksave">${tok ? "Cambiar" : "Conectar"}</button>${tok ? `<button class="btn" id="tokdel">Desconectar</button>` : ""}</div>
+      <span class="saved" id="syncstate">${esc(syncState)}</span></div>`;
+  $("#pctbtn").onclick = () => { recalcPct(); renderInfo(); renderList(); if (sel) renderDetail(DATA.listings.find(x => x.id === sel)); };
+  if ($("#pctback")) $("#pctback").onclick = () => { pctMode = "saved"; renderInfo(); renderList(); if (sel) renderDetail(DATA.listings.find(x => x.id === sel)); };
+  if ($("#prefsave")) $("#prefsave").onclick = async () => {
+    PREFS = $("#prefs").value; setSync("Guardando preferencias…");
+    try { await gh.get("data/preferences.md"); await gh.put("data/preferences.md", PREFS, "app: preferences"); setSync("Preferencias guardadas ✓ (la IA las usa en la próxima corrida)"); }
+    catch (e) { setSync("No pude guardar: " + e.message); }
+  };
+  $("#toksave").onclick = () => { const v = $("#tok").value.trim(); if (!v || v.startsWith("••")) return; store.set("hh-token", v); saveTags(); loadShared(); };
+  if ($("#tokdel")) $("#tokdel").onclick = () => { store.set("hh-token", ""); setSync(""); renderInfo(); };
+  $("#foot").textContent = "Filtradas = no cumplen algún filtro duro. Descartadas por mí = las que marcaste vos. Percentil = qué parte de todas las casas puntuadas quedó por debajo.";
 }
 
 function boot(d) {
   DATA = d;
   renderInfo(); renderList();
+  loadShared();
   $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
     view = b.dataset.v; shown = PAGE; document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
-    renderList(); if (!$("#map").hidden) renderMap(); window.scrollTo({ top: 0 }); };
+    renderList(); window.scrollTo({ top: 0 }); };
   $("#sort").onchange = () => { shown = PAGE; renderList(); };
-  $("#q").oninput = () => { shown = PAGE; renderList(); if (!$("#map").hidden) renderMap(); };
+  $("#q").oninput = () => { shown = PAGE; renderList(); };
   $("#list").onclick = e => { const c = e.target.closest(".card"); if (c) select(c.dataset.id); };
   const toggle = (btn, el, after) => $(btn).onclick = () => { const on = el.hidden; el.hidden = !on; $(btn).setAttribute("aria-pressed", on); if (on && after) after(); };
   toggle("#mapbtn", $("#map"), renderMap);

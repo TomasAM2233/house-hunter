@@ -81,6 +81,10 @@ def geocode(address):
 
 
 def reference():
-    """Map layers for the dashboard: Av. Maipú, stations, Puente Saavedra."""
+    """Map layers for the dashboard: Av. Maipú, stations, Puente Saavedra, plus the reference lines and places
+    in geo/overlays.json (Mitre and Belgrano rail, Panamericana, General Paz, Cementerio de Olivos, La Salle,
+    Municipalidad), pulled once from OpenStreetMap."""
+    ov = os.path.join(ROOT, "geo", "overlays.json")
     return {"maipu": [[[round(a, 5), round(b, 5)] for a, b in w] for w in _REF["maipu"]],
-            "stations": _REF["stations"], "puente": list(config.PUENTE_SAAVEDRA)}
+            "stations": _REF["stations"], "puente": list(config.PUENTE_SAAVEDRA),
+            **(json.load(open(ov)) if os.path.exists(ov) else {})}

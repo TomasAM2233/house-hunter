@@ -53,3 +53,14 @@ def single_storey(text):
 
 def own_lot(text):
     return bool(re.search(r"(lote propio|terreno propio|sobre lote)", norm(text)))
+
+
+def corner(text):
+    return bool(re.search(r"\b(en esquina|esquina|lote esquina|ochava)\b", norm(text)))
+
+
+def ph_stacked(text):
+    """A PH upstairs (or with another unit on top): the kind Tomás rules out."""
+    t = norm(text)
+    return bool(re.search(r"((ph|unidad)[^.]{0,40}(en planta alta|en (el )?primer piso|en (el )?1 ?(er|°|º)? piso|en altura|superpuest)"
+                          r"|(se accede|acceso|ingreso)[^.]{0,20}por escalera|ph de altos|ph en pa\b)", t))
