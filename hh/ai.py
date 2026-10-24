@@ -12,7 +12,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "ai_cache.json")
 PENDING = os.path.join(ROOT, "data", "ai_pending")
 MAX_PHOTOS = 12
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")  # alias: Google retires pinned versions for new keys
+# Gemini's free tier allows ~20 requests a day *per model*, so calls walk down this list as each model's daily
+# quota runs out (best first). GEMINI_MODEL is whichever one answered last.
+MODELS = os.environ.get("GEMINI_MODELS", "gemini-flash-latest,gemini-3.7-flash,gemini-3.6-flash,gemini-3.5-flash,"
+                        "gemini-3-flash-preview,gemini-flash-lite-latest,gemini-3.5-flash-lite,gemini-3.1-flash-lite").split(",")
+GEMINI_MODEL = MODELS[0]
 
 PROMPT_VERSION = 2
 PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte). Analizá esta publicación de venta
@@ -132,26 +136,31 @@ EXHAUSTED = None  # set to the error once the free quota runs out, so the rest o
 
 
 def _call(body, timeout):
-    global EXHAUSTED
-    if EXHAUSTED:
-        raise RuntimeError(EXHAUSTED)
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={os.environ['GEMINI_API_KEY']}"
-    for attempt in range(3):
-        r = requests.post(url, json=body, timeout=timeout)
-        if r.status_code == 429:
-            daily = "PerDay" in r.text
-            if daily or attempt == 2:
-                EXHAUSTED = f"Gemini quota used up ({'daily' if daily else 'per minute'}): {r.text[:300]}"
-                raise RuntimeError(EXHAUSTED)
-            wait = re.search(r'"retryDelay":\s*"(\d+)', r.text)
-            time.sleep(min(65, int(wait.group(1)) + 1 if wait else 20))
-            continue
-        if r.status_code >= 500:
-            time.sleep(10)
-            continue
-        r.raise_for_status()
-        return json.loads(_text(r.json()))
-    raise RuntimeError(f"Gemini unavailable: HTTP {r.status_code}")
+    global EXHAUSTED, GEMINI_MODEL
+    while True:
+        if EXHAUSTED:
+            raise RuntimeError(EXHAUSTED)
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={os.environ['GEMINI_API_KEY']}"
+        for attempt in range(3):
+            r = requests.post(url, json=body, timeout=timeout)
+            if r.status_code == 429 and "PerDay" in r.text:
+                break  # this model is done for today; try the next one
+            if r.status_code == 429:
+                wait = re.search(r'"retryDelay":\s*"(\d+)', r.text)
+                time.sleep(min(65, int(wait.group(1)) + 1 if wait else 20))
+                continue
+            if r.status_code == 404 or r.status_code >= 500:
+                time.sleep(5 if r.status_code >= 500 else 0)
+                if r.status_code == 404:
+                    break
+                continue
+            r.raise_for_status()
+            return json.loads(_text(r.json()))
+        i = MODELS.index(GEMINI_MODEL)
+        if i + 1 >= len(MODELS):
+            EXHAUSTED = "Gemini free quota used up for today on every model"
+        else:
+            GEMINI_MODEL = MODELS[i + 1]
 
 
 FINAL = os.path.join(ROOT, "data", "ai_final.json")
