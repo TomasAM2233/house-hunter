@@ -47,10 +47,10 @@ Score out of 100, in our order of importance:
 
 | Source | How | Notes |
 |---|---|---|
-| Zonaprop | search pages embed the listing JSON | blocks cloud IPs (403). With the `SCRAPER_API_KEY` secret, ScraperAPI renders the search pages (10 credits each) and the cards are parsed from the DOM; one full sweep every 6 days fits the free 1,000 credits/month |
+| Zonaprop | search pages embed the listing JSON | blocks cloud IPs (403). With the `SCRAPER_API_KEY` secret, ScraperAPI renders the search pages (10 credits each) and the cards are parsed from the DOM; one full sweep a week (~110 credits) |
 | Mercado Libre | search grid + item pages | most fingerprints hit an account wall; `PROFILES` in the module are the ones that pass |
 | Agencies (Tokko) | `AGENCIES` in `hh/config.py` | add an agency with its site URL; if the site ships a Tokko key, add `key` too |
-| Argenprop | search cards + item pages | WAF blocks cloud IPs, photos included; goes through ScraperAPI (1 credit per page), once a day |
+| Argenprop | search cards + item pages | WAF blocks cloud IPs, photos included; goes through ScraperAPI (1 credit per page or photo), every other day |
 
 The same house usually shows up on several of these. `run.py` treats listings with the same price, total m²
 within 3% and the same street (or under 250 m apart) as one, keeps the best-documented copy, and reuses its AI read.

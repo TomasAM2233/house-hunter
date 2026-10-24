@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.argenprop.com"
-API_EVERY_HOURS = 20  # see zonaprop.py: free API quota
+API_EVERY_HOURS = 44  # every other day; see zonaprop.py for the free API quota
 
 
 def search_url(page):

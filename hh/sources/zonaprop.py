@@ -5,8 +5,8 @@ from .. import http, config
 
 BASE = "https://www.zonaprop.com.ar"
 # Zonaprop blocks cloud IPs. With SCRAPER_API_KEY set, search pages are rendered by ScraperAPI (10 credits each,
-# ~11 pages a sweep) and parsed from the DOM; the free plan's 1,000 credits a month allow about one sweep a week.
-API_EVERY_HOURS = 24 * 6
+# ~11 pages a sweep) and parsed from the DOM; one sweep a week keeps it near half of the free 1,000 credits a month.
+API_EVERY_HOURS = 24 * 7
 _dec = json.JSONDecoder()
 
 
