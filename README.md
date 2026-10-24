@@ -47,7 +47,7 @@ Score out of 100, in our order of importance:
 
 | Source | How | Notes |
 |---|---|---|
-| Zonaprop | search pages embed the listing JSON | intermittent 403s; failed pages keep the previous state |
+| Zonaprop | search pages embed the listing JSON | blocks cloud IPs (403); goes through ScraperAPI when the `SCRAPER_API_KEY` secret is set, at most once every 20 h to stay in the free 1,000 requests/month |
 | Mercado Libre | search grid + item pages | most fingerprints hit an account wall; `PROFILES` in the module are the ones that pass |
 | Agencies (Tokko) | `AGENCIES` in `hh/config.py` | add an agency with its site URL; if the site ships a Tokko key, add `key` too |
 | Argenprop | not scraped | AWS WAF captcha on every request |

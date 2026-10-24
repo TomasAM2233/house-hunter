@@ -4,7 +4,7 @@ python run.py                 # scrape everything enabled and rescore
 python run.py --no-scrape     # just rescore what we already have (e.g. after editing weights or AI results)
 """
 import argparse, json, os, re, shutil, sys, time, traceback
-from hh import ai, config, geo, score
+from hh import ai, config, geo, http, score
 from hh.sources import zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -92,8 +92,14 @@ def main():
 
     listings = load()
     status = {}
+    prev = json.load(open(DATA)).get("status", {}) if os.path.exists(DATA) else {}
     if not args.no_scrape:
         for name in args.sources.split(","):
+            every = getattr(SOURCES[name], "API_EVERY_HOURS", None)
+            last = prev.get(name, {})
+            if every and http.API_KEY and last.get("ok") and time.time() - time.mktime(time.strptime(last["at"], "%Y-%m-%d %H:%M")) < every * 3600:
+                log(f"{name}: scraped at {last['at']}, skipping to save API quota")
+                continue
             try:
                 fresh = SOURCES[name].search(log=log)
                 seen = {l["id"] for l in fresh}

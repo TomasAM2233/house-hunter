@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.zonaprop.com.ar"
+# Zonaprop blocks cloud IPs, so requests go through ScraperAPI when SCRAPER_API_KEY is set.
+# Its free plan has 1,000 requests a month, so run.py scrapes Zonaprop at most once every API_EVERY_HOURS.
+API_EVERY_HOURS = 20
 _dec = json.JSONDecoder()
 
 
@@ -71,7 +74,7 @@ def search(max_pages=20, log=print):
     out, page, total_pages, failed = [], 1, 1, []
     while page <= min(total_pages, max_pages):
         try:
-            st = _state(http.get(search_url(page), pause=(3, 7)).text)["listStore"]
+            st = _state(http.get(search_url(page), pause=(3, 7), via_api=True).text)["listStore"]
         except Exception as e:
             log(f"zonaprop page {page}: {e}")
             failed.append(page)
@@ -92,7 +95,7 @@ def search(max_pages=20, log=print):
 
 def enrich(listing):
     """Fetch the detail page for the full description and every photo."""
-    html = http.get(listing["url"]).text
+    html = http.get(listing["url"], via_api=True).text
     s = BeautifulSoup(html, "html.parser")
     d = s.select_one("#reactDescription") or s.select_one("#longDescription")
     if d:
