@@ -39,10 +39,12 @@ def main():
         return
     data = json.load(open(DATA))
     for l in data["listings"]:
-        if not l.get("active", True):
+        if not l.get("active", True) or l.get("duplicate_of"):
             continue
-        n = args.photos if not l["discard"] else 1
-        l["thumbs"] = [thumb(u, (640, 480) if i == 0 else (360, 270)) for i, u in enumerate(l["photos"][:n])]
+        if l["discard"]:
+            l["thumbs"] = [thumb(u, (320, 240), q=50) for u in l["photos"][:1]]
+        else:
+            l["thumbs"] = [thumb(u, (560, 420) if i == 0 else (360, 270), q=58) for i, u in enumerate(l["photos"][:args.photos])]
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)
     out = os.path.join(ROOT, "dist", "house-hunter.html")

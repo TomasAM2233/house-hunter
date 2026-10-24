@@ -1826,5 +1826,466 @@
   "photos_key": "184f0a285f04",
   "analyst": "claude",
   "analysed_at": "2026-10-23"
+ },
+ "tk-8518475": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Vivienda de época detrás de un local: cocina y baño viejos, muros con humedad, terraza con membrana a renovar.",
+  "patio": "small",
+  "patio_m2_est": 25,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0.6,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio con local al frente (renta posible)",
+   "Terraza amplia con potencial de ampliación",
+   "Todo en planta baja"
+  ],
+  "red_flags": [
+   "Se vive detrás de una verdulería, ingreso por pasillo lateral",
+   "Interior chico y de época",
+   "Precio en el tope"
+  ],
+  "summary": "Casa en lote propio con local al frente y vivienda atrás; buena para crecer arriba, pero para vivir es un fondo detrás de un comercio.",
+  "photos_key": "c74161ccc71f",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3122452256": {
+  "condition": 2,
+  "reform_usd": 22000,
+  "reform_notes": "Chalet para reciclar: pisos de madera gastados, paredes manchadas, escalera precaria, instalaciones a revisar.",
+  "patio": "small",
+  "patio_m2_est": 30,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.5,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio 8,66 x 18 m con jardín y cochera",
+   "Losa, admite crecer"
+  ],
+  "red_flags": [
+   "Para reciclar, cerca del tope de reforma",
+   "Pocas fotos, ninguna del jardín",
+   "Probable duplicado de otra publicación en Valle Grande"
+  ],
+  "summary": "Chalet en Valle Grande para reciclar sobre lote propio con jardín y cochera; buen potencial si la reforma se mantiene acotada.",
+  "photos_key": "8c662068b191",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA4115485806": {
+  "condition": 2,
+  "reform_usd": 25000,
+  "reform_notes": "Para reformar: interior de época con ladrillo pintado, baño viejo, terraza con muros húmedos; techos de tejas a revisar.",
+  "patio": "medium",
+  "patio_m2_est": 40,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.4,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio (no es PH) de ~9,6 x 9,9 m al fondo",
+   "Gran patio y terraza",
+   "5 ambientes con playroom"
+  ],
+  "red_flags": [
+   "Se entra por pasillo al lote del fondo",
+   "Reforma por encima del presupuesto",
+   "Sin cochera"
+  ],
+  "summary": "Casa en lote propio al fondo con patio y terraza grandes, pero se entra por pasillo y pide una reforma importante.",
+  "photos_key": "779be7defc22",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA1697906489": {
+  "condition": 1,
+  "reform_usd": 35000,
+  "reform_notes": "Casa a refaccionar integralmente (techos, cocina, baño, carpinterías). Se vende casi como terreno.",
+  "patio": "medium",
+  "patio_m2_est": 50,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.9,
+  "apto_credito": false,
+  "highlights": [
+   "Plano aprobado para planta alta",
+   "Jardín al fondo con parrilla",
+   "Barrio Olivos Golf, cerca de Maipú y estación Olivos"
+  ],
+  "red_flags": [
+   "Reciclaje integral, muy por encima de USD 20k",
+   "Probablemente la misma casa que otra publicación de Rastreador Fournier 2300"
+  ],
+  "summary": "Casa a reciclar en Olivos Golf con jardín y plano aprobado para crecer arriba: buen lote, pero la obra excede el presupuesto.",
+  "photos_key": "bfdd8008a916",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA1944456837": {
+  "condition": 3,
+  "reform_usd": 10000,
+  "reform_notes": "Solo hay fotos del frente y exteriores: fachada prolija y rejas nuevas; interior sin fotos, 48 años, se asume actualización de baños y cocina.",
+  "patio": "small",
+  "patio_m2_est": 25,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.7,
+  "apto_credito": null,
+  "highlights": [
+   "Casa en una planta sobre lote propio",
+   "3 dormitorios + playroom, 2 baños, cochera",
+   "Jardín al frente, patio y terraza"
+  ],
+  "red_flags": [
+   "Ninguna foto del interior",
+   "Orientación sur",
+   "Patio chico"
+  ],
+  "summary": "Casa en una planta en lote propio en Olivos con cochera, patio y terraza; buen potencial para crecer, falta ver el interior.",
+  "photos_key": "181567b3cf64",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA1787872515": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Habitable y cuidado: parquet, cocina con granito, baño reciente; pintura y revestimientos decorativos a cambiar.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0.2,
+  "apto_credito": null,
+  "highlights": [
+   "PH al frente en una planta, sin expensas",
+   "Cerca de estación Juan B. Justo (Mitre)",
+   "Patio y terraza"
+  ],
+  "red_flags": [
+   "Alquilado hasta fines de 2026",
+   "Solo 80 m² cubiertos, 2 dormitorios",
+   "Patio chico"
+  ],
+  "summary": "PH al frente en una planta, cuidado y cerca del Mitre, pero chico y alquilado hasta fin de año.",
+  "photos_key": "255ec60cf46a",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3389403204": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Para actualizar: revestimientos de madera, pisos cerámicos de época, cocina vieja, sin aire ni calefacción.",
+  "patio": "small",
+  "patio_m2_est": 20,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.3,
+  "apto_credito": null,
+  "highlights": [
+   "Chalet de 5 ambientes en Olivos Golf, lote 9 x 18",
+   "4 dormitorios, 2 baños, garage",
+   "Patio con parrilla y jardín al frente"
+  ],
+  "red_flags": [
+   "Todo para actualizar",
+   "Pocas fotos y ninguna del patio"
+  ],
+  "summary": "Chalet grande en lote propio en Olivos Golf con garage y patio con parrilla; mucho espacio por el precio pero hay que actualizarlo.",
+  "photos_key": "e9625bd42baa",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA4114572532": {
+  "condition": 3,
+  "reform_usd": 9000,
+  "reform_notes": "Ordenado pero de época: pisos de granito y cerámica, cocina con revestimiento de madera, baño a actualizar.",
+  "patio": "small",
+  "patio_m2_est": 20,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0.05,
+  "apto_credito": null,
+  "highlights": [
+   "PB al frente en esquina arbolada",
+   "Patio con parrilla y cochera cubierta",
+   "Living amplio y luminoso"
+  ],
+  "red_flags": [
+   "Unidad en edificio de dos plantas (hay vecinos arriba)",
+   "Patio chico, no se ve en fotos",
+   "Cochera en espacio común"
+  ],
+  "summary": "PH en planta baja al frente con patio, parrilla y cochera en zona tranquila de Florida; correcto pero sin posibilidad de crecer.",
+  "photos_key": "780af77820ce",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA2223890627": {
+  "condition": 3,
+  "reform_usd": 9000,
+  "reform_notes": "Ordenado pero de época: pisos de granito y cerámica, cocina con revestimiento de madera, baño a actualizar.",
+  "patio": "small",
+  "patio_m2_est": 20,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0.05,
+  "apto_credito": null,
+  "highlights": [
+   "PB al frente en esquina arbolada",
+   "Patio con parrilla y cochera cubierta",
+   "Living amplio y luminoso"
+  ],
+  "red_flags": [
+   "Unidad en edificio de dos plantas (hay vecinos arriba)",
+   "Patio chico, no se ve en fotos",
+   "Cochera en espacio común"
+  ],
+  "summary": "PH en planta baja al frente con patio, parrilla y cochera en zona tranquila de Florida; correcto pero sin posibilidad de crecer.",
+  "photos_key": "a459d7a867f6",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA4040382940": {
+  "condition": 4,
+  "reform_usd": 3000,
+  "reform_notes": "Muy cuidado: pinotea, cocina actualizada, ambientes pintados. Detalles menores.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0.1,
+  "apto_credito": null,
+  "highlights": [
+   "PH al frente con entrada independiente, sin expensas",
+   "Terraza propia de 37 m² al frente",
+   "A 3 cuadras de Maipú"
+  ],
+  "red_flags": [
+   "El exterior es solo la terraza en planta alta: no hay patio a nivel",
+   "Solo 82 m² cubiertos"
+  ],
+  "summary": "PH al frente lindo y listo para mudarse con gran terraza, pero sin patio ni jardín en planta baja.",
+  "photos_key": "e0a47b1fb8bf",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA2124006117": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Baños y cocina reciclados; pintura a gusto.",
+  "patio": "large",
+  "patio_m2_est": 70,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.15,
+  "apto_credito": null,
+  "highlights": [
+   "PH en PB al frente con jardín verde grande",
+   "Baños y cocina reciclados, pisos de madera",
+   "Sin expensas, calle arbolada"
+  ],
+  "red_flags": [
+   "Solo 2 dormitorios",
+   "Fotos viejas (aviso con antigüedad)",
+   "Calefacción por picos, unidad arriba"
+  ],
+  "summary": "PH en PB al frente con jardín grande y reciclado: de los mejores para entrar ya, aunque con 2 dormitorios.",
+  "photos_key": "01b433adc6e4",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA1873547153": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "A estrenar, microcemento y terminaciones modernas.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "pasillo_ph": true,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0.0,
+  "apto_credito": null,
+  "highlights": [
+   "Tríplex a estrenar con cochera",
+   "Quincho común, muy bajas expensas"
+  ],
+  "red_flags": [
+   "Complejo de 5 unidades con calle interior (formato pasillo)",
+   "Sin patio propio a nivel, solo balcones",
+   "Solo 65 m² cubiertos y 2 ambientes",
+   "Precio en el tope"
+  ],
+  "summary": "Tríplex nuevo en complejo de 5 unidades con cochera; chico, sin patio propio y caro para lo que ofrece.",
+  "photos_key": "4874c5eca2cc",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3691616312": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Vivienda de época detrás de un local: cocina y baño viejos, muros con humedad, terraza con membrana a renovar.",
+  "patio": "small",
+  "patio_m2_est": 25,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0.6,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio con local al frente (renta posible)",
+   "Terraza amplia con potencial de ampliación",
+   "Todo en planta baja"
+  ],
+  "red_flags": [
+   "Se vive detrás de una verdulería, ingreso por pasillo lateral",
+   "Interior chico y de época",
+   "Precio en el tope"
+  ],
+  "summary": "Casa en lote propio con local al frente y vivienda atrás; buena para crecer arriba, pero para vivir es un fondo detrás de un comercio.",
+  "photos_key": "547ecac5bc2d",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA4119415740": {
+  "condition": 2,
+  "reform_usd": 16000,
+  "reform_notes": "Humedad en paredes, baño y placares de época, parquet a pulir, cerramiento de aluminio en lavadero.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": 0.0,
+  "apto_credito": null,
+  "highlights": [
+   "PH al frente sin expensas, 3 dormitorios",
+   "Terraza / patio a nivel del piso, luminoso"
+  ],
+  "red_flags": [
+   "Está en planta alta: el 'patio' es una terraza, no hay patio en suelo",
+   "Sobre Marcelino Ugarte, zona comercial y ruidosa",
+   "Humedad visible"
+  ],
+  "summary": "PH en planta alta sobre Ugarte con terraza y 3 dormitorios; no cumple patio en suelo y pide arreglos.",
+  "photos_key": "419cc8b2b952",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA2036155827": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Cocina y lavadero precarios, baño a rehacer, pintura y humedad en muros; living ok.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.2,
+  "apto_credito": null,
+  "highlights": [
+   "PH en PB con ingreso independiente",
+   "Patio + terraza + monoambiente extra",
+   "Bajó de USD 187k a 178k"
+  ],
+  "red_flags": [
+   "Fotos con render 'así podría verse'",
+   "Cocina y lavadero muy precarios",
+   "Garage convertido en monoambiente"
+  ],
+  "summary": "PH en planta baja con buenos metros y algo de exterior, pero la cocina y servicios piden una reforma casi al límite.",
+  "photos_key": "8051bf5adca8",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3678334548": {
+  "condition": 3,
+  "reform_usd": 10000,
+  "reform_notes": "Habitable; baño azul de los 80, pintura y revestimientos a actualizar.",
+  "patio": "medium",
+  "patio_m2_est": 45,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0.6,
+  "apto_credito": null,
+  "highlights": [
+   "PH tipo casa, independiente, todo en una planta",
+   "Jardín con galería y cochera",
+   "Bajó de USD 180k a 170k"
+  ],
+  "red_flags": [
+   "Solo 72 m² cubiertos y 2 dormitorios",
+   "Las fotos no muestran el jardín",
+   "Esquina sobre España/Borges, cerca de Maipú"
+  ],
+  "summary": "PH tipo casa en una planta con jardín y aire para crecer; habitable ya, pero chico adentro.",
+  "photos_key": "d0273b6aae03",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3943835634": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Reciclado, pisos de madera y parquet en buen estado, cocina con granito y split; solo pintura y detalles.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0.0,
+  "apto_credito": null,
+  "highlights": [
+   "Muy buen estado, listo para mudarse",
+   "Ambientes amplios con aire acondicionado"
+  ],
+  "red_flags": [
+   "Primer piso sin patio ni jardín visible, solo balcón",
+   "Sobre Av. San Martín (ruidosa)"
+  ],
+  "summary": "PH en primer piso reciclado y cuidado, pero sin patio y sobre avenida: no cumple el requisito de jardín.",
+  "photos_key": "31db0bde1247",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
+ },
+ "ml-MLA3678890594": {
+  "condition": 3,
+  "reform_usd": 10000,
+  "reform_notes": "Habitable; baño azul de los 80, pintura y revestimientos a actualizar.",
+  "patio": "medium",
+  "patio_m2_est": 45,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0.6,
+  "apto_credito": null,
+  "highlights": [
+   "PH tipo casa, independiente, todo en una planta",
+   "Jardín con galería y cochera",
+   "Bajó de USD 180k a 170k"
+  ],
+  "red_flags": [
+   "Solo 72 m² cubiertos y 2 dormitorios",
+   "Las fotos no muestran el jardín",
+   "Esquina sobre España/Borges, cerca de Maipú"
+  ],
+  "summary": "PH tipo casa en una planta con jardín y aire para crecer; habitable ya, pero chico adentro.",
+  "photos_key": "006ec10acae1",
+  "analyst": "claude",
+  "analysed_at": "2026-10-23"
  }
 }

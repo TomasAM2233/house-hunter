@@ -9,7 +9,8 @@ vision AI, and ranks the rest with our own weighted score. Runs for free on GitH
 ```
 run.py
   hh/sources/zonaprop.py      search pages -> normalized listings (price, m², coords, photos)
-  hh/sources/mercadolibre.py  search cards only (detail pages need login)
+  hh/sources/mercadolibre.py  search cards + item pages (older browser profiles get past the login wall)
+  hh/sources/tokko.py         local agencies on Tokko Broker: public web key -> JSON API, or their Tokko site
   hh/geo.py                   cuadras to Av. Maipú, Puente Saavedra, nearest train (OSM data in geo/)
   hh/score.py                 hard filters + 10 weighted criteria
   hh/ai.py                    Gemini free tier reads up to 12 photos + description, cached per listing
@@ -41,6 +42,18 @@ Score out of 100, in our order of importance:
 | Garage | 4 | listing data or mention |
 | Quiet | 3 | distance from Maipú + AI read of the street |
 | Light | 2 | AI + listing tags |
+
+## Sources
+
+| Source | How | Notes |
+|---|---|---|
+| Zonaprop | search pages embed the listing JSON | intermittent 403s; failed pages keep the previous state |
+| Mercado Libre | search grid + item pages | most fingerprints hit an account wall; `PROFILES` in the module are the ones that pass |
+| Agencies (Tokko) | `AGENCIES` in `hh/config.py` | add an agency with its site URL; if the site ships a Tokko key, add `key` too |
+| Argenprop | not scraped | AWS WAF captcha on every request |
+
+The same house usually shows up on several of these. `run.py` treats listings with the same price, total m²
+within 3% and the same street (or under 250 m apart) as one, keeps the best-documented copy, and reuses its AI read.
 
 ## Setup (one time)
 

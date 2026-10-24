@@ -40,3 +40,14 @@ WEIGHTS = {
     "light": 2,         # AI + listing tags
 }
 assert sum(WEIGHTS.values()) == 100
+
+
+# Local agencies on Tokko Broker (see hh/sources/tokko.py). "key" = public web key found in their site,
+# "site" = Tokko's own website template, searched and parsed page by page. Add more here.
+AGENCIES = [
+    {"name": "DIC Propiedades", "key": "23e7c1c635a8a47c413f9d49e464577f1e6b176c", "site": "https://www.dicpropiedades.com.ar"},
+    {"name": "Carlos Bezruk Inmuebles", "key": "89557e136aea786f201e20bacfacf769fa96034d", "site": "https://carlosbezruk.com.ar"},
+    {"name": "Caneva Propiedades", "site": "https://www.canevaprop.com"},
+    {"name": "Álvarez Dupot Propiedades", "site": "https://www.alvarezdupot.com.ar"},
+    {"name": "Real Props", "site": "https://www.realprops.com.ar"},
+]

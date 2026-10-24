@@ -193,7 +193,8 @@ const LABELS = { price: "Precio", space: "Espacio", location: "Ubicación", cond
   vertical: "Crecer arriba", credit: "Apto crédito", garage: "Cochera", quiet: "Tranquilidad", light: "Luz" };
 const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condition: "#1f8a6a", patio: "#4fa35a",
   vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
-const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop" };
+const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
+const srcName = l => l.source === "tokko" ? (l.publisher || "Inmobiliaria") : (SRC[l.source] || l.source);
 const $ = s => document.querySelector(s);
 const usd = n => n == null ? "?" : "USD " + Math.round(n).toLocaleString("es-AR");
 const fmt = n => n == null ? "?" : (Math.round(n * 10) / 10).toLocaleString("es-AR");
@@ -231,7 +232,7 @@ function renderList() {
   const r = rows();
   $("#list").innerHTML = r.length ? r.map((l, i) => {
     const b = band(l.score, l);
-    const chips = [`<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span>`, `<span class="pill">${SRC[l.source] || l.source}</span>`]
+    const chips = [`<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span>`, `<span class="pill">${esc(srcName(l))}</span>`]
       .concat(l.ai ? [`<span class="pill acc">IA</span>`] : [])
       .concat(favs.has(l.id) ? [`<span class="pill acc">★</span>`] : [])
       .concat((l.flags || []).filter(f => f !== "sin análisis IA").map(f => `<span class="pill warn">${esc(f)}</span>`))
@@ -286,7 +287,7 @@ function renderDetail(l) {
       <div class="dhead">
         <div>
           <h2>${esc(l.title)}</h2>
-          <div class="addr">${esc(l.address)} · ${SRC[l.source] || l.source} · visto desde ${esc(l.first_seen)}</div>
+          <div class="addr">${esc(l.address)} · ${esc(srcName(l))} · visto desde ${esc(l.first_seen)}</div>
         </div>
         <span class="badge ${band(l.score, l)}">${l.discard.length ? "—" : Math.round(l.score)}</span>
       </div>
@@ -302,7 +303,7 @@ function renderDetail(l) {
         <div class="fact"><span>Tren</span><b>${l.geo ? fmt(l.geo.station.blocks) + " cdas" : "?"}</b></div>
       </div>
       <div class="actions">
-        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso en ${SRC[l.source] || l.source} ↗</a>
+        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso en ${esc(srcName(l))} ↗</a>
         <button class="btn" id="fav" aria-pressed="${favs.has(l.id)}">★ Favorita</button>
       </div>
       ${aiBox}

@@ -96,7 +96,7 @@ def components(l, ai=None):
         c["condition"] = ((0.7 if age is not None and age <= 20 else 0.5 if age is not None and age <= 50 else 0.35), f"sin IA; antigüedad {age if age is not None else '?'} años")
 
     # patio
-    um2 = text.uncovered_m2(desc)
+    um2 = text.uncovered_m2(desc) or l.get("uncovered_m2")
     if ai and ai.get("patio"):
         m2 = ai.get("patio_m2_est") or um2
         base = {"none": 0, "small": 0.3, "medium": 0.65, "large": 1}.get(ai["patio"], 0.3)
@@ -115,6 +115,8 @@ def components(l, ai=None):
 
     # credit
     ac = text.apto_credito(desc)
+    if ac is None and l.get("apto_credito_field") is not None:
+        ac = l["apto_credito_field"]
     if ac is None and l.get("credit_pill"):
         ac = True
     if ac is None and ai:
