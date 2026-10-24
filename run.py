@@ -5,12 +5,12 @@ python run.py --no-scrape     # just rescore what we already have (e.g. after ed
 """
 import argparse, json, os, re, shutil, sys, time, traceback
 from hh import ai, config, geo, http, score
-from hh.sources import zonaprop, mercadolibre, tokko
+from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data", "listings.json")
 WEB_DATA = os.path.join(ROOT, "web", "listings.json")
-SOURCES = {"zonaprop": zonaprop, "mercadolibre": mercadolibre, "tokko": tokko}
+SOURCES = {"zonaprop": zonaprop, "argenprop": argenprop, "mercadolibre": mercadolibre, "tokko": tokko}
 TODAY = time.strftime("%Y-%m-%d")
 
 
@@ -33,11 +33,15 @@ def merge(old, fresh):
             if l.get("price_usd") and (not hist or hist[-1][1] != l["price_usd"]):
                 hist.append([TODAY, l["price_usd"]])
             l["price_history"] = hist
-            if prev.get("enriched") and not l.get("enriched"):
+            if (prev.get("enriched") and not l.get("enriched")) or l.get("card_only"):
+                # keep the richer copy: an enriched one, or (for card-only scrapes) the longer description
                 for k in ("enriched", "description", "photos", "features_text", "partial_data"):
-                    if k in prev:
+                    if k not in prev:
+                        continue
+                    longer = k == "description" and len(prev[k] or "") > len(l.get(k) or "")
+                    if prev.get("enriched") or not l.get(k) or longer:
                         l[k] = prev[k]
-                for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact"):
+                for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact", "publisher", "modified"):
                     if l.get(k) is None and prev.get(k) is not None:
                         l[k] = prev[k]
             if l.get("lat") is None and prev.get("lat") is not None:
@@ -86,7 +90,7 @@ def dedupe(listings):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-scrape", action="store_true")
-    ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,tokko,mercadolibre"))
+    ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,argenprop,tokko,mercadolibre"))
     ap.add_argument("--max-enrich", type=int, default=150)
     args = ap.parse_args()
 

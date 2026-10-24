@@ -50,4 +50,12 @@ AGENCIES = [
     {"name": "Caneva Propiedades", "site": "https://www.canevaprop.com"},
     {"name": "Álvarez Dupot Propiedades", "site": "https://www.alvarezdupot.com.ar"},
     {"name": "Real Props", "site": "https://www.realprops.com.ar"},
+    {"name": "O'Duch Negocios Inmobiliarios", "site": "https://www.o-duch.com.ar"},
+    {"name": "Martín Propiedades", "site": "https://www.martinprop.com.ar"},
+    {"name": "Estudio García", "site": "https://www.estudio-garcia.ar"},
+    {"name": "Molinari Propiedades", "site": "https://www.molinariprop.com.ar"},
+    {"name": "Jorge Becco Bienes Raíces", "site": "https://www.beccopropiedades.com"},
+    {"name": "Darío Martínez Propiedades", "site": "https://www.dmartinezpropiedades.com.ar"},
+    {"name": "Basilio Inmobiliaria", "site": "https://www.basilioinmobiliaria.com"},
+    {"name": "Bellagamba", "key": "dd0e6daf8ddc52df5b91f3f57224ac4d752c9db7", "site": "https://bellagamba.com"},
 ]

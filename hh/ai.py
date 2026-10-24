@@ -62,7 +62,11 @@ def _download(urls):
     imgs = []
     for u in urls[:MAX_PHOTOS]:
         try:
-            r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+            if "argenprop.com/" in u:  # its WAF blocks cloud IPs for photos too
+                from . import http
+                r = http.get(u, via_api=True)
+            else:
+                r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
             im.thumbnail((768, 768))
             imgs.append(im)

@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.zonaprop.com.ar"
-# Zonaprop blocks cloud IPs, so requests go through ScraperAPI when SCRAPER_API_KEY is set.
-# Its free plan has 1,000 requests a month, so run.py scrapes Zonaprop at most once every API_EVERY_HOURS.
-API_EVERY_HOURS = 20
+# Zonaprop blocks cloud IPs. With SCRAPER_API_KEY set, search pages are rendered by ScraperAPI (10 credits each,
+# ~11 pages a sweep) and parsed from the DOM; the free plan's 1,000 credits a month allow about one sweep a week.
+API_EVERY_HOURS = 24 * 6
 _dec = json.JSONDecoder()
 
 
@@ -70,7 +70,63 @@ def _normalize(p):
     }
 
 
+def _num(text):
+    m = re.search(r"\d+(?:[.,]\d+)*", text or "")
+    return float(m.group(0).replace(".", "").replace(",", ".")) if m else None
+
+
+def _dom_cards(html):
+    """Rendered search page (the API path): the JSON state is gone, the cards carry the essentials."""
+    s = BeautifulSoup(html, "html.parser")
+    for c in s.select('[data-qa="posting PROPERTY"]'):
+        href = c.get("data-to-posting", "").split("?")[0]
+        feats = [x.get_text(" ", strip=True) for x in c.select('[data-qa="POSTING_CARD_FEATURES"] span')]
+        f = lambda pat: next((_num(x) for x in feats if re.search(pat, x)), None)
+        price = c.select_one('[data-qa="POSTING_CARD_PRICE"]')
+        price = price.get_text(" ", strip=True) if price else ""
+        street = c.select_one('[class*="location-address"]')
+        where = c.select_one('[data-qa="POSTING_CARD_LOCATION"]')
+        where = where.get_text(" ", strip=True) if where else ""
+        street = street.get_text(" ", strip=True) if street else ""
+        zone = next((z for z in config.SEARCH["zones"] if z.lower() in where.lower()), where.split(",")[0])
+        imgs = [i.get("src") or i.get("data-flickity-lazyload") or "" for i in c.select('[data-qa="POSTING_CARD_GALLERY"] img')]
+        alt = (c.select_one('[data-qa="POSTING_CARD_GALLERY"] img') or {}).get("alt", "") if c.select_one('[data-qa="POSTING_CARD_GALLERY"] img') else ""
+        logo = c.select_one('[data-qa="POSTING_CARD_PUBLISHER"] img, [class*="publisher"] img')
+        desc = c.select_one('[data-qa="POSTING_CARD_DESCRIPTION"]')
+        pills = c.get("data-to-posting", "")
+        yield {
+            "id": f"zp-{c['data-id']}",
+            "source": "zonaprop",
+            "url": BASE + href,
+            "title": alt.split(" · ")[-1] if alt else "",
+            "type": "ph" if "-ph-" in href or alt.startswith("PH") else "casa",
+            "price_usd": _num(price) if "USD" in price else None,
+            "total_m2": f(r"m² tot"),
+            "covered_m2": f(r"m² cub"),
+            "ambientes": f(r"amb"),
+            "bedrooms": f(r"dorm"),
+            "bathrooms": f(r"baño"),
+            "garage": f(r"coch"),
+            "age_years": None,
+            "address": f"{street}, {zone}",
+            "geocode_query": f"{re.sub(r' al ', ' ', street, flags=re.I)}, {zone}, Vicente López, Buenos Aires" if street else None,
+            "zone": zone,
+            "address_exact": bool(re.search(r"\d", street)) and " al " not in street,
+            "lat": None,
+            "lng": None,
+            "description": desc.get_text(" ", strip=True) if desc else "",
+            "photos": list(dict.fromkeys(re.sub(r"/\d+x\d+/", "/720x532/", u.split("?")[0]) for u in imgs if "zonapropcdn" in u)),
+            "tags": {},
+            "credit_pill": "cr%C3%A9dito" in pills or "credito" in pills.lower(),
+            "publisher": logo.get("alt") if logo else None,
+            "modified": None,
+            "card_only": True,
+        }
+
+
 def search(max_pages=20, log=print):
+    if http.API_KEY:
+        return search_rendered(max_pages, log)
     out, page, total_pages, failed = [], 1, 1, []
     while page <= min(total_pages, max_pages):
         try:
@@ -93,8 +149,38 @@ def search(max_pages=20, log=print):
     return out
 
 
+def search_rendered(max_pages=20, log=print):
+    out, page, total_pages, failed = {}, 1, 1, []
+    while page <= min(total_pages, max_pages):
+        try:
+            html = http.get(search_url(page), via_api=True, render=True).text
+            cards = list(_dom_cards(html))
+            if not cards:
+                raise RuntimeError("no cards in rendered page")
+        except Exception as e:
+            log(f"zonaprop page {page}: {e}")
+            failed.append(page)
+            if page == 1:
+                raise
+            page += 1
+            continue
+        if page == 1:
+            n = re.search(r"<title>\s*([\d.]+)", html)  # "306 Casas o PH ..."; the pager only shows 5 pages
+            total_pages = -(-int(n.group(1).replace(".", "")) // 30) if n else 1
+        for c in cards:
+            out.setdefault(c["id"], c)
+        log(f"zonaprop page {page}/{total_pages}: {len(cards)} listings (rendered via API)")
+        page += 1
+    search_rendered.failed_pages = search.failed_pages = failed
+    return list(out.values())
+
+
 def enrich(listing):
-    """Fetch the detail page for the full description and every photo."""
+    """Fetch the detail page for the full description and every photo.
+    On the API path a detail page would cost 10 credits, so the card's data is kept as is."""
+    if http.API_KEY:
+        listing["enriched"] = True
+        return listing
     html = http.get(listing["url"], via_api=True).text
     s = BeautifulSoup(html, "html.parser")
     d = s.select_one("#reactDescription") or s.select_one("#longDescription")
