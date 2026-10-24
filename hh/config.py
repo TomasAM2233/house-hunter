@@ -30,6 +30,10 @@ REFORM_BUDGET_USD = 20_000
 AI_TOP_N = 40
 BRIEF_MAX_CHARS = 250
 
+# Phone alerts (ntfy.sh) for new listings at or above either threshold.
+ALERT_PERCENTILE = 90
+ALERT_AI_SCORE = 70
+
 # Weights add up to 100, in the order of importance Tomás gave.
 WEIGHTS = {
     "price": 22,        # effective price (asking + estimated reform) and $/m2

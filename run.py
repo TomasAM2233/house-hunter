@@ -4,6 +4,7 @@ python run.py                 # scrape everything enabled and rescore
 python run.py --no-scrape     # just rescore what we already have (e.g. after editing weights or AI results)
 """
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
+import requests
 from hh import ai, config, geo, http, score
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
@@ -92,26 +93,54 @@ def dedupe(listings):
             kept.append(l)
 
 
+def alert(new):
+    """Push a phone notification (ntfy.sh, topic in NTFY_TOPIC) for each new listing that ranks near the top."""
+    topic = os.environ.get("NTFY_TOPIC")
+    for l in sorted(new, key=lambda l: -l["score"]):
+        good = l.get("pct", 0) >= config.ALERT_PERCENTILE or (l.get("ai_final") or {}).get("score", 0) >= config.ALERT_AI_SCORE
+        if not good:
+            continue
+        g = l.get("geo") or {}
+        title = f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
+        body = (brief if (brief := (l.get("ai_final") or {}).get("brief")) else
+                f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {g.get('maipu_blocks', '?')} cdas a Maipú. {l.get('address', '')}")
+        log(f"ALERT {l['id']}: {title}")
+        if not topic:
+            continue
+        try:
+            requests.post("https://ntfy.sh/", timeout=20, json={"topic": topic, "title": title, "message": body,
+                                                                  "click": l["url"], "priority": 4, "tags": ["house"]})
+        except Exception as e:
+            log(f"alert failed: {e}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-scrape", action="store_true")
     ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,argenprop,tokko,mercadolibre"))
     ap.add_argument("--max-enrich", type=int, default=150)
+    ap.add_argument("--quick", action="store_true", help="only the newest pages of the sites that support it, to catch new listings fast")
     args = ap.parse_args()
 
     listings = load()
+    known = set(listings)
     tags = json.load(open(TAGS)) if os.path.exists(TAGS) else {}
     status = {}
     prev = json.load(open(DATA)).get("status", {}) if os.path.exists(DATA) else {}
     if not args.no_scrape:
         for name in args.sources.split(","):
-            # API-backed sources: a full sweep every FULL_EVERY_HOURS, otherwise one newest-first check a day
-            every, last = getattr(SOURCES[name], "FULL_EVERY_HOURS", None), prev.get(name, {})
+            src, last = SOURCES[name], prev.get(name, {})
             age = lambda t: (time.time() - time.mktime(time.strptime(t, "%Y-%m-%d %H:%M"))) / 3600 if t else 1e9
-            newest = bool(every and http.API_KEY and age(last.get("full_at")) < every)
-            if newest and last.get("ok") and age(last.get("at")) < 20:
-                log(f"{name}: checked at {last['at']}, next check tomorrow (API quota)")
-                continue
+            if args.quick:
+                if not hasattr(src, "NEW_PAGES"):
+                    continue
+                if name == "zonaprop" and not http.ANT_KEY and age(last.get("at")) < 20:
+                    continue  # ScraperAPI renders cost 10 credits: once a day is all the free plan allows
+                newest = True
+            else:
+                # with only ScraperAPI (render = 10 credits a page) full sweeps are spaced out; ScrapingAnt has room for every run
+                every = getattr(src, "FULL_EVERY_HOURS", None) if http.API_KEY and not http.ANT_KEY else None
+                newest = bool(every and age(last.get("full_at")) < every)
             try:
                 fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
                 seen = {l["id"] for l in fresh}
@@ -190,6 +219,7 @@ def main():
         if l.get("pct") is None or l.get("pct_score") != l["score"]:
             l["pct"] = round(100 * bisect.bisect_left(hist, l["score"]) / max(1, len(hist)))
             l["pct_score"], l["pct_n"] = l["score"], len(hist)
+    alert(l for l in listings.values() if l["id"] not in known and l.get("active") and not l["discard"] and not l.get("duplicate_of"))
     if os.path.exists(DATA):
         status = {**json.load(open(DATA)).get("status", {}), **status}
     out = sorted(listings.values(), key=lambda l: (not l.get("active"), bool(l["discard"]), -l["score"]))

@@ -4,9 +4,10 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.zonaprop.com.ar"
-# Zonaprop blocks cloud IPs. With SCRAPER_API_KEY set, search pages are rendered by ScraperAPI (10 credits each).
-# To stay in the free 1,000 credits a month: every day only the newest page (NEW_PAGES, sorted by publication
-# date) catches new listings; the full sweep (~11 pages, also catches price drops and removals) runs every FULL_EVERY_HOURS.
+# Zonaprop blocks cloud IPs, so requests go through the unblocking APIs in http.py. With ScrapingAnt the page
+# arrives whole (JSON state included) for 1 credit. With only ScraperAPI it must be rendered (10 credits a page),
+# so to fit its free 1,000 credits a month the full sweep (~11 pages) runs every FULL_EVERY_HOURS and other days
+# only the newest page (NEW_PAGES, sorted by publication date). Quick runs always check just the newest pages.
 FULL_EVERY_HOURS = 24 * 14
 NEW_PAGES = 1
 _dec = json.JSONDecoder()
@@ -127,12 +128,14 @@ def _dom_cards(html):
 
 
 def search(max_pages=20, log=print, newest_only=False):
-    if http.API_KEY:
-        return search_rendered(NEW_PAGES if newest_only else max_pages, log, newest_only)
+    if newest_only:
+        max_pages = NEW_PAGES
+    if http.API_KEY and not http.ANT_KEY:
+        return search_rendered(max_pages, log, newest_only)
     out, page, total_pages, failed = [], 1, 1, []
     while page <= min(total_pages, max_pages):
         try:
-            st = _state(http.get(search_url(page), pause=(3, 7), via_api=True).text)["listStore"]
+            st = _state(http.get(search_url(page, newest_only), pause=(3, 7), via_api=True).text)["listStore"]
         except Exception as e:
             log(f"zonaprop page {page}: {e}")
             failed.append(page)
@@ -179,8 +182,8 @@ def search_rendered(max_pages=20, log=print, newest=False):
 
 def enrich(listing):
     """Fetch the detail page for the full description and every photo.
-    On the API path a detail page would cost 10 credits, so the card's data is kept as is."""
-    if http.API_KEY:
+    When only ScraperAPI is available a detail page would cost 10 credits, so the card's data is kept as is."""
+    if http.API_KEY and not http.ANT_KEY:
         listing["enriched"] = True
         return listing
     html = http.get(listing["url"], via_api=True).text

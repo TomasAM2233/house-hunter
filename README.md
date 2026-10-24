@@ -47,10 +47,10 @@ Score out of 100, in our order of importance:
 
 | Source | How | Notes |
 |---|---|---|
-| Zonaprop | search pages embed the listing JSON | blocks cloud IPs (403). With the `SCRAPER_API_KEY` secret, ScraperAPI renders the search pages (10 credits each) and the cards are parsed from the DOM; the newest page every day (10 credits) and a full sweep every 2 weeks (~110 credits) |
+| Zonaprop | search pages embed the listing JSON | blocks cloud IPs (403); fetched through ScrapingAnt (1 credit a page, full sweep every full run, newest page every hour). Fallback: ScraperAPI renders (10 credits a page), spaced out to fit its free plan |
 | Mercado Libre | search grid + item pages | most fingerprints hit an account wall; `PROFILES` in the module are the ones that pass |
 | Agencies (Tokko) | `AGENCIES` in `hh/config.py` | add an agency with its site URL; if the site ships a Tokko key, add `key` too |
-| Argenprop | search cards + item pages | WAF blocks cloud IPs, photos included; goes through ScraperAPI (1 credit per page or photo): the 2 newest pages every day and a full sweep weekly |
+| Argenprop | search cards + item pages | WAF blocks cloud IPs; same APIs as Zonaprop (photos through ScraperAPI), full sweep every full run, 2 newest pages every hour |
 
 The same house usually shows up on several of these. `run.py` treats listings with the same price, total m²
 within 3% and the same street (or under 250 m apart) as one, keeps the best-documented copy, and reuses its AI read.
@@ -74,3 +74,11 @@ GEMINI_API_KEY=... .venv/bin/python run.py
 With no `GEMINI_API_KEY`, `run.py` queues each new candidate to `data/ai_pending/` (a photo contact sheet
 plus the text). Results written by hand or by another model go in a JSON file keyed by listing id and are
 saved with `python ai_fill.py results.json --analyst claude`. The first batch (`ai_batches/`) was read this way.
+
+## Runs and alerts
+
+- **Full runs** at 08:17, 14:17 and 20:17 (Buenos Aires): every source, full sweeps.
+- **Quick runs** every hour from 07:47 to 23:47: only the newest pages of Zonaprop and Argenprop, so a new listing
+  is scored, read by the AI and alerted within the hour.
+- **Alerts:** set the `NTFY_TOPIC` secret and subscribe to that topic in the free ntfy app. New listings at or above
+  the 90th percentile, or with an AI score of 70+, send a push notification (`ALERT_*` in `hh/config.py`).

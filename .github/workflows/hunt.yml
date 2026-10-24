@@ -2,7 +2,8 @@ name: hunt
 
 on:
   schedule:
-    - cron: "17 11,17,23 * * *"   # 08:17, 14:17 and 20:17 Buenos Aires time
+    - cron: "17 11,17,23 * * *"   # full runs: 08:17, 14:17 and 20:17 Buenos Aires time
+    - cron: "47 10-23,0-2 * * *"  # quick runs: newest Zonaprop/Argenprop listings every hour, 07:47 to 23:47
   workflow_dispatch:
   push:
     branches: [main]
@@ -35,9 +36,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+          SCRAPINGANT_API_KEY: ${{ secrets.SCRAPINGANT_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
           set -o pipefail
-          if [ "${{ github.event_name }}" = "push" ]; then python -u run.py --no-scrape; else python -u run.py; fi 2>&1 | tee data/last_run.log
+          if [ "${{ github.event_name }}" = "push" ]; then ARGS="--no-scrape"
+          elif [ "${{ github.event.schedule }}" = "47 10-23,0-2 * * *" ]; then ARGS="--quick"
+          else ARGS=""; fi
+          python -u run.py $ARGS 2>&1 | tee data/last_run.log
       - run: python build.py
       - name: Commit data
         run: |
