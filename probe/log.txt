@@ -1,45 +1,12 @@
-JS: (e[n]=t))})),e};t.loadMenuMobile=e=>{if(d&&(!d.hasAttribute("data-loaded")||e)){d.setAttribute("data-loaded","true");const e=d.getAttribute("data-menu-mobile");fetch(e,{credentials:"same-origin",method:"GET"}).then((e=>{if(e.ok)return e.text()})).then((e=>{d.innerHTML=e,p()}))}};const h=e=>{e?(null==d||d.classList.add("show"),(0,t.loadMenuMobile)(!1),m(!0),v(!0)):
-JS: =document.getElementById("ga-dimension-ficha");let l=null;null!=s&&(l=s.getAttribute("data-id-aviso"),null!=l&&(e.idaviso=l)),a.postMessage([`${location.origin}/api/Common/LogActividad`,e])}}initialize(){!1===this.DataSended&&(this.DataSended=!0,this.sendData())}}},5139:function(e,t,n){"use strict";var o=this&&this.__importDefault||function(e){return e&&e.__esMod
-JS: unter-responsive]"),document.querySelector("[data-video-counter-responsive]"),document.querySelector("[data-gallery-responsive]"),document.querySelector("[data-multimedia]"),document.querySelector("[data-submenu-foto360]"),document.querySelector("[data-submenu-video360]"),document.querySelector("[data-submenu-tour]"),document.querySelector("[data-btn-gallery]"),docume
-JS: const n=`${s.getAttribute("data-url-get-gallery")}&tipo=${encodeURIComponent(t)}`;return(0,a.remove)(s.querySelectorAll("[data-lazy]")),s.innerHTML="",c=null,d=fetch(n,{credentials:"same-origin",method:"GET"}).then((e=>{if(!e.ok)throw new Error(`GalleryPartial ${e.status}`);return e.text()})).then((n=>{s.innerHTML=n,c=t,(0,i.createGallery)(e)})).then((()=>{d=null}
-JS: SourcePage.Property,t.getAttribute("href"),t))})),(()=>{const e=document.querySelector("[data-preguntas-contacto]"),t=e.getAttribute("data-preguntas-contacto");fetch(t,{credentials:"same-origin",method:"GET"}).then((e=>{if(e.ok)return e.text()})).then((t=>{const n=c.parseHtml(t);e.innerHTML="",e.appendChild(n),N=new l.Popup("infoQPopup","popup-q-contact"),N.when("
-JS: const t=A.getAttribute(`data-${e}`);return t?"0"===t?null:t.replace(/"/g,""):null};try{const n=yield(()=>{const e=document.querySelector("#PositionUrl");return fetch(e.value).then((e=>{if(e.ok)return e.json();throw"No se puede obtener la posicion del aviso"}))})(),o=20,i=Math.ceil(n.PosicionGeneral/o),a=c.getUtm();let r="",s="",l="";(null==a?void 0:a.value)&&(r=a.
-JS: ector("[data-copy-on]").classList.remove("hide")})(e),t.hasAttribute("data-share")&&(e=>{const t=e.getAttribute("data-share");O.cssClass="popup-property-share",fetch(t,{credentials:"same-origin",method:"GET"}).then((e=>{if(e.ok)return e.text()})).then((e=>{const t=O.container;t.innerHTML=e,t.querySelectorAll("[data-social]").forEach((e=>{const t=e.getAttribute("da
-JS: &this.getData(e)}static getData(e){const t=e.getAttribute("data-get-data-url"),n=new FormData;n.append("idUrbanizacion",e.getAttribute("data-urbanizacion-id")),fetch(t,{method:"POST",credentials:"same-origin",body:n}).then((e=>e.json())).then((e=>{const t=document.querySelector("[data-lotes]"),n=document.querySelector("[data-venta]"),o=document.querySelector("[dat
-JS: p","popup-favourite");let d="",u=null,h=null,p=null;c.when("close",(()=>{p&&p.parentElement.removeChild(p)})),c.when("open",(()=>{c.enableClose=!1,c.loading=!0,fetch(d).then((e=>{if(c.enableClose=!0,c.loading=!1,e.ok)return e.text()})).then((e=>{const t=(0,l.parseHtml)(e),n=t.querySelector("#AddFavouriteTitle");c.container.appendChild(t),c.title=n.value,p=c.contai
-JS: Listener("submit",(e=>{e.preventDefault();const t=e.target,n=new FormData(t),i=t.querySelector("[type=submit]");c.enableClose=!1,i.classList.add("btn-loading"),fetch(t.action,{credentials:"same-origin",method:"POST",body:n}).then((e=>o(void 0,void 0,void 0,(function*(){if(c.enableClose=!0,i.classList.remove("btn-loading"),e.ok){u();const t=parseInt(yield e.text())
-JS: ,d="/Favourite/Add/idAviso".replace("idAviso",e.toString()),c.show()}));t.remove=e=>{const t="/Favourite/Remove/idAviso".replace("idAviso",e.toString());return fetch(t,{credentials:"same-origin",method:"DELETE"})};t.isFavourited=e=>{const t=new FormData;if(Array.isArray(e)){e.forEach(((e,n)=>{const o=`idAviso[${n}]`;t.append(o,e.toString())}))}else t.append("idAvi
-JS: so[0]",e.toString());return fetch("/favourite/isFavourited",{credentials:"same-origin",method:"POST",body:t}).then((e=>e.ok?e.json():[]))};t.Favourited=class{}},5055:function(e,t,n){"use strict";var o=this&&this.__awaiter||function(e,
-JS: ion*(){e.preventDefault();const t=new FormData(h),n=h.querySelector("[type=submit]");(yield(0,s.validate)(h))&&(d.enableClose=!1,n.classList.add("btn-loading"),fetch(h.action,{credentials:"same-origin",body:t,method:"POST"}).then((e=>o(void 0,void 0,void 0,(function*(){var t;if(d.enableClose=!0,n.classList.remove("btn-loading"),t=m.value,d.container.querySelectorA
-JS: e");d.title=e.value,v.style.display="block";break;case c.Error:g.style.display="block"}};t.show=e=>o(void 0,void 0,void 0,(function*(){var t;d.show(),u||(yield fetch("/favourite/addMember").then((e=>{if(e.ok)return e.text()})).then((e=>{const t=(0,a.parseHtml)(e);d.container.appendChild(t),p=d.container.querySelector("#AddMemberTitle");const n=d.container.querySel
-JS: ("close",(()=>{v.container.querySelector("form").innerHTML=""}));const f=()=>{const e="/favourite/comments/idVisibilidad".replace("idVisibilidad",u.toString());fetch(e.toString(),{credentials:"same-origin"}).then((e=>{if(e.ok)return e.text();throw"No se han podido cargar los comentarios"})).then((e=>{const t=(0,l.parseHtml)(e);h.innerHTML="",h.appendChild(t);const
-JS: stener("click",(()=>y(e)))))}))},y=e=>{v.show(),v.loading=!0,v.enableClose=!1;const t=v.container,n=e.getAttribute("data-url"),i=e.getAttribute("data-comment");fetch(n,{method:"GET",credentials:"same-origin"}).then((e=>o(void 0,void 0,void 0,(function*(){if(e.ok){v.loading=!1,v.enableClose=!0;const n=yield e.text();t.innerHTML=n;const o=t.querySelector("textarea")
-JS: click",(()=>b(r))),r.setAttribute("data-note",i)}}))))},b=e=>{v.close(),g.show(),g.loading=!0,g.enableClose=!1;const t=g.container,n=e.getAttribute("data-url");fetch(n,{method:"GET",credentials:"same-origin"}).then((n=>o(void 0,void 0,void 0,(function*(){if(n.ok){g.loading=!1,g.enableClose=!0;const o=yield n.text();t.innerHTML=o;t.querySelector("[data-popup-conten
-JS: t]").innerHTML=`"${e.getAttribute("data-note")}"`,w(g)}}))))},S=e=>{m.show(),m.loading=!0,m.enableClose=!1;const t=m.container,n=e.getAttribute("data-url");fetch(n,{method:"GET",credentials:"same-origin"}).then((e=>o(void 0,void 0,void 0,(function*(){if(e.ok){m.loading=!1,m.enableClose=!0;const n=yield e.text();t.innerHTML=n;const o=t.querySelector(".material-
-JS: (function*(){n.preventDefault();if(!(yield(0,a.validate)(t)))return;const i=new FormData(t);t.querySelector("button[type=submit]").classList.add("btn-loading"),fetch(t.action,{credentials:"same-origin",method:"POST",body:i}).then((t=>o(void 0,void 0,void 0,(function*(){if(t.ok)try{(0,l.trigger)(d),e.close();const n=yield t.json();if(n.notification){const e=c.Notif
-JS: =e.getAttribute("data-id-calificacion");let o="/favourite/DeleteRating/idVisibilidad/idCalificacion".replace("idVisibilidad",t);o=o.replace("idCalificacion",n),fetch(o,{method:"DELETE",credentials:"same-origin"}).then((e=>{e.ok&&p.forEach((e=>{f()}))}))})(e):(e=>{const t=e.getAttribute("data-calificacion"),n=e.getAttribute("data-idVisibilidad");let o="/favourite/P
-JS: ing/idVisibilidad/calificacion".replace("idVisibilidad",n);o=o.replace("calificacion",t),p.forEach((e=>e.classList.remove("active"))),e.classList.add("active"),fetch(o,{method:"POST",credentials:"same-origin"}).then((e=>{e.ok&&f()}))})(e)},L=()=>{const e=(0,l.getLoader)();h.appendChild(e),f()};t.addWidget=(e,t)=>{h=e,u=t,L(),(0,l.whenTrigger)(d,f)};t.addNoteProper
-JS: d 0===e?void 0:e.toUpperCase())||"GET",a=new URL(t,window.location.origin);let r=null;return"GET"===i?a.searchParams.append(n,o):(r=new FormData,r.append(n,o)),fetch(a.toString(),{method:i,credentials:"same-origin",body:r}).then((e=>{if(!e.ok)throw new Error("Error en la petición remota");return e.json()})).then((e=>{if(!e.Existe)return!0;if(e.EsAlerta){const e=th
-JS: is.element.closest("form"),t=new FormData(e);return fetch("/Auth/Register",{method:"POST",body:t,credentials:"same-origin"}).then((e=>{if(!e.redirected)return e.text();window.location.href=e.url})).then((e=>{document.body.innerHTML=e})).catch((e=>console.err
-JS: null,p=null;const m=()=>o(void 0,void 0,void 0,(function*(){const e=new FormData;return e.append("idAviso",d.toString()),e.append("idVisibilidad",u.toString()),fetch("/ignored/remove",{credentials:"same-origin",method:"DELETE",body:e}).then((e=>!!e.ok))})),v=e=>{const t=e.target,n=t.querySelector("[type=submit]"),o=new FormData(t);e.preventDefault(),n.classList.ad
-JS: d("btn-loading"),s.enableClose=!1,o.append("IdAviso",d.toString()),o.append("IdVisibilidad",u.toString()),fetch(t.action,{credentials:"same-origin",method:"POST",body:o}).then((e=>{n.classList.remove("btn-loading"),s.enableClose=!0,e.ok&&(h(!0),s.close())})).catch((e=>{p(e)}))},g=e=>{h(!0),s.enableClose=!1,l.cl
-photo 0 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c42334cc0>
-photo 0 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c400fdfd0>
-photo 0 via ant
-photo 1 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c4010d8f0>
-photo 1 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c4010e890>
-photo 1 via ant
-photo 2 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c4236a0c0>
-photo 2 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c400fe430>
-photo 2 via ant
-photo 3 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c4010ec00>
-photo 3 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c4010ef20>
-photo 3 via ant
-photo 4 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c4010ec00>
-photo 4 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c4010f7e0>
-photo 4 via ant
-photo 5 direct failed 405 cannot identify image file <_io.BytesIO object at 0x7f9c4010f6f0>
-photo 5 wsrv failed 403 cannot identify image file <_io.BytesIO object at 0x7f9c4010fd80>
-photo 5 via ant
-overpass https://overpass-api.de/api/interpreter 200
-elements 216
+gallery 200 27492 photos 50
+photo 6 cannot identify image file <_io.BytesIO object at 0x7fadd6555a80>
+photo 10 cannot identify image file <_io.BytesIO object at 0x7fadd5d522f0>
+photo 16 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 16 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 17 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 28 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 28 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 29 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+photo 45 cannot identify image file <_io.BytesIO object at 0x7fadd5d52980>
+photo 49 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
+saved 54
