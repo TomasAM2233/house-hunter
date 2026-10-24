@@ -129,7 +129,7 @@ def main():
     cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
     cands.sort(key=lambda l: -score.score(l)["score"])
     enriched = 0
-    for l in cands:
+    for rank, l in enumerate(cands):
         src = SOURCES.get(l["source"])
         if hasattr(src, "enrich") and not l.get("enriched") and enriched < args.max_enrich:
             try:
@@ -141,6 +141,8 @@ def main():
                 log(f"enrich failed {l['id']}: {e}")
             if score.hard_filters(l):  # full data can rule it out before spending an AI read
                 continue
+        if rank >= config.AI_TOP_N:
+            continue  # photo reads only for the top candidates
         cache = ai._load()
         if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
             continue  # same property already read under another source; dedupe keeps that one
@@ -153,9 +155,20 @@ def main():
             twin = next((o for o in listings.values() if o["id"] in cache and _twins(l, o)), None)
             res = cache[twin["id"]] if twin else None
         l["ai"] = res
+        l["ai_key"] = l["id"] if l["id"] in cache else (twin["id"] if res else None)
         l.update(score.score(l, res))
 
+
     dedupe(listings.values())
+    # a short brief for each top candidate, written once its photos are read and its score is known
+    top = sorted((l for l in listings.values() if l.get("active") and l.get("ai") and not l["discard"]), key=lambda l: -l["score"])
+    for l in top[:config.AI_TOP_N]:
+        if not l["ai"].get("brief"):
+            b = ai.brief(l, log=log)
+            if b:
+                l["ai"]["brief"] = b
+    for l in listings.values():
+        l.pop("ai_key", None)
     if os.path.exists(DATA):
         status = {**json.load(open(DATA)).get("status", {}), **status}
     out = sorted(listings.values(), key=lambda l: (not l.get("active"), bool(l["discard"]), -l["score"]))

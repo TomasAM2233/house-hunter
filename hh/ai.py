@@ -120,6 +120,58 @@ def _gemini(listing):
     raise RuntimeError("Gemini rate limit")
 
 
+BRIEF_PROMPT = f"""Escribí un resumen de esta casa para Tomás, en castellano rioplatense, de {config.BRIEF_MAX_CHARS} caracteres
+como máximo. Tomás busca casa o PH en Olivos/Florida/La Lucila y le importa, en este orden: precio y USD/m²,
+espacio (m² totales, ambientes), caminar a Av. Maipú o al tren, estado (puede gastar hasta USD {config.REFORM_BUDGET_USD:,}
+en reformas), patio o jardín (obligatorio), poder construir hacia arriba, apto crédito, tranquilidad y luz.
+Decí lo que más pesa a favor y en contra según esos criterios, con números concretos. Nada de adjetivos de
+inmobiliaria ni repetir la dirección. Respondé SOLO un JSON: {{"brief": "..."}}"""
+
+
+def _brief_text(l):
+    a, g = l.get("ai") or {}, l.get("geo") or {}
+    st = g.get("station") or {}
+    ppm2 = round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
+    comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
+    return (_listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
+            f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} a {st.get('blocks')} cuadras | Apto crédito: {l.get('apto_credito_field')}\n"
+            f"Lectura de fotos: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
+            f"Puntaje {l.get('score')}/100 — {comps}")
+
+
+def brief(listing, log=print):
+    """Text-only call: a <=250 char brief built from the listing, its photo read, location and score.
+    Saved in the cache entry the photo read lives in, so it's written once."""
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key or not listing.get("ai_key"):
+        return None
+    body = {"contents": [{"parts": [{"text": BRIEF_PROMPT + "\n\n" + _brief_text(listing)}]}],
+            "generationConfig": {"response_mime_type": "application/json", "temperature": 0.3}}
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
+    try:
+        for attempt in range(4):
+            r = requests.post(url, json=body, timeout=60)
+            if r.status_code == 429:
+                time.sleep(30 * (attempt + 1))
+                continue
+            r.raise_for_status()
+            text = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])["brief"].strip()
+            break
+        else:
+            raise RuntimeError("Gemini rate limit")
+    except Exception as e:
+        log(f"brief failed for {listing['id']}: {e}")
+        return None
+    if len(text) > config.BRIEF_MAX_CHARS:
+        text = text[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
+    cache = _load()
+    if listing["ai_key"] in cache:
+        cache[listing["ai_key"]]["brief"] = text
+        json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
+    time.sleep(4)
+    return text
+
+
 def analyse(listing, log=print):
     hit = cached(listing)
     if hit:

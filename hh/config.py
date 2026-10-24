@@ -26,6 +26,10 @@ TREN_DE_LA_COSTA = {"Avenida Maipú", "Borges", "Libertador"}
 
 REFORM_BUDGET_USD = 20_000
 
+# AI photo reads only for the best-ranked candidates (ranked by score before the AI read), to save quota.
+AI_TOP_N = 40
+BRIEF_MAX_CHARS = 250
+
 # Weights add up to 100, in the order of importance Tomás gave.
 WEIGHTS = {
     "price": 22,        # effective price (asking + estimated reform) and $/m2
