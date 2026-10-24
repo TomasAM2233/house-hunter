@@ -2937,5 +2937,36 @@
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "tk-9870333": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Modernización de baño y cocina, adecuación de la unidad al fondo (30m2), pulido de parquets y revisión de instalación eléctrica de 60 años.",
+  "patio": "medium",
+  "patio_m2_est": 28,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Lote propio en zona de buen acceso",
+   "Terraza amplia y transitable",
+   "Estructura sólida con techos de madera"
+  ],
+  "red_flags": [
+   "No apto crédito (posibles planos desactualizados)",
+   "Contaminación sonora por cercanía a Panamericana",
+   "Unidad al fondo requiere inversión estructural"
+  ],
+  "summary": "Es una casa de época con potencial por ser lote propio, pero el ruido de la autopista y el estado del fondo requieren una visita técnica antes de avanzar.",
+  "photos_key": "22761c3fbbb1",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  }
 }

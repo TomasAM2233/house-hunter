@@ -3,7 +3,7 @@
 Casa o PH para mudarnos pronto, en Olivos, Florida o La Lucila (Vicente López).
 
 **Obligatorio**
-- Precio hasta USD 210.000 y hasta USD 2.000 por m² total. Más barato es mejor: un precio por m² bajo no es motivo para descartar.
+- Precio hasta USD 210.000 y hasta USD 2.000 por m² total. Más barato es mejor: un precio por m² bajo no es motivo para descartar. Si piden un poco más (hasta USD 240.000), es negociable pero cuenta en contra.
 - Patio o jardín propio, a nivel del suelo. Cuanto más grande mejor. Una terraza no reemplaza al patio.
 - 3 ambientes o más y 100 m² totales o más.
 - Entre 3 y 15 cuadras de Av. Maipú (ideal 8 o menos), o cerca de una estación del tren.
