@@ -1,0 +1,4216 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-24T22:42:42Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 762936184,
+  "lat": -34.5079925,
+  "lon": -58.4907889,
+  "tags": {
+    "amenity": "school",
+    "name": "Escuela Nº2 \"Bartolomé Mitre\""
+  }
+},
+{
+  "type": "node",
+  "id": 762936187,
+  "lat": -34.5176288,
+  "lon": -58.4994792,
+  "tags": {
+    "amenity": "school",
+    "name": "Asunción de la Virgen"
+  }
+},
+{
+  "type": "node",
+  "id": 909830243,
+  "lat": -34.5108964,
+  "lon": -58.5236251,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "4201",
+    "addr:postcode": "B1636",
+    "addr:street": "Blas Parera",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "healthcare:speciality": "ophthalmology",
+    "name": "Clinica Dr. Nano",
+    "opening_hours": "Mo-Su 08:00-19:30",
+    "phone": "+54 11 4717-4000",
+    "survey:date": "2022-09-12",
+    "website": "http://www.clinicanano.com.ar/"
+  }
+},
+{
+  "type": "node",
+  "id": 909830274,
+  "lat": -34.5220660,
+  "lon": -58.5078040,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3145",
+    "addr:postcode": "1636",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "amenity": "hospital",
+    "description": "Organización profesional de servicios de salud para empresas.",
+    "emergency": "no",
+    "name": "Policlinica Asmel",
+    "website": "http://www.asmel.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 1689607210,
+  "lat": -34.5061688,
+  "lon": -58.4930195,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3201",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "check_date": "2024-06-18",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Selma",
+    "opening_hours": "24/7",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:nfc": "yes",
+    "phone": "+54 911 4073-1597",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://selmadigital.com/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1827873806,
+  "lat": -34.5182645,
+  "lon": -58.5003427,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2401",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "amenity": "pharmacy",
+    "check_date": "2025-10-09",
+    "delivery": "yes",
+    "healthcare": "pharmacy",
+    "name": "Farmacia España",
+    "opening_hours": "Mo-Sa 09:00-13:00,16:00-20:00; Su,PH off",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+54 11 4796-5712",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1827883337,
+  "lat": -34.5226735,
+  "lon": -58.5055483,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3035",
+    "addr:street": "Ingeniero Guillermo Marconi",
+    "amenity": "school",
+    "name": "Escuela 31 Doctor Ángel Acuña"
+  }
+},
+{
+  "type": "node",
+  "id": 1861673207,
+  "lat": -34.5101318,
+  "lon": -58.4873747,
+  "tags": {
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Vasallo"
+  }
+},
+{
+  "type": "node",
+  "id": 1861710862,
+  "lat": -34.5128810,
+  "lon": -58.4897264,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2440",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "check_date": "2025-05-19",
+    "healthcare": "pharmacy",
+    "name": "Sandra Selma",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1965897254,
+  "lat": -34.5126635,
+  "lon": -58.4886416,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "1441",
+    "addr:postcode": "1636",
+    "addr:street": "Corrientes",
+    "amenity": "school",
+    "name": "Media Nº1",
+    "phone": "+54 11 4790-6661",
+    "religion": "none",
+    "website": "https://www.secundaria1olivos.edu.ar/"
+  }
+},
+{
+  "type": "node",
+  "id": 1967837810,
+  "lat": -34.4995078,
+  "lon": -58.4908598,
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:postcode": "1636",
+    "addr:street": "Doctor Tomás M. de Anchorena",
+    "amenity": "school",
+    "name": "Escuela Nº16 \"Marcelino Ugarte\"",
+    "phone": "+54 11 4790-5047",
+    "religion": "none"
+  }
+},
+{
+  "type": "node",
+  "id": 1967844588,
+  "lat": -34.5140426,
+  "lon": -58.4887240,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2301",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "brand": "ICBC",
+    "brand:wikidata": "Q26463",
+    "brand:wikipedia": "en:Industrial and Commercial Bank of China",
+    "name": "ICBC",
+    "official_name": "Industrial and Commercial Bank of China",
+    "old_name": "Standard Bank",
+    "opening_hours": "Mo-Fr 10:00-15:00",
+    "phone": "+54 810 444 4652",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "website": "https://www.icbc.com.ar/"
+  }
+},
+{
+  "type": "node",
+  "id": 2598476243,
+  "lat": -34.5056449,
+  "lon": -58.5085516,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Díaz Vélez y España",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2598476250,
+  "lat": -34.5066459,
+  "lon": -58.5080392,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Debenedetti y España",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2604867266,
+  "lat": -34.4986813,
+  "lon": -58.5190983,
+  "tags": {
+    "addr:housenumber": "2068",
+    "addr:street": "Avenida Sir Alexander Fleming",
+    "amenity": "bank",
+    "atm": "yes",
+    "check_date": "2026-01-29",
+    "internet_access": "no",
+    "name": "Galicia",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "website": "https://www.bancogalicia.com"
+  }
+},
+{
+  "type": "node",
+  "id": 3448079322,
+  "lat": -34.4976279,
+  "lon": -58.4884083,
+  "tags": {
+    "name": "La Lucila",
+    "network": "Mitre",
+    "network:wikidata": "Q3239158",
+    "operator": "Trenes Argentinos Operaciones",
+    "operator:wikidata": "Q6116255",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "15.9",
+    "start_date": "1933-11-10",
+    "wikidata": "Q5843091",
+    "wikipedia": "es:Estación La Lucila"
+  }
+},
+{
+  "type": "node",
+  "id": 3448079323,
+  "lat": -34.4886206,
+  "lon": -58.4964082,
+  "tags": {
+    "name": "Martínez",
+    "network": "Mitre",
+    "operator": "Trenes Argentinos Operaciones",
+    "operator:wikidata": "Q6116255",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "railway:position": "17.2",
+    "start_date": "1871-11-18",
+    "wikidata": "Q5843653",
+    "wikipedia": "es:Estación Martínez"
+  }
+},
+{
+  "type": "node",
+  "id": 3448079325,
+  "lat": -34.5078205,
+  "lon": -58.4805953,
+  "tags": {
+    "name": "Olivos",
+    "network": "Mitre",
+    "network:wikidata": "Q3239158",
+    "operator": "Trenes Argentinos Operadora Ferroviaria",
+    "operator:wikidata": "Q6116255",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "start_date": "1863-10-10",
+    "train": "yes",
+    "wikidata": "Q5843982",
+    "wikipedia": "es:Estación Olivos"
+  }
+},
+{
+  "type": "node",
+  "id": 3450210484,
+  "lat": -34.5150168,
+  "lon": -58.4892309,
+  "tags": {
+    "name": "Bartolomé Mitre",
+    "network": "Mitre",
+    "network:wikidata": "Q3239158",
+    "operator": "Trenes Argentinos Operadora Ferroviaria",
+    "operator:wikidata": "Q6116255",
+    "public_transport": "station",
+    "railway": "station",
+    "train": "yes",
+    "wikidata": "Q5841066",
+    "wikipedia": "es:Estación Bartolomé Mitre"
+  }
+},
+{
+  "type": "node",
+  "id": 3450210485,
+  "lat": -34.5231338,
+  "lon": -58.4941325,
+  "tags": {
+    "name": "Doctor Cetrángolo",
+    "network": "Mitre",
+    "network:wikidata": "Q3239158",
+    "operator": "Trenes Argentinos Operadora Ferroviaria",
+    "operator:wikidata": "Q6116255",
+    "public_transport": "station",
+    "railway": "halt",
+    "short_name": "Cetrángolo",
+    "train": "yes",
+    "wikidata": "Q5841978",
+    "wikipedia": "es:Estación Dr. Cetrángolo"
+  }
+},
+{
+  "type": "node",
+  "id": 3534515807,
+  "lat": -34.5078575,
+  "lon": -58.5005923,
+  "tags": {
+    "addr:housenumber": "3461",
+    "addr:street": "Caseros",
+    "amenity": "school",
+    "building": "school",
+    "isced:level": "1",
+    "name": "Olivos del Sol",
+    "operator:type": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 3710051994,
+  "lat": -34.5155347,
+  "lon": -58.4879804,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2223",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Suizo",
+    "opening_hours": "Mo-Sa 08:00-22:00",
+    "phone": "+54 11 6051 7700",
+    "source": "Reconocimiento terrestre por Kaart 2016.;local knowledge",
+    "website": "https://selmadigital.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 3784156257,
+  "lat": -34.5133530,
+  "lon": -58.4910849,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2478",
+    "addr:postcode": "B1636",
+    "addr:street": "Juan de Garay",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "orthodontics;dentist",
+    "name": "Hospital Zonal de Odontología y Ortodoncia \"Dr. Juan U. Carrea\"",
+    "operator": "Provincial",
+    "operator:type": "public",
+    "phone": "+54 11 4794-3818",
+    "ref:sisa_codigo": "50068612116757",
+    "ref:sisa_tipologia": "ESSIDT",
+    "source": "http://www.ms.gba.gov.ar/hospitales/",
+    "website": "https://www.gba.gob.ar/content/regi%C3%B3n_sanitaria_v_4",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3798216097,
+  "lat": -34.5120076,
+  "lon": -58.5253209,
+  "tags": {
+    "addr:city": "Munro",
+    "addr:postcode": "B1605",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BBVA",
+    "brand:wikidata": "Q2876788",
+    "brand:wikipedia": "es:BBVA (Argentina)",
+    "name": "BBVA",
+    "old_name": "BBVA Francés",
+    "phone:AR": "0800-333-0303",
+    "website": "https://www.bbva.com.ar"
+  }
+},
+{
+  "type": "node",
+  "id": 4592713348,
+  "lat": -34.4971006,
+  "lon": -58.5204553,
+  "tags": {
+    "addr:street": "Monseñor Larumbe",
+    "amenity": "pharmacy",
+    "name": "Farmacia Irie",
+    "opening_hours": "Mo-Fr 09:00-13:00,16:00-20:00; Sa 09:00-13:00; Su off",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4592961415,
+  "lat": -34.4915827,
+  "lon": -58.5122266,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:street": "Diagonal Salta",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Gómez",
+    "opening_hours": "Mo-Fr 08:30-21:00; Sa 09:00-19:00",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4593031691,
+  "lat": -34.4958561,
+  "lon": -58.5138247,
+  "tags": {
+    "addr:street": "Hipólito Yrigoyen",
+    "amenity": "pharmacy",
+    "fixme": "nombre",
+    "healthcare": "pharmacy",
+    "name": "Farmacia",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4598901615,
+  "lat": -34.4925054,
+  "lon": -58.5064014,
+  "tags": {
+    "addr:street": "Hipólito Yrigoyen",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "healthcare:speciality": "homeopathy",
+    "name": "Sudamericana",
+    "opening_hours": "Mo-Fr 08:30-20:00; Sa 09:00-13:00; Su off",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4604986254,
+  "lat": -34.4972139,
+  "lon": -58.5085168,
+  "tags": {
+    "addr:street": "Edison",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Kregar",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4604986282,
+  "lat": -34.4993642,
+  "lon": -58.5132233,
+  "tags": {
+    "addr:street": "Edison",
+    "amenity": "pharmacy",
+    "fixme": "nombre",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Brucoli",
+    "phone": "+54 11 4792-2421",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605119661,
+  "lat": -34.5021711,
+  "lon": -58.5195238,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "1799",
+    "addr:postcode": "B1640",
+    "addr:street": "Edison",
+    "amenity": "pharmacy",
+    "check_date": "2024-11-12",
+    "healthcare": "pharmacy",
+    "name": "Farmacia La Paz",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605169149,
+  "lat": -34.5062054,
+  "lon": -58.5158973,
+  "tags": {
+    "amenity": "pharmacy",
+    "check_date": "2023-12-05",
+    "healthcare": "pharmacy",
+    "name": "Farmacia",
+    "opening_hours": "Mo-Sa 08:30-24:00; Su 09:30-13:00,16:00-24:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "phone": "+54 11 4717-2181",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4605169155,
+  "lat": -34.5058570,
+  "lon": -58.5151730,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3160",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "name": "Autoservicio Paraná",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605169159,
+  "lat": -34.5058934,
+  "lon": -58.5152643,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3172",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "check_date": "2026-03-12",
+    "name": "La Nueva Esmeralda",
+    "phone": "+54 11 4793-6234",
+    "shop": "bakery",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4605172762,
+  "lat": -34.5041372,
+  "lon": -58.5113729,
+  "tags": {
+    "addr:street": "Paraná",
+    "name": "La Estancia de Tiaguito",
+    "shop": "butcher",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605172775,
+  "lat": -34.5026881,
+  "lon": -58.5082110,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2502",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "check_date": "2026-03-12",
+    "name": "Tomasino",
+    "shop": "butcher",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605792965,
+  "lat": -34.5007808,
+  "lon": -58.5044949,
+  "tags": {
+    "addr:street": "Paraná",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Farmacia",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4605792979,
+  "lat": -34.5025372,
+  "lon": -58.5083057,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2509",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "amenity": "pharmacy",
+    "check_date": "2026-03-12",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Ishikawa",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4608396355,
+  "lat": -34.5059261,
+  "lon": -58.5022670,
+  "tags": {
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Galli"
+  }
+},
+{
+  "type": "node",
+  "id": 4608518421,
+  "lat": -34.5133195,
+  "lon": -58.5031255,
+  "tags": {
+    "addr:housenumber": "2680",
+    "addr:street": "Mariano Pelliza",
+    "amenity": "pharmacy",
+    "check_date": "2026-10-19",
+    "healthcare": "pharmacy",
+    "name": "Menegol",
+    "opening_hours": "Mo-Fr 08:30-20:00; Sa 08:30-19:00; Su,PH off",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+54 11 4790-7757",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4614776285,
+  "lat": -34.5069697,
+  "lon": -58.4931160,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:street": "Avenida Maipú",
+    "name": "Cuatrovacas",
+    "shop": "butcher",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4619372469,
+  "lat": -34.5183843,
+  "lon": -58.5006040,
+  "tags": {
+    "addr:street": "Gobernador Manuel Ugarte",
+    "name": "Rosmar",
+    "shop": "butcher"
+  }
+},
+{
+  "type": "node",
+  "id": 4619470901,
+  "lat": -34.5230001,
+  "lon": -58.5096857,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3311",
+    "addr:postcode": "B1636",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "amenity": "pharmacy",
+    "check_date": "2025-08-04",
+    "healthcare": "pharmacy",
+    "internet_access": "no",
+    "name": "Iara",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+54 11 4797-6883",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4623861612,
+  "lat": -34.5205053,
+  "lon": -58.4971199,
+  "tags": {
+    "addr:street": "Carlos Villate",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Jameson",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4649834559,
+  "lat": -34.4970624,
+  "lon": -58.4975458,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2836",
+    "addr:postcode": "1640",
+    "addr:street": "Avenida Santa Fe",
+    "leisure": "fitness_centre",
+    "name": "Viva Training Club",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "sport": "fitness"
+  }
+},
+{
+  "type": "node",
+  "id": 4649966996,
+  "lat": -34.5033859,
+  "lon": -58.4950334,
+  "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Lampe"
+  }
+},
+{
+  "type": "node",
+  "id": 4657350829,
+  "lat": -34.5172259,
+  "lon": -58.4876291,
+  "tags": {
+    "addr:city": "Vicente López",
+    "addr:housenumber": "2102",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "La Quinta Plus",
+    "opening_hours": "Mo-Sa 08:00-14:00,16:00-20:00; Su off",
+    "phone": "+54 11 4795 6380",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4658095059,
+  "lat": -34.5106128,
+  "lon": -58.4910839,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2702",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "check_date": "2024-12-07",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Cusatti",
+    "phone": "+54 11 4799-4211",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4658095066,
+  "lat": -34.5095891,
+  "lon": -58.4916794,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2828",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "check_date": "2024-12-07",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Antuña",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4660373377,
+  "lat": -34.4971496,
+  "lon": -58.4980175,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2797",
+    "addr:postcode": "1640",
+    "addr:street": "Avenida Santa Fe",
+    "amenity": "pharmacy",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Selma",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "node",
+  "id": 4672253224,
+  "lat": -34.5091008,
+  "lon": -58.4914985,
+  "tags": {
+    "brand": "Curves",
+    "brand:wikidata": "Q5196080",
+    "brand:wikipedia": "en:Curves International",
+    "leisure": "fitness_centre",
+    "name": "Curves",
+    "source": "Reconocimiento terrestre por Kaart 2016."
+  }
+},
+{
+  "type": "node",
+  "id": 4672372493,
+  "lat": -34.5079705,
+  "lon": -58.4921070,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "name": "La Vieja Aldea",
+    "shop": "greengrocer",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4726146088,
+  "lat": -34.5223488,
+  "lon": -58.5053738,
+  "tags": {
+    "amenity": "kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 5122685094,
+  "lat": -34.5085591,
+  "lon": -58.4847213,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Borges",
+    "network": "Mitre",
+    "operator": "Trenes Argentinos",
+    "public_transport": "station",
+    "railway": "halt",
+    "start_date": "1896",
+    "station": "light_rail",
+    "wikidata": "Q5841190",
+    "wikipedia": "es:Estación Borges"
+  }
+},
+{
+  "type": "node",
+  "id": 5122694827,
+  "lat": -34.5129556,
+  "lon": -58.4874923,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Avenida Maipú",
+    "network": "Mitre",
+    "network:wikidata": "Q3239158",
+    "operator": "Trenes Argentinos Operadora Ferroviaria",
+    "operator:wikidata": "Q6116255",
+    "public_transport": "station",
+    "railway": "station",
+    "short_name": "Maipú",
+    "start_date": "1995-04-25",
+    "station": "light_rail",
+    "train": "yes",
+    "wikidata": "Q5843552",
+    "wikipedia": "es:Estación Avenida Maipú"
+  }
+},
+{
+  "type": "node",
+  "id": 5122945454,
+  "lat": -34.5025614,
+  "lon": -58.4819801,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Libertador",
+    "network": "Mitre",
+    "operator": "Trenes Argentinos",
+    "public_transport": "station",
+    "railway": "halt",
+    "start_date": "1995-04-25",
+    "station": "light_rail",
+    "train": "yes",
+    "wikidata": "Q17043023",
+    "wikipedia": "es:Estación Libertador (Tren de la Costa)"
+  }
+},
+{
+  "type": "node",
+  "id": 6069860259,
+  "lat": -34.5123109,
+  "lon": -58.5089108,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "check_date:shelter": "2023-08-23",
+    "highway": "bus_stop",
+    "lit": "no",
+    "name": "Acassuso y Sarmiento",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6069860261,
+  "lat": -34.5114423,
+  "lon": -58.5069461,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "lit": "yes",
+    "name": "Acassuso y Juan B. Justo",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6069860262,
+  "lat": -34.5105837,
+  "lon": -58.5050779,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "highway": "bus_stop",
+    "lit": "no",
+    "name": "Acassuso y España",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6069860265,
+  "lat": -34.5097350,
+  "lon": -58.5031843,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "lit": "no",
+    "name": "Acassuso y José María Paz",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6069860267,
+  "lat": -34.5079292,
+  "lon": -58.4992428,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "lit": "no",
+    "name": "Acassuso y Avellaneda",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6108404867,
+  "lat": -34.5047066,
+  "lon": -58.5064767,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Díaz Vélez y José María Paz",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6152884564,
+  "lat": -34.5061941,
+  "lon": -58.5068911,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Salk y Debenedetti",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6152884567,
+  "lat": -34.5094510,
+  "lon": -58.5047212,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Salk y San Lorenzo",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6152884569,
+  "lat": -34.5111959,
+  "lon": -58.5035464,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Salk y Castro",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6152884570,
+  "lat": -34.5130491,
+  "lon": -58.5023354,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Salk y Pelliza",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474100,
+  "lat": -34.5088807,
+  "lon": -58.5111075,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y Fray Sarmiento",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474101,
+  "lat": -34.5080651,
+  "lon": -58.5093306,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y Juan B. Justo",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474102,
+  "lat": -34.5071423,
+  "lon": -58.5073256,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y España",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474104,
+  "lat": -34.5062892,
+  "lon": -58.5054186,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y José María Paz",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474105,
+  "lat": -34.5054072,
+  "lon": -58.5035249,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y Chacabuco",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6273474106,
+  "lat": -34.5045441,
+  "lon": -58.5016166,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Gardel y Avellaneda",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6307387362,
+  "lat": -34.5150495,
+  "lon": -58.5179353,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:postcode": "B1636",
+    "amenity": "police",
+    "name": "Vicente Lopez Patrulla"
+  }
+},
+{
+  "type": "node",
+  "id": 6307449200,
+  "lat": -34.5132525,
+  "lon": -58.5035303,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "España y Pelliza",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6307449204,
+  "lat": -34.5096875,
+  "lon": -58.5059202,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "España y San Lorenzo",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6307449205,
+  "lat": -34.5079182,
+  "lon": -58.5070963,
+  "tags": {
+    "bench": "no",
+    "bin": "no",
+    "highway": "bus_stop",
+    "lit": "yes",
+    "name": "España y Capitán Bermúdez",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6307449207,
+  "lat": -34.5075324,
+  "lon": -58.5099999,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Debenedetti y Juan B. Justo",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6693596906,
+  "lat": -34.5039046,
+  "lon": -58.4946774,
+  "tags": {
+    "addr:housenumber": "3482",
+    "addr:street": "Avenida Maipú",
+    "amenity": "community_centre",
+    "club": "scout",
+    "community_centre": "home_club",
+    "fixme": "revisar posición y direccón",
+    "name": "Grupo Scout Nuestra Señora de la Paz",
+    "network": "Scouts de Argentina",
+    "opening_hours": "Sa 15:00-18:00",
+    "ref": "110"
+  }
+},
+{
+  "type": "node",
+  "id": 6693596993,
+  "lat": -34.4987058,
+  "lon": -58.4997555,
+  "tags": {
+    "addr:housenumber": "1630",
+    "addr:street": "Paraná",
+    "amenity": "community_centre",
+    "club": "scout",
+    "community_centre": "home_club",
+    "fixme": "revisar posición y direccón",
+    "name": "Grupo Scout Nuestra Señora de la Unidad",
+    "network": "Scouts de Argentina",
+    "opening_hours": "Sa 15:00-18:00",
+    "ref": "172"
+  }
+},
+{
+  "type": "node",
+  "id": 6758067622,
+  "lat": -34.5058314,
+  "lon": -58.5067001,
+  "tags": {
+    "name": "Supermercado Debenedetti",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 7501509791,
+  "lat": -34.5033229,
+  "lon": -58.4928820,
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:full": "Tucumán 3339",
+    "addr:housenumber": "3339",
+    "addr:postcode": "1638",
+    "addr:street": "Tucumán",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "UAP Arcuri",
+    "operator": "Municipal",
+    "operator:type": "public",
+    "ref:sisa_codigo": "50068612215008",
+    "ref:sisa_tipologia": "ESSIDT"
+  }
+},
+{
+  "type": "node",
+  "id": 7501520903,
+  "lat": -34.5158137,
+  "lon": -58.5129355,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:full": "Cnel. Uzal 3244",
+    "addr:housenumber": "3244",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Francisco Uzal",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Unidad Sanitaria Doctor Arturo Illia",
+    "operator": "Municipal",
+    "operator:type": "public",
+    "phone": "+54 11 4513-9864",
+    "ref:sisa_codigo": "50068612202216",
+    "ref:sisa_tipologia": "ESSIDT"
+  }
+},
+{
+  "type": "node",
+  "id": 7501527148,
+  "lat": -34.5215014,
+  "lon": -58.5079989,
+  "tags": {
+    "addr:full": "Francisco Beiro 2585",
+    "addr:housenumber": "2585",
+    "addr:postcode": "1636",
+    "addr:street": "Francisco Beiró",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Hospital Privado Para La Comunidad",
+    "operator": "Privado",
+    "operator:type": "private",
+    "ref:sisa_codigo": "10068612305064",
+    "ref:sisa_tipologia": "ESCIG"
+  }
+},
+{
+  "type": "node",
+  "id": 7501609360,
+  "lat": -34.5052481,
+  "lon": -58.4974310,
+  "tags": {
+    "addr:full": "Domingo Faustino Sarmiento 3551",
+    "addr:housenumber": "3551",
+    "addr:postcode": "1638",
+    "addr:street": "Domingo Faustino Sarmiento",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Unidad Sanitaria Doctor Rotjer",
+    "operator": "Municipal",
+    "operator:type": "public",
+    "phone": "+54 11 45139863",
+    "ref:sisa_codigo": "50068612202249",
+    "ref:sisa_tipologia": "ESSIDT"
+  }
+},
+{
+  "type": "node",
+  "id": 7501612473,
+  "lat": -34.5075866,
+  "lon": -58.5046086,
+  "tags": {
+    "addr:full": "General José María Paz 3645",
+    "addr:housenumber": "3645",
+    "addr:postcode": "1636",
+    "addr:street": "General José María Paz",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Unidad Sanitaria 12 De Octubre De Vicente Lopez",
+    "operator": "Municipal",
+    "operator:type": "public",
+    "phone": "+54 11 4513-9862",
+    "ref:sisa_codigo": "50068612202922",
+    "ref:sisa_tipologia": "ESSIDT"
+  }
+},
+{
+  "type": "node",
+  "id": 8599558304,
+  "lat": -34.5129148,
+  "lon": -58.5075537,
+  "tags": {
+    "bench": "no",
+    "highway": "bus_stop",
+    "name": "Castro y Goyena",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8599558305,
+  "lat": -34.5072654,
+  "lon": -58.5001961,
+  "tags": {
+    "bench": "yes",
+    "highway": "bus_stop",
+    "name": "Escuela 15",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8599558313,
+  "lat": -34.5081187,
+  "lon": -58.5020580,
+  "tags": {
+    "bench": "yes",
+    "highway": "bus_stop",
+    "name": "San Lorenzo y Chacabuco",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8599662447,
+  "lat": -34.5088739,
+  "lon": -58.5013117,
+  "tags": {
+    "bench": "no",
+    "bin": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "lit": "no",
+    "name": "Acassuso y Chacabuco",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8599662449,
+  "lat": -34.5089736,
+  "lon": -58.5039161,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "San Lorenzo y María Paz",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8599662451,
+  "lat": -34.5098711,
+  "lon": -58.5058985,
+  "tags": {
+    "bench": "yes",
+    "highway": "bus_stop",
+    "name": "San Lorenzo y España",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8599662453,
+  "lat": -34.5107419,
+  "lon": -58.5078232,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "San Lorenzo y Juan B. Justo",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8599662455,
+  "lat": -34.5111312,
+  "lon": -58.5086039,
+  "tags": {
+    "bench": "no",
+    "bin": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Goyena y San Lorenzo",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9005299831,
+  "lat": -34.5102497,
+  "lon": -58.5246303,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-04-28",
+    "name": "Vicente López Patrulla"
+  }
+},
+{
+  "type": "node",
+  "id": 9029320666,
+  "lat": -34.5115583,
+  "lon": -58.5145831,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3484",
+    "addr:postcode": "B1636",
+    "addr:street": "Capitán Justo Germán de Bermúdez",
+    "amenity": "clinic",
+    "check_date": "2026-03-19",
+    "healthcare": "clinic",
+    "name": "Zoonosis Vicente Lopez",
+    "opening_hours": "Mo-Fr 08:00-16:00; Sa 08:00-12:00; Su,PH off",
+    "website": "https://www.vicentelopez.gov.ar/"
+  }
+},
+{
+  "type": "node",
+  "id": 9507912018,
+  "lat": -34.4995609,
+  "lon": -58.5190646,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2133",
+    "addr:postcode": "B1640",
+    "addr:street": "Avenida Sir Alexander Fleming",
+    "amenity": "pharmacy",
+    "check_date": "2024-02-16",
+    "delivery": "yes",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "El Fenix",
+    "opening_hours": "Mo-Sa 08:30-21:00; Su off",
+    "payment:cabal": "yes",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:maestro": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "payment:visa_debit": "yes",
+    "phone": "+54 11 4717-6601",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418055,
+  "lat": -34.5054393,
+  "lon": -58.5013349,
+  "tags": {
+    "bench": "no",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bermúdez y Avellaneda",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418058,
+  "lat": -34.5063069,
+  "lon": -58.5032608,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bermúdez y Chacabuco",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418063,
+  "lat": -34.5072120,
+  "lon": -58.5052402,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bermúdez y José María Paz",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418067,
+  "lat": -34.5080906,
+  "lon": -58.5071406,
+  "tags": {
+    "bench": "yes",
+    "bin": "no",
+    "highway": "bus_stop",
+    "lit": "yes",
+    "name": "Bermúdez y España",
+    "public_transport": "platform",
+    "shelter": "yes",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418069,
+  "lat": -34.5089515,
+  "lon": -58.5090221,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bermúdez y Juan B. Justo",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9596418071,
+  "lat": -34.5098444,
+  "lon": -58.5109587,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bermúdez y Fray Sarmiento",
+    "public_transport": "platform",
+    "shelter": "no",
+    "unsigned": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9762931611,
+  "lat": -34.5093412,
+  "lon": -58.4918429,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3850",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "brand": "Banco Ciudad",
+    "brand:wikidata": "Q4856204",
+    "name": "Banco Ciudad",
+    "official_name": "Banco Ciudad de Buenos Aires",
+    "opening_hours": "Mo-Fr 10:00-15:00",
+    "phone": "+54 11 4799-6246",
+    "website": "https://bancociudad.com.ar"
+  }
+},
+{
+  "type": "node",
+  "id": 9762931613,
+  "lat": -34.5103428,
+  "lon": -58.4912327,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2724",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "branch": "Maipú",
+    "brand": "SportClub",
+    "brand:wikidata": "Q118314171",
+    "check_date": "2024-12-07",
+    "leisure": "fitness_centre",
+    "name": "SportClub",
+    "phone": "+54 11 5482-9530",
+    "website": "https://www.sportclub.com.ar/site/sede/170-maipu",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9797617850,
+  "lat": -34.5086918,
+  "lon": -58.4922028,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "39080",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "kindergarten",
+    "name": "Jardín Maternal",
+    "phone": "+54 11 4790 7399"
+  }
+},
+{
+  "type": "node",
+  "id": 9802757249,
+  "lat": -34.5000265,
+  "lon": -58.4967925,
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3920",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "name": "La Nonna",
+    "shop": "bakery",
+    "website": "http://www.reposterialanonna.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 9987370846,
+  "lat": -34.5040269,
+  "lon": -58.5023086,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Debenedetti y Avellaneda",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9987370851,
+  "lat": -34.5048845,
+  "lon": -58.5041955,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Debenedetti y Chacabuco",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9987370854,
+  "lat": -34.5057742,
+  "lon": -58.5061441,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Debenedetti y José María Paz",
+    "public_transport": "platform",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9998136417,
+  "lat": -34.5017374,
+  "lon": -58.4952439,
+  "tags": {
+    "addr:city": "La Lucila",
+    "name": "FerGo",
+    "shop": "greengrocer",
+    "survey:date": "2022-09-03"
+  }
+},
+{
+  "type": "node",
+  "id": 9998136518,
+  "lat": -34.5025731,
+  "lon": -58.5004897,
+  "tags": {
+    "addr:housenumber": "3945",
+    "addr:street": "Hilarión de la Quintana",
+    "check_date": "2026-01-26",
+    "delivery": "no",
+    "name": "La Espiga de Oro",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "bakery",
+    "survey:date": "2022-09-03",
+    "takeaway": "only",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485967,
+  "lat": -34.5017208,
+  "lon": -58.5174325,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "2416",
+    "addr:postcode": "B1640",
+    "addr:street": "Avenida Sir Alexander Fleming",
+    "amenity": "kindergarten",
+    "check_date": "2024-10-18",
+    "education": "kindergarten",
+    "email": "jardin915sani@gmail.com",
+    "isced:level": "0",
+    "name": "Jardín de Infantes nº 915",
+    "operator:type": "public",
+    "phone": "+54 11 4733-9055",
+    "ref:cue": "062293700",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485968,
+  "lat": -34.5014611,
+  "lon": -58.5172402,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "1596",
+    "addr:postcode": "B1640",
+    "addr:street": "Edison",
+    "amenity": "school",
+    "education": "school",
+    "email": "cens452martinez@gmail.com;vero.carabajal@hotmail.com.ar",
+    "name": "Centro Educativo Nivel Secundario nº 452",
+    "operator:type": "public",
+    "phone": "+54 11 4792-7369",
+    "ref:cue": "061430900",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485969,
+  "lat": -34.4982700,
+  "lon": -58.5032349,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "583",
+    "addr:postcode": "1640",
+    "addr:street": "Aramburu",
+    "amenity": "kindergarten",
+    "email": "jardinmunicipal11@yahoo.com.ar; mji0962299@abc.gov.ar",
+    "isced:level": "0",
+    "name": "Jardín Municipal nº 11",
+    "operator:type": "public",
+    "phone": "+54 11 4580-3119",
+    "ref:cue": "061227000",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485970,
+  "lat": -34.4944757,
+  "lon": -58.5007332,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "2441",
+    "addr:postcode": "B1640",
+    "addr:street": "Italia",
+    "amenity": "school",
+    "email": "colegiorepublicaargentina@gmail.com",
+    "name": "Republica Argentina",
+    "operator:type": "privado",
+    "phone": "+54 11 4798-7713",
+    "ref:cue": "061229800",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485971,
+  "lat": -34.4944383,
+  "lon": -58.5007702,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2441",
+    "addr:postcode": "B1640",
+    "addr:street": "Italia",
+    "amenity": "school",
+    "email": "colegiorepublicaargentina@gmail.com",
+    "name": "Instututo Republica Argentina",
+    "operator:type": "privado",
+    "phone": "+54 11 4798-7713",
+    "ref:cue": "061226700",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485975,
+  "lat": -34.4935510,
+  "lon": -58.5006701,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "139",
+    "addr:postcode": "1640",
+    "addr:street": "Edison",
+    "amenity": "kindergarten",
+    "email": "nivel.inicial.mallinckrodt@gmail.com",
+    "isced:level": "0",
+    "name": "Jardín de Infantes Mallinckrodt",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-7111",
+    "ref:cue": "061214400",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485976,
+  "lat": -34.4935135,
+  "lon": -58.5005721,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "139",
+    "addr:postcode": "1640",
+    "addr:street": "Edison",
+    "amenity": "school",
+    "check_date": "2026-01-09",
+    "email": "secundariamallinckrodtmartinez@gmail.com; secundariamallinckrodtmartinez@gmail.com",
+    "name": "Instituto Mallinckrodt",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-7111",
+    "ref:cue": "061214500",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485977,
+  "lat": -34.4934094,
+  "lon": -58.5003621,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "139",
+    "addr:postcode": "1640",
+    "addr:street": "Edison",
+    "amenity": "school",
+    "check_date": "2026-01-09",
+    "email": "mallinckrodtprimaria@gmail.com",
+    "name": "Instituto Mallinckrodt",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-7111",
+    "ref:cue": "061214300",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485979,
+  "lat": -34.4929286,
+  "lon": -58.5099444,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "838",
+    "addr:postcode": "1640",
+    "addr:street": "Rodríguez Peña",
+    "amenity": "kindergarten",
+    "check_date": "2025-01-31",
+    "email": "direccioninicial@stateresa.edu.ar; secretariainicial@stateresa.edu.ar",
+    "isced:level": "0",
+    "name": "Jardín de Infantes Sta.Teresa del Niño Jesus",
+    "operator:type": "privado",
+    "phone": "+54 11 4508-8509",
+    "ref:cue": "061209100",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485980,
+  "lat": -34.4928806,
+  "lon": -58.5098465,
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "765",
+    "addr:postcode": "1640",
+    "addr:street": "Rodríguez Peña",
+    "amenity": "school",
+    "check_date": "2025-01-31",
+    "email": "secretariasecundaria@stateresa.edu.ar; direcciongeneral@stateresa.edu.ar",
+    "name": "Instituto Sta.Teresa del Niño Jesus",
+    "operator:type": "privado",
+    "phone": "+54 11 4508-8518",
+    "ref:cue": "061208400",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485982,
+  "lat": -34.4930128,
+  "lon": -58.5053626,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "450",
+    "addr:postcode": "1640",
+    "addr:street": "Vélez Sarsfield",
+    "amenity": "school",
+    "email": "colegiosanjosedemartinez@gmail.comr; adsanjose2010@yahoo.com.ar",
+    "name": "Colegio San Jose",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-7799",
+    "ref:cue": "061214200",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 10285485983,
+  "lat": -34.4923811,
+  "lon": -58.5042214,
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "368",
+    "addr:postcode": "1640",
+    "addr:street": "Vélez Sarsfield",
+    "amenity": "kindergarten",
+    "email": "jardinmecki@yahoo.com.ar",
+    "isced:level": "0",
+    "name": "Jardín Maternal Mecki",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-6907",
+    "ref:cue": "061712300",
+    "source": "Padrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "node",
+  "id": 11081029742,
+  "lat": -34.5123593,
+  "lon": -58.5013599,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Pelliza y General Paz",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 11081032754,
+  "lat": -34.5132905,
+  "lon": -58.5033125,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Pelliza y España",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 11143282640,
+  "lat": -34.5038337,
+  "lon": -58.5046108,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Díaz Vélez y Chacabuco",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 11765173451,
+  "lat": -34.5065644,
+  "lon": -58.5040749,
+  "tags": {
+    "shop": "butcher"
+  }
+},
+{
+  "type": "node",
+  "id": 12583744887,
+  "lat": -34.5120468,
+  "lon": -58.5079949,
+  "tags": {
+    "bench": "no",
+    "bin": "no",
+    "highway": "bus_stop",
+    "name": "Goyena y Acassuso",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12583744890,
+  "lat": -34.5116175,
+  "lon": -58.5097477,
+  "tags": {
+    "bench": "no",
+    "bin": "no",
+    "highway": "bus_stop",
+    "name": "San Lorenzo y Fray Sarmiento",
+    "public_transport": "platform",
+    "shelter": "no",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13203216355,
+  "lat": -34.5163137,
+  "lon": -58.4962660,
+  "tags": {
+    "addr:housenumber": "2099",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "check_date": "2025-10-08",
+    "name": "Rex",
+    "opening_hours": "Mo-Sa 08:00-21:00; Su,PH off",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "butcher",
+    "website": "https://www.res.com.ar",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 13513041987,
+  "lat": -34.4967573,
+  "lon": -58.5184707,
+  "tags": {
+    "addr:housenumber": "1483",
+    "addr:street": "Rodríguez Peña",
+    "amenity": "clinic",
+    "check_date": "2026-01-29",
+    "healthcare": "clinic",
+    "name": "Instituto Médico Rodriguez Peña"
+  }
+},
+{
+  "type": "node",
+  "id": 13661390404,
+  "lat": -34.5109675,
+  "lon": -58.5137956,
+  "tags": {
+    "amenity": "pharmacy",
+    "check_date": "2026-03-19",
+    "healthcare": "pharmacy"
+  }
+},
+{
+  "type": "node",
+  "id": 13661390405,
+  "lat": -34.5095272,
+  "lon": -58.5147467,
+  "tags": {
+    "addr:housenumber": "3209",
+    "addr:postcode": "B1636",
+    "addr:street": "Debenedetti",
+    "check_date": "2026-03-19",
+    "leisure": "fitness_centre",
+    "name": "Olivos Fit House",
+    "opening_hours": "Mo-Fr 08:00-22:00; Sa 09:00-14:00; Su off",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13661390406,
+  "lat": -34.5090032,
+  "lon": -58.5142547,
+  "tags": {
+    "addr:housenumber": "3911",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Francisco Uzal",
+    "check_date": "2026-03-19",
+    "internet_access": "no",
+    "name": "Buen Futuro",
+    "shop": "supermarket",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13661390407,
+  "lat": -34.5128270,
+  "lon": -58.5127719,
+  "tags": {
+    "addr:housenumber": "3505",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Francisco Uzal",
+    "amenity": "marketplace",
+    "check_date": "2026-03-19",
+    "name": "Los Mellizos"
+  }
+},
+{
+  "type": "node",
+  "id": 13968757092,
+  "lat": -34.5080946,
+  "lon": -58.5235264,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Galicia",
+    "brand:wikidata": "Q5717952",
+    "check_date": "2026-06-25",
+    "name": "Galicia"
+  }
+},
+{
+  "type": "way",
+  "id": 29995307,
+  "center": {
+    "lat": -34.4927021,
+    "lon": -58.5096353
+  },
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "765",
+    "addr:postcode": "1640",
+    "addr:street": "Rodríguez Peña",
+    "amenity": "school",
+    "check_date": "2025-01-31",
+    "email": "educacionprimaria@stateresa.edu.ar",
+    "name": "Colegio Santa Teresa del Niño Jesus",
+    "operator:type": "privado",
+    "phone": "+54 11 4508-8508",
+    "ref:cue": "061212700",
+    "source": "PPadrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "way",
+  "id": 77287317,
+  "center": {
+    "lat": -34.5150143,
+    "lon": -58.5056587
+  },
+  "tags": {
+    "barrier": "fence",
+    "leisure": "park",
+    "name": "San Héctor Valdivieso Sáez"
+  }
+},
+{
+  "type": "way",
+  "id": 185885729,
+  "center": {
+    "lat": -34.5044999,
+    "lon": -58.4936571
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3393",
+    "addr:postcode": "B1637",
+    "addr:street": "Avenida Maipú",
+    "brand": "Carrefour Market",
+    "brand:wikidata": "Q2689639",
+    "brand:wikipedia": "fr:Carrefour Market",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-12-07",
+    "delivery": "yes",
+    "name": "Carrefour Market",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016;local knowledge",
+    "website": "https://www.carrefour.com.ar/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 185904362,
+  "center": {
+    "lat": -34.5044711,
+    "lon": -58.4945155
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3402",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "name": "La Preferida",
+    "phone": "+54 11 4799 2272",
+    "shop": "bakery",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 203785208,
+  "center": {
+    "lat": -34.4931942,
+    "lon": -58.5050458
+  },
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "450",
+    "addr:postcode": "1640",
+    "addr:street": "Vélez Sarsfield",
+    "amenity": "school",
+    "email": "secretaria4685@gmail.com",
+    "name": "Instituto San Jose",
+    "operator:type": "privado",
+    "phone": "+54 11 4792-7799",
+    "ref:cue": "061221200",
+    "source": "PPadrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "way",
+  "id": 206779853,
+  "center": {
+    "lat": -34.4932150,
+    "lon": -58.5006925
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "Colegio Mallinckrodt"
+  }
+},
+{
+  "type": "way",
+  "id": 360554384,
+  "center": {
+    "lat": -34.5070411,
+    "lon": -58.5004821
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3510",
+    "addr:postcode": "B1636",
+    "addr:street": "Nicolás Avellaneda",
+    "amenity": "school",
+    "name": "Escuela 15 - Estanislao Zeballos",
+    "official_name": "Escuela Primaria Nº 15 Estanislao Severo Zeballos",
+    "phone": "+54 11 4799-5759"
+  }
+},
+{
+  "type": "way",
+  "id": 379075445,
+  "center": {
+    "lat": -34.5058377,
+    "lon": -58.4907436
+  },
+  "tags": {
+    "addr:housenumber": "1248",
+    "addr:street": "Roma",
+    "amenity": "school",
+    "check_date": "2026-01-05",
+    "isced:level": "2",
+    "name": "Northlands School",
+    "phone": "+54 11 4711-8400",
+    "website": "https://www.northlands.edu.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 379076649,
+  "center": {
+    "lat": -34.5049545,
+    "lon": -58.4913520
+  },
+  "tags": {
+    "addr:housenumber": "1248",
+    "addr:street": "Roma",
+    "amenity": "school",
+    "isced:level": "0;1",
+    "name": "Northlands School",
+    "phone": "+54 11 4711-8400",
+    "website": "https://www.northlands.edu.ar/",
+    "wikidata": "Q7059556",
+    "wikipedia": "es:Northlands School"
+  }
+},
+{
+  "type": "way",
+  "id": 464025046,
+  "center": {
+    "lat": -34.4978128,
+    "lon": -58.5194959
+  },
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "1944",
+    "addr:postcode": "1640",
+    "addr:street": "Avenida Sir Alexander Fleming",
+    "amenity": "bank",
+    "atm": "no",
+    "branch": "5145",
+    "brand": "Banco Provincia",
+    "brand:wikidata": "Q4856209",
+    "brand:wikipedia": "es:Banco de la Provincia de Buenos Aires",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-02-16",
+    "check_date:opening_hours": "2022-10-27",
+    "internet_access": "no",
+    "name": "Banco Provincia",
+    "official_name": "Banco de la Provincia de Buenos Aires",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa,Su off",
+    "phone": "+54 11 4792-4046",
+    "source": "Reconocimiento terrestre por Kaart 2016;local knowledge",
+    "website": "https://www.bancoprovincia.com.ar/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 464165890,
+  "center": {
+    "lat": -34.4979095,
+    "lon": -58.5189553
+  },
+  "tags": {
+    "addr:housenumber": "1547",
+    "addr:street": "Hipólito Yrigoyen",
+    "amenity": "bank",
+    "branch": "Martinez",
+    "brand": "Credicoop",
+    "brand:wikidata": "Q4854086",
+    "brand:wikipedia": "en:Banco Credicoop",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-02-16",
+    "internet_access": "no",
+    "name": "Credicoop",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su off",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 465555160,
+  "center": {
+    "lat": -34.5016002,
+    "lon": -58.5173301
+  },
+  "tags": {
+    "addr:city": "Martinez",
+    "addr:housenumber": "1596",
+    "addr:postcode": "B1640",
+    "addr:street": "Edison",
+    "amenity": "school",
+    "check_date": "2025-11-26",
+    "education": "school",
+    "email": "ep14martinez@gmail.co;opp0960014@abc.gov.ar",
+    "name": "Escuela de Educación Primaria nº 14 Pte.Rivadavia",
+    "operator:type": "public",
+    "phone": "+54 11 4792-7369",
+    "ref:cue": "061220000",
+    "religion": "none",
+    "source": "PPadrón Oficial de Establecimientos Educativos;https://catalogo.datos.gba.gob.ar/dataset/establecimientos-educativos/archivo/08a49256-620d-4d75-9a40-6f57df3be830"
+  }
+},
+{
+  "type": "way",
+  "id": 465569723,
+  "center": {
+    "lat": -34.4985430,
+    "lon": -58.4990307
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:street": "Paraná",
+    "amenity": "childcare",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "El Patito Coletón",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 465636200,
+  "center": {
+    "lat": -34.5026122,
+    "lon": -58.5078828
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2490",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "building": "yes",
+    "building:levels": "1",
+    "check_date": "2026-03-12",
+    "name": "Supermercado Martín",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 465645102,
+  "center": {
+    "lat": -34.5007625,
+    "lon": -58.4957379
+  },
+  "tags": {
+    "addr:city": "Vicente López",
+    "addr:housenumber": "3811",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Supermercado Lotus",
+    "phone": "+54 11 4711-3463",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 465645111,
+  "center": {
+    "lat": -34.5024698,
+    "lon": -58.5082343
+  },
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2501",
+    "addr:postcode": "B1636",
+    "addr:street": "Paraná",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2026-03-12",
+    "delivery": "yes",
+    "name": "Cielito Mío",
+    "opening_hours": "07:00-21:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+5491147936218",
+    "shop": "bakery",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "takeaway": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 465956798,
+  "center": {
+    "lat": -34.5146205,
+    "lon": -58.5057083
+  },
+  "tags": {
+    "addr:street": "Mariano Pelliza",
+    "amenity": "police",
+    "building": "yes",
+    "check_date": "2026-05-17",
+    "name": "Patrulla Policía",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 465959542,
+  "center": {
+    "lat": -34.5106963,
+    "lon": -58.4970899
+  },
+  "tags": {
+    "addr:street": "Mariano Pelliza",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "La Nueva Pelliza",
+    "shop": "bakery",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 465959543,
+  "center": {
+    "lat": -34.5106874,
+    "lon": -58.4969886
+  },
+  "tags": {
+    "addr:street": "Mariano Pelliza",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Supermercado Cosmos",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 466735604,
+  "center": {
+    "lat": -34.5067411,
+    "lon": -58.4932748
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "building:levels": "1",
+    "name": "Berna",
+    "shop": "bakery",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 466743691,
+  "center": {
+    "lat": -34.5208765,
+    "lon": -58.5194881
+  },
+  "tags": {
+    "addr:housenumber": "4398",
+    "addr:street": "Mariano Pelliza",
+    "amenity": "pharmacy",
+    "building": "yes",
+    "check_date": "2026-06-28",
+    "contact:phone": "+54 11 4756-5489",
+    "drive_through": "no",
+    "name": "Farmacia Pelliza",
+    "opening_hours": "Mo-Sa 09:00-21:00; Su off",
+    "payment:cabal": "yes",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:maestro": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "payment:visa_debit": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "way",
+  "id": 466744442,
+  "center": {
+    "lat": -34.5133137,
+    "lon": -58.5038050
+  },
+  "tags": {
+    "addr:housenumber": "2721",
+    "addr:street": "Mariano Pelliza",
+    "building": "yes",
+    "check_date": "2026-10-19",
+    "name": "Supermercado Grupo Ángel",
+    "opening_hours": "09:00-14:00,17:00-21:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 466749331,
+  "center": {
+    "lat": -34.5114610,
+    "lon": -58.5193315
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3663",
+    "addr:postcode": "B1636",
+    "addr:street": "Blas Parera",
+    "amenity": "clinic",
+    "building": "yes",
+    "building:levels": "3",
+    "check_date": "2026-03-21",
+    "healthcare": "clinic",
+    "name": "Sialar",
+    "website": "https://sialar.com"
+  }
+},
+{
+  "type": "way",
+  "id": 466750389,
+  "center": {
+    "lat": -34.5187071,
+    "lon": -58.5164281
+  },
+  "tags": {
+    "addr:full": "Esteban Echeverrìa 3150",
+    "addr:housenumber": "3150",
+    "addr:postcode": "1605",
+    "addr:street": "Esteban Echeverría",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Sanatorio Mariano Pelliza",
+    "operator:type": "private",
+    "phone": "+54 11 47564440",
+    "ref:sisa_codigo": "10068612304994",
+    "ref:sisa_tipologia": "ESCIG"
+  }
+},
+{
+  "type": "way",
+  "id": 466761042,
+  "center": {
+    "lat": -34.5145691,
+    "lon": -58.4927031
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "1787",
+    "addr:postcode": "1636",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "amenity": "childcare",
+    "building": "yes",
+    "name": "Jardín de Infantes N° 906 Los Horneros",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 467216263,
+  "center": {
+    "lat": -34.5158024,
+    "lon": -58.4952229
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:postcode": "B1636",
+    "addr:street": "Gobernador Manuel Ugarte",
+    "amenity": "pharmacy",
+    "building": "yes",
+    "building:levels": "1",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Del Río",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 467220561,
+  "center": {
+    "lat": -34.5125263,
+    "lon": -58.4886039
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "1441",
+    "addr:postcode": "B1636",
+    "addr:street": "Corrientes",
+    "amenity": "school",
+    "name": "Escuela N° 1 Vicente López y Planes",
+    "phone": "+54 11 4790-6661",
+    "religion": "none",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.secundaria1olivos.edu.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 470806376,
+  "center": {
+    "lat": -34.5034231,
+    "lon": -58.4950788
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3532",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "clinic",
+    "building": "yes",
+    "building:levels": "5",
+    "healthcare": "clinic",
+    "name": "Instituto Lampe",
+    "phone": "+54 11 4790 9659",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 470823677,
+  "center": {
+    "lat": -34.5056997,
+    "lon": -58.4931881
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3267",
+    "addr:postcode": "B1637",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "building:levels": "2",
+    "delivery": "yes",
+    "name": "Supermercado Los Olivos",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016"
+  }
+},
+{
+  "type": "way",
+  "id": 470843305,
+  "center": {
+    "lat": -34.5091314,
+    "lon": -58.4913782
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:street": "Avenida Maipú",
+    "amenity": "library",
+    "building": "yes",
+    "building:levels": "3",
+    "check_date": "2024-12-07",
+    "name": "Biblioteca Popular de Olivos",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 471118625,
+  "center": {
+    "lat": -34.5086848,
+    "lon": -58.4915185
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2949",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "brand": "Dia",
+    "brand:wikidata": "Q925132",
+    "brand:wikipedia": "es:Supermercados DIA",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-12-07",
+    "name": "Dia",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://supermercadosdia.com.ar/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 471118627,
+  "center": {
+    "lat": -34.5094998,
+    "lon": -58.4917631
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2836",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Supervielle",
+    "brand:wikidata": "Q5718035",
+    "brand:wikipedia": "es:Banco Supervielle",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-12-07",
+    "internet_access": "no",
+    "name": "Supervielle",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.supervielle.com.ar/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 471118628,
+  "center": {
+    "lat": -34.5094213,
+    "lon": -58.4918245
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2840",
+    "addr:postcode": "B1636AAV",
+    "addr:street": "Avenida Maipú",
+    "amenity": "police",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-12-07",
+    "designation": "Comisaría 1º de Vicente Lopez",
+    "name": "Comisaría de Olivos",
+    "opening_hours": "24/7",
+    "phone": "+54 11 4513-9797",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 471118630,
+  "center": {
+    "lat": -34.5092308,
+    "lon": -58.4920834
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2894",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "BBVA Argentina",
+    "brand:en": "BBVA France",
+    "brand:fr": "BBVA France",
+    "brand:wikidata": "Q2876788",
+    "brand:wikipedia": "es:BBVA (Argentina)",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2024-12-07",
+    "internet_access": "no",
+    "name": "BBVA Argentina",
+    "name:en": "BBVA France",
+    "name:fr": "BBVA Francés",
+    "old_name": "BBVA Francés",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "phone": "+54 11 4348-0101",
+    "phone:AR": "0800-333-0303",
+    "website": "https://www.bbva.com.ar",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 471125548,
+  "center": {
+    "lat": -34.5117720,
+    "lon": -58.4906441
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "1524",
+    "addr:postcode": "B1636",
+    "addr:street": "Ricardo Gutiérrez",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco Provincia",
+    "brand:en": "Province Bank",
+    "brand:es": "Banco Provincia",
+    "brand:wikidata": "Q4856209",
+    "brand:wikipedia": "es:Banco de la Provincia de Buenos Aires",
+    "building": "yes",
+    "building:levels": "3",
+    "check_date": "2024-12-07",
+    "internet_access": "no",
+    "name": "Banco Provincia",
+    "name:en": "Province Bank",
+    "name:es": "Banco Provincia",
+    "official_name": "Banco de la Provincia de Buenos Aires",
+    "official_name:en": "Bank of the Province of Buenos Aires",
+    "official_name:es": "Banco de la Provincia de Buenos Aires",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "phone": "+54 11 4794 8198",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.bancoprovincia.com.ar/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 471128162,
+  "center": {
+    "lat": -34.5122899,
+    "lon": -58.4894456
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2499",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco Nación",
+    "brand:en": "Nation Bank",
+    "brand:es": "Banco Nación",
+    "brand:wikidata": "Q2883376",
+    "brand:wikipedia": "es:Banco de la Nación Argentina",
+    "building": "yes",
+    "building:levels": "3",
+    "check_date": "2025-05-19",
+    "contact:website": "http://www.bna.com.ar/",
+    "internet_access": "no",
+    "name": "Banco Nación",
+    "name:en": "Nation Bank",
+    "name:es": "Banco Nación",
+    "official_name": "Banco de la Nación Argentina",
+    "official_name:en": "Bank of the Argentine Nation",
+    "official_name:es": "Banco de la Nación Argentina",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "short_name": "BNA",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "http://www.bna.com.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 471132318,
+  "center": {
+    "lat": -34.5125675,
+    "lon": -58.4892696
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2453",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco Santander",
+    "brand:en": "Santander Bank",
+    "brand:wikidata": "Q6496310",
+    "brand:wikipedia": "es:Banco Santander (Argentina)",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2023-11-20",
+    "internet_access": "no",
+    "name": "Banco Santander",
+    "official_name": "Santander Group",
+    "opening_hours": "Mo-Fr 10:00-15:00",
+    "website": "https://www.santander.com.ar"
+  }
+},
+{
+  "type": "way",
+  "id": 471132322,
+  "center": {
+    "lat": -34.5135050,
+    "lon": -58.4888159
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2353",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Galicia",
+    "brand:wikidata": "Q5717952",
+    "brand:wikipedia": "es:Banco Galicia",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2025-05-19",
+    "internet_access": "no",
+    "name": "Galicia",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "phone": "+54 810 777 3333",
+    "source": "Reconocimiento terrestre por Kaart 2016;survey",
+    "website": "https://bancogalicia.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 471132324,
+  "center": {
+    "lat": -34.5133771,
+    "lon": -58.4888344
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2383",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "brand": "Macro",
+    "brand:wikidata": "Q2335199",
+    "brand:wikipedia": "en:Banco Macro",
+    "building": "yes",
+    "check_date": "2025-05-19",
+    "internet_access": "no",
+    "name": "Macro",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+54 11 4790-6456",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.macro.com.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 471143813,
+  "center": {
+    "lat": -34.5149459,
+    "lon": -58.4882033
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2267",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "brand": "Credicoop",
+    "brand:wikidata": "Q4854086",
+    "brand:wikipedia": "en:Banco Credicoop",
+    "building": "yes",
+    "building:levels": "1",
+    "check_date": "2025-05-19",
+    "internet_access": "no",
+    "name": "Credicoop",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "phone": "+54 810 888 4500"
+  }
+},
+{
+  "type": "way",
+  "id": 471575156,
+  "center": {
+    "lat": -34.5153639,
+    "lon": -58.4886918
+  },
+  "tags": {
+    "addr:city": "Vicente López",
+    "addr:housenumber": "2240",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Macro",
+    "brand:wikidata": "Q2335199",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2025-05-19",
+    "internet_access": "no",
+    "name": "Macro",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off"
+  }
+},
+{
+  "type": "way",
+  "id": 471598200,
+  "center": {
+    "lat": -34.5126878,
+    "lon": -58.4899080
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2462",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Galicia",
+    "brand:wikidata": "Q5717952",
+    "building": "yes",
+    "building:levels": "2",
+    "check_date": "2025-05-19",
+    "internet_access": "no",
+    "name": "Galicia",
+    "old_name": "HSBC",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "operator": "Banco Galicia",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 471842880,
+  "center": {
+    "lat": -34.5032023,
+    "lon": -58.4952158
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3548",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "pharmacy",
+    "building": "yes",
+    "building:levels": "2",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Paradiñeiro",
+    "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-21:00",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.paradineirofarmacias.com.ar/farmacia-romani"
+  }
+},
+{
+  "type": "way",
+  "id": 471851637,
+  "center": {
+    "lat": -34.4996996,
+    "lon": -58.4969490
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "3998",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "building:levels": "2",
+    "delivery": "yes",
+    "name": "Campo Urbano",
+    "phone": "+54 11 4790-5790",
+    "shop": "greengrocer"
+  }
+},
+{
+  "type": "way",
+  "id": 472817115,
+  "center": {
+    "lat": -34.5105468,
+    "lon": -58.4911556
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:housenumber": "2710",
+    "addr:postcode": "B1636",
+    "addr:street": "Avenida Maipú",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco Ciudad",
+    "brand:en": "City Bank",
+    "brand:es": "Banco Ciudad",
+    "brand:wikidata": "Q4856204",
+    "brand:wikipedia": "en:Bank of the City of Buenos Aires",
+    "building": "yes",
+    "name": "Banco Ciudad",
+    "name:en": "City Bank",
+    "name:es": "Banco Ciudad",
+    "official_name": "Banco Ciudad de Buenos Aires",
+    "official_name:en": "Bank of the City of Buenos Aires",
+    "official_name:es": "Banco Ciudad de Buenos Aires",
+    "opening_hours": "Mo-Fr 10:00-15:00",
+    "source": "Reconocimiento terrestre por Kaart 2016."
+  }
+},
+{
+  "type": "way",
+  "id": 472818844,
+  "center": {
+    "lat": -34.5086932,
+    "lon": -58.4922692
+  },
+  "tags": {
+    "addr:street": "Avenida Maipú",
+    "amenity": "kindergarten",
+    "building": "yes",
+    "source": "Reconocimiento terrestre por Kaart 2016."
+  }
+},
+{
+  "type": "way",
+  "id": 472819269,
+  "center": {
+    "lat": -34.4972110,
+    "lon": -58.4895524
+  },
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:housenumber": "3785",
+    "addr:postcode": "1636",
+    "addr:street": "Doctor Guillermo Rawson",
+    "amenity": "pharmacy",
+    "building": "yes",
+    "healthcare": "pharmacy",
+    "name": "Selma - Tu Farmacia de Cabecera",
+    "website": "https://selmadigital.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 473066528,
+  "center": {
+    "lat": -34.5021936,
+    "lon": -58.4948914
+  },
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:housenumber": "3619",
+    "addr:postcode": "1636",
+    "addr:street": "Avenida Maipú",
+    "building": "yes",
+    "check_date": "2023-09-30",
+    "name": "Gran City",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "shop": "supermarket",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "survey:date": "2022-07-23",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 473071475,
+  "center": {
+    "lat": -34.4986741,
+    "lon": -58.4889359
+  },
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:housenumber": "3602",
+    "addr:postcode": "1636",
+    "addr:street": "Doctor Guillermo Rawson",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Banco Ciudad",
+    "brand:en": "City Bank",
+    "brand:es": "Banco Ciudad",
+    "brand:wikidata": "Q4856204",
+    "brand:wikipedia": "en:Bank of the City of Buenos Aires",
+    "building": "yes",
+    "name": "Banco Ciudad",
+    "name:en": "City Bank",
+    "name:es": "Banco Ciudad",
+    "official_name": "Banco Ciudad de Buenos Aires",
+    "official_name:en": "Bank of the City of Buenos Aires",
+    "official_name:es": "Banco Ciudad de Buenos Aires",
+    "phone": "0800 222 0400",
+    "source": "Reconocimiento terrestre por Kaart 2016.",
+    "website": "https://www.bancociudad.com.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 473072926,
+  "center": {
+    "lat": -34.4938516,
+    "lon": -58.4986222
+  },
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:country": "AR",
+    "addr:housenumber": "2477",
+    "addr:postcode": "B1640",
+    "addr:province": "Buenos Aires",
+    "addr:street": "Avenida Santa Fe",
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Galicia",
+    "brand:wikidata": "Q5717952",
+    "brand:wikipedia": "es:Banco Galicia",
+    "building": "yes",
+    "building:levels": "1",
+    "check_date": "2025-11-24",
+    "internet_access": "no",
+    "name": "Galicia",
+    "opening_hours": "Mo-Fr 10:00-15:00; Sa-Su,PH off",
+    "source": "Reconocimiento terrestre por Kaart 2016",
+    "website": "https://www.bancogalicia.com/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 507857395,
+  "center": {
+    "lat": -34.5095862,
+    "lon": -58.4873103
+  },
+  "tags": {
+    "addr:city": "Olivos",
+    "addr:postcode": "1636",
+    "amenity": "school",
+    "name": "Instituto Jesús en el Huerto de los Olivos",
+    "website": "https://www.jho.gejho.org/"
+  }
+},
+{
+  "type": "way",
+  "id": 507857403,
+  "center": {
+    "lat": -34.5029521,
+    "lon": -58.4917952
+  },
+  "tags": {
+    "addr:city": "La Lucila",
+    "addr:housenumber": "3329",
+    "addr:postcode": "1636",
+    "addr:street": "José Manuel Estrada",
+    "amenity": "school",
+    "name": "Colegio St Nicholas Primaria",
+    "website": "https://www.csn.edu.ar/"
+  }
+},
+{
+  "type": "way",
+  "id": 509011300,
+  "center": {
+    "lat": -34.5166907,
+    "lon": -58.5005120
+  },
+  "tags": {
+    "addr:housenumber": "2365",
+    "addr:street": "Entre Ríos",
+    "branch": "Olivos",
+    "check_date": "2025-10-09",
+    "club": "sport",
+    "leisure": "sports_centre",
+    "name": "Tenis Club Argentino",
+    "opening_hours": "08:00-20:00",
+    "website": "https://tenisclubargentino.com"
+  }
+},
+{
+  "type": "way",
+  "id": 509011303,
+  "center": {
+    "lat": -34.4970820,
+    "lon": -58.5009580
+  },
+  "tags": {
+    "club": "yes",
+    "leisure": "sports_centre",
+    "name": "El Plata Tenis Club"
+  }
+},
+{
+  "type": "way",
+  "id": 520667145,
+  "center": {
+    "lat": -34.5090993,
+    "lon": -58.4882903
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 673007061,
+  "center": {
+    "lat": -34.5145579,
+    "lon": -58.5042231
+  },
+  "tags": {
+    "addr:housenumber": "2443",
+    "addr:street": "Coronel Manuel Dorrego",
+    "check_date": "2026-10-19",
+    "leisure": "sports_centre",
+    "name": "Campo Municipal de Deportes N° 1",
+    "operator:type": "public",
+    "sport": "football;soccer;swimming;gymnastics"
+  }
+},
+{
+  "type": "way",
+  "id": 1311897819,
+  "center": {
+    "lat": -34.5014284,
+    "lon": -58.5180862
+  },
+  "tags": {
+    "addr:city": "Martínez",
+    "addr:housenumber": "2385",
+    "addr:postcode": "B1640",
+    "addr:street": "Avenida Sir Alexander Fleming",
+    "building": "yes",
+    "check_date": "2025-11-26",
+    "leisure": "fitness_centre",
+    "name": "Keep Fit",
+    "opening_hours": "Mo-Fr 07:00-22:00; Sa 09:00-14:00; Su off",
+    "sport": "running;fitness"
+  }
+},
+{
+  "type": "way",
+  "id": 1434864454,
+  "center": {
+    "lat": -34.5032383,
+    "lon": -58.4927427
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1460823145,
+  "center": {
+    "lat": -34.5139022,
+    "lon": -58.5041140
+  },
+  "tags": {
+    "addr:housenumber": "2786",
+    "addr:street": "Mariano Pelliza",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Hospital Geriatrico Municipal \"Rodriguez Ortega\""
+  }
+},
+{
+  "type": "relation",
+  "id": 2498993,
+  "center": {
+    "lat": -34.5090993,
+    "lon": -58.4882903
+  },
+  "tags": {
+    "amenity": "school",
+    "building": "yes",
+    "name": "Escuela Municipal Paula Albarracín de Sarmiento",
+    "type": "multipolygon",
+    "website": "https://escuelas.mvl.edu.ar/empas/"
+  }
+},
+{
+  "type": "relation",
+  "id": 2499200,
+  "center": {
+    "lat": -34.5705858,
+    "lon": -58.4350392
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Terminal Olivos",
+    "name": "Línea 152: Olivos → La Boca",
+    "network": "Nacional",
+    "note": "Algunos salen de estacion Mitre",
+    "opening_hours": "24/7",
+    "operator": "Empresa Tandilense S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "152",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "La Boca",
+    "type": "route",
+    "via": "Avenida Cabildo",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 2499214,
+  "center": {
+    "lat": -34.5701875,
+    "lon": -58.4350954
+  },
+  "tags": {
+    "colour": "blue",
+    "description": "La Boca - Retiro - Plaza Italia - Puente Saavedra - Olivos",
+    "fee": "yes",
+    "from": "La Boca",
+    "name": "Línea 152: La Boca → Olivos",
+    "network": "Nacional",
+    "note": "Algunos terminan en estacion mitre",
+    "operator": "Empresa Tandilense S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "152",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Terminal Olivos",
+    "type": "route",
+    "via": "Avenida Cabildo",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3789149,
+  "center": {
+    "lat": -34.5539732,
+    "lon": -58.4757922
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Estación Villa Adelina",
+    "name": "Línea 71: Villa Adelina → x Maipú → Once",
+    "network": "Nacional",
+    "operator": "Línea 71 S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "71M",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Plaza Miserere",
+    "type": "route",
+    "via": "Maipú",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3789508,
+  "center": {
+    "lat": -34.5534138,
+    "lon": -58.4746145
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Plaza Miserere",
+    "name": "Línea 71: Once → x Maipú → Villa Adelina",
+    "network": "Nacional",
+    "operator": "Línea 71 S.A.",
+    "payment:sube": "only",
+    "public_transport:version": "2",
+    "ref": "71M",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Estación Villa Adelina",
+    "type": "route",
+    "via": "Maipú",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3790296,
+  "center": {
+    "lat": -34.5534138,
+    "lon": -58.4746145
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Plaza Miserere",
+    "name": "Línea 71: Once → x Congreso y Maipú → Villa Adelina",
+    "network": "Nacional",
+    "operator": "Línea 71 S.A.",
+    "payment:sube": "only",
+    "public_transport:version": "2",
+    "ref": "71C",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Estación Villa Adelina",
+    "type": "route",
+    "via": "Maipu;Congreso",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3790297,
+  "center": {
+    "lat": -34.5539732,
+    "lon": -58.4757922
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Estación Villa Adelina",
+    "name": "Línea 71: Villa Adelina → x Maipú → x Congreso → Once",
+    "network": "Nacional",
+    "operator": "Línea 71 S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "71C",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Plaza Miserere",
+    "type": "route",
+    "via": "Maipu;Congreso",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3807303,
+  "center": {
+    "lat": -34.5714386,
+    "lon": -58.4516269
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Ex Estación Buenos Aires",
+    "name": "Línea 59 - Ramal 1: Barracas →x La Lucila→ Munro",
+    "network": "Nacional",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-1",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Terminal Línea 59",
+    "type": "route",
+    "via": "Estación La Lucila",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3807504,
+  "center": {
+    "lat": -34.5714386,
+    "lon": -58.4513376
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Terminal Línea 59",
+    "name": "Línea 59 - Ramal 1: Munro → Barracas",
+    "network": "Nacional",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-1",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Estación Buenos Aires",
+    "type": "route",
+    "via": "Estación La Lucila",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3822017,
+  "center": {
+    "lat": -34.5766020,
+    "lon": -58.4516269
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Ex Estación Buenos Aires",
+    "name": "Línea 59 - Ramal 2: Barracas →x Barrio Golf→ Munro",
+    "network": "Nacional",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-2",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Terminal Línea 59",
+    "type": "route",
+    "via": "Barrio Golf",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 3822018,
+  "center": {
+    "lat": -34.5772505,
+    "lon": -58.4513376
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Terminal Línea 59",
+    "name": "Línea 59 - Ramal 2: Munro → Barracas",
+    "network": "Nacional",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-2",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Estación Buenos Aires",
+    "type": "route",
+    "via": "Barrio Golf",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 4078789,
+  "center": {
+    "lat": -34.5713381,
+    "lon": -58.5020515
+  },
+  "tags": {
+    "colour": "#0079ef",
+    "from": "Cementerio de Olivos",
+    "name": "Línea 21: Cementerio de Olivos → Vicente López → Liniers",
+    "network": "Nacional",
+    "operator": "Empresa de Transporte Teniente General Roca S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "21VL",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Liniers",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 4078796,
+  "center": {
+    "lat": -34.5733012,
+    "lon": -58.5006894
+  },
+  "tags": {
+    "colour": "#0079ef",
+    "fee": "yes",
+    "from": "Liniers",
+    "name": "Línea 21: Liniers → Vicente López → Cementerio de Olivos",
+    "network": "Nacional",
+    "operator": "Empresa de Transporte Teniente General Roca S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "21VL",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "all_stops",
+    "to": "Cementerio de Olivos",
+    "type": "route",
+    "via": "Vicente López",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 4308166,
+  "center": {
+    "lat": -34.5582414,
+    "lon": -58.4828024
+  },
+  "tags": {
+    "colour": "red",
+    "fee": "yes",
+    "from": "Plaza Miserere",
+    "name": "Línea 19: Once → Boulogne",
+    "network": "Nacional",
+    "opening_hours": "24/7",
+    "operator": "ERSA",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "19",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Boulogne",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 4425961,
+  "center": {
+    "lat": -34.5571712,
+    "lon": -58.4835705
+  },
+  "tags": {
+    "colour": "red",
+    "fee": "yes",
+    "from": "Boulogne",
+    "name": "Línea 19: Boulogne → Once",
+    "network": "Nacional",
+    "operator": "ERSA",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "19",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "to": "Plaza Miserere",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 13887202,
+  "center": {
+    "lat": -34.5772505,
+    "lon": -58.4509278
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Terminal Línea 59",
+    "name": "Línea 59 - Ramal 2 Autopista: Munro →x Barrio Golf → Barracas",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 06:00-09:00",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-2A",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "Ex Estación Buenos Aires",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 13887371,
+  "center": {
+    "lat": -34.5766020,
+    "lon": -58.4516269
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Ex Estación Buenos Aires",
+    "name": "Línea 59 - Ramal 2 Autopista: Barracas →x Barrio Golf → Munro",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 18:00-21:00",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-2A",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "Terminal Línea 59",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 13945386,
+  "center": {
+    "lat": -34.5701875,
+    "lon": -58.4350954
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "La Boca",
+    "interval": "10",
+    "name": "Línea 152 - Semirápido: La Boca → x Autopista Illia → Olivos",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 17:30-19:00",
+    "operator": "Empresa Tandilense S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "152S",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "Terminal Olivos",
+    "type": "route",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 13945387,
+  "center": {
+    "lat": -34.5705858,
+    "lon": -58.4350392
+  },
+  "tags": {
+    "colour": "blue",
+    "fee": "yes",
+    "from": "Terminal Olivos",
+    "interval": "10",
+    "name": "Línea 152 - Semirápido: Olivos → x Autopista Illia→ La Boca",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 06:30-10:00",
+    "operator": "Empresa Tandilense S.A.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "152S",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "La Boca",
+    "type": "route",
+    "via": "Autopista Illia",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 20572684,
+  "center": {
+    "lat": -34.5714386,
+    "lon": -58.4516269
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Ex Estación Buenos Aires",
+    "name": "Línea 59 - Ramal 1 Autopista: Barracas →x La Lucila→ Munro",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 18:00-21:00",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-1A",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "Terminal Línea 59",
+    "type": "route",
+    "via": "Estación La Lucila",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "relation",
+  "id": 20572685,
+  "center": {
+    "lat": -34.5714386,
+    "lon": -58.4509278
+  },
+  "tags": {
+    "colour": "green",
+    "fee": "yes",
+    "from": "Terminal Línea 59",
+    "name": "Línea 59 - Ramal 1 Autopista: Munro → Barracas",
+    "network": "Nacional",
+    "opening_hours": "Mo-Fr 06:00-09:00",
+    "operator": "Microómnibus Ciudad de Buenos Aires S.A.T.C.I.",
+    "payment:apple_pay": "yes",
+    "payment:contactless": "yes",
+    "payment:google_pay": "yes",
+    "payment:mastercard_contactless": "yes",
+    "payment:mercado_pago_qr": "yes",
+    "payment:qr_code": "yes",
+    "payment:sube": "yes",
+    "payment:sube_app": "yes",
+    "payment:sube_qr": "yes",
+    "payment:visa_contactless": "yes",
+    "public_transport:version": "2",
+    "ref": "59-1A",
+    "reservation": "no",
+    "route": "bus",
+    "scope": "urban",
+    "stopping_pattern": "limited",
+    "to": "Ex Estación Buenos Aires",
+    "type": "route",
+    "via": "Estación La Lucila",
+    "wheelchair": "yes"
+  }
+}
+
+  ]
+}
