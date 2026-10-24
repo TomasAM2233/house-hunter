@@ -46,13 +46,28 @@ jobs:
           python -u run.py $ARGS 2>&1 | tee data/last_run.txt
       - run: python build.py
       - name: Commit data
+        if: always()
         run: |
           git config user.name "house-hunter-bot"
           git config user.email "house-hunter-bot@users.noreply.github.com"
           git add data web
-          git diff --cached --quiet || git commit -m "hunt: $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase -X theirs origin main   # the app may have saved tags or preferences meanwhile
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -qm "hunt: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git push -q && exit 0
+            # someone pushed meanwhile (code, or tags/preferences saved from the app): replay on top, ours wins on data
+            git fetch -q origin main
+            if ! git rebase -q -X theirs origin/main; then
+              # fall back: take main as it is and lay this run's outputs on top
+              git rebase --abort
+              OUT="data/listings.json data/ai_cache.json data/ai_final.json data/geocode_cache.json data/last_run.txt data/ai_pending web/listings.json"
+              mkdir -p /tmp/out && cp -r --parents $OUT /tmp/out/ 2>/dev/null || true
+              git reset -q --hard origin/main
+              cp -r /tmp/out/. . && python build.py && git add data web
+              git commit -qm "hunt: $(date -u +%Y-%m-%dT%H:%MZ)"
+            fi
+          done
+          exit 1
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web

@@ -3,7 +3,7 @@
 Provider: Google Gemini free tier (set GEMINI_API_KEY). Without a key, listings are queued in
 data/ai_pending/ as a photo contact sheet + text, so any vision model (or a human) can fill them in
 and save the answer with save_result()."""
-import base64, hashlib, io, json, os, time
+import base64, hashlib, io, json, os, re, time
 import requests
 from PIL import Image
 from . import config
@@ -125,16 +125,33 @@ def _gemini(listing):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
         parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(buf.getvalue()).decode()}})
-    body = {"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
-    for attempt in range(4):
-        r = requests.post(url, json=body, timeout=120)
+    return _call({"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 120)
+
+
+EXHAUSTED = None  # set to the error once the free quota runs out, so the rest of the run doesn't wait on it
+
+
+def _call(body, timeout):
+    global EXHAUSTED
+    if EXHAUSTED:
+        raise RuntimeError(EXHAUSTED)
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={os.environ['GEMINI_API_KEY']}"
+    for attempt in range(3):
+        r = requests.post(url, json=body, timeout=timeout)
         if r.status_code == 429:
-            time.sleep(30 * (attempt + 1))
+            daily = "PerDay" in r.text
+            if daily or attempt == 2:
+                EXHAUSTED = f"Gemini quota used up ({'daily' if daily else 'per minute'}): {r.text[:300]}"
+                raise RuntimeError(EXHAUSTED)
+            wait = re.search(r'"retryDelay":\s*"(\d+)', r.text)
+            time.sleep(min(65, int(wait.group(1)) + 1 if wait else 20))
+            continue
+        if r.status_code >= 500:
+            time.sleep(10)
             continue
         r.raise_for_status()
         return json.loads(_text(r.json()))
-    raise RuntimeError("Gemini rate limit")
+    raise RuntimeError(f"Gemini unavailable: HTTP {r.status_code}")
 
 
 FINAL = os.path.join(ROOT, "data", "ai_final.json")
@@ -173,20 +190,9 @@ def final(listing, prefs, note="", compute=True, log=print):
     key = os.environ.get("GEMINI_API_KEY")
     if not compute or not key:
         return hit  # stale verdict is better than none until the next run with a key
-    body = {"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
-            "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
     try:
-        for attempt in range(4):
-            r = requests.post(url, json=body, timeout=90)
-            if r.status_code == 429:
-                time.sleep(30 * (attempt + 1))
-                continue
-            r.raise_for_status()
-            res = json.loads(_text(r.json()))
-            break
-        else:
-            raise RuntimeError("Gemini rate limit")
+        res = _call({"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
+                     "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 90)
         brief = str(res.get("brief") or "").strip()
         if len(brief) > config.BRIEF_MAX_CHARS:
             brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
@@ -208,11 +214,14 @@ def analyse(listing, log=print):
     if hit:
         return hit
     if os.environ.get("GEMINI_API_KEY"):
+        if EXHAUSTED:
+            return None  # quota's gone for this run; don't spend photo downloads on it
         try:
             res = _gemini(listing)
             time.sleep(6)  # stay under the free tier's requests-per-minute
             return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}")
         except Exception as e:
             log(f"AI failed for {listing['id']}: {e}")
-    queue(listing)
+        return None
+    queue(listing)  # no key: leave a contact sheet for a human or another model
     return None
