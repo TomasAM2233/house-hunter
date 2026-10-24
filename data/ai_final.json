@@ -524,5 +524,63 @@
   "input_key": "1e6234ad92ef",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
+ },
+ "ap-20737250": {
+  "score": 42,
+  "brief": "Son dos viviendas multifamiliares en un lote de 255 m² a USD 199.000, con cochera y 35 m² de patio. A favor: gran espacio y buen precio por m². En contra: servicios compartidos y esquema multifamiliar que no coincide con una casa unifamiliar típica.",
+  "reasons": [
+   "El algoritmo sobreestimó la viabilidad de comprar un inmueble multifamiliar con dos unidades cuando Tomás busca una casa o PH unifamiliar estándar.",
+   "Baja fuerte el puntaje porque la propiedad tiene servicios compartidos (agua) y un formato de dos viviendas, lo que choca con la independencia buscada.",
+   "Ubicación justa al límite de la distancia permitida a Av. Maipú y estación de tren, sumado a que no es apto crédito."
+  ],
+  "input_key": "4a204520112e",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-16522420": {
+  "score": 63,
+  "brief": "Casa en una planta sobre lote propio a 10 cuadras de Maipú. USD 195.000 (USD 1.147/m²) con 170 m² totales, 4 amb, cochera y patio de 25 m².",
+  "reasons": [
+   "Suma 5 puntos porque el precio por m² es excelente y entra cómodo con el presupuesto y reforma.",
+   "Resta 4 puntos por la falta total de fotos del interior, lo que genera dudas sobre el estado real.",
+   "Suma 4 puntos por cumplir con la ubicación a menos de 15 cuadras de Maipú y ser casa en planta baja."
+  ],
+  "input_key": "f43b584fe328",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-20695578": {
+  "score": 40,
+  "brief": "Precio regalado a USD 140.000 por 229 m² totales y 6 dorms, pero está en Boulogne (San Isidro) y no en Vicente López como exigiste. Tiene patio propio de 25 m², cochera doble y apto crédito.",
+  "reasons": [
+   "Incumple el requisito obligatorio de ubicación: la propiedad está en Boulogne y no en Olivos, Florida o La Lucila.",
+   "Baja fuerte el puntaje por estar fuera del partido requerido, a pesar de su excelente precio y metraje."
+  ],
+  "input_key": "72bbebf5c6e6",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "tk-7482985": {
+  "score": 58,
+  "brief": "Casa en Olivos a USD 159.000 con 375 m² totales y 124 m² cubiertos. Excelente precio por metro y gran lote, pero tiene local al frente, reforma estimada alta de 25k USD y queda a casi 15 cuadras de Maipú.",
+  "reasons": [
+   "Sube por un precio excelente y un lote de 375 m² muy por debajo del presupuesto máximo.",
+   "Baja porque el costo de reforma excede ligeramente su tope de USD 20.000.",
+   "Baja por tener local al frente y quedar al límite de su distancia ideal a Maipú."
+  ],
+  "input_key": "d9c4c4e856d2",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "tk-376459": {
+  "score": 42,
+  "brief": "Está a USD 158.000 y 702 USD/m², pero queda en Florida Oeste (zona no buscada entre Mitre y Panamericana), lejos de Maipú o tren. Tiene 225 m² totales pero solo 57 m² cubiertos. Sí tiene patio y cochera.",
+  "reasons": [
+   "Ubicación descartable: queda en Florida Oeste entre Av. Mitre y Panamericana, fuera de Olivos, Florida este o La Lucila, y lejos de Maipú o el tren.",
+   "Espacio muy acotado: aunque el lote es amplio, la superficie cubierta es de apenas 57 m² para 3 ambientes."
+  ],
+  "input_key": "4cc28c73897c",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
  }
 }

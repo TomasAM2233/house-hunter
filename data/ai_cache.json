@@ -2659,5 +2659,159 @@
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "tk-7859094": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualización completa de cocina y baños, pintura general, reparación de manchas de humedad de cimiento/filtraciones e instalación eléctrica nueva.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Amplia terraza propia con sol directo",
+   "Pisos de parquet originales en dormitorios",
+   "Buena superficie total y distribución"
+  ],
+  "red_flags": [
+   "No posee patio propio a nivel del suelo (requisito excluyente)",
+   "Humedad visible en zócalos e instalaciones de época",
+   "Ubicado sobre la calle Pelliza, zona de alto tránsito vehicular"
+  ],
+  "summary": "Aunque el presupuesto de USD 20.000 alcanza para dejarlo impecable y la terraza es excelente, queda descartado porque es un PH en primer piso sin patio en planta baja.",
+  "photos_key": "d63565fe2a61",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "ap-20695578": {
+  "condition": 4,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura general, adecuación de climatización para tantos ambientes y posibles detalles de terminación en baños/cocina tras el reciclado.",
+  "patio": "medium",
+  "patio_m2_est": 25,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Lote propio en zona residencial",
+   "Gran capacidad (6 dormitorios)",
+   "Relación precio/m2 muy competitiva"
+  ],
+  "red_flags": [
+   "Ubicación real en Boulogne (límite Olivos)",
+   "Superficie libre escasa para el tamaño de la casa",
+   "Calidad de reciclado a verificar en detalle"
+  ],
+  "summary": "Es una casa muy amplia y lista para entrar, ideal si buscan muchos cuartos, aunque el patio es más funcional que recreativo por los metros cubiertos que tiene el lote.",
+  "photos_key": "103055707fb0",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "tk-376459": {
+  "condition": 4,
+  "reform_usd": 3500,
+  "reform_notes": "Pintura general, revisión de humedad menor en paredes de dormitorios y mantenimiento de impermeabilización en terraza.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Planta baja sin expensas con cochera y jardín",
+   "Terraza propia con parrilla",
+   "Antigüedad moderna (aprox. 8 años)"
+  ],
+  "red_flags": [
+   "Indicios de humedad ascendente o filtración en dormitorio",
+   "Poco espacio de guardado en general"
+  ],
+  "summary": "Un PH moderno en planta baja con patio, cochera y terraza que está para mudarse ya mismo.",
+  "photos_key": "2cddaf60fbeb",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "tk-7482985": {
+  "condition": 2,
+  "reform_usd": 25000,
+  "reform_notes": "Reciclaje integral de instalaciones, baños, cocina, techos y adaptación del local comercial al frente para integrarlo a la vivienda.",
+  "patio": "small",
+  "patio_m2_est": 10,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Amplio lote propio de 375 m2",
+   "Excelente ubicación en Olivos",
+   "Potencial comercial con local al frente"
+  ],
+  "red_flags": [
+   "Propiedad a reciclar con antigüedad de 70 años",
+   "Incluye local comercial que requiere readaptación",
+   "Presupuesto de reforma superior al límite del comprador"
+  ],
+  "summary": "Es un lote con mucho potencial en Olivos pero la casa está destruida y el presupuesto de reforma se queda corto.",
+  "photos_key": "ed8d1593e892",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "zp-59532919": {
+  "condition": 2,
+  "reform_usd": 35000,
+  "reform_notes": "Requiere una refacción integral: techos, revoques picados por humedad, baños y cocina nuevos, además de adecuar el galpón para uso habitacional.",
+  "patio": "small",
+  "patio_m2_est": 24,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 2,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Gran superficie cubierta con galpón integrado",
+   "Lote propio con patio lateral",
+   "Potencial comercial o profesional"
+  ],
+  "red_flags": [
+   "Humedad generalizada y revoques desprendidos",
+   "Techos con cielorrasos rotos o caídos",
+   "Instalaciones muy antiguas y deterioro estructural visible"
+  ],
+  "summary": "Un PH gigante para hacer a nuevo que se pasa de tu presupuesto de refacción y te exige un laburo chino.",
+  "photos_key": "b846461851b6",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  }
 }
