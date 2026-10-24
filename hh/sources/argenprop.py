@@ -74,7 +74,7 @@ def _card(it):
     }
 
 
-def search(max_pages=15, log=print, newest_only=False):
+def search(max_pages=40, log=print, newest_only=False):
     if newest_only:
         max_pages = NEW_PAGES
     out, failed, page, last = {}, [], 1, 1

@@ -26,20 +26,21 @@ def get(url, tries=5, impersonate="chrome", pause=(1.5, 3.5), blocked=None, via_
     via_api=True sends the request through the unblocking APIs above, in order, when their keys are set.
     render=True asks ScraperAPI for a browser render (10 credits instead of 1); binary=True is for images."""
     if via_api and _routes(url, render, binary):
-        last = None
+        errors = []
         for api in _routes(url, render, binary):
             for attempt in range(2):
                 try:
                     r = requests.get(api, timeout=150)
                 except Exception as e:
-                    last = e
+                    errors.append(f"{api.split('/')[2]}: {str(e)[:80]}")
                     continue
                 if r.status_code == 200 and not (blocked and blocked(r)):
                     return r
-                last = f"HTTP {r.status_code} from {api.split('/')[2]}"
+                errors.append(f"HTTP {r.status_code} from {api.split('/')[2]}")
                 if r.status_code in (401, 403, 404, 422):
                     break
-        raise RuntimeError(f"GET {url} failed: {last}")
+                time.sleep(5 * (attempt + 1))
+        raise RuntimeError(f"GET {url} failed: {'; '.join(errors)}")
     profiles = [impersonate] if isinstance(impersonate, str) else list(impersonate)
     last = None
     for attempt in range(tries):

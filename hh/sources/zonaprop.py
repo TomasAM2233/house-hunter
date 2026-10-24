@@ -1,5 +1,5 @@
 """Zonaprop: search pages embed window.__PRELOADED_STATE__ with full posting data incl. coordinates."""
-import json, re
+import json, re, time
 from bs4 import BeautifulSoup
 from .. import http, config
 
@@ -148,6 +148,18 @@ def search(max_pages=20, log=print, newest_only=False):
         out += items
         log(f"zonaprop page {page}/{total_pages}: {len(items)} listings")
         page += 1
+    if failed:  # the APIs fail in bursts; one slower second pass recovers most pages
+        time.sleep(30)
+        for page in list(failed):
+            try:
+                st = _state(http.get(search_url(page, newest_only), pause=(3, 7), via_api=True).text)["listStore"]
+            except Exception as e:
+                log(f"zonaprop page {page} (retry): {e}")
+                continue
+            out += [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
+            failed.remove(page)
+            log(f"zonaprop page {page}/{total_pages}: recovered on retry")
+            time.sleep(5)
     if failed:
         log(f"zonaprop: pages {failed} were blocked; their listings keep their previous state")
     search.failed_pages = failed

@@ -65,5 +65,7 @@ AGENCIES = [
     {"name": "Jorge Becco Bienes Raíces", "site": "https://www.beccopropiedades.com"},
     {"name": "Darío Martínez Propiedades", "site": "https://www.dmartinezpropiedades.com.ar"},
     {"name": "Basilio Inmobiliaria", "site": "https://www.basilioinmobiliaria.com"},
+    {"name": "Martín Fonseca Propiedades", "site": "https://www.martinfonsecaprop.com"},
+    {"name": "Braulio Inmuebles", "site": "https://www.braulioinmuebles.com"},
     {"name": "Bellagamba", "key": "dd0e6daf8ddc52df5b91f3f57224ac4d752c9db7", "site": "https://bellagamba.com"},
 ]
