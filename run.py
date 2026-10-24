@@ -5,7 +5,7 @@ python run.py --no-scrape     # just rescore what we already have (e.g. after ed
 """
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
 import requests
-from hh import ai, config, geo, http, score
+from hh import ai, config, geo, http, score, text
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -163,6 +163,8 @@ def main():
 
     # geography
     for l in listings.values():
+        if not l.get("price_usd") and text.usd_price(l.get("description")):
+            l["price_usd"] = text.usd_price(l["description"])  # cards that only say "consultar" or show pesos
         if l.get("lat") is None and l.get("geocode_query"):
             ll = geo.geocode(l["geocode_query"])
             if ll:

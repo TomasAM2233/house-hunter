@@ -68,6 +68,10 @@ jobs:
             fi
           done
           exit 1
+      - name: Add map key to the deployed page
+        env:
+          CARTO_API_KEY: ${{ secrets.CARTO_API_KEY }}
+        run: python build.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web

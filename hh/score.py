@@ -18,6 +18,14 @@ def lerp(x, x0, y0, x1, y1):
     return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
 
+def n(x):
+    """Spanish-style whole number for the reasons shown in the app: 204500.0 -> '204.500'."""
+    return "?" if x is None else f"{x:,.0f}".replace(",", ".")
+
+
+PATIO_ES = {"none": "sin patio", "small": "patio chico", "medium": "patio mediano", "large": "patio grande"}
+
+
 def ppm2(l):
     return round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
 
@@ -26,8 +34,8 @@ def hard_filters(l, ai=None):
     """Reasons to discard. Missing data never discards on its own; it's flagged instead."""
     r = []
     p = l.get("price_usd")
-    if p and not (S["price_min"] <= p <= S["price_max"]):
-        r.append(f"precio USD {p:,.0f} fuera de rango")
+    if p and p > S["price_max"]:  # no floor: a cheap house is a find, not a red flag
+        r.append(f"precio USD {n(p)} (más de {n(S['price_max'])})")
     if l.get("type") not in S["types"]:
         r.append(f"tipo '{l.get('type')}'")
     if l.get("total_m2") and l["total_m2"] < S["min_total_m2"]:
@@ -35,8 +43,8 @@ def hard_filters(l, ai=None):
     if l.get("ambientes") and l["ambientes"] < S["min_ambientes"]:
         r.append(f"{l['ambientes']:.0f} ambientes")
     v = ppm2(l)
-    if v and not (S["ppm2_min"] <= v <= S["ppm2_max"]):
-        r.append(f"USD {v:,}/m² fuera de rango")
+    if v and v > S["ppm2_max"]:
+        r.append(f"USD {n(v)}/m² (más de {n(S['ppm2_max'])})")
     g = l.get("geo")
     if g:
         if g["maipu_blocks"] < config.MAIPU_MIN_BLOCKS:
@@ -58,7 +66,7 @@ def hard_filters(l, ai=None):
         if ai.get("pasillo_ph") and l.get("type") == "ph":
             r.append("PH por pasillo / muy alargado")
         if (ai.get("reform_usd") or 0) > config.REFORM_BUDGET_USD * 1.75:
-            r.append(f"reforma estimada USD {ai['reform_usd']:,.0f}")
+            r.append(f"reforma estimada USD {n(ai['reform_usd'])}")
     return r
 
 
@@ -75,21 +83,21 @@ def components(l, ai=None):
         s1 = lerp(eff, 140_000, 1, 250_000, 0)
         v = ppm2(l)
         s2 = lerp(v, 1_000, 1, 2_000, 0) if v else 0.5
-        c["price"] = (0.6 * s1 + 0.4 * s2, f"USD {eff:,.0f} efectivo" + (f" (incl. reforma {reform:,.0f})" if reform else "") + (f", {v:,}/m²" if v else ""))
+        c["price"] = (0.6 * s1 + 0.4 * s2, f"USD {n(eff)} efectivo" + (f" (incl. reforma {n(reform)})" if reform else "") + (f", {n(v)}/m²" if v else ""))
     else:
         c["price"] = (0.3, "sin precio en USD")
 
     # space
     t, cov, amb = l.get("total_m2"), l.get("covered_m2"), l.get("ambientes")
     s = 0.45 * lerp(t or 100, 100, 0, 300, 1) + 0.35 * lerp(cov or 80, 70, 0, 200, 1) + 0.2 * lerp(amb or 3, 3, 0, 6, 1)
-    c["space"] = (s, f"{t or '?'} m² tot, {cov or '?'} cub, {amb or '?'} amb")
+    c["space"] = (s, f"{n(t)} m² tot, {n(cov)} cub, {n(amb)} amb")
 
     # location
     g = l.get("geo")
     if g:
         st = g["station"]
         eff = min(g["maipu_blocks"], st["effective_blocks"])
-        why = f"{g['maipu_blocks']} cuadras a Maipú, {st['blocks']} a est. {st['name']} ({st['line']})"
+        why = f"{n(g['maipu_blocks'])} cuadras a Maipú, {n(st['blocks'])} a est. {st['name']} ({st['line']})"
         c["location"] = (lerp(eff, 4, 1, 8, 0.7) if eff <= 8 else lerp(eff, 8, 0.7, 15, 0), why + ("" if l.get("address_exact") else " · ubicación aproximada"))
     else:
         c["location"] = (0.4, "sin ubicación")
@@ -97,7 +105,7 @@ def components(l, ai=None):
     # condition
     if ai and ai.get("condition"):
         rs = lerp(reform or 0, 5_000, 1, 20_000, 0.45) if (reform or 0) <= 20_000 else lerp(reform, 20_000, 0.45, 35_000, 0)
-        c["condition"] = (0.5 * (ai["condition"] - 1) / 4 + 0.5 * rs, f"estado {ai['condition']}/5, reforma ~USD {reform or 0:,.0f}")
+        c["condition"] = (0.5 * (ai["condition"] - 1) / 4 + 0.5 * rs, f"estado {ai['condition']}/5, reforma ~USD {n(reform or 0)}")
     else:
         age = l.get("age_years")
         c["condition"] = ((0.7 if age is not None and age <= 20 else 0.5 if age is not None and age <= 50 else 0.35), f"sin IA; antigüedad {age if age is not None else '?'} años")
@@ -107,7 +115,7 @@ def components(l, ai=None):
     if ai and ai.get("patio"):
         m2 = ai.get("patio_m2_est") or um2
         base = {"none": 0, "small": 0.3, "medium": 0.65, "large": 1}.get(ai["patio"], 0.3)
-        c["patio"] = (max(base, lerp(m2, 0, 0, 60, 1)) if m2 else base, f"patio {ai['patio']}" + (f" ~{m2:.0f} m²" if m2 else ""))
+        c["patio"] = (max(base, lerp(m2, 0, 0, 60, 1)) if m2 else base, PATIO_ES.get(ai["patio"], f"patio {ai['patio']}") + (f" ~{m2:.0f} m²" if m2 else ""))
     elif um2:
         c["patio"] = (lerp(um2, 0, 0, 60, 1), f"{um2} m² descubiertos según aviso")
     else:

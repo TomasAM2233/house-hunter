@@ -1,10 +1,9 @@
 """Search criteria and scoring weights. Edit this file to change what the hunter looks for."""
 
 SEARCH = {
-    "price_min": 140_000,      # USD
+    "price_min": 80_000,       # USD; only bounds what the portals return, never discards (a cheap house is a find)
     "price_max": 210_000,      # USD
-    "ppm2_min": 1_000,         # USD per total m2
-    "ppm2_max": 2_000,
+    "ppm2_max": 2_000,         # USD per total m2; no floor, for the same reason
     "min_ambientes": 3,
     "min_total_m2": 100,
     "types": ["casa", "ph"],

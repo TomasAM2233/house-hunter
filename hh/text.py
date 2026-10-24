@@ -23,6 +23,13 @@ def lot_dims(text):
     return (a, b)
 
 
+def usd_price(text):
+    """Asking price written in the description ('antes U$D 187.000 ahora U$D 178.000' -> 178000): the last one wins."""
+    found = [int(m.replace(".", "")) for m in re.findall(r"(?:u\$[sd]|usd|us\$)\s*(\d{2,3}\.\d{3})\b", norm(text))]
+    found = [v for v in found if 30_000 <= v <= 900_000]
+    return found[-1] if found else None
+
+
 def uncovered_m2(text):
     m = re.search(r"(\d{2,4})\s*m(?:2|²|ts2| ?cuadrados)?\s*(?:de\s+)?(?:descubiert|libres|de (?:patio|jardin|parque))", norm(text))
     return int(m.group(1)) if m else None

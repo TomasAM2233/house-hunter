@@ -37,7 +37,8 @@ def main():
             src = os.path.join(ROOT, "data", name)
             if os.path.exists(src):
                 open(os.path.join(ROOT, "web", name), "w").write(open(src).read())
-        page = app.replace("__HH_DATA__", "")
+        # the map key goes only into the deployed page (CI passes it at deploy time), never into the committed copy
+        page = app.replace("__HH_DATA__", "").replace("__CARTO_KEY__", os.environ.get("CARTO_API_KEY") or "__CARTO_KEY__")
         head, rest = page.split("</style>", 1)
         open(os.path.join(ROOT, "web", "index.html"), "w").write(HEAD + head + "</style>\n</head><body>\n" + rest + "\n</body></html>\n")
         print("wrote web/index.html")

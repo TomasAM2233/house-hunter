@@ -21,7 +21,7 @@ build.py                      web/index.html for GitHub Pages (reads web/listing
 ## The rules (edit `hh/config.py`)
 
 Hard filters, a listing is discarded if it breaks any:
-- USD 140k–210k, USD 1,000–2,000 per total m²
+- Up to USD 210k and USD 2,000 per total m² (no floor: portals are searched from USD 80k)
 - Casa or PH, 3+ ambientes, 100+ m² totales
 - 3 to 15 cuadras from Av. Maipú, 5+ cuadras from Puente Saavedra
 - Has a patio or garden (AI), is not a PH al fondo por pasillo (AI)
