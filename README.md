@@ -81,4 +81,4 @@ saved with `python ai_fill.py results.json --analyst claude`. The first batch (`
 - **Quick runs** every hour from 07:47 to 23:47: only the newest pages of Zonaprop and Argenprop, so a new listing
   is scored, read by the AI and alerted within the hour.
 - **Alerts:** set the `NTFY_TOPIC` secret and subscribe to that topic in the free ntfy app. New listings at or above
-  the 90th percentile, or with an AI score of 70+, send a push notification (`ALERT_*` in `hh/config.py`).
+  the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification.

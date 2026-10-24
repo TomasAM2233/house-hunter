@@ -102,7 +102,7 @@ button, select, input { font: inherit; color: inherit; }
 /* ── list ── */
 .layout { padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: 12px calc(32px + env(safe-area-inset-bottom, 0px)); }
 .list { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; cursor: pointer; text-align: left; width: 100%; padding: 0; }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; cursor: pointer; text-align: left; width: 100%; padding: 0; color: inherit; }
 .card[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .ph { position: relative; aspect-ratio: 16 / 10; max-width: 100%; background: var(--sunk); }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -136,6 +136,11 @@ button, select, input { font: inherit; color: inherit; }
 .row2 { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .row2 input { flex: 1 1 200px; min-width: 0; height: 38px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--bg); }
 .reasons { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; }
+.qa { display: flex; gap: 8px; margin-top: 2px; }
+.qa .btn { flex: 1; min-height: 40px; font-size: 14px; }
+.qa .btn:not(.primary) { flex: 0 1 auto; }
+.flash { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 30; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; box-shadow: 0 4px 16px rgb(0 0 0 / .25); }
+label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; }
 .empty { padding: 32px 16px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; }
 .more { align-self: center; }
 
@@ -234,6 +239,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
 <section class="info" id="info" hidden></section>
 <div class="map" id="map" hidden><div id="lmap"></div><div class="cap" id="mapcap"></div></div>
 
+<div class="flash" id="flash" hidden role="status"></div>
 <main class="layout">
   <div>
     <div class="list" id="list"></div>
@@ -250,7 +256,7 @@ const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condit
   vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
-const TABS = { short: "Candidatas", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas por mí", out: "Filtradas", all: "Todas" };
+const TABS = { short: "Bandeja", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas", out: "Filtradas", all: "Todas" };
 const REPO = "TomasAM2233/house-hunter";   // where tags and preferences are saved
 const PAGE = 30;
 const srcName = l => l.source === "tokko" ? (l.publisher || "Inmobiliaria") : (SRC[l.source] || l.source);
@@ -265,7 +271,7 @@ const store = {
 };
 let DATA, view = "short", sel = null, shown = PAGE;
 let TAGS = store.get("hh-tags", {});           // {id: {fav, visited, dismissed, note, at}}
-let PREFS = "", pctMode = "saved";
+let PREFS = "", pctMode = "saved", SETTINGS = { alert_percentile: 90, alert_ai_score: 70 };
 for (const id of store.get("hh-favs", [])) (TAGS[id] ||= {}).fav = true;   // favourites from the first version
 
 /* ── tags, synced through the repo when a GitHub token is set ── */
@@ -314,9 +320,11 @@ function setTag(id, k, v) {
 async function loadShared() {
   try {
     let tags, prefs;
-    if (gh.token()) { tags = await gh.get("data/tags.json"); prefs = await gh.get("data/preferences.md"); setSync("Sincronizado ✓"); }
-    else { tags = await fetch("tags.json", { cache: "no-store" }).then(r => r.ok ? r.text() : null).catch(() => null);
-           prefs = await fetch("preferences.md", { cache: "no-store" }).then(r => r.ok ? r.text() : "").catch(() => ""); }
+    let settings;
+    if (gh.token()) { tags = await gh.get("data/tags.json"); prefs = await gh.get("data/preferences.md"); settings = await gh.get("data/settings.json"); setSync("Sincronizado ✓"); }
+    else { const get = (f, d) => fetch(f, { cache: "no-store" }).then(r => r.ok ? r.text() : d).catch(() => d);
+           [tags, prefs, settings] = await Promise.all([get("tags.json", null), get("preferences.md", ""), get("settings.json", null)]); }
+    if (settings) SETTINGS = { ...SETTINGS, ...JSON.parse(settings) };
     for (const [id, t] of Object.entries(JSON.parse(tags || "{}"))) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
     store.set("hh-tags", TAGS);
     PREFS = prefs || "";
@@ -339,13 +347,16 @@ function recalcPct() {
   pctMode = "now"; DATA.pct_n_now = all.length;
 }
 
+// Each house lives in one bucket: the inbox until Tomás processes it, then favourite → visited, or dismissed.
+function bucket(l) { const t = tag(l.id); return t.dismissed ? "mine" : t.visited ? "visited" : t.fav ? "fav" : "short"; }
 function base() {
   const act = DATA.listings.filter(l => l.active !== false && !l.duplicate_of);
+  const tagged = DATA.listings.filter(l => !l.duplicate_of);
   return {
-    short: act.filter(l => !l.discard.length && !tag(l.id).dismissed),
-    fav: DATA.listings.filter(l => tag(l.id).fav),
-    visited: DATA.listings.filter(l => tag(l.id).visited),
-    mine: DATA.listings.filter(l => tag(l.id).dismissed),
+    short: act.filter(l => !l.discard.length && bucket(l) === "short"),
+    fav: tagged.filter(l => bucket(l) === "fav"),
+    visited: tagged.filter(l => bucket(l) === "visited"),
+    mine: tagged.filter(l => bucket(l) === "mine"),
     out: act.filter(l => l.discard.length),
     all: act,
   };
@@ -377,16 +388,39 @@ function specs(l) {
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
 }
+// one-tap triage from the list: the next step for the bucket the house is in
+function quick(l) {
+  const b = bucket(l), btn = (act, label, cls = "") => `<button class="btn ${cls}" data-act="${act}">${label}</button>`;
+  const acts = { short: [btn("fav", "★ Me interesa", "primary"), btn("dismissed", "✕ Descartar")],
+    fav: [btn("visited", "✓ La visitamos", "primary"), btn("share", "Compartir"), btn("dismissed", "✕")],
+    visited: [btn("share", "Compartir"), btn("dismissed", "✕ Descartar")],
+    mine: [btn("restore", "↩ Volver a la bandeja")] }[b];
+  return l.discard.length && b === "short" ? "" : `<div class="qa">${acts.join("")}</div>`;
+}
+function act(l, a) {
+  if (a === "share") return share(l);
+  if (a === "restore") { TAGS[l.id] = { note: tag(l.id).note, at: new Date().toISOString() }; saveTags(); }
+  else setTag(l.id, a, true);
+  if (sel === l.id && !wide.matches && !$("#detail").hidden) history.state?.open ? history.back() : closeDetail();
+  if (sel === l.id) sel = null;
+  renderList();
+}
+async function share(l) {
+  const text = `${usd(l.price_usd)} · ${l.zone || ""} · ${fmt(l.total_m2)} m² · ${fmt(l.ambientes)} amb\n${brief(l)}\n${l.url}`;
+  try { if (navigator.share) { await navigator.share({ title: l.title, text, url: l.url }); return; } } catch (e) { if (e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(text); setSync("Copiado para mandar ✓"); flash("Copiado: pegalo en WhatsApp"); } catch { prompt("Copiá esto:", text); }
+}
+function flash(msg) { const f = $("#flash"); f.textContent = msg; f.hidden = false; clearTimeout(flash.t); flash.t = setTimeout(() => f.hidden = true, 2200); }
 function card(l, i) {
   const t = tag(l.id), src = img(l, 0);
   const chips = (l.flags || []).filter(f => f !== "sin análisis IA").map(f => `<span class="pill warn">${esc(f)}</span>`)
     .concat(l.discard.length ? [`<span class="pill err">${esc(l.discard[0])}</span>`] : [])
     .concat(t.note ? [`<span class="pill acc">✎ ${esc(t.note.slice(0, 40))}${t.note.length > 40 ? "…" : ""}</span>`] : []);
   const text = brief(l);
-  return `<button class="card" data-id="${l.id}" aria-current="${sel === l.id}">
+  return `<div class="card" role="button" tabindex="0" data-id="${l.id}" aria-current="${sel === l.id}">
     <div class="ph">
       ${src ? `<img loading="lazy" decoding="async" src="${esc(src)}" alt="">` : ""}
-      <div class="tl"><span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}</div>
+      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}</div>
       ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
     </div>
@@ -396,13 +430,14 @@ function card(l, i) {
       ${text ? `<p class="brief">${esc(text)}</p>` : `<p class="brief none">${l.discard.length ? "" : "Todavía sin evaluación de la IA: el puntaje sale solo del aviso."}</p>`}
       ${miniBar(l)}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
+      ${quick(l)}
     </div>
-  </button>`;
+  </div>`;
 }
 function renderList() {
   const r = rows(), counts = base();
   document.querySelectorAll("#tabs button").forEach(b => { b.innerHTML = `${TABS[b.dataset.v]}<span class="n">${counts[b.dataset.v].length}</span>`; });
-  const empty = { fav: "Tocá ★ en una casa para guardarla acá.", visited: "Marcá las casas que fuiste a ver.", mine: "Las que descartes van a aparecer acá." }[view] || "Nada con estos filtros.";
+  const empty = { short: "Bandeja vacía: procesaste todo. Te aviso cuando entre algo bueno.", fav: "Tocá ★ Me interesa en la bandeja para traerla acá.", visited: "Cuando visiten una favorita, marcala como visitada.", mine: "Las que descartes van a aparecer acá." }[view] || "Nada con estos filtros.";
   $("#list").innerHTML = r.length
     ? r.slice(0, shown).map(card).join("") + (r.length > shown ? `<button class="btn more" id="more">Ver ${Math.min(PAGE, r.length - shown)} más de ${r.length - shown}</button>` : "")
     : `<div class="empty">${empty}</div>`;
@@ -457,9 +492,10 @@ function renderDetail(l) {
       <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · visto desde ${esc(l.first_seen)}</div></div>
       <div class="mine">
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
-        <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">Visitada</button>
-        <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">Descartar</button>
+        <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
+        <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">✕ Descartar</button>
       </div>
+      <button class="btn" id="sharebtn">Compartir (WhatsApp, etc.)</button>
       <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa (la IA las tiene en cuenta en la próxima corrida)">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
       ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
       ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
@@ -486,9 +522,11 @@ function renderDetail(l) {
     </div>`;
   $("#back").onclick = () => history.state?.open ? history.back() : closeDetail();
   $("#detail").querySelectorAll("[data-tag]").forEach(b => b.onclick = () => {
-    setTag(l.id, b.dataset.tag, !tag(l.id)[b.dataset.tag]);
-    renderDetail(l); renderList();
+    const k = b.dataset.tag, on = !tag(l.id)[k];
+    if (on) return act(l, k);          // processing it moves it to its bucket and returns to the list
+    setTag(l.id, k, false); renderDetail(l); renderList();
   });
+  $("#sharebtn").onclick = () => share(l);
   $("#note").onchange = e => { setTag(l.id, "note", e.target.value.trim()); renderList(); };
   $("#descmore").onclick = e => { $("#desc").classList.remove("clamp"); e.target.remove(); };
   const gal = $("#gal");
@@ -554,6 +592,12 @@ function renderInfo() {
     <div class="section"><span class="label">Percentiles</span>
       <p>${pctMode === "now" ? `Recalculados con las ${DATA.pct_n_now} casas puntuadas hasta hoy.` : "Cada percentil se calculó contra todas las casas puntuadas hasta ese momento."}</p>
       <div class="row2"><button class="btn" id="pctbtn">Recalcular con todos los datos</button>${pctMode === "now" ? `<button class="btn" id="pctback">Volver a los originales</button>` : ""}</div></div>
+    <div class="section"><span class="label">Alertas al celular</span>
+      <p>Te llega una notificación por cada casa nueva que cumpla al menos una de estas dos condiciones.</p>
+      <div class="row2"><label>Percentil ≥ <input id="apct" type="number" min="0" max="100" inputmode="numeric" value="${SETTINGS.alert_percentile}" style="width:5em;flex:none"></label>
+        <label>o puntaje IA ≥ <input id="aai" type="number" min="0" max="100" inputmode="numeric" value="${SETTINGS.alert_ai_score}" style="width:5em;flex:none"></label>
+        ${tok ? `<button class="btn" id="asave">Guardar</button>` : ""}</div>
+      ${tok ? "" : "<p>Para cambiarlas desde acá, conectá GitHub abajo.</p>"}</div>
     <div class="section"><span class="label">Tus preferencias (la IA las lee)</span>
       <textarea class="prefs" id="prefs" ${tok ? "" : "readonly"}>${esc(PREFS)}</textarea>
       ${tok ? `<div class="row2"><button class="btn primary" id="prefsave">Guardar preferencias</button></div>` : `<p>Para editarlas desde acá, conectá GitHub abajo.</p>`}</div>
@@ -563,6 +607,12 @@ function renderInfo() {
       <span class="saved" id="syncstate">${esc(syncState)}</span></div>`;
   $("#pctbtn").onclick = () => { recalcPct(); renderInfo(); renderList(); if (sel) renderDetail(DATA.listings.find(x => x.id === sel)); };
   if ($("#pctback")) $("#pctback").onclick = () => { pctMode = "saved"; renderInfo(); renderList(); if (sel) renderDetail(DATA.listings.find(x => x.id === sel)); };
+  if ($("#asave")) $("#asave").onclick = async () => {
+    SETTINGS = { ...SETTINGS, alert_percentile: +$("#apct").value, alert_ai_score: +$("#aai").value };
+    setSync("Guardando alertas…");
+    try { await gh.get("data/settings.json"); await gh.put("data/settings.json", JSON.stringify(SETTINGS, null, 1), "app: alert thresholds"); setSync("Alertas guardadas ✓"); }
+    catch (e) { setSync("No pude guardar: " + e.message); }
+  };
   if ($("#prefsave")) $("#prefsave").onclick = async () => {
     PREFS = $("#prefs").value; setSync("Guardando preferencias…");
     try { await gh.get("data/preferences.md"); await gh.put("data/preferences.md", PREFS, "app: preferences"); setSync("Preferencias guardadas ✓ (la IA las usa en la próxima corrida)"); }
@@ -570,7 +620,7 @@ function renderInfo() {
   };
   $("#toksave").onclick = () => { const v = $("#tok").value.trim(); if (!v || v.startsWith("••")) return; store.set("hh-token", v); saveTags(); loadShared(); };
   if ($("#tokdel")) $("#tokdel").onclick = () => { store.set("hh-token", ""); setSync(""); renderInfo(); };
-  $("#foot").textContent = "Filtradas = no cumplen algún filtro duro. Descartadas por mí = las que marcaste vos. Percentil = qué parte de todas las casas puntuadas quedó por debajo.";
+  $("#foot").textContent = "Bandeja = lo que todavía no procesaste, por puntaje. Filtradas = no cumplen algún filtro duro. Percentil = qué parte de todas las casas puntuadas quedó por debajo.";
 }
 
 function boot(d) {
@@ -582,7 +632,13 @@ function boot(d) {
     renderList(); window.scrollTo({ top: 0 }); };
   $("#sort").onchange = () => { shown = PAGE; renderList(); };
   $("#q").oninput = () => { shown = PAGE; renderList(); };
-  $("#list").onclick = e => { const c = e.target.closest(".card"); if (c) select(c.dataset.id); };
+  $("#list").onclick = e => {
+    const c = e.target.closest(".card"); if (!c) return;
+    const b = e.target.closest("[data-act]");
+    if (b) { e.stopPropagation(); act(DATA.listings.find(x => x.id === c.dataset.id), b.dataset.act); return; }
+    select(c.dataset.id);
+  };
+  $("#list").onkeydown = e => { const c = e.target.closest(".card"); if (c && e.key === "Enter") select(c.dataset.id); };
   const toggle = (btn, el, after) => $(btn).onclick = () => { const on = el.hidden; el.hidden = !on; $(btn).setAttribute("aria-pressed", on); if (on && after) after(); };
   toggle("#mapbtn", $("#map"), renderMap);
   toggle("#infobtn", $("#info"));

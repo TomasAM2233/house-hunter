@@ -33,7 +33,7 @@ def main():
     app = open(APP).read()
     if not args.embed:
         # the app reads tags and preferences next to listings.json when it has no GitHub token
-        for name in ("tags.json", "preferences.md"):
+        for name in ("tags.json", "preferences.md", "settings.json"):
             src = os.path.join(ROOT, "data", name)
             if os.path.exists(src):
                 open(os.path.join(ROOT, "web", name), "w").write(open(src).read())

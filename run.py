@@ -11,6 +11,7 @@ from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data", "listings.json")
 PREFS = os.path.join(ROOT, "data", "preferences.md")   # Tomás's own words; edited from the app or on GitHub
+SETTINGS = os.path.join(ROOT, "data", "settings.json")  # alert thresholds, saved by the app
 TAGS = os.path.join(ROOT, "data", "tags.json")         # favourite / visited / dismissed + notes, saved by the app
 WEB_DATA = os.path.join(ROOT, "web", "listings.json")
 SOURCES = {"zonaprop": zonaprop, "argenprop": argenprop, "mercadolibre": mercadolibre, "tokko": tokko}
@@ -96,8 +97,11 @@ def dedupe(listings):
 def alert(new):
     """Push a phone notification (ntfy.sh, topic in NTFY_TOPIC) for each new listing that ranks near the top."""
     topic = os.environ.get("NTFY_TOPIC")
+    st = json.load(open(SETTINGS)) if os.path.exists(SETTINGS) else {}   # thresholds edited in the app
+    min_pct = st.get("alert_percentile", config.ALERT_PERCENTILE)
+    min_ai = st.get("alert_ai_score", config.ALERT_AI_SCORE)
     for l in sorted(new, key=lambda l: -l["score"]):
-        good = l.get("pct", 0) >= config.ALERT_PERCENTILE or (l.get("ai_final") or {}).get("score", 0) >= config.ALERT_AI_SCORE
+        good = l.get("pct", 0) >= min_pct or (l.get("ai_final") or {}).get("score", 0) >= min_ai
         if not good:
             continue
         g = l.get("geo") or {}
