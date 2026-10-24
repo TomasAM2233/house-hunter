@@ -120,29 +120,34 @@
  },
  "zp-60257262": {
   "condition": 3,
-  "reform_usd": 12000,
-  "reform_notes": "Habitable; actualizar baño y cocina, pintura, impermeabilizar terraza.",
-  "patio": "medium",
-  "patio_m2_est": 45,
+  "reform_usd": 18000,
+  "reform_notes": "Reciclar baño y cocina a nuevo, hacer instalación eléctrica y de cañerías completa, y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 4,
-  "quiet": 3,
-  "vertical_potential": 0.3,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Terraza propia grande + patio",
-   "Sin expensas, PB al frente",
-   "A pasos de estación Juan B. Justo"
+   "Gran terraza propia de uso exclusivo con parrilla",
+   "Sin expensas y con entrada independiente al frente",
+   "Pisos de parquet originales en aceptable estado"
   ],
   "red_flags": [
-   "Solo 62 m² cubiertos",
-   "Lote de 6 unidades con pasillo común",
-   "Casa de 76 años"
+   "Falta de patio o jardín propio a nivel del suelo (excluyente)",
+   "Instalaciones originales de 76 años de antigüedad a reemplazar",
+   "Ubicación sobre calle de alto tránsito y colectivos"
   ],
-  "summary": "PH barato al frente con mucha terraza, en buen estado de conservación; chico en metros cubiertos y en lote compartido.",
+  "summary": "Tiene una terraza bárbara al sol, pero al no contar con un verdadero patio en planta baja no cumple con el requisito obligatorio de los compradores.",
   "photos_key": "581c585c74d3",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  },
  "zp-60270207": {
   "condition": 3,

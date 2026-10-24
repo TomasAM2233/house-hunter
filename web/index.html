@@ -345,9 +345,10 @@ const brief = l => l.ai_final?.brief || l.ai?.brief || l.ai?.summary || "";
 const pct = l => pctMode === "now" ? l.pct_now : l.pct;
 
 function recalcPct() {
-  const all = DATA.listings.map(l => l.score).sort((a, b) => a - b);
+  const sc = l => l.score_calc ?? l.score;   // same scale for everyone: the algorithm's score
+  const all = DATA.listings.map(sc).sort((a, b) => a - b);
   const lo = x => { let a = 0, b = all.length; while (a < b) { const m = (a + b) >> 1; all[m] < x ? a = m + 1 : b = m; } return a; };
-  for (const l of DATA.listings) l.pct_now = Math.round(100 * lo(l.score) / all.length);
+  for (const l of DATA.listings) l.pct_now = Math.round(100 * lo(sc(l)) / all.length);
   pctMode = "now"; DATA.pct_n_now = all.length;
 }
 
@@ -624,7 +625,7 @@ function renderInfo() {
   };
   $("#toksave").onclick = () => { const v = $("#tok").value.trim(); if (!v || v.startsWith("••")) return; store.set("hh-token", v); saveTags(); loadShared(); };
   if ($("#tokdel")) $("#tokdel").onclick = () => { store.set("hh-token", ""); setSync(""); renderInfo(); };
-  $("#foot").textContent = "Bandeja = lo que todavía no procesaste, por puntaje. Filtradas = no cumplen algún filtro duro. Percentil = qué parte de todas las casas puntuadas quedó por debajo.";
+  $("#foot").textContent = "Bandeja = lo que todavía no procesaste, por puntaje. Filtradas = no cumplen algún filtro duro. Percentil = qué parte de todas las casas puntuadas por el algoritmo quedó por debajo.";
 }
 
 function boot(d) {
