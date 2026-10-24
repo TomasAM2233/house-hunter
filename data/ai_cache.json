@@ -2442,5 +2442,36 @@
   "analyst": "gemini:gemini-3-flash-preview",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "ap-20473447": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualización de cañerías e instalación eléctrica original de 50 años, modernización básica de baños y cocina, y pintura integral.",
+  "patio": "medium",
+  "patio_m2_est": 25,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Patio propio en planta baja más terraza amplia en planta alta",
+   "Excelente ubicación residencial en Olivos a 4 cuadras de Maipú",
+   "Entrada al frente con cochera y sin expensas"
+  ],
+  "red_flags": [
+   "Antigüedad de 50 años con terminaciones e instalaciones originales",
+   "Verificar que la planta alta esté regularizada en planos para el crédito",
+   "Posibles filtraciones bajo la terraza hacia la planta baja"
+  ],
+  "summary": "Es un PH tipo casa al frente muy bien ubicado en Olivos que cumple con el patio en planta baja y entra en el presupuesto de refacción para modernizarlo.",
+  "photos_key": "7781ef1590fd",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  }
 }
