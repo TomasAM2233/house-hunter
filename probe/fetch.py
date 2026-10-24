@@ -15,3 +15,18 @@ for site in SITES:
         print(site, r.status_code, r.url, len(r.text), sig[:8], keys[:2])
     except Exception as e:
         print(site, "ERR", str(e)[:100])
+
+import os
+from urllib.parse import quote
+K = os.environ["SCRAPER_API_KEY"]
+ZP = "https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-140000-210000-dolar.html"
+print("account", requests.get(f"https://api.scraperapi.com/account?api_key={K}", timeout=30).text[:300])
+for extra in ["", "&premium=true", "&ultra_premium=true", "&render=true&premium=true"]:
+    try:
+        r = requests.get(f"https://api.scraperapi.com/?api_key={K}&country_code=ar&url={quote(ZP, safe='')}{extra}", timeout=120)
+        print("zp", extra or "plain", r.status_code, len(r.text), "__PRELOADED_STATE__" in r.text, r.text[:150].replace("\n", " ") if r.status_code != 200 else "")
+        if "__PRELOADED_STATE__" in r.text:
+            break
+    except Exception as e:
+        print("zp", extra, "ERR", e)
+print("account", requests.get(f"https://api.scraperapi.com/account?api_key={K}", timeout=30).text[:300])
