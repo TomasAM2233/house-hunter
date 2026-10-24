@@ -4,16 +4,18 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.zonaprop.com.ar"
-# Zonaprop blocks cloud IPs. With SCRAPER_API_KEY set, search pages are rendered by ScraperAPI (10 credits each,
-# ~11 pages a sweep) and parsed from the DOM; one sweep a week keeps it near half of the free 1,000 credits a month.
-API_EVERY_HOURS = 24 * 7
+# Zonaprop blocks cloud IPs. With SCRAPER_API_KEY set, search pages are rendered by ScraperAPI (10 credits each).
+# To stay in the free 1,000 credits a month: every day only the newest page (NEW_PAGES, sorted by publication
+# date) catches new listings; the full sweep (~11 pages, also catches price drops and removals) runs every FULL_EVERY_HOURS.
+FULL_EVERY_HOURS = 24 * 14
+NEW_PAGES = 1
 _dec = json.JSONDecoder()
 
 
-def search_url(page):
+def search_url(page, newest=False):
     s = config.SEARCH
     zones = "-".join(z.lower().replace(" ", "-") for z in s["zones"])
-    suffix = "" if page == 1 else f"-pagina-{page}"
+    suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
     return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{s['price_min']}-{s['price_max']}-dolar{suffix}.html"
 
 
@@ -124,9 +126,9 @@ def _dom_cards(html):
         }
 
 
-def search(max_pages=20, log=print):
+def search(max_pages=20, log=print, newest_only=False):
     if http.API_KEY:
-        return search_rendered(max_pages, log)
+        return search_rendered(NEW_PAGES if newest_only else max_pages, log, newest_only)
     out, page, total_pages, failed = [], 1, 1, []
     while page <= min(total_pages, max_pages):
         try:
@@ -149,11 +151,11 @@ def search(max_pages=20, log=print):
     return out
 
 
-def search_rendered(max_pages=20, log=print):
+def search_rendered(max_pages=20, log=print, newest=False):
     out, page, total_pages, failed = {}, 1, 1, []
     while page <= min(total_pages, max_pages):
         try:
-            html = http.get(search_url(page), via_api=True, render=True).text
+            html = http.get(search_url(page, newest), via_api=True, render=True).text
             cards = list(_dom_cards(html))
             if not cards:
                 raise RuntimeError("no cards in rendered page")

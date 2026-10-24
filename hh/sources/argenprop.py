@@ -4,13 +4,15 @@ from bs4 import BeautifulSoup
 from .. import http, config
 
 BASE = "https://www.argenprop.com"
-API_EVERY_HOURS = 44  # every other day; see zonaprop.py for the free API quota
+FULL_EVERY_HOURS = 24 * 7  # newest pages daily, full sweep weekly; see zonaprop.py for the free API quota
+NEW_PAGES = 2
 
 
-def search_url(page):
+def search_url(page, newest=False):
     s = config.SEARCH
     zones = "-o-".join(z.lower().replace(" ", "-") for z in s["zones"])
-    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_max']}" + (f"?pagina-{page}" if page > 1 else "")
+    q = (["orden-masnuevos"] if newest else []) + ([f"pagina-{page}"] if page > 1 else [])
+    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_max']}" + ("?" + "&".join(q) if q else "")
 
 
 def _n(text):
@@ -72,11 +74,13 @@ def _card(it):
     }
 
 
-def search(max_pages=15, log=print):
+def search(max_pages=15, log=print, newest_only=False):
+    if newest_only:
+        max_pages = NEW_PAGES
     out, failed, page, last = {}, [], 1, 1
     while page <= min(last, max_pages):
         try:
-            html = http.get(search_url(page), via_api=True).text
+            html = http.get(search_url(page, newest_only), via_api=True).text
         except Exception as e:
             log(f"argenprop page {page}: {e}")
             failed.append(page)

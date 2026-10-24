@@ -105,20 +105,24 @@ def main():
     prev = json.load(open(DATA)).get("status", {}) if os.path.exists(DATA) else {}
     if not args.no_scrape:
         for name in args.sources.split(","):
-            every = getattr(SOURCES[name], "API_EVERY_HOURS", None)
-            last = prev.get(name, {})
-            if every and http.API_KEY and last.get("ok") and time.time() - time.mktime(time.strptime(last["at"], "%Y-%m-%d %H:%M")) < every * 3600:
-                log(f"{name}: scraped at {last['at']}, skipping to save API quota")
+            # API-backed sources: a full sweep every FULL_EVERY_HOURS, otherwise one newest-first check a day
+            every, last = getattr(SOURCES[name], "FULL_EVERY_HOURS", None), prev.get(name, {})
+            age = lambda t: (time.time() - time.mktime(time.strptime(t, "%Y-%m-%d %H:%M"))) / 3600 if t else 1e9
+            newest = bool(every and http.API_KEY and age(last.get("full_at")) < every)
+            if newest and last.get("ok") and age(last.get("at")) < 20:
+                log(f"{name}: checked at {last['at']}, next check tomorrow (API quota)")
                 continue
             try:
-                fresh = SOURCES[name].search(log=log)
+                fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
                 seen = {l["id"] for l in fresh}
-                complete = not getattr(SOURCES[name].search, "failed_pages", None)
+                complete = not newest and not getattr(SOURCES[name].search, "failed_pages", None)
                 for l in listings.values():
                     if complete and l["source"] == name and l["id"] not in seen:
                         l["active"] = False
                 listings = merge(listings, fresh)
-                status[name] = {"ok": True, "count": len(fresh), "complete": complete, "at": time.strftime("%Y-%m-%d %H:%M")}
+                now = time.strftime("%Y-%m-%d %H:%M")
+                status[name] = {"ok": True, "count": len(fresh) if not newest else last.get("count"), "complete": complete, "at": now,
+                                "mode": "newest" if newest else "full", "full_at": now if complete else last.get("full_at")}
             except Exception as e:
                 traceback.print_exc()
                 status[name] = {"ok": False, "error": str(e)[:200], "at": time.strftime("%Y-%m-%d %H:%M")}
