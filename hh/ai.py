@@ -155,7 +155,8 @@ def _call(body, timeout):
                     break
                 continue
             r.raise_for_status()
-            return json.loads(_text(r.json()))
+            out = json.loads(_text(r.json()))
+            return out[0] if isinstance(out, list) and out else out
         i = MODELS.index(GEMINI_MODEL)
         if i + 1 >= len(MODELS):
             EXHAUSTED = "Gemini free quota used up for today on every model"
@@ -168,7 +169,10 @@ FINAL_PROMPT = f"""Sos el asesor inmobiliario de Tomás. Abajo están sus prefer
 esta casa (si las hay), los datos del aviso, la lectura de las fotos y el puntaje que calculó nuestro algoritmo
 con su desglose. Tu evaluación final reemplaza a ese puntaje, así que tené en cuenta todo: sus criterios en orden
 de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algoritmo no ve. Si algo choca con un
-requisito obligatorio suyo, bajá mucho el puntaje. Respondé SOLO un JSON:
+requisito obligatorio suyo, bajá mucho el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
+que pasan los filtros, 45 es floja, 55 buena, 65 muy buena y 75 o más solo para una oportunidad excepcional que
+Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con motivos concretos (cada motivo
+vale entre 3 y 15 puntos). Sé exigente: la mayoría de los avisos no son excepcionales. Respondé SOLO un JSON:
 {{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
 rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
 inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"]}}"""
@@ -191,7 +195,7 @@ def final(listing, prefs, note="", compute=True, log=print):
     """The overall AI verdict: score 0-100 that overrides ours, a <=250 char brief and the reasons.
     Cached per listing and keyed by everything it reads, so it reruns only when something changed."""
     text = _final_text(listing, prefs, note)
-    h = hashlib.sha1(text.encode()).hexdigest()[:12]
+    h = hashlib.sha1((FINAL_PROMPT + text).encode()).hexdigest()[:12]
     cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
     hit = cache.get(listing["id"])
     if hit and hit.get("input_key") == h:

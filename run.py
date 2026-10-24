@@ -218,11 +218,12 @@ def main():
             l["score"] = v["score"]
     # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
     # Frozen the first time a listing gets a score; the app can recompute all of them on demand.
-    hist = sorted(l["score"] for l in listings.values())
+    # Ranked on the algorithm's score, which every listing has on the same scale (the AI verdict covers only the top).
+    hist = sorted(l["score_calc"] for l in listings.values())
     for l in listings.values():
-        if l.get("pct") is None or l.get("pct_score") != l["score"]:
-            l["pct"] = round(100 * bisect.bisect_left(hist, l["score"]) / max(1, len(hist)))
-            l["pct_score"], l["pct_n"] = l["score"], len(hist)
+        if l.get("pct") is None or l.get("pct_score") != l["score_calc"]:
+            l["pct"] = round(100 * bisect.bisect_left(hist, l["score_calc"]) / max(1, len(hist)))
+            l["pct_score"], l["pct_n"] = l["score_calc"], len(hist)
     alert(l for l in listings.values() if l["id"] not in known and l.get("active") and not l["discard"] and not l.get("duplicate_of"))
     if os.path.exists(DATA):
         status = {**json.load(open(DATA)).get("status", {}), **status}
