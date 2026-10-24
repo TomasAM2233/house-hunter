@@ -354,14 +354,14 @@
   "at": "2026-10-24"
  },
  "zp-60420657": {
-  "score": 46,
-  "brief": "Bajó a USD 210.000, al límite de tu presupuesto. Tiene 130 m² totales, 4 ambientes y está a 6 cuadras de Maipú. El patio es chico (15 m²) y la estética muy cargada de madera, requiriendo unos USD 6.000 para actualizar.",
+  "score": 52,
+  "brief": "Bajó a USD 210.000 (USD 1.615/m²), cumpliendo el tope. 130 m² totales, 4 amb y cochera. A 6 cuadras de Maipú. Patio chico de 15 m² y estilo recargado de madera con poca luz.",
   "reasons": [
-   "El precio total está en el tope de tu presupuesto obligatorio y la reforma suma inversión inicial.",
-   "El patio de 15 m² es bastante chico para lo que buscás, aunque cumple con ser a nivel del suelo.",
-   "Los ambientes son algo oscuros y la estética muy maderera requiere actualización inmediata."
+   "Sube 3 puntos porque el precio por m² es muy bajo para la zona y ya bajó de pretensiones, aliviando el costo total con la reforma.",
+   "Baja 3 puntos porque el patio es chico y Tomás prioriza mucho el espacio exterior al nivel del suelo.",
+   "Sube 3 puntos por la excelente ubicación a solo 6 cuadras de Av. Maipú."
   ],
-  "input_key": "4a172be127f2",
+  "input_key": "e00183e21d56",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  },
@@ -521,13 +521,13 @@
   "at": "2026-10-24"
  },
  "ml-MLA4099196524": {
-  "score": 64,
-  "brief": "Excelente precio (USD 780/m² total) y espacio con 255 m² y 6 amb. Tiene patio propio de 35 m², cochera y está a 13 cuadras de Maipú. Son dos viviendas en el mismo lote, ideal inversión, pero no es apto crédito.",
+  "score": 63,
+  "brief": "Casa de 255 m² totales y 6 amb en Olivos por USD 199.000 (USD 780/m²). A favor: precio excelente, amplio espacio y patio de 35 m². En contra: 13 cuadras de Maipú y 16 del tren, y son dos viviendas compartidas.",
   "reasons": [
-   "Suma puntos por estar justo dentro de los límites de precio y metraje, ofreciendo dos unidades en un mismo lote.",
-   "Resta levemente por estar a más de 13 cuadras de Maipú y no ser apto crédito."
+   "Sube 3 puntos porque el precio por m² es muy bajo y entra cómodo en el presupuesto con margen para refacciones.",
+   "Baja 3 puntos por estar al límite de la distancia aceptable a la avenida Maipú y al tren (más de 13 cuadras)."
   ],
-  "input_key": "1e6234ad92ef",
+  "input_key": "e8cfefb8c9c9",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  },
@@ -647,6 +647,29 @@
    "El estado general de 60 años requiere una inversión importante de reformas estructurales y de servicios."
   ],
   "input_key": "50fa734dd427",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "ap-18155980": {
+  "score": 63,
+  "brief": "Casa de 5 amb con 219 m² tot (141 cub), jardín de 35 m² y cochera en Olivos. A 8 cuadras de Maipú. Piden USD 215.000 (se pasa un poco del límite) y necesita USD 12.000 de reformas.",
+  "reasons": [
+   "Bajo el puntaje porque el precio pedido está por encima de los USD 210.000 obligatorios, restando en su prioridad N°1.",
+   "El costo total (precio + reforma de USD 12.000) supera holgadamente su presupuesto base.",
+   "Compensa parcialmente con excelente tamaño, lote propio, cochera y buena cercanía a Maipú."
+  ],
+  "input_key": "e7fac76615a3",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-24"
+ },
+ "tk-7333929": {
+  "score": 58,
+  "brief": "Casa en Olivos sobre lote propio de 281 m² con 141 m² cubiertos, 5 amb, cochera y jardín de 35 m². Piden USD 215.000 (supera tu límite de 210k, negociable) y requiere USD 18.000 en refacciones. Está a 9 cuadras de Maipú.",
+  "reasons": [
+   "El precio de venta excede tu límite obligatorio de USD 210.000, aunque entra en el rango negociable.",
+   "El costo de refacción necesario se acerca al límite de USD 20.000 que tenés pensado invertir."
+  ],
+  "input_key": "091513ba1c6c",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  }

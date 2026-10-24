@@ -2968,5 +2968,67 @@
   "analyst": "gemini:gemini-3-flash-preview",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "tk-7333929": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Pintura general, refacción de baños y cocina, actualización de alfombras por pisos flotantes o cerámicos, y revisión de techos por posibles filtraciones.",
+  "patio": "medium",
+  "patio_m2_est": 35,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Muy lindo jardín al fondo con buen pulmón de manzana",
+   "Lote propio de 8.66 x 25.32 con cochera",
+   "Amplia superficie cubierta y distribución flexible"
+  ],
+  "red_flags": [
+   "Instalaciones de época que requieren actualización",
+   "Alfombras y revestimientos deteriorados",
+   "Indicios de humedad en cielorrasos y paredes"
+  ],
+  "summary": "Una casa clásica en Olivos con un jardín hermoso y gran potencial, pero que pide una lavada de cara urgente antes de mudarse.",
+  "photos_key": "3e052cdd2f7f",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
+ },
+ "tk-6197531": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de baños y cocina, pintura general, reemplazo de revestimientos de madera y revoques en mal estado.",
+  "patio": "medium",
+  "patio_m2_est": 35,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Lote propio con lindo jardín en planta baja",
+   "Muy buena distribución y ambientes amplios",
+   "Terraza accesible y potencial de ampliación"
+  ],
+  "red_flags": [
+   "Instalaciones y estética de época muy marcadas (madera y azulejos)",
+   "Humedad potencial en muros y cielorrasos",
+   "Antigüedad de 50 años sin refacciones visibles recientes"
+  ],
+  "summary": "Una casa con un jardín hermoso y re buen potencial, pero que pide una lavada decara integral para dejarla habitable.",
+  "photos_key": "0ccd55a7a470",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-24",
+  "prompt_version": 2
  }
 }
