@@ -151,7 +151,8 @@ def main():
                 complete = not newest and not getattr(SOURCES[name].search, "failed_pages", None)
                 for l in listings.values():
                     if complete and l["source"] == name and l["id"] not in seen:
-                        l["active"] = False
+                        l["active"] = False  # kept for the percentile history; shown as "Reservada"
+                        l.setdefault("gone_at", TODAY)
                 listings = merge(listings, fresh)
                 now = time.strftime("%Y-%m-%d %H:%M")
                 status[name] = {"ok": True, "count": len(fresh) if not newest else last.get("count"), "complete": complete, "at": now,

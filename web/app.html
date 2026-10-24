@@ -221,6 +221,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
     <button role="tab" data-v="fav" aria-selected="false"></button>
     <button role="tab" data-v="visited" aria-selected="false"></button>
     <button role="tab" data-v="mine" aria-selected="false"></button>
+    <button role="tab" data-v="reserved" aria-selected="false"></button>
     <button role="tab" data-v="out" aria-selected="false"></button>
     <button role="tab" data-v="all" aria-selected="false"></button>
   </div>
@@ -256,7 +257,7 @@ const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condit
   vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
-const TABS = { short: "Bandeja", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas", out: "Filtradas", all: "Todas" };
+const TABS = { short: "Bandeja", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas", reserved: "Reservadas", out: "Filtradas", all: "Todas" };
 const REPO = "TomasAM2233/house-hunter";   // where tags and preferences are saved
 const PAGE = 30;
 const srcName = l => l.source === "tokko" ? (l.publisher || "Inmobiliaria") : (SRC[l.source] || l.source);
@@ -358,6 +359,8 @@ function base() {
     fav: tagged.filter(l => bucket(l) === "fav"),
     visited: tagged.filter(l => bucket(l) === "visited"),
     mine: tagged.filter(l => bucket(l) === "mine"),
+    // taken down from the portal (likely booked): kept so percentiles count them
+    reserved: tagged.filter(l => l.active === false),
     out: act.filter(l => l.discard.length),
     all: act,
   };
@@ -421,7 +424,7 @@ function card(l, i) {
   return `<div class="card" role="button" tabindex="0" data-id="${l.id}" aria-current="${sel === l.id}">
     <div class="ph">
       ${src ? `<img loading="lazy" decoding="async" src="${esc(src)}" alt="">` : ""}
-      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}</div>
+      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}${l.active === false ? `<span class="pill">Reservada</span>` : ""}</div>
       ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
     </div>
@@ -490,7 +493,7 @@ function renderDetail(l) {
     </div>
     ${pics.length ? `<div class="gallery" id="gal">${pics.map((p, i) => `<img ${i ? 'loading="lazy"' : ""} src="${esc(p)}" alt="Foto ${i + 1}">`).join("")}</div><div class="gcount num" id="gcount">1 / ${pics.length}</div>` : ""}
     <div class="dbody">
-      <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · visto desde ${esc(l.first_seen)}</div></div>
+      <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · visto desde ${esc(l.first_seen)}${l.active === false ? ` · <b>Reservada</b> (bajada ${esc(l.gone_at || l.last_seen || "")})` : ""}</div></div>
       <div class="mine">
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
         <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
