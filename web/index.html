@@ -67,6 +67,7 @@ button, select, input { font: inherit; color: inherit; }
 .dot.err { background: var(--bad); }
 .tabs { display: flex; background: var(--sunk); border-radius: 10px; padding: 3px; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
+@media (max-width: 999px) { .tabs { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); } }
 .tabs button { flex: 1 0 auto; border: 0; background: transparent; padding: 7px 4px; border-radius: 8px; cursor: pointer; color: var(--muted); font-size: 14px; white-space: nowrap; }
 .tabs button[aria-selected="true"] { background: var(--surface); color: var(--fg); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
 .tabs .n { font: 500 12px var(--font-data); opacity: .8; margin-left: 3px; }
@@ -98,7 +99,7 @@ button, select, input { font: inherit; color: inherit; }
 .ref-label { background: transparent; border: 0; box-shadow: none; font: 600 11px var(--font-body); color: #3b3546; text-shadow: 0 0 3px #fff, 0 0 3px #fff; padding: 0; }
 .ref-label::before { display: none; }
 .pin { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 700 11px var(--font-display); color: #fff; border: 2px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / .35); }
-.pin.hi { background: #1f7a4d; } .pin.mid { background: #a76a00; } .pin.lo { background: #b3322d; } .pin.out { background: #8a8494; opacity: .7; }
+.pin.hi { background: #1f7a4d; } .pin.mid { background: #a76a00; } .pin.lo { background: #b3322d; } .pin.out { background: #8a8494; opacity: .55; width: 12px; height: 12px; border-width: 1.5px; box-shadow: none; }
 .pin.on { outline: 3px solid var(--accent); outline-offset: 1px; }
 
 /* ── list ── */
@@ -128,6 +129,7 @@ button, select, input { font: inherit; color: inherit; }
 .badge.mid { background: var(--warn-soft); color: var(--warn); }
 .badge.lo { background: var(--bad-soft); color: var(--bad); }
 .badge.out { background: var(--sunk); color: var(--muted); font-size: 16px; }
+.ph .badge.out:empty, .ph .badge.dash { display: none; }
 .badge { flex-direction: column; gap: 1px; }
 .badge small { font: 500 10px var(--font-data); opacity: .85; }
 .mine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
@@ -170,7 +172,7 @@ label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted)
 .fact { background: var(--sunk); border-radius: 10px; padding: 8px 12px; min-width: 0; }
 .fact span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .fact b { font: 500 15px var(--font-data); }
-.actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.actions { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); min-height: 44px; padding: 0 14px; border-radius: 12px; cursor: pointer; text-decoration: none; color: var(--fg); font-weight: 500; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
@@ -180,8 +182,8 @@ label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted)
 .ai ul { margin: 0; padding-left: 18px; }
 .ai .num { font-size: 13px; color: var(--muted); }
 .breakdown { display: grid; grid-template-columns: 96px minmax(0, 1fr) 50px; gap: 6px 10px; align-items: center; font-size: 13.5px; }
-.breakdown .bar { height: 8px; background: var(--sunk); border-radius: 4px; overflow: hidden; }
-.breakdown .bar i { display: block; height: 100%; border-radius: 4px; }
+.breakdown .track { height: 8px; background: var(--sunk); border-radius: 4px; overflow: hidden; }
+.breakdown .track i { display: block; height: 100%; border-radius: 4px; }
 .breakdown .why { grid-column: 1 / 4; color: var(--muted); font-size: 12.5px; margin: -2px 0 4px; }
 .breakdown .pts { text-align: right; }
 .desc { white-space: pre-line; color: var(--muted); font-size: 13.5px; }
@@ -194,10 +196,15 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (min-width: 1000px) {
-  .bar { flex-direction: row; align-items: center; flex-wrap: wrap; }
-  .bar .row:first-child { flex: 1 1 240px; }
-  .tabs { flex: 0 1 460px; }
-  .tools { flex: 1 1 360px; }
+  .bar, .info { padding-left: max(var(--gutter-l), calc((100% - 1400px) / 2 + 16px)); padding-right: max(var(--gutter-r), calc((100% - 1400px) / 2 + 16px)); }
+  .bar { flex-direction: row; align-items: center; flex-wrap: wrap; column-gap: 16px; }
+  .bar .row:first-child { flex: 0 1 auto; }
+  .bar h1 { flex: 0 0 auto; margin-right: 8px; }
+  .tools { flex: 1 1 360px; justify-content: flex-end; }
+  .tools input { max-width: 420px; }
+  .tabs { flex: 1 0 100%; order: 3; }
+  .tabs button { flex: 1 1 0; }
+  .info > * { max-width: 900px; }
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 20px; align-items: start; max-width: 1400px; margin: 0 auto; }
   .list { grid-template-columns: minmax(0, 1fr); }
   .card { flex-direction: row; }
@@ -207,7 +214,8 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   .dtop { padding-top: 10px; }
   .dtop .close { display: none; }
   .gallery img { aspect-ratio: auto; height: 340px; }
-  .map { max-width: 1400px; margin-left: max(var(--gutter-l), calc((100% - 1400px) / 2)); margin-right: max(var(--gutter-r), calc((100% - 1400px) / 2)); }
+  .map { margin-left: max(var(--gutter-l), calc((100% - 1400px) / 2 + 16px)); margin-right: max(var(--gutter-r), calc((100% - 1400px) / 2 + 16px)); }
+  .dempty { display: grid; place-items: center; min-height: 240px; padding: 24px; color: var(--muted); text-align: center; }
 }
 @media (prefers-reduced-motion: no-preference) { .gallery { scroll-behavior: smooth; } }
 </style>
@@ -262,11 +270,14 @@ const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condit
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
 const TABS = { short: "Bandeja", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas", reserved: "Reservadas", out: "Filtradas", all: "Todas" };
+const CARTO_KEY = "__CARTO_KEY__";        // filled in at deploy time
 const REPO = "TomasAM2233/house-hunter";   // where tags and preferences are saved
 const PAGE = 30;
 const srcName = l => l.source === "tokko" ? (l.publisher || "Inmobiliaria") : (SRC[l.source] || l.source);
 const $ = s => document.querySelector(s);
-const usd = n => n == null ? "?" : "USD " + Math.round(n).toLocaleString("es-AR");
+const usd = n => n == null ? "Precio a consultar" : "USD " + Math.round(n).toLocaleString("es-AR");
+const blk = n => n == null ? "?" : Math.round(n).toLocaleString("es-AR");   // cuadras: whole numbers read faster
+const day = d => { const t = Date.parse(d + "T12:00"); return isNaN(t) ? (d || "?") : new Date(t).toLocaleDateString("es-AR", { day: "numeric", month: "short" }); };
 const fmt = n => n == null ? "?" : (Math.round(n * 10) / 10).toLocaleString("es-AR");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const wide = matchMedia("(min-width: 1000px)");
@@ -385,14 +396,14 @@ function miniBar(l) {
 }
 function badge(l, cls = "") {
   const p = pct(l);
-  return `<span class="badge ${band(l.score, l)} ${cls}" title="${l.ai_final ? "Puntaje de la IA" : "Puntaje del algoritmo"}${p != null ? ` · percentil ${p}` : ""}">${l.discard.length ? "—" : Math.round(l.score)}${!l.discard.length && p != null ? `<small>P${p}</small>` : ""}</span>`;
+  return `<span class="badge ${band(l.score, l)} ${l.discard.length ? "dash" : ""} ${cls}" title="${l.ai_final ? "Puntaje de la IA" : "Puntaje del algoritmo"}${p != null ? ` · percentil ${p}` : ""}">${l.discard.length ? "—" : Math.round(l.score)}${!l.discard.length && p != null ? `<small>P${p}</small>` : ""}</span>`;
 }
 function specs(l) {
   const g = l.geo;
   return `<div class="specs">
     <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
     <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
-    ${g ? `<span><b class="num">${fmt(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${fmt(g.station.blocks)}</b></span>` : ""}
+    ${g ? `<span><b class="num">${blk(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${blk(g.station.blocks)}</b> cdas</span>` : ""}
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
 }
@@ -428,7 +439,7 @@ function card(l, i) {
   return `<div class="card" role="button" tabindex="0" data-id="${l.id}" aria-current="${sel === l.id}">
     <div class="ph">
       ${src ? `<img loading="lazy" decoding="async" src="${esc(src)}" alt="">` : ""}
-      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav ? `<span class="pill">★</span>` : ""}${t.visited ? `<span class="pill">Visitada</span>` : ""}${t.dismissed ? `<span class="pill">Descartada</span>` : ""}${l.active === false ? `<span class="pill">Reservada</span>` : ""}</div>
+      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav && !t.visited && view !== "fav" ? `<span class="pill">★</span>` : ""}${t.visited && view !== "visited" ? `<span class="pill">Visitada</span>` : ""}${t.dismissed && view !== "mine" ? `<span class="pill">Descartada</span>` : ""}${l.active === false && view !== "reserved" ? `<span class="pill">Reservada</span>` : ""}</div>
       ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
     </div>
@@ -451,6 +462,7 @@ function renderList() {
     : `<div class="empty">${empty}</div>`;
   const m = $("#more"); if (m) m.onclick = e => { e.stopPropagation(); shown += PAGE; renderList(); };
   if (wide.matches && r.length && !r.some(l => l.id === sel)) select(r[0].id, false);
+  if (wide.matches && !r.length) { sel = null; $("#detail").innerHTML = `<div class="dempty">Elegí una casa de la lista para verla acá.</div>`; }
   if (!$("#map").hidden) renderMap();
 }
 
@@ -477,7 +489,7 @@ function renderDetail(l) {
   const a = l.ai, g = l.geo, f = l.ai_final;
   const comp = Object.entries(l.components).map(([k, c]) => `
     <span>${LABELS[k]}</span>
-    <span class="bar"><i style="width:${c.value * 100}%;background:${COLORS[k]}"></i></span>
+    <span class="track"><i style="width:${c.value * 100}%;background:${COLORS[k]}"></i></span>
     <span class="pts num">${fmt(c.points)}/${c.max}</span>
     <span class="why">${esc(c.why)}</span>`).join("");
   const aiBox = a ? `<div class="section ai">
@@ -497,31 +509,31 @@ function renderDetail(l) {
     </div>
     ${pics.length ? `<div class="gallery" id="gal">${pics.map((p, i) => `<img ${i ? 'loading="lazy"' : ""} src="${esc(p)}" alt="Foto ${i + 1}">`).join("")}</div><div class="gcount num" id="gcount">1 / ${pics.length}</div>` : ""}
     <div class="dbody">
-      <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · visto desde ${esc(l.first_seen)}${l.active === false ? ` · <b>Reservada</b> (bajada ${esc(l.gone_at || l.last_seen || "")})` : ""}</div></div>
+      <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · vista desde el ${day(l.first_seen)}${l.active === false ? ` · <b>Reservada</b> (bajada el ${day(l.gone_at || l.last_seen)})` : ""}</div></div>
+      ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
+      ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
+        ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}</div>` : ""}
       <div class="mine">
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
         <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
         <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">✕ Descartar</button>
       </div>
-      <button class="btn" id="sharebtn">Compartir (WhatsApp, etc.)</button>
-      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa (la IA las tiene en cuenta en la próxima corrida)">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
-      ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
-      ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
-        ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}</div>` : ""}
       <div class="facts">
         <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
         <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
         <div class="fact"><span>Cubierta</span><b>${fmt(l.covered_m2)} m²</b></div>
         <div class="fact"><span>Ambientes</span><b>${fmt(l.ambientes)}</b></div>
-        <div class="fact"><span>A Maipú</span><b>${g ? fmt(g.maipu_blocks) + " cdas" : "?"}</b></div>
-        <div class="fact"><span>${g ? esc(g.station.name) : "Tren"}</span><b>${g ? fmt(g.station.blocks) + " cdas" : "?"}</b></div>
+        <div class="fact"><span>A Maipú</span><b>${g ? blk(g.maipu_blocks) + " cdas" : "?"}</b></div>
+        <div class="fact"><span>${g ? "Est. " + esc(g.station.name) : "Tren"}</span><b>${g ? blk(g.station.blocks) + " cdas" : "?"}</b></div>
         <div class="fact"><span>Cochera</span><b>${l.garage ? fmt(l.garage) : "no"}</b></div>
         <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
       </div>
       <div class="actions">
-        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso en ${esc(srcName(l))} ↗</a>
+        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + ", Vicente López")}" target="_blank" rel="noopener">Maps ↗</a>
+        <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
       </div>
+      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa (la IA las tiene en cuenta en la próxima corrida)">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
       ${aiBox}
       <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
       ${hist}
@@ -547,7 +559,7 @@ function initMap() {
   if (MAP || !window.L) return;
   const ref = DATA.reference || {};
   MAP = L.map("lmap", { zoomControl: true, attributionControl: true }).setView([-34.515, -58.49], 14);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" + (CARTO_KEY.startsWith("__") ? "" : "?key=" + CARTO_KEY), {
     maxZoom: 19, subdomains: "abcd", attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>' }).addTo(MAP);
   const lines = (ws, style, name) => (ws || []).forEach((w, i) => { const pl = L.polyline(w, style).addTo(MAP); if (i === 0 && name) pl.bindTooltip(name, { sticky: true }); });
   lines(ref.general_paz, { color: "#6b6578", weight: 6, opacity: .55 }, "Av. General Paz");
@@ -573,7 +585,7 @@ function renderMap() {
   const pts = rows().filter(l => l.lat);
   for (const l of pts) {
     const b = band(l.score, l);
-    L.marker([l.lat, l.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${b}${l.id === sel ? " on" : ""}">${l.discard.length ? "" : Math.round(l.score)}</div>`, iconSize: [28, 28], iconAnchor: [14, 14] }),
+    L.marker([l.lat, l.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${b}${l.id === sel ? " on" : ""}">${l.discard.length ? "" : Math.round(l.score)}</div>`, iconSize: b === "out" ? [12, 12] : [28, 28], iconAnchor: b === "out" ? [6, 6] : [14, 14] }),
       zIndexOffset: l.id === sel ? 1000 : b === "hi" ? 500 : 0 })
       .addTo(MARKERS).bindTooltip(`${usd(l.price_usd)} · ${esc(l.address)}`).on("click", () => select(l.id));
   }
@@ -590,7 +602,7 @@ function renderInfo() {
   $("#sub").textContent = `Actualizado ${DATA.generated_at}`;
   const tok = gh.token();
   $("#info").innerHTML = `
-    <p>Casas y PH en ${S.zones.join(", ")} · USD ${S.price_min / 1000}k–${S.price_max / 1000}k · ${S.ppm2_min}–${S.ppm2_max} USD/m² · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
+    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
     <div><span class="label">Fuentes</span><div class="status" style="margin-top:6px">${Object.entries(DATA.status || {}).map(([k, s]) =>
       `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc((s.at || "").slice(5)) : "falló " + esc((s.at || "").slice(5))}</span>`).join("")}</div></div>
     <div><span class="label">Cómo puntúa el algoritmo (sobre 100)</span>
@@ -637,6 +649,7 @@ function boot(d) {
   loadShared();
   $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
     view = b.dataset.v; shown = PAGE; document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+    b.scrollIntoView({ block: "nearest", inline: "nearest" });
     renderList(); window.scrollTo({ top: 0 }); };
   $("#sort").onchange = () => { shown = PAGE; renderList(); };
   $("#q").oninput = () => { shown = PAGE; renderList(); };
