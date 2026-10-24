@@ -1,12 +1,7 @@
-"""One-off: is the Gemini key there, and which models answer?"""
-import os, requests
-k = os.environ.get("GEMINI_API_KEY", "")
-print("key set:", bool(k), len(k))
-r = requests.get(f"https://generativelanguage.googleapis.com/v1beta/models?key={k}&pageSize=200", timeout=30)
-print("list", r.status_code, r.text[:300] if r.status_code != 200 else "")
-if r.ok:
-    ms = [m["name"] for m in r.json().get("models", []) if "generateContent" in m.get("supportedGenerationMethods", [])]
-    print([m for m in ms if "flash" in m or "pro" in m][:40])
-for m in ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]:
-    r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={k}", json={"contents": [{"parts": [{"text": "Decí hola en una palabra."}]}]}, timeout=60)
-    print(m, r.status_code, r.text[:300].replace("\n", " "))
+"""One-off: which Gemini models still have free quota today, and what the limits are."""
+import os, re, requests
+k = os.environ["GEMINI_API_KEY"]
+for m in ["gemini-flash-latest", "gemini-flash-lite-latest", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3-flash-preview", "gemini-pro-latest"]:
+    r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={k}", json={"contents": [{"parts": [{"text": "Respondé solo: ok"}]}]}, timeout=60)
+    lim = re.findall(r'"quotaId": "([^"]+)".{0,200}?"quotaValue": "(\d+)"', r.text, re.S)
+    print(m, r.status_code, lim[:4] if lim else r.text[:160].replace("\n", " "))
