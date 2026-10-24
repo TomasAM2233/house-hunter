@@ -21,7 +21,7 @@ def fetch(url):
 def search_url(kind, zone_slug, offset):
     s = config.SEARCH
     page = "" if offset == 0 else f"_Desde_{offset + 1}"
-    return f"{BASE}/{kind}/venta/bsas-gba-norte/vicente-lopez/{zone_slug}/{page}_PriceRange_{s['price_min']}USD-{s['price_max']}USD_NoIndex_True"
+    return f"{BASE}/{kind}/venta/bsas-gba-norte/vicente-lopez/{zone_slug}/{page}_PriceRange_{s['price_min']}USD-{s['price_ceiling']}USD_NoIndex_True"
 
 
 def _cards(html):

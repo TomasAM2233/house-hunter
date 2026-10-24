@@ -12,7 +12,7 @@ def search_url(page, newest=False):
     s = config.SEARCH
     zones = "-o-".join(z.lower().replace(" ", "-") for z in s["zones"])
     q = (["orden-masnuevos"] if newest else []) + ([f"pagina-{page}"] if page > 1 else [])
-    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_max']}" + ("?" + "&".join(q) if q else "")
+    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_ceiling']}" + ("?" + "&".join(q) if q else "")
 
 
 def _n(text):
@@ -90,7 +90,7 @@ def search(max_pages=15, log=print, newest_only=False):
             continue
         s = BeautifulSoup(html, "html.parser")
         if page == 1:
-            pages = [int(p) for p in re.findall(r"\?pagina-(\d+)", html)]
+            pages = [int(p) for p in re.findall(r"[?&]pagina-(\d+)", html)]
             last = max(pages, default=1)
         items = [c for c in (_card(it) for it in s.select("div.listing__item") if not it.find_parent(class_="listing-container--suggested")) if c]
         for c in items:

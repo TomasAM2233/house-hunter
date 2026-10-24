@@ -17,7 +17,7 @@ def search_url(page, newest=False):
     s = config.SEARCH
     zones = "-".join(z.lower().replace(" ", "-") for z in s["zones"])
     suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
-    return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{s['price_min']}-{s['price_max']}-dolar{suffix}.html"
+    return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{s['price_min']}-{s['price_ceiling']}-dolar{suffix}.html"
 
 
 def _state(html):

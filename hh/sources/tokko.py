@@ -77,7 +77,7 @@ def _from_api(o, agency):
 def search_api(agency, log=print):
     s = config.SEARCH
     data = {"current_localization_id": VICENTE_LOPEZ, "current_localization_type": "division",
-            "price_from": s["price_min"], "price_to": s["price_max"], "currency": "USD",
+            "price_from": s["price_min"], "price_to": s["price_ceiling"], "currency": "USD",
             "operation_types": [1], "property_types": list(PTYPES), "filters": []}
     out, offset = [], 0
     while True:
@@ -174,7 +174,7 @@ def search_site(agency, log=print, max_pages=10):
     s = config.SEARCH
     base = (f"{agency['site']}/Buscar?operation=1&ptypes={','.join(map(str, PTYPES))}"
             f"&locations={','.join(map(str, LOCATIONS.values()))}"
-            f"&min-price={s['price_min']}&max-price={s['price_max']}&currency=USD&o=2,2")
+            f"&min-price={s['price_min']}&max-price={s['price_ceiling']}&currency=USD&o=2,2")
     found = {}
     for page in range(1, max_pages + 1):
         body = http.get(base + (f"&p={page}" if page > 1 else "")).text

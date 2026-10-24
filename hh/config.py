@@ -2,7 +2,8 @@
 
 SEARCH = {
     "price_min": 80_000,       # USD; only bounds what the portals return, never discards (a cheap house is a find)
-    "price_max": 210_000,      # USD
+    "price_max": 210_000,      # USD; the budget
+    "price_ceiling": 240_000,  # USD; asking prices up to here are fetched and scored with a penalty (room to negotiate)
     "ppm2_max": 2_000,         # USD per total m2; no floor, for the same reason
     "min_ambientes": 3,
     "min_total_m2": 100,

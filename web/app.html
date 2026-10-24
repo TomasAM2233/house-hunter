@@ -598,7 +598,7 @@ function renderInfo() {
   $("#sub").textContent = `Actualizado ${DATA.generated_at}`;
   const tok = gh.token();
   $("#info").innerHTML = `
-    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
+    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k (se aceptan hasta ${(S.price_ceiling || S.price_max) / 1000}k con penalización) y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
     <div><span class="label">Fuentes</span><div class="status" style="margin-top:6px">${Object.entries(DATA.status || {}).map(([k, s]) =>
       `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc((s.at || "").slice(5)) : "falló " + esc((s.at || "").slice(5))}</span>`).join("")}</div></div>
     <div><span class="label">Cómo puntúa el algoritmo (sobre 100)</span>

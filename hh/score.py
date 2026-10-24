@@ -34,8 +34,8 @@ def hard_filters(l, ai=None):
     """Reasons to discard. Missing data never discards on its own; it's flagged instead."""
     r = []
     p = l.get("price_usd")
-    if p and p > S["price_max"]:  # no floor: a cheap house is a find, not a red flag
-        r.append(f"precio USD {n(p)} (más de {n(S['price_max'])})")
+    if p and p > S["price_ceiling"]:  # no floor: a cheap house is a find, not a red flag
+        r.append(f"precio USD {n(p)} (más de {n(S['price_ceiling'])})")
     if l.get("type") not in S["types"]:
         r.append(f"tipo '{l.get('type')}'")
     if l.get("total_m2") and l["total_m2"] < S["min_total_m2"]:
@@ -176,6 +176,11 @@ def score(l, ai=None):
     if l.get("type") == "ph" and text.pasillo_words(l.get("description", "")) and not (ai and ai.get("pasillo_ph") is False):
         flags.append("posible pasillo")
         total -= 5
+    p = l.get("price_usd")
+    if p and p > S["price_max"]:
+        # over budget but negotiable: up to 10 points off at the ceiling, on top of the price component
+        flags.append(f"sobre presupuesto (USD {n(p)})")
+        total -= lerp(p, S["price_max"], 0, S["price_ceiling"], 10)
     return {
         "score": round(max(0, total), 1),
         "components": {k: {"value": round(v, 2), "points": round(config.WEIGHTS[k] * v, 1), "max": config.WEIGHTS[k], "why": why} for k, (v, why) in comps.items()},
