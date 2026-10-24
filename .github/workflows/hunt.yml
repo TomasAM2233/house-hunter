@@ -43,7 +43,7 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ]; then ARGS="--no-scrape"
           elif [ "${{ github.event.schedule }}" = "47 10-23,0-2 * * *" ]; then ARGS="--quick"
           else ARGS=""; fi
-          python -u run.py $ARGS 2>&1 | tee data/last_run.log
+          python -u run.py $ARGS 2>&1 | tee data/last_run.txt
       - run: python build.py
       - name: Commit data
         run: |

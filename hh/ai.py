@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "ai_cache.json")
 PENDING = os.path.join(ROOT, "data", "ai_pending")
 MAX_PHOTOS = 12
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")  # alias: Google retires pinned versions for new keys
 
 PROMPT_VERSION = 2
 PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte). Analizá esta publicación de venta
@@ -42,6 +42,12 @@ esquina casi nunca tienen patio: si no lo ves en las fotos, poné "patio": "none
 
 KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "patio_seen", "terrace", "corner", "ph_stacked",
         "pasillo_ph", "natural_light", "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
+
+
+def _text(resp):
+    """The answer text, skipping the thinking parts newer models return first."""
+    parts = resp["candidates"][0]["content"]["parts"]
+    return "".join(p.get("text", "") for p in parts if not p.get("thought"))
 
 
 def _load():
@@ -127,7 +133,7 @@ def _gemini(listing):
             time.sleep(30 * (attempt + 1))
             continue
         r.raise_for_status()
-        return json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
+        return json.loads(_text(r.json()))
     raise RuntimeError("Gemini rate limit")
 
 
@@ -177,7 +183,7 @@ def final(listing, prefs, note="", compute=True, log=print):
                 time.sleep(30 * (attempt + 1))
                 continue
             r.raise_for_status()
-            res = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
+            res = json.loads(_text(r.json()))
             break
         else:
             raise RuntimeError("Gemini rate limit")
