@@ -1,0 +1,934 @@
+ <!DOCTYPE html>
+<html ng-app=''>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+	<title>Azara Propiedades</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="https://kit.fontawesome.com/916a03be44.js" crossorigin="anonymous"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/styles.css?build=1.1">
+	<link rel="stylesheet" href="css/responsive.css?build=1.1">
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head><body>
+  <nav class="col-xs-12 nav">
+<div>
+  <a href="index.php" class="logo"><img src="img/logo.png"></a>
+<div class="menu_side">
+  <a href="https://www.facebook.com/azarapropiedades/" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="https://www.instagram.com/azaraprop/" target="_blank"><i class="fa fa-instagram"></i></a>
+  <a href="https://twitter.com/azaraprop" target="_blank"><i class="fa fa-twitter"></i></a>
+
+  <a href="tasaciones" class="button_tasacion">Pedí tu <strong>tasación</strong></a>
+</div>
+<div class="mobile">
+  
+  <div class="hamburger-menu">
+    <div class="bar"></div> 
+  </div>
+</div>  
+
+<div class="mobile-nav hide">
+    <ul>
+      <li><a href="propiedades">Propiedades</a></li>
+      <li><a href="emprendimientos">Emprendimientos</a></li>
+      <li><a href="nosotros">QUIENES SOMOS</a></li>
+      <li><a href="contacto">CONTACTO</a></li>
+      <li> <a href="tasaciones" class="button_tasacion">Pedí tu <strong>tasación</strong></a></li>
+    </ul>
+</div>
+</div>
+</nav>
+  <!-- Whatsapp -->
+  <a href="https://wa.me/5491137711682" class="btn_wp">
+	<i class="fa fa-whatsapp"></i>
+</a>
+
+  <section class="home">
+
+    <header class="col-xs-12">
+      <div class="owl-carousel owl-theme" id="owl-home">
+        <div class="item" style="background-image:url('img/slider_home/1.jpg');"></div>
+        <div class="item" style="background-image:url('img/slider_home/2.jpg');"></div>
+        <div class="item" style="background-image:url('img/slider_home/3.jpg');"></div>
+        <div class="item" style="background-image:url('img/slider_home/4.jpg');"></div>
+        <div class="item" style="background-image:url('img/slider_home/5.jpg');"></div>
+        <div class="item" style="background-image:url('img/slider_home/6.jpg');"></div>
+      </div>
+      <img src="img/logo_slider.png" class="logo_slider">
+      <div class="text_home">
+        <h1>¿Cómo podemos ayudarte?</h1>
+        
+      <div class="buttons_header" id="buttons_header">
+        <a href="propiedades-venta">Quiero comprar</a>
+         <a href="tasaciones">Quiero vender</a>
+        <a href="propiedades-alquiler">Quiero alquilar</a>
+      </div>
+        <a href="#down_form" id="down_form"><img src="img/arrow-home.png" alt=""></a>
+      </div>
+    </header>
+
+
+    <!-- Por qué Azara Propiedades -->
+
+    <section class="col-xs-12 porque_inmobiliaria show_desktop">
+      <h2>¿Por qué Azara Propiedades?</h2>
+      <div class="porque_inmobiliaria-inside">
+        
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_1.png">
+          </div>
+          <p>Generamos soluciones inmobiliarias adaptadas a tus necesidades.</p>
+        </div>
+
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_2.png">
+          </div>
+          <p>Trabajamos con seriedad y responsabilidad para que tu propiedad se venda/alquiler.</p>
+        </div>
+
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_3.png">
+          </div>
+          <p>Nos caracteriza la calidad profesional y la calidez humana.</p>
+        </div>
+
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_4.png">
+          </div>
+          <p>Te acompañamos en todo el proceso de compra/venta o alquiler</p>
+        </div>
+
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_5.png">
+          </div>
+          <p>Contamos con más de 20 años de experiencia y no dejamos de capacitarnos.</p>
+        </div>
+
+        <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_6.png">
+          </div>
+          <p>Buscamos siempre ofrecerte el mejor servicio.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="col-xs-12 porque_inmobiliaria show_mobile">
+      
+      <h2>¿Por qué Azara Propiedades?</h2>
+
+      <div class="porque_inmobiliaria-inside">
+
+      <div class="owl-carousel owl-theme" id="owl-inmobiliaria">
+
+        <div class="item">
+          <div class="inmobiliaria_item">
+            <div class="inmobiliaria_item_img">
+              <img src="img/iconos/valor_1.png">
+            </div>
+            <p>Generamos soluciones inmobiliarias adaptadas a tus necesidades.</p>
+          </div>
+          <div class="inmobiliaria_item">
+            <div class="inmobiliaria_item_img">
+              <img src="img/iconos/valor_2.png">
+            </div>
+            <p>Trabajamos con seriedad y responsabilidad para que tu propiedad se venda/alquiler.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="inmobiliaria_item">
+            <div class="inmobiliaria_item_img">
+              <img src="img/iconos/valor_3.png">
+            </div>
+            <p>Nos caracteriza la calidad profesional y la calidez humana.</p>
+          </div>
+
+          <div class="inmobiliaria_item">
+          <div class="inmobiliaria_item_img">
+            <img src="img/iconos/valor_4.png">
+            </div>
+            <p>Te acompañamos en todo el proceso de compra/venta o alquiler</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="inmobiliaria_item">
+            <div class="inmobiliaria_item_img">
+              <img src="img/iconos/valor_5.png">
+            </div>
+            <p>Contamos con más de 20 años de experiencia y no dejamos de capacitarnos.</p>
+          </div>
+
+          <div class="inmobiliaria_item">
+            <div class="inmobiliaria_item_img">
+              <img src="img/iconos/valor_6.png">
+            </div>
+            <p>Buscamos siempre ofrecerte el mejor servicio.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <!-- Frase Azara -->
+    <div class="col-xs-12 home_info">
+      <h2><strong>Azara Propiedades,</strong> la tranquilidad de saber que estás en buenas manos.</h2>
+    </div>
+
+    <!-- Oportunidades -->
+    <section class="col-xs-12 container-fluid home_props">
+      <h2>Oportunidades</h2>
+      <div class="col-xs-12 listado_propiedades arrows_home">
+        <div id="owl-prop-home" class="owl-carousel owl-theme">
+          <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Terreno</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/6422743_114409731361602377431709069925289576176314486054975329843005581941275797458979.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>Área 5 del Barrio San Sebastian</h3>
+      <h3>Lote de 1082m2 en el área 5 del Barrio San Sebastián, listo para escriturar!</h3>
+      <p>                                    
+Lote de 1082 m2 ubicado en el área 5, la más segura y consolidada del barrio, por ser perimetral a otras áreas del complejo y tener más de la mitad de los lotes construidos. Está listo para escriturar!
+
+
+El Barrio San Sebastián cuenta con 154 hectáreas de  [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>0 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>0 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 80.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+%C3%81rea+5+del+Barrio+San+Sebastian" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-6422743-Lote-de-1082m2-en-el-área-5-del-Barrio-San-Sebastián,-listo-para-escriturar!" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Terreno</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/6261369_2305955938412627332289959211193129828438187705815760437986653451514617357045.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>Ruta 5 frente al Merlo Village</h3>
+      <h3>Terreno en  560m2 en Merlo, San Luis, muy cerca del centro</h3>
+      <p>Excelente terreno de 560m2 en barrio semi cerrado, a metros de Ruta 5, frente al Village Merlo, y a pocos minutos del centro.
+            
+        Hay dos lotes juntos (de 517m2 y de 560 m2  en la manzana 68) que se venden juntos o separados a un valor de USD 22.000- cada uno.
+El tendido del gas  [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>0 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>0 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 20.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+Ruta+5+frente+al+Merlo+Village" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-6261369-Terreno-en--560m2-en-Merlo,-San-Luis,-muy-cerca-del-centro" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Terreno</a>
+      </div>
+      <img src="https://static.tokkobroker.com/water_pics/44054374612244216642038822818839234480891580566993066200511857835271409255997.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>Área 5 del Barrio San Sebastian</h3>
+      <h3>Lote de 1125m2 en el área 5 del Barrio San Sebastián, listo para construir!</h3>
+      <p>                        
+Lote de 1125 m2 ubicado en el área 5, la más segura y consolidada del barrio, por ser perimetral a otras áreas del complejo y tener más de la mitad de los lotes construidos.
+
+
+
+
+Está escriturado, listo para construir!
+
+
+
+
+El Barrio San Sebastián cuenta con 154 hectá [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>0 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>0 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 83.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+%C3%81rea+5+del+Barrio+San+Sebastian" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-4480534-Lote-de-1125m2-en-el-área-5-del-Barrio-San-Sebastián,-listo-para-construir!" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Departamento</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/8032675_75926474688335247110433265511542146340054817326810264020893418386089328269348.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>BARDI  al 1400</h3>
+      <h3>Departamento 3 AMBIENTES CON DOS BALCONES   EN VENTA</h3>
+      <p>APTO CREDITO 
+Excelente oportunidad para adquirir un departamento de calidad en el prestigioso Barrio Vicente López. Esta propiedad, apta para crédito, se destaca por su construcción de lujo y su ubicación privilegiada, a pocos metros de la Avenida Maipú y el centro comercial, y a solo 8 cuadra [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>73.70 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>3 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>1 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 185.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+BARDI++al+1400" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-8032675-Departamento-3-AMBIENTES-CON-DOS-BALCONES---EN-VENTA" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Departamento</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/8693202_75914630155361100079554840430404730550336331638480448968453905453107666189168.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>MAIPU   al 4100</h3>
+      <h3>Departamento 2amb  con cochera baulera en venta </h3>
+      <p>                                                
+NO ES  APTO CREDITO  -   SE VENDE  CON CESION DE BOLETO  EDIFICIO  NUEVO  DE UN AÑO DE ANTIGUEDAD    CON DETALLES DE CATEGORIA  - 
+Edificio con perímetro libre en zona Residencial de Olivos, desarrollado en PB y 14 pisos. Consta de 76 departamentos  [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>2 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>1 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 179.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+MAIPU+++al+4100" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-8693202-Departamento-2amb--con-cochera-baulera-en-venta-" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Casa</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/6389676_56580422286782680730335494833099891490714986243837095622960686779612984298228.png" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>barrio San Sebastian area 12</h3>
+      <h3>Casa en San Sebastian</h3>
+      <p>                --- NO ES APTO CREDITO ---
+
+
+En el barrio San Sebastian ÁREA 12, tenemos esta espectacular casa con un lote de 820 m2  con jardín y piscina, la casa es toda en una planta, de muy buena categoría, amb amplios y luminosos todos con vistas al jardín, una casa de estilo Minimalista y [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>180.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>4 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>2 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 185.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+barrio+San+Sebastian+area+12" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-6389676-Casa-en-San-Sebastian" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Casa</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/7941536_28879975631106042254995885391452191106954192502427030681136134929770730498159.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>ESMERALDA   al 4600</h3>
+      <h3>Casa 4 amb con dependencia completa en venta </h3>
+      <p>Muy buena casa  en una sola  planta  4 ambientes  con   entrada de auto    gran jardin  con entrada de servicio  sobre lote  10  x  30 distribuido de la siguiente manera:  
+Retiro de frente  y entrada de auto - Porch 3,80 x 1, 80   Muy buen living  con hogar  a leña  3,80  x  5,80  con   detalles d [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>4 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>2 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 240.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+ESMERALDA+++al+4600" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-7941536-Casa-4-amb-con-dependencia-completa-en-venta-" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Departamento</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/6332557_47787404022375153325449907427840813984927747106090958237042501895763303694673.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>Acassuso al 1400</h3>
+      <h3>Departamento 2 ambientes con cochera cubierta y amenities en exclusiva Torre Bamboo</h3>
+      <p>                                                                                                        [SE VENDE CON O SIN RENTA] Hermoso departamento de 2 ambientes con cochera cubierta y amenities de primer nivel, en exclusiva Torre Bamboo en Olivos. No está sujeto a reubicación y es apto créd [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>55.25 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>2 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>1 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 180.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+Acassuso+al+1400" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-6332557-Departamento-2-ambientes-con-cochera-cubierta-y-amenities-en-exclusiva-Torre-Bamboo" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+  <!-- Destacado -->
+  <div class="col-xs-12 prop-destacada">
+    <div class="col-xs-12 col-sm-5 image_prop_destacada">
+      <div class="etiquetas_destacadas">
+        <p>Destacado</p>
+        <a href="">Venta</a>
+        <a href="">Casa</a>
+      </div>
+      <img src="https://static.tokkobroker.com/w_pics/7564656_59905192095024217273164254096417447851944027204025466702597749409476573729073.jpg" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-7 description_prop_destacada">
+      <h3>Carlos Francisco Melo al 2200</h3>
+      <h3>Espectacular Casa Chalet estilo ingles  5 ambientes en dos plantas en venta</h3>
+      <p>                                                                                                                Chalet de estilo inglés en Florida: una casa para disfrutar adentro y afuera · Apto crédito
+En Melo al 2200, este chalet de cinco ambientes combina el encanto de su arquitectura de esti [...]</p>
+
+      <div class="details_generic">
+
+        <div class="details_destacados">
+          <span>
+            <img src="img/iconos/superficie_home.png" alt="Superficie">
+            <p>0.00 m2 total</p>
+          </span>
+           <span>
+            <img src="img/iconos/ambientes.png" alt="Ambientes">
+            <p>5 ambientes</p>
+          </span>
+           <span>
+            <img src="img/iconos/banios.png" alt="Baños">
+            <p>2 baños</p>
+          </span>
+        </div>
+
+        <div class="details_valor">
+          <img src="img/iconos/precio.png" alt="Valor">
+          <span>
+            <h4>Precio</h4>
+            <p>
+                u$s 415.000             </p>            
+          </span>
+        </div>
+
+      </div>
+
+      <div>
+        <a target="_blank" href="https://wa.me/5491137711682?text=Estoy+interesado+en+la+propiedad+ubicada+en+Carlos+Francisco+Melo+al+2200" class="button_destacado" id="see_gallery">Consultar por Whatsapp</a>
+        <a href="propiedad-7564656-Espectacular-Casa-Chalet-estilo-ingles--5-ambientes-en-dos-plantas-en-venta" class="button_destacado">Ver Ficha</a>
+      </div>
+    </div>
+  </div>
+      </div> 
+    </div>
+    </section>
+
+
+    <!-- Emprendimientos destacados -->
+          <section class="col-xs-12 container-fluid home_props home_empr">
+        <div class="col-xs-12">
+          <h2>Emprendimientos destacados</h2>
+          <div class="col-xs-12 listado_propiedades">
+            <div id="owl-empr-home" class="owl-carousel owl-theme">
+              <div class="col-xs-12 col-sm-6 propiedad_item emprendimiento_item">
+  <div class="etiquetas_props"> 
+    <a href=" ">Edificio</a>
+    <a href=" ">V.Lopez-Vias/Maipu</a>
+  </div>
+  <div class="owl-carousel owl-theme owl-prop">
+    <div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/102856135924612164288455388278552072837320855365027583360598057386826468421988.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/92355817396824822607338893673719246322001138572769486177679614969840390950318.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/60400026001883042129775238412100390244064238455327225714804525674743984372816.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/43542297510369452573466645648208756800137298597409452752268013319264384680880.jpg' alt=''></div>  </div>
+  <div class="info_prop">
+    <div class="info_items">  
+      <h2>ZOOM</h2>
+      <h3><b>A ESTRENAR</b></h3>
+      <h3>25 de Mayo 70</h3>
+    </div>
+    <div class="action_items"> 
+      <a href="emprendimiento-36259-25-de-Mayo-70">Ver Ficha</a>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-6 propiedad_item emprendimiento_item">
+  <div class="etiquetas_props"> 
+    <a href=" ">Edificio</a>
+    <a href=" ">Munro</a>
+  </div>
+  <div class="owl-carousel owl-theme owl-prop">
+    <div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/65868878562273215638086206510782681649051886614180624737058931014482094476927.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/62135834890521818403846733505892351752558559486850582333865614422783236643505.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/20741261871408375270411292984753774504832190846863109385456159061124664333131.jpg' alt=''></div><div class='item'><img src='https://static.tokkobroker.com/dev_water_pics/77293576567532249126400393169161677699195659799089166914225611183146851896041.jpg' alt=''></div>  </div>
+  <div class="info_prop">
+    <div class="info_items">  
+      <h2>Olaguer y Feliú</h2>
+      <h3><b>A ESTRENAR</b></h3>
+      <h3>Olaguer y Feliú 4957</h3>
+    </div>
+    <div class="action_items"> 
+      <a href="emprendimiento-36285-Olaguer-y-Feliú-4957">Ver Ficha</a>
+    </div>
+  </div>
+</div>
+            </div>
+          </div>
+          <a href="emprendimientos" id="see_more_props">Ver más emprendimientos</a>
+        </div>
+      </section>
+    
+
+    <!--Clientes-->
+    <section class="col-xs-12 clientes">
+      <h2>La palabra de nuestros clientes</h2>
+
+      <div class="owl-carousel owl-theme" id="owl-clientes">
+        
+        <div class="item">
+          <div class="img-cliente"><img src="img/iconos/clientes.png"></div>
+          <div class="text-cliente">
+            <p>"Destaco la idoneidad profesional de la martillera Adriana Azara, tanto para las inversiones como alquileres, en el rubro inmobiliario. Muy recomendable."</p>
+            <span>Liliana Gentile</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-cliente"><img src="img/iconos/clientes.png"></div>
+          <div class="text-cliente">
+            <p>"La atención recibida por Adriana Azara en la venta de mi terreno fue excelente. Siempre dispuesta y con muy buen trato."</p>
+            <span>Guillermo Buero</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-cliente"><img src="img/iconos/clientes.png"></div>
+          <div class="text-cliente">
+            <p>"Conocí a Azara Propiedades hace dos años por medio de una vecina. Siempre me han atendido muy bien, tanto la dueña como quienes trabajan en la parte administrativa y ventas. Agradecida."</p>
+            <span>Susana Biagini</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-cliente"><img src="img/iconos/clientes.png"></div>
+          <div class="text-cliente">
+            <p>"Me he es grato haber conocido a Azara Propiedades. Me parecen muy eficientes y ponen seriedad en lo que hacen."</p>
+            <span>Marcelo Pozo</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-cliente"><img src="img/iconos/clientes.png"></div>
+          <div class="text-cliente">
+            <p>"Es una empresa eficaz, eficiente y seria. Estoy muy conforme de haberle entregado mi confianza para todos mis negocios inmobiliarios."</p>
+            <span>Romina Misci</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Ubicación -->
+   <section class="col-xs-12 map_place">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.8068527216856!2d-58.4829855850548!3d-34.53312116127261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6b6d011d505%3A0xc955c5070d79fc53!2sB1638%2C%20Gral.%20Juan%20Lavalle%201599%2C%20B1602DYC%20Florida%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1615903949971!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+    <!-- Contacto -->
+    <section class="col-xs-12 contacto_home">
+      <div class="col-xs-12 col-sm-6 contacto_home_info">
+        <p><i class="fa fa-clock-o"></i> <strong>Lunes a Viernes </strong> de 10hs a 19hs <br><strong>Sábados</strong> de 10hs a 13hs</p>
+        <p><a href="tel:01147974686"><i class="fa fa-phone"></i><strong>011 4797-4686 / 8020</strong></a></p>
+        <p><i class="fa fa-map-marker"></i> Gral Juan Lavalle 1599, Planta Baja <br>Florida (1602) Vicente López, <br><strong>Pcia de Buenos Aires</strong></p>
+        <p><a href="mailto:info@azarapropiedades.com.ar"><i class="fa fa-envelope"></i> info@azarapropiedades.com.ar</a></p>
+
+        <h3>Administración de alquileres</h3>
+        <p><a href="tel:77055218"><i class="fa fa-phone"></i>(011) 7705-5218</a></p>
+        <p><a href="mailto:admazarapropiedades@gmail.com"><i class="fa fa-envelope"></i> admazarapropiedades@gmail.com</a></p>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 contacto_home_form">
+        <h2>¿Cómo podemos ayudarte?</h2>
+        <p>Envíanos un mensaje con tu consulta.</p>
+
+        <form id="form-wsp" class="col-xs-12">
+  <input type="text" id="nombre" class="col-xs-12 col-sm-6" placeholder="Nombre y Apellido" required>
+  <input type="text" id="telefono" class="col-xs-12 col-sm-6" placeholder="Teléfono (Opcional)">
+  <input type="email" id="email" class="col-xs-12 col-sm-12" placeholder="Email" required>
+  <textarea id="mensaje" placeholder="Deja tu mensaje..." class="col-xs-12" required></textarea>
+  <input type="submit" value="Enviar">
+</form>
+      </div>
+    </section>
+
+  </section>
+
+
+  <script src="js/script-home.js"></script>
+  <script type="text/javascript" src="js/tokko.js"></script>
+  
+  <footer class="col-xs-12">
+	<div class="item_footer logos">
+		<img src="img/logo_footer.png" alt="Azara Propiedades">
+		<div>
+			<h2>Seguinos</h2>
+			<a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+			<a href="https://www.facebook.com/azarapropiedades/" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://www.instagram.com/azaraprop/" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://twitter.com/azaraprop" target="_blank"><i class="fa fa-twitter"></i></a>
+		</div>
+
+	</div>
+
+	<div class="item_footer links">
+		<a href="propiedades">PROPIEDADES</a>
+		<a href="emprendimientos">EMPRENDIMIENTOS</a>
+		<a href="nosotros">QUIENES SOMOS</a>
+		<a href="tasaciones">TASACIONES</a>
+		<a href="contacto">CONTACTO</a>
+	</div>
+
+	<div class="item_footer datos">
+			<div class="col-xs-12 col-md-12 col-lg-12">			
+				<p class="col-xs-12"><a href="tel:01147978020"><i class="fa fa-phone"></i> 011 4797-4686 / 8020</a></p>
+				<p class="col-xs-12"><a href="https://wa.me/5491137711682"><i class="fa fa-whatsapp"></i>+54 9 11 3771-1682</a></p>
+  				<p class="col-xs-12"><i class="fa fa-map-marker"></i> Gral. Juan Lavalle 1599, Planta Baja, Florida (1602) Vicente López, Pcia de Buenos Aires.</p>
+  				<p class="col-xs-12"><a href="mailto:info@azarapropiedades.com.ar"><i class="fa fa-envelope"></i> info@azarapropiedades.com.ar</a></p>  			
+  			</div>
+	</div>
+
+</footer>
+<p class="col-xs-12 bottom_disclaimer">
+	Copyright© 2024 - Azara Propiedades Negocios Inmobiliarios. Todos los derechos reservados <img src="img/poweredby.png">
+</p>
+
+<!-- Javascript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/owl-thumb.js"></script>
+<!-- Custom -->
+<script src="js/script.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdefqwaAAAAAI-jg44gNRoZemTU_sxyvnM0FiXp"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/es.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.1.3/dist/sweetalert2.all.js"></script>
+<!--<script data-api_url="includes/enviar_contacto.php" data-id_result="success" src="js/contact.js"></script>-->
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+  $('.responsive-slick').slick({
+  slidesToShow: 3,
+  dots:true,
+  centerMode: true,
+  });
+});
+</script>
+<script type="text/javascript">
+	$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 50) {
+        $("nav").addClass("darkHeader");
+    } else {
+        $("nav").removeClass("darkHeader");
+    }
+});
+</script>
+<script src="js/retina.min.js"></script>
+
+
+
+
+<script>
+
+document.getElementById("form-wsp").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Números del captcha
+  let num1 = parseInt(document.getElementById("num1").innerText);
+  let num2 = parseInt(document.getElementById("num2").innerText);
+  let resultado = parseInt(document.getElementById("resultado").value);
+
+  // Validamos la suma
+  if (resultado !== num1 + num2) {
+    alert("El resultado de la suma es incorrecto.");
+    return; // corta el envío
+  }
+
+  // Número de WhatsApp al que querés enviar
+  let numero = "5491136687890";
+
+  // Datos del formulario
+  let nombre   = document.getElementById("nombre").value;
+  let telefono = document.getElementById("telefono").value;
+  let email    = document.getElementById("email").value;
+  let mensaje  = document.getElementById("mensaje").value;
+
+  // URL actual
+  let urlActual = window.location.href;
+
+  // Armamos texto base
+  let texto = "Nuevo contacto desde el formulario:%0A"
+            + "Nombre: " + nombre + "%0A"
+            + "Teléfono: " + telefono + "%0A"
+            + "Email: " + email + "%0A"
+            + "Mensaje: " + mensaje;
+
+  // Si no está en la home, agregamos URL
+  if (urlActual !== "https://www.azarapropiedades.com.ar/" &&
+      urlActual !== "https://www.azarapropiedades.com.ar/index.php") {
+    texto += "%0A" + "Página: " + urlActual;
+  }
+
+  // Abrimos WhatsApp
+  let url = "https://wa.me/" + numero + "?text=" + texto;
+  window.open(url, "_blank");
+});
+</script>
+
+
+</body>
+</html>
+
+
+
