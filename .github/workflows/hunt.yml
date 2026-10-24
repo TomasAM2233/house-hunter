@@ -36,7 +36,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
         run: |
-          if [ "${{ github.event_name }}" = "push" ]; then python run.py --no-scrape; else python run.py; fi
+          set -o pipefail
+          if [ "${{ github.event_name }}" = "push" ]; then python -u run.py --no-scrape; else python -u run.py; fi 2>&1 | tee data/last_run.log
       - run: python build.py
       - name: Commit data
         run: |
