@@ -1,12 +1,39 @@
-gallery 200 27492 photos 50
-photo 6 cannot identify image file <_io.BytesIO object at 0x7fadd6555a80>
-photo 10 cannot identify image file <_io.BytesIO object at 0x7fadd5d522f0>
-photo 16 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 16 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 17 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 28 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 28 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 29 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-photo 45 cannot identify image file <_io.BytesIO object at 0x7fadd5d52980>
-photo 49 cannot identify image file <_io.BytesIO object at 0x7fadd5d51d50>
-saved 54
+Diego Lopez Pereyra {'host': 'lopezpereyraprop.com.ar', 'error': "HTTPSConnectionPool(host='lopezpereyraprop.com.ar', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLC"}
+Diego Lopez Pereyra {'host': 'www.lopezpereyraprop.com.ar', 'status': 405, 'final': 'https://www.lopezpereyraprop.com.ar/', 'bytes': 2527, 'title': 'Human Verification', 'marks': {}, 'key40': None, 'p_links': 0}
+Di Nardo {'host': 'www.dinardoprop.com.ar', 'status': 200, 'final': 'https://www.dinardoprop.com.ar/', 'bytes': 76287, 'title': 'DI NARDO Propiedades', 'marks': {'wp-content': 31}, 'key40': None, 'p_links': 0}
+Marolla {'host': 'www.marollainmobiliaria.com.ar', 'status': 200, 'final': 'https://www.marollainmobiliaria.com.ar/', 'bytes': 31647, 'title': 'Marolla Inmobiliaria', 'marks': {}, 'key40': None, 'p_links': 0}
+Marolla {'host': 'marollainmobiliaria.com.ar', 'status': 200, 'final': 'https://marollainmobiliaria.com.ar/', 'bytes': 31647, 'title': 'Marolla Inmobiliaria', 'marks': {}, 'key40': None, 'p_links': 0}
+Martin Fonseca {'host': 'www.martinfonsecaprop.com', 'status': 200, 'final': 'https://www.martinfonsecaprop.com/', 'bytes': 103405, 'title': 'Martin Fonseca Propiedades', 'marks': {'tokko': 36}, 'key40': None, 'p_links': 0, 'buscar': [200, 7]}
+Martin Fonseca {'host': 'martinfonsecaprop.com', 'status': 200, 'final': 'https://www.martinfonsecaprop.com/', 'bytes': 103405, 'title': 'Martin Fonseca Propiedades', 'marks': {'tokko': 36}, 'key40': None, 'p_links': 0, 'buscar': [200, 7]}
+Lencke {'host': 'www.lencke.com.ar', 'error': "HTTPSConnectionPool(host='www.lencke.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionError"}
+Lencke {'host': 'www.lencke.com', 'status': 200, 'final': 'https://lencke.com/', 'bytes': 158388, 'title': 'Home | Lencke Propiedades', 'marks': {'tokko': 32}, 'key40': None, 'p_links': 0, 'buscar': [404, 0]}
+Houghton {'host': 'www.houghtonpropiedades.com.ar', 'error': "HTTPSConnectionPool(host='www.houghtonpropiedades.com.ar', port=443): Max retries exceeded with url: / (Caused by SSLErr"}
+Houghton {'host': 'www.houghtonpropiedades.com', 'error': "HTTPSConnectionPool(host='www.houghtonpropiedades.com', port=443): Max retries exceeded with url: / (Caused by NameResol"}
+Houghton {'host': 'houghton.com.ar', 'error': 'HTTPSConnectionPool(host=\'houghton.com.ar\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("'}
+Barbini {'host': 'www.barbini.com.ar', 'status': 200, 'final': 'https://maps.app.goo.gl/owSHKEvNKxrvx5TK6', 'bytes': 39536, 'title': '', 'marks': {}, 'key40': None, 'p_links': 0}
+Barbini {'host': 'www.barbinipropiedades.com.ar', 'status': 200, 'final': 'https://www.barbinipropiedades.com.ar/', 'bytes': 29566, 'title': 'Inmobilairia en Tandil - Barbini Propiedades', 'marks': {}, 'key40': None, 'p_links': 0}
+Barbini {'host': 'www.apbarbini.com.ar', 'error': "HTTPSConnectionPool(host='www.apbarbini.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionEr"}
+Barbini {'host': 'www.barbinipropiedades.com', 'error': "HTTPSConnectionPool(host='www.barbinipropiedades.com', port=443): Max retries exceeded with url: / (Caused by NameResolu"}
+Braulio {'host': 'www.braulioinmuebles.com', 'status': 200, 'final': 'https://www.braulioinmuebles.com/', 'bytes': 38294, 'title': 'Braulio Inmuebles', 'marks': {'tokko': 31}, 'key40': None, 'p_links': 0, 'buscar': [200, 1]}
+Braulio {'host': 'www.braulioinmuebles.com.ar', 'error': "HTTPSConnectionPool(host='www.braulioinmuebles.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResol"}
+Braulio {'host': 'www.braulio.com.ar', 'error': "HTTPSConnectionPool(host='www.braulio.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionErro"}
+Martin Pinus {'host': 'www.martinpinus.com', 'error': "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"}
+Martin Pinus {'host': 'www.martinpinus.com.ar', 'error': "HTTPSConnectionPool(host='www.martinpinus.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolution"}
+Ambito Urbano {'host': 'www.ambitourbano.com.ar', 'error': "HTTPSConnectionPool(host='www.ambitourbano.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutio"}
+Ambito Urbano {'host': 'www.ambitourbanoinmobiliaria.com.ar', 'error': "HTTPSConnectionPool(host='www.ambitourbanoinmobiliaria.com.ar', port=443): Max retries exceeded with url: / (Caused by N"}
+Ambito Urbano {'host': 'www.ambitourbano.com', 'error': "HTTPSConnectionPool(host='www.ambitourbano.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionEr"}
+MP Bienes Raices {'host': 'www.mpbienesraices.com.ar', 'error': "HTTPSConnectionPool(host='www.mpbienesraices.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolut"}
+MP Bienes Raices {'host': 'www.mpbienesraices.com', 'error': "HTTPSConnectionPool(host='www.mpbienesraices.com', port=443): Max retries exceeded with url: / (Caused by NameResolution"}
+MP Bienes Raices {'host': 'www.monicapaschetti.com.ar', 'error': "HTTPSConnectionPool(host='www.monicapaschetti.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolu"}
+Canali {'host': 'www.canalipropiedades.com.ar', 'error': "HTTPSConnectionPool(host='www.canalipropiedades.com.ar', port=443): Max retries exceeded with url: / (Caused by NameReso"}
+Canali {'host': 'www.canalipropiedades.com', 'error': "HTTPSConnectionPool(host='www.canalipropiedades.com', port=443): Max retries exceeded with url: / (Caused by NameResolut"}
+Canali {'host': 'www.canali.com.ar', 'error': "HTTPSConnectionPool(host='www.canali.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionError"}
+Inguer {'host': 'www.inguer.com.ar', 'error': "HTTPSConnectionPool(host='www.inguer.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionError"}
+Inguer {'host': 'www.inguerpropiedades.com.ar', 'status': 200, 'final': 'https://inguerpropiedades.com.ar/', 'bytes': 153, 'title': '', 'marks': {}, 'key40': None, 'p_links': 0}
+Inguer {'host': 'www.inguer.com', 'error': 'HTTPSConnectionPool(host=\'www.inguer.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("H'}
+f+f studio {'host': 'www.ffstudio.com.ar', 'error': "HTTPSConnectionPool(host='www.ffstudio.com.ar', port=443): Max retries exceeded with url: / (Caused by NameResolutionErr"}
+f+f studio {'host': 'www.ffcasasdediseno.com', 'error': "HTTPSConnectionPool(host='www.ffcasasdediseno.com', port=443): Max retries exceeded with url: / (Caused by NameResolutio"}
+f+f studio {'host': 'www.ffstudio.ar', 'error': 'HTTPSConnectionPool(host=\'www.ffstudio.ar\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("'}
+RE/MAX {'host': 'www.remax.com.ar', 'status': 403, 'final': 'https://www.remax.com.ar/', 'bytes': 23, 'title': '', 'marks': {}, 'key40': None, 'p_links': 0}
+zp 53020994 200 517949
+zp 58852278 200 496810

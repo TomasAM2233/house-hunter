@@ -1,0 +1,2357 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ar">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"62718d2ad0","applicationID":"1026144548","transactionName":"M1wBZUVVXxJQAkBcWQoWJURZV0UIXg8bVlkWXE1HXlFGEgsIWlFTHA==","queueTime":0,"applicationTime":24,"agent":""};
+(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"62718d2ad0",applicationID:"1026144548",browserID:"1103530204"};;/*! For license information please see nr-loader-rum-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.0.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-Pjy0Jxmo6oAG6oGKLKrf8x8xyaSM1NuL7vLGv9xRLEw0hrpERDruLI5RxlCHNy0NpMyEPWhlC34zujXIR3qJPQ=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+<meta content="all" name="robots" />
+<meta content="global" name="distribution" />
+<meta content="7 days" name="Revisit" />
+<meta name="AUTHOR" content="Tokko Broker">
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript" src="https://static.tokkobroker.com/tfw/js/utils.eb8929bff3ac.js"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+
+var is_home = false
+var is_listado = false
+
+</script>
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script nonce="14qoavVxl86oqYgHKaRyLg" async src="https://www.googletagmanager.com/gtag/js?id=G-17PZHDHJZ9"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+</script>
+
+
+
+
+<!-- Facebook Pixel Code -->
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1349300285621003');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1349300285621003&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+<meta property="og:locale" content="es_ar" />
+
+
+  <meta property="og:title" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria"/>
+  <meta property="og:image" content="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/logo_horizontal.png">
+  
+    <meta property="og:description" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria"/>
+  
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria"/>
+  
+    <meta name="twitter:description" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria"/>
+  
+
+  <meta name="twitter:image" content="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/logo_horizontal.png"/>
+
+
+
+  <meta name="title" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria" />
+  
+    <meta name="description" content="Martin Fonseca Propiedades – Venta y Alquiler de Propiedades - Inmobiliaria" />
+  
+
+
+<meta name="keywords" content="inmobiliaria venta, casas, terreno, emprendimientos, agencias inmobiliarias, venta, alquiler" />
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Sans" rel="stylesheet">
+
+<title>Martin Fonseca Propiedades</title>
+<link href="https://static.tokkobroker.com/tfw/css/normalize.7caceed67722.css" rel="stylesheet" />
+
+<link href="https://static.tokkobroker.com/tfw/css/estilo.bb94cb6be3a2.css" rel="stylesheet" />
+<link href="https://static.tokkobroker.com/tfw/css/animate.404020c62cd1.css" rel="stylesheet" />
+<link href="https://static.tokkobroker.com/tfw/css/print.1a52917c062b.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link rel="icon" type="image/png" href="/favicon.ico"/>
+<link rel="stylesheet" href="https://static.tokkobroker.com/tfw/css/font-awesome.min.bf0c425cdb73.css">
+<link rel="stylesheet" href="https://static.tokkobroker.com/tfw/css/tokko-icons.982773fa9f2d.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href="https://static.tokkobroker.com/tfw/css/jquery.bxslider.dd2e67415640.css" rel="stylesheet" />
+<link href="https://static.tokkobroker.com/tfw/css/jquery-ui-1.11.14.201a8b5fc41b.css" />
+<script nonce="14qoavVxl86oqYgHKaRyLg" src="https://static.tokkobroker.com/tfw/js/jquery-1.10.1.min.4b5f62f5d972.js"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg" src="https://static.tokkobroker.com/tfw/js/jquery-ui-1.11.14.42fbc7043183.js"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript" src="https://static.tokkobroker.com/tfw/js/jquery.sticky.112dbba9abde.js"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript">var switchTo5x=true;</script>
+
+
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript" src="https://static.tokkobroker.com/tfw/js/jquery.youtubebackground.80e8f9c0ae6c.js"></script>
+
+<script src="https://ss.sharethis.com/loader.js"></script>
+<script src="https://ws.sharethis.com/button/buttons.js"></script>
+
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+  function fh_star_unstar_prop(evt, prop_id ){
+    evt.preventDefault();
+    star_unstar_prop(prop_id);
+  }
+
+  function star_unstar_prop(id){
+    if ($('.star-'+id).is(":visible")){
+        star_remove_prop(id)
+    }else{
+        star_prop(id)
+    }
+  }
+
+  function star_prop(id){
+    /**
+     * Marca una propiedad como Favorita.
+     * Agrega 1 al contador de Propiedades Favoritas de la página.
+     * En los templates viejos, muestra el contador, si no era visible.
+     * En los templates nuevos, cambia el valor también para el contador del menu mobile.
+    */
+    $('.star-'+id).show();
+    var jqxhr = $.ajax('/add_star/'+id)
+    .done(function(result){
+        let old_value = parseInt($('#favcounter').html())
+        let new_value = old_value + 1
+        $('#favcounter').html(new_value)
+
+        //si hay menu mobile (nuevos templates)
+        if($('#m-favcounter').length > 0){
+            $('#m-favcounter').html(`(${new_value})`)
+        }else{
+            $('#fav-btn').show();
+        }
+    })
+}
+
+function star_remove_prop(id){
+    /**
+     * Desmarca una propiedad como Favorita.
+     * Resta 1 al contador de Propiedades Favoritas de la página.
+     * En los templates viejos, oculta el contador, si se llegó a 0 favoritas.
+     * En los templates nuevos, cambia el valor también para el contador del menu mobile.
+    */
+    $('.star-'+id).hide();
+    var jqxhr = $.ajax('/remove_star/'+id)
+    .done(function(result){
+        let old_value = parseInt($('#favcounter').html())
+        let new_value = old_value - 1
+        $('#favcounter').html(new_value)
+        if($('#m-favcounter').length > 0){
+            if(new_value == 0){
+                $('#m-favcounter').html('')
+            }else{
+                $('#m-favcounter').html(`(${new_value})`)
+            }
+        }else{
+            if (new_value < 1){ $('#fav-btn').hide();}
+        }
+        if($('#favprop_'+id).length > 0)
+          $('#favprop_'+id).remove()
+        if(new_value == 0){
+          $('#no-favourites-message').show();
+        }
+    })
+}
+
+</script>
+
+</head>
+
+<style nonce="14qoavVxl86oqYgHKaRyLg">
+  :root {
+  --color-background-b: #f2ede9;
+  --color-opposite-b: #000000;
+}
+.bgcolorB {background-color: var(--color-background-b) !important; }
+.colorOppositeB{color: var(--color-opposite-b) !important;}
+.bgcolorA {background-color: #ffffff !important; }
+.bgcolorC {background-color: #0c4f53 !important; border-color: #093434 !important; }
+.bgcolorCwithText {background-color: #0c4f53 !important; color: #FFFFFF!important;}
+.textColorC{color: #0c4f53!important;}
+.textColorCopositte{color: #FFFFFF!important;}
+.detalleColor { background-color: #093434 !important ; color: #FFFFFF !important ;}
+.colorDetalleAfter::after { color: #093434 !important ; }
+.detalleColorText { color: #093434 !important ; }
+#buscador02 .selectbox .selected {
+  background-color: #093434 !important ;
+  color: #FFFFFF !important ;
+}
+.detallefocus option:selected,
+.detallefocus option:active,
+.detallefocus option:focus,
+.detallefocus option:checked  {
+  background-color: #093434 !important ;
+  color: #FFFFFF !important ;
+}
+
+.multiple_selected {
+   background-color: #093434 !important ;
+   color: #FFFFFF !important ;
+}
+.btn.stroke-btn{
+  color:  #0c4f53 !important;
+  border: 2px solid #0c4f53 !important;
+}
+
+.btn.stroke-opposite-btn{
+  color:  #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.detalleColor a { color: #FFFFFF !important; }
+.detalleColorC { color: #093434 !important; }
+
+
+button, input[type="button"] {
+  background-color: #093434 !important;
+  color: #FFFFFF !important ;
+}
+
+#map-canvas button, #map-canvas input[type="button"] { background-color: inherit !important ; color: inherit !important; }
+.home_adv_srch_opt .nav-pills li.nav-item a.nav-link.active:before{
+  background-color: #0c4f53;
+}
+</style>
+<body class="
+  
+    bgcolorA
+    
+      header-lateral
+     
+    
+      header-whatsapp
+    
+  
+  show-wa-widget
+  ">
+  
+
+
+
+
+  
+  
+      
+
+
+
+<div id="datahead_box" class="bgcolorC">
+    <div id="datahead"  style="color: #FFFFFF">
+    	 <a href="tel:4793 9039" style="color: #FFFFFF"><i class="fa fa-phone" style="font-size:16px;"></i> <div style="filter: none;">4793 9039</div></a> 
+         <div>|</div> 
+         <div id="email"><a style="color: #FFFFFF" href="mailto:info@martinfonsecaprop.com" rel="nofollow">info@martinfonsecaprop.com</a></div> 
+        
+            <div id="tel2">
+                <a href="https://api.whatsapp.com/send?phone=5491150528326&text=Me%20gustar%C3%ADa%20contactar" target="_blank" style="color: #FFFFFF">
+                    <div id="whatsapp2" style="zoom:0.85"></div>
+                    <span>+54 9 11 5052 8326</span>
+                </a>
+            </div>
+        
+
+        
+        <a href="https://www.facebook.com/martinfonsecaprop/?locale=es_LA" target="_blank" rel="nofollow"><div id="fb2"></div></a>
+        
+        
+        
+        
+        <a href="https://www.instagram.com/martinfonsecaprop/?hl=es" target="_blank" class="redes" rel="nofollow"><div id="ig2"></div></a>
+        
+    </div>
+</div>
+
+
+
+<header id="header_box" class="bgcolorB borderColorC">
+	<div id="header">
+    	<div id="logo"><a href="/"><img src="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/logo_horizontal.png" /></a></div>
+        <div id="mobile_menu" class="noprint">
+	        
+        		<a href="tel:4793 9039">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                    </span>
+        		</a>
+			
+        	<span class="fa-stack fa-lg" id="openmenu">
+	          <i class="fa fa-circle fa-stack-2x"></i>
+	          <i class="fa fa-bars fa-stack-1x fa-inverse"></i>
+	        </span>
+        </div>
+	    <div id="mobile-menu-mini" style="color: #000000">MENÚ</div>
+        <nav id="menu_lateral" class="">
+            <ul id="menu">
+		        
+                    <li class="mobile-mini-item">
+                        <a href="tel:4793 9039" style="color: #000000">
+                            LLAMAR
+                        </a>
+                    </li> 
+                
+                
+                    <li>
+                        <a href="/" style="color: #000000">
+                            Inicio
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/s/Martin-Fonseca-Propiedades" style="color: #000000">
+                            Martin Fonseca Propiedades
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/Propiedades" style="color: #000000">
+                            Propiedades
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/Emprendimientos" style="color: #000000">
+                            Emprendimientos
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/Alquiler" style="color: #000000">
+                            Alquiler
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/Venta" style="color: #000000">
+                            Venta
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/Tasacion" style="color: #000000">
+                            Tasación
+                        </a>
+                    </li>
+                
+                
+
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+  
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+            
+            
+                
+
+<section id="buscador02" style="background:none;">
+    <div id="bannerhome">
+        
+        
+            <img src="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/e7c7b2af3caacf2373674146d775a6e0.jpg"/>
+        
+        
+            <img src="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/5.jpg" />
+        
+        
+            <img src="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/3.jpg" />
+        
+    </div>
+</section>
+<section id="buscador-box">
+        <div id="buscador03">
+        <h1 class="buscador-titulo">El momento es AHORA</h1>
+                <div id="buscador-selects">
+					<div id="operacion" class="buscador-item">
+        
+                    	<div class="buscador-item-label colorDetalleAfter" id="op-label">Operación</div>
+	                    <div class="buscador-item-desp" id="operacion-desp">
+            
+                
+	                        <div class="op-item operacion-item" id="ope_1" data-name="Venta" onclick="set_op(1,'operation','Venta', this);">Venta</div>
+                
+                
+                
+            
+                
+                
+	                        <div class="op-item operacion-item" id="ope_2" data-name="Alquiler" onclick="set_op(2,'operation','Alquiler', this);">Alquiler</div>
+                
+                
+            
+	    </div>
+	</div>
+
+	<div id="propiedad" class="buscador-item">
+        
+        <div class="buscador-item-label colorDetalleAfter" id="prop-label">Tipo</div>
+        <div class="buscador-item-desp" id="prop-desp">
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="Campo" data-val="9" id="prop_9" onclick="set_prop(9,'property','Campo', this);">Campo</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+                    <div class="op-item property_option" data-url="Casa" data-val="3" id="prop_3" onclick="set_prop(3,'property','Casa', this);">Casa</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="Departamento" data-val="2" id="prop_2" onclick="set_prop(2,'property','Departamento', this);">Departamento</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="Edificio Comercial" data-val="8" id="prop_8" onclick="set_prop(8,'property','Edificio Comercial', this);">Edificio Comercial</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="galpon" data-val="24" id="prop_24" onclick="set_prop(24,'property','Galpon', this);">Galpon</div>
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="Locales" data-val="7" id="prop_7" onclick="set_prop(7,'property','Locales', this);">Locales</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+                    <div class="op-item property_option" data-url="Oficina" data-val="5" id="prop_5" onclick="set_prop(5,'property','Oficina', this);">Oficina</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="PH" data-val="13" id="prop_13" onclick="set_prop(13,'property','PH', this);">PH</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                    <div class="op-item property_option" data-url="Terreno" data-val="1" id="prop_1" onclick="set_prop(1,'property','Terreno', this);">Terreno</div>
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    <div class="op-item property_option" data-url="Cochera" data-val="10" id="prop_10" onclick="set_prop(10,'property','Cochera', this);">Cochera</div>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+	</div>
+</div>
+
+            
+					<div id="zona" class="buscador-item">
+	                    <div class="buscador-item-label colorDetalleAfter" id="zona-label">Zona</div>
+	                    <div class="buscador-item-desp" id="zona-desp">
+                               
+                                  <div class="op-item zone_option" data-val="147" id="zon_147" data-name="G.B.A. Zona Norte" onclick="set_zone(147,'zona','G.B.A. Zona Norte', this);">G.B.A. Zona Norte</div>
+                               
+                                  <div class="op-item zone_option" data-val="146" id="zon_146" data-name="Capital Federal" onclick="set_zone(146,'zona','Capital Federal', this);">Capital Federal</div>
+                               
+                                  <div class="op-item zone_option" data-val="175" id="zon_175" data-name="Maldonado" onclick="set_zone(175,'zona','Maldonado', this);">Maldonado</div>
+                               
+                                  <div class="op-item zone_option" data-val="151" id="zon_151" data-name="Interior Buenos Aires" onclick="set_zone(151,'zona','Interior Buenos Aires', this);">Interior Buenos Aires</div>
+                               
+                                  <div class="op-item zone_option" data-val="148" id="zon_148" data-name="G.B.A. Zona Oeste" onclick="set_zone(148,'zona','G.B.A. Zona Oeste', this);">G.B.A. Zona Oeste</div>
+                               
+                                  <div class="op-item zone_option" data-val="150" id="zon_150" data-name="Costa Atlantica" onclick="set_zone(150,'zona','Costa Atlantica', this);">Costa Atlantica</div>
+                               
+                                  <div class="op-item zone_option" data-val="306" id="zon_306" data-name="Santa Catarina" onclick="set_zone(306,'zona','Santa Catarina', this);">Santa Catarina</div>
+                               
+                                  <div class="op-item zone_option" data-val="165" id="zon_165" data-name="Rio Negro" onclick="set_zone(165,'zona','Rio Negro', this);">Rio Negro</div>
+                               
+                                  <div class="op-item zone_option" data-val="185" id="zon_185" data-name="Montevideo" onclick="set_zone(185,'zona','Montevideo', this);">Montevideo</div>
+                               
+			   </div>
+ 			</div>
+                        
+                               
+			<div id="barrio" class="buscador-item">
+	                    <div class="buscador-item-label colorDetalleAfter" id="barrio-label">Barrio</div>
+	                    <div class="buscador-item-desp" id="barrio-desp">
+                                    
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25511" id="loc_25511" data-name="Acassuso" onclick="set_barrio(25511,'barrio','Acassuso', this);">Acassuso</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25718" id="loc_25718" data-name="Altos De Benavidez" onclick="set_barrio(25718,'barrio','Altos De Benavidez', this);">Altos De Benavidez</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="254136" id="loc_254136" data-name="Amarras" onclick="set_barrio(254136,'barrio','Amarras', this);">Amarras</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24842" id="loc_24842" data-name="Barrio Privado El Ensueño" onclick="set_barrio(24842,'barrio','Barrio Privado El Ensueño', this);">Barrio Privado El Ensueño</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25846" id="loc_25846" data-name="Barrio Vicente López" onclick="set_barrio(25846,'barrio','Barrio Vicente López', this);">Barrio Vicente López</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25520" id="loc_25520" data-name="Beccar" onclick="set_barrio(25520,'barrio','Beccar', this);">Beccar</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="51976" id="loc_51976" data-name="Beccar Central" onclick="set_barrio(51976,'barrio','Beccar Central', this);">Beccar Central</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24894" id="loc_24894" data-name="Belen De Escobar" onclick="set_barrio(24894,'barrio','Belen De Escobar', this);">Belen De Escobar</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25717" id="loc_25717" data-name="Benavidez" onclick="set_barrio(25717,'barrio','Benavidez', this);">Benavidez</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25475" id="loc_25475" data-name="Boating Club" onclick="set_barrio(25475,'barrio','Boating Club', this);">Boating Club</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24830" id="loc_24830" data-name="C.C.Manuel Belgrano" onclick="set_barrio(24830,'barrio','C.C.Manuel Belgrano', this);">C.C.Manuel Belgrano</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24989" id="loc_24989" data-name="Capilla Del Señor" onclick="set_barrio(24989,'barrio','Capilla Del Señor', this);">Capilla Del Señor</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25621" id="loc_25621" data-name="Countries/B.Cerrado (Tigre)" onclick="set_barrio(25621,'barrio','Countries/B.Cerrado (Tigre)', this);">Countries/B.Cerrado (Tigre)</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25728" id="loc_25728" data-name="Don Torcuato" onclick="set_barrio(25728,'barrio','Don Torcuato', this);">Don Torcuato</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24839" id="loc_24839" data-name="El Canton - Norte" onclick="set_barrio(24839,'barrio','El Canton - Norte', this);">El Canton - Norte</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25886" id="loc_25886" data-name="El Casco (Country)" onclick="set_barrio(25886,'barrio','El Casco (Country)', this);">El Casco (Country)</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24820" id="loc_24820" data-name="Escobar" onclick="set_barrio(24820,'barrio','Escobar', this);">Escobar</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25820" id="loc_25820" data-name="Florida" onclick="set_barrio(25820,'barrio','Florida', this);">Florida</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25741" id="loc_25741" data-name="General Pacheco" onclick="set_barrio(25741,'barrio','General Pacheco', this);">General Pacheco</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25188" id="loc_25188" data-name="Haras Del Pilar" onclick="set_barrio(25188,'barrio','Haras Del Pilar', this);">Haras Del Pilar</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25189" id="loc_25189" data-name="Haras Del Sol" onclick="set_barrio(25189,'barrio','Haras Del Sol', this);">Haras Del Sol</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24849" id="loc_24849" data-name="Haras Santa Maria" onclick="set_barrio(24849,'barrio','Haras Santa Maria', this);">Haras Santa Maria</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25484" id="loc_25484" data-name="Jardines De San Isidro" onclick="set_barrio(25484,'barrio','Jardines De San Isidro', this);">Jardines De San Isidro</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="210561" id="loc_210561" data-name="La Horqueta" onclick="set_barrio(210561,'barrio','La Horqueta', this);">La Horqueta</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25829" id="loc_25829" data-name="La Lucila" onclick="set_barrio(25829,'barrio','La Lucila', this);">La Lucila</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25216" id="loc_25216" data-name="La Peregrina" onclick="set_barrio(25216,'barrio','La Peregrina', this);">La Peregrina</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="52109" id="loc_52109" data-name="La Reserva Cardales" onclick="set_barrio(52109,'barrio','La Reserva Cardales', this);">La Reserva Cardales</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="80472" id="loc_80472" data-name="Las Lomas de San Isidro" onclick="set_barrio(80472,'barrio','Las Lomas de San Isidro', this);">Las Lomas de San Isidro</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="51257" id="loc_51257" data-name="Las Tipas" onclick="set_barrio(51257,'barrio','Las Tipas', this);">Las Tipas</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="82137" id="loc_82137" data-name="Los Robles" onclick="set_barrio(82137,'barrio','Los Robles', this);">Los Robles</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25677" id="loc_25677" data-name="Los Sauces" onclick="set_barrio(25677,'barrio','Los Sauces', this);">Los Sauces</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25357" id="loc_25357" data-name="Manuel Alberti" onclick="set_barrio(25357,'barrio','Manuel Alberti', this);">Manuel Alberti</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25445" id="loc_25445" data-name="Marina Del Sol" onclick="set_barrio(25445,'barrio','Marina Del Sol', this);">Marina Del Sol</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="55595" id="loc_55595" data-name="Marinas" onclick="set_barrio(55595,'barrio','Marinas', this);">Marinas</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25529" id="loc_25529" data-name="Martinez" onclick="set_barrio(25529,'barrio','Martinez', this);">Martinez</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="51308" id="loc_51308" data-name="Miradores de la Bahia" onclick="set_barrio(51308,'barrio','Miradores de la Bahia', this);">Miradores de la Bahia</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25833" id="loc_25833" data-name="Munro" onclick="set_barrio(25833,'barrio','Munro', this);">Munro</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25836" id="loc_25836" data-name="Olivos" onclick="set_barrio(25836,'barrio','Olivos', this);">Olivos</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25127" id="loc_25127" data-name="Pilar" onclick="set_barrio(25127,'barrio','Pilar', this);">Pilar</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25273" id="loc_25273" data-name="Pilar Del Este" onclick="set_barrio(25273,'barrio','Pilar Del Este', this);">Pilar Del Este</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25452" id="loc_25452" data-name="Punta Chica" onclick="set_barrio(25452,'barrio','Punta Chica', this);">Punta Chica</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25501" id="loc_25501" data-name="Quinta De Atalaya" onclick="set_barrio(25501,'barrio','Quinta De Atalaya', this);">Quinta De Atalaya</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25436" id="loc_25436" data-name="San Fernando" onclick="set_barrio(25436,'barrio','San Fernando', this);">San Fernando</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="51261" id="loc_51261" data-name="San Gabriel" onclick="set_barrio(51261,'barrio','San Gabriel', this);">San Gabriel</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25469" id="loc_25469" data-name="San Isidro" onclick="set_barrio(25469,'barrio','San Isidro', this);">San Isidro</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25536" id="loc_25536" data-name="San Isidro" onclick="set_barrio(25536,'barrio','San Isidro', this);">San Isidro</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24880" id="loc_24880" data-name="San Matias" onclick="set_barrio(24880,'barrio','San Matias', this);">San Matias</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="51263" id="loc_51263" data-name="Santa Catalina" onclick="set_barrio(51263,'barrio','Santa Catalina', this);">Santa Catalina</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24884" id="loc_24884" data-name="Septiembre" onclick="set_barrio(24884,'barrio','Septiembre', this);">Septiembre</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25757" id="loc_25757" data-name="Tigre" onclick="set_barrio(25757,'barrio','Tigre', this);">Tigre</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="24886" id="loc_24886" data-name="Tortugas Norte" onclick="set_barrio(24886,'barrio','Tortugas Norte', this);">Tortugas Norte</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25818" id="loc_25818" data-name="Vicente López" onclick="set_barrio(25818,'barrio','Vicente López', this);">Vicente López</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25461" id="loc_25461" data-name="Victoria" onclick="set_barrio(25461,'barrio','Victoria', this);">Victoria</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25850" id="loc_25850" data-name="Villa Martelli" onclick="set_barrio(25850,'barrio','Villa Martelli', this);">Villa Martelli</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="56036" id="loc_56036" data-name="Virazon" onclick="set_barrio(56036,'barrio','Virazon', this);">Virazon</div>
+                                        
+                                <div class="op-item location_option" data-state="147" data-val="25766" id="loc_25766" data-name="Zona Delta Tigre" onclick="set_barrio(25766,'barrio','Zona Delta Tigre', this);">Zona Delta Tigre</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24676" id="loc_24676" data-name="Balvanera" onclick="set_barrio(24676,'barrio','Balvanera', this);">Balvanera</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24677" id="loc_24677" data-name="Barracas" onclick="set_barrio(24677,'barrio','Barracas', this);">Barracas</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24678" id="loc_24678" data-name="Barrio Norte" onclick="set_barrio(24678,'barrio','Barrio Norte', this);">Barrio Norte</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24682" id="loc_24682" data-name="Belgrano" onclick="set_barrio(24682,'barrio','Belgrano', this);">Belgrano</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24690" id="loc_24690" data-name="Caballito" onclick="set_barrio(24690,'barrio','Caballito', this);">Caballito</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24706" id="loc_24706" data-name="Coghlan" onclick="set_barrio(24706,'barrio','Coghlan', this);">Coghlan</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24707" id="loc_24707" data-name="Colegiales" onclick="set_barrio(24707,'barrio','Colegiales', this);">Colegiales</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24710" id="loc_24710" data-name="Flores" onclick="set_barrio(24710,'barrio','Flores', this);">Flores</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24700" id="loc_24700" data-name="Monserrat" onclick="set_barrio(24700,'barrio','Monserrat', this);">Monserrat</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24721" id="loc_24721" data-name="Nuñez" onclick="set_barrio(24721,'barrio','Nuñez', this);">Nuñez</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24724" id="loc_24724" data-name="Once" onclick="set_barrio(24724,'barrio','Once', this);">Once</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24728" id="loc_24728" data-name="Palermo" onclick="set_barrio(24728,'barrio','Palermo', this);">Palermo</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24755" id="loc_24755" data-name="Parque Chas" onclick="set_barrio(24755,'barrio','Parque Chas', this);">Parque Chas</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24735" id="loc_24735" data-name="Paternal" onclick="set_barrio(24735,'barrio','Paternal', this);">Paternal</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24701" id="loc_24701" data-name="Puerto Madero" onclick="set_barrio(24701,'barrio','Puerto Madero', this);">Puerto Madero</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24681" id="loc_24681" data-name="Recoleta" onclick="set_barrio(24681,'barrio','Recoleta', this);">Recoleta</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24702" id="loc_24702" data-name="Retiro" onclick="set_barrio(24702,'barrio','Retiro', this);">Retiro</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24739" id="loc_24739" data-name="Saavedra" onclick="set_barrio(24739,'barrio','Saavedra', this);">Saavedra</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24703" id="loc_24703" data-name="San Nicolás" onclick="set_barrio(24703,'barrio','San Nicolás', this);">San Nicolás</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24743" id="loc_24743" data-name="Villa Gral. Mitre" onclick="set_barrio(24743,'barrio','Villa Gral. Mitre', this);">Villa Gral. Mitre</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24753" id="loc_24753" data-name="Villa Urquiza" onclick="set_barrio(24753,'barrio','Villa Urquiza', this);">Villa Urquiza</div>
+                                        
+                                <div class="op-item location_option" data-state="146" data-val="24747" id="loc_24747" data-name="Villa del Parque" onclick="set_barrio(24747,'barrio','Villa del Parque', this);">Villa del Parque</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="175" data-val="55994" id="loc_55994" data-name="San Vicente" onclick="set_barrio(55994,'barrio','San Vicente', this);">San Vicente</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="151" data-val="27337" id="loc_27337" data-name="Costa Del Este" onclick="set_barrio(27337,'barrio','Costa Del Este', this);">Costa Del Este</div>
+                                        
+                                <div class="op-item location_option" data-state="151" data-val="28497" id="loc_28497" data-name="San Nicolas De Los Arroyos" onclick="set_barrio(28497,'barrio','San Nicolas De Los Arroyos', this);">San Nicolas De Los Arroyos</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="148" data-val="26337" id="loc_26337" data-name="Caseros" onclick="set_barrio(26337,'barrio','Caseros', this);">Caseros</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="150" data-val="26615" id="loc_26615" data-name="Carilo" onclick="set_barrio(26615,'barrio','Carilo', this);">Carilo</div>
+                                        
+                                <div class="op-item location_option" data-state="150" data-val="254456" id="loc_254456" data-name="Deportivo I" onclick="set_barrio(254456,'barrio','Deportivo I', this);">Deportivo I</div>
+                                        
+                                <div class="op-item location_option" data-state="150" data-val="26724" id="loc_26724" data-name="Pinamar" onclick="set_barrio(26724,'barrio','Pinamar', this);">Pinamar</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="306" data-val="75702" id="loc_75702" data-name="Canasvieiras" onclick="set_barrio(75702,'barrio','Canasvieiras', this);">Canasvieiras</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="165" data-val="40891" id="loc_40891" data-name="Viedma" onclick="set_barrio(40891,'barrio','Viedma', this);">Viedma</div>
+                                        
+                                    
+                                        
+                                <div class="op-item location_option" data-state="185" data-val="51693" id="loc_51693" data-name="Centro (Montevideo)" onclick="set_barrio(51693,'barrio','Centro (Montevideo)', this);">Centro (Montevideo)</div>
+                                        
+                                    
+						</div>
+					</div>
+                        
+
+                            
+                            
+
+                               
+                               
+                                    
+                                     <div id="currencies" class="buscador-item">
+                                         <div class="buscador-item-label colorDetalleAfter" id="currency-label">Moneda</div>
+                                         <div class="buscador-item-desp" id="currency-desp">
+                                           
+                                              <div class="op-item currency-item" onclick="set_currency('USD','currency','USD', this);">USD</div>
+                                              <div class="op-item currency-item" onclick="set_currency('ARS','currency','$', this);">$</div>
+                                           
+                                         </div>
+                                    </div>
+                                    
+
+                                     <div id="price" class="buscador-item">
+                        <input id="min-price" placeholder="$ Mín" /><input id="max-price" placeholder="$ Máx" />
+                                     </div>
+                               
+					<div id="codref" class="buscador-item">
+						<input placeholder="Buscar por código" id="buscar-codigo"/>
+	                </div>
+				</div>
+                <div id="buscador-btn" class="detalleColor"onclick="do_search()" ><div>Buscar</div></div>
+    </div>
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+  operation_types = [1,2,3];
+  rooms = null
+  suites = null
+  currency="ANY"
+    $('#buscar-codigo').keypress(function (e) {
+     var key = e.which;
+     if(key == 13){
+        window.location = '/Full_search?q='+$('#buscar-codigo').val()
+      }
+    });
+
+  String.prototype.replaceAt=function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+  }
+
+  function do_search(){
+      if ($('#buscar-codigo').val() != ''){
+          window.location = '/Full_search?q='+$('#buscar-codigo').val()
+          return
+      }
+
+      locations = [];
+      if( $(".location_option.selected").length > 0){
+        locations = [];
+        $(".location_option.selected").each(function(){ locations.push($(this).data('val')); });
+      }else{
+          if($(".zone_option.selected").length > 0){
+              $('.location_option[data-state="'+ $(".zone_option.selected").data('val') +'"]').each(function(){ locations.push($(this).data('val')); });
+          }
+      }
+
+      filters = "";
+      
+      
+
+      
+      
+      filters = "&min-price="+ $("#min-price").val() + "&max-price="+ $("#max-price").val()+"&currency="+currency;
+      
+
+      o_name = [];
+      for(a=0;a<operation_types.length;a++ ){
+        if( $("#ope_"+operation_types[a]).val() != undefined){
+          o_name.push($("#ope_"+operation_types[a]).data('name').split(" ").join("-"));
+        }
+      }
+
+      p_name = [];
+      if( $(".property_option.selected").length > 0 ){
+            $(".property_option.selected").each(function(){
+                p_name.push( $( "#prop_"+$(this).data('val') ).data('url').split(" ").join("-") ) 
+            });
+      }else{
+         p_name = ["propiedades"];
+      }
+
+      organic_url = "/Buscar-"+p_name.join("-y-")+"--"+o_name.join("-y-");
+      if($(".location_option.selected").length){
+        if($(".location_option.selected").length == 1){
+          l_name = ""
+            $(".location_option.selected").each(function(){ 
+                l_name = $("#loc_"+$(this).data('val')).data('name').split(" ").join("-")+"-"+$(this).data('val'); 
+            })
+
+          if(filters){ filters = filters.replaceAt(0,"?"); }
+          organic_url = organic_url+"--"+l_name+filters;
+        }else{
+          organic_url = organic_url+"?locations="+locations.join()+filters;
+        }
+      }else{
+        if( $(".zone_option.selected").length > 0 ){ organic_url = organic_url + "--" + $(".zone_option.selected").data("name").split(" ").join("-") + "-" +$(".zone_option.selected").data("val") }
+        if(filters){ filters = filters.replaceAt(0,"?"); }
+        organic_url = organic_url+filters;
+      }
+      window.location = organic_url;
+  }
+
+  $(".buscador-item-label").click(function(){
+    $(this).parent().children(".buscador-item-desp").slideToggle();
+  })
+
+function close_dropdown_click_outside(){
+    document.addEventListener("click", function(evt) {
+        var targetElement = evt.target;
+        var clicked_element_parent = $(targetElement.parentNode).parent().attr('class')
+        var elem = $("#buscador-selects > div").children("div[style='display: block;']")
+        var elem_desp = $(".buscador-item").attr("class")
+
+        if(clicked_element_parent === elem_desp){
+            return false;
+        }else{
+            $(elem).slideToggle()
+        }
+    });
+}close_dropdown_click_outside()
+
+
+function set_op (val,op,txt,elem) {
+    if ( $(elem).hasClass("selected") == false ) {
+        $(".operacion-item").removeClass("selected");
+        $(elem).addClass("selected");
+    }else{
+        $(".operacion-item").removeClass("selected");
+    }
+
+    $("#operacion-desp").slideUp();
+    if ( txt != $("#op-label").text() ) {
+        $("#op-label").text(txt);
+                    operation_types = [parseInt(val)];
+    }else{
+        $("#op-label").text("Tipo de Operación");
+                    operation_types = [1,2,3];
+    }
+}
+
+function set_prop (val,op,txt,elem) {
+    $(elem).toggleClass("selected");
+    if ( txt != $("#prop-label").text() ) {
+                    prop_names = [];
+                    $(".property_option.selected").each(function(){ prop_names.push($(this).text()); });
+                    $("#prop-label").text(prop_names.join(", "));
+    }else{
+        $("#prop-label").text("Tipo de Propiedad");
+    }
+}
+
+function set_barrio (val,op,txt,elem) {
+    $(elem).toggleClass("selected");
+
+    if ( txt != $("#barrio-label").text() ) {
+                if($("#barrio-label").text() == "Barrio");
+                names = [];
+                $(".location_option.selected").each(function(){ names.push($(this).data('name')); });
+                $("#barrio-label").text(names.join(", "));
+    }else{
+        $("#barrio-label").text("Barrio");
+    }
+}
+
+function set_zone(val,op,txt,elem) {
+            if ( txt != $("#zona-label").text() ) {
+                if($("#zona-label").text() == "Zona");
+                $(".zone_option.selected").each(function(){ if (this != elem) {$(this).removeClass("selected");} });
+                $(elem).addClass("selected");
+                $("#zona-label").text($(elem).data('name'));
+            }else{
+                    $("#barrio-label").text("Zona");
+            }
+            $(".location_option.selected").each(function(){ $(this).removeClass("selected");});
+            $("#barrio-label").text("Barrio");
+            $(".location_option").hide();
+            $('.location_option[data-state="'+ val +'"]').show();
+}
+
+function set_amb (val,op,txt,elem) {
+            $(".room-item").removeClass("selected");
+            if ( $(elem).hasClass("selected") == false ) {
+                    $(elem).addClass("selected");
+            }
+
+    $("#amb-desp").slideUp();
+
+    if ( txt != $("#amb-label").text() ) {
+        $("#amb-label").text(txt);
+                    rooms = parseInt(val);
+    }else{
+        $("#amb-label").text("Ambientes");
+                    rooms = null;
+    }
+}
+
+function set_currency (val,op,txt,elem) {
+            if ( $(elem).hasClass("selected") == false ) {
+                    $(".currency-item").removeClass("selected");
+                    $(elem).addClass("selected");
+            }else{
+                    $(".currency-item").removeClass("selected");
+            }
+
+            $("#currency-desp").slideUp();
+
+            if ( txt != $("#currency-label").text() ) {
+                    $("#currency-label").text(txt);
+                    currency = val;
+            }else{
+                    $("#currency-label").text("Moneda");
+                    currency = "ANY";
+            }
+}
+
+function set_sui (val,op,txt,elem) {
+            $(".suite-item").removeClass("selected");
+            if ( $(elem).hasClass("selected") == false ) {
+                    $(elem).addClass("selected");
+            }
+
+            $("#suite-desp").slideUp();
+            if ( txt != $("#suite-label").text() ) {
+                    $("#suite-label").text(txt);
+                    suites = parseInt(val);
+            }else{
+                    $("#suite-label").text("Dormitorios");
+                    suites = null;
+            }
+}
+</script>
+
+</section>
+
+            
+        
+    
+    </div>
+
+
+
+<section id="content_wrapper" class="content_wrapper wrapperhome">
+
+
+    
+        <div id="fullimg-info" class="montserrat" style="background:#0c4f53">
+            <p style="line-height: 1; text-align: center;"><span style="background-color: rgba(255, 255, 255, 0); font-size: 16px; font-family: &quot;Helvetica Neue&quot;; color: rgb(255, 255, 255);">Vos tenés uno sueño, nosotros el plan para alcanzarlo.</span></p>
+            <!--<div class="fullimg-info-sec ptsans">Segunda linea de texto personalizable</div>-->
+        </div>
+    
+
+
+
+
+<section id="prop-box" 
+    >
+    <div style="padding-top: 30px;padding-bottom: 30px;">
+        <div id="loading" class="loader"></div>
+    <div>
+</section>
+
+
+</section> <!-- wrapper -->
+
+
+    
+        
+
+
+<section id="contacto-forms-box">
+	<div id="contacto-forms">    
+
+    
+
+    
+    <div id="tasar-box" class="contacto-forms-box">
+        <div class="contacto-forms-titulo"><img src="https://static.tokkobroker.com/tfw/img/supcub2.a4947f6983bb.svg" /><br />Tasaciones </div>
+        <div class="form-box" id="gracias_cot" style="display:none">
+          Gracias por su consulta. Será contactado a la brevedad.
+        </div>
+
+        <div class="form-box" id="fields_cot">
+                <div><input id="cot_name" placeholder="Nombre" /></div>
+                <div><input id="cot_phone" placeholder="Teléfono" /></div>
+				<div><input id="cot_cellphone" placeholder="Celular" /></div>
+                <div class="hidden"><input id="cot_pin" placeholder="PIN" /></div>
+                <div><input id="cot_email" placeholder="Email" /></div>
+            <div><textarea id="cot_msg" placeholder="Descripción de la Propiedad"></textarea></div>
+            <div id="submit-cot" class="detalleColor contacto-form-submit" style="cursor:pointer;" onclick="send_form('cot');">Enviar</div>
+        </div>
+    </div>
+    
+    
+    </div>
+</section>
+
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", 'OHCgPHEFlFL9xzqsmzdpOL5MnwukSj8fyqoMSLmfzIctMYYe5ljCmZGSFhdUn4Gl');
+        }
+    }
+});
+
+function is_form_valid(form_name){
+    if ($("#"+form_name+"_name").val().trim() == ""){
+      $("#"+form_name+"_name").attr("placeholder", "Por favor complete su nombre");
+      return false
+    }
+    if ($("#"+form_name+"_email").val().trim() == ""){
+      $("#"+form_name+"_email").attr("placeholder", "Por favor complete su e-mail");
+      return false
+    }
+    if ($("#"+form_name+"_phone").val().trim() == ""){
+      $("#"+form_name+"_phone").attr("placeholder", "Por favor complete su teléfono");
+      return false
+    }
+    if ($("#"+form_name+"_msg").val().trim() == ""){
+      $("#"+form_name+"_msg").attr("placeholder", "Por favor complete este campo");
+      return false
+    }
+
+    return true
+}
+
+
+var sending = false;
+function send_form(form_name){
+    if (!sending & is_form_valid(form_name)){
+        sending = true;
+        $("#submit-"+form_name).html("Enviando...")
+        motivo = "Tasación";
+        if (form_name == "contact"){
+            motivo = "Contacto"
+        }
+        data = {"name": $("#"+form_name+"_name").val(),
+                "motivo": motivo,
+                "phone": $("#"+form_name+"_phone").val(),
+				"cellphone": $("#"+form_name+"_cellphone").val(),
+                "email": $("#"+form_name+"_email").val(),
+                "text": $("#"+form_name+"_msg").val(),
+                "pin": $(`#${form_name}_pin`).val(),
+               };
+        var jqxhr = $.ajax( '/webcontact/', {'type':"POST", 'data': data} )
+            .done(function(result) {
+                 if (result == "Error"){
+                     $("#submit-"+form_name).html("Enviar")
+                     alert("Ocurrió un error. Por favor reintente en unos minutos.")
+                 }else{
+                     $("#fields_"+form_name).hide()
+                     $("#gracias_"+form_name).show();
+                     $("#gracias_"+form_name).append('<iframe frameborder="0" height="1" width="1" src="/gracias"></iframe>');
+                 }
+                 sending = false;
+             })
+            .fail(function() {
+             })
+     }
+}
+</script>
+
+    
+
+
+<script nonce="14qoavVxl86oqYgHKaRyLg" src="https://static.tokkobroker.com/tfw/js/jquery.bxslider.min.697d69a48e53.js"></script>
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript" src="https://static.tokkobroker.com/tfw/js/jquery-ui.min.a6055e336b9a.js"></script>
+
+<script nonce="14qoavVxl86oqYgHKaRyLg" type="text/javascript" src="https://static.tokkobroker.com/tfw/js/owl.carousel.min.f416f9031fef.js"></script>
+  
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+
+is_home = true
+is_listado = false
+
+
+var jqxhr = $.ajax('/home_properties/')
+                .done(function(result){
+                    if(result.indexOf("--NoMoreProperties--") == -1){
+                        $("#prop-box").html(result);
+                    }else{
+                        $("#prop-box").hide();
+                    }
+                    $(".resultados-list-home li").hover( $(".resultadosB-interesa").slideUp() );
+                });
+
+
+
+	$(document).ready(function(){
+		var bannerwidth = $('#searchbanner_wrapper').width() - 230;
+		$('#banner').width(bannerwidth);
+		$('#bannerhome').bxSlider( { auto:($('#bannerhome').children().length < 2) ? false : true , pause:4500, pager:false, mode:'fade', randomStart:true, controls:false, } );
+
+		var newH = (600/800) * $(".resultados-list-home li").width();
+		$(".prop-img").height( newH );
+	});
+
+	$( window ).resize(function() {
+		
+		var bannerwidthResize = $('#searchbanner_wrapper').width() - 230;
+		$('#banner').width(bannerwidthResize);
+		
+		var newH = (600/800) * $(".resultados-list-home li").width();
+		$(".prop-img").height( newH );
+		
+	});
+
+
+    
+
+    $("#fullscreenvideo-box").height( $(window).height() );
+    $("#video-container").height( $(window).height() );
+</script>
+
+
+
+
+  
+    
+
+
+
+
+
+
+    <div style="display:block" onclick="window.location='/Favoritos'" id="fav-btn" class="animated bounceIn detalleColor" rel="nofollow"><i class="fa fa-star"></i><span id="favcounter">0</span></div>
+
+
+<footer id="footerB-box" class="noprint">
+        <div id="footerB">
+            <div class="footerB-col logo">
+                <div class="footerB-logo"><img src="https://static.tokkobroker.com/tfw_images/13968_Martin%20Fonseca%20Propiedades/logo_horizontal.png" width="200"></div>
+                
+                    <br>Encontranos en
+                    <div class="footerB-tel"><a href="tel:4793 9039"><img src="https://static.tokkobroker.com/tfw/img/phone.604342640ae9.png">4793 9039</a></div>
+                
+                
+                    <div class="footerB-address">Av. Libertador 14102. Martínez. Buenos Aires</div>
+                
+            </div>
+
+        <div class="footerB-col footerB-col-txt">
+          <div class="footerB-txt">
+            
+            <p style="line-height: 1.6;"><span style="font-family: &quot;Helvetica Neue&quot;;">MF es una inmobiliaria contemporánea enfocada en acompañarte en </span><span style="font-family: &quot;Helvetica Neue&quot;;">cada mudanza con empatía, dedicación y cercanía</span></p><p style="line-height: 1.6;"><span style="font-family: &quot;Helvetica Neue&quot;;">Curamos propiedades desde una mirada sensible hacia la luz, la materialidad y la experiencia de habitar. Creemos en los espacios con identidad, en los barrios con historia y en una forma más calma y refinada de vivir el real estate. Porque entendemos que elegir un lugar para vivir también es elegir cómo queremos vivir.</span></p><p style="line-height: 1.6;"><span style="font-family: &quot;Helvetica Neue&quot;;">Espacios que se sienten. Historias que empiezan.</span></p>
+            
+            
+           </div>
+        </div>
+
+        <div class="footerB-col footerB-col-redes">
+        
+            <b>Seguinos en</b><br>
+            <div class="footerB-redes">
+                
+                <a href="https://www.facebook.com/martinfonsecaprop/?locale=es_LA" target="_blank"><img src="https://static.tokkobroker.com/tfw/img/r-facebook.956838008eb8.svg" width="40" height="40"></a>
+                
+                
+                
+                <a href="https://www.instagram.com/martinfonsecaprop/?hl=es" target="_blank"><img src="https://static.tokkobroker.com/tfw/img/r-instagram.a5a5678e02c4.svg" width="40" height="40"></a>
+                
+                
+                
+                
+                <a href="https://www.tiktok.com/@martinfonsecaprop" target="_blank"><img src="https://static.tokkobroker.com/tfw/img/r-tiktok.84127b9e33c9.svg" width="40" height="40"></a>
+                
+                
+                <a href="https://www.linkedin.com/in/martin-fonseca-812631174/?originalSubdomain=ar" target="_blank"><img src="https://static.tokkobroker.com/tfw/img/r-linkedin.d54bb3e0ec73.svg" width="40" height="40"></a>
+                
+            </div>
+        
+                                
+            <b>Asociados con</b><br>                
+            <div class="asociaciones">                
+                
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <img src="https://static.tokkobroker.com/web-multimedia/14225675658460478106637105076403736276376498743740543768938916359442630670654/cpi.jpg" alt="CPI">
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <img src="https://static.tokkobroker.com/web-multimedia/90638294530220659468890187428178547318509144137398972890074725293474806580496/cucicba.jpg" alt="CUCICBA">
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </div>              
+        
+        </div>
+        <div class="footerB-col qr footerB-col-nav">            
+            
+                <b>¿Qué estás buscando?</b><br><br>
+                    
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/Campos">Campos</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+      · <a href="/Casas">Casas</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/Departamentos">Departamentos</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/Edificios-comerciales">Edificios comerciales</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/Galpones">Galpones</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/locales">Locales</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+      · <a href="/Oficinas">Oficinas</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+      · <a href="/PHs">PHs</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      · <a href="/Terrenos">Terrenos</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      · <a href="/Cocheras">Cocheras</a></br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            
+                <br>
+            
+            
+        </div>
+
+        <div class="footerB-full aclaracion">
+            Todas las medidas enunciadas son meramente orientativas, las medidas exactas serán las que se expresen en el respectivo título de propiedad de cada inmueble. Todas las fotos, imagenes y videos son meramente ilustrativos y no contractuales. Los precios enunciados son meramente orientativos y no contractuales.
+        </div>
+        <div class="footerB-full bottom">
+            <div class="footerB-copyright" style="display: inline-block;">© 2026 Martin Fonseca Propiedades.</div>
+            
+            <div class="footerB-powered"><a href="https://www.tokkobroker.com/crm-sistema-inmobiliario?n=Martin Fonseca Propiedades" target="_blank" alt="Software Inmobiliario Tokko Broker">Software inmobiliario - Tokko Broker</a></div>
+        </div>
+    </div>
+</footer>
+<script nonce="14qoavVxl86oqYgHKaRyLg">
+
+    $('#openmenu').click( function() { $('#menu_lateral').slideToggle() })
+    $('#mobile-menu-mini').click( function() { $('#menu_lateral').slideToggle() })
+
+</script>
+
+
+
+
+  <a href="https://api.whatsapp.com/send?phone=5491150528326&text=Me%20gustar%C3%ADa%20contactar" class="whatsapp-widget" target="_blank">
+    <i class="fa fa-whatsapp whatsapp-icon"></i>
+  </a>
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
