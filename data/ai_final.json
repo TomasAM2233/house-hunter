@@ -421,15 +421,17 @@
   "at": "2026-10-24"
  },
  "zp-58603868": {
-  "score": 52,
-  "brief": "Excelente precio (USD 1.231/m²) y ubicación a 3 cuadras de Maipú. Pero son solo 61 m² cubiertos, patio chico y sin fotos del mismo.",
+  "score": 55,
+  "brief": "Precio imbatible (USD 160k) y ubicación ideal a 3 cuadras de Maipú. Es PH al frente con entrada propia, pero ojo: los 61m² cubiertos son muy chicos para 3 ambientes y no hay fotos del patio, aunque por metros totales debería ser generoso.",
   "reasons": [
-   "Suma por estar muy cerca de Av. Maipú y tener un precio por m² excelente dentro del presupuesto.",
-   "Baja levemente por la superficie cubierta chica (61 m²) y la falta de fotos claras del patio."
+   "Precio muy competitivo y ubicación privilegiada a pocas cuadras de Maipú y el tren.",
+   "Unidad al frente con entrada independiente, cumpliendo el requisito de no vivir en pasillo.",
+   "Duda sobre la distribución: 61m² cubiertos es poco para 3 ambientes y el patio no se ve en fotos."
   ],
-  "input_key": "c7ef83f02305",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-24"
+  "input_key": "76d0f04cd800",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-25",
+  "ts": "2026-10-25T19:58:41Z"
  },
  "ml-MLA1787872515": {
   "score": 32,
@@ -780,17 +782,30 @@
   "at": "2026-10-25",
   "ts": "2026-10-25T18:54:13Z"
  },
- "zp-49502309": {
-  "score": 73,
-  "brief": "Chalet sólido en Olivos con un jardín de 130m2, ideal para lo que buscás. El precio por m2 (USD 764) es una ganga. Está a 10 cuadras de Maipú y requiere reforma total de cañerías y luz, pero entra justo en tu presupuesto de USD 210.000.",
+ "zp-60465083": {
+  "score": 32,
+  "brief": "El precio de USD 140.000 tienta, pero el aviso miente: es en Boulogne, no en Olivos. Incumple tu requisito de zona y cercanía a Maipú. El patio de 40m² es chico y 100% baldosa para una casa de 188m² cubiertos. No es lo que buscás.",
   "reasons": [
-   "El precio por m2 de USD 764 es bajísimo para la zona y compensa que el valor total esté en tu límite.",
-   "El jardín de 130m2 es una oportunidad difícil de encontrar en este rango de precio.",
-   "Es lote propio, lo que te da el potencial vertical que buscás sin lidiar con vecinos."
+   "Ubicación fuera de zona: Es en Boulogne (San Isidro), no en Vicente López.",
+   "Distancia a Maipú: Incumple el requisito obligatorio de cercanía al corredor solicitado.",
+   "Patio insuficiente: Muy poco espacio descubierto y sin verde para el metraje de la casa."
   ],
-  "input_key": "b1cc66268b6c",
+  "input_key": "479c3a462d1d",
   "model": "gemini-3-flash-preview",
   "at": "2026-10-25",
-  "ts": "2026-10-25T19:47:07Z"
+  "ts": "2026-10-25T19:58:13Z"
+ },
+ "ml-MLA3790564262": {
+  "score": 62,
+  "brief": "PH de 4 ambientes con un jardín gigante de 100m2. El precio por m2 es un regalo (USD 806) y es apto crédito. Lo malo es que estás a 14 cuadras de Maipú, casi al límite de lo que pedís, y hay que ponerle unos USD 12.000 encima.",
+  "reasons": [
+   "El precio por m² (USD 806) es excelente, muy por debajo de tu límite de USD 2.000.",
+   "El jardín de 100 m² en planta baja es exactamente lo que buscás y difícil de encontrar en este precio.",
+   "La ubicación a 14 cuadras de Maipú es el punto más flojo, rozando tu límite máximo de 15."
+  ],
+  "input_key": "3e013d7d58e0",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-25",
+  "ts": "2026-10-25T19:58:56Z"
  }
 }
