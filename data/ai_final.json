@@ -707,5 +707,28 @@
   "input_key": "3f268df9f68b",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-25"
+ },
+ "tk-9831856": {
+  "score": 30,
+  "brief": "El precio de USD 200.000 es tentador, pero tiene inquilinos hasta 2027: imposible mudarte pronto. El lote de 130 m2 es muy chico para una casa y estás a casi 10 cuadras de Maipú. No es lo que buscás.",
+  "reasons": [
+   "Inquilinos hasta 2027: Anula tu requisito de mudanza pronta.",
+   "Lote de 130 m2: Muy poco espacio total para una casa independiente.",
+   "Ubicación: A 9.7 cuadras de Maipú, fuera de tu rango preferido de 8."
+  ],
+  "input_key": "3f71c79178ce",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-25"
+ },
+ "ml-MLA2233218373": {
+  "score": 62,
+  "brief": "Casa en lote propio en Olivos a USD 198.000. 199 m² totales, 4 amb, jardín y cochera. A 12 cuadras de Maipú. Apto crédito. Necesita USD 18.000 de refacción.",
+  "reasons": [
+   "Sube por excelente relación precio-m² ($995/m²) y estar en lote propio con cochera dentro del presupuesto.",
+   "Baja ligeramente porque el jardín trasero es chico (aprox. 10 m²)."
+  ],
+  "input_key": "67b80e54f23a",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-25"
  }
 }
