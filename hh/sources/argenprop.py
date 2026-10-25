@@ -116,12 +116,14 @@ def enrich(l):
     d = s.select_one(".section-description")
     if d:
         l["description"] = d.get_text("\n", strip=True).replace("Descripción\n", "", 1)
-    pics = list(dict.fromkeys(_photo(m) for m in re.findall(r"https://www\.argenprop\.com/static-content/\d+/[0-9a-f-]+(?:_u_[a-z]+)?\.jpg", html)))
+    # the gallery shows up as full URLs, protocol-relative or root-relative paths and in data-src/srcset, so match the path
+    paths = re.findall(r"/static-content/\d+/[0-9a-f-]{20,}(?:_u_[a-z]+)?\.(?:jpe?g|webp|png)", html, re.I)
+    pics = list(dict.fromkeys(_photo("https://www.argenprop.com" + p) for p in paths))
     own = l["photos"][0].split("/static-content/")[1].split("/")[0] if l.get("photos") else None
     if own:
         pics = [p for p in pics if f"/static-content/{own}/" in p]  # drop agent logos and other listings
     if pics:
-        l["photos"] = pics[:20]
+        l["photos"] = pics[:60]
     l["partial_data"] = not (l.get("total_m2") and l.get("description"))
     l["enriched"] = True
     return l

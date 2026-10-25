@@ -32,8 +32,8 @@ def main():
     args = ap.parse_args()
     app = open(APP).read()
     if not args.embed:
-        # the app reads tags and preferences next to listings.json when it has no GitHub token
-        for name in ("tags.json", "preferences.md", "settings.json"):
+        # the app reads tags, preferences and on-demand AI results next to listings.json when it has no GitHub token
+        for name in ("tags.json", "preferences.md", "settings.json", "ai_results.json"):
             src = os.path.join(ROOT, "data", name)
             if os.path.exists(src):
                 open(os.path.join(ROOT, "web", name), "w").write(open(src).read())

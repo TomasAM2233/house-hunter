@@ -62,18 +62,25 @@ def _photos_key(listing):
     return hashlib.sha1("|".join(listing["photos"][:MAX_PHOTOS]).encode()).hexdigest()[:12]
 
 
-def cached(listing, current=False):
-    """current=True also requires a read made with the current prompt."""
+def _note_key(note):
+    return hashlib.sha1(note.strip().encode()).hexdigest()[:8] if note and note.strip() else ""
+
+
+def cached(listing, current=False, note=""):
+    """current=True also requires a read made with the current prompt and Tomás's current note."""
     hit = _load().get(listing["id"])
     if not hit or hit.get("photos_key") != _photos_key(listing):
         return None
-    return hit if not current or hit.get("prompt_version", 1) >= PROMPT_VERSION else None
+    if not current:
+        return hit
+    return hit if hit.get("prompt_version", 1) >= PROMPT_VERSION and hit.get("note_key", "") == _note_key(note) else None
 
 
-def save_result(listing_id, result, photos_key, analyst):
+def save_result(listing_id, result, photos_key, analyst, note=""):
     cache = _load()
     result = {k: result.get(k) for k in KEYS}
-    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"), prompt_version=PROMPT_VERSION)
+    result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"), prompt_version=PROMPT_VERSION,
+                  note_key=_note_key(note), ts=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
     cache[listing_id] = result
     json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
     return result
@@ -122,9 +129,12 @@ def queue(listing):
         json.dump({"id": listing["id"], "photos_key": _photos_key(listing), "text": _listing_text(listing)}, f, ensure_ascii=False, indent=1)
 
 
-def _gemini(listing):
-    key = os.environ["GEMINI_API_KEY"]
-    parts = [{"text": PROMPT + "\n\n" + _listing_text(listing)}]
+NOTE_PROMPT = """NOTAS DE TOMÁS SOBRE ESTA CASA: lo que él averiguó (visita, llamado a la inmobiliaria, fotos propias).
+Es información verificada y tiene prioridad sobre el aviso y las fotos: si algo choca, creele a él."""
+
+
+def _gemini(listing, note=""):
+    parts = [{"text": PROMPT + "\n\n" + _listing_text(listing) + (f"\n\n{NOTE_PROMPT}\n{note.strip()}" if note.strip() else "")}]
     for im in _download(listing["photos"]):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
@@ -168,7 +178,10 @@ FINAL = os.path.join(ROOT, "data", "ai_final.json")
 FINAL_PROMPT = f"""Sos el asesor inmobiliario de Tomás. Abajo están sus preferencias escritas por él, sus notas sobre
 esta casa (si las hay), los datos del aviso, la lectura de las fotos y el puntaje que calculó nuestro algoritmo
 con su desglose. Tu evaluación final reemplaza a ese puntaje, así que tené en cuenta todo: sus criterios en orden
-de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algoritmo no ve. Si algo choca con un
+de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algoritmo no ve. Sus notas son datos que
+él verificó (visitas, llamados a la inmobiliaria) y mandan sobre el aviso, las fotos y el algoritmo: si una nota
+corrige algo (patio, estado, precio, expensas, m², ubicación), puntuá con lo que dice la nota y mencionalo en los
+motivos. Si algo choca con un
 requisito obligatorio suyo, bajá mucho el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
 que pasan los filtros, 45 es floja, 55 buena, 65 muy buena y 75 o más solo para una oportunidad excepcional que
 Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con motivos concretos (cada motivo
@@ -191,14 +204,15 @@ def _final_text(l, prefs, note):
             f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
 
 
-def final(listing, prefs, note="", compute=True, log=print):
+def final(listing, prefs, note="", compute=True, force=False, log=print):
     """The overall AI verdict: score 0-100 that overrides ours, a <=250 char brief and the reasons.
-    Cached per listing and keyed by everything it reads, so it reruns only when something changed."""
+    Cached per listing and keyed by everything it reads, so it reruns only when something changed (or force=True,
+    when Tomás asks for it from the app)."""
     text = _final_text(listing, prefs, note)
     h = hashlib.sha1((FINAL_PROMPT + text).encode()).hexdigest()[:12]
     cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
     hit = cache.get(listing["id"])
-    if hit and hit.get("input_key") == h:
+    if hit and hit.get("input_key") == h and not force:
         return hit
     key = os.environ.get("GEMINI_API_KEY")
     if not compute or not key:
@@ -211,9 +225,11 @@ def final(listing, prefs, note="", compute=True, log=print):
             brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
         out = {"score": max(0, min(100, int(round(float(res["score"]))))), "brief": brief,
                "reasons": [str(x) for x in (res.get("reasons") or [])][:3], "input_key": h,
-               "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d")}
+               "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d"), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     except Exception as e:
         log(f"final verdict failed for {listing['id']}: {e}")
+        if force:
+            raise
         return hit
     cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
     cache[listing["id"]] = out
@@ -222,19 +238,25 @@ def final(listing, prefs, note="", compute=True, log=print):
     return out
 
 
-def analyse(listing, log=print):
-    hit = cached(listing, current=True)
+def analyse(listing, note="", force=False, log=print):
+    """Photo + text read. Tomás's note goes in the prompt, and a changed note means a fresh read.
+    force=True (asked for from the app) always reads again and raises on failure."""
+    hit = None if force else cached(listing, current=True, note=note)
     if hit:
         return hit
     if os.environ.get("GEMINI_API_KEY"):
-        if EXHAUSTED:
+        if EXHAUSTED and not force:
             return None  # quota's gone for this run; don't spend photo downloads on it
         try:
-            res = _gemini(listing)
+            res = _gemini(listing, note)
             time.sleep(6)  # stay under the free tier's requests-per-minute
-            return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}")
+            return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}", note)
         except Exception as e:
             log(f"AI failed for {listing['id']}: {e}")
+            if force:
+                raise
         return None
+    if force:
+        raise RuntimeError("no GEMINI_API_KEY")
     queue(listing)  # no key: leave a contact sheet for a human or another model
     return None

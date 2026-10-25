@@ -72,7 +72,8 @@ button, select, input { font: inherit; color: inherit; }
 .tools { display: flex; gap: 8px; }
 .tools input, .tools select { height: 38px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; min-width: 0; }
 .tools input { flex: 1 1 auto; }
-.tools select { flex: 0 0 auto; max-width: 44%; }
+.tools select { flex: 0 1 auto; max-width: 40%; }
+.tools .icon { flex: none; }
 
 /* ── info panel (sources + how we score) ── */
 .info { padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: 14px; background: var(--surface); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
@@ -89,7 +90,8 @@ button, select, input { font: inherit; color: inherit; }
 .wlegend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
 
 /* ── map ── */
-.map { margin: 12px var(--gutter-r) 0 var(--gutter-l); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+/* isolation keeps Leaflet's own z-indexes (400–1000) inside the map, so the open house sheet covers it on mobile */
+.map { margin: 12px var(--gutter-r) 0 var(--gutter-l); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; position: relative; z-index: 0; isolation: isolate; }
 #lmap { height: 62vh; min-height: 320px; max-height: 640px; background: var(--sunk); }
 .map .cap { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); padding: 8px 10px; }
 .map .cap i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 4px; }
@@ -139,7 +141,7 @@ button, select, input { font: inherit; color: inherit; }
 .row2 input { flex: 1 1 200px; min-width: 0; height: 38px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--bg); }
 .reasons { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; }
 .qa { display: flex; gap: 8px; margin-top: 2px; }
-.qa .btn { flex: 1; min-height: 40px; font-size: 14px; }
+.qa .btn { flex: 1; min-height: 40px; font-size: 14px; padding: 0 11px; white-space: nowrap; }
 .qa .btn:not(.primary) { flex: 0 1 auto; }
 .flash { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 30; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; box-shadow: 0 4px 16px rgb(0 0 0 / .25); }
 label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; }
@@ -189,6 +191,71 @@ label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted)
 .linkish { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; font-size: 14px; align-self: start; }
 footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px; }
 
+/* ── photo strips: swipe on the card and in the sheet, tap for full screen ── */
+.strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; background: var(--sunk); }
+.strip::-webkit-scrollbar { display: none; }
+.strip img { color: transparent; flex: 0 0 100%; width: 100%; min-width: 0; object-fit: cover; scroll-snap-align: center; scroll-snap-stop: always; display: block; cursor: zoom-in; background: var(--sunk); }
+.ph .strip { position: absolute; inset: 0; }
+.ph .strip img { height: 100%; }
+.ph .count { position: absolute; bottom: 10px; right: 10px; font: 500 12px var(--font-data); color: #fff; background: rgb(20 16 28 / .72); padding: 1px 8px; border-radius: 999px; pointer-events: none; }
+.ph .tl, .ph .rank, .ph .badge { pointer-events: none; }
+.snav { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgb(255 255 255 / .9); color: #1d1a24;
+  font-size: 18px; line-height: 1; cursor: pointer; display: none; place-items: center; box-shadow: 0 1px 4px rgb(0 0 0 / .3); z-index: 1; }
+.snav.prev { left: 8px; } .snav.next { right: 8px; }
+@media (hover: hover) and (pointer: fine) { .ph:hover .snav, .gwrap:hover .snav { display: grid; } }
+.gwrap { position: relative; }
+.viewer { position: fixed; inset: 0; z-index: 40; background: #000; display: flex; flex-direction: column; }
+.viewer .strip { flex: 1; background: #000; }
+.viewer .strip img { object-fit: contain; height: 100%; background: #000; cursor: default; }
+.vtop { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) var(--gutter-r) 10px var(--gutter-l); color: #fff; background: linear-gradient(rgb(0 0 0 / .55), transparent); pointer-events: none; }
+.vtop > * { pointer-events: auto; }
+.vtop .num { font-size: 14px; }
+.vtop button { background: rgb(255 255 255 / .16); color: #fff; border: 0; width: 42px; height: 42px; border-radius: 50%; font-size: 20px; cursor: pointer; }
+.viewer .snav { display: grid; }
+@media (hover: none) { .viewer .snav { display: none; } }
+
+/* ── filters sheet ── */
+.fbtn .n { background: var(--accent); color: var(--on-accent); border-radius: 999px; font: 600 11px/18px var(--font-data); min-width: 18px; padding: 0 5px; }
+.scrim { position: fixed; inset: 0; z-index: 30; background: var(--scrim); }
+.sheet { position: fixed; z-index: 31; left: 0; right: 0; bottom: 0; max-height: 88vh; max-height: 88dvh; background: var(--surface); border-radius: 18px 18px 0 0;
+  display: flex; flex-direction: column; box-shadow: 0 -8px 30px rgb(0 0 0 / .25); }
+.shead { display: flex; align-items: center; gap: 8px; padding: 14px var(--gutter-r) 10px var(--gutter-l); border-bottom: 1px solid var(--line); }
+.shead h2 { flex: 1; font-size: 18px; }
+.sbody { overflow-y: auto; overscroll-behavior: contain; padding: 6px var(--gutter-r) 16px var(--gutter-l); display: flex; flex-direction: column; gap: 18px; }
+.sfoot { padding: 10px var(--gutter-r) calc(12px + env(safe-area-inset-bottom, 0px)) var(--gutter-l); border-top: 1px solid var(--line); display: flex; gap: 8px; }
+.sfoot .btn { flex: 1; }
+.rng .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.rng .top b { font: 500 13.5px var(--font-data); color: var(--fg); text-align: right; }
+.rng .top b.any { color: var(--muted); font-weight: 400; }
+.dual { position: relative; height: 34px; margin: 0 4px; }
+.dual .track { position: absolute; left: 0; right: 0; top: 15px; height: 4px; border-radius: 2px; background: var(--sunk); }
+.dual .fill { position: absolute; top: 15px; height: 4px; border-radius: 2px; background: var(--accent); }
+.dual input { position: absolute; left: -4px; width: calc(100% + 8px); top: 0; height: 34px; margin: 0; background: none; pointer-events: none; -webkit-appearance: none; appearance: none; }
+.dual input::-webkit-slider-runnable-track { background: none; border: 0; }
+.dual input::-moz-range-track { background: none; border: 0; }
+.dual input::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 26px; height: 26px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 1px 3px rgb(0 0 0 / .25); cursor: grab; }
+.dual input::-moz-range-thumb { pointer-events: auto; width: 22px; height: 22px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 1px 3px rgb(0 0 0 / .25); cursor: grab; }
+.choices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.choices button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; font-size: 13.5px; cursor: pointer; }
+.choices button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* ── map address search ── */
+.msearch { display: flex; gap: 6px; padding: 8px; border-bottom: 1px solid var(--line); position: relative; }
+.msearch input { flex: 1; min-width: 0; height: 38px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--bg); }
+.msearch .btn { min-height: 38px; }
+.mres { position: absolute; left: 8px; right: 8px; top: 50px; z-index: 1001; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 6px 20px rgb(0 0 0 / .18); overflow: hidden; }
+.mres button { display: block; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: none; padding: 10px 12px; font-size: 13.5px; cursor: pointer; }
+.mres button:last-child { border-bottom: 0; }
+.pin.here { background: var(--accent); width: 18px; height: 18px; border-width: 3px; }
+
+/* ── AI on demand + percentile ── */
+.aiact { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 8px; }
+.aiact .btn { padding: 0 10px; }
+.aiact .btn[disabled] { opacity: .6; cursor: progress; }
+.pctout { background: var(--sunk); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; display: flex; flex-direction: column; gap: 2px; }
+.pctout b { font-family: var(--font-data); font-weight: 500; }
+
 @media (min-width: 640px) {
   .list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -214,6 +281,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   .gallery img { aspect-ratio: auto; height: 340px; }
   .map { margin-left: max(var(--gutter-l), calc((100% - 1400px) / 2 + 16px)); margin-right: max(var(--gutter-r), calc((100% - 1400px) / 2 + 16px)); }
   .dempty { display: grid; place-items: center; min-height: 240px; padding: 24px; color: var(--muted); text-align: center; }
+  .sheet { left: 50%; right: auto; bottom: auto; top: 50%; transform: translate(-50%, -50%); width: 540px; max-height: 84vh; border-radius: 18px; }
 }
 @media (prefers-reduced-motion: no-preference) { .gallery { scroll-behavior: smooth; } }
 </style>
@@ -236,17 +304,20 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   <div class="tools">
     <input id="q" type="search" placeholder="Calle, palabra…" aria-label="Buscar" enterkeyhint="search">
     <select id="sort" aria-label="Ordenar">
-      <option value="score">Mejor puntaje</option>
-      <option value="price">Menor precio</option>
-      <option value="ppm2">Menor USD/m²</option>
+      <option value="score">Puntaje</option>
+      <option value="price">Precio</option>
+      <option value="ppm2">USD/m²</option>
       <option value="m2">Más m²</option>
-      <option value="new">Más nuevas</option>
+      <option value="new">Nuevas</option>
     </select>
+    <button class="icon fbtn" id="fbtn" aria-label="Filtros">Filtros</button>
   </div>
 </header>
 
 <section class="info" id="info" hidden></section>
-<div class="map" id="map" hidden><div id="lmap"></div><div class="cap" id="mapcap"></div></div>
+<div class="map" id="map" hidden>
+  <form class="msearch" id="msearch" role="search"><input id="maddr" type="search" placeholder="Buscar una dirección en el mapa…" aria-label="Buscar dirección" enterkeyhint="search" autocomplete="off"><button class="btn" type="submit">Buscar</button><div class="mres" id="mres" hidden></div></form>
+  <div id="lmap"></div><div class="cap" id="mapcap"></div></div>
 
 <div class="flash" id="flash" hidden role="status"></div>
 <main class="layout">
@@ -256,6 +327,9 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   </div>
   <article class="detail" id="detail" hidden aria-label="Detalle"></article>
 </main>
+<div class="scrim" id="fscrim" hidden></div>
+<section class="sheet" id="filters" hidden role="dialog" aria-modal="true" aria-label="Filtros"></section>
+<div class="viewer" id="viewer" data-sw hidden role="dialog" aria-modal="true" aria-label="Fotos"></div>
 
 <script type="application/json" id="hh-data">__HH_DATA__</script>
 <script>
@@ -285,6 +359,25 @@ let DATA, view = "short", sel = null, shown = PAGE;
 let TAGS = store.get("hh-tags", {});           // {id: {fav, visited, dismissed, note, at}}
 let PREFS = "", pctMode = "saved", SETTINGS = { alert_percentile: 90, alert_ai_score: 70 };
 for (const id of store.get("hh-favs", [])) (TAGS[id] ||= {}).fav = true;   // favourites from the first version
+let FILT = store.get("hh-filters", { r: {}, c: {} });   // filters: r = {key: [lo, hi]}, c = {group: [values]}
+let AIP = store.get("hh-ai-pending", {});               // AI reads asked for and not back yet: {id: requested at}
+const AIMSG = {}, PCTSHOW = new Set();
+
+/* ── overlays (house sheet, photo viewer, filters) close with the phone's back gesture ── */
+const layers = [];
+function openLayer(name, close) {
+  if (layers.some(x => x.name === name)) return;
+  layers.push({ name, close });
+  try { history.pushState({ layer: name }, ""); } catch {}
+}
+function closeLayer(name) {
+  const i = layers.findIndex(x => x.name === name);
+  if (i < 0) return;
+  if (i === layers.length - 1 && history.state?.layer === name) return history.back();   // popstate closes it
+  layers.splice(i, 1)[0].close();
+}
+addEventListener("popstate", () => { const top = layers.pop(); if (top) top.close(); });
+function unlock() { if (wide.matches || ($("#detail").hidden && $("#viewer").hidden && $("#filters").hidden)) document.body.classList.remove("locked"); }
 
 /* ── tags, synced through the repo when a GitHub token is set ── */
 const gh = {
@@ -308,18 +401,20 @@ const gh = {
 };
 let syncTimer = null, syncState = "";
 function setSync(t) { syncState = t; const e = $("#syncstate"); if (e) e.textContent = t; const d = $("#saved"); if (d) d.textContent = t; }
+async function syncTags() {
+  const remote = JSON.parse(await gh.get("data/tags.json") || "{}");
+  for (const [id, t] of Object.entries(remote)) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
+  await gh.put("data/tags.json", JSON.stringify(TAGS, null, 1), "app: tags");
+  store.set("hh-tags", TAGS); setSync("Sincronizado ✓");
+}
 function saveTags() {
   store.set("hh-tags", TAGS);
   if (!gh.token()) { setSync("Guardado en este dispositivo"); return; }
   setSync("Guardando…");
   clearTimeout(syncTimer);
   syncTimer = setTimeout(async () => {
-    try {
-      const remote = JSON.parse(await gh.get("data/tags.json") || "{}");
-      for (const [id, t] of Object.entries(remote)) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
-      await gh.put("data/tags.json", JSON.stringify(TAGS, null, 1), "app: tags");
-      store.set("hh-tags", TAGS); setSync("Sincronizado ✓");
-    } catch (e) { setSync("No pude sincronizar (" + e.message + "); quedó guardado en este dispositivo"); }
+    try { await syncTags(); }
+    catch (e) { setSync("No pude sincronizar (" + e.message + "); quedó guardado en este dispositivo"); }
   }, 900);
 }
 function tag(id) { return TAGS[id] || {}; }
@@ -332,17 +427,98 @@ function setTag(id, k, v) {
 async function loadShared() {
   try {
     let tags, prefs;
-    let settings;
-    if (gh.token()) { tags = await gh.get("data/tags.json"); prefs = await gh.get("data/preferences.md"); settings = await gh.get("data/settings.json"); setSync("Sincronizado ✓"); }
+    let settings, results;
+    if (gh.token()) { tags = await gh.get("data/tags.json"); prefs = await gh.get("data/preferences.md"); settings = await gh.get("data/settings.json");
+                      results = await gh.get("data/ai_results.json").catch(() => null); setSync("Sincronizado ✓"); }
     else { const get = (f, d) => fetch(f, { cache: "no-store" }).then(r => r.ok ? r.text() : d).catch(() => d);
-           [tags, prefs, settings] = await Promise.all([get("tags.json", null), get("preferences.md", ""), get("settings.json", null)]); }
+           [tags, prefs, settings, results] = await Promise.all([get("tags.json", null), get("preferences.md", ""), get("settings.json", null), get("ai_results.json", null)]); }
     if (settings) SETTINGS = { ...SETTINGS, ...JSON.parse(settings) };
+    if (results) applyResults(JSON.parse(results), true);
     for (const [id, t] of Object.entries(JSON.parse(tags || "{}"))) if (!TAGS[id] || (t.at || "") > (TAGS[id].at || "")) TAGS[id] = t;
     store.set("hh-tags", TAGS);
     PREFS = prefs || "";
   } catch (e) { setSync("No pude leer GitHub: " + e.message); }
   renderList(); renderInfo();
   if (sel) renderDetail(DATA.listings.find(x => x.id === sel));
+  if (Object.keys(AIP).length) pollAI();
+}
+
+/* ── "Evaluar con IA": commit a request file (the assess workflow picks it up), then poll data/ai_results.json ── */
+async function requestAI(l) {
+  if (!gh.token()) { flash("Conectá GitHub en Info para pedirle evaluaciones a la IA"); if ($("#info").hidden) $("#infobtn").click(); return; }
+  const box = $("#note");
+  if (box && sel === l.id && box.value.trim() !== (tag(l.id).note || "")) { TAGS[l.id] = { ...tag(l.id), note: box.value.trim(), at: new Date().toISOString() }; store.set("hh-tags", TAGS); }
+  clearTimeout(syncTimer);
+  AIMSG[l.id] = "Guardando tus notas…"; renderAIState(l);
+  try {
+    await syncTags();   // the workflow reads the note from data/tags.json, so it has to be there first
+    const at = new Date().toISOString();
+    await gh.put(`data/ai_requests/${l.id}.json`, JSON.stringify({ id: l.id, at }, null, 1), `app: evaluar ${l.id}`);
+    AIP[l.id] = at; store.set("hh-ai-pending", AIP);
+    delete AIMSG[l.id];
+    pollAI();
+  } catch (e) { AIMSG[l.id] = "No pude pedirla: " + e.message; }
+  renderAIState(l);
+}
+function renderAIState(l) {
+  const b = $("#aibtn"), st = $("#aistate");
+  if (!b || sel !== l.id) return;
+  const at = AIP[l.id];
+  b.disabled = !!at || AIMSG[l.id] === "Guardando tus notas…";
+  b.textContent = at ? "Evaluando…" : "✨ Evaluar con IA";
+  st.textContent = at ? `Pedida a las ${new Date(at).toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit", hour12: false })}. Tarda 1 a 3 minutos; podés seguir usando la app.` : (AIMSG[l.id] || "");
+}
+function applyResults(R, onLoad = false) {
+  const gen = Date.parse((DATA.generated_at || "").replace(" ", "T") + "Z") || 0;
+  let changed = false;
+  for (const [id, r] of Object.entries(R || {})) {
+    const mine = AIP[id] && r.requested_at === AIP[id];
+    // on load, results newer than the data file; while polling, only the answer to this device's request
+    if (!(mine || (onLoad && Date.parse(r.done_at) > gen))) continue;
+    if (r.listing) {
+      const i = DATA.listings.findIndex(x => x.id === id);
+      if (i >= 0) DATA.listings[i] = { ...r.listing, thumbs: DATA.listings[i].thumbs }; else DATA.listings.push(r.listing);
+      changed = true;
+    }
+    if (mine) {
+      delete AIP[id];
+      const l = DATA.listings.find(x => x.id === id);
+      AIMSG[id] = r.error ? `La IA no pudo terminar (${r.error}).` : `Listo: la IA le puso ${l?.ai_final?.score ?? Math.round(l?.score)}/100 con tus notas.`;
+      flash(r.error ? "La evaluación de la IA falló" : `IA: ${l?.ai_final?.score ?? Math.round(l?.score)}/100 · ${l?.address || ""}`);
+    }
+  }
+  store.set("hh-ai-pending", AIP);
+  if (changed && pctMode === "now") recalcPct();
+  return changed;
+}
+async function pollAI() {
+  if (pollAI.t) return;
+  const tick = async () => {
+    for (const [id, at] of Object.entries(AIP)) if (Date.now() - Date.parse(at) > 15 * 60e3) {
+      delete AIP[id]; AIMSG[id] = "Tardó demasiado. Mirá GitHub → Actions → assess para ver qué pasó.";
+    }
+    store.set("hh-ai-pending", AIP);
+    let changed = false;
+    if (!Object.keys(AIP).length || !gh.token()) { clearInterval(pollAI.t); pollAI.t = null; }
+    else try { changed = applyResults(JSON.parse(await gh.get("data/ai_results.json") || "{}")); } catch {}
+    const l = sel && DATA.listings.find(x => x.id === sel);
+    if (changed) { renderList(); if (l) renderDetail(l); }   // only then: a re-render would drop a note being typed
+    else if (l) renderAIState(l);
+  };
+  pollAI.t = setInterval(tick, 20000);
+  setTimeout(tick, 15000);
+}
+
+/* ── percentile of one house, on demand ── */
+function pctLines(l) {
+  const sc = x => x.score_calc ?? x.score;
+  const rank = (vals, v) => { const below = vals.filter(x => x < v).length; return Math.round(100 * below / Math.max(1, vals.length)); };
+  const all = DATA.listings.map(sc), pass = DATA.listings.filter(x => !x.discard.length).map(sc);
+  const ai = DATA.listings.filter(x => x.ai_final).map(x => x.ai_final.score);
+  const out = [`Algoritmo <b>${fmt(sc(l))}</b> → percentil <b>${rank(all, sc(l))}</b> de ${all.length} casas puntuadas`];
+  if (!l.discard.length) out.push(`Entre las ${pass.length} que pasan los filtros: percentil <b>${rank(pass, sc(l))}</b>`);
+  if (l.ai_final) out.push(`IA <b>${l.ai_final.score}</b> → percentil <b>${rank(ai, l.ai_final.score)}</b> de ${ai.length} evaluadas por la IA`);
+  return out.map(x => `<span>${x}</span>`).join("");
 }
 
 /* ── data helpers ── */
@@ -360,11 +536,66 @@ function recalcPct() {
   pctMode = "now"; DATA.pct_n_now = all.length;
 }
 
+/* ── filters: two-ended sliders for numbers, chips for the rest ── */
+const PATIO_RANK = { none: 0, small: 1, medium: 2, large: 3 };
+const RANGES = [
+  ["price", "Precio", l => l.price_usd, 5000, v => "USD " + Math.round(v / 1000) + "k"],
+  ["total", "Superficie total", l => l.total_m2, 5, v => v + " m²"],
+  ["covered", "Superficie cubierta", l => l.covered_m2, 5, v => v + " m²"],
+  ["amb", "Ambientes", l => l.ambientes, 1, v => v],
+  ["bed", "Dormitorios", l => l.bedrooms, 1, v => v],
+  ["bath", "Baños", l => l.bathrooms, 1, v => v],
+  ["ppm2", "USD por m² total", l => ppm2(l), 50, v => v.toLocaleString("es-AR")],
+  ["maipu", "Cuadras a Av. Maipú", l => l.geo?.maipu_blocks, 1, v => v],
+  ["train", "Cuadras al tren", l => l.geo?.station?.blocks, 1, v => v],
+  ["score", "Puntaje", l => l.score, 1, v => v],
+  ["age", "Antigüedad (años)", l => l.age_years, 1, v => v],
+  ["reform", "Reforma estimada por la IA", l => l.ai?.reform_usd, 2500, v => "USD " + Math.round(v / 1000) + "k"],
+];
+const CHOICES = [
+  ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
+  ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"]]],
+  ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
+  ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
+  ["extra", "Tiene que tener", [["garage", "Cochera"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
+];
+const EXTRA = {
+  garage: l => l.garage > 0, credit: l => l.components?.credit?.value === 1, ai: l => !!l.ai_final, note: l => !!tag(l.id).note,
+  drop: l => { const h = l.price_history || []; return h.length > 1 && h[h.length - 1][1] < h[0][1]; },
+  new: l => Date.now() - Date.parse(l.first_seen + "T12:00") < 7 * 864e5, exact: l => !!l.address_exact,
+};
+let BOUNDS = {};
+function calcBounds() {
+  for (const [k, , get, step] of RANGES) {
+    const v = DATA.listings.filter(l => l.active !== false && !l.duplicate_of).map(get).filter(x => x != null && isFinite(x)).sort((a, b) => a - b);
+    if (!v.length) { BOUNDS[k] = [0, step]; continue; }
+    const lo = Math.floor(v[0] / step) * step, hi = v[Math.min(v.length - 1, Math.floor(v.length * 0.98))];   // past the 98th percentile is "or more"
+    BOUNDS[k] = [lo, Math.max(Math.ceil(hi / step) * step, lo + step)];
+  }
+}
+function passF(l) {
+  for (const [k, , get] of RANGES) {
+    const f = FILT.r[k]; if (!f) continue;
+    const v = get(l), [a, b] = BOUNDS[k] || [];
+    if (v == null) return false;                    // narrowed: unknowns are out
+    if (f[0] > a && v < f[0]) return false;
+    if (f[1] < b && v > f[1]) return false;
+  }
+  const c = FILT.c;
+  if (c.type?.length && !c.type.includes(l.type)) return false;
+  if (c.zone?.length && !c.zone.includes(l.zone)) return false;
+  if (c.src?.length && !c.src.includes(l.source)) return false;
+  if (c.patio?.length && !((PATIO_RANK[l.ai?.patio] ?? -1) >= Math.min(...c.patio.map(x => PATIO_RANK[x])))) return false;
+  for (const x of c.extra || []) if (!EXTRA[x](l)) return false;
+  return true;
+}
+const nFilt = () => Object.keys(FILT.r).length + Object.values(FILT.c).filter(v => v?.length).length;
+
 // Each house lives in one bucket: the inbox until Tomás processes it, then favourite → visited, or dismissed.
 function bucket(l) { const t = tag(l.id); return t.dismissed ? "mine" : t.visited ? "visited" : t.fav ? "fav" : "short"; }
 function base() {
-  const act = DATA.listings.filter(l => l.active !== false && !l.duplicate_of);
-  const tagged = DATA.listings.filter(l => !l.duplicate_of);
+  const tagged = DATA.listings.filter(l => !l.duplicate_of && passF(l));
+  const act = tagged.filter(l => l.active !== false);
   return {
     short: act.filter(l => !l.discard.length && bucket(l) === "short"),
     fav: tagged.filter(l => bucket(l) === "fav"),
@@ -384,6 +615,47 @@ function rows() {
     m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0) }[$("#sort").value];
   return r.slice().sort((a, b) => key(a) - key(b));
 }
+
+/* ── photos: every stored photo, swipeable on the card and in the sheet; tap opens the full-screen viewer ── */
+const photos = l => (l.photos?.length ? l.photos : (l.thumbs || [])).filter(Boolean);
+const big = u => u.replace("/720x532/", "/1200x1200/");   // Zonaprop serves a larger size for the viewer
+function strip(pics, cls = "", lazy = true) {
+  // only the first two load up front; the rest load as you swipe (see stripLoad)
+  return `<div class="strip ${cls}">${pics.map((p, i) => `<img ${i < 2 ? `src="${esc(p)}"${lazy ? ' loading="lazy"' : ""}` : `data-src="${esc(p)}"`} data-i="${i}" alt="Foto ${i + 1}" decoding="async" draggable="false">`).join("")}</div>`;
+}
+const snav = n => n > 1 ? `<button class="snav prev" data-nav="-1" aria-label="Foto anterior">‹</button><button class="snav next" data-nav="1" aria-label="Foto siguiente">›</button>` : "";
+function stripLoad(s) {
+  const i = Math.round(s.scrollLeft / Math.max(1, s.clientWidth));
+  for (let k = i - 1; k <= i + 2; k++) { const im = s.children[k]; if (im?.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; } }
+  const c = s.closest("[data-sw]")?.querySelector("[data-count]");
+  if (c) c.textContent = `${Math.min(i + 1, s.children.length)} / ${s.children.length}`;
+  return i;
+}
+document.addEventListener("scroll", e => { if (e.target.classList?.contains("strip")) stripLoad(e.target); }, true);
+function nav(btn) { const s = btn.closest("[data-sw]").querySelector(".strip"); s.scrollBy({ left: +btn.dataset.nav * s.clientWidth, behavior: "smooth" }); }
+function openViewer(pics, start) {
+  const v = $("#viewer");
+  v.innerHTML = `<div class="vtop"><span class="num" data-count>${start + 1} / ${pics.length}</span><button id="vclose" aria-label="Cerrar fotos">✕</button></div>${strip(pics.map(big), "", false)}${snav(pics.length)}`;
+  v.hidden = false; document.body.classList.add("locked");
+  const s = v.querySelector(".strip");
+  s.scrollLeft = start * s.clientWidth; stripLoad(s);
+  $("#vclose").onclick = () => closeLayer("viewer");
+  openLayer("viewer", () => { v.hidden = true; v.innerHTML = ""; unlock(); });
+}
+addEventListener("keydown", e => {
+  if ($("#viewer").hidden) { if (e.key === "Escape" && !$("#filters").hidden) closeLayer("filters"); return; }
+  if (e.key === "Escape") closeLayer("viewer");
+  const b = $(`#viewer [data-nav="${e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0}"]`); if (b) nav(b);
+});
+// a tap on a photo (card or sheet) opens the viewer at that photo; the arrows page through
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-sw] [data-nav]");
+  if (b) { e.stopPropagation(); nav(b); return; }
+  const im = e.target.closest(".ph .strip img, .gwrap .strip img"); if (!im) return;
+  const id = im.closest("[data-id]")?.dataset.id || sel, l = DATA.listings.find(x => x.id === id);
+  if (!l) return;
+  e.stopPropagation(); openViewer(photos(l), +im.dataset.i);
+}, true);
 
 /* ── list ── */
 function miniBar(l) {
@@ -405,18 +677,19 @@ function specs(l) {
 }
 // one-tap triage from the list: the next step for the bucket the house is in
 function quick(l) {
-  const b = bucket(l), btn = (act, label, cls = "") => `<button class="btn ${cls}" data-act="${act}">${label}</button>`;
-  const acts = { short: [btn("fav", "★ Me interesa", "primary"), btn("dismissed", "✕ Descartar")],
-    fav: [btn("visited", "✓ La visitamos", "primary"), btn("share", "Compartir"), btn("dismissed", "✕")],
-    visited: [btn("share", "Compartir"), btn("dismissed", "✕ Descartar")],
-    mine: [btn("restore", "↩ Volver a la bandeja")] }[b];
-  return l.discard.length && b === "short" ? "" : `<div class="qa">${acts.join("")}</div>`;
+  const b = bucket(l), btn = (act, label, cls = "", aria = "") => `<button class="btn ${cls}" data-act="${act}"${aria ? ` aria-label="${aria}"` : ""}>${label}</button>`;
+  const link = `<a class="btn" data-act="link" href="${esc(l.url)}" target="_blank" rel="noopener" aria-label="Ver la publicación en ${esc(srcName(l))}">Aviso ↗</a>`;
+  const acts = { short: [btn("fav", "★ Me interesa", "primary"), btn("dismissed", "✕ Descartar"), link],
+    fav: [btn("visited", "✓ La visitamos", "primary"), link, btn("share", "⤴", "", "Compartir"), btn("dismissed", "✕", "", "Descartar")],
+    visited: [btn("share", "Compartir"), btn("dismissed", "✕ Descartar"), link],
+    mine: [btn("restore", "↩ Volver a la bandeja"), link] }[b];
+  return `<div class="qa">${l.discard.length && b === "short" ? link : acts.join("")}</div>`;
 }
 function act(l, a) {
   if (a === "share") return share(l);
   if (a === "restore") { TAGS[l.id] = { note: tag(l.id).note, at: new Date().toISOString() }; saveTags(); }
   else setTag(l.id, a, true);
-  if (sel === l.id && !wide.matches && !$("#detail").hidden) history.state?.open ? history.back() : closeDetail();
+  if (sel === l.id && !wide.matches && !$("#detail").hidden) closeLayer("detail");
   if (sel === l.id) sel = null;
   renderList();
 }
@@ -427,14 +700,14 @@ async function share(l) {
 }
 function flash(msg) { const f = $("#flash"); f.textContent = msg; f.hidden = false; clearTimeout(flash.t); flash.t = setTimeout(() => f.hidden = true, 2200); }
 function card(l, i) {
-  const t = tag(l.id), src = img(l, 0);
+  const t = tag(l.id), pics = photos(l);
   const chips = (l.flags || []).filter(f => f !== "sin análisis IA").map(f => `<span class="pill warn">${esc(f)}</span>`)
     .concat(l.discard.length ? [`<span class="pill err">${esc(l.discard[0])}</span>`] : [])
     .concat(t.note ? [`<span class="pill acc">✎ ${esc(t.note.slice(0, 40))}${t.note.length > 40 ? "…" : ""}</span>`] : []);
   const text = brief(l);
   return `<div class="card" role="button" tabindex="0" data-id="${l.id}" aria-current="${sel === l.id}">
-    <div class="ph">
-      ${src ? `<img loading="lazy" decoding="async" src="${esc(src)}" alt="">` : ""}
+    <div class="ph" data-sw>
+      ${pics.length ? strip(pics) + snav(pics.length) + (pics.length > 1 ? `<span class="count" data-count>1 / ${pics.length}</span>` : "") : ""}
       <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav && !t.visited && view !== "fav" ? `<span class="pill">★</span>` : ""}${t.visited && view !== "visited" ? `<span class="pill">Visitada</span>` : ""}${t.dismissed && view !== "mine" ? `<span class="pill">Descartada</span>` : ""}${l.active === false && view !== "reserved" ? `<span class="pill">Reservada</span>` : ""}</div>
       ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
@@ -473,15 +746,15 @@ function select(id, push = true) {
     $("#detail").hidden = false;
     $("#detail").scrollTop = 0;
     document.body.classList.add("locked");
-    if (push) try { history.pushState({ open: id }, ""); } catch {}
+    if (push) openLayer("detail", closeDetail);
   }
 }
-function closeDetail() { $("#detail").hidden = true; document.body.classList.remove("locked"); }
+function closeDetail() { $("#detail").hidden = true; unlock(); }
 
 function renderDetail(l) {
   if (!l) { $("#detail").innerHTML = ""; return; }
   const t = tag(l.id);
-  const pics = (l.photos?.length ? l.photos : l.thumbs || []).slice(0, 12);
+  const pics = photos(l);
   const a = l.ai, g = l.geo, f = l.ai_final;
   const comp = Object.entries(l.components).map(([k, c]) => `
     <span>${LABELS[k]}</span>
@@ -503,7 +776,7 @@ function renderDetail(l) {
       <div class="t"><b class="num">${usd(l.price_usd)}</b><span>${esc(l.zone || "")} · ${l.type === "ph" ? "PH" : "Casa"} · ${esc(srcName(l))}</span></div>
       ${badge(l)}
     </div>
-    ${pics.length ? `<div class="gallery" id="gal">${pics.map((p, i) => `<img ${i ? 'loading="lazy"' : ""} src="${esc(p)}" alt="Foto ${i + 1}">`).join("")}</div><div class="gcount num" id="gcount">1 / ${pics.length}</div>` : ""}
+    ${pics.length ? `<div class="gwrap" data-sw>${strip(pics, "gallery", false)}${snav(pics.length)}<div class="gcount num" data-count>1 / ${pics.length}</div></div>` : ""}
     <div class="dbody">
       <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · vista desde el ${day(l.first_seen)}${l.active === false ? ` · <b>Reservada</b> (bajada el ${day(l.gone_at || l.last_seen)})` : ""}</div></div>
       ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
@@ -513,6 +786,11 @@ function renderDetail(l) {
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
         <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
         <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">✕ Descartar</button>
+      </div>
+      <div class="section">
+        <div class="aiact"><button class="btn primary" id="aibtn">✨ Evaluar con IA</button><button class="btn" id="pctcalc">Calcular percentil</button></div>
+        <span class="saved" id="aistate"></span>
+        ${PCTSHOW.has(l.id) ? `<div class="pctout">${pctLines(l)}</div>` : ""}
       </div>
       <div class="facts">
         <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
@@ -529,14 +807,14 @@ function renderDetail(l) {
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + ", Vicente López")}" target="_blank" rel="noopener">Maps ↗</a>
         <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
       </div>
-      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa (la IA las tiene en cuenta en la próxima corrida)">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
+      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa: lo que averigües (patio, estado, expensas…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
       ${aiBox}
       <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
       ${hist}
       <div class="section"><span class="label">Descripción del aviso</span><div class="desc clamp" id="desc">${esc(l.description)}</div>
         <button class="linkish" id="descmore">Leer todo</button></div>
     </div>`;
-  $("#back").onclick = () => history.state?.open ? history.back() : closeDetail();
+  $("#back").onclick = () => closeLayer("detail");
   $("#detail").querySelectorAll("[data-tag]").forEach(b => b.onclick = () => {
     const k = b.dataset.tag, on = !tag(l.id)[k];
     if (on) return act(l, k);          // processing it moves it to its bucket and returns to the list
@@ -545,8 +823,9 @@ function renderDetail(l) {
   $("#sharebtn").onclick = () => share(l);
   $("#note").onchange = e => { setTag(l.id, "note", e.target.value.trim()); renderList(); };
   $("#descmore").onclick = e => { $("#desc").classList.remove("clamp"); e.target.remove(); };
-  const gal = $("#gal");
-  if (gal) gal.onscroll = () => { $("#gcount").textContent = `${Math.round(gal.scrollLeft / gal.clientWidth) + 1} / ${pics.length}`; };
+  $("#aibtn").onclick = () => requestAI(l);
+  $("#pctcalc").onclick = () => { PCTSHOW.add(l.id); renderDetail(l); };
+  renderAIState(l);
 }
 
 /* ── map: OpenStreetMap streets + Tomás's reference points ── */
@@ -583,12 +862,117 @@ function renderMap() {
     const b = band(l.score, l);
     L.marker([l.lat, l.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${b}${l.id === sel ? " on" : ""}">${l.discard.length ? "" : Math.round(l.score)}</div>`, iconSize: b === "out" ? [12, 12] : [28, 28], iconAnchor: b === "out" ? [6, 6] : [14, 14] }),
       zIndexOffset: l.id === sel ? 1000 : b === "hi" ? 500 : 0 })
-      .addTo(MARKERS).bindTooltip(`${usd(l.price_usd)} · ${esc(l.address)}`).on("click", () => select(l.id));
+      .addTo(MARKERS).bindTooltip(`${usd(l.price_usd)} · ${esc(l.address)}`).on("click", e => { e.target.closeTooltip(); select(l.id); });
   }
   setTimeout(() => {
     MAP.invalidateSize();
     if (!MAP._fitted && pts.length) { MAP.fitBounds(pts.map(l => [l.lat, l.lng]), { padding: [24, 24], maxZoom: 16 }); MAP._fitted = true; }
   }, 50);
+}
+
+/* ── filters sheet ── */
+function fbtnLabel() { const n = nFilt(); $("#fbtn").innerHTML = `Filtros${n ? `<span class="n">${n}</span>` : ""}`; $("#fbtn").setAttribute("aria-pressed", n > 0); }
+function rngText(k) {
+  const [, , , , f] = RANGES.find(r => r[0] === k), [a, b] = BOUNDS[k], v = FILT.r[k];
+  if (!v) return "Cualquiera";
+  if (v[0] <= a) return `hasta ${f(v[1])}`;
+  if (v[1] >= b) return `${f(v[0])} o más`;
+  return `${f(v[0])} – ${f(v[1])}`;
+}
+function paintRange(el) {
+  const k = el.dataset.k, [a, b] = BOUNDS[k], [lo, hi] = FILT.r[k] || [a, b];
+  const fill = el.querySelector(".fill");
+  fill.style.left = (100 * (lo - a) / (b - a)) + "%"; fill.style.right = (100 - 100 * (hi - a) / (b - a)) + "%"; fill.style.opacity = FILT.r[k] ? 1 : .3;
+  const t = el.querySelector(".top b"); t.textContent = rngText(k); t.classList.toggle("any", !FILT.r[k]);
+}
+function filtCount() { const n = rows().length; $("#fapply").textContent = n === 1 ? "Ver 1 casa" : `Ver ${n} casas`; }
+let filtFrame = 0;
+function filtChanged() {
+  store.set("hh-filters", FILT); fbtnLabel();
+  cancelAnimationFrame(filtFrame);
+  filtFrame = requestAnimationFrame(() => { shown = PAGE; renderList(); filtCount(); });
+}
+function renderFilters() {
+  const ranges = RANGES.map(([k, label, , step]) => {
+    const [a, b] = BOUNDS[k], [lo, hi] = FILT.r[k] || [a, b];
+    return `<div class="rng" data-k="${k}"><div class="top"><span class="label">${label}</span><b></b></div>
+      <div class="dual"><div class="track"></div><div class="fill"></div>
+        <input type="range" min="${a}" max="${b}" step="${step}" value="${lo}" data-end="0" aria-label="${label}: mínimo">
+        <input type="range" min="${a}" max="${b}" step="${step}" value="${hi}" data-end="1" aria-label="${label}: máximo"></div></div>`;
+  }).join("");
+  const chips = CHOICES.map(([g, label, opts]) => `<div><span class="label">${label}</span><div class="choices" data-g="${g}">${opts.map(([v, t]) =>
+    `<button type="button" data-v="${esc(v)}" aria-pressed="${!!FILT.c[g]?.includes(v)}">${t}</button>`).join("")}</div></div>`).join("");
+  const f = $("#filters");
+  f.innerHTML = `<div class="shead"><h2>Filtros</h2><button class="btn" id="freset">Limpiar</button><button class="icon" id="fclose" aria-label="Cerrar filtros">✕</button></div>
+    <div class="sbody">${chips}${ranges}</div>
+    <div class="sfoot"><button class="btn primary" id="fapply"></button></div>`;
+  f.querySelectorAll(".rng").forEach(paintRange);
+  f.oninput = e => {
+    const inp = e.target.closest(".dual input"); if (!inp) return;
+    const el = inp.closest(".rng"), k = el.dataset.k, [a, b] = BOUNDS[k], [i0, i1] = el.querySelectorAll("input");
+    let lo = +i0.value, hi = +i1.value;
+    if (lo > hi) { if (inp === i0) hi = lo; else lo = hi; i0.value = lo; i1.value = hi; }
+    // the thumb that was moved last stays on top, so two thumbs at the same spot can still be pulled apart
+    i0.style.zIndex = inp === i0 ? 2 : 1; i1.style.zIndex = inp === i1 ? 2 : 1;
+    if (lo <= a && hi >= b) delete FILT.r[k]; else FILT.r[k] = [lo, hi];
+    paintRange(el); filtChanged();
+  };
+  f.onclick = e => {
+    const c = e.target.closest(".choices button");
+    if (c) {
+      const g = c.parentElement.dataset.g, v = c.dataset.v, cur = FILT.c[g] || [];
+      FILT.c[g] = g === "patio" ? (cur.includes(v) ? [] : [v]) : cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v];
+      c.parentElement.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", FILT.c[g].includes(b.dataset.v)));
+      filtChanged(); return;
+    }
+    if (e.target.closest("#freset")) { FILT = { r: {}, c: {} }; renderFilters(); filtChanged(); return; }
+    if (e.target.closest("#fapply, #fclose")) closeLayer("filters");
+  };
+  filtCount();
+}
+function openFilters() {
+  renderFilters();
+  $("#filters").hidden = $("#fscrim").hidden = false;
+  document.body.classList.add("locked");
+  openLayer("filters", () => { $("#filters").hidden = $("#fscrim").hidden = true; unlock(); window.scrollTo({ top: 0 }); });
+}
+
+/* ── address search on the map (OpenStreetMap Nominatim, free) ── */
+let HERE = null;
+function toM(p, o) { return [(p[1] - o[1]) * 111320 * Math.cos(o[0] * Math.PI / 180), (p[0] - o[0]) * 110540]; }
+function distLine(p, ways) {   // metres from p to the nearest point of a set of polylines
+  let best = Infinity;
+  for (const w of ways || []) for (let i = 1; i < w.length; i++) {
+    const [ax, ay] = toM(w[i - 1], p), [bx, by] = toM(w[i], p), dx = bx - ax, dy = by - ay;
+    const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / ((dx * dx + dy * dy) || 1)));
+    best = Math.min(best, Math.hypot(ax + t * dx, ay + t * dy));
+  }
+  return best;
+}
+async function findAddress(q) {
+  const box = $("#mres");
+  if (!q) return;
+  box.hidden = false; box.innerHTML = `<button type="button" disabled>Buscando…</button>`;
+  const url = "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=ar&accept-language=es&q=";
+  try {
+    let res = await fetch(url + encodeURIComponent(q) + "&viewbox=-58.56,-34.47,-58.44,-34.57&bounded=1").then(r => r.json());
+    if (!res.length) res = await fetch(url + encodeURIComponent(q + ", Vicente López, Buenos Aires")).then(r => r.json());
+    if (!res.length) { box.innerHTML = `<button type="button" disabled>No encontré esa dirección. Probá "calle número, barrio".</button>`; return; }
+    if (res.length === 1) { box.hidden = true; return showHere(res[0]); }
+    box.innerHTML = res.map((r, i) => `<button type="button" data-i="${i}">${esc(r.display_name.split(",").slice(0, 3).join(","))}</button>`).join("");
+    box.onclick = e => { const b = e.target.closest("[data-i]"); if (b) { box.hidden = true; showHere(res[+b.dataset.i]); } };
+  } catch (e) { box.innerHTML = `<button type="button" disabled>No pude buscar (${esc(e.message)}).</button>`; }
+}
+function showHere(r) {
+  initMap();
+  const p = [+r.lat, +r.lon], ref = DATA.reference || {};
+  const maipu = distLine(p, ref.maipu) / 100;
+  const st = Object.entries(ref.stations || {}).map(([n, s]) => [n, Math.hypot(...toM(s, p)) / 100]).sort((a, b) => a[1] - b[1])[0];
+  const near = rows().filter(l => l.lat && Math.hypot(...toM([l.lat, l.lng], p)) < 500).length;
+  if (HERE) HERE.remove();
+  HERE = L.marker(p, { icon: L.divIcon({ className: "", html: `<div class="pin here"></div>`, iconSize: [18, 18], iconAnchor: [9, 9] }), zIndexOffset: 2000 }).addTo(MAP)
+    .bindPopup(`<b>${esc(r.display_name.split(",").slice(0, 2).join(","))}</b><br>${blk(maipu)} cdas de Maipú${st ? ` · Est. ${esc(st[0])} a ${blk(st[1])} cdas` : ""}<br>${near} casa${near === 1 ? "" : "s"} de la lista a menos de 5 cuadras`).openPopup();
+  MAP.setView(p, 16);
 }
 
 /* ── info panel: sources, scoring, preferences, sync ── */
@@ -618,7 +1002,7 @@ function renderInfo() {
       <textarea class="prefs" id="prefs" ${tok ? "" : "readonly"}>${esc(PREFS)}</textarea>
       ${tok ? `<div class="row2"><button class="btn primary" id="prefsave">Guardar preferencias</button></div>` : `<p>Para editarlas desde acá, conectá GitHub abajo.</p>`}</div>
     <div class="section"><span class="label">Sincronizar entre dispositivos</span>
-      <p>Tus marcas y notas se guardan en este dispositivo. Para tenerlas en el celu y la compu, y para que la IA lea tus notas, pegá un token de GitHub con permiso de escritura en <b>${REPO}</b> (Settings → Developer settings → Fine-grained tokens → Contents: Read and write).</p>
+      <p>Tus marcas y notas se guardan en este dispositivo. Para tenerlas en el celu y la compu, para que la IA lea tus notas y para pedirle evaluaciones con el botón ✨, pegá un token de GitHub con permiso de escritura en <b>${REPO}</b> (Settings → Developer settings → Fine-grained tokens → Contents: Read and write).</p>
       <div class="row2"><input id="tok" type="password" autocomplete="off" placeholder="github_pat_…" value="${tok ? "••••••••" : ""}"><button class="btn" id="toksave">${tok ? "Cambiar" : "Conectar"}</button>${tok ? `<button class="btn" id="tokdel">Desconectar</button>` : ""}</div>
       <span class="saved" id="syncstate">${esc(syncState)}</span></div>`;
   $("#pctbtn").onclick = () => { recalcPct(); renderInfo(); renderList(); if (sel) renderDetail(DATA.listings.find(x => x.id === sel)); };
@@ -641,6 +1025,7 @@ function renderInfo() {
 
 function boot(d) {
   DATA = d;
+  calcBounds(); fbtnLabel();
   renderInfo(); renderList();
   loadShared();
   $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
@@ -652,15 +1037,19 @@ function boot(d) {
   $("#list").onclick = e => {
     const c = e.target.closest(".card"); if (!c) return;
     const b = e.target.closest("[data-act]");
-    if (b) { e.stopPropagation(); act(DATA.listings.find(x => x.id === c.dataset.id), b.dataset.act); return; }
+    if (b) { e.stopPropagation(); if (b.dataset.act !== "link") act(DATA.listings.find(x => x.id === c.dataset.id), b.dataset.act); return; }
     select(c.dataset.id);
   };
   $("#list").onkeydown = e => { const c = e.target.closest(".card"); if (c && e.key === "Enter") select(c.dataset.id); };
   const toggle = (btn, el, after) => $(btn).onclick = () => { const on = el.hidden; el.hidden = !on; $(btn).setAttribute("aria-pressed", on); if (on && after) after(); };
   toggle("#mapbtn", $("#map"), renderMap);
   toggle("#infobtn", $("#info"));
-  addEventListener("popstate", () => { if (!wide.matches) closeDetail(); });
-  wide.addEventListener?.("change", () => { closeDetail(); renderList(); if (wide.matches && sel) renderDetail(DATA.listings.find(x => x.id === sel)); });
+  wide.addEventListener?.("change", () => { const i = layers.findIndex(x => x.name === "detail"); if (i >= 0) layers.splice(i, 1);
+    closeDetail(); renderList(); if (wide.matches && sel) renderDetail(DATA.listings.find(x => x.id === sel)); });
+  $("#fbtn").onclick = openFilters;
+  $("#fscrim").onclick = () => closeLayer("filters");
+  $("#msearch").onsubmit = e => { e.preventDefault(); findAddress($("#maddr").value.trim()); };
+  $("#maddr").oninput = () => { if (!$("#maddr").value) $("#mres").hidden = true; };
 }
 
 const inline = $("#hh-data").textContent.trim();
