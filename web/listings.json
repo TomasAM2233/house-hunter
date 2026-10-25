@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-25 00:54",
+ "generated_at": "2026-10-25 00:55",
  "status": {
   "zonaprop": {
    "ok": true,
    "count": 269,
    "complete": false,
-   "at": "2026-10-25 00:43",
-   "mode": "full",
+   "at": "2026-10-25 00:55",
+   "mode": "newest",
    "full_at": null
   },
   "tokko": {
@@ -27,11 +27,11 @@
   },
   "argenprop": {
    "ok": true,
-   "count": 391,
-   "complete": true,
-   "at": "2026-10-25 00:44",
-   "mode": "full",
-   "full_at": "2026-10-25 00:44"
+   "count": 237,
+   "complete": false,
+   "at": "2026-10-25 00:55",
+   "mode": "newest",
+   "full_at": "2026-10-24 14:44"
   }
  },
  "weights": {
@@ -10631,7 +10631,7 @@
    "pct": 87,
    "pct_score": 57.8,
    "pct_n": 634,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 5.9,
@@ -17449,7 +17449,7 @@
    "pct": 78,
    "pct_score": 52.1,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 4.5,
@@ -17961,7 +17961,7 @@
    "pct": 69,
    "pct_score": 49.5,
    "pct_n": 634,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 5.1,
@@ -20379,7 +20379,7 @@
    "pct": 70,
    "pct_score": 50.5,
    "pct_n": 659,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 10.1,
@@ -28078,7 +28078,7 @@
    "pct": 62,
    "pct_score": 46.2,
    "pct_n": 1566,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 10.0,
@@ -30837,7 +30837,7 @@
    "pct": 45,
    "pct_score": 44.5,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -33740,7 +33740,7 @@
    "pct": 38,
    "pct_score": 43.2,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 12.2,
@@ -37970,7 +37970,7 @@
    "pct": 41,
    "pct_score": 41.6,
    "pct_n": 1550,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -39420,7 +39420,7 @@
     "Cochera": "1",
     "Antigüedad": "33"
    },
-   "credit_pill": true,
+   "credit_pill": false,
    "publisher": "Remax Premium IV",
    "modified": "2026-10-22T00:00:00-0400",
    "first_seen": "2026-10-23",
@@ -39444,7 +39444,7 @@
    "pct": 72,
    "pct_score": 51.2,
    "pct_n": 634,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 12.9,
@@ -40434,7 +40434,7 @@
    "pct": 28,
    "pct_score": 40.7,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 6.7,
@@ -46243,7 +46243,7 @@
    "pct": 17,
    "pct_score": 37.1,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 12.4,
@@ -47988,7 +47988,7 @@
    "pct": 23,
    "pct_score": 36.0,
    "pct_n": 1566,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -50629,7 +50629,7 @@
    "pct": 17,
    "pct_score": 34.1,
    "pct_n": 1566,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 11.4,
@@ -51728,7 +51728,7 @@
    "pct": 6,
    "pct_score": 33.0,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -52710,7 +52710,7 @@
    "pct": 3,
    "pct_score": 30.2,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -55635,7 +55635,7 @@
    "pct": 99,
    "pct_score": 70.8,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 24.4,
@@ -58115,7 +58115,7 @@
    "pct": 99,
    "pct_score": 66.8,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 37.6,
@@ -60432,7 +60432,7 @@
    "pct": 97,
    "pct_score": 65.0,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 25.0,
@@ -76624,7 +76624,7 @@
    "pct": 90,
    "pct_score": 56.6,
    "pct_n": 1550,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 21.6,
@@ -78498,7 +78498,7 @@
    "pct": 86,
    "pct_score": 55.4,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 25.0,
@@ -91660,7 +91660,7 @@
    "pct": 76,
    "pct_score": 52.1,
    "pct_n": 634,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 1.3,
@@ -95072,7 +95072,7 @@
    "pct": 73,
    "pct_score": 51.5,
    "pct_n": 659,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 17.7,
@@ -101511,225 +101511,6 @@
    "score_calc": 50.1
   },
   {
-   "id": "zp-60505772",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-de-3-ambientes-en-florida-vicente-lopez-60505772.html",
-   "title": "PH en Venta de 3 Ambientes en Florida, Vicente López con Terraza Propia",
-   "type": "ph",
-   "price_usd": 155000,
-   "total_m2": 139.0,
-   "covered_m2": 76.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 45.0,
-   "address": "Ceballos Pedro de Virrey al 18, Florida",
-   "zone": "Florida",
-   "address_exact": true,
-   "lat": -34.541771454,
-   "lng": -58.4839459286,
-   "description": "PH 3 ambientes en venta en Florida, Vicente Lopez, con terraza y parrilla privada.\nLa unidad se encuentra en un SEGUNDO PISO POR ESCALERA, SIN EXPENSAS!\nSe destaca por su luminosidad, en su Primer Piso cuenta con  un amplio living comedor con salida al balcón, cocina con lavadero, hall de distribución,  2 habitaciones con amplio lugar de guardado y baño completo.\nSegundo piso: Toilette, habitación de dependencia, baulera, parrilla con amplia terraza privada.\nExcelente conectividad y ubicación (a pocos metros de General Paz).\n¡Contactanos para coordinar una visita y conocer tu próximo hogar!\nNo accesible para personas con movilidad reducida.\nEn cumplimiento de las normas legales aplicables, informamos que los agentes NO ejercen el corretaje inmobiliario. Todas las operaciones son concluidas por el corredor inmobiliario matriculado responsable de la oficina\nPablo Ariel Juan CUCICBA 7458 - CMCPSI 6822\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137987.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138008.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138204.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138070.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138116.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137737.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138048.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138179.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137763.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137999.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138210.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138164.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138003.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138019.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138032.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138079.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138040.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138102.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138174.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138014.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137731.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138218.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137973.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137981.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137756.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137953.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137741.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138145.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138113.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138159.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137991.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137746.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137752.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138169.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137976.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138060.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137968.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138214.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138108.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138083.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137963.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137995.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138090.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137798.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138026.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138065.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137802.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138054.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138097.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138152.jpg"
-   ],
-   "tags": {
-    "Disposición": "Frente",
-    "Luminoso": "Muy luminoso",
-    "Orientación": "NO",
-    "Superficie total": "139",
-    "Superficie cubierta": "76",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Toilette": "1",
-    "Antigüedad": "45"
-   },
-   "credit_pill": true,
-   "publisher": "Real Props",
-   "modified": "2026-10-22T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     155000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "139 m² tot.",
-    "76 m² cub.",
-    "3 amb.",
-    "1 baño",
-    "2 dorm.",
-    "1 toilette",
-    "45 años",
-    "Frente",
-    "NO",
-    "Muy luminoso"
-   ],
-   "pct": 76,
-   "pct_score": 50.1,
-   "pct_n": 1550,
-   "last_seen": "2026-10-24",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 8.0,
-    "puente_blocks": 8.1,
-    "station": {
-     "name": "Aristóbulo del Valle",
-     "line": "Belgrano Norte",
-     "blocks": 7.2,
-     "effective_blocks": 8.2
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 8000,
-    "reform_notes": "Baño y cocina de época, sacar revestimientos de madera; pisos de parquet buenos.",
-    "patio": "none",
-    "patio_m2_est": null,
-    "pasillo_ph": false,
-    "natural_light": 5,
-    "quiet": 2,
-    "vertical_potential": 0.05,
-    "apto_credito": null,
-    "highlights": [
-     "Muy luminoso, terraza con parrilla",
-     "Sin expensas",
-     "Pisos de parquet en buen estado"
-    ],
-    "red_flags": [
-     "Segundo piso por escalera, sin patio",
-     "A metros de General Paz",
-     "Revestimientos de madera"
-    ],
-    "summary": "PH en segundo piso luminoso con terraza, pero sin patio y pegado a la General Paz.",
-    "photos_key": "117502dc9873",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 50.1,
-   "components": {
-    "price": {
-     "value": 0.83,
-     "points": 18.2,
-     "max": 22,
-     "why": "USD 163.000 efectivo (incl. reforma 8.000), 1.115/m²"
-    },
-    "space": {
-     "value": 0.1,
-     "points": 1.9,
-     "max": 18,
-     "why": "139 m² tot, 76 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.7,
-     "points": 10.5,
-     "max": 15,
-     "why": "8 cuadras a Maipú, 7 a est. Aristóbulo del Valle (Belgrano Norte)"
-    },
-    "condition": {
-     "value": 0.7,
-     "points": 9.0,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 8.000"
-    },
-    "patio": {
-     "value": 0,
-     "points": 0,
-     "max": 10,
-     "why": "sin patio"
-    },
-    "vertical": {
-     "value": 0.05,
-     "points": 0.4,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.7,
-     "points": 2.1,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 1.0,
-     "points": 2.0,
-     "max": 2,
-     "why": "luz 5/5"
-    }
-   },
-   "discard": [
-    "sin patio ni jardín",
-    "duplicado de tk-8449113"
-   ],
-   "flags": [],
-   "duplicate_of": "tk-8449113",
-   "score_calc": 50.1
-  },
-  {
    "id": "zp-60460024",
    "source": "zonaprop",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-de-3-ambientes-en-florida-en-muy-buen-estado!-60460024.html",
@@ -107464,7 +107245,7 @@
    "pct": 66,
    "pct_score": 48.9,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 3.0,
@@ -108028,7 +107809,7 @@
    "pct": 67,
    "pct_score": 48.9,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 18.6,
@@ -108927,7 +108708,7 @@
    "pct": 66,
    "pct_score": 48.7,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 0.1,
@@ -116050,7 +115831,7 @@
    "pct": 61,
    "pct_score": 47.8,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 12.0,
@@ -122059,7 +121840,7 @@
    "pct": 58,
    "pct_score": 47.1,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -122182,7 +121963,7 @@
    "pct": 66,
    "pct_score": 47.1,
    "pct_n": 1566,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -126331,6 +126112,225 @@
     "datos parciales"
    ],
    "score_calc": 46.6
+  },
+  {
+   "id": "zp-60505772",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-de-3-ambientes-en-florida-vicente-lopez-60505772.html",
+   "title": "PH en Venta de 3 Ambientes en Florida, Vicente López con Terraza Propia",
+   "type": "ph",
+   "price_usd": 155000,
+   "total_m2": 139.0,
+   "covered_m2": 76.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 45.0,
+   "address": "Ceballos Pedro de Virrey al 18, Florida",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.541771454,
+   "lng": -58.4839459286,
+   "description": "PH 3 ambientes en venta en Florida, Vicente Lopez, con terraza y parrilla privada.\nLa unidad se encuentra en un SEGUNDO PISO POR ESCALERA, SIN EXPENSAS!\nSe destaca por su luminosidad, en su Primer Piso cuenta con  un amplio living comedor con salida al balcón, cocina con lavadero, hall de distribución,  2 habitaciones con amplio lugar de guardado y baño completo.\nSegundo piso: Toilette, habitación de dependencia, baulera, parrilla con amplia terraza privada.\nExcelente conectividad y ubicación (a pocos metros de General Paz).\n¡Contactanos para coordinar una visita y conocer tu próximo hogar!\nNo accesible para personas con movilidad reducida.\nEn cumplimiento de las normas legales aplicables, informamos que los agentes NO ejercen el corretaje inmobiliario. Todas las operaciones son concluidas por el corredor inmobiliario matriculado responsable de la oficina\nPablo Ariel Juan CUCICBA 7458 - CMCPSI 6822\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137987.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138008.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138204.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138070.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138116.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137737.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138048.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138179.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137763.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137999.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138210.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138164.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138003.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138019.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138032.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138079.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138040.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138102.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138174.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138014.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137731.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138218.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137973.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137981.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137756.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137953.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137741.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138145.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138113.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138159.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137991.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137746.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137752.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138169.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137976.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138060.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137968.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138214.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138108.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138083.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137963.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137995.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138090.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137798.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138026.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138065.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137802.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138054.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138097.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138152.jpg"
+   ],
+   "tags": {
+    "Disposición": "Frente",
+    "Luminoso": "Muy luminoso",
+    "Orientación": "NO",
+    "Superficie total": "139",
+    "Superficie cubierta": "76",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Toilette": "1",
+    "Antigüedad": "45"
+   },
+   "credit_pill": false,
+   "publisher": "Real Props",
+   "modified": "2026-10-22T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     155000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "139 m² tot.",
+    "76 m² cub.",
+    "3 amb.",
+    "1 baño",
+    "2 dorm.",
+    "1 toilette",
+    "45 años",
+    "Frente",
+    "NO",
+    "Muy luminoso"
+   ],
+   "pct": 63,
+   "pct_score": 46.5,
+   "pct_n": 1550,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 8.0,
+    "puente_blocks": 8.1,
+    "station": {
+     "name": "Aristóbulo del Valle",
+     "line": "Belgrano Norte",
+     "blocks": 7.2,
+     "effective_blocks": 8.2
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 8000,
+    "reform_notes": "Baño y cocina de época, sacar revestimientos de madera; pisos de parquet buenos.",
+    "patio": "none",
+    "patio_m2_est": null,
+    "pasillo_ph": false,
+    "natural_light": 5,
+    "quiet": 2,
+    "vertical_potential": 0.05,
+    "apto_credito": null,
+    "highlights": [
+     "Muy luminoso, terraza con parrilla",
+     "Sin expensas",
+     "Pisos de parquet en buen estado"
+    ],
+    "red_flags": [
+     "Segundo piso por escalera, sin patio",
+     "A metros de General Paz",
+     "Revestimientos de madera"
+    ],
+    "summary": "PH en segundo piso luminoso con terraza, pero sin patio y pegado a la General Paz.",
+    "photos_key": "117502dc9873",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 46.5,
+   "components": {
+    "price": {
+     "value": 0.83,
+     "points": 18.2,
+     "max": 22,
+     "why": "USD 163.000 efectivo (incl. reforma 8.000), 1.115/m²"
+    },
+    "space": {
+     "value": 0.1,
+     "points": 1.9,
+     "max": 18,
+     "why": "139 m² tot, 76 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.7,
+     "points": 10.5,
+     "max": 15,
+     "why": "8 cuadras a Maipú, 7 a est. Aristóbulo del Valle (Belgrano Norte)"
+    },
+    "condition": {
+     "value": 0.7,
+     "points": 9.0,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 8.000"
+    },
+    "patio": {
+     "value": 0,
+     "points": 0,
+     "max": 10,
+     "why": "sin patio"
+    },
+    "vertical": {
+     "value": 0.05,
+     "points": 0.4,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.7,
+     "points": 2.1,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 1.0,
+     "points": 2.0,
+     "max": 2,
+     "why": "luz 5/5"
+    }
+   },
+   "discard": [
+    "sin patio ni jardín",
+    "duplicado de tk-8449113"
+   ],
+   "flags": [],
+   "duplicate_of": "tk-8449113",
+   "score_calc": 46.5
   },
   {
    "id": "ml-MLA4114543162",
@@ -132714,7 +132714,7 @@
    "pct": 51,
    "pct_score": 45.8,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 10.9,
@@ -134007,10 +134007,10 @@
      169000
     ]
    ],
-   "pct": 60,
+   "pct": 59,
    "pct_score": 45.7,
-   "pct_n": 1603,
-   "last_seen": "2026-10-24",
+   "pct_n": 1550,
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 17.4,
@@ -134094,146 +134094,6 @@
     "posible pasillo"
    ],
    "score_calc": 45.7
-  },
-  {
-   "id": "zp-60420469",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-2-dorm.-venta-olivos-maipu-uzal-60420469.html",
-   "title": "Casa 2 Dorm. Venta - Olivos - Maipu/uzal",
-   "type": "casa",
-   "price_usd": 150000,
-   "total_m2": 216.0,
-   "covered_m2": 72.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 3.0,
-   "age_years": 62.0,
-   "address": "San Lorenzo  al 3200, Entre O Higgins y Warnes, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5123577,
-   "lng": -58.5111304,
-   "description": "Casa sobre lote propio de 10x22, 50, ubicada en San Lorenzo 3200, Olivos. La propiedad cuenta con una construcción antigua a demoler o refaccionar, ideal para desarrollar un nuevo proyecto o remodelar a gusto. Se encuentra en una zona residencial con muy buen entorno, cercana a Avenida Maipú, Panamericana, medios de transporte, colegios y centros comerciales, lo que la convierte en una excelente oportunidad tanto por su ubicación como por el potencial del lote. Escucha ofertas. Pedinos tu visita. Código de propiedad: dho<span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver datos</button></span>Con más de 40 años de experiencia, en dic Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos. Nuestros números avalan nuestro compromiso: • 1. 700 propiedades en comercialización. • 137. 000 tasaciones realizadas con precisión• 950. 000 m2 vendidos con éxito. • 35. 000 unidades de pozo comercializadas. Te esperamos de lunes a sábados en nuestras oficinas de caba y Zona Norte. ___ * * * ___________________________________________________________________________________* * ** * * Información Importante y Aviso Legal * * *La presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, abl, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual. dic propiedades S. A. Actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa. __________________________________________________________________________________Javier Del Coro Igarzabal | cmcpsi Mat. Nº 4499María Amparo Coello | cucicba Mat. Nº 5147dic propiedades S. A. |. ar",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018530.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018607.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085019605.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085019046.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018890.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018642.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018852.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/69/720x532/2085018675.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Orientación": "NO",
-    "Superficie total": "216",
-    "Superficie cubierta": "72",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Cocheras": "3",
-    "Antigüedad": "62"
-   },
-   "credit_pill": false,
-   "publisher": "DIC PROPIEDADES S.A.",
-   "modified": "2026-10-13T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     150000
-    ]
-   ],
-   "pct": 60,
-   "pct_score": 45.6,
-   "pct_n": 1603,
-   "last_seen": "2026-10-24",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 17.7,
-    "puente_blocks": 43.0,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 19.6,
-     "effective_blocks": 19.6
-    }
-   },
-   "ai": null,
-   "score": 45.6,
-   "components": {
-    "price": {
-     "value": 0.95,
-     "points": 20.8,
-     "max": 22,
-     "why": "USD 150.000 efectivo, 694/m²"
-    },
-    "space": {
-     "value": 0.27,
-     "points": 4.8,
-     "max": 18,
-     "why": "216 m² tot, 72 cub, 3 amb"
-    },
-    "location": {
-     "value": 0,
-     "points": 0,
-     "max": 15,
-     "why": "18 cuadras a Maipú, 20 a est. Doctor Cetrángolo (Mitre)"
-    },
-    "condition": {
-     "value": 0.35,
-     "points": 4.5,
-     "max": 13,
-     "why": "sin IA; antigüedad 62.0 años"
-    },
-    "patio": {
-     "value": 0.1,
-     "points": 1.0,
-     "max": 10,
-     "why": "no menciona patio"
-    },
-    "vertical": {
-     "value": 0.6,
-     "points": 4.2,
-     "max": 7,
-     "why": "heurística: casa, lote propio"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "3 cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 2.4,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luminoso según aviso"
-    }
-   },
-   "discard": [
-    "a 17.7 cuadras de Maipú (muy lejos)",
-    "duplicado de ap-18470916"
-   ],
-   "flags": [
-    "sin análisis IA"
-   ],
-   "duplicate_of": "ap-18470916",
-   "score_calc": 45.6
   },
   {
    "id": "ml-MLA3912774440",
@@ -140138,7 +139998,7 @@
    "pct": 47,
    "pct_score": 44.8,
    "pct_n": 1148,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 1.5,
@@ -140775,7 +140635,7 @@
    "pct": 47,
    "pct_score": 44.7,
    "pct_n": 659,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 2.6,
@@ -143333,7 +143193,7 @@
    "pct": 45,
    "pct_score": 44.4,
    "pct_n": 1148,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 0.6,
@@ -162635,7 +162495,7 @@
     "Baño": "1",
     "Antigüedad": "40"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "SERRANO PROPIEDADES",
    "modified": "2026-10-21T00:00:00-0400",
    "first_seen": "2026-10-24",
@@ -162648,7 +162508,7 @@
    "pct": 34,
    "pct_score": 42.4,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 10.6,
@@ -164124,8 +163984,11 @@
     "sin análisis IA",
     "sobre presupuesto (USD 220.000)"
    ],
-   "duplicate_of": "zp-60475725",
-   "score_calc": 42.2
+   "duplicate_of": "ml-MLA4099349004",
+   "score_calc": 42.2,
+   "pct": 44,
+   "pct_score": 42.2,
+   "pct_n": 1566
   },
   {
    "id": "tk-1525502",
@@ -164902,7 +164765,7 @@
    "pct": 34,
    "pct_score": 42.0,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 2.4,
@@ -167828,7 +167691,7 @@
    "pct": 31,
    "pct_score": 41.6,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 11.9,
@@ -188254,7 +188117,7 @@
    "pct": 20,
    "pct_score": 38.6,
    "pct_n": 659,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 22.7,
@@ -191033,7 +190896,7 @@
    "pct": 20,
    "pct_score": 38.1,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 9.7,
@@ -196236,7 +196099,7 @@
    "pct": 17,
    "pct_score": 37.0,
    "pct_n": 659,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 21.4,
@@ -199694,7 +199557,7 @@
    "pct": 15,
    "pct_score": 36.6,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": null,
@@ -204757,7 +204620,7 @@
    "pct": 15,
    "pct_score": 36.0,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 6.5,
@@ -208169,7 +208032,7 @@
    "pct": 13,
    "pct_score": 35.4,
    "pct_n": 620,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 10.1,
@@ -210425,7 +210288,7 @@
    "pct": 11,
    "pct_score": 35.2,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 15.7,
@@ -212192,7 +212055,7 @@
    "pct": 10,
    "pct_score": 34.9,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 107.0,
@@ -221360,7 +221223,7 @@
    "pct": 5,
    "pct_score": 32.6,
    "pct_n": 1140,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 16.0,
@@ -222598,7 +222461,7 @@
    "pct": 5,
    "pct_score": 32.3,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 3.8,
@@ -229325,7 +229188,7 @@
     "Baños": "2",
     "Antigüedad": "56"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Remax Class II - Vila Terra",
    "modified": "2026-10-22T00:00:00-0400",
    "first_seen": "2026-10-24",
@@ -229338,7 +229201,7 @@
    "pct": 4,
    "pct_score": 30.6,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 3.8,
@@ -229851,7 +229714,7 @@
    "pct": 11,
    "pct_score": 30.4,
    "pct_n": 1566,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 16.3,
@@ -237415,7 +237278,7 @@
    "pct": 1,
    "pct_score": 28.0,
    "pct_n": 1165,
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "active": true,
    "geo": {
     "maipu_blocks": 14.2,
