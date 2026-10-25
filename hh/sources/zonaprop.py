@@ -13,11 +13,17 @@ NEW_PAGES = 1
 _dec = json.JSONDecoder()
 
 
-def search_url(page, newest=False):
+# Zonaprop answers pages 10+ of a search with a bot wall (HTTP 423 through ScrapingAnt), so the full sweep
+# splits the price range into bands that each fit in fewer pages.
+BANDS = [(None, 150_000), (150_000, 185_000), (185_000, 210_000), (210_000, None)]
+
+
+def search_url(page, newest=False, band=(None, None)):
     s = config.SEARCH
+    lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
     zones = "-".join(z.lower().replace(" ", "-") for z in s["zones"])
     suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
-    return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{s['price_min']}-{s['price_ceiling']}-dolar{suffix}.html"
+    return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{lo}-{hi}-dolar{suffix}.html"
 
 
 def _state(html):
@@ -127,41 +133,34 @@ def _dom_cards(html):
         }
 
 
-def search(max_pages=20, log=print, newest_only=False):
+def search(max_pages=9, log=print, newest_only=False):
     if newest_only:
         max_pages = NEW_PAGES
     if http.API_KEY and not http.ANT_KEY:
-        return search_rendered(max_pages, log, newest_only)
-    out, page, total_pages, failed = [], 1, 1, []
-    while page <= min(total_pages, max_pages):
-        try:
-            st = _state(http.get(search_url(page, newest_only), pause=(3, 7), via_api=True).text)["listStore"]
-        except Exception as e:
-            log(f"zonaprop page {page}: {e}")
-            failed.append(page)
-            if page == 1:
-                raise
-            page += 1
-            continue
-        total_pages = st["paging"]["totalPages"]
-        items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
-        out += items
-        log(f"zonaprop page {page}/{total_pages}: {len(items)} listings")
-        page += 1
-    if failed:  # the APIs fail in bursts; one slower second pass recovers most pages
-        time.sleep(30)
-        for page in list(failed):
+        return search_rendered(20 if not newest_only else max_pages, log, newest_only)
+    out, failed = [], []
+    for band in [(None, None)] if newest_only else BANDS:
+        page, total_pages = 1, 1
+        while page <= min(total_pages, max_pages):
             try:
-                st = _state(http.get(search_url(page, newest_only), pause=(3, 7), via_api=True).text)["listStore"]
+                st = _state(http.get(search_url(page, newest_only, band), pause=(3, 7), via_api=True).text)["listStore"]
             except Exception as e:
-                log(f"zonaprop page {page} (retry): {e}")
+                log(f"zonaprop {band} page {page}: {e}")
+                failed.append((band, page))
+                if page == 1 and newest_only:
+                    raise
+                page += 1
                 continue
-            out += [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
-            failed.remove(page)
-            log(f"zonaprop page {page}/{total_pages}: recovered on retry")
-            time.sleep(5)
+            total_pages = st["paging"]["totalPages"]
+            items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
+            out += items
+            log(f"zonaprop {band} page {page}/{total_pages}: {len(items)} listings")
+            if total_pages > max_pages and page == 1:
+                log(f"zonaprop {band}: {total_pages} pages, only {max_pages} are reachable; narrow BANDS")
+                failed.append((band, "overflow"))
+            page += 1
     if failed:
-        log(f"zonaprop: pages {failed} were blocked; their listings keep their previous state")
+        log(f"zonaprop: pages {failed} failed; their listings keep their previous state")
     search.failed_pages = failed
     return out
 
