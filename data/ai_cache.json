@@ -3035,5 +3035,36 @@
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-24",
   "prompt_version": 2
+ },
+ "ml-MLA2209148301": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, cerramiento o protección para termotanques/bomba a la intemperie y puesta a punto de aberturas.",
+  "patio": "medium",
+  "patio_m2_est": 22,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0.0,
+  "apto_credito": true,
+  "highlights": [
+   "Patio en planta baja con parrilla y bacha",
+   "Casa reciclada lista para entrar a vivir",
+   "Gran metraje cubierto en lote propio"
+  ],
+  "red_flags": [
+   "Discrepancia de ubicación (dice Olivos pero el texto aclara Boulogne)",
+   "Termotanques y bomba expuestos en el patio",
+   "Patio interno encajonado y 100% embaldosado sin verde"
+  ],
+  "summary": "Casa amplia y reciclada en lote propio con patio propio en planta baja, ideal para mudarse de inmediato casi sin tocar los ahorros de reforma.",
+  "photos_key": "a3ba11598663",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-25",
+  "prompt_version": 2
  }
 }

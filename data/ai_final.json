@@ -683,5 +683,17 @@
   "input_key": "26d7643f4143",
   "model": "gemini-3.6-flash",
   "at": "2026-10-25"
+ },
+ "ml-MLA2209148301": {
+  "score": 27,
+  "brief": "Tienta por precio (USD 140.000, 611 USD/m²) y gran tamaño (229 m² tot, 6 dorm), pero está en Boulogne (San Isidro) y no en Olivos/VL. Incumple el filtro obligatorio de zona. Patio de 22 m² encajonado y sin verde.",
+  "reasons": [
+   "Ubicada en Boulogne (San Isidro), fuera de Olivos, Florida o La Lucila (-15)",
+   "No está a distancia caminable de Av. Maipú ni del tren en Vicente López (-15)",
+   "Patio chico (22 m²) encajonado y 100% embaldosado sin verde (-15)"
+  ],
+  "input_key": "d63c925d09fb",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-25"
  }
 }
