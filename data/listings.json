@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25 18:52",
+ "generated_at": "2026-10-25 18:54",
  "status": {
   "zonaprop": {
    "ok": true,
@@ -14438,6 +14438,201 @@
    }
   },
   {
+   "id": "ap-20602045",
+   "source": "argenprop",
+   "url": "https://www.argenprop.com/casa-en-venta-en-olivos-vias-maipu-3-ambientes--20602045",
+   "title": "Casa tipo chalet con una segunda vivienda al fondo en olivos",
+   "type": "casa",
+   "price_usd": 230000.0,
+   "total_m2": 245.85,
+   "covered_m2": 120.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 50.0,
+   "address": "Jose Ingenieros 2500, Olivos Vías/Maipú",
+   "geocode_query": "Jose Ingenieros 2500, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.508074,
+   "lng": -58.504192,
+   "description": "Casa tipo chalet con una segunda vivienda al fondo en olivos\nCasa tipo Chalet de 1 planta en venta ubicada en el barrio de Olivos con frente a la calle Jose Ingenieros, sobre un terreno con un frente de 8,66 metros y un largo de 28,39 metros. La propiedad cuenta con 120 m² de superficie construida y 2 amplios patios en su superficie total. Casa principal que en su interior dispone de comedor diario muy amplio, cocina, 2 dormitorios, 1 baño completo y un lavadero. Su orientación sudeste aporta buena luz natural a todos los sectores de la casa, que además cuenta con una Segunda propiedad al fondo compuesta de Living Comedor, con cocina incorporada, 1 dormitorio, Baño, Lavadero, Jardin .Ambas dos cuentan con un lindo jardin propio muy luminoso. La Unidad del fondo cuenta con acceso Independiente y Comunicado. La propiedad tiene una antigüedad aproximada de  50 años. Se encuentra en una zona residencial tranquila y consolidada de Vicente López, con rápidos accesos a avenidas principales, variedad de comercios locales y opciones de transporte público hacia la Ciudad de Buenos Aires.\nCasa apta para vivienda de 2 familias, Estudio profesional, Consultorio, etc.\nLeer descripción completa\nLeer menos\nPedir más datos al anunciante",
+   "photos": [
+    "https://www.argenprop.com/static-content/54020602/f36c80bb-fdd4-4be7-aeab-81b77675b480.jpg",
+    "https://www.argenprop.com/static-content/54020602/6ec4301b-bbf2-4e27-8b1f-fca5547a2644.jpg",
+    "https://www.argenprop.com/static-content/54020602/a45e2632-d602-44af-8cbb-716597f060ad.jpg",
+    "https://www.argenprop.com/static-content/54020602/425063db-714e-417e-bc19-d424a80f466e.jpg",
+    "https://www.argenprop.com/static-content/54020602/2e994f51-2b0b-4278-94c7-90f427d71aa4.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": "Marolla Inmobiliaria",
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     230000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Casa",
+    "120 m² Cubierta",
+    "2 dormitorios",
+    "50 años",
+    "1 baño",
+    "3 ambientes",
+    "Bueno",
+    "Sureste",
+    "245,85 m² Terreno",
+    "Antiguedad: 50",
+    "Cant. Baños: 1",
+    "Cant. Ambientes: 3",
+    "Cant. Dormitorios: 2",
+    "Long. Frente: 86 m",
+    "Long. Fondo: 28 m",
+    "Estado: Bueno",
+    "Cant. Plantas: 1",
+    "Orientación: SE",
+    "Tipo de Unidad: Chalet",
+    "Tipo de operación: Venta",
+    "Precio: USD 230.000",
+    "Sup. Cubierta: 120 m2",
+    "Sup. Terreno: 245,85 m2"
+   ],
+   "pct": 81,
+   "pct_score": 51.7,
+   "pct_n": 1729,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 9.9,
+    "puente_blocks": 42.1,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 15.7,
+     "effective_blocks": 15.7
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 19500,
+    "reform_notes": "Actualización de instalaciones eléctricas y sanitarias (50 años de antigüedad), pintura integral y modernización de núcleos húmedos principales.",
+    "patio": "large",
+    "patio_m2_est": 125,
+    "patio_seen": true,
+    "terrace": false,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 1,
+    "apto_credito": true,
+    "highlights": [
+     "Lote propio de 8.66m de frente en zona premium",
+     "Segunda unidad independiente ideal para renta o estudio",
+     "Excelente pulmón de manzana y orientación SE"
+    ],
+    "red_flags": [
+     "Instalaciones originales de 50 años",
+     "Presupuesto de reforma muy ajustado para dos unidades",
+     "Posible humedad ascendente típica de la zona y antigüedad"
+    ],
+    "summary": "Es un chalet clásico en lote propio con un potencial bárbaro por la segunda vivienda al fondo, ubicado en la mejor zona de Olivos.",
+    "photos_key": "a41f871b6a91",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-25",
+    "prompt_version": 2,
+    "note_key": "6599a16e",
+    "ts": "2026-10-25T18:51:09Z"
+   },
+   "score": 58,
+   "components": {
+    "price": {
+     "value": 0.4,
+     "points": 8.9,
+     "max": 22,
+     "why": "USD 249.500 efectivo (incl. reforma 19.500), 936/m²"
+    },
+    "space": {
+     "value": 0.46,
+     "points": 8.3,
+     "max": 18,
+     "why": "246 m² tot, 120 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.51,
+     "points": 7.7,
+     "max": 15,
+     "why": "10 cuadras a Maipú, 16 a est. Bartolomé Mitre (Mitre)"
+    },
+    "condition": {
+     "value": 0.48,
+     "points": 6.3,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 19.500"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~125 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [],
+   "flags": [
+    "sobre presupuesto (USD 230.000)"
+   ],
+   "score_calc": 51.7,
+   "uncovered_m2": null,
+   "photos_v": 2,
+   "ai_final": {
+    "score": 58,
+    "brief": "Casa en lote propio con jardín enorme (125m2), ideal por espacio y privacidad. El precio (USD 230k) está al límite y sumado a la reforma de USD 20k, te pasás del presupuesto. A 10 cuadras de Maipú, es apta crédito y no es pasillo.",
+    "reasons": [
+     "Lote propio: Al no ser PH ni pasillo y tener un jardín de 125m2, es exactamente el tipo de unidad que buscás.",
+     "Presupuesto ajustado: El precio de USD 230k deja poco margen para la reforma de USD 20k que requiere por sus 50 años de antigüedad.",
+     "Apto crédito: Confirmaste que califica, lo cual es una prioridad alta para tu búsqueda y facilita la operación."
+    ],
+    "at": "2026-10-25"
+   }
+  },
+  {
    "id": "ap-20734026",
    "source": "argenprop",
    "url": "https://www.argenprop.com/casa-en-venta-en-olivos-5-ambientes--20734026",
@@ -15233,7 +15428,8 @@
    "flags": [
     "sin análisis IA"
    ],
-   "score_calc": 56.2
+   "score_calc": 56.2,
+   "photos_v": 2
   },
   {
    "id": "zp-59569736",
@@ -42013,579 +42209,6 @@
    "discard": [],
    "flags": [],
    "score_calc": 40.1
-  },
-  {
-   "id": "ap-20602045",
-   "source": "argenprop",
-   "url": "https://www.argenprop.com/casa-en-venta-en-olivos-vias-maipu-3-ambientes--20602045",
-   "title": "Casa tipo chalet con una segunda vivienda al fondo en olivos",
-   "type": "casa",
-   "price_usd": 230000.0,
-   "total_m2": 245.85,
-   "covered_m2": 120.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 50.0,
-   "address": "Jose Ingenieros 2500, Olivos Vías/Maipú",
-   "geocode_query": "Jose Ingenieros 2500, Olivos, Vicente López, Buenos Aires",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.508074,
-   "lng": -58.504192,
-   "description": "Casa tipo chalet con una segunda vivienda al fondo en olivos\nCasa tipo Chalet de 1 planta en venta ubicada en el barrio de Olivos con frente a la calle Jose Ingenieros, sobre un terreno con un frente de 8,66 metros y un largo de 28,39 metros. La propiedad cuenta con 120 m² de superficie construida y 2 amplios patios en su superficie total. Casa principal que en su interior dispone de comedor diario muy amplio, cocina, 2 dormitorios, 1 baño completo y un lavadero. Su orientación sudeste aporta buena luz natural a todos los sectores de la casa, que además cuenta con una Segunda propiedad al fondo compuesta de Living Comedor, con cocina incorporada, 1 dormitorio, Baño, Lavadero, Jardin .Ambas dos cuentan con un lindo jardin propio muy luminoso. La Unidad del fondo cuenta con acceso Independiente y Comunicado. La propiedad tiene una antigüedad aproximada de  50 años. Se encuentra en una zona residencial tranquila y consolidada de Vicente López, con rápidos accesos a avenidas principales, variedad de comercios locales y opciones de transporte público hacia la Ciudad de Buenos Aires.\nCasa apta para vivienda de 2 familias, Estudio profesional, Consultorio, etc.\nLeer descripción completa\nLeer menos\nPedir más datos al anunciante",
-   "photos": [
-    "https://www.argenprop.com/static-content/54020602/f36c80bb-fdd4-4be7-aeab-81b77675b480.jpg",
-    "https://www.argenprop.com/static-content/54020602/6ec4301b-bbf2-4e27-8b1f-fca5547a2644.jpg",
-    "https://www.argenprop.com/static-content/54020602/a45e2632-d602-44af-8cbb-716597f060ad.jpg",
-    "https://www.argenprop.com/static-content/54020602/425063db-714e-417e-bc19-d424a80f466e.jpg",
-    "https://www.argenprop.com/static-content/54020602/2e994f51-2b0b-4278-94c7-90f427d71aa4.jpg"
-   ],
-   "tags": {},
-   "credit_pill": false,
-   "publisher": "Marolla Inmobiliaria",
-   "modified": null,
-   "partial_data": false,
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     230000.0
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "Casa",
-    "120 m² Cubierta",
-    "2 dormitorios",
-    "50 años",
-    "1 baño",
-    "3 ambientes",
-    "Bueno",
-    "Sureste",
-    "245,85 m² Terreno",
-    "Antiguedad: 50",
-    "Cant. Baños: 1",
-    "Cant. Ambientes: 3",
-    "Cant. Dormitorios: 2",
-    "Long. Frente: 86 m",
-    "Long. Fondo: 28 m",
-    "Estado: Bueno",
-    "Cant. Plantas: 1",
-    "Orientación: SE",
-    "Tipo de Unidad: Chalet",
-    "Tipo de operación: Venta",
-    "Precio: USD 230.000",
-    "Sup. Cubierta: 120 m2",
-    "Sup. Terreno: 245,85 m2"
-   ],
-   "pct": 36,
-   "pct_score": 40.1,
-   "pct_n": 1603,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 9.9,
-    "puente_blocks": 42.1,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 15.7,
-     "effective_blocks": 15.7
-    }
-   },
-   "ai": null,
-   "score": 40.1,
-   "components": {
-    "price": {
-     "value": 0.51,
-     "points": 11.2,
-     "max": 22,
-     "why": "USD 230.000 efectivo, 936/m²"
-    },
-    "space": {
-     "value": 0.46,
-     "points": 8.3,
-     "max": 18,
-     "why": "246 m² tot, 120 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.51,
-     "points": 7.7,
-     "max": 15,
-     "why": "10 cuadras a Maipú, 16 a est. Bartolomé Mitre (Mitre)"
-    },
-    "condition": {
-     "value": 0.5,
-     "points": 6.5,
-     "max": 13,
-     "why": "sin IA; antigüedad 50.0 años"
-    },
-    "patio": {
-     "value": 0.4,
-     "points": 4.0,
-     "max": 10,
-     "why": "menciona patio/jardín"
-    },
-    "vertical": {
-     "value": 0.4,
-     "points": 2.8,
-     "max": 7,
-     "why": "heurística: casa"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 2.4,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luminoso según aviso"
-    }
-   },
-   "discard": [],
-   "flags": [
-    "sin análisis IA",
-    "sobre presupuesto (USD 230.000)"
-   ],
-   "score_calc": 40.1
-  },
-  {
-   "id": "zp-60282655",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-lote-con-dos-casas-en-olivos.-oportunidad-de-vivienda-60282655.html",
-   "title": "Lote con Dos Casas en Olivos. Oportunidad de Vivienda Multifamiliar",
-   "type": "casa",
-   "price_usd": 199000,
-   "total_m2": 459.0,
-   "covered_m2": 204.0,
-   "ambientes": 5.0,
-   "bedrooms": 3.0,
-   "bathrooms": 3.0,
-   "garage": 1.0,
-   "age_years": 20.0,
-   "address": "Ramon Castro al 2800, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5120002,
-   "lng": -58.50548,
-   "description": "Lote con dos casas en Olivos – Ideal para vivienda multifamiliar o inversión (( NO ES APTO CRÉDITO ))\nPropiedad ubicada en Olivos, compuesta por dos viviendas desarrolladas sobre un mismo lote, con ambientes amplios, espacios exteriores y una distribución que permite diferentes posibilidades de uso. Una excelente alternativa para vivienda multifamiliar o para quienes buscan combinar vivienda propia con una inversión destinada al alquiler.\nPrimera vivienda – Casa al frente\nAl ingresar a la propiedad nos encontramos con un espacio guardacoche con capacidad para un vehículo.\nLa entrada principal da acceso a un ambiente de recepción que distribuye hacia los distintos sectores de la vivienda.\nCuenta con dos dormitorios, uno de ellos con ventana al frente y vista a la calle, mientras que el segundo dispone de una ventana con vista al patio interno que conecta ambas viviendas.\nLa propiedad también cuenta con un baño con toilette, sin bañera, y un cómodo sector de cocina, living y comedor integrado, con salida directa al patio interno.\nSegunda vivienda – Casa desarrollada en dos plantas\nA través del patio que conecta ambas propiedades se accede a la segunda vivienda, que ofrece una distribución funcional en dos niveles.\nEn planta baja encontramos un ambiente de ingreso que comunica con un pequeño patio propio equipado con parrilla, ideal para disfrutar de reuniones al aire libre.\nEste nivel también dispone de cocina y comedor integrados, además de una sala de estar donde se encuentra la escalera que conduce a la planta alta.\nEn el segundo piso se desarrollan tres dormitorios, uno de ellos con placard empotrado. Los tres ambientes cuentan con estufas a gas para calefacción.\nCompleta esta planta un baño completo que brinda servicio a los dormitorios.\n**Una propiedad con múltiples posibilidades**\nLa distribución de las dos viviendas, conectadas mediante un patio interno, permite aprovechar los espacios de manera independiente, resultando ideal para dos familias que desean vivir cerca manteniendo sus propios ambientes.\nTambién representa una interesante alternativa de inversión, con la posibilidad de habitar una de las casas y destinar la otra al alquiler para generar una renta mensual.\nUbicada en Olivos, dentro de un entorno residencial de Zona Norte, con acceso a comercios, servicios y diferentes medios de transporte.\nUna excelente opción para quienes buscan amplitud, versatilidad y la posibilidad de contar con dos viviendas en un mismo terreno.\nConsultanos para más información o para coordinar una visita.\nNota: La información gráfica y escrita contenida en el presente aviso es meramente a título estimativo y no forma parte de ningún tipo de documentación contractual. Las medidas y superficies definitivas surgirán del título de propiedad del inmueble referido. Asimismo, los importes de impuestos, tasas, servicios y expensas aquí indicados están sujetos a verificación por parte del potencial comprador.\nPARRA DESARROLLOS URBANOS\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678676.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678954.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678873.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678841.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678761.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678831.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678702.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678859.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678719.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678670.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678943.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678706.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678890.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678748.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678896.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678711.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678691.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678910.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678770.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678725.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678852.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678916.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678695.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678987.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678786.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678685.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678812.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678755.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678801.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678793.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678822.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678688.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678980.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678866.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678730.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678904.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678973.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678697.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678936.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678881.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678682.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/28/26/55/720x532/2085678781.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Orientación": "SE",
-    "Superficie total": "459",
-    "Superficie cubierta": "204",
-    "Ambientes": "5",
-    "Dormitorios": "3",
-    "Baños": "3",
-    "Cochera": "1",
-    "Toilette": "1",
-    "Antigüedad": "20"
-   },
-   "credit_pill": false,
-   "publisher": "Parra Desarrollos Urbanos",
-   "modified": "2026-10-21T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     199000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "459 m² tot.",
-    "204 m² cub.",
-    "5 amb.",
-    "3 baños",
-    "1 coch.",
-    "3 dorm.",
-    "1 toilette",
-    "20 años",
-    "SE",
-    "Muy luminoso"
-   ],
-   "pct": 86,
-   "pct_score": 56.7,
-   "pct_n": 634,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 12.8,
-    "puente_blocks": 39.6,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 15.3,
-     "effective_blocks": 15.3
-    }
-   },
-   "ai": {
-    "condition": 2,
-    "reform_usd": 15000,
-    "reform_notes": "Actualización de baños y cocina, pintura general, revisión de techos de madera y resolución de detalles de humedad.",
-    "patio": "small",
-    "patio_m2_est": 12,
-    "patio_seen": true,
-    "terrace": false,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": true,
-    "natural_light": 3,
-    "quiet": 4,
-    "vertical_potential": 1,
-    "apto_credito": false,
-    "highlights": [
-     "Amplio lote propio de 459 m2",
-     "Dos viviendas en un mismo terreno",
-     "Ubicación residencial en Olivos"
-    ],
-    "red_flags": [
-     "Disposición tipo pasillo entre construcciones",
-     "Instalaciones y terminaciones antiguas",
-     "Techos de madera con cielorraso a la vista que requieren revisión"
-    ],
-    "summary": "Dos casas en un lote propio en Olivos con mucho terreno para aprovechar, pero pide una lavada de cara urgente.",
-    "photos_key": "2ce4dedc9913",
-    "analyst": "gemini:gemini-flash-lite-latest",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
-   },
-   "score": 40,
-   "components": {
-    "price": {
-     "value": 0.6,
-     "points": 13.1,
-     "max": 22,
-     "why": "USD 214.000 efectivo (incl. reforma 15.000), 434/m²"
-    },
-    "space": {
-     "value": 0.93,
-     "points": 16.8,
-     "max": 18,
-     "why": "459 m² tot, 204 cub, 5 amb"
-    },
-    "location": {
-     "value": 0.22,
-     "points": 3.3,
-     "max": 15,
-     "why": "13 cuadras a Maipú, 15 a est. Bartolomé Mitre (Mitre)"
-    },
-    "condition": {
-     "value": 0.44,
-     "points": 5.7,
-     "max": 13,
-     "why": "estado 2/5, reforma ~USD 15.000"
-    },
-    "patio": {
-     "value": 0.3,
-     "points": 3.0,
-     "max": 10,
-     "why": "patio chico ~12 m²"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 7.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0,
-     "points": 0,
-     "max": 6,
-     "why": "no apto crédito"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 1.0,
-     "max": 2,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 56.7,
-   "ai_final": {
-    "score": 40,
-    "brief": "Excelente precio por m² y gran lote de 459 m², pero son dos casas independientes con disposición de PH por pasillo que incumple tus obligatorios. Precio USD 199.000 con patio chico y no apto crédito.",
-    "reasons": [
-     "Incumple el requisito obligatorio de no ser PH por pasillo (son dos casas conectadas por patio interno).",
-     "No es apto crédito según el aviso, lo cual frena la operación.",
-     "Disposición interna incómoda con dos viviendas sobre el mismo terreno."
-    ],
-    "at": "2026-10-25"
-   }
-  },
-  {
-   "id": "zp-59910581",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-venta-olivos-3-ambientes-planta-baja-terraza-59910581.html",
-   "title": "PH Venta Olivos 3 Ambientes Planta Baja Terraza",
-   "type": "ph",
-   "price_usd": 198000,
-   "total_m2": 120.0,
-   "covered_m2": 60.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 2.0,
-   "garage": 0,
-   "age_years": null,
-   "address": "Avenida Florida al 2100, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.521228,
-   "lng": -58.4935204,
-   "description": "ESPECTACULAR PH RECICLADO\nEN PLANTA BAJA CON TERRAZA\nAPTO CRÉDITO\nSUPERFICIE TOTAL: 120M²\nA pocos metros de Malaver y a solo unas cuadras de la Avenida Maipú, se encuentra este hermoso PH al fondo completamente reciclado.\nEl ingreso a la propiedad es por un pasillo que comparte con el PH del medio, A continuación, un jardín propio nos da la bienvenida. La cocina cuenta con muebles bajo y sobre mesada y se integra con el living comedor. Además, hay conexión y espacio para lavarropas y pre instalación para aire acondicionado. Los dormitorios, que comparten un baño super moderno con ducha, cuentan con placard, pre instalación de aire acondicionado y ventana al exterior.\nPor un pasillo al fondo se accede a un patio trasero y a la escalera que conecta con una espectacular terraza. Este espacio ideal para disfrutar cuenta además con un baño completo con ducha y un quincho abierto, que puede cerrarse y ser utilizado como otro ambiente más, como ser un escritorio o play. Un entorno arbolado y apacible rodea la propiedad, lo cual le da aún mayor encanto.\nLa instalación eléctrica y las cañerías de agua y gas fueron hechas a nuevo.\nUbicada muy próxima a la estación de tren Dr. Cetrángolo del Ramal Mitre y sobre una arteria muy tranquila, esta vivienda no te la podes perder.\nESPERAMOS SU CONSULTA!\n**Las medidas y superficies expuestas surgen de la información suministrada por el propietario, la empresa no se responsabiliza por la exactitud de las mismas**\nCUCICBA 5156\nCMCPSI 4500\nBELLAGAMBA\nMarketing Inmobiliario\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642937.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642910.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642950.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642944.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642980.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642897.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642931.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642887.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642916.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642925.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642957.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642988.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642929.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642912.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642903.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642982.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642906.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642940.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642934.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642954.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642986.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642967.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642942.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642948.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642907.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642895.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642993.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642913.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642922.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642919.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/59/91/05/81/720x532/2072642899.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Superficie total": "120",
-    "Superficie cubierta": "60",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baños": "2"
-   },
-   "credit_pill": false,
-   "publisher": "BELLAGAMBA Marketing Inmobiliario - CMCPSI 4500",
-   "modified": "2026-08-19T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     198000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "120 m² tot.",
-    "60 m² cub.",
-    "3 amb.",
-    "2 baños",
-    "2 dorm.",
-    "A estrenar",
-    "Muy luminoso"
-   ],
-   "pct": 84,
-   "pct_score": 55.5,
-   "pct_n": 634,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 6.9,
-    "puente_blocks": 24.7,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 2.2,
-     "effective_blocks": 2.2
-    }
-   },
-   "ai": {
-    "condition": 5,
-    "reform_usd": 1500,
-    "reform_notes": "Reciclado a nuevo: microcemento, cocina nueva, baño moderno, parquet plastificado. Solo falta instalar aires.",
-    "patio": "medium",
-    "patio_m2_est": 40,
-    "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 0.1,
-    "apto_credito": true,
-    "highlights": [
-     "Reciclado completo, para mudarse",
-     "Jardín propio y terraza con parrilla y quincho",
-     "Apto crédito, a pocas cuadras de Maipú"
-    ],
-    "red_flags": [
-     "PH al fondo, ingreso por pasillo compartido con 1 unidad",
-     "Solo 60 m² cubiertos",
-     "Precio cerca del tope"
-    ],
-    "summary": "PH al fondo totalmente reciclado con jardín, terraza con quincho y apto crédito; chico de cubierta y con pasillo corto compartido.",
-    "photos_key": "0315989b4f68",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 40,
-   "components": {
-    "price": {
-     "value": 0.42,
-     "points": 9.1,
-     "max": 22,
-     "why": "USD 199.500 efectivo (incl. reforma 1.500), 1.650/m²"
-    },
-    "space": {
-     "value": 0.05,
-     "points": 0.8,
-     "max": 18,
-     "why": "120 m² tot, 60 cub, 3 amb"
-    },
-    "location": {
-     "value": 1,
-     "points": 15,
-     "max": 15,
-     "why": "7 cuadras a Maipú, 2 a est. Doctor Cetrángolo (Mitre)"
-    },
-    "condition": {
-     "value": 1.0,
-     "points": 13.0,
-     "max": 13,
-     "why": "estado 5/5, reforma ~USD 1.500"
-    },
-    "patio": {
-     "value": 0.67,
-     "points": 6.7,
-     "max": 10,
-     "why": "patio mediano ~40 m²"
-    },
-    "vertical": {
-     "value": 0.1,
-     "points": 0.7,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.89,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 55.5,
-   "ai_final": {
-    "score": 40,
-    "brief": "Precio de USD 198k y 120 m² totales, a 7 cuadras de Maipú. En contra: es un PH al fondo con ingreso por pasillo compartido, lo que viola sus requisitos obligatorios.",
-    "reasons": [
-     "Tiene ingreso por pasillo compartido con otra unidad, lo que incumple directamente el requisito obligatorio de evitar PH por pasillo.",
-     "La superficie cubierta es de solo 60 m², quedando muy justo para los metros habitables que busca.",
-     "El puntaje se reduce fuertemente por tratarse de un formato de PH con pasillo de acceso, descartado por sus normas."
-    ],
-    "at": "2026-10-25"
-   }
   },
   {
    "id": "ap-13077185",
@@ -102642,6 +102265,225 @@
     "sin análisis IA"
    ],
    "duplicate_of": "zp-60420864",
+   "score_calc": 50.8
+  },
+  {
+   "id": "zp-60461847",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-tipo-chalet-con-una-segunda-vivienda-al-fondo-en-60461847.html",
+   "title": "Casa Tipo Chalet con Una Segunda Vivienda Al Fondo en Olivos",
+   "type": "casa",
+   "price_usd": 230000,
+   "total_m2": 250.0,
+   "covered_m2": 120.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 50.0,
+   "address": "José Ingenieros 2530, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.508313099999995,
+   "lng": -58.504807799999995,
+   "description": "Casa tipo Chalet de 1 planta en venta ubicada en el barrio de Olivos con frente a la calle Jose Ingenieros, sobre un terreno con un frente de 8,66 metros y un largo de 28,39 metros. La propiedad cuenta con 120 m² de superficie construida y 2 amplios patios en su superficie total. Casa principal que en su interior dispone de comedor diario muy amplio, cocina, 2 dormitorios, 1 baño completo y un lavadero. Su orientación sudeste aporta buena luz natural a todos los sectores de la casa, que además cuenta con una Segunda propiedad al fondo compuesta de Living Comedor, con cocina incorporada, 1 dormitorio, Baño, Lavadero, Jardin .Ambas dos cuentan con un lindo jardin propio muy luminoso. La Unidad del fondo cuenta con acceso Independiente y Comunicado. La propiedad tiene una antigüedad aproximada de 50 años. Se encuentra en una zona residencial tranquila y consolidada de Vicente López, con rápidos accesos a avenidas principales, variedad de comercios locales y opciones de transporte público hacia la Ciudad de Buenos Aires.\nCasa apta para vivienda de 2 familias, Estudio profesional, Consultorio, etc.\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069594.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069602.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069599.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069600.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689307.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689299.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689314.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689316.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689296.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689315.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689320.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689322.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689323.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689321.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689312.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689300.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689317.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689327.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689306.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689297.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689310.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689333.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689329.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689304.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689311.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689303.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689332.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689309.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689330.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689313.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689308.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689328.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689331.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689334.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689319.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689324.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689325.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689301.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689318.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689335.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689302.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689294.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689295.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689305.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689298.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689326.jpg"
+   ],
+   "tags": {
+    "Luminoso": "Muy luminoso",
+    "Orientación": "NO",
+    "Superficie total": "250",
+    "Superficie cubierta": "120",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Antigüedad": "50"
+   },
+   "credit_pill": false,
+   "publisher": "Marolla Inmobiliaria",
+   "modified": "2026-10-21T00:00:00-0400",
+   "first_seen": "2026-10-25",
+   "price_history": [
+    [
+     "2026-10-25",
+     230000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "250 m² tot.",
+    "120 m² cub.",
+    "3 amb.",
+    "1 baño",
+    "2 dorm.",
+    "50 años",
+    "NO",
+    "Muy luminoso"
+   ],
+   "pct": 79,
+   "pct_score": 50.8,
+   "pct_n": 1729,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 10.6,
+    "puente_blocks": 42.3,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 16.1,
+     "effective_blocks": 16.1
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 19500,
+    "reform_notes": "Actualización de instalaciones eléctricas y sanitarias (50 años de antigüedad), pintura integral y modernización de núcleos húmedos principales.",
+    "patio": "large",
+    "patio_m2_est": 125,
+    "patio_seen": true,
+    "terrace": false,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 1,
+    "apto_credito": true,
+    "highlights": [
+     "Lote propio de 8.66m de frente en zona premium",
+     "Segunda unidad independiente ideal para renta o estudio",
+     "Excelente pulmón de manzana y orientación SE"
+    ],
+    "red_flags": [
+     "Instalaciones originales de 50 años",
+     "Presupuesto de reforma muy ajustado para dos unidades",
+     "Posible humedad ascendente típica de la zona y antigüedad"
+    ],
+    "summary": "Es un chalet clásico en lote propio con un potencial bárbaro por la segunda vivienda al fondo, ubicado en la mejor zona de Olivos.",
+    "photos_key": "a41f871b6a91",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-25",
+    "prompt_version": 2,
+    "note_key": "6599a16e",
+    "ts": "2026-10-25T18:51:09Z"
+   },
+   "score": 50.8,
+   "components": {
+    "price": {
+     "value": 0.4,
+     "points": 8.9,
+     "max": 22,
+     "why": "USD 249.500 efectivo (incl. reforma 19.500), 920/m²"
+    },
+    "space": {
+     "value": 0.47,
+     "points": 8.5,
+     "max": 18,
+     "why": "250 m² tot, 120 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.44,
+     "points": 6.6,
+     "max": 15,
+     "why": "11 cuadras a Maipú, 16 a est. Bartolomé Mitre (Mitre)"
+    },
+    "condition": {
+     "value": 0.48,
+     "points": 6.3,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 19.500"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~125 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [
+    "duplicado de ap-20602045"
+   ],
+   "flags": [
+    "sobre presupuesto (USD 230.000)"
+   ],
+   "duplicate_of": "ap-20602045",
    "score_calc": 50.8
   },
   {
@@ -194756,194 +194598,6 @@
     "datos parciales",
     "sobre presupuesto (USD 219.000)"
    ],
-   "score_calc": 39.2
-  },
-  {
-   "id": "zp-60461847",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-tipo-chalet-con-una-segunda-vivienda-al-fondo-en-60461847.html",
-   "title": "Casa Tipo Chalet con Una Segunda Vivienda Al Fondo en Olivos",
-   "type": "casa",
-   "price_usd": 230000,
-   "total_m2": 250.0,
-   "covered_m2": 120.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 50.0,
-   "address": "José Ingenieros 2530, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.508313099999995,
-   "lng": -58.504807799999995,
-   "description": "Casa tipo Chalet de 1 planta en venta ubicada en el barrio de Olivos con frente a la calle Jose Ingenieros, sobre un terreno con un frente de 8,66 metros y un largo de 28,39 metros. La propiedad cuenta con 120 m² de superficie construida y 2 amplios patios en su superficie total. Casa principal que en su interior dispone de comedor diario muy amplio, cocina, 2 dormitorios, 1 baño completo y un lavadero. Su orientación sudeste aporta buena luz natural a todos los sectores de la casa, que además cuenta con una Segunda propiedad al fondo compuesta de Living Comedor, con cocina incorporada, 1 dormitorio, Baño, Lavadero, Jardin .Ambas dos cuentan con un lindo jardin propio muy luminoso. La Unidad del fondo cuenta con acceso Independiente y Comunicado. La propiedad tiene una antigüedad aproximada de 50 años. Se encuentra en una zona residencial tranquila y consolidada de Vicente López, con rápidos accesos a avenidas principales, variedad de comercios locales y opciones de transporte público hacia la Ciudad de Buenos Aires.\nCasa apta para vivienda de 2 familias, Estudio profesional, Consultorio, etc.\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069594.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069602.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069599.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086069600.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689307.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689299.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689314.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689316.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689296.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689315.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689320.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689322.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689323.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689321.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689312.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689300.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689317.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689327.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689306.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689297.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689310.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689333.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689329.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689304.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689311.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689303.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689332.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689309.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689330.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689313.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689308.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689328.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689331.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689334.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689319.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689324.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689325.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689301.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689318.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689335.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689302.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689294.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689295.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689305.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689298.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/46/18/47/720x532/2086689326.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Orientación": "NO",
-    "Superficie total": "250",
-    "Superficie cubierta": "120",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Antigüedad": "50"
-   },
-   "credit_pill": false,
-   "publisher": "Marolla Inmobiliaria",
-   "modified": "2026-10-21T00:00:00-0400",
-   "first_seen": "2026-10-25",
-   "price_history": [
-    [
-     "2026-10-25",
-     230000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "250 m² tot.",
-    "120 m² cub.",
-    "3 amb.",
-    "1 baño",
-    "2 dorm.",
-    "50 años",
-    "NO",
-    "Muy luminoso"
-   ],
-   "pct": 33,
-   "pct_score": 39.2,
-   "pct_n": 1714,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 10.6,
-    "puente_blocks": 42.3,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 16.1,
-     "effective_blocks": 16.1
-    }
-   },
-   "ai": null,
-   "score": 39.2,
-   "components": {
-    "price": {
-     "value": 0.51,
-     "points": 11.2,
-     "max": 22,
-     "why": "USD 230.000 efectivo, 920/m²"
-    },
-    "space": {
-     "value": 0.47,
-     "points": 8.5,
-     "max": 18,
-     "why": "250 m² tot, 120 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.44,
-     "points": 6.6,
-     "max": 15,
-     "why": "11 cuadras a Maipú, 16 a est. Bartolomé Mitre (Mitre)"
-    },
-    "condition": {
-     "value": 0.5,
-     "points": 6.5,
-     "max": 13,
-     "why": "sin IA; antigüedad 50.0 años"
-    },
-    "patio": {
-     "value": 0.4,
-     "points": 4.0,
-     "max": 10,
-     "why": "menciona patio/jardín"
-    },
-    "vertical": {
-     "value": 0.4,
-     "points": 2.8,
-     "max": 7,
-     "why": "heurística: casa"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 2.4,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luminoso según aviso"
-    }
-   },
-   "discard": [
-    "duplicado de ap-20602045"
-   ],
-   "flags": [
-    "sin análisis IA",
-    "sobre presupuesto (USD 230.000)"
-   ],
-   "duplicate_of": "ap-20602045",
    "score_calc": 39.2
   },
   {

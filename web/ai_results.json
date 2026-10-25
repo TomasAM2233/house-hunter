@@ -205,5 +205,377 @@
     "at": "2026-10-25"
    }
   }
+ },
+ "ap-20602045": {
+  "requested_at": "2026-10-25T18:39:33.034Z",
+  "done_at": "2026-10-25T18:54:17Z",
+  "error": null,
+  "listing": {
+   "id": "ap-20602045",
+   "source": "argenprop",
+   "url": "https://www.argenprop.com/casa-en-venta-en-olivos-vias-maipu-3-ambientes--20602045",
+   "title": "Casa tipo chalet con una segunda vivienda al fondo en olivos",
+   "type": "casa",
+   "price_usd": 230000.0,
+   "total_m2": 245.85,
+   "covered_m2": 120.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 50.0,
+   "address": "Jose Ingenieros 2500, Olivos Vías/Maipú",
+   "geocode_query": "Jose Ingenieros 2500, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.508074,
+   "lng": -58.504192,
+   "description": "Casa tipo chalet con una segunda vivienda al fondo en olivos\nCasa tipo Chalet de 1 planta en venta ubicada en el barrio de Olivos con frente a la calle Jose Ingenieros, sobre un terreno con un frente de 8,66 metros y un largo de 28,39 metros. La propiedad cuenta con 120 m² de superficie construida y 2 amplios patios en su superficie total. Casa principal que en su interior dispone de comedor diario muy amplio, cocina, 2 dormitorios, 1 baño completo y un lavadero. Su orientación sudeste aporta buena luz natural a todos los sectores de la casa, que además cuenta con una Segunda propiedad al fondo compuesta de Living Comedor, con cocina incorporada, 1 dormitorio, Baño, Lavadero, Jardin .Ambas dos cuentan con un lindo jardin propio muy luminoso. La Unidad del fondo cuenta con acceso Independiente y Comunicado. La propiedad tiene una antigüedad aproximada de  50 años. Se encuentra en una zona residencial tranquila y consolidada de Vicente López, con rápidos accesos a avenidas principales, variedad de comercios locales y opciones de transporte público hacia la Ciudad de Buenos Aires.\nCasa apta para vivienda de 2 familias, Estudio profesional, Consultorio, etc.\nLeer descripción completa\nLeer menos\nPedir más datos al anunciante",
+   "photos": [
+    "https://www.argenprop.com/static-content/54020602/f36c80bb-fdd4-4be7-aeab-81b77675b480.jpg",
+    "https://www.argenprop.com/static-content/54020602/6ec4301b-bbf2-4e27-8b1f-fca5547a2644.jpg",
+    "https://www.argenprop.com/static-content/54020602/a45e2632-d602-44af-8cbb-716597f060ad.jpg",
+    "https://www.argenprop.com/static-content/54020602/425063db-714e-417e-bc19-d424a80f466e.jpg",
+    "https://www.argenprop.com/static-content/54020602/2e994f51-2b0b-4278-94c7-90f427d71aa4.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": "Marolla Inmobiliaria",
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     230000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Casa",
+    "120 m² Cubierta",
+    "2 dormitorios",
+    "50 años",
+    "1 baño",
+    "3 ambientes",
+    "Bueno",
+    "Sureste",
+    "245,85 m² Terreno",
+    "Antiguedad: 50",
+    "Cant. Baños: 1",
+    "Cant. Ambientes: 3",
+    "Cant. Dormitorios: 2",
+    "Long. Frente: 86 m",
+    "Long. Fondo: 28 m",
+    "Estado: Bueno",
+    "Cant. Plantas: 1",
+    "Orientación: SE",
+    "Tipo de Unidad: Chalet",
+    "Tipo de operación: Venta",
+    "Precio: USD 230.000",
+    "Sup. Cubierta: 120 m2",
+    "Sup. Terreno: 245,85 m2"
+   ],
+   "pct": 81,
+   "pct_score": 51.7,
+   "pct_n": 1729,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 9.9,
+    "puente_blocks": 42.1,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 15.7,
+     "effective_blocks": 15.7
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 19500,
+    "reform_notes": "Actualización de instalaciones eléctricas y sanitarias (50 años de antigüedad), pintura integral y modernización de núcleos húmedos principales.",
+    "patio": "large",
+    "patio_m2_est": 125,
+    "patio_seen": true,
+    "terrace": false,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 1,
+    "apto_credito": true,
+    "highlights": [
+     "Lote propio de 8.66m de frente en zona premium",
+     "Segunda unidad independiente ideal para renta o estudio",
+     "Excelente pulmón de manzana y orientación SE"
+    ],
+    "red_flags": [
+     "Instalaciones originales de 50 años",
+     "Presupuesto de reforma muy ajustado para dos unidades",
+     "Posible humedad ascendente típica de la zona y antigüedad"
+    ],
+    "summary": "Es un chalet clásico en lote propio con un potencial bárbaro por la segunda vivienda al fondo, ubicado en la mejor zona de Olivos.",
+    "photos_key": "a41f871b6a91",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-25",
+    "prompt_version": 2,
+    "note_key": "6599a16e",
+    "ts": "2026-10-25T18:51:09Z"
+   },
+   "score": 58,
+   "components": {
+    "price": {
+     "value": 0.4,
+     "points": 8.9,
+     "max": 22,
+     "why": "USD 249.500 efectivo (incl. reforma 19.500), 936/m²"
+    },
+    "space": {
+     "value": 0.46,
+     "points": 8.3,
+     "max": 18,
+     "why": "246 m² tot, 120 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.51,
+     "points": 7.7,
+     "max": 15,
+     "why": "10 cuadras a Maipú, 16 a est. Bartolomé Mitre (Mitre)"
+    },
+    "condition": {
+     "value": 0.48,
+     "points": 6.3,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 19.500"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~125 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [],
+   "flags": [
+    "sobre presupuesto (USD 230.000)"
+   ],
+   "score_calc": 51.7,
+   "uncovered_m2": null,
+   "photos_v": 2,
+   "ai_final": {
+    "score": 58,
+    "brief": "Casa en lote propio con jardín enorme (125m2), ideal por espacio y privacidad. El precio (USD 230k) está al límite y sumado a la reforma de USD 20k, te pasás del presupuesto. A 10 cuadras de Maipú, es apta crédito y no es pasillo.",
+    "reasons": [
+     "Lote propio: Al no ser PH ni pasillo y tener un jardín de 125m2, es exactamente el tipo de unidad que buscás.",
+     "Presupuesto ajustado: El precio de USD 230k deja poco margen para la reforma de USD 20k que requiere por sus 50 años de antigüedad.",
+     "Apto crédito: Confirmaste que califica, lo cual es una prioridad alta para tu búsqueda y facilita la operación."
+    ],
+    "at": "2026-10-25"
+   }
+  }
+ },
+ "zp-49502309": {
+  "requested_at": "2026-10-25T18:40:22.992Z",
+  "done_at": "2026-10-25T18:54:17Z",
+  "error": "lectura de fotos: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)",
+  "listing": {
+   "id": "zp-49502309",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-chalet-4-ambientes-ubicado-en-olivos-49502309.html",
+   "title": "Chalet 4 Ambientes - Ubicado en Olivos",
+   "type": "casa",
+   "price_usd": 210000,
+   "total_m2": 275.0,
+   "covered_m2": 171.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 1.0,
+   "garage": 1.0,
+   "age_years": 65.0,
+   "address": "Ing Ramon Castro 2500, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5106314,
+   "lng": -58.50269329999999,
+   "description": "CHALET 4 AMBIENTES DE 171M2 CUBIERTOS SOBRE UN LOTE DE 8,66X31,84. CONSTA DE LIVING 4x4. COMEDOR 6x3, COCINA - COMEDOR DIARIO 5x4, 3 DORMITORIOS C/PLACARD DE 3,50x3,50, 3x3 Y 3x2,80, LAVADERO CUBIERTO, 1 BAÑO, 1 TOILETTE, TERRAZA 8,66x2, JARDIN FONDO 8,66x15, GALPON, QUINCHO 8,66x15, COCHERA. UBICADO EN OLIVOS A 10 CUADRAS DE AV. MAIPÚ.\nJulio Ramirez Leiva\nMartillero. C.S.I 3192\n*LAS MEDIDAS SON APROXIMADAS Y SUMINISTRADAS POR LOS PROPIETARIOS ES RESPONSABILIDAD DEL COMPRADOR CONFIRMAR LAS MISMAS ANTES DE LA COMPRA*\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806328.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806317.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806320.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806310.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806315.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806321.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806314.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806323.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806313.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806316.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806319.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806312.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806324.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806325.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806326.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806329.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806327.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806318.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806311.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806322.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806330.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806332.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806333.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/49/50/23/09/720x532/1802806331.jpg"
+   ],
+   "tags": {
+    "Luminoso": "Luminoso",
+    "Orientación": "S",
+    "Superficie total": "275",
+    "Superficie cubierta": "171",
+    "Ambientes": "4",
+    "Dormitorios": "3",
+    "Baño": "1",
+    "Cochera": "1",
+    "Toilette": "1",
+    "Antigüedad": "65"
+   },
+   "credit_pill": false,
+   "publisher": "SYR PROPIEDADES ",
+   "modified": "2026-09-16T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     210000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "275 m² tot.",
+    "171 m² cub.",
+    "4 amb.",
+    "1 baño",
+    "1 coch.",
+    "3 dorm.",
+    "1 toilette",
+    "65 años",
+    "S",
+    "Luminoso"
+   ],
+   "pct": 84,
+   "pct_score": 56.2,
+   "pct_n": 620,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 9.8,
+    "puente_blocks": 39.1,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 13.3,
+     "effective_blocks": 13.3
+    }
+   },
+   "ai": null,
+   "score": 56.2,
+   "components": {
+    "price": {
+     "value": 0.62,
+     "points": 13.6,
+     "max": 22,
+     "why": "USD 210.000 efectivo, 764/m²"
+    },
+    "space": {
+     "value": 0.73,
+     "points": 13.2,
+     "max": 18,
+     "why": "275 m² tot, 171 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.52,
+     "points": 7.8,
+     "max": 15,
+     "why": "10 cuadras a Maipú, 13 a est. Bartolomé Mitre (Mitre)"
+    },
+    "condition": {
+     "value": 0.35,
+     "points": 4.5,
+     "max": 13,
+     "why": "sin IA; antigüedad 65.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 4.0,
+     "max": 10,
+     "why": "menciona patio/jardín"
+    },
+    "vertical": {
+     "value": 0.4,
+     "points": 2.8,
+     "max": 7,
+     "why": "heurística: casa"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luminoso según aviso"
+    }
+   },
+   "discard": [],
+   "flags": [
+    "sin análisis IA"
+   ],
+   "score_calc": 56.2,
+   "photos_v": 2
+  }
  }
 }
