@@ -963,6 +963,15 @@ async function findAddress(q) {
     box.onclick = e => { const b = e.target.closest("[data-i]"); if (b) { box.hidden = true; showHere(res[+b.dataset.i]); } };
   } catch (e) { box.innerHTML = `<button type="button" disabled>No pude buscar (${esc(e.message)}).</button>`; }
 }
+// cleared search: drop the pin and go back to the view of all the houses
+function clearHere() {
+  $("#mres").hidden = true;
+  if (!MAP) return;
+  if (HERE) { HERE.remove(); HERE = null; }
+  MAP.closePopup();
+  const pts = rows().filter(l => l.lat);
+  if (pts.length) MAP.fitBounds(pts.map(l => [l.lat, l.lng]), { padding: [24, 24], maxZoom: 16 });
+}
 function showHere(r) {
   initMap();
   const p = [+r.lat, +r.lon], ref = DATA.reference || {};
@@ -1049,7 +1058,7 @@ function boot(d) {
   $("#fbtn").onclick = openFilters;
   $("#fscrim").onclick = () => closeLayer("filters");
   $("#msearch").onsubmit = e => { e.preventDefault(); findAddress($("#maddr").value.trim()); };
-  $("#maddr").oninput = () => { if (!$("#maddr").value) $("#mres").hidden = true; };
+  $("#maddr").oninput = () => { if (!$("#maddr").value.trim()) clearHere(); };
 }
 
 const inline = $("#hh-data").textContent.trim();
