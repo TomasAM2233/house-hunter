@@ -1,1 +1,14 @@
-1711 listings, 287 on the shortlist, 225 waiting for AI
+zonaprop (None, None) page 1: GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-80000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+Traceback (most recent call last):
+  File "/home/runner/work/house-hunter/house-hunter/run.py", line 149, in main
+    fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/house-hunter/house-hunter/hh/sources/zonaprop.py", line 146, in search
+    st = _state(http.get(search_url(page, newest_only, band), pause=(3, 7), via_api=True).text)["listStore"]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/house-hunter/house-hunter/hh/http.py", line 43, in get
+    raise RuntimeError(f"GET {url} failed: {'; '.join(errors)}")
+RuntimeError: GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-80000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+argenprop page 1/1: 20 listings
+final verdict failed for tk-8513578: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+1712 listings, 266 on the shortlist, 204 waiting for AI
