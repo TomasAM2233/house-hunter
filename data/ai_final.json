@@ -695,5 +695,17 @@
   "input_key": "d63c925d09fb",
   "model": "gemini-3.6-flash",
   "at": "2026-10-25"
+ },
+ "tk-8513578": {
+  "score": 62,
+  "brief": "PH en esquina con jardín de 45 m² y cochera a USD 170.000 (USD 1.000/m² total). Son 170 m² totales pero solo 72 m² cubiertos. Está a 12 cuadras de Maipú. El estado es regular y requiere unos USD 10.000 para actualizar.",
+  "reasons": [
+   "Suma puntos por estar en esquina pero el aviso no muestra el jardín, generando dudas sobre su tamaño real según sus criterios.",
+   "Baja el puntaje de espacio porque tiene 72 m² cubiertos, justitos para 3 ambientes.",
+   "Suma puntos por excelente precio por m² total y estar dentro del presupuesto con margen para refaccionar."
+  ],
+  "input_key": "3f268df9f68b",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-25"
  }
 }
