@@ -58,6 +58,13 @@ def describe(lat, lon):
 _cache = None
 
 
+AREA = (-58.53, -34.55, -58.46, -34.49)  # lon/lat box around Olivos, Florida and La Lucila, as in geocode()
+
+
+def in_area(lat, lon):
+    return AREA[0] <= lon <= AREA[2] and AREA[1] <= lat <= AREA[3]
+
+
 def geocode(address):
     """Street address -> [lat, lon] via OpenStreetMap Nominatim, cached on disk, 1 req/s."""
     global _cache

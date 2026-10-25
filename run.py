@@ -165,6 +165,11 @@ def main():
     for l in listings.values():
         if not l.get("price_usd") and text.usd_price(l.get("description")):
             l["price_usd"] = text.usd_price(l["description"])  # cards that only say "consultar" or show pesos
+        if l.get("lat") is not None and l.get("zone") and not geo.in_area(l["lat"], l["lng"]):
+            # the agent dropped the pin somewhere else (seen: a CABA street with the same name); trust the address
+            l["lat"] = l["lng"] = None
+            l["address_exact"] = False
+            l["geocode_query"] = l.get("geocode_query") or f"{re.sub(r' al ', ' ', l.get('address') or '', flags=re.I)}, Vicente López, Buenos Aires"
         if l.get("lat") is None and l.get("geocode_query"):
             ll = geo.geocode(l["geocode_query"])
             if ll:
