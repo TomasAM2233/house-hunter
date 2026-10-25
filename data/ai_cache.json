@@ -213,29 +213,34 @@
  },
  "zp-60421365": {
   "condition": 2,
-  "reform_usd": 18000,
-  "reform_notes": "Cocina y lavadero precarios, baño a rehacer, pintura y humedad en muros; living ok.",
+  "reform_usd": 20000,
+  "reform_notes": "Reciclado completo de cocina y baño (no mostrado), actualización de cañerías e instalación eléctrica, pintura general y acondicionamiento del garage/monoambiente.",
   "patio": "small",
-  "patio_m2_est": 15,
+  "patio_m2_est": 12,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 3,
+  "natural_light": 2,
   "quiet": 4,
-  "vertical_potential": 0.2,
+  "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "PH en PB con ingreso independiente",
-   "Patio + terraza + monoambiente extra",
-   "Bajó de USD 187k a 178k"
+   "Entrada independiente al frente con cochera",
+   "Terraza propia de uso exclusivo",
+   "Muy buena ubicación residencial en Florida Mitre"
   ],
   "red_flags": [
-   "Fotos con render 'así podría verse'",
-   "Cocina y lavadero muy precarios",
-   "Garage convertido en monoambiente"
+   "El patio en planta baja no se muestra (aparenta ser solo un pasaje/pulmón bajo la escalera)",
+   "Cocina interna y oscura que ventila únicamente por claraboya",
+   "Baño oculto en las fotos, indicio de estado original a demoler"
   ],
-  "summary": "PH en planta baja con buenos metros y algo de exterior, pero la cocina y servicios piden una reforma casi al límite.",
+  "summary": "Tiene buen metraje y terraza propia, pero no muestran el patio en planta baja porque seguro es un pulmón mínimo bajo la escalera, y con USD 20.000 van a quedar muy justos para reciclarlo.",
   "photos_key": "41c5f9b3d8e8",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-25",
+  "prompt_version": 2
  },
  "zp-60423133": {
   "condition": 3,
