@@ -3066,5 +3066,38 @@
   "analyst": "gemini:gemini-flash-latest",
   "analysed_at": "2026-10-25",
   "prompt_version": 2
+ },
+ "ml-MLA3790564262": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura general, actualización de instalación eléctrica (hay cables y caños a la vista), revisión de cubierta de tejas/madera y modernización de baños y cocina.",
+  "patio": "large",
+  "patio_m2_est": 100,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0.2,
+  "apto_credito": true,
+  "highlights": [
+   "Jardín propio gigante en planta baja con galería",
+   "Apto crédito bancario y sin expensas",
+   "Espacios amplios con buena luz natural"
+  ],
+  "red_flags": [
+   "Techo de madera y tejas requiere revisión de filtraciones",
+   "Instalaciones eléctricas y de gas de época a modernizar",
+   "Terminaciones y pintura en estado regular"
+  ],
+  "summary": "Es un PH ideal para la pareja porque cumple holgadamente con el jardín propio en planta baja y la reforma necesaria entra cómodo dentro de los USD 20.000.",
+  "photos_key": "c36156297575",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-25T18:40:30Z"
  }
 }
