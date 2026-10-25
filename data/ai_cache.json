@@ -2698,34 +2698,36 @@
  },
  "ap-20695578": {
   "condition": 4,
-  "reform_usd": 12000,
-  "reform_notes": "Pintura general, adecuación de climatización para tantos ambientes y posibles detalles de terminación en baños/cocina tras el reciclado.",
-  "patio": "medium",
-  "patio_m2_est": 25,
-  "patio_seen": true,
+  "reform_usd": 10000,
+  "reform_notes": "Pintura general, detalles de terminación en reciclado y revisión de instalaciones.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": false,
   "terrace": true,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 3,
-  "quiet": 4,
+  "quiet": 3,
   "vertical_potential": 0,
   "apto_credito": true,
   "highlights": [
-   "Lote propio en zona residencial",
-   "Gran capacidad (6 dormitorios)",
-   "Relación precio/m2 muy competitiva"
+   "Muy buena relación superficie/precio en lote propio",
+   "Cuenta con patio en PB y terraza propia",
+   "Apto crédito y con 6 dormitorios/monoambiente independiente"
   ],
   "red_flags": [
-   "Ubicación real en Boulogne (límite Olivos)",
-   "Superficie libre escasa para el tamaño de la casa",
-   "Calidad de reciclado a verificar en detalle"
+   "Inconsistencia en la ubicación (se anuncia en Olivos pero la descripción indica Boulogne/San Isidro)",
+   "Precio por m2 muy bajo que puede esconder terminaciones de baja calidad",
+   "Los 40 m2 descubiertos se dividen entre el patio de PB y la terraza"
   ],
-  "summary": "Es una casa muy amplia y lista para entrar, ideal si buscan muchos cuartos, aunque el patio es más funcional que recreativo por los metros cubiertos que tiene el lote.",
-  "photos_key": "103055707fb0",
-  "analyst": "gemini:gemini-3-flash-preview",
-  "analysed_at": "2026-10-24",
-  "prompt_version": 2
+  "summary": "Es una oportunidad muy espaciosa con el patio en PB que buscan, ideal para entrar con bajo presupuesto de reforma si la ubicación en Boulogne les sirve.",
+  "photos_key": "dea7ab385e17",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-25T18:40:19Z"
  },
  "tk-376459": {
   "condition": 4,
