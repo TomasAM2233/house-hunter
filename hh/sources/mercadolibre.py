@@ -157,9 +157,11 @@ def enrich(l):
     d = re.search(r'ui-pdp-description__content"[^>]*>(.*?)</p>', html, re.S)
     if d:
         l["description"] = htmllib.unescape(re.sub(r"<br\s*/?>", "\n", d.group(1))).strip()
-    ids = list(dict.fromkeys(re.findall(r"D_NQ_NP_(?:2X_)?(\d{5,7}-MLA\d+_\d{6})-", html)))
+    # gallery pictures: image URLs in every size variant (D_NQ_NP_, D_Q_NP_, 2X_) plus the picture ids in the page state
+    ids = list(dict.fromkeys(re.findall(r"D_(?:N?Q_)?NP_(?:2X_)?(\d{5,7}-MLA\d+_\d{6})-", html)
+                             + re.findall(r'"id":"(\d{5,7}-MLA\d+_\d{6})"', html)))
     if ids:
-        l["photos"] = [f"https://http2.mlstatic.com/D_NQ_NP_{i}-O.jpg" for i in ids[:20]]
+        l["photos"] = [f"https://http2.mlstatic.com/D_NQ_NP_{i}-O.jpg" for i in ids[:60]]
     c = re.search(r"center=(-3[45]\.\d+)%2C(-58\.\d+)", html)
     if c:
         l["lat"], l["lng"], l["address_exact"] = float(c.group(1)), float(c.group(2)), True

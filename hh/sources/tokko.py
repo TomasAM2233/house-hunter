@@ -160,7 +160,7 @@ def _from_page(pid, slug, html, agency):
         "lat": float(ll.group(1)) if ll else None,
         "lng": float(ll.group(2)) if ll else None,
         "description": desc,
-        "photos": photos[:30],
+        "photos": photos[:60],
         "tags": {},
         "features_text": [cond],
         "credit_pill": "apto" in credit.lower() and "no" not in credit.lower(),

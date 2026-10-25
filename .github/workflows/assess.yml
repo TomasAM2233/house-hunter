@@ -1,0 +1,66 @@
+name: assess
+
+# "Evaluar con IA" in the app: it commits data/ai_requests/<id>.json with Tomás's GitHub token, which triggers this.
+# Reads the full item page, runs a fresh photo read and verdict with his notes, and writes data/ai_results.json,
+# which the app polls. The next hunt run publishes the new score on the site for everyone.
+on:
+  push:
+    branches: [main]
+    paths: ["data/ai_requests/**"]
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Listing ids, comma-separated (e.g. zp-60403181,ap-19224619)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assess
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # latest main, not the commit that triggered it: requests queued meanwhile get done in this run
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: AI read and verdict
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+          SCRAPINGANT_API_KEY: ${{ secrets.SCRAPINGANT_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.ids }}" ]; then python -u run.py --assess "${{ github.event.inputs.ids }}"
+          else python -u run.py --assess-queue; fi
+      - run: python build.py
+      - name: Commit results
+        run: |
+          git config user.name "house-hunter-bot"
+          git config user.email "house-hunter-bot@users.noreply.github.com"
+          git add -A data web
+          git diff --cached --quiet && exit 0
+          git commit -qm "assess: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4; do
+            git push -q && exit 0
+            git fetch -q origin main
+            if ! git rebase -q -X theirs origin/main; then
+              # take main as it is and lay this run's AI results on top (the next hunt run rebuilds listings.json from them)
+              git rebase --abort
+              mkdir -p /tmp/out && cp -r --parents data/ai_cache.json data/ai_final.json data/ai_results.json /tmp/out/
+              DONE=$(git diff --name-only --diff-filter=D HEAD~1 HEAD -- data/ai_requests)
+              git reset -q --hard origin/main
+              python merge_ai.py /tmp/out && for f in $DONE; do git rm -q --ignore-unmatch "$f"; done
+              python build.py && git add -A data web
+              git commit -qm "assess: $(date -u +%Y-%m-%dT%H:%MZ)"
+            fi
+          done
+          exit 1

@@ -2,6 +2,7 @@
 
 python run.py                 # scrape everything enabled and rescore
 python run.py --no-scrape     # just rescore what we already have (e.g. after editing weights or AI results)
+python run.py --assess-queue  # AI reads asked for from the app (data/ai_requests/), results in data/ai_results.json
 """
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
 import requests
@@ -14,6 +15,9 @@ PREFS = os.path.join(ROOT, "data", "preferences.md")   # Tomás's own words; edi
 SETTINGS = os.path.join(ROOT, "data", "settings.json")  # alert thresholds, saved by the app
 TAGS = os.path.join(ROOT, "data", "tags.json")         # favourite / visited / dismissed + notes, saved by the app
 WEB_DATA = os.path.join(ROOT, "web", "listings.json")
+REQUESTS = os.path.join(ROOT, "data", "ai_requests")    # one file per "Evaluar con IA" tap in the app
+RESULTS = os.path.join(ROOT, "data", "ai_results.json") # the re-scored listings for those taps; the app polls it
+PHOTOS_V = 2      # bump to fetch item pages again for listings stored with only the search card's photos
 SOURCES = {"zonaprop": zonaprop, "argenprop": argenprop, "mercadolibre": mercadolibre, "tokko": tokko}
 TODAY = time.strftime("%Y-%m-%d")
 
@@ -39,7 +43,7 @@ def merge(old, fresh):
             l["price_history"] = hist
             if (prev.get("enriched") and not l.get("enriched")) or l.get("card_only"):
                 # keep the richer copy: an enriched one, or (for card-only scrapes) the longer description
-                for k in ("enriched", "description", "photos", "features_text", "partial_data"):
+                for k in ("enriched", "description", "photos", "features_text", "partial_data", "photos_v"):
                     if k not in prev:
                         continue
                     longer = k == "description" and len(prev[k] or "") > len(l.get(k) or "")
@@ -124,7 +128,22 @@ def main():
     ap.add_argument("--sources", default=os.environ.get("HH_SOURCES", "zonaprop,argenprop,tokko,mercadolibre"))
     ap.add_argument("--max-enrich", type=int, default=150)
     ap.add_argument("--quick", action="store_true", help="only the newest pages of the sites that support it, to catch new listings fast")
+    ap.add_argument("--assess", default="", help="comma-separated ids: fresh AI read + verdict for just these, now")
+    ap.add_argument("--assess-queue", action="store_true", help="--assess with the ids the app queued in data/ai_requests/")
     args = ap.parse_args()
+    queued = sorted(f for f in os.listdir(REQUESTS) if f.endswith(".json")) if args.assess_queue and os.path.isdir(REQUESTS) else []
+    requested = {}  # id -> when it was asked for
+    for f in queued:
+        try:
+            requested[f[:-5]] = json.load(open(os.path.join(REQUESTS, f))).get("at")
+        except Exception:
+            requested[f[:-5]] = None
+    requested.update({i: None for i in args.assess.split(",") if i})
+    if args.assess_queue and not requested:
+        log("nothing queued")
+        return
+    if requested:
+        args.no_scrape = True
 
     listings = load()
     known = set(listings)
@@ -176,28 +195,49 @@ def main():
                 l["lat"], l["lng"] = ll
         l["geo"] = geo.describe(l["lat"], l["lng"]) if l.get("lat") is not None else None
 
-    # enrich + AI only for active listings that survive the non-AI filters, best pre-score first
-    cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
-    cands.sort(key=lambda l: -score.score(l)["score"])
-    enriched = 0
-    for rank, l in enumerate(cands):
-        src = SOURCES.get(l["source"])
-        if hasattr(src, "enrich") and not l.get("enriched") and enriched < args.max_enrich:
-            try:
-                src.enrich(l)
-                enriched += 1
-                if l.get("lat") is not None:
-                    l["geo"] = geo.describe(l["lat"], l["lng"])
-            except Exception as e:
-                log(f"enrich failed {l['id']}: {e}")
-            if score.hard_filters(l):  # full data can rule it out before spending an AI read
+    def enrich(l):
+        try:
+            SOURCES[l["source"]].enrich(l)
+            l["photos_v"] = PHOTOS_V
+            if l.get("lat") is not None:
+                l["geo"] = geo.describe(l["lat"], l["lng"])
+            return True
+        except Exception as e:
+            log(f"enrich failed {l['id']}: {e}")
+
+    note = lambda l: tags.get(l["id"], {}).get("note", "")
+    errors = {}
+    if requested:
+        # asked for from the app: the full item page (every photo) and a fresh read with his note, whatever the rank
+        for i in requested:
+            l = listings.get(i)
+            if not l:
+                errors[i] = "no la encontré en los datos"
                 continue
-        if rank >= config.AI_TOP_N or tags.get(l["id"], {}).get("dismissed"):
-            continue  # photo reads only for the top candidates, and never for houses Tomás dismissed
-        cache = ai._load()
-        if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
-            continue  # same property already read under another source; dedupe keeps that one
-        ai.analyse(l, log=log)
+            if hasattr(SOURCES.get(l["source"]), "enrich") and (not l.get("enriched") or l.get("photos_v", 0) < PHOTOS_V):
+                enrich(l)
+            try:
+                ai.analyse(l, note(l), force=True, log=log)
+            except Exception as e:
+                errors[i] = "lectura de fotos: " + ("se acabó la cuota gratis de Gemini por hoy" if ai.EXHAUSTED else str(e)[:160])
+    else:
+        # enrich + AI only for active listings that survive the non-AI filters, best pre-score first
+        cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
+        cands.sort(key=lambda l: -score.score(l)["score"])
+        enriched = 0
+        for rank, l in enumerate(cands):
+            # item pages for new candidates, and once more for ones stored with only the search card's few photos
+            stale = not l.get("enriched") or (l.get("photos_v", 0) < PHOTOS_V and len(l.get("photos") or []) <= 8)
+            if hasattr(SOURCES.get(l["source"]), "enrich") and stale and enriched < args.max_enrich:
+                enriched += bool(enrich(l))
+                if score.hard_filters(l):  # full data can rule it out before spending an AI read
+                    continue
+            if rank >= config.AI_TOP_N or tags.get(l["id"], {}).get("dismissed"):
+                continue  # photo reads only for the top candidates, and never for houses Tomás dismissed
+            cache = ai._load()
+            if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
+                continue  # same property already read under another source; dedupe keeps that one
+            ai.analyse(l, note(l), log=log)
 
     cache = ai._load()
     for l in listings.values():
@@ -220,7 +260,14 @@ def main():
         l["score_calc"] = l["score"]
         if not l.get("ai") or l["discard"]:
             continue
-        v = ai.final(l, prefs, tags.get(l["id"], {}).get("note", ""), compute=l["id"] in top_ids, log=log)
+        if requested and l["id"] in requested and l["id"] not in errors:
+            try:
+                v = ai.final(l, prefs, note(l), force=True, log=log)
+            except Exception as e:
+                errors[l["id"]] = "evaluación: " + ("se acabó la cuota gratis de Gemini por hoy" if ai.EXHAUSTED else str(e)[:160])
+                v = None
+        else:
+            v = ai.final(l, prefs, note(l), compute=l["id"] in top_ids and not requested, log=log)
         if v:
             l["ai_final"] = {k: v[k] for k in ("score", "brief", "reasons", "at")}
             l["score"] = v["score"]
@@ -241,6 +288,17 @@ def main():
     os.makedirs(os.path.dirname(DATA), exist_ok=True)
     json.dump(payload, open(DATA, "w"), ensure_ascii=False, indent=1)
     shutil.copy(DATA, WEB_DATA)
+    if requested:
+        # what the app polls for: the re-scored listing per request (last 12 kept)
+        res = json.load(open(RESULTS)) if os.path.exists(RESULTS) else {}
+        now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        for i, at in requested.items():
+            res.pop(i, None)
+            res[i] = {"requested_at": at, "done_at": now, "error": errors.get(i), "listing": listings.get(i)}
+            log(f"assessed {i}: " + (errors[i] if i in errors else f"{listings[i]['score']:.0f}/100"))
+        json.dump(dict(list(res.items())[-12:]), open(RESULTS, "w"), ensure_ascii=False, indent=1)
+        for f in queued:
+            os.remove(os.path.join(REQUESTS, f))
     shortlist = [l for l in out if l.get("active") and not l["discard"]]
     pending = len([l for l in shortlist if not l.get("ai")])
     log(f"{len(out)} listings, {len(shortlist)} on the shortlist, {pending} waiting for AI")

@@ -75,6 +75,15 @@ With no `GEMINI_API_KEY`, `run.py` queues each new candidate to `data/ai_pending
 plus the text). Results written by hand or by another model go in a JSON file keyed by listing id and are
 saved with `python ai_fill.py results.json --analyst claude`. The first batch (`ai_batches/`) was read this way.
 
+## AI on demand
+
+Each house in the app has **✨ Evaluar con IA**. It saves your notes, then commits `data/ai_requests/<id>.json` with
+your GitHub token, which triggers `.github/workflows/assess.yml`: it fetches the full item page (every photo), runs a
+fresh photo read and final verdict with your notes (treated as verified facts that override the listing), and writes
+the re-scored listing to `data/ai_results.json`. The app polls that file and updates the house in 1–3 minutes; the next
+hunt run publishes it on the site. Uses the same free Gemini quota as the scheduled runs. Your notes also feed the
+scheduled runs: a changed note means a fresh read for the top candidates.
+
 ## Runs and alerts
 
 - **Full runs** at 08:17, 14:17 and 20:17 (Buenos Aires): every source, full sweeps.
