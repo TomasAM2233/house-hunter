@@ -75,17 +75,17 @@
   "ts": "2026-10-25T18:49:27Z"
  },
  "ap-20090489": {
-  "score": 62,
-  "brief": "USD 170.000 por 170 m² totales y 72 m² cubiertos en Olivos. Precio muy conveniente (USD 1.000/m²), jardín propio y cochera. Cumple con espacio y planta baja, pero falta chequear distancia exacta a Maipú/tren.",
+  "score": 67,
+  "brief": "Casa en esquina en Olivos a USD 170.000 (170 m² totales, 72 m² cubiertos, 3 amb). Excelente precio por m², jardín propio y cochera, con potencial para ampliar arriba. Queda chequear la esquina y cercanía a Maipú.",
   "reasons": [
-   "Mejora por precio muy atractivo (USD 170k y USD 1.000/m²) y menor costo de reforma estimado.",
-   "Ajuste por falta de datos precisos sobre la distancia exacta a Avenida Maipú o estación de tren en la lectura automática.",
-   "Bonificación por contar con jardín propio a nivel del suelo y cochera en una sola planta."
+   "Sube 5 puntos por un precio muy conveniente (USD 1.000 por m² total y rebajado a 170k) que deja margen para los USD 10.000 de refacción.",
+   "Sube 4 puntos por tratarse de una unidad independiente en planta baja con jardín y cochera, cumpliendo con los obligatorios de Tomás.",
+   "Sube 3 puntos por ofrecer potencial de ampliación en la terraza propia, valorado en las prioridades de Tomás."
   ],
-  "input_key": "8f5d121684da",
+  "input_key": "3cae8edbec31",
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-25",
-  "ts": "2026-10-25T18:49:38Z"
+  "ts": "2026-10-25T21:16:55Z"
  },
  "tk-3567069": {
   "score": 68,
@@ -807,5 +807,18 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-10-25",
   "ts": "2026-10-25T19:58:56Z"
+ },
+ "zp-49502309": {
+  "score": 68,
+  "brief": "Oportunidad por precio: USD 764/m² en Olivos es imbatible. Tenés 275m² totales y un jardín de 130m² (ojo, no hay fotos). Está a 10 cuadras de Maipú. La reforma de USD 20.000 te deja al límite del presupuesto, pero vale la pena por ser lote propio.",
+  "reasons": [
+   "Precio por m² excepcional (USD 764) para la zona de Olivos.",
+   "Lote propio con jardín de 130m², prioridad absoluta para vos.",
+   "Estado original de 65 años exige reforma de USD 20k, justo en tu tope."
+  ],
+  "input_key": "b1cc66268b6c",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-25",
+  "ts": "2026-10-25T21:16:50Z"
  }
 }
