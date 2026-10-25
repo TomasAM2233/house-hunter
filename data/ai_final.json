@@ -673,37 +673,12 @@
   "model": "gemini-flash-lite-latest",
   "at": "2026-10-24"
  },
- "tk-7560352": {
-  "score": 25,
-  "brief": "Incumple un filtro excluyente: es un PH al fondo por pasillo compartido. A favor: reciclado a nuevo, 120 m² totales con jardín propio y a 2 cuadras del tren. En contra: USD 198.000 por apenas 60 m² cubiertos y sin cochera.",
-  "reasons": [
-   "Es un PH al fondo con ingreso por pasillo compartido, incumpliendo un requisito obligatorio",
-   "Superficie cubierta muy chica (apenas 60 m² para 3 ambientes)",
-   "Precio de USD 198.000 elevado para los metros cubiertos que ofrece"
-  ],
-  "input_key": "cfa29fb523ca",
-  "model": "gemini-flash-latest",
-  "at": "2026-10-25"
- },
- "tk-9831856": {
-  "score": 20,
-  "brief": "Lote propio de 130 m² con cochera por USD 200.000, pero tiene inquilinos hasta marzo 2027, impidiendo mudarse pronto. Además, el patio es de solo 26 m² y está a casi 10 cuadras de Maipú.",
-  "reasons": [
-   "Tiene inquilinos hasta marzo 2027, lo que anula la necesidad de mudarse pronto (-15)",
-   "Espacio exterior muy reducido: lote de 130 m² con apenas 26 m² de patio (-10)",
-   "Ubicada a casi 10 cuadras de Maipú sobre una avenida transitada (-7)"
-  ],
-  "input_key": "3f71c79178ce",
-  "model": "gemini-3.7-flash",
-  "at": "2026-10-25"
- },
  "ml-MLA2152377001": {
-  "score": 44,
-  "brief": "Buen precio (USD 185.000) y reciclado a nuevo (solo USD 3.000 de arreglos), a 7 cuadras del tren. Pero se distribuye en 3 plantas por escalera y solo tiene un patio interno de 8 m² en PB, incumpliendo el patio amplio que buscás.",
+  "score": 38,
+  "brief": "A USD 185.000 y 130 m² (100 cub) tiene buen precio por m² (USD 1.423) y está reciclada, a 7 cuadras del tren. Pero es un tríplex en 3 plantas con solo un patio interno de 8 m² y terraza, sin el patio a nivel del suelo que buscás.",
   "reasons": [
-   "Patio en planta baja de apenas 8 m² (pozo de luz), muy distante del espacio descubierto pretendido.",
-   "Distribución en tríplex (3 plantas) que fracciona los 100 m² cubiertos y recarga la circulación con escaleras.",
-   "Estado de conservación impecable (reciclado moderno) que exige solo USD 3.000 de inversión para entrar."
+   "El patio es solo un pozo de aire y luz de 8 m², sin el espacio verde a nivel del suelo que exigís.",
+   "Distribución vertical en 3 plantas (tríplex) con muchas escaleras, poco funcional."
   ],
   "input_key": "26d7643f4143",
   "model": "gemini-3.6-flash",
