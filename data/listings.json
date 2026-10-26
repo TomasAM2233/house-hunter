@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25 23:36",
+ "generated_at": "2026-10-26 00:14",
  "status": {
   "zonaprop": {
    "ok": true,
@@ -9846,43 +9846,45 @@
    ],
    "photos_v": 2,
    "pct": 98,
-   "pct_score": 66.6,
-   "pct_n": 1148,
+   "pct_score": 65.8,
+   "pct_n": 1727,
    "last_seen": "2026-10-25",
    "active": true,
    "geo": null,
    "ai": {
     "condition": 3,
     "reform_usd": 18000,
-    "reform_notes": "Actualización de baño y cocina, revisión de instalaciones eléctricas y cañerías originales de 50 años, pintura general y pulido de pisos.",
+    "reform_notes": "Actualización de cañerías e instalación eléctrica original de 50 años, modernización de cocina y baño principal, pintura integral e impermeabilización de losa.",
     "patio": "large",
-    "patio_m2_est": 111,
-    "patio_seen": true,
+    "patio_m2_est": 100,
+    "patio_seen": false,
     "terrace": true,
     "corner": false,
     "ph_stacked": false,
     "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
+    "natural_light": 3,
+    "quiet": 3,
     "vertical_potential": 1,
     "apto_credito": null,
     "highlights": [
-     "Lote propio en excelente ubicación de Olivos",
-     "Gran superficie descubierta de 120m2 con parrilla",
-     "Techo de losa que permite construcción de planta alta"
+     "Lote propio de 221 m2 con gran fondo libre",
+     "Techo de losa con potencial para construir arriba",
+     "Entrada de auto cubierta y quincho/depto al fondo"
     ],
     "red_flags": [
-     "Instalaciones de agua y luz con 50 años de antigüedad",
-     "Necesita modernización estética integral en áreas húmedas",
-     "Posible humedad ascendente típica en construcciones de esta época"
+     "50 años de antigüedad con instalaciones probablemente originales",
+     "Construcción al fondo resta metros verdes o requiere mantenimiento extra",
+     "Reforma básica consume casi todo el presupuesto disponible"
     ],
-    "summary": "Es una oportunidad sólida en Olivos con un patio bárbaro y potencial para crecer, ideal para entrar con una lavada de cara y actualizar de a poco.",
+    "summary": "Buena opción en lote propio con lindo metraje descubierto y losa para ampliar, pero requiere meterle mano urgente a las instalaciones de época.",
     "photos_key": "c0cac0a07682",
-    "analyst": "gemini:gemini-3-flash-preview",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
+    "analyst": "gemini:gemini-3.7-flash",
+    "analysed_at": "2026-10-26",
+    "prompt_version": 2,
+    "note_key": "ced1b7bc",
+    "ts": "2026-10-26T00:14:01Z"
    },
-   "score": 90,
+   "score": 80,
    "components": {
     "price": {
      "value": 0.93,
@@ -9912,7 +9914,7 @@
      "value": 1,
      "points": 10,
      "max": 10,
-     "why": "patio grande ~111 m²"
+     "why": "patio grande ~100 m²"
     },
     "vertical": {
      "value": 1.0,
@@ -9933,32 +9935,31 @@
      "why": "1 cochera"
     },
     "quiet": {
-     "value": 0.6,
-     "points": 1.8,
+     "value": 0.5,
+     "points": 1.5,
      "max": 3,
      "why": "intermedio"
     },
     "light": {
-     "value": 0.75,
-     "points": 1.5,
+     "value": 0.5,
+     "points": 1.0,
      "max": 2,
-     "why": "luz 4/5"
+     "why": "luz 3/5"
     }
    },
    "discard": [],
    "flags": [
     "sin ubicación"
    ],
-   "score_calc": 66.6,
+   "score_calc": 65.8,
    "ai_final": {
-    "score": 90,
-    "brief": "Oportunidad única en Olivos por USD 135.000. Lote propio con patio de 120m2 y terraza de losa para ampliar. A 8 cuadras de Maipú, precio por m2 de USD 611. Entra perfecto en presupuesto incluso sumando los USD 18.000 de reformas necesarias.",
+    "score": 80,
+    "brief": "Excelente oportunidad en Olivos: lote propio de 221 m² (110 m² cub) por USD 135.000 (USD 611/m²). Gran patio de 100 m², losa para construir y garage. A 6 cuadras de Maipú. La reforma estimada es USD 18.000, dentro de tu presupuesto.",
     "reasons": [
-     "Precio de USD 135.000 y USD 611/m2 es imbatible para una casa de lote propio en esta zona de Olivos.",
-     "El patio de 120m2 y la estructura de losa para construir arriba coinciden exactamente con tus prioridades.",
-     "Ubicación confirmada a 8 cuadras de Av. Maipú, cumpliendo con creces el requisito de cercanía al transporte."
+     "Se confirma la ubicación a unas 6 cuadras de Av. Maipú en Olivos, corrigiendo la falta de ubicación del algoritmo.",
+     "Relación precio/espacio excepcional: USD 135.000 por lote propio de 221 m² con losa para edificar arriba y reforma dentro del margen."
     ],
-    "at": "2026-10-25"
+    "at": "2026-10-26"
    }
   },
   {
@@ -66846,380 +66847,6 @@
    "score_calc": 61.6
   },
   {
-   "id": "zp-60420449",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-2-dorm.-venta-olivos-maipu-uzal-60420449.html",
-   "title": "Casa 2 Dorm. Venta - Olivos - Maipu/uzal",
-   "type": "casa",
-   "price_usd": 135000,
-   "total_m2": 221.0,
-   "covered_m2": 110.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 2.0,
-   "garage": 1.0,
-   "age_years": 50.0,
-   "address": "Acassuso al 3100, Entre Sarmiento y O Higgins, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5125457,
-   "lng": -58.5097084,
-   "description": "Ubicada en Olivos entre Av. Maipú/Uzal en Vicente López, esta casa sobre lote propio de 3 ambientes es una oportunidad única para quienes buscan un hogar acogedor y funcional. Con un total de 221 m2 de superficie, la propiedad ofrece un espacio habitable de 110 m2 cubiertos, complementados por 120 m2 descubiertos, ideal para disfrutar al aire libre. La casa cuenta con un amplio living comedor, una cocina comedor equipada, y dos dormitorios, uno de ellos con placard. Además, dispone de un baño completo. El patio trasero es un espacio perfecto para reuniones, con una parrilla que invita a disfrutar de asados en familia o con amigos. Una característica destacada es la construcción sólida con techo de loza, lo que permite la posibilidad de ampliar hacia arriba, ofreciendo un potencial de crecimiento significativo. Al fondo, existe la opción de un departamento de un ambiente con baño, que podría utilizarse como quincho o para alojamiento adicional. La entrada de auto cubierta asegura la comodidad y seguridad del estacionamiento. Los servicios incluyen agua corriente, cloaca, gas natural, electricidad y pavimento, garantizando una vida cómoda y conectada. Con una antigüedad de 50 años, la propiedad está en buen estado y habitada, lista para recibir a sus nuevos propietarios. La ubicación es estratégica, con fácil acceso a comercios, escuelas y transporte público. ¡No pierda la oportunidad de visitar esta encantadora casa que combina comodidad, ubicación y potencial de expansión! Escuchamos ofertas. Código de propiedad: dho<span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver datos</button></span>Con más de 40 años de experiencia, en dic Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos. Nuestros números avalan nuestro compromiso: • 1. 700 propiedades en comercialización. • 137. 000 tasaciones realizadas con precisión• 950. 000 m2 vendidos con éxito. • 35. 000 unidades de pozo comercializadas. Te esperamos de lunes a sábados en nuestras oficinas de caba y Zona Norte. ___ * * * ___________________________________________________________________________________* * ** * * Información Importante y Aviso Legal * * *La presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, abl, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual. dic propiedades S. A. Actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa. __________________________________________________________________________________Javier Del Coro Igarzabal | cmcpsi Mat. Nº 4499María Amparo Coello | cucicba Mat. Nº 5147dic propiedades S. A. |. ar",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019057.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019439.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018400.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018308.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018342.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019177.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019245.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018258.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Orientación": "S",
-    "Superficie total": "221",
-    "Superficie cubierta": "110",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baños": "2",
-    "Cochera": "1",
-    "Antigüedad": "50"
-   },
-   "credit_pill": false,
-   "publisher": "DIC PROPIEDADES S.A.",
-   "modified": "2026-10-13T00:00:00-0400",
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     135000
-    ]
-   ],
-   "pct": 95,
-   "pct_score": 61.5,
-   "pct_n": 1148,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 16.6,
-    "puente_blocks": 41.9,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 18.5,
-     "effective_blocks": 18.5
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 18000,
-    "reform_notes": "Actualización de baño y cocina, revisión de instalaciones eléctricas y cañerías originales de 50 años, pintura general y pulido de pisos.",
-    "patio": "large",
-    "patio_m2_est": 111,
-    "patio_seen": true,
-    "terrace": true,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 1,
-    "apto_credito": null,
-    "highlights": [
-     "Lote propio en excelente ubicación de Olivos",
-     "Gran superficie descubierta de 120m2 con parrilla",
-     "Techo de losa que permite construcción de planta alta"
-    ],
-    "red_flags": [
-     "Instalaciones de agua y luz con 50 años de antigüedad",
-     "Necesita modernización estética integral en áreas húmedas",
-     "Posible humedad ascendente típica en construcciones de esta época"
-    ],
-    "summary": "Es una oportunidad sólida en Olivos con un patio bárbaro y potencial para crecer, ideal para entrar con una lavada de cara y actualizar de a poco.",
-    "photos_key": "c0cac0a07682",
-    "analyst": "gemini:gemini-3-flash-preview",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
-   },
-   "score": 61.5,
-   "components": {
-    "price": {
-     "value": 0.93,
-     "points": 20.4,
-     "max": 22,
-     "why": "USD 153.000 efectivo (incl. reforma 18.000), 611/m²"
-    },
-    "space": {
-     "value": 0.38,
-     "points": 6.8,
-     "max": 18,
-     "why": "221 m² tot, 110 cub, 3 amb"
-    },
-    "location": {
-     "value": 0,
-     "points": 0,
-     "max": 15,
-     "why": "17 cuadras a Maipú, 18 a est. Doctor Cetrángolo (Mitre)"
-    },
-    "condition": {
-     "value": 0.51,
-     "points": 6.7,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 18.000"
-    },
-    "patio": {
-     "value": 1,
-     "points": 10,
-     "max": 10,
-     "why": "patio grande ~111 m²"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 7.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [
-    "a 16.6 cuadras de Maipú (muy lejos)",
-    "duplicado de ap-19224619"
-   ],
-   "flags": [],
-   "duplicate_of": "ap-19224619",
-   "score_calc": 61.5
-  },
-  {
-   "id": "tk-7177693",
-   "source": "tokko",
-   "url": "https://ficha.info/p/eEhppcWHpdowa",
-   "title": "Casa 2 dormitorios Venta - Olivos-Maipu/Uzal",
-   "type": "casa",
-   "price_usd": 135000,
-   "total_m2": 221.0,
-   "covered_m2": 110.0,
-   "uncovered_m2": 120.0,
-   "ambientes": 3,
-   "bedrooms": 2,
-   "bathrooms": 2,
-   "garage": 1,
-   "age_years": 50,
-   "address": "Acassuso al 3100, entre Sarmiento y O higgins, Olivos-Maipu/Uzal",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5125457,
-   "lng": -58.5097084,
-   "description": "                Ubicada en Olivos entre Av. Maipú/Uzal en Vicente López, esta casa sobre lote propio de 3 ambientes es una oportunidad única para quienes buscan un hogar acogedor y funcional. Con un total de 221 m2 de superficie, la propiedad ofrece un espacio habitable de 110 m2 cubiertos, complementados por 120 m2 descubiertos, ideal para disfrutar al aire libre.\n\nLa casa cuenta con un amplio living comedor, una cocina comedor equipada, y dos dormitorios, uno de ellos con placard. Además, dispone de un baño completo. El patio trasero es un espacio perfecto para reuniones, con una parrilla que invita a disfrutar de asados en familia o con amigos.\n\nUna característica destacada es la construcción sólida con techo de loza, lo que permite la posibilidad de ampliar hacia arriba, ofreciendo un potencial de crecimiento significativo. Al fondo, existe la opción de un departamento de un ambiente con baño, que podría utilizarse como quincho o para alojamiento adicional.\n\nLa entrada de auto cubierta asegura la comodidad y seguridad del estacionamiento. Los servicios incluyen agua corriente, cloaca, gas natural, electricidad y pavimento, garantizando una vida cómoda y conectada.\n\nCon una antigüedad de 50 años, la propiedad está en buen estado y habitada, lista para recibir a sus nuevos propietarios. La ubicación es estratégica, con fácil acceso a comercios, escuelas y transporte público. \n\n¡No pierda la oportunidad de visitar esta encantadora casa que combina comodidad, ubicación y potencial de expansión! Escuchamos ofertas.\r\n            \n\nCódigo de propiedad: DHO7177693\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
-   "photos": [
-    "https://static.tokkobroker.com/pictures/7177693_17293375989744584838059883316294669582578803890467415982395557462292357252561.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_27328300160172232933743601099370107664844410310241643301839066008519480865226.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_42984145579005819006950129527868139248088004814847350934717405698504590368002.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_51580672270123227492574891631406055077326621260804334376462444423290588983914.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_84017264450491953891249729532007860906238063271527975967171481074361897466315.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_66890217446068735195562660572081453593850118821944499318744772292665051062109.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_16123244574915229603525124578640859110142728890814495476401221427575250846520.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_43037041587735956679638187281711433550036197582463267905859798157730341044162.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_79672350349002910853160629228172793267328843400123511904351901454627127415675.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_85392381934438415276463414773801504171692427532629601755725446583870004756513.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_110793754617092336102309011764231318527428423284832576138458963322046911114517.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_73475764877730867946730236572345028309902178965175036042376022437046373372978.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_4908226036901526398955025067722218780357500783179400424663117826922030495438.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_81854030186834304657648805051738221872379561839602966040772820129905953935285.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_106294922398437393323782565652181797078398268726941541988157811248352188152966.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_39829199598993949631222980298326439559942154306120956139383276384195315099994.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_52260915684328563294858972709499368020531821213905554775224481963743594916286.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_2230665513799499403723348873500111244753900055470480267813129496089924757794.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_40326241697427369076185884680573293698639844332652988071010937691100378057068.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_105054235269256405204248501814307347494363022843824479273260885629429048500222.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_44419236854445483684795557664236134703002084882899866117129101551860077883835.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_72809389946224351883765310968107379603492863725645899161066280546955545916814.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_49969152611492398119356005115527626863960580235478263039681629388042213463284.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_11252332523989942653712704466267069512033959008924992015477092132667049807861.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_69656066658350599375044414105922845778803375178340641167401728019946220760437.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_80848867535765625020533496615657047244506182713114608278588558688521178602617.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_104694091647530022749285250233323022195177373830503256523102922523160615122740.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_50868285302414906220308603177571064285713847748578607138725553504438216955717.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_37506494563278748959441762704775564024776752027126302531287098001259285516913.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_104979571510049954066465506551220622035235504464900741908132732116220919416086.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_36409949954743633084355207221370082755315358276179635040764154504251340810753.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_15568036216386323801988329114043719588715922356295325720957311089039083724068.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_108462984134971138942001836665869011100299796952397050555390099595348735914623.jpg",
-    "https://static.tokkobroker.com/pictures/7177693_105633284317423213498244453016415643261956407195450593001940778992783369096170.jpg"
-   ],
-   "tags": {
-    "Agua Corriente": true,
-    "Cloaca": true,
-    "Gas Natural": true,
-    "Electricidad": true,
-    "Pavimento": true,
-    "Cocina": true,
-    "Lavadero": true,
-    "Patio": true,
-    "Terraza": true,
-    "Aire Acondicionado individual": true,
-    "Termo de gas": true,
-    "Luminoso": true,
-    "Estufas TB": true
-   },
-   "features_text": [
-    "Bueno",
-    "Frente",
-    "Sur"
-   ],
-   "credit_pill": false,
-   "apto_credito_field": null,
-   "publisher": "DIC Propiedades",
-   "modified": "2025-07-22T13:14:00",
-   "enriched": true,
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     135000
-    ]
-   ],
-   "pct": 95,
-   "pct_score": 61.5,
-   "pct_n": 1148,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 16.6,
-    "puente_blocks": 41.9,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 18.5,
-     "effective_blocks": 18.5
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 18000,
-    "reform_notes": "Actualización de baño y cocina, revisión de instalaciones eléctricas y cañerías originales de 50 años, pintura general y pulido de pisos.",
-    "patio": "large",
-    "patio_m2_est": 111,
-    "patio_seen": true,
-    "terrace": true,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 1,
-    "apto_credito": null,
-    "highlights": [
-     "Lote propio en excelente ubicación de Olivos",
-     "Gran superficie descubierta de 120m2 con parrilla",
-     "Techo de losa que permite construcción de planta alta"
-    ],
-    "red_flags": [
-     "Instalaciones de agua y luz con 50 años de antigüedad",
-     "Necesita modernización estética integral en áreas húmedas",
-     "Posible humedad ascendente típica en construcciones de esta época"
-    ],
-    "summary": "Es una oportunidad sólida en Olivos con un patio bárbaro y potencial para crecer, ideal para entrar con una lavada de cara y actualizar de a poco.",
-    "photos_key": "c0cac0a07682",
-    "analyst": "gemini:gemini-3-flash-preview",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
-   },
-   "score": 61.5,
-   "components": {
-    "price": {
-     "value": 0.93,
-     "points": 20.4,
-     "max": 22,
-     "why": "USD 153.000 efectivo (incl. reforma 18.000), 611/m²"
-    },
-    "space": {
-     "value": 0.38,
-     "points": 6.8,
-     "max": 18,
-     "why": "221 m² tot, 110 cub, 3 amb"
-    },
-    "location": {
-     "value": 0,
-     "points": 0,
-     "max": 15,
-     "why": "17 cuadras a Maipú, 18 a est. Doctor Cetrángolo (Mitre)"
-    },
-    "condition": {
-     "value": 0.51,
-     "points": 6.7,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 18.000"
-    },
-    "patio": {
-     "value": 1,
-     "points": 10,
-     "max": 10,
-     "why": "patio grande ~111 m²"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 7.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [
-    "a 16.6 cuadras de Maipú (muy lejos)",
-    "duplicado de ap-19224619"
-   ],
-   "flags": [],
-   "duplicate_of": "ap-19224619",
-   "score_calc": 61.5
-  },
-  {
    "id": "ap-15815890",
    "source": "argenprop",
    "url": "https://www.argenprop.com/casa-en-venta-en-olivos-maipu-uzal-5-ambientes--15815890",
@@ -68206,6 +67833,384 @@
     "sin análisis IA"
    ],
    "score_calc": 60.8
+  },
+  {
+   "id": "zp-60420449",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-2-dorm.-venta-olivos-maipu-uzal-60420449.html",
+   "title": "Casa 2 Dorm. Venta - Olivos - Maipu/uzal",
+   "type": "casa",
+   "price_usd": 135000,
+   "total_m2": 221.0,
+   "covered_m2": 110.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 2.0,
+   "garage": 1.0,
+   "age_years": 50.0,
+   "address": "Acassuso al 3100, Entre Sarmiento y O Higgins, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5125457,
+   "lng": -58.5097084,
+   "description": "Ubicada en Olivos entre Av. Maipú/Uzal en Vicente López, esta casa sobre lote propio de 3 ambientes es una oportunidad única para quienes buscan un hogar acogedor y funcional. Con un total de 221 m2 de superficie, la propiedad ofrece un espacio habitable de 110 m2 cubiertos, complementados por 120 m2 descubiertos, ideal para disfrutar al aire libre. La casa cuenta con un amplio living comedor, una cocina comedor equipada, y dos dormitorios, uno de ellos con placard. Además, dispone de un baño completo. El patio trasero es un espacio perfecto para reuniones, con una parrilla que invita a disfrutar de asados en familia o con amigos. Una característica destacada es la construcción sólida con techo de loza, lo que permite la posibilidad de ampliar hacia arriba, ofreciendo un potencial de crecimiento significativo. Al fondo, existe la opción de un departamento de un ambiente con baño, que podría utilizarse como quincho o para alojamiento adicional. La entrada de auto cubierta asegura la comodidad y seguridad del estacionamiento. Los servicios incluyen agua corriente, cloaca, gas natural, electricidad y pavimento, garantizando una vida cómoda y conectada. Con una antigüedad de 50 años, la propiedad está en buen estado y habitada, lista para recibir a sus nuevos propietarios. La ubicación es estratégica, con fácil acceso a comercios, escuelas y transporte público. ¡No pierda la oportunidad de visitar esta encantadora casa que combina comodidad, ubicación y potencial de expansión! Escuchamos ofertas. Código de propiedad: dho<span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver datos</button></span>Con más de 40 años de experiencia, en dic Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos. Nuestros números avalan nuestro compromiso: • 1. 700 propiedades en comercialización. • 137. 000 tasaciones realizadas con precisión• 950. 000 m2 vendidos con éxito. • 35. 000 unidades de pozo comercializadas. Te esperamos de lunes a sábados en nuestras oficinas de caba y Zona Norte. ___ * * * ___________________________________________________________________________________* * ** * * Información Importante y Aviso Legal * * *La presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, abl, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual. dic propiedades S. A. Actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa. __________________________________________________________________________________Javier Del Coro Igarzabal | cmcpsi Mat. Nº 4499María Amparo Coello | cucicba Mat. Nº 5147dic propiedades S. A. |. ar",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019057.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019439.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018400.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018308.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018342.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019177.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085019245.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/42/04/49/720x532/2085018258.jpg"
+   ],
+   "tags": {
+    "Luminoso": "Muy luminoso",
+    "Orientación": "S",
+    "Superficie total": "221",
+    "Superficie cubierta": "110",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baños": "2",
+    "Cochera": "1",
+    "Antigüedad": "50"
+   },
+   "credit_pill": false,
+   "publisher": "DIC PROPIEDADES S.A.",
+   "modified": "2026-10-13T00:00:00-0400",
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     135000
+    ]
+   ],
+   "pct": 95,
+   "pct_score": 60.7,
+   "pct_n": 1727,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 16.6,
+    "puente_blocks": 41.9,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 18.5,
+     "effective_blocks": 18.5
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Actualización de cañerías e instalación eléctrica original de 50 años, modernización de cocina y baño principal, pintura integral e impermeabilización de losa.",
+    "patio": "large",
+    "patio_m2_est": 100,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 3,
+    "vertical_potential": 1,
+    "apto_credito": null,
+    "highlights": [
+     "Lote propio de 221 m2 con gran fondo libre",
+     "Techo de losa con potencial para construir arriba",
+     "Entrada de auto cubierta y quincho/depto al fondo"
+    ],
+    "red_flags": [
+     "50 años de antigüedad con instalaciones probablemente originales",
+     "Construcción al fondo resta metros verdes o requiere mantenimiento extra",
+     "Reforma básica consume casi todo el presupuesto disponible"
+    ],
+    "summary": "Buena opción en lote propio con lindo metraje descubierto y losa para ampliar, pero requiere meterle mano urgente a las instalaciones de época.",
+    "photos_key": "c0cac0a07682",
+    "analyst": "gemini:gemini-3.7-flash",
+    "analysed_at": "2026-10-26",
+    "prompt_version": 2,
+    "note_key": "ced1b7bc",
+    "ts": "2026-10-26T00:14:01Z"
+   },
+   "score": 60.7,
+   "components": {
+    "price": {
+     "value": 0.93,
+     "points": 20.4,
+     "max": 22,
+     "why": "USD 153.000 efectivo (incl. reforma 18.000), 611/m²"
+    },
+    "space": {
+     "value": 0.38,
+     "points": 6.8,
+     "max": 18,
+     "why": "221 m² tot, 110 cub, 3 amb"
+    },
+    "location": {
+     "value": 0,
+     "points": 0,
+     "max": 15,
+     "why": "17 cuadras a Maipú, 18 a est. Doctor Cetrángolo (Mitre)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 6.7,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~100 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [
+    "a 16.6 cuadras de Maipú (muy lejos)",
+    "duplicado de ap-19224619"
+   ],
+   "flags": [],
+   "duplicate_of": "ap-19224619",
+   "score_calc": 60.7
+  },
+  {
+   "id": "tk-7177693",
+   "source": "tokko",
+   "url": "https://ficha.info/p/eEhppcWHpdowa",
+   "title": "Casa 2 dormitorios Venta - Olivos-Maipu/Uzal",
+   "type": "casa",
+   "price_usd": 135000,
+   "total_m2": 221.0,
+   "covered_m2": 110.0,
+   "uncovered_m2": 120.0,
+   "ambientes": 3,
+   "bedrooms": 2,
+   "bathrooms": 2,
+   "garage": 1,
+   "age_years": 50,
+   "address": "Acassuso al 3100, entre Sarmiento y O higgins, Olivos-Maipu/Uzal",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5125457,
+   "lng": -58.5097084,
+   "description": "                Ubicada en Olivos entre Av. Maipú/Uzal en Vicente López, esta casa sobre lote propio de 3 ambientes es una oportunidad única para quienes buscan un hogar acogedor y funcional. Con un total de 221 m2 de superficie, la propiedad ofrece un espacio habitable de 110 m2 cubiertos, complementados por 120 m2 descubiertos, ideal para disfrutar al aire libre.\n\nLa casa cuenta con un amplio living comedor, una cocina comedor equipada, y dos dormitorios, uno de ellos con placard. Además, dispone de un baño completo. El patio trasero es un espacio perfecto para reuniones, con una parrilla que invita a disfrutar de asados en familia o con amigos.\n\nUna característica destacada es la construcción sólida con techo de loza, lo que permite la posibilidad de ampliar hacia arriba, ofreciendo un potencial de crecimiento significativo. Al fondo, existe la opción de un departamento de un ambiente con baño, que podría utilizarse como quincho o para alojamiento adicional.\n\nLa entrada de auto cubierta asegura la comodidad y seguridad del estacionamiento. Los servicios incluyen agua corriente, cloaca, gas natural, electricidad y pavimento, garantizando una vida cómoda y conectada.\n\nCon una antigüedad de 50 años, la propiedad está en buen estado y habitada, lista para recibir a sus nuevos propietarios. La ubicación es estratégica, con fácil acceso a comercios, escuelas y transporte público. \n\n¡No pierda la oportunidad de visitar esta encantadora casa que combina comodidad, ubicación y potencial de expansión! Escuchamos ofertas.\r\n            \n\nCódigo de propiedad: DHO7177693\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
+   "photos": [
+    "https://static.tokkobroker.com/pictures/7177693_17293375989744584838059883316294669582578803890467415982395557462292357252561.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_27328300160172232933743601099370107664844410310241643301839066008519480865226.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_42984145579005819006950129527868139248088004814847350934717405698504590368002.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_51580672270123227492574891631406055077326621260804334376462444423290588983914.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_84017264450491953891249729532007860906238063271527975967171481074361897466315.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_66890217446068735195562660572081453593850118821944499318744772292665051062109.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_16123244574915229603525124578640859110142728890814495476401221427575250846520.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_43037041587735956679638187281711433550036197582463267905859798157730341044162.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_79672350349002910853160629228172793267328843400123511904351901454627127415675.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_85392381934438415276463414773801504171692427532629601755725446583870004756513.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_110793754617092336102309011764231318527428423284832576138458963322046911114517.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_73475764877730867946730236572345028309902178965175036042376022437046373372978.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_4908226036901526398955025067722218780357500783179400424663117826922030495438.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_81854030186834304657648805051738221872379561839602966040772820129905953935285.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_106294922398437393323782565652181797078398268726941541988157811248352188152966.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_39829199598993949631222980298326439559942154306120956139383276384195315099994.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_52260915684328563294858972709499368020531821213905554775224481963743594916286.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_2230665513799499403723348873500111244753900055470480267813129496089924757794.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_40326241697427369076185884680573293698639844332652988071010937691100378057068.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_105054235269256405204248501814307347494363022843824479273260885629429048500222.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_44419236854445483684795557664236134703002084882899866117129101551860077883835.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_72809389946224351883765310968107379603492863725645899161066280546955545916814.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_49969152611492398119356005115527626863960580235478263039681629388042213463284.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_11252332523989942653712704466267069512033959008924992015477092132667049807861.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_69656066658350599375044414105922845778803375178340641167401728019946220760437.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_80848867535765625020533496615657047244506182713114608278588558688521178602617.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_104694091647530022749285250233323022195177373830503256523102922523160615122740.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_50868285302414906220308603177571064285713847748578607138725553504438216955717.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_37506494563278748959441762704775564024776752027126302531287098001259285516913.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_104979571510049954066465506551220622035235504464900741908132732116220919416086.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_36409949954743633084355207221370082755315358276179635040764154504251340810753.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_15568036216386323801988329114043719588715922356295325720957311089039083724068.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_108462984134971138942001836665869011100299796952397050555390099595348735914623.jpg",
+    "https://static.tokkobroker.com/pictures/7177693_105633284317423213498244453016415643261956407195450593001940778992783369096170.jpg"
+   ],
+   "tags": {
+    "Agua Corriente": true,
+    "Cloaca": true,
+    "Gas Natural": true,
+    "Electricidad": true,
+    "Pavimento": true,
+    "Cocina": true,
+    "Lavadero": true,
+    "Patio": true,
+    "Terraza": true,
+    "Aire Acondicionado individual": true,
+    "Termo de gas": true,
+    "Luminoso": true,
+    "Estufas TB": true
+   },
+   "features_text": [
+    "Bueno",
+    "Frente",
+    "Sur"
+   ],
+   "credit_pill": false,
+   "apto_credito_field": null,
+   "publisher": "DIC Propiedades",
+   "modified": "2025-07-22T13:14:00",
+   "enriched": true,
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     135000
+    ]
+   ],
+   "pct": 95,
+   "pct_score": 60.7,
+   "pct_n": 1727,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 16.6,
+    "puente_blocks": 41.9,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 18.5,
+     "effective_blocks": 18.5
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Actualización de cañerías e instalación eléctrica original de 50 años, modernización de cocina y baño principal, pintura integral e impermeabilización de losa.",
+    "patio": "large",
+    "patio_m2_est": 100,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 3,
+    "vertical_potential": 1,
+    "apto_credito": null,
+    "highlights": [
+     "Lote propio de 221 m2 con gran fondo libre",
+     "Techo de losa con potencial para construir arriba",
+     "Entrada de auto cubierta y quincho/depto al fondo"
+    ],
+    "red_flags": [
+     "50 años de antigüedad con instalaciones probablemente originales",
+     "Construcción al fondo resta metros verdes o requiere mantenimiento extra",
+     "Reforma básica consume casi todo el presupuesto disponible"
+    ],
+    "summary": "Buena opción en lote propio con lindo metraje descubierto y losa para ampliar, pero requiere meterle mano urgente a las instalaciones de época.",
+    "photos_key": "c0cac0a07682",
+    "analyst": "gemini:gemini-3.7-flash",
+    "analysed_at": "2026-10-26",
+    "prompt_version": 2,
+    "note_key": "ced1b7bc",
+    "ts": "2026-10-26T00:14:01Z"
+   },
+   "score": 60.7,
+   "components": {
+    "price": {
+     "value": 0.93,
+     "points": 20.4,
+     "max": 22,
+     "why": "USD 153.000 efectivo (incl. reforma 18.000), 611/m²"
+    },
+    "space": {
+     "value": 0.38,
+     "points": 6.8,
+     "max": 18,
+     "why": "221 m² tot, 110 cub, 3 amb"
+    },
+    "location": {
+     "value": 0,
+     "points": 0,
+     "max": 15,
+     "why": "17 cuadras a Maipú, 18 a est. Doctor Cetrángolo (Mitre)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 6.7,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~100 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [
+    "a 16.6 cuadras de Maipú (muy lejos)",
+    "duplicado de ap-19224619"
+   ],
+   "flags": [],
+   "duplicate_of": "ap-19224619",
+   "score_calc": 60.7
   },
   {
    "id": "zp-58109958",

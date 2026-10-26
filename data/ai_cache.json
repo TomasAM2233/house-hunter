@@ -2886,33 +2886,35 @@
  "ap-19224619": {
   "condition": 3,
   "reform_usd": 18000,
-  "reform_notes": "Actualización de baño y cocina, revisión de instalaciones eléctricas y cañerías originales de 50 años, pintura general y pulido de pisos.",
+  "reform_notes": "Actualización de cañerías e instalación eléctrica original de 50 años, modernización de cocina y baño principal, pintura integral e impermeabilización de losa.",
   "patio": "large",
-  "patio_m2_est": 111,
-  "patio_seen": true,
+  "patio_m2_est": 100,
+  "patio_seen": false,
   "terrace": true,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 4,
-  "quiet": 4,
+  "natural_light": 3,
+  "quiet": 3,
   "vertical_potential": 1,
   "apto_credito": null,
   "highlights": [
-   "Lote propio en excelente ubicación de Olivos",
-   "Gran superficie descubierta de 120m2 con parrilla",
-   "Techo de losa que permite construcción de planta alta"
+   "Lote propio de 221 m2 con gran fondo libre",
+   "Techo de losa con potencial para construir arriba",
+   "Entrada de auto cubierta y quincho/depto al fondo"
   ],
   "red_flags": [
-   "Instalaciones de agua y luz con 50 años de antigüedad",
-   "Necesita modernización estética integral en áreas húmedas",
-   "Posible humedad ascendente típica en construcciones de esta época"
+   "50 años de antigüedad con instalaciones probablemente originales",
+   "Construcción al fondo resta metros verdes o requiere mantenimiento extra",
+   "Reforma básica consume casi todo el presupuesto disponible"
   ],
-  "summary": "Es una oportunidad sólida en Olivos con un patio bárbaro y potencial para crecer, ideal para entrar con una lavada de cara y actualizar de a poco.",
+  "summary": "Buena opción en lote propio con lindo metraje descubierto y losa para ampliar, pero requiere meterle mano urgente a las instalaciones de época.",
   "photos_key": "c0cac0a07682",
-  "analyst": "gemini:gemini-3-flash-preview",
-  "analysed_at": "2026-10-24",
-  "prompt_version": 2
+  "analyst": "gemini:gemini-3.7-flash",
+  "analysed_at": "2026-10-26",
+  "prompt_version": 2,
+  "note_key": "ced1b7bc",
+  "ts": "2026-10-26T00:14:01Z"
  },
  "ap-18986681": {
   "condition": 3,
