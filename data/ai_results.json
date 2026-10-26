@@ -1015,200 +1015,6 @@
    "photos_v": 2
   }
  },
- "ml-MLA3992998294": {
-  "requested_at": "2026-10-26T00:25:03.656Z",
-  "done_at": "2026-10-26T00:27:22Z",
-  "error": null,
-  "listing": {
-   "id": "ml-MLA3992998294",
-   "source": "mercadolibre",
-   "url": "https://casa.mercadolibre.com.ar/MLA-3992998294-olivos-casa-en-venta-de-2-dormitorios-para-actualizar-_JM",
-   "title": "Olivos: Casa En Venta De 2 Dormitorios Para Actualizar",
-   "type": "casa",
-   "price_usd": 235000.0,
-   "total_m2": 360.0,
-   "covered_m2": 140.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 2.0,
-   "garage": 1.0,
-   "age_years": 0.0,
-   "address": "Doctor Mariano Moreno 2700, Olivos, Vicente López, Bs.As. G.B.A. Norte",
-   "geocode_query": "Doctor Mariano Moreno 2700, Olivos, Vicente López, Buenos Aires",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5045509,
-   "lng": -58.5094032,
-   "description": "Olivos: casa para actualizar, construida toda en una planta. Living comedor, cocina comedor, toilette, baño completo , dos dormitorios amplios con placar, garaje cubierto, jardín, terraza techo de loza, ideal para construir otra planta. a 10 cuadras de Avenida Maipú, a 1 cuadra de Paraná, varios medios de transportes",
-   "photos": [
-    "https://http2.mlstatic.com/D_NQ_NP_869585-MLA96876468346_112025-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_914077-MLA96876468356_112025-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_692522-MLA96876468362_112025-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_953292-MLA96876468344_112025-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_702248-MLA96876468358_112025-O.jpg"
-   ],
-   "tags": {},
-   "credit_pill": false,
-   "publisher": null,
-   "modified": null,
-   "partial_data": false,
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     235000.0
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "Superficie total: 360 m²",
-    "Superficie cubierta: 140 m²",
-    "Dormitorios: 2",
-    "Baños: 2",
-    "Cocheras: 1",
-    "Antigüedad: 0 años",
-    "Ambientes: 3",
-    "Tipo de casa: Casa",
-    "Expensas: 0 ARS",
-    "Aire acondicionado: No",
-    "Calefacción: No",
-    "TV por cable: No",
-    "Gas natural: Sí",
-    "Agua corriente: Sí",
-    "Seguridad: No",
-    "Acceso controlado: No",
-    "Con área verde: Sí",
-    "Pileta: No"
-   ],
-   "photos_v": 2,
-   "pct": 73,
-   "pct_score": 48.7,
-   "pct_n": 1727,
-   "last_seen": "2026-10-25",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 12.8,
-    "puente_blocks": 48.2,
-    "station": {
-     "name": "La Lucila",
-     "line": "Mitre",
-     "blocks": 20.7,
-     "effective_blocks": 20.7
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 18000,
-    "reform_notes": "Pintura general, modernización de cocina y baños, revisión de instalaciones eléctricas y sanitarias de época.",
-    "patio": "large",
-    "patio_m2_est": 200,
-    "patio_seen": false,
-    "terrace": true,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 3,
-    "vertical_potential": 1,
-    "apto_credito": null,
-    "highlights": [
-     "Lote propio de 360 m² con mucho espacio libre",
-     "Construcción en una planta con losa para edificar arriba",
-     "Ubicación residencial en Olivos a una cuadra de Paraná"
-    ],
-    "red_flags": [
-     "No muestran fotos del jardín de fondo ni de los baños",
-     "Terminaciones e instalaciones de época para actualizar",
-     "Ambientes interiores oscuros y desordenados que ocultan detalles"
-    ],
-    "summary": "Es una típica casa sobre lote propio con techo de losa y gran potencial que entra en tu presupuesto de reforma, pero llama la atención que no muestren ni una foto del jardín trasero.",
-    "photos_key": "f422044f400f",
-    "analyst": "gemini:gemini-flash-latest",
-    "analysed_at": "2026-10-26",
-    "prompt_version": 2,
-    "note_key": "",
-    "ts": "2026-10-26T00:26:51Z"
-   },
-   "score": 52,
-   "components": {
-    "price": {
-     "value": 0.4,
-     "points": 8.8,
-     "max": 22,
-     "why": "USD 253.000 efectivo (incl. reforma 18.000), 653/m²"
-    },
-    "space": {
-     "value": 0.64,
-     "points": 11.5,
-     "max": 18,
-     "why": "360 m² tot, 140 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.22,
-     "points": 3.3,
-     "max": 15,
-     "why": "13 cuadras a Maipú, 21 a est. La Lucila (Mitre)"
-    },
-    "condition": {
-     "value": 0.51,
-     "points": 6.7,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 18.000"
-    },
-    "patio": {
-     "value": 1,
-     "points": 10,
-     "max": 10,
-     "why": "patio grande ~200 m²"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 7.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 2.4,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 1.0,
-     "max": 2,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [],
-   "flags": [
-    "sobre presupuesto (USD 235.000)"
-   ],
-   "score_calc": 48.7,
-   "ai_final": {
-    "score": 52,
-    "brief": "Lote propio de 360m2 con m2 muy barato (USD 653). Supera tus USD 210.000 y está lejos de Maipú (13 cuadras). Requiere USD 18.000 en arreglos, pero el jardín y la posibilidad de construir arriba son puntos muy fuertes.",
-    "reasons": [
-     "Supera el presupuesto de USD 210.000, lo que obliga a una negociación agresiva.",
-     "El precio por m2 de USD 653 es bajísimo para Olivos, compensando el estado a refaccionar.",
-     "A 13 cuadras de Maipú, está en el límite de lo aceptable y lejos de tu zona preferida."
-    ],
-    "at": "2026-10-26"
-   }
-  }
- },
  "zp-60436249": {
   "requested_at": "2026-10-26T00:26:03.059Z",
   "done_at": "2026-10-26T00:28:07Z",
@@ -1655,6 +1461,205 @@
    ],
    "enriched": true,
    "photos_v": 2
+  }
+ },
+ "ml-MLA3992998294": {
+  "requested_at": "2026-10-26T22:50:25.721Z",
+  "done_at": "2026-10-26T22:54:07Z",
+  "error": null,
+  "listing": {
+   "id": "ml-MLA3992998294",
+   "source": "mercadolibre",
+   "url": "https://casa.mercadolibre.com.ar/MLA-3992998294-olivos-casa-en-venta-de-2-dormitorios-para-actualizar-_JM",
+   "title": "Olivos: Casa En Venta De 2 Dormitorios Para Actualizar",
+   "type": "casa",
+   "price_usd": 235000.0,
+   "total_m2": 360.0,
+   "covered_m2": 140.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 2.0,
+   "garage": 1.0,
+   "age_years": 0.0,
+   "address": "Doctor Mariano Moreno 2700, Olivos, Vicente López, Bs.As. G.B.A. Norte",
+   "geocode_query": "Doctor Mariano Moreno 2700, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5045509,
+   "lng": -58.5094032,
+   "description": "Olivos: casa para actualizar, construida toda en una planta. Living comedor, cocina comedor, toilette, baño completo , dos dormitorios amplios con placar, garaje cubierto, jardín, terraza techo de loza, ideal para construir otra planta. a 10 cuadras de Avenida Maipú, a 1 cuadra de Paraná, varios medios de transportes",
+   "photos": [
+    "https://http2.mlstatic.com/D_NQ_NP_869585-MLA96876468346_112025-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_914077-MLA96876468356_112025-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_692522-MLA96876468362_112025-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_953292-MLA96876468344_112025-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_702248-MLA96876468358_112025-O.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": null,
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     235000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Superficie total: 360 m²",
+    "Superficie cubierta: 140 m²",
+    "Dormitorios: 2",
+    "Baños: 2",
+    "Cocheras: 1",
+    "Antigüedad: 0 años",
+    "Ambientes: 3",
+    "Tipo de casa: Casa",
+    "Expensas: 0 ARS",
+    "Aire acondicionado: No",
+    "Calefacción: No",
+    "TV por cable: No",
+    "Gas natural: Sí",
+    "Agua corriente: Sí",
+    "Seguridad: No",
+    "Acceso controlado: No",
+    "Con área verde: Sí",
+    "Pileta: No"
+   ],
+   "photos_v": 2,
+   "pct": 80,
+   "pct_score": 48.7,
+   "pct_n": 1746,
+   "last_seen": "2026-10-26",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 12.8,
+    "puente_blocks": 48.2,
+    "villa_blocks": 13.9,
+    "station": {
+     "name": "La Lucila",
+     "line": "Mitre",
+     "blocks": 20.7,
+     "effective_blocks": 20.7
+    },
+    "park": {
+     "name": "San Héctor Valdivieso Sáez",
+     "m": 1145
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Actualización de cocina y baños, pintura integral, pulido de pisos de granito y revisión de instalaciones eléctricas y pluviales.",
+    "patio": "large",
+    "patio_m2_est": 180,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 4,
+    "vertical_potential": 1,
+    "apto_credito": null,
+    "highlights": [
+     "Lote propio de 360m2 en excelente zona de Olivos",
+     "Techo de losa que permite construcción en planta alta",
+     "Distribución funcional en una sola planta"
+    ],
+    "red_flags": [
+     "El jardín no se muestra en ninguna foto (sospechoso)",
+     "Instalaciones de gas y agua probablemente originales",
+     "Humedad de cimientos visible en algunos sectores"
+    ],
+    "summary": "Es una casa sólida con un lote enorme para Olivos, pero está muy de época y es clave ver el estado real del fondo antes de avanzar.",
+    "photos_key": "f422044f400f",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-26",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-10-26T22:53:58Z"
+   },
+   "score": 45,
+   "components": {
+    "price": {
+     "value": 0.4,
+     "points": 8.8,
+     "max": 22,
+     "why": "USD 253.000 efectivo (incl. reforma 18.000), 653/m²"
+    },
+    "space": {
+     "value": 0.64,
+     "points": 11.5,
+     "max": 18,
+     "why": "360 m² tot, 140 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.2,
+     "points": 3.0,
+     "max": 15,
+     "why": "13 cuadras a Maipú, 21 a est. La Lucila (Mitre), plaza a 11 cdas (San Héctor Valdivieso Sáez)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 6.7,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~180 m²"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 7.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [],
+   "flags": [
+    "sobre presupuesto (USD 235.000)"
+   ],
+   "score_calc": 48.7,
+   "ai_final": {
+    "score": 45,
+    "brief": "Casa de 3 amb y 360 m² en Olivos a USD 235k, algo arriba de tu tope (negociable) pero con bajo USD/m². A 13 cuadras de Maipú. Pide 18k de refacción. Lo malo: el jardín no se ve en fotos y es clave.",
+    "reasons": [
+     "Bajo 3.7 puntos porque el precio de lista de USD 235.000 supera tu límite estricto de USD 210.000, aunque entra en el rango negociable.",
+     "Bajo 3.0 puntos porque las fotos no muestran el jardín en un lote de 360 m², generando dudas sobre su estado real.",
+     "Sumo 3.0 puntos por el excelente valor por m² total (USD 653) y la superficie generosa con potencial de ampliación."
+    ],
+    "at": "2026-10-26"
+   }
   }
  }
 }
