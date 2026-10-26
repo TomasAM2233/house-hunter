@@ -30,6 +30,34 @@ def ppm2(l):
     return round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
 
 
+def lot_m2(l):
+    """(m2, what it is): the lot (terreno) when the listing or its text gives it, else the total surface."""
+    desc = (l.get("description") or "") + " " + (l.get("title") or "")
+    if l.get("lot_m2"):
+        return l["lot_m2"], "terreno"
+    t = text.lot_m2(desc)
+    if t:
+        return t, "terreno"
+    return l.get("total_m2"), "totales"
+
+
+def maipu_sweet(blocks):
+    """1 around the sweet spot (6 cuadras from Maipú), falling off towards the 3 and 15 cuadra limits."""
+    s = config.MAIPU_SWEET_BLOCKS
+    if blocks <= s - 0.5:
+        return lerp(blocks, 3, 0.3, s - 0.5, 1)
+    if blocks <= s + 0.5:
+        return 1.0
+    if blocks <= 10:
+        return lerp(blocks, s + 0.5, 1, 10, 0.6)
+    return lerp(blocks, 10, 0.6, 15, 0)
+
+
+def park_value(m):
+    """Walking distance to the edge of the nearest plaza/park: on the block 1, 3 cuadras 0.6, 8+ cuadras 0."""
+    return lerp(m, 100, 1, 300, 0.6) if m <= 300 else lerp(m, 300, 0.6, 800, 0)
+
+
 def hard_filters(l, ai=None):
     """Reasons to discard. Missing data never discards on its own; it's flagged instead."""
     r = []
@@ -53,6 +81,8 @@ def hard_filters(l, ai=None):
             r.append(f"a {g['maipu_blocks']} cuadras de Maipú (muy lejos)")
         if g["puente_blocks"] < config.PUENTE_MIN_BLOCKS:
             r.append(f"a {g['puente_blocks']} cuadras de Puente Saavedra")
+        if g.get("villa_blocks") is not None and g["villa_blocks"] < config.VILLA_BORGES_MIN_BLOCKS:
+            r.append(f"a {g['villa_blocks']} cuadras de la villa Borges")
     desc = (l.get("description") or "") + " " + (l.get("title") or "")
     if l.get("type") == "ph":
         stacked = ai.get("ph_stacked") if ai and ai.get("ph_stacked") is not None else text.ph_stacked(desc)
@@ -92,13 +122,19 @@ def components(l, ai=None):
     s = 0.45 * lerp(t or 100, 100, 0, 300, 1) + 0.35 * lerp(cov or 80, 70, 0, 200, 1) + 0.2 * lerp(amb or 3, 3, 0, 6, 1)
     c["space"] = (s, f"{n(t)} m² tot, {n(cov)} cub, {n(amb)} amb")
 
-    # location
+    # location: cuadras to Maipú around the sweet spot (a train station nearby can stand in, capped), plus a plaza/park
     g = l.get("geo")
     if g:
-        st = g["station"]
-        eff = min(g["maipu_blocks"], st["effective_blocks"])
+        st, pk = g["station"], g.get("park")
+        mv = max(maipu_sweet(g["maipu_blocks"]), 0.7 * lerp(st["effective_blocks"], 4, 1, 10, 0))
         why = f"{n(g['maipu_blocks'])} cuadras a Maipú, {n(st['blocks'])} a est. {st['name']} ({st['line']})"
-        c["location"] = (lerp(eff, 4, 1, 8, 0.7) if eff <= 8 else lerp(eff, 8, 0.7, 15, 0), why + ("" if l.get("address_exact") else " · ubicación aproximada"))
+        if pk:
+            pv = park_value(pk["m"])
+            v = (1 - config.PARK_SHARE) * mv + config.PARK_SHARE * pv
+            why += f", plaza a {n(pk['m'] / config.BLOCK_M)} cdas ({pk['name']})" if pk["m"] >= 50 else f", frente a plaza ({pk['name']})"
+        else:
+            v = mv  # parks not fetched yet: Maipú alone
+        c["location"] = (v, why + ("" if l.get("address_exact") else " · ubicación aproximada"))
     else:
         c["location"] = (0.4, "sin ubicación")
 

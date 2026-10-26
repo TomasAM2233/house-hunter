@@ -15,9 +15,17 @@ SEARCH = {
 BLOCK_M = 100
 MAIPU_MIN_BLOCKS = 3        # closer than this to Av. Maipú is too noisy
 MAIPU_MAX_BLOCKS = 15       # farther than this is out of the zone
-MAIPU_IDEAL_BLOCKS = 8      # inside this (or this close to a train) is preferred
+MAIPU_SWEET_BLOCKS = 6      # the location score peaks here and falls off on both sides
 PUENTE_SAAVEDRA = (-34.5383, -58.4762)
 PUENTE_MIN_BLOCKS = 5
+# Villa Borges (La Loma de Olivos, around Rosetti y Borges): anything within 4 cuadras of it is discarded.
+# Measured from its edge, taken as a circle of VILLA_BORGES_RADIUS_M around this centre. Check it on the app's map.
+VILLA_BORGES = (-34.5174, -58.5142)
+VILLA_BORGES_RADIUS_M = 100
+VILLA_BORGES_MIN_BLOCKS = 4
+# Plazas and parks (OSM, geo/parks.json via osm_parks.py): part of the location score, by walking distance to the edge.
+PARK_MIN_M2 = 1_500          # smaller green spots (a boulevard, a corner) don't count
+PARK_SHARE = 0.25            # share of the location score that comes from the nearest plaza/park
 
 # Lines that actually get you to Palermo / Belgrano / Recoleta / Centro.
 # Tren de la Costa stations count, but with a penalty since you need a transfer.
@@ -33,12 +41,15 @@ BRIEF_MAX_CHARS = 250
 # Phone alerts (ntfy.sh) for new listings at or above either threshold.
 ALERT_PERCENTILE = 90
 ALERT_AI_SCORE = 70
+# ...and, whatever the score, a big lot at a good price around the Maipú sweet spot. The lot surface (terreno)
+# is used when the listing or its text gives it, otherwise the total m2.
+ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8)}
 
 # Weights add up to 100, in the order of importance Tomás gave.
 WEIGHTS = {
     "price": 22,        # effective price (asking + estimated reform) and $/m2
     "space": 18,        # total m2, covered m2, ambientes
-    "location": 15,     # walking distance to Av. Maipú or a train station
+    "location": 15,     # cuadras to Av. Maipú (peak at 6) or a train station, plus a nearby plaza/park
     "condition": 13,    # AI: how habitable it is and how much reform it needs
     "patio": 10,        # AI + text: size of garden / patio
     "vertical": 7,      # AI + text: room to build upwards

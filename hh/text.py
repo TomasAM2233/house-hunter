@@ -23,6 +23,18 @@ def lot_dims(text):
     return (a, b)
 
 
+def lot_m2(text):
+    """Lot surface from the text: 'terreno de 350 m2', 'lote: 8,66 x 30' -> m2."""
+    t = norm(text)
+    m = re.search(r"(?:lote|terreno)\s*(?:propio\s*)?(?:de|:)?\s*(?:aprox\.?\s*)?(\d\.\d{3}|\d{3,4}(?:[.,]\d{1,2})?)\s*(?:m2|m²|mts2|mts\.? ?cuadrados|metros cuadrados)", t)
+    if m:
+        v = _num(m.group(1).replace(".", "") if re.fullmatch(r"\d\.\d{3}", m.group(1)) else m.group(1))
+        if 80 <= v <= 3_000:
+            return round(v)
+    d = lot_dims(text)
+    return round(d[0] * d[1]) if d else None
+
+
 def usd_price(text):
     """Asking price written in the description ('antes U$D 187.000 ahora U$D 178.000' -> 178000): the last one wins."""
     found = [int(m.replace(".", "")) for m in re.findall(r"(?:u\$[sd]|usd|us\$)\s*(\d{2,3}\.\d{3})\b", norm(text))]

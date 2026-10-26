@@ -7,6 +7,7 @@ python run.py --assess-queue  # AI reads asked for from the app (data/ai_request
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
 import requests
 from hh import ai, config, geo, http, score, text
+import osm_parks
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -49,7 +50,7 @@ def merge(old, fresh):
                     longer = k == "description" and len(prev[k] or "") > len(l.get(k) or "")
                     if prev.get("enriched") or not l.get(k) or longer:
                         l[k] = prev[k]
-                for k in ("total_m2", "covered_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact", "publisher", "modified"):
+                for k in ("total_m2", "covered_m2", "lot_m2", "bedrooms", "bathrooms", "garage", "age_years", "address_exact", "publisher", "modified"):
                     if l.get(k) is None and prev.get(k) is not None:
                         l[k] = prev[k]
             for k in ("pct", "pct_score", "pct_n"):
@@ -98,18 +99,30 @@ def dedupe(listings):
             kept.append(l)
 
 
+def big_lot(l):
+    """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú."""
+    r = config.ALERT_BIG_LOT
+    m2, _ = score.lot_m2(l)
+    g = l.get("geo") or {}
+    return bool(m2 and m2 >= r["min_m2"] and l.get("price_usd") and l["price_usd"] < r["max_price"]
+                and g.get("maipu_blocks") is not None and r["maipu_blocks"][0] <= g["maipu_blocks"] <= r["maipu_blocks"][1])
+
+
 def alert(new):
-    """Push a phone notification (ntfy.sh, topic in NTFY_TOPIC) for each new listing that ranks near the top."""
+    """Push a phone notification (ntfy.sh, topic in NTFY_TOPIC) for each new listing that ranks near the top,
+    or that is a big lot at a good price around the Maipú sweet spot."""
     topic = os.environ.get("NTFY_TOPIC")
     st = json.load(open(SETTINGS)) if os.path.exists(SETTINGS) else {}   # thresholds edited in the app
     min_pct = st.get("alert_percentile", config.ALERT_PERCENTILE)
     min_ai = st.get("alert_ai_score", config.ALERT_AI_SCORE)
     for l in sorted(new, key=lambda l: -l["score"]):
+        lot = big_lot(l)
         good = l.get("pct", 0) >= min_pct or (l.get("ai_final") or {}).get("score", 0) >= min_ai
-        if not good:
+        if not (good or lot):
             continue
         g = l.get("geo") or {}
-        title = f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
+        m2, what = score.lot_m2(l)
+        title = (f"{m2:.0f} m² {what} · " if lot else "") + f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
         body = (brief if (brief := (l.get("ai_final") or {}).get("brief")) else
                 f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {g.get('maipu_blocks', '?')} cdas a Maipú. {l.get('address', '')}")
         log(f"ALERT {l['id']}: {title}")
@@ -181,6 +194,8 @@ def main():
                 status[name] = {"ok": False, "error": str(e)[:200], "at": time.strftime("%Y-%m-%d %H:%M")}
 
     # geography
+    if not os.path.exists(geo.PARKS):
+        osm_parks.fetch(log=log)  # once; refreshed by hand with the osm workflow
     for l in listings.values():
         if not l.get("price_usd") and text.usd_price(l.get("description")):
             l["price_usd"] = text.usd_price(l["description"])  # cards that only say "consultar" or show pesos
