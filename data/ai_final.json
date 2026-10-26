@@ -100,17 +100,17 @@
   "ts": "2026-10-26T17:03:49Z"
  },
  "zp-60503292": {
-  "score": 67,
-  "brief": "PH en PB en Olivos a USD 175.000 (muy buen precio por m²), 164 m² totales con 2 patios y terraza propia. A 6 cuadras de Maipú, sin expensas. En contra: tiene 72 m² cubiertos y un dormitorio chico.",
+  "score": 75,
+  "brief": "Excelente PH en Olivos a USD 175.000 (1067 USD/m²), 164 m² totales y 72 cubiertos. A 6 cuadras de Maipú, sin expensas, con dos patios propios a nivel de suelo y gran terraza.",
   "reasons": [
-   "Excelente relación precio-superficie por debajo de su límite con un precio muy competitivo de USD 1.067 el m² total.",
-   "Cumple perfectamente con la ubicación al estar a 6 cuadras de Av. Maipú y ofrece dos patios a nivel del suelo.",
-   "Tiene 72 m² cubiertos, lo que se queda justo en su preferencia de espacio y suma puntos por ser un PH al frente sin expensas."
+   "Precio sumamente conveniente por debajo del presupuesto y excelente costo por m².",
+   "Ubicación ideal a 6 cuadras de Av. Maipú cumpliendo con la distancia perfecta.",
+   "Cuenta con dos patios propios en planta baja y gran terraza sin ser PH por pasillo."
   ],
-  "input_key": "4aea166777e9",
+  "input_key": "65e204022a82",
   "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:49:23Z"
+  "at": "2026-10-26",
+  "ts": "2026-10-26T21:59:27Z"
  },
  "zp-56345451": {
   "score": 58,
@@ -801,17 +801,17 @@
   "ts": "2026-10-25T19:58:13Z"
  },
  "ml-MLA3790564262": {
-  "score": 62,
-  "brief": "PH de 4 ambientes con un jardín gigante de 100m2. El precio por m2 es un regalo (USD 806) y es apto crédito. Lo malo es que estás a 14 cuadras de Maipú, casi al límite de lo que pedís, y hay que ponerle unos USD 12.000 encima.",
+  "score": 65,
+  "brief": "PH de 4 amb, 248 m2 tot y 117 cub. Excelente precio de USD 806/m2 y jardín de 100 m2. Está a 14 cuadras de Maipú. Pide USD 200.000 y requiere 12.000 de refacción.",
   "reasons": [
-   "El precio por m² (USD 806) es excelente, muy por debajo de tu límite de USD 2.000.",
-   "El jardín de 100 m² en planta baja es exactamente lo que buscás y difícil de encontrar en este precio.",
-   "La ubicación a 14 cuadras de Maipú es el punto más flojo, rozando tu límite máximo de 15."
+   "Suma por un precio muy conveniente por m2 y un jardín amplio de 100 m2 dentro del presupuesto.",
+   "Baja por estar a 14 cuadras de Maipú y lejos de la estación de tren.",
+   "Suma por tener 4 ambientes, 248 m2 totales y ser apto crédito sin expensas."
   ],
-  "input_key": "3e013d7d58e0",
-  "model": "gemini-3-flash-preview",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T19:58:56Z"
+  "input_key": "30e02498054c",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T21:59:32Z"
  },
  "zp-49502309": {
   "score": 76,
@@ -866,17 +866,17 @@
   "ts": "2026-10-26T14:36:40Z"
  },
  "tk-7560352": {
-  "score": 38,
-  "brief": "Está impecable y cerca del tren, pero es un PH al fondo por pasillo, algo que rechazás. Son solo 60m² cubiertos, muy justo para 3 ambientes, aunque el jardín y la terraza con quincho están bárbaros.",
+  "score": 45,
+  "brief": "PH al fondo por pasillo compartido, lo que viola el requisito obligatorio de Tomás. Precio USD 198.000 por 60 m² cubiertos (120 m² totales) con jardín y terraza, excelente estado reciclado y cerca del tren.",
   "reasons": [
-   "Incumple el requisito obligatorio de no ser PH por pasillo.",
-   "Espacio cubierto muy reducido (60m²) para la tipología de 3 ambientes.",
-   "Compensa con excelente estado y ubicación, pero no deja de ser una unidad al fondo."
+   "Ingreso por pasillo compartido con otra unidad, incumpliendo un requisito obligatorio explícito.",
+   "Superficie cubierta justa de 60 m² para un puntaje de espacio bajo.",
+   "Baja del puntaje calculado debido a la tipología de PH al fondo por pasillo."
   ],
-  "input_key": "3c05e2091f10",
-  "model": "gemini-3-flash-preview",
+  "input_key": "ac37837d792e",
+  "model": "gemini-flash-lite-latest",
   "at": "2026-10-26",
-  "ts": "2026-10-26T01:29:28Z"
+  "ts": "2026-10-26T21:59:37Z"
  },
  "zp-60405333": {
   "score": 32,
@@ -981,5 +981,18 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-10-26",
   "ts": "2026-10-26T17:08:01Z"
+ },
+ "zp-60537957": {
+  "score": 48,
+  "brief": "Precio genial de USD 183.000 (USD 943/m²) y cerquita del tren, pero es PH por pasillo (exclusión de Tomás) con patio chico de 15 m² y casi sin jardín a nivel de suelo.",
+  "reasons": [
+   "Es un PH por pasillo, lo cual choca directamente con el requisito obligatorio de Tomás de no vivir en pasillo.",
+   "El espacio exterior principal es una terraza y el patio a nivel del suelo es muy chico (unos 15 m²).",
+   "La lectura de fotos indica que tiene cero potencial para construir hacia arriba."
+  ],
+  "input_key": "3c14f91b4922",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T21:59:42Z"
  }
 }

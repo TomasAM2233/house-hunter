@@ -3301,5 +3301,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-26T17:03:13Z"
+ },
+ "zp-60537957": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Pintura integral, pulido de pisos de madera, modernización de baños y cocina (no mostrada, presuntamente original). Revisión de techos de madera y zinguería.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 5,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Ubicación privilegiada en pasaje muy tranquilo de Florida",
+   "Doble cochera (cubierta y descubierta)",
+   "Gran terraza transitable con potencial para quincho"
+  ],
+  "red_flags": [
+   "No hay fotos de la cocina (punto crítico de inversión)",
+   "Techos de madera (machimbre) requieren control de filtraciones",
+   "El 'jardín' es en realidad un retiro frontal pequeño; el espacio abierto principal es terraza"
+  ],
+  "summary": "La casa está en una zona bárbara y es habitable, pero ojo que el patio a nivel del suelo es mínimo y la falta de fotos de la cocina huele a reforma obligatoria.",
+  "photos_key": "d6eb76811c54",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-26",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-26T21:59:17Z"
  }
 }
