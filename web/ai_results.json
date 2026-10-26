@@ -818,5 +818,201 @@
     "at": "2026-10-26"
    }
   }
+ },
+ "ml-MLA4010370240": {
+  "requested_at": "2026-10-26T00:09:15.908Z",
+  "done_at": "2026-10-26T00:18:02Z",
+  "error": "evaluación: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)",
+  "listing": {
+   "id": "ml-MLA4010370240",
+   "source": "mercadolibre",
+   "url": "https://casa.mercadolibre.com.ar/MLA-4010370240-lote-con-dos-casas-en-olivos-oportunidad-de-vivienda-multifamiliar-_JM",
+   "title": "Lote Con Dos Casas En Olivos. Oportunidad De Vivienda Multifamiliar",
+   "type": "casa",
+   "price_usd": 199000.0,
+   "total_m2": 459.0,
+   "covered_m2": 204.0,
+   "ambientes": 5.0,
+   "bedrooms": 3.0,
+   "bathrooms": 3.0,
+   "garage": 1.0,
+   "age_years": 20.0,
+   "address": "Ramon Castro Al 2800, Olivos, Vicente López, Bs.As. G.B.A. Norte",
+   "geocode_query": "Ramon Castro 2800, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5120002,
+   "lng": -58.50548,
+   "description": "Lote con dos casas en Olivos Ideal para vivienda multifamiliar o inversión (( NO ES APTO CRéDITO ))\n\nPropiedad ubicada en Olivos, compuesta por dos viviendas desarrolladas sobre un mismo lote, con ambientes amplios, espacios exteriores y una distribución que permite diferentes posibilidades de uso. Una excelente alternativa para vivienda multifamiliar o para quienes buscan combinar vivienda propia con una inversión destinada al alquiler.\n\nPrimera vivienda Casa al frente\n\nAl ingresar a la propiedad nos encontramos con un espacio guardacoche con capacidad para un vehículo.\n\nLa entrada principal da acceso a un ambiente de recepción que distribuye hacia los distintos sectores de la vivienda.\n\nCuenta con dos dormitorios, uno de ellos con ventana al frente y vista a la calle, mientras que el segundo dispone de una ventana con vista al patio interno que conecta ambas viviendas.\n\nLa propiedad también cuenta con un baño con toilette, sin bañera, y un cómodo sector de cocina, living y comedor integrado, con salida directa al patio interno.\n\nSegunda vivienda Casa desarrollada en dos plantas\n\nA través del patio que conecta ambas propiedades se accede a la segunda vivienda, que ofrece una distribución funcional en dos niveles.\n\nEn planta baja encontramos un ambiente de ingreso que comunica con un pequeño patio propio equipado con parrilla, ideal para disfrutar de reuniones al aire libre.\n\nEste nivel también dispone de cocina y comedor integrados, además de una sala de estar donde se encuentra la escalera que conduce a la planta alta.\n\nEn el segundo piso se desarrollan tres dormitorios, uno de ellos con placard empotrado. Los tres ambientes cuentan con estufas a gas para calefacción.\n\nCompleta esta planta un baño completo que brinda servicio a los dormitorios.\n\n**Una propiedad con múltiples posibilidades**\n\nLa distribución de las dos viviendas, conectadas mediante un patio interno, permite aprovechar los espacios de manera independiente, resultando ideal para dos familias que desean vivir cerca manteniendo sus propios ambientes.\n\nTambién representa una interesante alternativa de inversión, con la posibilidad de habitar una de las casas y destinar la otra al alquiler para generar una renta mensual.\n\nUbicada en Olivos, dentro de un entorno residencial de Zona Norte, con acceso a comercios, servicios y diferentes medios de transporte.\n\nUna excelente opción para quienes buscan amplitud, versatilidad y la posibilidad de contar con dos viviendas en un mismo terreno.\n\nConsultanos para más información o para coordinar una visita.\n\nNota: La información gráfica y escrita contenida en el presente aviso es meramente a título estimativo y no forma parte de ningún tipo de documentación contractual. Las medidas y superficies definitivas surgirán del título de propiedad del inmueble referido. Asimismo, los importes de impuestos, tasas, servicios y expensas aquí indicados están sujetos a verificación por parte del potencial comprador. \n\nPARRA DESARROLLOS URBANOS",
+   "photos": [
+    "https://http2.mlstatic.com/D_NQ_NP_619497-MLA119474207397_102026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_816286-MLA119474248517_102026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_802545-MLA119474037675_102026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_755284-MLA119474037667_102026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_924679-MLA119474037669_102026-O.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": null,
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     199000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Superficie total: 459 m²",
+    "Superficie cubierta: 204 m²",
+    "Dormitorios: 3",
+    "Baños: 3",
+    "Cocheras: 1",
+    "Antigüedad: 20 años",
+    "Ambientes: 5",
+    "Bauleras: 1",
+    "Cantidad de pisos: 2",
+    "Tipo de casa: Casa",
+    "Orientación: Sur",
+    "Expensas: 0 ARS",
+    "Aire acondicionado: Sí",
+    "Calefacción: Sí",
+    "TV por cable: No",
+    "Gas natural: Sí",
+    "Con conexión para lavarropas: No",
+    "Agua corriente: Sí",
+    "Seguridad: No",
+    "Acceso controlado: No",
+    "Con área verde: Sí",
+    "Parrilla: Sí",
+    "Pileta: No",
+    "Toilette: Sí",
+    "Terraza: No",
+    "Comedor: No",
+    "Estudio: Sí",
+    "Living: No",
+    "Patio: Sí",
+    "Dormitorio en suite: No",
+    "Jardín: Sí",
+    "Cocina: Sí"
+   ],
+   "pct": 90,
+   "pct_score": 56.9,
+   "pct_n": 1727,
+   "last_seen": "2026-10-25",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 12.8,
+    "puente_blocks": 39.6,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 15.3,
+     "effective_blocks": 15.3
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Reparar humedad de cimientos visible en zócalos, renovar instalación eléctrica, pintura general y actualización de cocina/baño de la casa al frente.",
+    "patio": "large",
+    "patio_m2_est": 120,
+    "patio_seen": false,
+    "terrace": false,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 3,
+    "vertical_potential": 0.0,
+    "apto_credito": false,
+    "highlights": [
+     "Lote propio amplio de 459 m2",
+     "Dos viviendas independientes con potencial de renta",
+     "Espacio guardacoche al frente"
+    ],
+    "red_flags": [
+     "Techos livianos de chapa y machimbre en casa del frente",
+     "Humedad de cimientos visible en ambientes interiores",
+     "No es apto crédito bancario"
+    ],
+    "summary": "Es un lote entero con dos casas a reciclar en Olivos; tenés metros libres de sobra para jardín pero las fotos esconden los patios traseros y la casa del frente pide arreglos inmediatos.",
+    "photos_key": "ead34cf9e212",
+    "analyst": "gemini:gemini-flash-latest",
+    "analysed_at": "2026-10-26",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-10-26T00:16:29Z"
+   },
+   "score": 56.9,
+   "components": {
+    "price": {
+     "value": 0.58,
+     "points": 12.8,
+     "max": 22,
+     "why": "USD 217.000 efectivo (incl. reforma 18.000), 434/m²"
+    },
+    "space": {
+     "value": 0.93,
+     "points": 16.8,
+     "max": 18,
+     "why": "459 m² tot, 204 cub, 5 amb"
+    },
+    "location": {
+     "value": 0.22,
+     "points": 3.3,
+     "max": 15,
+     "why": "13 cuadras a Maipú, 15 a est. Bartolomé Mitre (Mitre)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 6.7,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 10,
+     "max": 10,
+     "why": "patio grande ~120 m²"
+    },
+    "vertical": {
+     "value": 0.0,
+     "points": 0.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0,
+     "points": 0,
+     "max": 6,
+     "why": "no apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 56.9,
+   "photos_v": 2
+  }
  }
 }

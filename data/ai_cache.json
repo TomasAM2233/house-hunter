@@ -3169,5 +3169,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-25T19:46:36Z"
+ },
+ "ml-MLA4010370240": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Reparar humedad de cimientos visible en zócalos, renovar instalación eléctrica, pintura general y actualización de cocina/baño de la casa al frente.",
+  "patio": "large",
+  "patio_m2_est": 120,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0.0,
+  "apto_credito": false,
+  "highlights": [
+   "Lote propio amplio de 459 m2",
+   "Dos viviendas independientes con potencial de renta",
+   "Espacio guardacoche al frente"
+  ],
+  "red_flags": [
+   "Techos livianos de chapa y machimbre en casa del frente",
+   "Humedad de cimientos visible en ambientes interiores",
+   "No es apto crédito bancario"
+  ],
+  "summary": "Es un lote entero con dos casas a reciclar en Olivos; tenés metros libres de sobra para jardín pero las fotos esconden los patios traseros y la casa del frente pide arreglos inmediatos.",
+  "photos_key": "ead34cf9e212",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-26",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-26T00:16:29Z"
  }
 }
