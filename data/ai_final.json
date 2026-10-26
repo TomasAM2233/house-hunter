@@ -832,5 +832,43 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-10-26",
   "ts": "2026-10-26T00:27:18Z"
+ },
+ "ml-MLA4010370240": {
+  "score": 75,
+  "brief": "Lote propio de 459 m² en Olivos a USD 199.000 (USD 434/m²). Incluye 2 casas (204 m² cub), patio de 120 m² y cochera. A 12,8 cuadras de Maipú. Reforma estimada en USD 18.000 (dentro de presupuesto). No es apto crédito.",
+  "reasons": [
+   "Precio por m² imbatible (USD 434/m²) en lote propio de 459 m², satisfaciendo sus prioridades #1 y #2.",
+   "Gran terreno con patio/jardín de 120 m², 204 m² cubiertos en 2 casas y espacio guardacoche.",
+   "La reforma de USD 18.000 no supera su tope de USD 20.000 y la ubicación está dentro de las 15 cuadras a Maipú."
+  ],
+  "input_key": "b1e6a16c85c7",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T01:29:00Z"
+ },
+ "ap-20330478": {
+  "score": 55,
+  "brief": "Lote enorme de 293 m² con jardín de 150 m² a USD 785/m² en Olivos. Tiene 4 amb, 120 m² cub y cochera. Lo malo: pide USD 230.000 (supera el ideal de 210k), exige USD 15.000 de reforma, está a 10,7 cuadras de Maipú y no es apta crédito.",
+  "reasons": [
+   "Lote propio de 293 m² con gran jardín de 150 m² a un valor de 785 USD/m² muy aprovechable.",
+   "El precio de USD 230.000 excede el presupuesto base y al no ser apta crédito exige todo en efectivo."
+  ],
+  "input_key": "915a3c1cf31e",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T01:29:16Z"
+ },
+ "tk-7560352": {
+  "score": 38,
+  "brief": "Está impecable y cerca del tren, pero es un PH al fondo por pasillo, algo que rechazás. Son solo 60m² cubiertos, muy justo para 3 ambientes, aunque el jardín y la terraza con quincho están bárbaros.",
+  "reasons": [
+   "Incumple el requisito obligatorio de no ser PH por pasillo.",
+   "Espacio cubierto muy reducido (60m²) para la tipología de 3 ambientes.",
+   "Compensa con excelente estado y ubicación, pero no deja de ser una unidad al fondo."
+  ],
+  "input_key": "3c05e2091f10",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T01:29:28Z"
  }
 }
