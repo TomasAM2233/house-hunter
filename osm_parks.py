@@ -2,7 +2,7 @@
 
 Run by .github/workflows/osm.yml (and by run.py when the file is missing); Overpass doesn't answer from everywhere.
 """
-import json, math, os, sys
+import json, math, os, re, sys
 import requests
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -11,10 +11,9 @@ BBOX = "-34.56,-58.54,-34.48,-58.45"  # south,west,north,east, a bit wider than 
 Q = f"""
 [out:json][timeout:90];
 (
-  way["leisure"~"^(park|playground|recreation_ground)$"]({BBOX});
+  way["leisure"~"^(park|playground)$"]({BBOX});
   relation["leisure"="park"]({BBOX});
   way["place"="square"]({BBOX});
-  way["landuse"="recreation_ground"]({BBOX});
 );
 out geom;
 """
@@ -42,7 +41,8 @@ def fetch(log=print):
     rings = []
     for e in els:
         t = e.get("tags", {})
-        if t.get("access") == "private":
+        # recreation grounds here are mostly private clubs (Jockey Club, Centro Naval...), so they're left out
+        if t.get("access") in ("private", "members") or re.search(r"\b(club|c[ií]rculo)\b", t.get("name", ""), re.I):
             continue
         if e["type"] == "way" and e.get("geometry"):
             parts = [e["geometry"]]

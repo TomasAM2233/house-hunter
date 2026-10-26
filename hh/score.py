@@ -54,8 +54,9 @@ def maipu_sweet(blocks):
 
 
 def park_value(m):
-    """Walking distance to the edge of the nearest plaza/park: on the block 1, 3 cuadras 0.6, 8+ cuadras 0."""
-    return lerp(m, 100, 1, 300, 0.6) if m <= 300 else lerp(m, 300, 0.6, 800, 0)
+    """Distance to the edge of the nearest plaza/park: on the block 1, 4 cuadras 0.5, 10+ cuadras 0
+    (most houses here are 3 to 8 cuadras from one)."""
+    return lerp(m, 100, 1, 400, 0.5) if m <= 400 else lerp(m, 400, 0.5, 1_000, 0)
 
 
 def hard_filters(l, ai=None):
