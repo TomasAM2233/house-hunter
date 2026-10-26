@@ -50,17 +50,16 @@
   "ts": "2026-10-25T18:51:27Z"
  },
  "ml-MLA4032159620": {
-  "score": 52,
-  "brief": "PH al fondo de 4 amb y 145 m² totales en Florida, a 3 cuadras de Maipú. Precio excelente (USD 175.000 + USD 14.000 de refacción). Tiene patio delantero propio y es apto crédito, pero es un PH con entrada por pasillo lateral, lo que viola un…",
+  "score": 35,
+  "brief": "PH al fondo a USD 175.000 (1.207 USD/m²) con 145 m² totales, 4 amb y patio de ~40 m². A 3,8 cdas de Maipú y apto crédito. Incumple el filtro obligatorio de no ser PH por pasillo e insume USD 14.000 en reformas.",
   "reasons": [
-   "Se baja notablemente el puntaje porque tiene entrada por pasillo lateral, lo cual choca con un requisito excluyente de Tomás.",
-   "Se descuentan puntos por ser un PH al fondo compartido en el terreno, afectando la independencia esperada.",
-   "A pesar del muy buen precio y ubicación, los defectos de acceso y tipología reducen el atractivo general de la propiedad."
+   "Incumple el requisito obligatorio de no ser PH por pasillo (es la unidad del fondo con entrada por pasillo lateral).",
+   "Requiere una inversión estimada de USD 14.000 para refaccionar cocina y baños originales."
   ],
-  "input_key": "b3befde50580",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:01Z"
+  "input_key": "9f70c39187bf",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:37:39Z"
  },
  "zp-60238063": {
   "score": 67,
@@ -138,17 +137,16 @@
   "at": "2026-10-24"
  },
  "zp-58707535": {
-  "score": 45,
-  "brief": "Excelente precio (USD 180k) y buen jardín, pero la reforma necesaria sale USD 30k y supera su tope. Quedan 4 amb, 160 m² y cercanía al tren Mitre.",
+  "score": 55,
+  "brief": "Chalet en Florida de 160 m² (110 cub) a USD 180.000 (1.125 USD/m²). Lote propio con jardín de 25 m², cochera y a 2,8 cuadras del tren. En contra: la reforma (humedad e instalaciones) ronda los USD 30.000, superando tu tope de USD 20.000.",
   "reasons": [
-   "El costo de reforma estimado es de USD 30.000, superando los USD 20.000 máximos que Tomás puede invertir.",
-   "Presenta humedad de cimientos severa y generalizada que encarece y complica los arreglos.",
-   "Las instalaciones originales de hace 70 años requieren un cambio completo que excede el presupuesto."
+   "La reforma estimada (USD 30.000 por humedad e instalaciones) excede tu límite de USD 20.000",
+   "Excelente relación precio/m² en lote propio con jardín y muy cerca de la estación de tren"
   ],
-  "input_key": "d151ed315384",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:22Z"
+  "input_key": "1382df29363f",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:40:47Z"
  },
  "zp-60240833": {
   "score": 50,
@@ -163,16 +161,17 @@
   "ts": "2026-10-25T18:50:40Z"
  },
  "ml-MLA3122452256": {
-  "score": 52,
-  "brief": "Excelente precio (USD 185k) y ubicación a 3 cuadras del tren, con 160 m² y 4 amb. En contra: requiere reciclar íntegro y la reforma supera su presupuesto máximo por USD 5k.",
+  "score": 50,
+  "brief": "Chalet de 160 m² (110 cubiertos) a excelente precio (USD 185.000, USD 1.156/m²) y a 2,8 cdas del tren. Punto en contra: la reforma ronda los USD 25.000 (supera tus USD 20.000 de tope) y no hay fotos del jardín en la publicación.",
   "reasons": [
-   "El presupuesto de reforma estimado en USD 25.000 excede el límite de USD 20.000 que Tomás está dispuesto a invertir.",
-   "El estado general requiere una actualización completa que encrudece la inversión inicial necesaria."
+   "El costo estimado de reforma (USD 25.000) supera tu presupuesto máximo de USD 20.000.",
+   "Muy buen precio por m² (USD 1.156) sobre lote propio de 8,66 m y excelente cercanía al tren (2,8 cdas).",
+   "No hay fotos del jardín en la publicación, lo que genera incertidumbre sobre su estado real."
   ],
-  "input_key": "68f549a4cda8",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:50:56Z"
+  "input_key": "3f9524e1e169",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:37:16Z"
  },
  "zp-59910581": {
   "score": 40,
@@ -273,29 +272,29 @@
   "ts": "2026-10-25T18:49:17Z"
  },
  "zp-57372458": {
-  "score": 48,
-  "brief": "Precio excelente a 6 cuadras de Maipú, lote propio con patio y cochera. Pero requiere reforma integral por 28 mil dólares, superando su presupuesto de inversión.",
+  "score": 42,
+  "brief": "Casa en lote propio en Olivos a 6 cdas de Maipú por USD 195.000 (155 m² tot). El patio de 35 m² y cochera suman, pero exige USD 28.000 de reforma (excede tu tope de USD 20.000) y solo tiene 68 m² cubiertos en estado crítico.",
   "reasons": [
-   "El costo estimado de reforma excede su límite de 20.000 dólares.",
-   "La superficie cubierta de 68 m² es chica para 4 ambientes.",
-   "El estado general requiere demolición parcial o refacción muy profunda."
+   "La reforma estimada (~USD 28.000) excede tu límite fijado de USD 20.000.",
+   "La superficie cubierta es muy chica (68 m²) y requiere hacerse prácticamente de cero."
   ],
-  "input_key": "d8dc644fb9f7",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:37Z"
+  "input_key": "ff3154e30e03",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:39:04Z"
  },
  "zp-60488219": {
-  "score": 45,
-  "brief": "Triplex en Olivos a USD 185.000 (154 m² tot, 100 m² cub, 4 amb) con cochera, patio de 30 m² y apto crédito. A 13 cuadras de Maipú. En contra: son 3 plantas por escalera y distribución en tríplex.",
+  "score": 61,
+  "brief": "Tríplex de 4 amb en Olivos a excelente precio (USD 185.000, 1.201 USD/m²). Tiene patio de 30 m², cochera y es apto crédito. En contra: está a 12,9 cuadras de Maipú, requiere USD 10.000 en arreglos (humedad) y es en 3 plantas por escalera.",
   "reasons": [
-   "Bajo 3 puntos por ser un tríplex en altura con múltiples plantas por escalera, lo cual dificulta la comodidad diaria.",
-   "Bajo 3 puntos adicionales porque la distribución en varias plantas afecta la funcionalidad del espacio comparado con una casa o PH en planta baja."
+   "Precio muy competitivo de USD 185.000 (USD 1.201/m²) en Olivos con cochera y apto crédito.",
+   "Ubicación a 12,9 cuadras de Av. Maipú, alejada del ideal de 8 cuadras.",
+   "Distribución en tríplex de 3 plantas por escalera con arreglos estimados en USD 10.000."
   ],
-  "input_key": "3f600140909a",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:57Z"
+  "input_key": "50d65d7233ad",
+  "model": "gemini-3.5-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:41:56Z"
  },
  "zp-58181732": {
   "score": 62,
@@ -336,17 +335,17 @@
   "ts": "2026-10-25T18:52:22Z"
  },
  "zp-60089567": {
-  "score": 52,
-  "brief": "PH al frente en Florida, USD 200.000 (USD 1.075/m²), 186 m² totales con 42 m² de patio y cochera. Cumple en precio y espacio, pero es no apto crédito y tiene solo 2 dormitorios (pide 3 amb).",
+  "score": 70,
+  "brief": "PH al frente de 186 m² tot (74 cub) a USD 200.000 (1.075 USD/m²). Tiene patio a nivel de 42 m², garage, terraza y reforma de USD 14.000 que entra en tu presupuesto. A 8 cdas del tren y 9,4 de Maipú. No es apto crédito.",
   "reasons": [
-   "Bajo 3 puntos por ser no apto crédito, castigando su prioridad en la materia.",
-   "Sumo 4 puntos por un excelente precio por metro cuadrado y estar dentro de su presupuesto con margen para reformas.",
-   "Bajo 2 puntos porque tiene 2 dormitorios en lugar de los 3 ambientes requeridos, aunque la superficie total es amplia."
+   "Cumple todos los obligatorios: PH al frente con entrada independiente, sin pasillo ni vecinos arriba.",
+   "Excelente valor por m² (USD 1.075/m²) con patio a nivel de 42 m², terraza y garage propio.",
+   "La reforma de USD 14.000 entra holgada en tu presupuesto de reformas de USD 20.000."
   ],
-  "input_key": "38dd1e580aa7",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:47Z"
+  "input_key": "d3585e021de2",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:38:07Z"
  },
  "zp-57689157": {
   "score": 42,
@@ -374,15 +373,16 @@
  },
  "zp-60420657": {
   "score": 52,
-  "brief": "Bajó a USD 210.000 (USD 1.615/m²), cumpliendo el tope. 130 m² totales, 4 amb y cochera. A 6 cuadras de Maipú. Patio chico de 15 m² y estilo recargado de madera con poca luz.",
+  "brief": "Dúplex de 130 m² (120 cubiertos) en Olivos a 6,4 cdas de Maipú. Precio en el tope (USD 210.000, USD 1.615/m²). Buen estado con reforma baja (USD 6.000) y cochera. En contra: patio muy chico de solo 15 m².",
   "reasons": [
-   "Sube 3 puntos porque el precio por m² es muy bajo para la zona y ya bajó de pretensiones, aliviando el costo total con la reforma.",
-   "Baja 3 puntos porque el patio es chico y Tomás prioriza mucho el espacio exterior al nivel del suelo.",
-   "Sube 3 puntos por la excelente ubicación a solo 6 cuadras de Av. Maipú."
+   "Buen estado de conservación con bajo costo de actualización (USD 6.000)",
+   "Buena ubicación a 6,4 cuadras de Maipú e incluye cochera",
+   "Patio muy chico (15 m²) y precio en el tope del límite fijado"
   ],
-  "input_key": "e00183e21d56",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-24"
+  "input_key": "2d3e85bd9952",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:37:53Z"
  },
  "zp-58224676": {
   "score": 62,
@@ -409,16 +409,17 @@
   "at": "2026-10-24"
  },
  "ap-20500468": {
-  "score": 46,
-  "brief": "Casa en lote propio en Olivos a USD 190.000 (153 m² totales, 116 m² cubiertos, 4 ambientes). A favor: precio, cochera y lote propio. En contra: requiere USD 22.000 en reformas (superando tu límite de USD 20.000) y tiene un dormitorio con techo de…",
+  "score": 52,
+  "brief": "Lote propio de 153 m² a USD 190.000 (USD 1.242/m²) a 10 cuadras de Maipú. Incluye cochera, pero el patio en L es chico (25 m²) y la reforma estimada de USD 22.000 supera tu tope de USD 20.000 para arreglos.",
   "reasons": [
-   "El costo de la reforma estimado en USD 22.000 excede tu límite máximo obligatorio de USD 20.000.",
-   "Presenta problemas estructurales menores detectados en fotos, como un dormitorio con techo de chapa y signos de humedad.",
-   "La ubicación exacta no está detallada en el aviso para verificar la distancia a la avenida Maipú o al tren."
+   "Ubicación real en Olivos a 10 cuadras de Av. Maipú, corrigiendo el valor nulo del algoritmo.",
+   "Es lote propio con cochera cubierta y posibilidad de ampliar hacia arriba.",
+   "La obra estimada (USD 22.000) se pasa de tu límite de USD 20.000 e impacta en el presupuesto total."
   ],
-  "input_key": "69db37d8b3d6",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-24"
+  "input_key": "72d36f0b77db",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:40:07Z"
  },
  "zp-58603868": {
   "score": 55,
@@ -594,16 +595,17 @@
   "ts": "2026-10-25T18:52:02Z"
  },
  "tk-7482985": {
-  "score": 52,
-  "brief": "Casa a refaccionar en Olivos a USD 159.000, con 375 m² totales y 124 cubiertos. Muy buen precio y gran lote, pero con local al frente y 15 cuadras de Maipú.",
+  "score": 41,
+  "brief": "Lote de 375 m² a USD 159.000 (USD 424/m²), pero requiere una reforma estimada en USD 25.000 que supera tu límite de USD 20.000. Además, queda a 14,9 cuadras de Maipú, casi al límite de tu zona.",
   "reasons": [
-   "Se bonifica el puntaje porque el costo total con reforma queda por debajo del presupuesto máximo y el precio por m² es excelente.",
-   "Se ajusta la ubicación por estar en el límite de las 15 cuadras permitidas de Maipú.",
-   "Se penaliza levemente por el presupuesto de reforma que excede por USD 5.000 el límite previsto para mejoras."
+   "Reforma estimada de USD 25.000 excede tu presupuesto máximo de USD 20.000 para arreglos.",
+   "Ubicación a 14,9 cuadras de Av. Maipú, muy al límite de tu tope de 15 cuadras.",
+   "Puntos a favor por excelente valor total de USD 159.000 y gran lote propio de 375 m²."
   ],
-  "input_key": "fe399f76b63a",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-24"
+  "input_key": "79ca72e2c37d",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:37:04Z"
  },
  "tk-376459": {
   "score": 68,
@@ -668,30 +670,30 @@
   "at": "2026-10-24"
  },
  "tk-9870333": {
-  "score": 58,
-  "brief": "Precio excelente (USD 190.000, 905 USD/m²) y a 4 cuadras de Maipú. En contra: no es apto crédito y queda cerca de la Panamericana (menos tranquilidad).",
+  "score": 50,
+  "brief": "Lote propio de 210 m² a USD 190.000 (USD 905/m²) con cochera doble. Entra en presupuesto con reforma de USD 18.000. En contra: erróneamente ubicada cerca de Maipú (está en Florida Oeste, ruidosa junto a Panamericana) y no es apto crédito.",
   "reasons": [
-   "Baja 3 puntos por estar cerca de la Panamericana afectando la tranquilidad exigida.",
-   "Baja 3 puntos por no ser apto crédito, restando flexibilidad financiera.",
-   "Baja 1.7 puntos adicionales por requerir refacciones importantes en la unidad del fondo."
+   "Error de ubicación del algoritmo: está en Florida Oeste a más de 20 cuadras de Maipú",
+   "Muy buena relación precio/m² (USD 905) en lote propio con garage y reforma dentro del límite",
+   "Zona muy ruidosa por proximidad a Panamericana/Mitre y propiedad no apta crédito"
   ],
-  "input_key": "940493be27da",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:50:50Z"
+  "input_key": "619e03149562",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:36:12Z"
  },
  "ap-18155980": {
-  "score": 60,
-  "brief": "Casa en lote propio en Olivos a 8 cuadras de Maipú. 219 m² totales, 141 cubiertos, 5 ambientes y cochera. Piden USD 215.000 (negociable por encima de su límite). Jardín propio y terraza. Requiere USD 12.000 en refacciones.",
+  "score": 67,
+  "brief": "Lote propio en Olivos de 219 m² con 5 amb, jardín y cochera. Precio USD 215.000 ($982/m², supera por poco los 210k deseados). Requiere USD 12.000 de reformas (dentro de los 20k). A 8,4 cuadras de Maipú.",
   "reasons": [
-   "El precio de USD 215.000 supera ligeramente su límite obligatorio de USD 210.000, restando puntos en su prioridad principal.",
-   "El costo total incluyendo los USD 12.000 de reformas se mantiene dentro de su presupuesto global permitiendo avanzar.",
-   "Excelente ubicación a 8 cuadras de Maipú, lote propio de 219 m² y jardín en planta baja que cumplen con sus requisitos clave."
+   "Precio de USD 215.000 supera por poco el tope de USD 210.000, aunque cuenta con margen de negociación.",
+   "Excelente valor por m² (USD 982/m²) en lote propio de 8,66x25m con patio/jardín y cochera.",
+   "Reforma estimada en USD 12.000 para modernizar entra cómodo en el margen de USD 20.000."
   ],
-  "input_key": "8280b9d58d18",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:49:43Z"
+  "input_key": "d35779abd515",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:35:57Z"
  },
  "tk-7333929": {
   "score": 62,
@@ -732,16 +734,17 @@
   "at": "2026-10-25"
  },
  "tk-8513578": {
-  "score": 62,
-  "brief": "PH en esquina con jardín de 45 m² y cochera a USD 170.000 (USD 1.000/m² total). Son 170 m² totales pero solo 72 m² cubiertos. Está a 12 cuadras de Maipú. El estado es regular y requiere unos USD 10.000 para actualizar.",
+  "score": 64,
+  "brief": "PH independiente a USD 170.000, un preciazo para Olivos. Tiene 170m2 totales y losa para ampliar. Lo malo: está a 12 cuadras de Maipú y, al ser esquina sin fotos del patio, hay que verificar que el jardín sea real y privado.",
   "reasons": [
-   "Suma puntos por estar en esquina pero el aviso no muestra el jardín, generando dudas sobre su tamaño real según sus criterios.",
-   "Baja el puntaje de espacio porque tiene 72 m² cubiertos, justitos para 3 ambientes.",
-   "Suma puntos por excelente precio por m² total y estar dentro del presupuesto con margen para refaccionar."
+   "PH totalmente independiente, sin pasillo ni vecinos arriba, cumpliendo un requisito crítico.",
+   "Precio muy competitivo (USD 1.000/m2) con margen de USD 40k sobre tu presupuesto máximo.",
+   "Ubicación a casi 12 cuadras de Maipú, lejos del ideal de 8, y falta ver el patio en fotos por ser esquina."
   ],
-  "input_key": "3f268df9f68b",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25"
+  "input_key": "d89e77e88eb1",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:42:52Z"
  },
  "tk-9831856": {
   "score": 32,
@@ -769,17 +772,17 @@
   "ts": "2026-10-25T18:41:38Z"
  },
  "ap-20602045": {
-  "score": 58,
-  "brief": "Casa en lote propio con jardín enorme (125m2), ideal por espacio y privacidad. El precio (USD 230k) está al límite y sumado a la reforma de USD 20k, te pasás del presupuesto. A 10 cuadras de Maipú, es apta crédito y no es pasillo.",
+  "score": 63,
+  "brief": "Lote propio de 246 m² (8,66x28 m) en Olivos a USD 936/m² (USD 230.000). Tiene jardín de 125 m², casa de 3 amb más unidad al fondo y apto crédito. La reforma de USD 19.500 entra en tu presupuesto, aunque está a 9,9 cdai de Maipú.",
   "reasons": [
-   "Lote propio: Al no ser PH ni pasillo y tener un jardín de 125m2, es exactamente el tipo de unidad que buscás.",
-   "Presupuesto ajustado: El precio de USD 230k deja poco margen para la reforma de USD 20k que requiere por sus 50 años de antigüedad.",
-   "Apto crédito: Confirmaste que califica, lo cual es una prioridad alta para tu búsqueda y facilita la operación."
+   "El valor por m² total (USD 936/m²) y el terreno propio de 246 m² ofrecen una relación precio/espacio muy superior al promedio.",
+   "El jardín de 125 m² a nivel y el costo de reforma estimado (USD 19.500) se ajustan muy bien a tus prioridades.",
+   "Es lote propio con segunda unidad independiente y apto crédito confirmado, dentro de las 15 cuadras a Maipú."
   ],
-  "input_key": "790f0e6a2615",
-  "model": "gemini-3-flash-preview",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:54:13Z"
+  "input_key": "79f3a1e78dc1",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:36:27Z"
  },
  "zp-60465083": {
   "score": 32,
@@ -821,17 +824,17 @@
   "ts": "2026-10-25T21:16:50Z"
  },
  "ml-MLA3992998294": {
-  "score": 52,
-  "brief": "Lote propio de 360m2 con m2 muy barato (USD 653). Supera tus USD 210.000 y está lejos de Maipú (13 cuadras). Requiere USD 18.000 en arreglos, pero el jardín y la posibilidad de construir arriba son puntos muy fuertes.",
+  "score": 54,
+  "brief": "Lote propio enorme de 360 m² con 200 m² de jardín y losa para edificar. Piden USD 235.000 (USD 653/m²), al límite del presupuesto, más USD 18.000 de reforma. A 12,8 cuadras de Maipú. Faltan fotos del jardín y baños.",
   "reasons": [
-   "Supera el presupuesto de USD 210.000, lo que obliga a una negociación agresiva.",
-   "El precio por m2 de USD 653 es bajísimo para Olivos, compensando el estado a refaccionar.",
-   "A 13 cuadras de Maipú, está en el límite de lo aceptable y lejos de tu zona preferida."
+   "Terreno propio muy amplio (360 m²) a USD 653/m² con opción de construir en losa.",
+   "Precio publicado de USD 235.000 roza el límite de USD 240.000 negociable.",
+   "Aviso incompleto: oculta fotos del jardín de fondo y baños en la publicación."
   ],
-  "input_key": "4f88cbb58c08",
-  "model": "gemini-3-flash-preview",
+  "input_key": "3f36f0a84d4d",
+  "model": "gemini-3.6-flash",
   "at": "2026-10-26",
-  "ts": "2026-10-26T00:27:18Z"
+  "ts": "2026-10-26T14:38:32Z"
  },
  "ml-MLA4010370240": {
   "score": 75,
@@ -847,16 +850,17 @@
   "ts": "2026-10-26T01:29:00Z"
  },
  "ap-20330478": {
-  "score": 55,
-  "brief": "Lote enorme de 293 m² con jardín de 150 m² a USD 785/m² en Olivos. Tiene 4 amb, 120 m² cub y cochera. Lo malo: pide USD 230.000 (supera el ideal de 210k), exige USD 15.000 de reforma, está a 10,7 cuadras de Maipú y no es apta crédito.",
+  "score": 58,
+  "brief": "Excelente lote de 293 m² con jardín de 150 m² y 4 ambientes a 10,7 cdas de Maipú. El precio es USD 230.000 (excede tus USD 210.000 ideales) más USD 15.000 de reforma estimada. No es apto crédito por falta de planos.",
   "reasons": [
-   "Lote propio de 293 m² con gran jardín de 150 m² a un valor de 785 USD/m² muy aprovechable.",
-   "El precio de USD 230.000 excede el presupuesto base y al no ser apta crédito exige todo en efectivo."
+   "El lote propio de 293 m² con gran jardín arbolado destaca mucho en espacio y patio.",
+   "El precio de publicación de USD 230.000 supera el presupuesto deseado de USD 210.000.",
+   "Muy buen valor por m² total (USD 785/m²) para una casa en planta baja con opción de construir arriba."
   ],
-  "input_key": "915a3c1cf31e",
+  "input_key": "09e457a7aa8f",
   "model": "gemini-3.6-flash",
   "at": "2026-10-26",
-  "ts": "2026-10-26T01:29:16Z"
+  "ts": "2026-10-26T14:36:40Z"
  },
  "tk-7560352": {
   "score": 38,
@@ -870,5 +874,96 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-10-26",
   "ts": "2026-10-26T01:29:28Z"
+ },
+ "zp-60405333": {
+  "score": 32,
+  "brief": "Muy buen precio de USD 159.000 (USD 1.445/m²) y 110 m² impecables. Sin embargo, no tiene patio a nivel del suelo (solo terraza arriba) incumpliendo tu requisito obligatorio, tiene 3 plantas con escaleras y está a 15 cuadras de Maipú.",
+  "reasons": [
+   "No cumple el requisito obligatorio de patio a nivel del suelo (solo terraza en 3er nivel).",
+   "Distribución en tríplex de 3 plantas con excesiva circulación vertical por escaleras.",
+   "Ubicación al límite máximo permitido (a 15 cuadras de Maipú y del tren)."
+  ],
+  "input_key": "48516192eb38",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:39:39Z"
+ },
+ "zp-60290998": {
+  "score": 62,
+  "brief": "Precio imbatible (USD 802/m2) y ubicación ideal a 6 cuadras de Maipú. El terreno es enorme (222m2), pero ojo: está sobre Av. Paraná (ruido) y no hay fotos del patio ni del frente, lo que genera dudas sobre el estado real del exterior.",
+  "reasons": [
+   "Precio y ubicación excelentes: USD 178.000 por 222m2 a pocas cuadras de Maipú es una oportunidad real.",
+   "Ubicación sobre avenida: el ruido constante de Av. Paraná resta puntos importantes en el criterio de tranquilidad.",
+   "Incertidumbre visual: la ausencia de fotos del patio y del frente obliga a una verificación presencial urgente por posibles vicios."
+  ],
+  "input_key": "057d3fe21b4d",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:42:13Z"
+ },
+ "ml-MLA2169592327": {
+  "score": 62,
+  "brief": "Precio excelente (USD 1.207/m2) y ubicación estratégica a metros del tren. Tiene jardín con verde, aunque chico (25m2), y cochera doble. El estado pide USD 12.000 en reformas (cocina/baños), pero entra perfecto en tu presupuesto total.",
+  "reasons": [
+   "Relación precio/m2 muy favorable para la zona, cumpliendo justo tu tope de USD 210.000.",
+   "Ubicación privilegiada para transporte: a menos de una cuadra de la estación Cetrángolo.",
+   "Apto crédito y con cochera doble en subsuelo, sumando valor a la propiedad."
+  ],
+  "input_key": "4c012ec22f25",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:42:26Z"
+ },
+ "ap-18835376": {
+  "score": 68,
+  "brief": "Casa a reciclar en Olivos Golf con precio imbatible (USD 1171/m2). A 3 cuadras del tren y con planos aprobados para ampliar, ideal para tu prioridad de construir. El patio de 60m2 y la cochera cierran un combo muy sólido por USD 185.000.",
+  "reasons": [
+   "Precio excelente para Olivos Golf y m2 totales, permitiendo la reforma dentro de tu presupuesto de USD 20.000.",
+   "Potencial vertical excepcional: los planos ya aprobados para planta alta ahorran gestiones y dinero, cumpliendo tu prioridad 6.",
+   "Ubicación estratégica: aunque está a 9 cuadras de Maipú, la cercanía extrema al tren (3 cdas) garantiza la conectividad que buscás."
+  ],
+  "input_key": "7aa70c189b1e",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:42:37Z"
+ },
+ "zp-60270207": {
+  "score": 63,
+  "brief": "PH al frente en Olivos, a 4 cuadras de Maipú. Precio excelente (USD 1230/m2) y apto crédito. Tiene patio de 25m2 y terraza, pero ojo que no hay fotos del patio y hay que invertir unos USD 15.000 para modernizarlo todo. Es para ir a ver ya.",
+  "reasons": [
+   "Ubicación y precio imbatibles: a 4 cuadras de Maipú por menos de USD 200k es una oportunidad real en Olivos.",
+   "Cumple todos los obligatorios: es PH al frente (no pasillo), tiene patio propio en PB y más de 100m2 cubiertos.",
+   "El puntaje sube porque el presupuesto de reforma (USD 15k) entra perfecto en tu límite y la estructura lo vale."
+  ],
+  "input_key": "bc8bae2deb52",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:43:05Z"
+ },
+ "ml-MLA2013028929": {
+  "score": 38,
+  "brief": "PH reciclado en Olivos, a 6 cuadras de Maipú y cerca del tren. Tiene patio y terraza, pero el ingreso es por pasillo compartido, algo que Tomás prohibió. Son solo 60m2 cubiertos por USD 198.000, un valor alto por m2 construido.",
+  "reasons": [
+   "Incumple el requisito obligatorio de no ser PH por pasillo.",
+   "Relación precio/m2 cubierto elevada: USD 198.000 por solo 60m2 de casa.",
+   "Ubicación y estado impecables, pero no compensan la restricción del acceso."
+  ],
+  "input_key": "ae1f4affbb36",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:43:19Z"
+ },
+ "ap-20457203": {
+  "score": 35,
+  "brief": "Casa en lote propio a buen precio por m2 (USD 1538), pero el patio de 26m2 es chico. Lo más grave: tiene inquilinos hasta 2027, lo que anula tu plan de mudarte pronto. Está a 10 cuadras de Maipú, aceptable pero no ideal.",
+  "reasons": [
+   "Inquilinos hasta marzo 2027: Imposible mudarse pronto como necesitás.",
+   "Patio de solo 26m2: Muy justo para ser una casa en lote propio.",
+   "Ubicación: A casi 10 cuadras de Maipú, en el límite de tu zona ideal."
+  ],
+  "input_key": "94491a456741",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-26",
+  "ts": "2026-10-26T14:43:32Z"
  }
 }

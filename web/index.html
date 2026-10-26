@@ -847,6 +847,8 @@ function initMap() {
   lines(ref.mitre, { color: "#b3322d", weight: 3, opacity: .85, dashArray: "8 5" }, "Tren Mitre");
   lines(ref.maipu, { color: "#c9a227", weight: 5, opacity: .9 }, "Av. Maipú");
   (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(MAP).bindTooltip("Cementerio de Olivos"));
+  (ref.parks || []).forEach(p => L.polygon(p.ring, { color: "#4fa35a", weight: 1, fillOpacity: .35 }).addTo(MAP).bindTooltip(p.name));
+  if (ref.villa) L.circle(ref.villa.center, { radius: ref.villa.radius_m, color: "#b3322d", weight: 1.5, dashArray: "5 4", fillOpacity: .08 }).addTo(MAP).bindTooltip("Villa Borges + 4 cuadras (descartado)", { sticky: true });
   const place = (ll, name, color) => L.circleMarker(ll, { radius: 6, color: "#fff", weight: 2, fillColor: color, fillOpacity: 1 }).addTo(MAP)
     .bindTooltip(name, { permanent: true, direction: "right", className: "ref-label", offset: [6, 0] });
   for (const [n, [la, lo]] of Object.entries(ref.stations || {})) L.circleMarker([la, lo], { radius: 4, color: "#1d1a24", weight: 1.5, fillColor: "#fff", fillOpacity: 1 }).addTo(MAP)
@@ -855,7 +857,7 @@ function initMap() {
   if (ref.puente) place(ref.puente, "Puente Saavedra", "#b3322d");
   if (ref.cementerio?.[0]) { const c = ref.cementerio[0]; place(c[Math.floor(c.length / 2)], "Cementerio de Olivos", "#4fa35a"); }
   MARKERS = L.layerGroup().addTo(MAP);
-  $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
+  $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span><i style="background:#4fa35a"></i>Plazas</span><span><i style="background:#b3322d;opacity:.4"></i>Villa Borges (no)</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
 }
 function renderMap() {
   if (!window.L) { $("#lmap").innerHTML = `<div class="empty">El mapa necesita conexión a internet.</div>`; return; }
