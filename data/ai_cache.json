@@ -3268,5 +3268,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-26T00:28:04Z"
+ },
+ "zp-60454860": {
+  "condition": 2,
+  "reform_usd": 15000,
+  "reform_notes": "Tratamiento de humedad de cimientos y techos, pintura integral, reparación de rajaduras y actualización de baño y cocina.",
+  "patio": "small",
+  "patio_m2_est": 14,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": true,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Entrada independiente y sin expensas",
+   "Amplia terraza propia en planta alta",
+   "Buena ubicación residencial en Florida"
+  ],
+  "red_flags": [
+   "Contrato de alquiler vigente hasta agosto de 2027 (imposible mudarse pronto)",
+   "Humedades visibles de cimientos y filtraciones en cielorrasos",
+   "Grieta exterior visible en pared junto a la escalera"
+  ],
+  "summary": "Descartenló del todo: tiene patio en planta baja y la reforma entraría en presupuesto, pero está alquilado hasta agosto de 2027 y ustedes necesitan mudarse pronto.",
+  "photos_key": "28b74df9824e",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-26",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-26T17:03:13Z"
  }
 }
