@@ -1,4 +1,4 @@
-"""Distances to Av. Maipú, Puente Saavedra and train stations, plus a cached Nominatim geocoder."""
+"""Distances to Av. Maipú, Puente Saavedra, train stations, Villa Borges and plazas/parks, plus a cached Nominatim geocoder."""
 import json, math, os, time
 import requests
 from . import config
@@ -6,6 +6,8 @@ from . import config
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _REF = json.load(open(os.path.join(ROOT, "geo", "reference.json")))
 GEOCODE_CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
+PARKS = os.path.join(ROOT, "geo", "parks.json")  # written by osm_parks.py
+_parks = None
 
 
 def _xy(lat, lon, lat0=-34.52):
@@ -47,11 +49,45 @@ def nearest_station(lat, lon):
     return best
 
 
+def parks():
+    global _parks
+    if _parks is None:
+        _parks = [p for p in (json.load(open(PARKS)) if os.path.exists(PARKS) else [])
+                  if p["m2"] >= config.PARK_MIN_M2]
+    return _parks
+
+
+def _inside(p, ring):
+    (x, y), pts = _xy(*p), [_xy(*q) for q in ring]
+    hit = False
+    for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1]):
+        if (y1 > y) != (y2 > y) and x < x1 + (y - y1) * (x2 - x1) / (y2 - y1):
+            hit = not hit
+    return hit
+
+
+def nearest_park(lat, lon):
+    """Closest plaza/park, in metres to its edge (0 if inside). None if geo/parks.json hasn't been fetched yet."""
+    p, best = (lat, lon), None
+    for park in parks():
+        ring = park["ring"]
+        d = 0 if _inside(p, ring) else min(_seg_dist(p, ring[i], ring[(i + 1) % len(ring)]) for i in range(len(ring)))
+        if best is None or d < best["m"]:
+            best = {"name": park["name"], "m": round(d)}
+    return best
+
+
+def villa_blocks(lat, lon):
+    return max(0, dist_m((lat, lon), config.VILLA_BORGES) - config.VILLA_BORGES_RADIUS_M) / config.BLOCK_M
+
+
 def describe(lat, lon):
     return {
         "maipu_blocks": round(maipu_m(lat, lon) / config.BLOCK_M, 1),
         "puente_blocks": round(dist_m((lat, lon), config.PUENTE_SAAVEDRA) / config.BLOCK_M, 1),
+        "villa_blocks": round(villa_blocks(lat, lon), 1),
         "station": nearest_station(lat, lon),
+        "park": nearest_park(lat, lon),
     }
 
 
@@ -90,8 +126,11 @@ def geocode(address):
 def reference():
     """Map layers for the dashboard: Av. Maipú, stations, Puente Saavedra, plus the reference lines and places
     in geo/overlays.json (Mitre and Belgrano rail, Panamericana, General Paz, Cementerio de Olivos, La Salle,
-    Municipalidad), pulled once from OpenStreetMap."""
+    Municipalidad), pulled once from OpenStreetMap; and the plazas/parks and the Villa Borges no-go circle."""
     ov = os.path.join(ROOT, "geo", "overlays.json")
     return {"maipu": [[[round(a, 5), round(b, 5)] for a, b in w] for w in _REF["maipu"]],
             "stations": _REF["stations"], "puente": list(config.PUENTE_SAAVEDRA),
+            "parks": [{"name": p["name"], "ring": p["ring"]} for p in parks()],
+            "villa": {"center": list(config.VILLA_BORGES),
+                      "radius_m": config.VILLA_BORGES_RADIUS_M + config.VILLA_BORGES_MIN_BLOCKS * config.BLOCK_M},
             **(json.load(open(ov)) if os.path.exists(ov) else {})}

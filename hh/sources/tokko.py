@@ -148,6 +148,7 @@ def _from_page(pid, slug, html, agency):
         "total_m2": total,
         "covered_m2": covered,
         "uncovered_m2": uncovered,
+        "lot_m2": land,
         "ambientes": _num(_after(r"Ambientes", txt)),
         "bedrooms": _num(_after(r"Dormitorios", txt)),
         "bathrooms": _num(_after(r"Baños", txt)),

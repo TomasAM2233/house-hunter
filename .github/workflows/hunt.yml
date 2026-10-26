@@ -50,7 +50,7 @@ jobs:
         run: |
           git config user.name "house-hunter-bot"
           git config user.email "house-hunter-bot@users.noreply.github.com"
-          git add data web
+          git add data web geo
           git diff --cached --quiet && exit 0
           git commit -qm "hunt: $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do
@@ -60,12 +60,12 @@ jobs:
             if ! git rebase -q -X theirs origin/main; then
               # fall back: take main as it is and lay this run's outputs on top
               git rebase --abort
-              OUT="data/listings.json data/ai_cache.json data/ai_final.json data/geocode_cache.json data/last_run.txt data/ai_pending web/listings.json"
+              OUT="data/listings.json data/ai_cache.json data/ai_final.json data/geocode_cache.json data/last_run.txt data/ai_pending web/listings.json geo/parks.json"
               mkdir -p /tmp/out && cp -r --parents $OUT /tmp/out/ 2>/dev/null || true
               git reset -q --hard origin/main
               python merge_ai.py /tmp/out   # keep reads made meanwhile from the app ("Evaluar con IA")
               rm -f /tmp/out/data/ai_cache.json /tmp/out/data/ai_final.json
-              cp -r /tmp/out/. . && python build.py && git add data web
+              cp -r /tmp/out/. . && python build.py && git add data web geo
               git commit -qm "hunt: $(date -u +%Y-%m-%dT%H:%MZ)"
             fi
           done

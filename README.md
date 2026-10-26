@@ -11,7 +11,7 @@ run.py
   hh/sources/zonaprop.py      search pages -> normalized listings (price, m², coords, photos)
   hh/sources/mercadolibre.py  search cards + item pages (older browser profiles get past the login wall)
   hh/sources/tokko.py         local agencies on Tokko Broker: public web key -> JSON API, or their Tokko site
-  hh/geo.py                   cuadras to Av. Maipú, Puente Saavedra, nearest train (OSM data in geo/)
+  hh/geo.py                   cuadras to Av. Maipú, Puente Saavedra, Villa Borges, nearest train and plaza (OSM data in geo/)
   hh/score.py                 hard filters + 10 weighted criteria
   hh/ai.py                    Gemini free tier reads up to 12 photos + description, cached per listing
 build.py                      web/index.html for GitHub Pages (reads web/listings.json)
@@ -23,7 +23,7 @@ build.py                      web/index.html for GitHub Pages (reads web/listing
 Hard filters, a listing is discarded if it breaks any:
 - Up to USD 210k (asking prices up to 240k are scored with a penalty, for negotiation) and USD 2,000 per total m² (no floor: portals are searched from USD 80k)
 - Casa or PH, 3+ ambientes, 100+ m² totales
-- 3 to 15 cuadras from Av. Maipú, 5+ cuadras from Puente Saavedra
+- 3 to 15 cuadras from Av. Maipú, 5+ cuadras from Puente Saavedra, 4+ cuadras from Villa Borges (Rosetti y Borges)
 - Has a patio or garden (AI), is not a PH al fondo por pasillo (AI)
 - Reform estimate under ~USD 35k (AI)
 - Not a duplicate of another agency's post (same price and m², within 200 m)
@@ -34,7 +34,7 @@ Score out of 100, in our order of importance:
 |---|---|---|
 | Price | 22 | asking + estimated reform, and USD/m² |
 | Space | 18 | total m², covered m², ambientes |
-| Location | 15 | min(cuadras to Maipú, cuadras to a Mitre/Belgrano station); ≤8 is preferred |
+| Location | 15 | 75%: cuadras to Maipú, best at 6 and falling off both ways (a nearby Mitre/Belgrano station can stand in, capped); 25%: distance to the nearest plaza/park |
 | Condition | 13 | AI condition 1–5 and reform estimate vs the USD 20k budget |
 | Patio | 10 | AI patio size, or m² descubiertos from the text |
 | Build upwards | 7 | AI read: own lot, one storey, no consorcio |
@@ -90,4 +90,7 @@ scheduled runs: a changed note means a fresh read for the top candidates.
 - **Quick runs** every hour from 07:47 to 23:47: only the newest pages of Zonaprop and Argenprop, so a new listing
   is scored, read by the AI and alerted within the hour.
 - **Alerts:** set the `NTFY_TOPIC` secret and subscribe to that topic in the free ntfy app. New listings at or above
-  the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification.
+  the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification. So does any new listing with 300+ m²
+  (lot surface when the listing or its text gives it, else total m²) under USD 230k, 4 to 8 cuadras from Maipú
+  (`ALERT_BIG_LOT` in `hh/config.py`).
+- **Plazas:** `geo/parks.json` comes from OpenStreetMap through `osm_parks.py` (the `osm` workflow refreshes it).

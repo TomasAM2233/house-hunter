@@ -109,6 +109,7 @@ def enrich(l):
     feats = [" ".join(li.get_text(" ", strip=True).split()) for li in s.select(".property-features li")]
     l["total_m2"] = _feat(main, r"m² (total|terreno)") or l.get("total_m2")
     l["covered_m2"] = _feat(main, r"m² cubierta") or l.get("covered_m2")
+    l["lot_m2"] = _feat(main + feats, r"m² terreno|sup\. terreno|superficie del terreno") or l.get("lot_m2")
     l["uncovered_m2"] = _feat(main, r"m² descubierta") or l.get("uncovered_m2")
     l["garage"] = _feat(feats, r"cocheras") or _feat(main, r"cochera") or 0
     l["age_years"] = _feat(feats, r"antig") or l.get("age_years")
