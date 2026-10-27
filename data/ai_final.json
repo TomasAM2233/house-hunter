@@ -2225,48 +2225,53 @@
   "ts": "2026-10-27T17:29:31Z"
  },
  "zp-60405333": {
-  "score": 38,
-  "brief": "Triplex de 110 m² totales a USD 159.000 en Olivos. Precio y estado bárbaros, pero es un triplex en plantas altas con terraza en vez de patio a nivel del suelo, lo que choca directo con un requisito obligatorio.",
+  "score": 35,
+  "brief": "Buen precio (USD 159.000, USD 1.445/m²) y buen estado, pero no tiene patio real en planta baja (solo terraza en 3er piso y entrada de auto), incumpliendo tu filtro obligatorio. Queda a 14,7 cuadras de Maipú y son 3 plantas con escalera.",
   "reasons": [
-   "Es un triplex (planta alta/superpuesto) y no tiene patio a nivel del suelo, sino una terraza, lo que viola un requisito excluyente de Tomás.",
-   "Tiene muchas escaleras y la lectura de fotos indica que el 'patio' es solo el ingreso semicubierto sin verde."
+   "Carece de patio o jardín propio a nivel del suelo (la parte exterior es terraza en 3er piso y garage/acceso), incumpliendo un requisito obligatorio",
+   "Distribución en tríplex (3 plantas) sin potencial de expansión ni construcción vertical",
+   "Ubicación al límite del filtro (14,7 cuadras de Av. Maipú)"
   ],
   "questions": [
    {
-    "q": "¿Es un PH que comparte lote o unidad en planta baja, o forma parte de un complejo tipo edificio?",
-    "impact": "si es un PH en planta alta con unidad abajo -20; si es una unidad independiente tipo casa en block +0"
+    "q": "¿Existe algún espacio descubierto/patio propio en PB que no sea el guarda coche?",
+    "impact": "si existe un patio propio verde de más de 20 m² en PB +12; si solo es el espacio guarda coche se mantiene el puntaje"
    },
    {
-    "q": "¿Hay alguna posibilidad de armar un jardín o patio real a nivel del suelo o es 100% espacio aéreo/terraza?",
-    "impact": "si no hay patio de tierra o baldosa abajo -10; si hay algún espacio verde propio +5"
+    "q": "¿Es un PH bajo régimen de propiedad horizontal o casa única en lote propio?",
+    "impact": "si es lote propio sin expensas ni restricciones +5; si es PH con expensas altas -5"
    },
    {
-    "q": "¿El espacio guarda coche es propio e independiente o es descubierto y compartido en la entrada?",
-    "impact": "si es compartido o incómodo -3; si es cochera fija cubierta propia +3"
+    "q": "¿Es apto crédito bancario y cuenta con planos actualizados?",
+    "impact": "si es apto crédito +5; si no lo es -3"
+   },
+   {
+    "q": "¿Qué valor mensual se paga de expensas o gastos comunes?",
+    "impact": "si no paga expensas +3; si supera $80.000 -5"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Tiene expensas o se administra de manera independiente entre las unidades?",
+    "q": "¿Por qué motivo vende la propiedad el dueño actual?",
     "impact": ""
    },
    {
-    "q": "¿Por qué se mudan los dueños y cuál es el plazo de entrega?",
+    "q": "¿Los metros cuadrados cubiertos y la terraza figuran 100% reglamentarios en el plano?",
     "impact": ""
    },
    {
-    "q": "¿Los planos están aprobados y al día para la superficie construida en tres plantas?",
+    "q": "¿Qué elementos quedan en la propiedad con la venta (aires, estufas)?",
     "impact": ""
    },
    {
-    "q": "¿Qué artefactos o muebles quedan en la propiedad al momento de la venta?",
+    "q": "¿Cuál es el estado de la documentación y los plazos de escrituración y posesión?",
     "impact": ""
    }
   ],
-  "input_key": "3d09991862aa",
-  "model": "gemini-flash-lite-latest",
+  "input_key": "4fc4eac2e42e",
+  "model": "gemini-3.6-flash",
   "at": "2026-10-27",
-  "ts": "2026-10-27T17:31:50Z"
+  "ts": "2026-10-27T21:35:21Z"
  },
  "zp-60290998": {
   "score": 58,
@@ -2707,5 +2712,105 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-10-27",
   "ts": "2026-10-27T17:22:38Z"
+ },
+ "zp-57158279": {
+  "score": 63,
+  "brief": "Lote propio de 219 m² (141 m² cub.) en Olivos a USD 982/m². El precio (USD 215.000) se pasa USD 5.000 de tu tope, mas USD 12.000 de reformas estimadas. Tiene jardín de 35 m², cochera, 5 ambientes y está a 9 cuadras de Maipú.",
+  "reasons": [
+   "Supera levemente el presupuesto tope de USD 210.000 sin contar refacciones (-2 puntos)",
+   "Duda sobre si es apto crédito: el algoritmo le sumó puntaje completo pero el análisis de fotos indica lo contrario (-1 punto)"
+  ],
+  "questions": [
+   {
+    "q": "¿Es apto crédito bancario?",
+    "impact": "Si no es apto crédito -3 puntos; si está con la documentación al día y acepta crédito +2 puntos."
+   },
+   {
+    "q": "¿Hay signos de humedad en techos o cimientos y en qué estado están las cañerías/instalaciones?",
+    "impact": "Si la reforma supera los USD 20.000 presupuestados -10 puntos; si requiere menos de USD 10.000 +3 puntos."
+   },
+   {
+    "q": "¿El entrepiso y la construcción en planta alta figuran en los planos aprobados?",
+    "impact": "Si no están declarados y dificultan el trámite o crédito -5 puntos; si está todo en regla +2 puntos."
+   },
+   {
+    "q": "¿Cuál es la orientación de la casa y cuánto sol directo recibe el jardín?",
+    "impact": "Si tiene buena luz natural en el patio +3 puntos; si es muy sombrío -3 puntos."
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Cuál es el margen real de negociación del precio?",
+    "impact": ""
+   },
+   {
+    "q": "¿Están los títulos de propiedad al día y listos para escriturar?",
+    "impact": ""
+   },
+   {
+    "q": "¿Qué plazos manejan para la entrega del inmueble y la posesión?",
+    "impact": ""
+   },
+   {
+    "q": "¿Qué artefactos o muebles quedan en la propiedad (estufas, aires, muebles de cocina)?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cómo es el flujo de tránsito y ruido sobre la calle Pelliza a esa altura?",
+    "impact": ""
+   }
+  ],
+  "input_key": "3bfafdc1a18a",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T21:35:44Z"
+ },
+ "tk-6587345": {
+  "score": 54,
+  "brief": "Casa en lote propio de 170 m² a USD 195.000 (1.141 USD/m²). Tiene 120 m² cubiertos, 3 dormitorios, playroom, cochera y patio chico (~25 m²). A 10 cuadras de Maipú. Alerta: no hay fotos del interior para evaluar sus 48 años de antigüedad.",
+  "reasons": [
+   "Falta total de fotos del interior en una casa de 48 años: el costo de reforma podría superar el límite de USD 20.000 (-5 pts)",
+   "Ubicación a 10 cuadras de Av. Maipú, algo alejada de la zona óptima de caminabilidad (-2 pts)"
+  ],
+  "questions": [
+   {
+    "q": "¿En qué estado están los interiores, baños, cocina y las instalaciones de agua, gas y electricidad?",
+    "impact": "Si requiere más de USD 20.000 de reforma -10; si está habitable de época +4"
+   },
+   {
+    "q": "¿Tiene problemas de humedad de cimientos o en techos?",
+    "impact": "Si hay humedad grave -8; si está seca y firme +3"
+   },
+   {
+    "q": "¿Cuáles son las medidas reales del patio al fondo?",
+    "impact": "Si tiene menos de 20 m² -4; si supera los 40 m² +5"
+   },
+   {
+    "q": "¿Es apta crédito e incluye todos los m² construidos en los planos aprobados?",
+    "impact": "Si no es apta crédito -6; si tiene planos 100% al día +2"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Por qué no publicaron fotos del interior en el aviso?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuál es el motivo de venta y qué plazos manejan para la escrituración y entrega?",
+    "impact": ""
+   },
+   {
+    "q": "¿Escuchan ofertas por debajo del precio publicado?",
+    "impact": ""
+   },
+   {
+    "q": "¿Tiene posibilidades estructurales de construir una segunda planta sobre la losa existente?",
+    "impact": ""
+   }
+  ],
+  "input_key": "9e17eb0cbec6",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T21:36:07Z"
  }
 }
