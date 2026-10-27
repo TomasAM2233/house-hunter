@@ -188,7 +188,18 @@ Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con
 vale entre 3 y 15 puntos). Sé exigente: la mayoría de los avisos no son excepcionales. Respondé SOLO un JSON:
 {{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
 rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
-inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"]}}"""
+inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"],
+"questions": [hasta 6 preguntas para que Tomás haga en la visita o al llamar a la inmobiliaria, cuya respuesta
+cambiaría tu puntaje: lo que hoy no se sabe o asumiste (patio real, humedad, estado del techo y las instalaciones,
+m² y planos aprobados, expensas, si es apto crédito, ruido, orientación, qué hay al fondo o al lado, etc.), las más
+importantes primero, cada una {{"q": "la pregunta, corta y concreta", "impact": "cómo movería el puntaje según la
+respuesta, con puntos (ej.: si hay humedad de cimientos -10; si está seca +3)"}}],
+"general_questions": [hasta 6 preguntas que igual conviene hacer aunque no cambien el puntaje (papeles, deudas,
+plazos de escritura y entrega, qué queda con la casa, por qué venden, si aceptan oferta, gastos de mantenimiento,
+vecinos, etc.), específicas para esta casa]}}
+Sus notas pueden tener preguntas de visitas anteriores con su respuesta ("pregunta → respuesta"): esas respuestas
+son datos verificados, usalas para afinar el puntaje y no las vuelvas a preguntar; una pregunta sin respuesta sigue
+pendiente."""
 
 
 def _final_text(l, prefs, note):
@@ -202,6 +213,16 @@ def _final_text(l, prefs, note):
             f"Cuadras a Puente Saavedra: {g.get('puente_blocks')}\n"
             f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
             f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
+
+
+def _questions(qs):
+    """[{q, impact}] for the visit, from whatever shape the model answered with (plain strings get no impact)."""
+    out = []
+    for x in (qs if isinstance(qs, list) else [])[:6]:
+        q, impact = (x.get("q") or x.get("question"), x.get("impact")) if isinstance(x, dict) else (x, None)
+        if str(q or "").strip():
+            out.append({"q": str(q).strip(), "impact": str(impact).strip() if impact else ""})
+    return out
 
 
 def final(listing, prefs, note="", compute=True, force=False, log=print):
@@ -224,7 +245,9 @@ def final(listing, prefs, note="", compute=True, force=False, log=print):
         if len(brief) > config.BRIEF_MAX_CHARS:
             brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
         out = {"score": max(0, min(100, int(round(float(res["score"]))))), "brief": brief,
-               "reasons": [str(x) for x in (res.get("reasons") or [])][:3], "input_key": h,
+               "reasons": [str(x) for x in (res.get("reasons") or [])][:3],
+               "questions": _questions(res.get("questions")), "general_questions": _questions(res.get("general_questions")),
+               "input_key": h,
                "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d"), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     except Exception as e:
         log(f"final verdict failed for {listing['id']}: {e}")

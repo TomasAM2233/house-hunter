@@ -140,6 +140,14 @@ button, select, input { font: inherit; color: inherit; }
 .row2 { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .row2 input { flex: 1 1 200px; min-width: 0; height: 38px; border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; background: var(--bg); }
 .reasons { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; }
+.vq { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.vq button { width: 100%; text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; color: inherit; font: 14px/1.4 var(--font-body); cursor: pointer; display: flex; gap: 10px; align-items: flex-start; }
+.vq button > span { flex: 1; min-width: 0; }
+.vq button small { display: block; margin-top: 2px; color: var(--muted); font-size: 12.5px; }
+.vq button i { font-style: normal; color: var(--accent); font-weight: 600; flex: none; }
+.vq button.in { opacity: .6; }
+.vq button.in i { color: var(--good); }
+.vqhead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .qa { display: flex; gap: 8px; margin-top: 2px; }
 .qa .btn { flex: 1; min-height: 40px; font-size: 14px; padding: 0 11px; white-space: nowrap; }
 .qa .btn:not(.primary) { flex: 0 1 auto; }
@@ -509,6 +517,38 @@ async function pollAI() {
   setTimeout(tick, 15000);
 }
 
+/* ── visit questions from the AI verdict: tap one (or "todas") to copy it into the notes as "pregunta → ",
+   answer it during the visit, then Evaluar con IA reads the answers as verified facts ── */
+const visitQs = (l, k) => (l.ai_final?.[k] || []).filter(x => x?.q);
+const inNote = (note, q) => (note || "").toLowerCase().includes(q.toLowerCase());
+function visitBox(l, t) {
+  const f = l.ai_final;
+  if (!f) return "";
+  const groups = [["questions", "Preguntas que mueven el puntaje"], ["general_questions", "Para preguntar igual en la visita"]];
+  if (!groups.some(([k]) => visitQs(l, k).length))
+    return `<div class="section"><span class="label">Preguntas para la visita</span><span class="saved">Tocá Evaluar con IA y te armo las preguntas para esta casa.</span></div>`;
+  return groups.filter(([k]) => visitQs(l, k).length).map(([k, label]) => `<div class="section">
+      <div class="vqhead"><span class="label">${label}</span><button class="linkish" data-vqall="${k}" style="white-space:nowrap">Todas a notas</button></div>
+      <ul class="vq">${visitQs(l, k).map(x => `<li><button data-vq="${esc(x.q)}" class="${inNote(t.note, x.q) ? "in" : ""}"><span>${esc(x.q)}${x.impact ? `<small>${esc(x.impact)}</small>` : ""}</span><i>${inNote(t.note, x.q) ? "✓" : "+"}</i></button></li>`).join("")}</ul>
+    </div>`).join("");
+}
+function markAsked(l) {
+  const note = $("#note")?.value || "";
+  $("#detail").querySelectorAll("[data-vq]").forEach(b => { const on = inNote(note, b.dataset.vq); b.classList.toggle("in", on); b.querySelector("i").textContent = on ? "✓" : "+"; });
+}
+function addQuestions(l, qs) {
+  const box = $("#note");
+  const cur = box.value.replace(/\s+$/, "");
+  const add = qs.filter(q => !inNote(cur, q));
+  if (!add.length) { flash("Ya están en tus notas"); return; }
+  box.value = (cur ? cur + "\n" : "") + add.map(q => `${q} → `).join("\n");
+  setTag(l.id, "note", box.value.trim());
+  markAsked(l); renderList();
+  const at = box.value.indexOf(add[0]) + add[0].length + 3;   // cursor right after the first new "→ ", ready to answer
+  box.focus(); box.setSelectionRange(at, at);
+  flash(add.length === 1 ? "Pregunta agregada a tus notas" : `${add.length} preguntas agregadas a tus notas`);
+}
+
 /* ── percentile of one house, on demand ── */
 function pctLines(l) {
   const sc = x => x.score_calc ?? x.score;
@@ -808,6 +848,7 @@ function renderDetail(l) {
         <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
       </div>
       <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa: lo que averigües (patio, estado, expensas…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
+      ${visitBox(l, t)}
       ${aiBox}
       <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
       ${hist}
@@ -821,7 +862,9 @@ function renderDetail(l) {
     setTag(l.id, k, false); renderDetail(l); renderList();
   });
   $("#sharebtn").onclick = () => share(l);
-  $("#note").onchange = e => { setTag(l.id, "note", e.target.value.trim()); renderList(); };
+  $("#note").onchange = e => { setTag(l.id, "note", e.target.value.trim()); renderList(); markAsked(l); };
+  $("#detail").querySelectorAll("[data-vq]").forEach(b => b.onclick = () => addQuestions(l, [b.dataset.vq]));
+  $("#detail").querySelectorAll("[data-vqall]").forEach(b => b.onclick = () => addQuestions(l, visitQs(l, b.dataset.vqall).map(x => x.q)));
   $("#descmore").onclick = e => { $("#desc").classList.remove("clamp"); e.target.remove(); };
   $("#aibtn").onclick = () => requestAI(l);
   $("#pctcalc").onclick = () => { PCTSHOW.add(l.id); renderDetail(l); };
