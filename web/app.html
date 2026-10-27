@@ -1061,6 +1061,17 @@ function boot(d) {
   $("#fscrim").onclick = () => closeLayer("filters");
   $("#msearch").onsubmit = e => { e.preventDefault(); findAddress($("#maddr").value.trim()); };
   $("#maddr").oninput = () => { if (!$("#maddr").value.trim()) clearHere(); };
+  openFromLink();
+  addEventListener("hashchange", openFromLink);
+}
+
+/* ── deep link from a phone alert: …/house-hunter/#casa=<id> opens that house ── */
+function openFromLink() {
+  const id = decodeURIComponent((location.hash.match(/^#casa=(.+)$/) || [])[1] || "");
+  if (!id) return;
+  try { history.replaceState(history.state, "", location.pathname + location.search); } catch {}
+  if (DATA.listings.some(x => x.id === id)) select(id);
+  else flash("Esa casa todavía no está en la app: recargá en unos minutos.");
 }
 
 const inline = $("#hh-data").textContent.trim();

@@ -38,7 +38,8 @@ REFORM_BUDGET_USD = 20_000
 AI_TOP_N = 40
 BRIEF_MAX_CHARS = 250
 
-# Phone alerts (ntfy.sh) for new listings at or above either threshold.
+# Phone alerts (ntfy.sh) for new listings at or above either threshold. Tapping one opens the house in the app.
+SITE_URL = "https://tomasam2233.github.io/house-hunter/"
 ALERT_PERCENTILE = 90
 ALERT_AI_SCORE = 70
 # ...and, whatever the score, a big lot at a good price around the Maipú sweet spot. The lot surface (terreno)
