@@ -149,16 +149,17 @@
   "ts": "2026-10-26T14:40:47Z"
  },
  "zp-60240833": {
-  "score": 50,
-  "brief": "Precio joya de USD 190.000 y 140 m² en Olivos, cerca del tren. Pero tiene patio chico y seco, y cero potencial para construir arriba por la terraza.",
+  "score": 45,
+  "brief": "Chalet bien de precio (USD 190k) y cerca del tren, pero el patio es minúsculo (12m2) y seco, casi sin verde. Está al límite de distancia de Maipú (15 cdas). Requiere USD 15k en arreglos por humedad y antigüedad. Apto crédito.",
   "reasons": [
-   "Bajo 4 puntos porque el patio es chico, seco y sin césped, algo que no le convence del todo a Tomás.",
-   "Bajo otro punto porque no tiene ningún potencial para construir hacia arriba, un punto que le importa bastante."
+   "El patio de 12m² es puramente funcional y seco, muy lejos del jardín amplio que buscás como prioridad.",
+   "Ubicación al límite: está a casi 15 cuadras de Maipú, aunque compensa un poco la cercanía al tren Cetrángolo.",
+   "Relación precio/m² atractiva, pero la falta de espacio descubierto real penaliza mucho el puntaje final."
   ],
-  "input_key": "fcb5f0f7fac2",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:50:40Z"
+  "input_key": "9ec0c746b116",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:25Z"
  },
  "ml-MLA3122452256": {
   "score": 50,
@@ -187,17 +188,16 @@
   "ts": "2026-10-25T18:51:52Z"
  },
  "ml-MLA3836458730": {
-  "score": 35,
-  "brief": "Cumple precio con USD 185.000 y ubicación en Florida, pero se descarta porque está alquilado con renta hasta fines de 2026 y no te podés mudar pronto.",
+  "score": 0,
+  "brief": "Inviable para mudarse pronto: se vende con renta hasta fines de 2026. Cumple con precio (USD 185.000) y ubicación (Florida), pero no se puede habitar.",
   "reasons": [
-   "Tiene contrato de alquiler vigente hasta fines de 2026, lo que incumple tu requisito de mudarte pronto.",
-   "Al estar alquilado, no se puede verificar el estado actual y las fotos son viejas.",
-   "El patio es chico (15 m²) y solo tiene 80 m² cubiertos para tres ambientes."
+   "El inmueble se vende con contrato de alquiler vigente hasta fines de 2026, lo cual incumple la premisa de mudarse pronto.",
+   "Baja el puntaje a cero porque Tomás necesita habitar la propiedad de forma inmediata tras la compra."
   ],
-  "input_key": "0c05f208eb14",
+  "input_key": "334796038ed2",
   "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:52:12Z"
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:40Z"
  },
  "zp-60293478": {
   "score": 67,
@@ -224,15 +224,16 @@
  },
  "ml-MLA2124006117": {
   "score": 45,
-  "brief": "PH en PB al frente en Olivos con 171 m² totales, 3 ambientes y gran jardín de 70 m². A 4 cuadras de Maipú. Sin precio publicado y con unidad arriba.",
+  "brief": "PH en PB al frente en Olivos a 4 cuadras de Maipú con 171 m² totales y gran jardín de 70 m². Cocina y baños reciclados. El aviso no aclara el precio, condición obligatoria para avanzar.",
   "reasons": [
-   "No figura el precio de venta en el aviso, lo cual es un impedimento crítico para evaluar su principal requisito.",
-   "Tiene una unidad arriba según las fotos y red flags, lo que incumple la preferencia de no ser PH superpuesto."
+   "El aviso no indica el precio en USD, lo cual incumple el requisito obligatorio principal de Tomás.",
+   "Tiene unidad arriba según las fotos, lo que choca con la preferencia de no ser superpuestos.",
+   "El algoritmo penaliza la falta de precio pero mantiene una base alta por metraje y jardín."
   ],
-  "input_key": "f39f1f58aabe",
+  "input_key": "2e24f9a88207",
   "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:51:42Z"
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:30Z"
  },
  "zp-59477427": {
   "score": 63,
@@ -322,17 +323,17 @@
   "at": "2026-10-24"
  },
  "ml-MLA4009143472": {
-  "score": 45,
-  "brief": "Precio OK (USD 185.000, USD 1.779/m²) y buen estado (8 años). Pero es un PH al fondo por pasillo, lo que viola un requisito obligatorio. Superficie cubierta justa (64 m²) y patio chico entre muros.",
+  "score": 38,
+  "brief": "Buen precio (USD 185.000, USD 1.779/m²) y a 4 cuadras del tren. Pero es un PH al fondo por pasillo, lo que viola tus obligatorios. Además, tiene solo 64 m² cubiertos y un patio chico entre medianeras altas.",
   "reasons": [
-   "Es un PH al fondo con acceso por pasillo, lo cual infringe directamente la preferencia obligatoria de Tomás.",
-   "El espacio cubierto es muy justo (64 m²) y el segundo dormitorio es extremadamente pequeño.",
-   "El patio es chico (aprox. 20 m²) y encajonado entre muros altos, restando puntos en una de sus prioridades."
+   "Es un PH al fondo con acceso por pasillo, violando directamente tu requisito obligatorio de no vivir en un pasillo.",
+   "La superficie cubierta es de solo 64 m² (con un segundo dormitorio muy chico), quedando por debajo de lo ideal para 3 ambientes.",
+   "El puntaje se reduce porque el patio es chico y encajonado entre muros altos, afectando la luminosidad y el espacio exterior."
   ],
-  "input_key": "162ce40488b4",
+  "input_key": "af9f65899e83",
   "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:52:22Z"
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:36Z"
  },
  "zp-60089567": {
   "score": 70,
@@ -360,16 +361,17 @@
   "at": "2026-10-24"
  },
  "zp-60509848": {
-  "score": 52,
-  "brief": "Por USD 180.000 con 100 m² totales y cochera en Olivos. A 5 cuadras de Maipú. Pide USD 1.800/m², requiere USD 12.000 en arreglos por humedad y cocina. El patio real es chico y tiene terraza.",
+  "score": 43,
+  "brief": "Ubicación ideal a 5 cuadras de Maipú y precio de USD 180.000. Pero ojo: tiene 100m² cubiertos sobre 100m² totales, lo que significa que el patio es casi inexistente. No cumple con tu deseo de un jardín grande a nivel suelo.",
   "reasons": [
-   "Suma puntos porque cumple con el precio, la cochera y la ubicación cerca de Maipú.",
-   "Baja levemente porque los 100 m² totales son justo el límite y el patio es chico.",
-   "El puntaje final refleja mejor el costo de la reforma necesaria dentro de su presupuesto."
+   "Patio inexistente: 100m² cubiertos sobre 100m² totales incumplen tu requisito obligatorio de jardín a nivel del suelo.",
+   "Ubicación excelente: a 5 cuadras de Maipú, está en tu zona ideal para moverte a pie.",
+   "Precio favorable: los USD 180.000 son competitivos y permiten cubrir los USD 12.000 de reforma estimados."
   ],
-  "input_key": "133d0f216215",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-24"
+  "input_key": "bb8b05bf60b5",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:12Z"
  },
  "zp-60420657": {
   "score": 52,
@@ -879,17 +881,17 @@
   "ts": "2026-10-26T21:59:37Z"
  },
  "zp-60405333": {
-  "score": 32,
-  "brief": "Muy buen precio de USD 159.000 (USD 1.445/m²) y 110 m² impecables. Sin embargo, no tiene patio a nivel del suelo (solo terraza arriba) incumpliendo tu requisito obligatorio, tiene 3 plantas con escaleras y está a 15 cuadras de Maipú.",
+  "score": 35,
+  "brief": "Precio excelente de USD 159.000 y 110 m² en Olivos, pero es un tríplex sin patio real a nivel del suelo (tiene terraza) y con unidades superpuestas, lo que viola un requisito excluyente.",
   "reasons": [
-   "No cumple el requisito obligatorio de patio a nivel del suelo (solo terraza en 3er nivel).",
-   "Distribución en tríplex de 3 plantas con excesiva circulación vertical por escaleras.",
-   "Ubicación al límite máximo permitido (a 15 cuadras de Maipú y del tren)."
+   "Incumple el requisito obligatorio de tener patio o jardín propio a nivel del suelo (es un tríplex con terraza y entrada vehicular semicubierta).",
+   "Es un tríplex en altura y superpuesto, chocando directamente con su negativa a vivir en PHs en planta alta o unidades superpuestas.",
+   "El algoritmo sobreestimó la tipología: al tratarse de un tríplex en altura, no cumple con la estructura de casa o PH de planta baja que exige Tomás."
   ],
-  "input_key": "48516192eb38",
-  "model": "gemini-3.6-flash",
-  "at": "2026-10-26",
-  "ts": "2026-10-26T14:39:39Z"
+  "input_key": "6e40ba363c75",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T01:42:46Z"
  },
  "zp-60290998": {
   "score": 62,

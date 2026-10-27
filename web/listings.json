@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-26 22:54",
+ "generated_at": "2026-10-27 01:42",
  "status": {
   "zonaprop": {
    "ok": true,
    "count": 592,
    "complete": false,
-   "at": "2026-10-26 21:56",
+   "at": "2026-10-27 01:38",
    "mode": "newest",
    "full_at": "2026-10-26 17:25"
   },
@@ -29,7 +29,7 @@
    "ok": true,
    "count": 389,
    "complete": false,
-   "at": "2026-10-26 21:56",
+   "at": "2026-10-27 01:38",
    "mode": "newest",
    "full_at": "2026-10-26 17:26"
   }
@@ -18101,7 +18101,7 @@
    "pct": 94,
    "pct_score": 56.8,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 5.9,
@@ -21944,7 +21944,7 @@
    "pct": 96,
    "pct_score": 64.1,
    "pct_n": 1148,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": null,
    "ai": {
@@ -24317,25 +24317,7 @@
      165000.0
     ]
    ],
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 10.3,
-    "puente_blocks": 27.7,
-    "villa_blocks": 14.5,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 4.2,
-     "effective_blocks": 4.2
-    },
-    "park": {
-     "name": "Plaza Amigos de Florida",
-     "m": 809
-    }
-   },
-   "lot_m2": null,
-   "uncovered_m2": 55.0,
+   "enriched": true,
    "features_text": [
     "PH",
     "119 m² Cubierta",
@@ -24365,8 +24347,27 @@
     "Patio",
     "Terraza"
    ],
-   "enriched": true,
    "photos_v": 2,
+   "pct": 92,
+   "pct_score": 55.5,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 10.3,
+    "puente_blocks": 27.7,
+    "villa_blocks": 14.5,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 4.2,
+     "effective_blocks": 4.2
+    },
+    "park": {
+     "name": "Plaza Amigos de Florida",
+     "m": 809
+    }
+   },
    "ai": null,
    "score": 55.5,
    "components": {
@@ -24436,10 +24437,7 @@
     "sin análisis IA",
     "datos parciales"
    ],
-   "score_calc": 55.5,
-   "pct": 92,
-   "pct_score": 55.5,
-   "pct_n": 1746
+   "score_calc": 55.5
   },
   {
    "id": "zp-59569736",
@@ -25645,7 +25643,22 @@
      165000
     ]
    ],
-   "last_seen": "2026-10-26",
+   "enriched": true,
+   "features_text": [
+    "199 m² tot.",
+    "119 m² cub.",
+    "4 amb.",
+    "2 baños",
+    "1 coch.",
+    "3 dorm.",
+    "Frente",
+    "NO"
+   ],
+   "photos_v": 2,
+   "pct": 90,
+   "pct_score": 53.6,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 10.2,
@@ -25662,18 +25675,6 @@
      "m": 826
     }
    },
-   "features_text": [
-    "199 m² tot.",
-    "119 m² cub.",
-    "4 amb.",
-    "2 baños",
-    "1 coch.",
-    "3 dorm.",
-    "Frente",
-    "NO"
-   ],
-   "enriched": true,
-   "photos_v": 2,
    "ai": null,
    "score": 53.6,
    "components": {
@@ -25742,10 +25743,7 @@
    "flags": [
     "sin análisis IA"
    ],
-   "score_calc": 53.6,
-   "pct": 90,
-   "pct_score": 53.6,
-   "pct_n": 1746
+   "score_calc": 53.6
   },
   {
    "id": "zp-58637825",
@@ -26526,197 +26524,6 @@
     "sobre presupuesto (USD 220.000)"
    ],
    "score_calc": 52.6
-  },
-  {
-   "id": "zp-60509848",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-olivos-vicente-lopez-60509848.html",
-   "title": "Casa en Venta Olivos Vicente Lopez",
-   "type": "casa",
-   "price_usd": 180000,
-   "total_m2": 100.0,
-   "covered_m2": 100.0,
-   "ambientes": 5.0,
-   "bedrooms": 3.0,
-   "bathrooms": 1.0,
-   "garage": 1.0,
-   "age_years": 72.0,
-   "address": "Alférez Hipólito Bouchard 1900, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.501808751654,
-   "lng": -58.501660823822,
-   "description": "Corredor Responsable: Romina Chiffel Col. 7801. TºXIV, Fº120 CPI",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087277556.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240589.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240528.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240607.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240630.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240621.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240603.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240632.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240523.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240615.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240541.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240507.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240517.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240534.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240547.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240596.jpg"
-   ],
-   "tags": {
-    "Luminoso": null,
-    "Superficie total": "100",
-    "Superficie cubierta": "100",
-    "Ambientes": "5",
-    "Dormitorios": "3",
-    "Baño": "1",
-    "Cochera": "1",
-    "Antigüedad": "72"
-   },
-   "credit_pill": false,
-   "publisher": "Remax Roble",
-   "modified": "2026-10-23T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     180000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "100 m² tot.",
-    "100 m² cub.",
-    "5 amb.",
-    "1 baño",
-    "1 coch.",
-    "3 dorm.",
-    "72 años"
-   ],
-   "pct": 73,
-   "pct_score": 45.7,
-   "pct_n": 1729,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 5.1,
-    "puente_blocks": 46.6,
-    "villa_blocks": 19.7,
-    "station": {
-     "name": "La Lucila",
-     "line": "Mitre",
-     "blocks": 13.0,
-     "effective_blocks": 13.0
-    },
-    "park": {
-     "name": "Plaza 9 de Julio",
-     "m": 1311
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 12000,
-    "reform_notes": "Pintura y humedad en muros, cocina vieja, persianas; terraza y estructura en buen estado.",
-    "patio": "small",
-    "patio_m2_est": 15,
-    "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 0.3,
-    "apto_credito": null,
-    "highlights": [
-     "Casa con jardín al frente y terraza grande",
-     "Hogar a leña, mucha luz",
-     "Calle arbolada en Olivos"
-    ],
-    "red_flags": [
-     "100 m² totales: justo el mínimo",
-     "Aviso sin descripción",
-     "Patio real chico, el exterior es terraza"
-    ],
-    "summary": "Casita con encanto, terraza grande y luz, habitable con arreglos, pero justa en metros.",
-    "photos_key": "1423712681c0",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 52,
-   "components": {
-    "price": {
-     "value": 0.4,
-     "points": 8.7,
-     "max": 22,
-     "why": "USD 192.000 efectivo (incl. reforma 12.000), 1.800/m²"
-    },
-    "space": {
-     "value": 0.21,
-     "points": 3.9,
-     "max": 18,
-     "why": "100 m² tot, 100 cub, 5 amb"
-    },
-    "location": {
-     "value": 0.67,
-     "points": 10.0,
-     "max": 15,
-     "why": "5 cuadras a Maipú, 13 a est. La Lucila (Mitre), plaza a 13 cdas (Plaza 9 de Julio)"
-    },
-    "condition": {
-     "value": 0.62,
-     "points": 8.1,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 12.000"
-    },
-    "patio": {
-     "value": 0.3,
-     "points": 3.0,
-     "max": 10,
-     "why": "patio chico ~15 m²"
-    },
-    "vertical": {
-     "value": 0.3,
-     "points": 2.1,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.7,
-     "points": 2.1,
-     "max": 3,
-     "why": "intermedio"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 45.7,
-   "ai_final": {
-    "score": 52,
-    "brief": "Por USD 180.000 con 100 m² totales y cochera en Olivos. A 5 cuadras de Maipú. Pide USD 1.800/m², requiere USD 12.000 en arreglos por humedad y cocina. El patio real es chico y tiene terraza.",
-    "reasons": [
-     "Suma puntos porque cumple con el precio, la cochera y la ubicación cerca de Maipú.",
-     "Baja levemente porque los 100 m² totales son justo el límite y el patio es chico.",
-     "El puntaje final refleja mejor el costo de la reforma necesaria dentro de su presupuesto."
-    ],
-    "at": "2026-10-24"
-   }
   },
   {
    "id": "ap-18986681",
@@ -29583,226 +29390,6 @@
    }
   },
   {
-   "id": "zp-60240833",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-chalet-4-ambientes-proximo-al-colegio-la-salle.-60240833.html",
-   "title": "Chalet 4 Ambientes, Próximo Al Colegio La Salle.",
-   "type": "casa",
-   "price_usd": 190000,
-   "total_m2": 140.0,
-   "covered_m2": 140.0,
-   "ambientes": 4.0,
-   "bedrooms": 3.0,
-   "bathrooms": 2.0,
-   "garage": 1.0,
-   "age_years": 50.0,
-   "address": "Fray Justo Sarmiento 2136, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5236941,
-   "lng": -58.5016332,
-   "description": "Chalet próximo al Colegio La Salle. En planta baja con entrada independiente, estudio o consultorio, con sector de espera y toilette. Living comedor con hogar. Cocina , Un baño completo y un dormitorio en planta baja. Garaje cubierto, patio lateral que permite doble circulación en la propiedad. Otro patio interno en planta baja. En planta alta dos dormitorios al frente uno con balcón, ambos con placard y ventanas al frente y al fondo. Un baño completo. Lavadero. Terraza. Propiedad muy luminosa, con diseño arquitectónico. Apto Crédito, venta no condicionada a reubicación.\nMedidas y datos aproximados suministrados por el propietario.\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699213.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699205.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699227.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699225.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699214.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699196.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699215.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699218.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699191.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699207.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699201.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699208.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699198.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699219.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699223.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699189.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699195.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699210.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699200.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699220.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699217.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699194.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699197.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699226.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699222.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699203.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699212.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699209.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699221.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699216.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699193.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699202.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699199.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699190.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699192.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699204.jpg"
-   ],
-   "tags": {
-    "Luminoso": "Muy luminoso",
-    "Orientación": "E",
-    "Superficie total": "140",
-    "Superficie cubierta": "140",
-    "Ambientes": "4",
-    "Dormitorios": "3",
-    "Baños": "2",
-    "Cochera": "1",
-    "Toilette": "1",
-    "Antigüedad": "50"
-   },
-   "credit_pill": true,
-   "publisher": "Cabrera Inmuebles",
-   "modified": "2026-09-24T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     190000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "140 m² tot.",
-    "140 m² cub.",
-    "4 amb.",
-    "2 baños",
-    "1 coch.",
-    "3 dorm.",
-    "1 toilette",
-    "50 años",
-    "E",
-    "Muy luminoso"
-   ],
-   "pct": 78,
-   "pct_score": 47.8,
-   "pct_n": 1729,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 14.8,
-    "puente_blocks": 28.4,
-    "villa_blocks": 12.5,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 6.9,
-     "effective_blocks": 6.9
-    },
-    "park": {
-     "name": "Plaza Libertad",
-     "m": 393
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 15000,
-    "reform_notes": "Impermeabilización de losa/techo por filtraciones visibles, pintura general, adecuación de instalación eléctrica y actualización básica de baños y cocina.",
-    "patio": "small",
-    "patio_m2_est": 12,
-    "patio_seen": true,
-    "terrace": true,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 0,
-    "apto_credito": true,
-    "highlights": [
-     "Ubicación muy buscada en Olivos cercana al Colegio La Salle",
-     "Apto crédito bancario con entrada independiente y cochera",
-     "Buena distribución arquitectónica con buena luz y ventilación"
-    ],
-    "red_flags": [
-     "Manchas claras de humedad de filtración en cielorrasos",
-     "Instalaciones y revestimientos originales de hace 50 años",
-     "Patio seco y pequeño, sin espacio de jardín con césped"
-    ],
-    "summary": "Es una muy buena opción apto crédito en Olivos que entra dentro del presupuesto de USD 20.000 para refaccionar, siempre que acepten un patio pequeño y embaldosado.",
-    "photos_key": "72e3b20884f9",
-    "analyst": "gemini:gemini-3.6-flash",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
-   },
-   "score": 50,
-   "components": {
-    "price": {
-     "value": 0.5,
-     "points": 11.1,
-     "max": 22,
-     "why": "USD 205.000 efectivo (incl. reforma 15.000), 1.357/m²"
-    },
-    "space": {
-     "value": 0.35,
-     "points": 6.2,
-     "max": 18,
-     "why": "140 m² tot, 140 cub, 4 amb"
-    },
-    "location": {
-     "value": 0.4,
-     "points": 6.0,
-     "max": 15,
-     "why": "15 cuadras a Maipú, 7 a est. Doctor Cetrángolo (Mitre), plaza a 4 cdas (Plaza Libertad)"
-    },
-    "condition": {
-     "value": 0.57,
-     "points": 7.4,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 15.000"
-    },
-    "patio": {
-     "value": 0.3,
-     "points": 3.0,
-     "max": 10,
-     "why": "patio chico ~12 m²"
-    },
-    "vertical": {
-     "value": 0.0,
-     "points": 0.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 47.8,
-   "ai_final": {
-    "score": 50,
-    "brief": "Precio joya de USD 190.000 y 140 m² en Olivos, cerca del tren. Pero tiene patio chico y seco, y cero potencial para construir arriba por la terraza.",
-    "reasons": [
-     "Bajo 4 puntos porque el patio es chico, seco y sin césped, algo que no le convence del todo a Tomás.",
-     "Bajo otro punto porque no tiene ningún potencial para construir hacia arriba, un punto que le importa bastante."
-    ],
-    "at": "2026-10-25"
-   }
-  },
-  {
    "id": "ap-18905120",
    "source": "argenprop",
    "url": "https://www.argenprop.com/ph-en-venta-en-olivos-uzal-panamericana-4-ambientes--18905120",
@@ -30489,7 +30076,7 @@
    "pct": 69,
    "pct_score": 49.6,
    "pct_n": 1140,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": null,
    "ai": null,
@@ -32397,7 +31984,22 @@
      183000
     ]
    ],
-   "last_seen": "2026-10-26",
+   "enriched": true,
+   "features_text": [
+    "194 m² tot.",
+    "150 m² cub.",
+    "5 amb.",
+    "3 baños",
+    "2 coch.",
+    "4 dorm.",
+    "35 años",
+    "NO"
+   ],
+   "photos_v": 2,
+   "pct": 96,
+   "pct_score": 60.4,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 5.6,
@@ -32414,18 +32016,6 @@
      "m": 627
     }
    },
-   "features_text": [
-    "194 m² tot.",
-    "150 m² cub.",
-    "5 amb.",
-    "3 baños",
-    "2 coch.",
-    "4 dorm.",
-    "35 años",
-    "NO"
-   ],
-   "enriched": true,
-   "photos_v": 2,
    "ai": {
     "condition": 3,
     "reform_usd": 18000,
@@ -32534,10 +32124,7 @@
      "La lectura de fotos indica que tiene cero potencial para construir hacia arriba."
     ],
     "at": "2026-10-26"
-   },
-   "pct": 96,
-   "pct_score": 60.4,
-   "pct_n": 1746
+   }
   },
   {
    "id": "ap-20473447",
@@ -32780,7 +32367,7 @@
    "pct": 78,
    "pct_score": 47.9,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 5.1,
@@ -34822,6 +34409,170 @@
    "score_calc": 46.0
   },
   {
+   "id": "zp-60541425",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-vemta-3-ambientes-en-venta-en-olivos-vicente-60541425.html",
+   "title": "Casa en Vemta 3 Ambientes en Venta en Olivos, Vicente Lopez",
+   "type": "casa",
+   "price_usd": 240000,
+   "total_m2": 230.0,
+   "covered_m2": 160.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 2.0,
+   "age_years": 48.0,
+   "address": "Buenos Aires 3116, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5105515,
+   "lng": -58.4963913,
+   "description": "Casa en venta en Olivos, Vicente López, sobre un lote de 10,56 x 22 metros, con garage cubierto para 2 autos, jardín al fondo y plano aprobado para construir una planta alta. Apta crédito.\n¿Qué ofrece esta casa?\nAl ingresar: living comedor integrado con la cocina, 2 dormitorios con placard, 1 baño completo y toilette. El garage tiene portón de madera y capacidad para 2 vehículos. Al fondo: jardín y 2 cuartos de guardado separados.\nTodos los servicios instalados: agua corriente, gas natural, cloaca y electricidad.\n¿Tiene posibilidad de ampliar?\nSí. La casa tiene una escalera de acceso directo desde la calle y plano aprobado para construir una planta alta: una oportunidad para comprar hoy y seguir construyendo. Pisos de cerámico.\n¿Dónde está ubicada?\nBuenos Aires 3116, Olivos, partido de Vicente López, provincia de Buenos Aires. Zona consolidada, con todos los servicios municipales.\nCaracterísticas principales:\n- 3 ambientes: living comedor integrado con cocina y 2 dormitorios con placard\n- 1 baño completo y toilette\n- Garage cubierto para 2 vehículos con portón de madera\n- Jardín al fondo y 2 cuartos de guardado\n- Plano aprobado para planta alta\n- Pisos de cerámico\n- Lote de 10,56 x 22 m (230 m²), 160 m² cubiertos\n- Servicios: agua, gas, cloaca y electricidad\nConsultas y visitas: WhatsApp +54 9 11",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088035091.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088035461.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030202.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030199.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030206.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030209.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030204.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030203.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088030201.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034010.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034014.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034017.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034020.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034007.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/14/25/720x532/2088034011.jpg"
+   ],
+   "tags": {
+    "Luminoso": "Muy luminoso",
+    "Orientación": "N",
+    "Superficie total": "230",
+    "Superficie cubierta": "160",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Cocheras": "2",
+    "Toilette": "1",
+    "Antigüedad": "48"
+   },
+   "credit_pill": false,
+   "publisher": "Andrea Fernandez",
+   "modified": "2026-10-26T19:58:55-0400",
+   "first_seen": "2026-10-27",
+   "price_history": [
+    [
+     "2026-10-27",
+     240000
+    ]
+   ],
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 4.5,
+    "puente_blocks": 35.8,
+    "villa_blocks": 17.0,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 8.2,
+     "effective_blocks": 8.2
+    },
+    "park": {
+     "name": "De los Inmigrantes",
+     "m": 776
+    }
+   },
+   "features_text": [
+    "230 m² tot.",
+    "160 m² cub.",
+    "3 amb.",
+    "1 baño",
+    "2 coch.",
+    "2 dorm.",
+    "1 toilette",
+    "48 años",
+    "N",
+    "Muy luminoso"
+   ],
+   "enriched": true,
+   "photos_v": 2,
+   "ai": null,
+   "score": 45.9,
+   "components": {
+    "price": {
+     "value": 0.44,
+     "points": 9.6,
+     "max": 22,
+     "why": "USD 240.000 efectivo, 1.043/m²"
+    },
+    "space": {
+     "value": 0.53,
+     "points": 9.6,
+     "max": 18,
+     "why": "230 m² tot, 160 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.59,
+     "points": 8.8,
+     "max": 15,
+     "why": "4 cuadras a Maipú, 8 a est. Bartolomé Mitre (Mitre), plaza a 8 cdas (De los Inmigrantes)"
+    },
+    "condition": {
+     "value": 0.5,
+     "points": 6.5,
+     "max": 13,
+     "why": "sin IA; antigüedad 48.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 4.0,
+     "max": 10,
+     "why": "menciona patio/jardín"
+    },
+    "vertical": {
+     "value": 0.6,
+     "points": 4.2,
+     "max": 7,
+     "why": "heurística: casa, una planta"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "2 cochera"
+    },
+    "quiet": {
+     "value": 0.54,
+     "points": 1.6,
+     "max": 3,
+     "why": "intermedio"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luminoso según aviso"
+    }
+   },
+   "discard": [],
+   "flags": [
+    "sin análisis IA",
+    "sobre presupuesto (USD 240.000)"
+   ],
+   "score_calc": 45.9,
+   "pct": 73,
+   "pct_score": 45.9,
+   "pct_n": 1750
+  },
+  {
    "id": "tk-7120872",
    "source": "tokko",
    "url": "https://www.molinariprop.com.ar/p/7120872-PH-en-Venta-en-Florida-Oeste-italia--al-4000",
@@ -35347,7 +35098,7 @@
    "pct": 72,
    "pct_score": 45.5,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 12.6,
@@ -35679,7 +35430,7 @@
    "pct": 71,
    "pct_score": 45.3,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 4.5,
@@ -35766,6 +35517,227 @@
     "datos parciales"
    ],
    "score_calc": 45.3
+  },
+  {
+   "id": "zp-60240833",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-chalet-4-ambientes-proximo-al-colegio-la-salle.-60240833.html",
+   "title": "Chalet 4 Ambientes, Próximo Al Colegio La Salle.",
+   "type": "casa",
+   "price_usd": 190000,
+   "total_m2": 140.0,
+   "covered_m2": 140.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 2.0,
+   "garage": 1.0,
+   "age_years": 50.0,
+   "address": "Fray Justo Sarmiento 2136, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5236941,
+   "lng": -58.5016332,
+   "description": "Chalet próximo al Colegio La Salle. En planta baja con entrada independiente, estudio o consultorio, con sector de espera y toilette. Living comedor con hogar. Cocina , Un baño completo y un dormitorio en planta baja. Garaje cubierto, patio lateral que permite doble circulación en la propiedad. Otro patio interno en planta baja. En planta alta dos dormitorios al frente uno con balcón, ambos con placard y ventanas al frente y al fondo. Un baño completo. Lavadero. Terraza. Propiedad muy luminosa, con diseño arquitectónico. Apto Crédito, venta no condicionada a reubicación.\nMedidas y datos aproximados suministrados por el propietario.\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699213.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699205.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699227.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699225.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699214.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699196.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699215.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699218.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699191.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699207.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699201.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699208.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699198.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699219.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699223.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699189.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699195.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699210.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699200.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699220.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699217.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699194.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699197.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699226.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699222.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699203.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699212.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699209.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699221.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699216.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699193.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699202.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699199.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699190.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699192.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/24/08/33/720x532/2080699204.jpg"
+   ],
+   "tags": {
+    "Luminoso": "Muy luminoso",
+    "Orientación": "E",
+    "Superficie total": "140",
+    "Superficie cubierta": "140",
+    "Ambientes": "4",
+    "Dormitorios": "3",
+    "Baños": "2",
+    "Cochera": "1",
+    "Toilette": "1",
+    "Antigüedad": "50"
+   },
+   "credit_pill": true,
+   "publisher": "Cabrera Inmuebles",
+   "modified": "2026-09-24T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     190000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "140 m² tot.",
+    "140 m² cub.",
+    "4 amb.",
+    "2 baños",
+    "1 coch.",
+    "3 dorm.",
+    "1 toilette",
+    "50 años",
+    "E",
+    "Muy luminoso"
+   ],
+   "pct": 78,
+   "pct_score": 47.8,
+   "pct_n": 1729,
+   "last_seen": "2026-10-26",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 14.8,
+    "puente_blocks": 28.4,
+    "villa_blocks": 12.5,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 6.9,
+     "effective_blocks": 6.9
+    },
+    "park": {
+     "name": "Plaza Libertad",
+     "m": 393
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 15000,
+    "reform_notes": "Impermeabilización de losa/techo por filtraciones visibles, pintura general, adecuación de instalación eléctrica y actualización básica de baños y cocina.",
+    "patio": "small",
+    "patio_m2_est": 12,
+    "patio_seen": true,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 0,
+    "apto_credito": true,
+    "highlights": [
+     "Ubicación muy buscada en Olivos cercana al Colegio La Salle",
+     "Apto crédito bancario con entrada independiente y cochera",
+     "Buena distribución arquitectónica con buena luz y ventilación"
+    ],
+    "red_flags": [
+     "Manchas claras de humedad de filtración en cielorrasos",
+     "Instalaciones y revestimientos originales de hace 50 años",
+     "Patio seco y pequeño, sin espacio de jardín con césped"
+    ],
+    "summary": "Es una muy buena opción apto crédito en Olivos que entra dentro del presupuesto de USD 20.000 para refaccionar, siempre que acepten un patio pequeño y embaldosado.",
+    "photos_key": "72e3b20884f9",
+    "analyst": "gemini:gemini-3.6-flash",
+    "analysed_at": "2026-10-24",
+    "prompt_version": 2
+   },
+   "score": 45,
+   "components": {
+    "price": {
+     "value": 0.5,
+     "points": 11.1,
+     "max": 22,
+     "why": "USD 205.000 efectivo (incl. reforma 15.000), 1.357/m²"
+    },
+    "space": {
+     "value": 0.35,
+     "points": 6.2,
+     "max": 18,
+     "why": "140 m² tot, 140 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.4,
+     "points": 6.0,
+     "max": 15,
+     "why": "15 cuadras a Maipú, 7 a est. Doctor Cetrángolo (Mitre), plaza a 4 cdas (Plaza Libertad)"
+    },
+    "condition": {
+     "value": 0.57,
+     "points": 7.4,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 15.000"
+    },
+    "patio": {
+     "value": 0.3,
+     "points": 3.0,
+     "max": 10,
+     "why": "patio chico ~12 m²"
+    },
+    "vertical": {
+     "value": 0.0,
+     "points": 0.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 47.8,
+   "ai_final": {
+    "score": 45,
+    "brief": "Chalet bien de precio (USD 190k) y cerca del tren, pero el patio es minúsculo (12m2) y seco, casi sin verde. Está al límite de distancia de Maipú (15 cdas). Requiere USD 15k en arreglos por humedad y antigüedad. Apto crédito.",
+    "reasons": [
+     "El patio de 12m² es puramente funcional y seco, muy lejos del jardín amplio que buscás como prioridad.",
+     "Ubicación al límite: está a casi 15 cuadras de Maipú, aunque compensa un poco la cercanía al tren Cetrángolo.",
+     "Relación precio/m² atractiva, pero la falta de espacio descubierto real penaliza mucho el puntaje final."
+    ],
+    "at": "2026-10-27"
+   }
   },
   {
    "id": "ml-MLA3992998294",
@@ -36129,205 +36101,13 @@
    "score_calc": 46.6,
    "ai_final": {
     "score": 45,
-    "brief": "PH en PB al frente en Olivos con 171 m² totales, 3 ambientes y gran jardín de 70 m². A 4 cuadras de Maipú. Sin precio publicado y con unidad arriba.",
+    "brief": "PH en PB al frente en Olivos a 4 cuadras de Maipú con 171 m² totales y gran jardín de 70 m². Cocina y baños reciclados. El aviso no aclara el precio, condición obligatoria para avanzar.",
     "reasons": [
-     "No figura el precio de venta en el aviso, lo cual es un impedimento crítico para evaluar su principal requisito.",
-     "Tiene una unidad arriba según las fotos y red flags, lo que incumple la preferencia de no ser PH superpuesto."
+     "El aviso no indica el precio en USD, lo cual incumple el requisito obligatorio principal de Tomás.",
+     "Tiene unidad arriba según las fotos, lo que choca con la preferencia de no ser superpuestos.",
+     "El algoritmo penaliza la falta de precio pero mantiene una base alta por metraje y jardín."
     ],
-    "at": "2026-10-25"
-   }
-  },
-  {
-   "id": "ml-MLA4009143472",
-   "source": "mercadolibre",
-   "url": "https://casa.mercadolibre.com.ar/MLA-4009143472-ph-en-olivos-_JM",
-   "title": "Ph En Olivos",
-   "type": "casa",
-   "price_usd": 185000.0,
-   "total_m2": 104.0,
-   "covered_m2": 64.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 2.0,
-   "garage": 0,
-   "age_years": 8.0,
-   "address": "Juan B. Justo  Al 2000, Olivos, Vicente López, Bs.As. G.B.A. Norte",
-   "geocode_query": "Juan B. Justo 2000, Olivos, Vicente López, Buenos Aires",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5241844,
-   "lng": -58.4983912,
-   "description": "Excelente Chalet en Ph al Fondo , amplio Living-comedor , cocina -comedor diario , 2 baños , Dormitorio principal con vestidor , Escritorio o 2do dormitorio pequeño , Quincho , Parrilla y Patio . Inmejorable ubicación , cercano a Estación de Tren . \n \nPara visitarlo comunicarse al 4794-1500\nALVAREZ DUPOT PROPIEDADES .",
-   "photos": [
-    "https://http2.mlstatic.com/D_NQ_NP_910875-MLA118447624083_092026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_627974-MLA118447624085_092026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_694341-MLA118447624087_092026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_779300-MLA118447624089_092026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_692537-MLA118447624091_092026-O.jpg"
-   ],
-   "tags": {},
-   "credit_pill": false,
-   "publisher": null,
-   "modified": null,
-   "partial_data": false,
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     185000.0
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "Superficie total: 104 m²",
-    "Superficie cubierta: 64 m²",
-    "Dormitorios: 2",
-    "Baños: 2",
-    "Cocheras: 0",
-    "Antigüedad: 8 años",
-    "Ambientes: 3",
-    "Tipo de casa: Casa",
-    "Expensas: 0 ARS",
-    "Aire acondicionado: No",
-    "Calefacción: No",
-    "TV por cable: No",
-    "Gas natural: No",
-    "Con conexión para lavarropas: No",
-    "Agua corriente: Sí",
-    "Seguridad: No",
-    "Acceso controlado: No",
-    "Parrilla: Sí",
-    "Pileta: No",
-    "Terraza: No",
-    "Comedor: No",
-    "Living: No",
-    "Patio: No",
-    "Dormitorio en suite: No",
-    "Jardín: No",
-    "Cocina: No"
-   ],
-   "photos_v": 2,
-   "pct": 71,
-   "pct_score": 45.2,
-   "pct_n": 1729,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 12.3,
-    "puente_blocks": 25.6,
-    "villa_blocks": 15.3,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 4.1,
-     "effective_blocks": 4.1
-    },
-    "park": {
-     "name": "Plaza Amigos de Florida",
-     "m": 503
-    }
-   },
-   "ai": {
-    "condition": 5,
-    "reform_usd": 1000,
-    "reform_notes": "Para entrar; construcción de 8 años.",
-    "patio": "small",
-    "patio_m2_est": 20,
-    "pasillo_ph": true,
-    "natural_light": 4,
-    "quiet": 4,
-    "vertical_potential": 0.05,
-    "apto_credito": null,
-    "highlights": [
-     "Moderno (8 años), impecable",
-     "2 baños, vestidor, quincho con parrilla",
-     "Cerca de la estación"
-    ],
-    "red_flags": [
-     "PH al fondo",
-     "Solo 64 m² cubiertos, segundo dormitorio mínimo",
-     "Patio de baldosas entre muros altos"
-    ],
-    "summary": "Chalet-PH al fondo casi nuevo y para entrar, pero chico y en formato fondo con patio encajonado.",
-    "photos_key": "455489244a99",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 45,
-   "components": {
-    "price": {
-     "value": 0.44,
-     "points": 9.6,
-     "max": 22,
-     "why": "USD 186.000 efectivo (incl. reforma 1.000), 1.779/m²"
-    },
-    "space": {
-     "value": 0.01,
-     "points": 0.2,
-     "max": 18,
-     "why": "104 m² tot, 64 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.62,
-     "points": 9.3,
-     "max": 15,
-     "why": "12 cuadras a Maipú, 4 a est. Doctor Cetrángolo (Mitre), plaza a 5 cdas (Plaza Amigos de Florida)"
-    },
-    "condition": {
-     "value": 1.0,
-     "points": 13.0,
-     "max": 13,
-     "why": "estado 5/5, reforma ~USD 1.000"
-    },
-    "patio": {
-     "value": 0.33,
-     "points": 3.3,
-     "max": 10,
-     "why": "patio chico ~20 m²"
-    },
-    "vertical": {
-     "value": 0.05,
-     "points": 0.4,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 0.7,
-     "points": 2.8,
-     "max": 4,
-     "why": "menciona cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 1.5,
-     "max": 2,
-     "why": "luz 4/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 45.2,
-   "ai_final": {
-    "score": 45,
-    "brief": "Precio OK (USD 185.000, USD 1.779/m²) y buen estado (8 años). Pero es un PH al fondo por pasillo, lo que viola un requisito obligatorio. Superficie cubierta justa (64 m²) y patio chico entre muros.",
-    "reasons": [
-     "Es un PH al fondo con acceso por pasillo, lo cual infringe directamente la preferencia obligatoria de Tomás.",
-     "El espacio cubierto es muy justo (64 m²) y el segundo dormitorio es extremadamente pequeño.",
-     "El patio es chico (aprox. 20 m²) y encajonado entre muros altos, restando puntos en una de sus prioridades."
-    ],
-    "at": "2026-10-25"
+    "at": "2026-10-27"
    }
   },
   {
@@ -37073,7 +36853,7 @@
    "pct": 69,
    "pct_score": 44.6,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 4.7,
@@ -40338,6 +40118,197 @@
     "datos parciales"
    ],
    "score_calc": 43.2
+  },
+  {
+   "id": "zp-60509848",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-olivos-vicente-lopez-60509848.html",
+   "title": "Casa en Venta Olivos Vicente Lopez",
+   "type": "casa",
+   "price_usd": 180000,
+   "total_m2": 100.0,
+   "covered_m2": 100.0,
+   "ambientes": 5.0,
+   "bedrooms": 3.0,
+   "bathrooms": 1.0,
+   "garage": 1.0,
+   "age_years": 72.0,
+   "address": "Alférez Hipólito Bouchard 1900, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.501808751654,
+   "lng": -58.501660823822,
+   "description": "Corredor Responsable: Romina Chiffel Col. 7801. TºXIV, Fº120 CPI",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087277556.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240589.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240528.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240607.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240630.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240621.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240603.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240632.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240523.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240615.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240541.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240507.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240517.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240534.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240547.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/98/48/720x532/2087240596.jpg"
+   ],
+   "tags": {
+    "Luminoso": null,
+    "Superficie total": "100",
+    "Superficie cubierta": "100",
+    "Ambientes": "5",
+    "Dormitorios": "3",
+    "Baño": "1",
+    "Cochera": "1",
+    "Antigüedad": "72"
+   },
+   "credit_pill": false,
+   "publisher": "Remax Roble",
+   "modified": "2026-10-23T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     180000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "100 m² tot.",
+    "100 m² cub.",
+    "5 amb.",
+    "1 baño",
+    "1 coch.",
+    "3 dorm.",
+    "72 años"
+   ],
+   "pct": 73,
+   "pct_score": 45.7,
+   "pct_n": 1729,
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 5.1,
+    "puente_blocks": 46.6,
+    "villa_blocks": 19.7,
+    "station": {
+     "name": "La Lucila",
+     "line": "Mitre",
+     "blocks": 13.0,
+     "effective_blocks": 13.0
+    },
+    "park": {
+     "name": "Plaza 9 de Julio",
+     "m": 1311
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 12000,
+    "reform_notes": "Pintura y humedad en muros, cocina vieja, persianas; terraza y estructura en buen estado.",
+    "patio": "small",
+    "patio_m2_est": 15,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 0.3,
+    "apto_credito": null,
+    "highlights": [
+     "Casa con jardín al frente y terraza grande",
+     "Hogar a leña, mucha luz",
+     "Calle arbolada en Olivos"
+    ],
+    "red_flags": [
+     "100 m² totales: justo el mínimo",
+     "Aviso sin descripción",
+     "Patio real chico, el exterior es terraza"
+    ],
+    "summary": "Casita con encanto, terraza grande y luz, habitable con arreglos, pero justa en metros.",
+    "photos_key": "1423712681c0",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 43,
+   "components": {
+    "price": {
+     "value": 0.4,
+     "points": 8.7,
+     "max": 22,
+     "why": "USD 192.000 efectivo (incl. reforma 12.000), 1.800/m²"
+    },
+    "space": {
+     "value": 0.21,
+     "points": 3.9,
+     "max": 18,
+     "why": "100 m² tot, 100 cub, 5 amb"
+    },
+    "location": {
+     "value": 0.67,
+     "points": 10.0,
+     "max": 15,
+     "why": "5 cuadras a Maipú, 13 a est. La Lucila (Mitre), plaza a 13 cdas (Plaza 9 de Julio)"
+    },
+    "condition": {
+     "value": 0.62,
+     "points": 8.1,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 12.000"
+    },
+    "patio": {
+     "value": 0.3,
+     "points": 3.0,
+     "max": 10,
+     "why": "patio chico ~15 m²"
+    },
+    "vertical": {
+     "value": 0.3,
+     "points": 2.1,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.7,
+     "points": 2.1,
+     "max": 3,
+     "why": "intermedio"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 45.7,
+   "ai_final": {
+    "score": 43,
+    "brief": "Ubicación ideal a 5 cuadras de Maipú y precio de USD 180.000. Pero ojo: tiene 100m² cubiertos sobre 100m² totales, lo que significa que el patio es casi inexistente. No cumple con tu deseo de un jardín grande a nivel suelo.",
+    "reasons": [
+     "Patio inexistente: 100m² cubiertos sobre 100m² totales incumplen tu requisito obligatorio de jardín a nivel del suelo.",
+     "Ubicación excelente: a 5 cuadras de Maipú, está en tu zona ideal para moverte a pie.",
+     "Precio favorable: los USD 180.000 son competitivos y permiten cubrir los USD 12.000 de reforma estimados."
+    ],
+    "at": "2026-10-27"
+   }
   },
   {
    "id": "ml-MLA3979151050",
@@ -45748,7 +45719,7 @@
    "pct": 54,
    "pct_score": 41.1,
    "pct_n": 1746,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 12.2,
@@ -48714,7 +48685,7 @@
    "pct": 50,
    "pct_score": 40.1,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 10.0,
@@ -49546,7 +49517,7 @@
    "pct": 36,
    "pct_score": 40.0,
    "pct_n": 1711,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geocode_query": "ORO, FRAY JUSTO SANTAMARIA DE 3300, Olivos, Vicente López, Buenos Aires",
    "geo": null,
@@ -51001,7 +50972,7 @@
    "pct": 46,
    "pct_score": 39.3,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 8.3,
@@ -53417,6 +53388,199 @@
    "discard": [],
    "flags": [],
    "score_calc": 38.1
+  },
+  {
+   "id": "ml-MLA4009143472",
+   "source": "mercadolibre",
+   "url": "https://casa.mercadolibre.com.ar/MLA-4009143472-ph-en-olivos-_JM",
+   "title": "Ph En Olivos",
+   "type": "casa",
+   "price_usd": 185000.0,
+   "total_m2": 104.0,
+   "covered_m2": 64.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 2.0,
+   "garage": 0,
+   "age_years": 8.0,
+   "address": "Juan B. Justo  Al 2000, Olivos, Vicente López, Bs.As. G.B.A. Norte",
+   "geocode_query": "Juan B. Justo 2000, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5241844,
+   "lng": -58.4983912,
+   "description": "Excelente Chalet en Ph al Fondo , amplio Living-comedor , cocina -comedor diario , 2 baños , Dormitorio principal con vestidor , Escritorio o 2do dormitorio pequeño , Quincho , Parrilla y Patio . Inmejorable ubicación , cercano a Estación de Tren . \n \nPara visitarlo comunicarse al 4794-1500\nALVAREZ DUPOT PROPIEDADES .",
+   "photos": [
+    "https://http2.mlstatic.com/D_NQ_NP_910875-MLA118447624083_092026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_627974-MLA118447624085_092026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_694341-MLA118447624087_092026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_779300-MLA118447624089_092026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_692537-MLA118447624091_092026-O.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": null,
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     185000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Superficie total: 104 m²",
+    "Superficie cubierta: 64 m²",
+    "Dormitorios: 2",
+    "Baños: 2",
+    "Cocheras: 0",
+    "Antigüedad: 8 años",
+    "Ambientes: 3",
+    "Tipo de casa: Casa",
+    "Expensas: 0 ARS",
+    "Aire acondicionado: No",
+    "Calefacción: No",
+    "TV por cable: No",
+    "Gas natural: No",
+    "Con conexión para lavarropas: No",
+    "Agua corriente: Sí",
+    "Seguridad: No",
+    "Acceso controlado: No",
+    "Parrilla: Sí",
+    "Pileta: No",
+    "Terraza: No",
+    "Comedor: No",
+    "Living: No",
+    "Patio: No",
+    "Dormitorio en suite: No",
+    "Jardín: No",
+    "Cocina: No"
+   ],
+   "photos_v": 2,
+   "pct": 71,
+   "pct_score": 45.2,
+   "pct_n": 1729,
+   "last_seen": "2026-10-26",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 12.3,
+    "puente_blocks": 25.6,
+    "villa_blocks": 15.3,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 4.1,
+     "effective_blocks": 4.1
+    },
+    "park": {
+     "name": "Plaza Amigos de Florida",
+     "m": 503
+    }
+   },
+   "ai": {
+    "condition": 5,
+    "reform_usd": 1000,
+    "reform_notes": "Para entrar; construcción de 8 años.",
+    "patio": "small",
+    "patio_m2_est": 20,
+    "pasillo_ph": true,
+    "natural_light": 4,
+    "quiet": 4,
+    "vertical_potential": 0.05,
+    "apto_credito": null,
+    "highlights": [
+     "Moderno (8 años), impecable",
+     "2 baños, vestidor, quincho con parrilla",
+     "Cerca de la estación"
+    ],
+    "red_flags": [
+     "PH al fondo",
+     "Solo 64 m² cubiertos, segundo dormitorio mínimo",
+     "Patio de baldosas entre muros altos"
+    ],
+    "summary": "Chalet-PH al fondo casi nuevo y para entrar, pero chico y en formato fondo con patio encajonado.",
+    "photos_key": "455489244a99",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 38,
+   "components": {
+    "price": {
+     "value": 0.44,
+     "points": 9.6,
+     "max": 22,
+     "why": "USD 186.000 efectivo (incl. reforma 1.000), 1.779/m²"
+    },
+    "space": {
+     "value": 0.01,
+     "points": 0.2,
+     "max": 18,
+     "why": "104 m² tot, 64 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.62,
+     "points": 9.3,
+     "max": 15,
+     "why": "12 cuadras a Maipú, 4 a est. Doctor Cetrángolo (Mitre), plaza a 5 cdas (Plaza Amigos de Florida)"
+    },
+    "condition": {
+     "value": 1.0,
+     "points": 13.0,
+     "max": 13,
+     "why": "estado 5/5, reforma ~USD 1.000"
+    },
+    "patio": {
+     "value": 0.33,
+     "points": 3.3,
+     "max": 10,
+     "why": "patio chico ~20 m²"
+    },
+    "vertical": {
+     "value": 0.05,
+     "points": 0.4,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0.7,
+     "points": 2.8,
+     "max": 4,
+     "why": "menciona cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 45.2,
+   "ai_final": {
+    "score": 38,
+    "brief": "Buen precio (USD 185.000, USD 1.779/m²) y a 4 cuadras del tren. Pero es un PH al fondo por pasillo, lo que viola tus obligatorios. Además, tiene solo 64 m² cubiertos y un patio chico entre medianeras altas.",
+    "reasons": [
+     "Es un PH al fondo con acceso por pasillo, violando directamente tu requisito obligatorio de no vivir en un pasillo.",
+     "La superficie cubierta es de solo 64 m² (con un segundo dormitorio muy chico), quedando por debajo de lo ideal para 3 ambientes.",
+     "El puntaje se reduce porque el patio es chico y encajonado entre muros altos, afectando la luminosidad y el espacio exterior."
+    ],
+    "at": "2026-10-27"
+   }
   },
   {
    "id": "ml-MLA2152377001",
@@ -59499,201 +59663,6 @@
    }
   },
   {
-   "id": "ml-MLA3836458730",
-   "source": "mercadolibre",
-   "url": "https://casa.mercadolibre.com.ar/MLA-3836458730-casa-florida-_JM",
-   "title": "Casa - Florida",
-   "type": "casa",
-   "price_usd": 185000.0,
-   "total_m2": 150.0,
-   "covered_m2": 80.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 30.0,
-   "address": "Fray Justo Sarmiento Al 600, Florida, Vicente López, Bs.As. G.B.A. Norte",
-   "geocode_query": "Fray Justo Sarmiento 600, Florida, Vicente López, Buenos Aires",
-   "zone": "Florida",
-   "address_exact": true,
-   "lat": -34.5378953,
-   "lng": -58.4905438,
-   "description": "Chalet (PH al frente) en una planta, dos dormitorios, living comedor, baño completo, cocina independiente con barra, patio, terraza.\nExcelente ubicación, Florida Mitre. VENTA CON RENTA. ALQUILADO HASTA FINES 2026.\n\nPARA VERLO 4794-1500 \nALVAREZ DUPOT PROPIEDADES .",
-   "photos": [
-    "https://http2.mlstatic.com/D_NQ_NP_910937-MLA115127775050_082026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_942510-MLA115127775052_082026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_704671-MLA115127775054_082026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_847104-MLA115127775056_082026-O.jpg",
-    "https://http2.mlstatic.com/D_NQ_NP_832435-MLA115127775058_082026-O.jpg"
-   ],
-   "tags": {},
-   "credit_pill": false,
-   "publisher": null,
-   "modified": null,
-   "partial_data": false,
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     185000.0
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "Superficie total: 150 m²",
-    "Superficie cubierta: 80 m²",
-    "Dormitorios: 2",
-    "Baños: 1",
-    "Cocheras: 0",
-    "Antigüedad: 30 años",
-    "Ambientes: 3",
-    "Cantidad de pisos: 1",
-    "Tipo de casa: Casa",
-    "Orientación: Este",
-    "Expensas: 0 ARS",
-    "Acceso a internet: Sí",
-    "Aire acondicionado: No",
-    "Calefacción: No",
-    "TV por cable: Sí",
-    "Gas natural: Sí",
-    "Con conexión para lavarropas: No",
-    "Agua corriente: Sí",
-    "Seguridad: No",
-    "Acceso controlado: No",
-    "Pileta: No",
-    "Terraza: Sí",
-    "Comedor: No",
-    "Living: Sí",
-    "Patio: Sí",
-    "Dormitorio en suite: No",
-    "Jardín: No",
-    "Cocina: No"
-   ],
-   "photos_v": 2,
-   "pct": 78,
-   "pct_score": 47.8,
-   "pct_n": 1729,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 11.9,
-    "puente_blocks": 13.2,
-    "villa_blocks": 30.4,
-    "station": {
-     "name": "Juan B. Justo",
-     "line": "Mitre",
-     "blocks": 6.4,
-     "effective_blocks": 6.4
-    },
-    "park": {
-     "name": "Eduardo Gonzalez",
-     "m": 702
-    }
-   },
-   "ai": {
-    "condition": 4,
-    "reform_usd": 5000,
-    "reform_notes": "Habitable; baño y cocina recientes, pintura y humedad leve en muros del patio.",
-    "patio": "small",
-    "patio_m2_est": 15,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 4,
-    "vertical_potential": 0.35,
-    "apto_credito": null,
-    "highlights": [
-     "PH al frente tipo chalet en una planta",
-     "Cocina y baño actualizados",
-     "Florida Mitre/este"
-    ],
-    "red_flags": [
-     "Fotos viejas, aviso de hace años",
-     "Patio chico de baldosas",
-     "Solo 80 m² cubiertos, 2 dormitorios"
-    ],
-    "summary": "PH tipo chalet en una planta, prolijo y habitable, pero chico y con un patio de baldosas modesto.",
-    "photos_key": "184f0a285f04",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 35,
-   "components": {
-    "price": {
-     "value": 0.63,
-     "points": 13.9,
-     "max": 22,
-     "why": "USD 190.000 efectivo (incl. reforma 5.000), 1.233/m²"
-    },
-    "space": {
-     "value": 0.14,
-     "points": 2.5,
-     "max": 18,
-     "why": "150 m² tot, 80 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.38,
-     "points": 5.7,
-     "max": 15,
-     "why": "12 cuadras a Maipú, 6 a est. Juan B. Justo (Mitre), plaza a 7 cdas (Eduardo Gonzalez)"
-    },
-    "condition": {
-     "value": 0.88,
-     "points": 11.4,
-     "max": 13,
-     "why": "estado 4/5, reforma ~USD 5.000"
-    },
-    "patio": {
-     "value": 0.3,
-     "points": 3.0,
-     "max": 10,
-     "why": "patio chico ~15 m²"
-    },
-    "vertical": {
-     "value": 0.35,
-     "points": 2.4,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 0.7,
-     "points": 2.8,
-     "max": 4,
-     "why": "menciona cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 1.0,
-     "max": 2,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 47.8,
-   "ai_final": {
-    "score": 35,
-    "brief": "Cumple precio con USD 185.000 y ubicación en Florida, pero se descarta porque está alquilado con renta hasta fines de 2026 y no te podés mudar pronto.",
-    "reasons": [
-     "Tiene contrato de alquiler vigente hasta fines de 2026, lo que incumple tu requisito de mudarte pronto.",
-     "Al estar alquilado, no se puede verificar el estado actual y las fotos son viejas.",
-     "El patio es chico (15 m²) y solo tiene 80 m² cubiertos para tres ambientes."
-    ],
-    "at": "2026-10-25"
-   }
-  },
-  {
    "id": "ap-20457203",
    "source": "argenprop",
    "url": "https://www.argenprop.com/casa-en-venta-en-olivos-3-ambientes--20457203",
@@ -59887,6 +59856,198 @@
      "Ubicación: A casi 10 cuadras de Maipú, en el límite de tu zona ideal."
     ],
     "at": "2026-10-26"
+   }
+  },
+  {
+   "id": "zp-60405333",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-triplex-4-amb-olivos-terraza-parrilla-cocher-60405333.html",
+   "title": "Venta Triplex 4 Amb Olivos Terraza Parrilla Cocher",
+   "type": "casa",
+   "price_usd": 159000,
+   "total_m2": 110.0,
+   "covered_m2": 95.0,
+   "ambientes": 4.0,
+   "bedrooms": 2.0,
+   "bathrooms": 2.0,
+   "garage": 1.0,
+   "age_years": 26.0,
+   "address": "Pedro Goyena 3800, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5146701,
+   "lng": -58.5063012,
+   "description": "Corredor Responsable: Angélica Estefanía Berdun S.I. Nº 6575  / Marcela Bulnes CPI 6915  -\nContacto: Magdalena Menendez\nTRIPLEX 4 AMBIENTES CON PLAYROOM, TERRAZA Y PARRILLA\nExcelente dúplex de 4 ambientes desarrollado en tres plantas, ubicado en un entorno residencial y tranquilo de Olivos.\nLa planta baja cuenta con living comedor con cálido piso de madera entarugado, calefacción hogar de gas, cocina independiente y toilette de recepción. Además, dispone de espacio propio para guardar un vehículo.\nEn el primer piso se encuentran dos cómodos dormitorios, ambos con placard,  estufa tiro balanceado y split, un baño completo con ducha.\nEl segundo nivel ofrece un amplio práctico y versátil playroom, ideal como espacio de estar, escritorio, área de juegos o incluso para generar un dormitorio  adicional. Desde allí se accede a una agradable terraza, que incorpora sector de lavadero y parrilla, perfecta para disfrutar al aire libre.\nLa propiedad cuenta con aproximadamente 95 m² cubiertos, excelente entrada de luz natural gracias a su orientación noreste, calefacción y equipos de aire acondicionado.\nUna propiedad funcional y luminosa, con muy buenos espacios exteriores y una distribución ideal para quienes buscan la comodidad de una casa sin resignar una ubicación residencial y con buena conectividad.\n**Características principales:**\n* 4 ambientes\n* 2 dormitorios + Playroom\n* 1 baño completo + toilette\n* Living comedor\n* terraza y parrilla\n* cochera\ncolectivos 152 y 59\n* Cocina independiente\n* Terraza con parrilla\n* Lavadero\n* Espacio guarda coche\n* Calefacción\n* Aire acondicionado\n* Orientación noreste\n* 95 m² cubiertos aproximadamente\n* Antigüedad: 25 años\nRAU S.R.L. no ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios RE/MAX puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que RAU S.R.L. no interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados.\nComprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637674.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637852.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637788.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637646.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637802.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637732.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637632.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637687.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637744.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637757.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637769.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637818.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637661.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637703.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637717.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637835.jpg"
+   ],
+   "tags": {
+    "Luminoso": null,
+    "Superficie total": "110",
+    "Superficie cubierta": "95",
+    "Ambientes": "4",
+    "Dormitorios": "2",
+    "Baños": "2",
+    "Cochera": "1",
+    "Toilette": "1",
+    "Antigüedad": "26"
+   },
+   "credit_pill": false,
+   "publisher": "REMAX BLUE",
+   "modified": "2026-10-09T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     159000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "110 m² tot.",
+    "95 m² cub.",
+    "4 amb.",
+    "2 baños",
+    "1 coch.",
+    "2 dorm.",
+    "1 toilette",
+    "26 años"
+   ],
+   "pct": 76,
+   "pct_score": 46.8,
+   "pct_n": 1738,
+   "last_seen": "2026-10-26",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 14.7,
+    "puente_blocks": 38.0,
+    "villa_blocks": 6.8,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 14.6,
+     "effective_blocks": 14.6
+    },
+    "park": {
+     "name": "San Héctor Valdivieso Sáez",
+     "m": 7
+    }
+   },
+   "ai": {
+    "condition": 4,
+    "reform_usd": 4000,
+    "reform_notes": "Muy cuidado: pisos de madera, cocina con isla, baños ok; solo pintura y gustos personales.",
+    "patio": "small",
+    "patio_m2_est": 15,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 4,
+    "vertical_potential": 0.0,
+    "apto_credito": null,
+    "highlights": [
+     "Listo para mudarse",
+     "Espacio para auto y terraza con parrilla",
+     "Complejo prolijo en esquina residencial"
+    ],
+    "red_flags": [
+     "El 'patio' es el ingreso semicubierto, poco verde",
+     "Triplex: muchas escaleras"
+    ],
+    "summary": "Triplex impecable con cochera y terraza en complejo de Olivos; buen estado pero el espacio exterior a nivel es chico.",
+    "photos_key": "5d47f5a9613f",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 35,
+   "components": {
+    "price": {
+     "value": 0.7,
+     "points": 15.3,
+     "max": 22,
+     "why": "USD 163.000 efectivo (incl. reforma 4.000), 1.445/m²"
+    },
+    "space": {
+     "value": 0.16,
+     "points": 2.8,
+     "max": 18,
+     "why": "110 m² tot, 95 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.28,
+     "points": 4.2,
+     "max": 15,
+     "why": "15 cuadras a Maipú, 15 a est. Doctor Cetrángolo (Mitre), frente a plaza (San Héctor Valdivieso Sáez)"
+    },
+    "condition": {
+     "value": 0.88,
+     "points": 11.4,
+     "max": 13,
+     "why": "estado 4/5, reforma ~USD 4.000"
+    },
+    "patio": {
+     "value": 0.3,
+     "points": 3.0,
+     "max": 10,
+     "why": "patio chico ~15 m²"
+    },
+    "vertical": {
+     "value": 0.0,
+     "points": 0.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 4,
+     "max": 4,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 46.8,
+   "ai_final": {
+    "score": 35,
+    "brief": "Precio excelente de USD 159.000 y 110 m² en Olivos, pero es un tríplex sin patio real a nivel del suelo (tiene terraza) y con unidades superpuestas, lo que viola un requisito excluyente.",
+    "reasons": [
+     "Incumple el requisito obligatorio de tener patio o jardín propio a nivel del suelo (es un tríplex con terraza y entrada vehicular semicubierta).",
+     "Es un tríplex en altura y superpuesto, chocando directamente con su negativa a vivir en PHs en planta alta o unidades superpuestas.",
+     "El algoritmo sobreestimó la tipología: al tratarse de un tríplex en altura, no cumple con la estructura de casa o PH de planta baja que exige Tomás."
+    ],
+    "at": "2026-10-27"
    }
   },
   {
@@ -62798,198 +62959,6 @@
     "sobre presupuesto (USD 230.000)"
    ],
    "score_calc": 32.1
-  },
-  {
-   "id": "zp-60405333",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-triplex-4-amb-olivos-terraza-parrilla-cocher-60405333.html",
-   "title": "Venta Triplex 4 Amb Olivos Terraza Parrilla Cocher",
-   "type": "casa",
-   "price_usd": 159000,
-   "total_m2": 110.0,
-   "covered_m2": 95.0,
-   "ambientes": 4.0,
-   "bedrooms": 2.0,
-   "bathrooms": 2.0,
-   "garage": 1.0,
-   "age_years": 26.0,
-   "address": "Pedro Goyena 3800, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5146701,
-   "lng": -58.5063012,
-   "description": "Corredor Responsable: Angélica Estefanía Berdun S.I. Nº 6575  / Marcela Bulnes CPI 6915  -\nContacto: Magdalena Menendez\nTRIPLEX 4 AMBIENTES CON PLAYROOM, TERRAZA Y PARRILLA\nExcelente dúplex de 4 ambientes desarrollado en tres plantas, ubicado en un entorno residencial y tranquilo de Olivos.\nLa planta baja cuenta con living comedor con cálido piso de madera entarugado, calefacción hogar de gas, cocina independiente y toilette de recepción. Además, dispone de espacio propio para guardar un vehículo.\nEn el primer piso se encuentran dos cómodos dormitorios, ambos con placard,  estufa tiro balanceado y split, un baño completo con ducha.\nEl segundo nivel ofrece un amplio práctico y versátil playroom, ideal como espacio de estar, escritorio, área de juegos o incluso para generar un dormitorio  adicional. Desde allí se accede a una agradable terraza, que incorpora sector de lavadero y parrilla, perfecta para disfrutar al aire libre.\nLa propiedad cuenta con aproximadamente 95 m² cubiertos, excelente entrada de luz natural gracias a su orientación noreste, calefacción y equipos de aire acondicionado.\nUna propiedad funcional y luminosa, con muy buenos espacios exteriores y una distribución ideal para quienes buscan la comodidad de una casa sin resignar una ubicación residencial y con buena conectividad.\n**Características principales:**\n* 4 ambientes\n* 2 dormitorios + Playroom\n* 1 baño completo + toilette\n* Living comedor\n* terraza y parrilla\n* cochera\ncolectivos 152 y 59\n* Cocina independiente\n* Terraza con parrilla\n* Lavadero\n* Espacio guarda coche\n* Calefacción\n* Aire acondicionado\n* Orientación noreste\n* 95 m² cubiertos aproximadamente\n* Antigüedad: 25 años\nRAU S.R.L. no ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios RE/MAX puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que RAU S.R.L. no interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados.\nComprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637674.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637852.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637788.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637646.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637802.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637732.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637632.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637687.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637744.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637757.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637769.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637818.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637661.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637703.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637717.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/40/53/33/720x532/2084637835.jpg"
-   ],
-   "tags": {
-    "Luminoso": null,
-    "Superficie total": "110",
-    "Superficie cubierta": "95",
-    "Ambientes": "4",
-    "Dormitorios": "2",
-    "Baños": "2",
-    "Cochera": "1",
-    "Toilette": "1",
-    "Antigüedad": "26"
-   },
-   "credit_pill": false,
-   "publisher": "REMAX BLUE",
-   "modified": "2026-10-09T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     159000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "110 m² tot.",
-    "95 m² cub.",
-    "4 amb.",
-    "2 baños",
-    "1 coch.",
-    "2 dorm.",
-    "1 toilette",
-    "26 años"
-   ],
-   "pct": 76,
-   "pct_score": 46.8,
-   "pct_n": 1738,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 14.7,
-    "puente_blocks": 38.0,
-    "villa_blocks": 6.8,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 14.6,
-     "effective_blocks": 14.6
-    },
-    "park": {
-     "name": "San Héctor Valdivieso Sáez",
-     "m": 7
-    }
-   },
-   "ai": {
-    "condition": 4,
-    "reform_usd": 4000,
-    "reform_notes": "Muy cuidado: pisos de madera, cocina con isla, baños ok; solo pintura y gustos personales.",
-    "patio": "small",
-    "patio_m2_est": 15,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 4,
-    "vertical_potential": 0.0,
-    "apto_credito": null,
-    "highlights": [
-     "Listo para mudarse",
-     "Espacio para auto y terraza con parrilla",
-     "Complejo prolijo en esquina residencial"
-    ],
-    "red_flags": [
-     "El 'patio' es el ingreso semicubierto, poco verde",
-     "Triplex: muchas escaleras"
-    ],
-    "summary": "Triplex impecable con cochera y terraza en complejo de Olivos; buen estado pero el espacio exterior a nivel es chico.",
-    "photos_key": "5d47f5a9613f",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 32,
-   "components": {
-    "price": {
-     "value": 0.7,
-     "points": 15.3,
-     "max": 22,
-     "why": "USD 163.000 efectivo (incl. reforma 4.000), 1.445/m²"
-    },
-    "space": {
-     "value": 0.16,
-     "points": 2.8,
-     "max": 18,
-     "why": "110 m² tot, 95 cub, 4 amb"
-    },
-    "location": {
-     "value": 0.28,
-     "points": 4.2,
-     "max": 15,
-     "why": "15 cuadras a Maipú, 15 a est. Doctor Cetrángolo (Mitre), frente a plaza (San Héctor Valdivieso Sáez)"
-    },
-    "condition": {
-     "value": 0.88,
-     "points": 11.4,
-     "max": 13,
-     "why": "estado 4/5, reforma ~USD 4.000"
-    },
-    "patio": {
-     "value": 0.3,
-     "points": 3.0,
-     "max": 10,
-     "why": "patio chico ~15 m²"
-    },
-    "vertical": {
-     "value": 0.0,
-     "points": 0.0,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 4,
-     "max": 4,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.9,
-     "points": 2.7,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 1.0,
-     "max": 2,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [],
-   "flags": [],
-   "score_calc": 46.8,
-   "ai_final": {
-    "score": 32,
-    "brief": "Muy buen precio de USD 159.000 (USD 1.445/m²) y 110 m² impecables. Sin embargo, no tiene patio a nivel del suelo (solo terraza arriba) incumpliendo tu requisito obligatorio, tiene 3 plantas con escaleras y está a 15 cuadras de Maipú.",
-    "reasons": [
-     "No cumple el requisito obligatorio de patio a nivel del suelo (solo terraza en 3er nivel).",
-     "Distribución en tríplex de 3 plantas con excesiva circulación vertical por escaleras.",
-     "Ubicación al límite máximo permitido (a 15 cuadras de Maipú y del tren)."
-    ],
-    "at": "2026-10-26"
-   }
   },
   {
    "id": "zp-58693304",
@@ -66373,6 +66342,200 @@
    "score_calc": 23.8
   },
   {
+   "id": "ml-MLA3836458730",
+   "source": "mercadolibre",
+   "url": "https://casa.mercadolibre.com.ar/MLA-3836458730-casa-florida-_JM",
+   "title": "Casa - Florida",
+   "type": "casa",
+   "price_usd": 185000.0,
+   "total_m2": 150.0,
+   "covered_m2": 80.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 30.0,
+   "address": "Fray Justo Sarmiento Al 600, Florida, Vicente López, Bs.As. G.B.A. Norte",
+   "geocode_query": "Fray Justo Sarmiento 600, Florida, Vicente López, Buenos Aires",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.5378953,
+   "lng": -58.4905438,
+   "description": "Chalet (PH al frente) en una planta, dos dormitorios, living comedor, baño completo, cocina independiente con barra, patio, terraza.\nExcelente ubicación, Florida Mitre. VENTA CON RENTA. ALQUILADO HASTA FINES 2026.\n\nPARA VERLO 4794-1500 \nALVAREZ DUPOT PROPIEDADES .",
+   "photos": [
+    "https://http2.mlstatic.com/D_NQ_NP_910937-MLA115127775050_082026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_942510-MLA115127775052_082026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_704671-MLA115127775054_082026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_847104-MLA115127775056_082026-O.jpg",
+    "https://http2.mlstatic.com/D_NQ_NP_832435-MLA115127775058_082026-O.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": null,
+   "modified": null,
+   "partial_data": false,
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     185000.0
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "Superficie total: 150 m²",
+    "Superficie cubierta: 80 m²",
+    "Dormitorios: 2",
+    "Baños: 1",
+    "Cocheras: 0",
+    "Antigüedad: 30 años",
+    "Ambientes: 3",
+    "Cantidad de pisos: 1",
+    "Tipo de casa: Casa",
+    "Orientación: Este",
+    "Expensas: 0 ARS",
+    "Acceso a internet: Sí",
+    "Aire acondicionado: No",
+    "Calefacción: No",
+    "TV por cable: Sí",
+    "Gas natural: Sí",
+    "Con conexión para lavarropas: No",
+    "Agua corriente: Sí",
+    "Seguridad: No",
+    "Acceso controlado: No",
+    "Pileta: No",
+    "Terraza: Sí",
+    "Comedor: No",
+    "Living: Sí",
+    "Patio: Sí",
+    "Dormitorio en suite: No",
+    "Jardín: No",
+    "Cocina: No"
+   ],
+   "photos_v": 2,
+   "pct": 78,
+   "pct_score": 47.8,
+   "pct_n": 1729,
+   "last_seen": "2026-10-26",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 11.9,
+    "puente_blocks": 13.2,
+    "villa_blocks": 30.4,
+    "station": {
+     "name": "Juan B. Justo",
+     "line": "Mitre",
+     "blocks": 6.4,
+     "effective_blocks": 6.4
+    },
+    "park": {
+     "name": "Eduardo Gonzalez",
+     "m": 702
+    }
+   },
+   "ai": {
+    "condition": 4,
+    "reform_usd": 5000,
+    "reform_notes": "Habitable; baño y cocina recientes, pintura y humedad leve en muros del patio.",
+    "patio": "small",
+    "patio_m2_est": 15,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 4,
+    "vertical_potential": 0.35,
+    "apto_credito": null,
+    "highlights": [
+     "PH al frente tipo chalet en una planta",
+     "Cocina y baño actualizados",
+     "Florida Mitre/este"
+    ],
+    "red_flags": [
+     "Fotos viejas, aviso de hace años",
+     "Patio chico de baldosas",
+     "Solo 80 m² cubiertos, 2 dormitorios"
+    ],
+    "summary": "PH tipo chalet en una planta, prolijo y habitable, pero chico y con un patio de baldosas modesto.",
+    "photos_key": "184f0a285f04",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 0,
+   "components": {
+    "price": {
+     "value": 0.63,
+     "points": 13.9,
+     "max": 22,
+     "why": "USD 190.000 efectivo (incl. reforma 5.000), 1.233/m²"
+    },
+    "space": {
+     "value": 0.14,
+     "points": 2.5,
+     "max": 18,
+     "why": "150 m² tot, 80 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.38,
+     "points": 5.7,
+     "max": 15,
+     "why": "12 cuadras a Maipú, 6 a est. Juan B. Justo (Mitre), plaza a 7 cdas (Eduardo Gonzalez)"
+    },
+    "condition": {
+     "value": 0.88,
+     "points": 11.4,
+     "max": 13,
+     "why": "estado 4/5, reforma ~USD 5.000"
+    },
+    "patio": {
+     "value": 0.3,
+     "points": 3.0,
+     "max": 10,
+     "why": "patio chico ~15 m²"
+    },
+    "vertical": {
+     "value": 0.35,
+     "points": 2.4,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0.7,
+     "points": 2.8,
+     "max": 4,
+     "why": "menciona cochera"
+    },
+    "quiet": {
+     "value": 0.9,
+     "points": 2.7,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [],
+   "flags": [],
+   "score_calc": 47.8,
+   "ai_final": {
+    "score": 0,
+    "brief": "Inviable para mudarse pronto: se vende con renta hasta fines de 2026. Cumple con precio (USD 185.000) y ubicación (Florida), pero no se puede habitar.",
+    "reasons": [
+     "El inmueble se vende con contrato de alquiler vigente hasta fines de 2026, lo cual incumple la premisa de mudarse pronto.",
+     "Baja el puntaje a cero porque Tomás necesita habitar la propiedad de forma inmediata tras la compra."
+    ],
+    "at": "2026-10-27"
+   }
+  },
+  {
    "id": "ml-MLA2209148301",
    "source": "mercadolibre",
    "url": "https://casa.mercadolibre.com.ar/MLA-2209148301-venta-casa-reciclada-monoambiente-en-san-isidro-_JM",
@@ -69319,7 +69482,7 @@
    "pct": 98,
    "pct_score": 64.4,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 24.4,
@@ -71924,7 +72087,7 @@
    "pct": 97,
    "pct_score": 62.1,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 37.6,
@@ -73293,7 +73456,7 @@
    "pct": 96,
    "pct_score": 61.4,
    "pct_n": 1566,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": null,
    "ai": {
@@ -79267,7 +79430,7 @@
    "pct": 95,
    "pct_score": 57.6,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 21.6,
@@ -87659,7 +87822,7 @@
    "pct": 91,
    "pct_score": 54.4,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 10.9,
@@ -97125,7 +97288,7 @@
    "pct": 87,
    "pct_score": 52.0,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 22.7,
@@ -100031,7 +100194,7 @@
    "pct": 85,
    "pct_score": 51.1,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 19.8,
@@ -100946,7 +101109,7 @@
    "pct": 85,
    "pct_score": 50.7,
    "pct_n": 1733,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 22.2,
@@ -102683,230 +102846,6 @@
    "flags": [
     "sin análisis IA"
    ],
-   "score_calc": 50.2
-  },
-  {
-   "id": "zp-60505772",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-de-3-ambientes-en-florida-vicente-lopez-60505772.html",
-   "title": "PH en Venta de 3 Ambientes en Florida, Vicente López con Terraza Propia",
-   "type": "ph",
-   "price_usd": 155000,
-   "total_m2": 139.0,
-   "covered_m2": 76.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 45.0,
-   "address": "Ceballos Pedro de Virrey al 18, Florida",
-   "zone": "Florida",
-   "address_exact": true,
-   "lat": -34.541771454,
-   "lng": -58.4839459286,
-   "description": "PH 3 ambientes en venta en Florida, Vicente Lopez, con terraza y parrilla privada.\nLa unidad se encuentra en un SEGUNDO PISO POR ESCALERA, SIN EXPENSAS!\nSe destaca por su luminosidad, en su Primer Piso cuenta con  un amplio living comedor con salida al balcón, cocina con lavadero, hall de distribución,  2 habitaciones con amplio lugar de guardado y baño completo.\nSegundo piso: Toilette, habitación de dependencia, baulera, parrilla con amplia terraza privada.\nExcelente conectividad y ubicación (a pocos metros de General Paz).\n¡Contactanos para coordinar una visita y conocer tu próximo hogar!\nNo accesible para personas con movilidad reducida.\nEn cumplimiento de las normas legales aplicables, informamos que los agentes NO ejercen el corretaje inmobiliario. Todas las operaciones son concluidas por el corredor inmobiliario matriculado responsable de la oficina\nPablo Ariel Juan CUCICBA 7458 - CMCPSI 6822\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137987.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138008.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138204.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138070.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138116.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137737.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138048.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138179.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137763.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137999.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138210.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138164.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138003.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138019.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138032.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138079.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138040.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138102.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138174.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138014.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137731.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138218.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137973.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137981.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137756.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137953.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137741.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138145.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138113.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138159.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137991.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137746.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137752.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138169.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137976.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138060.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137968.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138214.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138108.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138083.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137963.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137995.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138090.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137798.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138026.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138065.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137802.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138054.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138097.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138152.jpg"
-   ],
-   "tags": {
-    "Disposición": "Frente",
-    "Luminoso": "Muy luminoso",
-    "Orientación": "NO",
-    "Superficie total": "139",
-    "Superficie cubierta": "76",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Toilette": "1",
-    "Antigüedad": "45"
-   },
-   "credit_pill": true,
-   "publisher": "Real Props",
-   "modified": "2026-10-22T00:00:00-0400",
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     155000
-    ]
-   ],
-   "enriched": true,
-   "features_text": [
-    "139 m² tot.",
-    "76 m² cub.",
-    "3 amb.",
-    "1 baño",
-    "2 dorm.",
-    "1 toilette",
-    "45 años",
-    "Frente",
-    "NO",
-    "Muy luminoso"
-   ],
-   "pct": 84,
-   "pct_score": 50.2,
-   "pct_n": 1746,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 8.0,
-    "puente_blocks": 8.1,
-    "villa_blocks": 37.7,
-    "station": {
-     "name": "Aristóbulo del Valle",
-     "line": "Belgrano Norte",
-     "blocks": 7.2,
-     "effective_blocks": 8.2
-    },
-    "park": {
-     "name": "Plaza Benjamín Vicuña Mackenna",
-     "m": 590
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 8000,
-    "reform_notes": "Baño y cocina de época, sacar revestimientos de madera; pisos de parquet buenos.",
-    "patio": "none",
-    "patio_m2_est": null,
-    "pasillo_ph": false,
-    "natural_light": 5,
-    "quiet": 2,
-    "vertical_potential": 0.05,
-    "apto_credito": null,
-    "highlights": [
-     "Muy luminoso, terraza con parrilla",
-     "Sin expensas",
-     "Pisos de parquet en buen estado"
-    ],
-    "red_flags": [
-     "Segundo piso por escalera, sin patio",
-     "A metros de General Paz",
-     "Revestimientos de madera"
-    ],
-    "summary": "PH en segundo piso luminoso con terraza, pero sin patio y pegado a la General Paz.",
-    "photos_key": "117502dc9873",
-    "analyst": "claude",
-    "analysed_at": "2026-10-23"
-   },
-   "score": 50.2,
-   "components": {
-    "price": {
-     "value": 0.83,
-     "points": 18.2,
-     "max": 22,
-     "why": "USD 163.000 efectivo (incl. reforma 8.000), 1.115/m²"
-    },
-    "space": {
-     "value": 0.1,
-     "points": 1.9,
-     "max": 18,
-     "why": "139 m² tot, 76 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.71,
-     "points": 10.6,
-     "max": 15,
-     "why": "8 cuadras a Maipú, 7 a est. Aristóbulo del Valle (Belgrano Norte), plaza a 6 cdas (Plaza Benjamín Vicuña Mackenna)"
-    },
-    "condition": {
-     "value": 0.7,
-     "points": 9.0,
-     "max": 13,
-     "why": "estado 3/5, reforma ~USD 8.000"
-    },
-    "patio": {
-     "value": 0,
-     "points": 0,
-     "max": 10,
-     "why": "sin patio"
-    },
-    "vertical": {
-     "value": 0.05,
-     "points": 0.4,
-     "max": 7,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.7,
-     "points": 2.1,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 1.0,
-     "points": 2.0,
-     "max": 2,
-     "why": "luz 5/5"
-    }
-   },
-   "discard": [
-    "sin patio ni jardín",
-    "duplicado de tk-8449113"
-   ],
-   "flags": [],
-   "duplicate_of": "tk-8449113",
    "score_calc": 50.2
   },
   {
@@ -113498,7 +113437,7 @@
    "pct": 78,
    "pct_score": 47.8,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 7.4,
@@ -118655,6 +118594,230 @@
    "score_calc": 46.7
   },
   {
+   "id": "zp-60505772",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-de-3-ambientes-en-florida-vicente-lopez-60505772.html",
+   "title": "PH en Venta de 3 Ambientes en Florida, Vicente López con Terraza Propia",
+   "type": "ph",
+   "price_usd": 155000,
+   "total_m2": 139.0,
+   "covered_m2": 76.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 45.0,
+   "address": "Ceballos Pedro de Virrey al 18, Florida",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.541771454,
+   "lng": -58.4839459286,
+   "description": "PH 3 ambientes en venta en Florida, Vicente Lopez, con terraza y parrilla privada.\nLa unidad se encuentra en un SEGUNDO PISO POR ESCALERA, SIN EXPENSAS!\nSe destaca por su luminosidad, en su Primer Piso cuenta con  un amplio living comedor con salida al balcón, cocina con lavadero, hall de distribución,  2 habitaciones con amplio lugar de guardado y baño completo.\nSegundo piso: Toilette, habitación de dependencia, baulera, parrilla con amplia terraza privada.\nExcelente conectividad y ubicación (a pocos metros de General Paz).\n¡Contactanos para coordinar una visita y conocer tu próximo hogar!\nNo accesible para personas con movilidad reducida.\nEn cumplimiento de las normas legales aplicables, informamos que los agentes NO ejercen el corretaje inmobiliario. Todas las operaciones son concluidas por el corredor inmobiliario matriculado responsable de la oficina\nPablo Ariel Juan CUCICBA 7458 - CMCPSI 6822\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137987.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138008.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138204.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138070.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138116.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137737.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138048.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138179.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137763.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137999.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138210.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138164.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138003.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138019.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138032.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138079.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138040.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138102.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138174.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138014.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137731.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138218.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137973.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137981.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137756.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137953.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137741.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138145.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138113.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138159.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137991.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137746.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137752.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138169.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137976.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138060.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137968.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138214.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138108.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138083.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137963.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137995.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138090.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137798.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138026.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138065.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087137802.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138054.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138097.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/50/57/72/720x532/2087138152.jpg"
+   ],
+   "tags": {
+    "Disposición": "Frente",
+    "Luminoso": "Muy luminoso",
+    "Orientación": "NO",
+    "Superficie total": "139",
+    "Superficie cubierta": "76",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Toilette": "1",
+    "Antigüedad": "45"
+   },
+   "credit_pill": false,
+   "publisher": "Real Props",
+   "modified": "2026-10-22T00:00:00-0400",
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     155000
+    ]
+   ],
+   "enriched": true,
+   "features_text": [
+    "139 m² tot.",
+    "76 m² cub.",
+    "3 amb.",
+    "1 baño",
+    "2 dorm.",
+    "1 toilette",
+    "45 años",
+    "Frente",
+    "NO",
+    "Muy luminoso"
+   ],
+   "pct": 75,
+   "pct_score": 46.6,
+   "pct_n": 1750,
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 8.0,
+    "puente_blocks": 8.1,
+    "villa_blocks": 37.7,
+    "station": {
+     "name": "Aristóbulo del Valle",
+     "line": "Belgrano Norte",
+     "blocks": 7.2,
+     "effective_blocks": 8.2
+    },
+    "park": {
+     "name": "Plaza Benjamín Vicuña Mackenna",
+     "m": 590
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 8000,
+    "reform_notes": "Baño y cocina de época, sacar revestimientos de madera; pisos de parquet buenos.",
+    "patio": "none",
+    "patio_m2_est": null,
+    "pasillo_ph": false,
+    "natural_light": 5,
+    "quiet": 2,
+    "vertical_potential": 0.05,
+    "apto_credito": null,
+    "highlights": [
+     "Muy luminoso, terraza con parrilla",
+     "Sin expensas",
+     "Pisos de parquet en buen estado"
+    ],
+    "red_flags": [
+     "Segundo piso por escalera, sin patio",
+     "A metros de General Paz",
+     "Revestimientos de madera"
+    ],
+    "summary": "PH en segundo piso luminoso con terraza, pero sin patio y pegado a la General Paz.",
+    "photos_key": "117502dc9873",
+    "analyst": "claude",
+    "analysed_at": "2026-10-23"
+   },
+   "score": 46.6,
+   "components": {
+    "price": {
+     "value": 0.83,
+     "points": 18.2,
+     "max": 22,
+     "why": "USD 163.000 efectivo (incl. reforma 8.000), 1.115/m²"
+    },
+    "space": {
+     "value": 0.1,
+     "points": 1.9,
+     "max": 18,
+     "why": "139 m² tot, 76 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.71,
+     "points": 10.6,
+     "max": 15,
+     "why": "8 cuadras a Maipú, 7 a est. Aristóbulo del Valle (Belgrano Norte), plaza a 6 cdas (Plaza Benjamín Vicuña Mackenna)"
+    },
+    "condition": {
+     "value": 0.7,
+     "points": 9.0,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 8.000"
+    },
+    "patio": {
+     "value": 0,
+     "points": 0,
+     "max": 10,
+     "why": "sin patio"
+    },
+    "vertical": {
+     "value": 0.05,
+     "points": 0.4,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.7,
+     "points": 2.1,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 1.0,
+     "points": 2.0,
+     "max": 2,
+     "why": "luz 5/5"
+    }
+   },
+   "discard": [
+    "sin patio ni jardín",
+    "duplicado de tk-8449113"
+   ],
+   "flags": [],
+   "duplicate_of": "tk-8449113",
+   "score_calc": 46.6
+  },
+  {
    "id": "tk-7202766",
    "source": "tokko",
    "url": "https://ficha.info/p/eEnVOcWHpgEIa",
@@ -122109,7 +122272,7 @@
    "pct": 74,
    "pct_score": 46.2,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 17.7,
@@ -143250,16 +143413,16 @@
    "address_exact": true,
    "lat": -34.513342,
    "lng": -58.510745,
-   "description": "Casa 3 amb + play con terraza - olivos - vicente lopez\nExcelente dúplex de 3 ambientes + playroom, súper luminoso y en impecable estado.\n\n\n- Living comedor \n- amplia cocina comedor diario\n- toilette de recepción\n- 2 dormitorios con placard\n- playroom con espacio de guarda\n- terraza al contrafrente con parrilla\n- cochera al frente con portón eléctrico\n\nla propiedad se destaca por su amplia cocina de 21 m², ideal para disfrutar en familia, con gran espacio de guardado y excelente funcionalidad.\n \nCuenta con baño completo y toilette recientemente remodelados, combinando confort y diseño moderno.\n\nLos dos dormitorios poseen estufas instaladas y el living también cuenta con estufa, generando un ambiente cálido y confortable. Además, la cocina y el dormitorio principal poseen aire acondicionado.\n\nEn el primer piso se encuentra un hermoso patio de 12 m² con parrilla, ideal para disfrutar al aire libre, con espacio para plantas y un entorno muy agradable y luminoso.\n\nDispone de cochera cubierta con portón automático, brindando comodidad y seguridad.\n\nUn hogar cálido, funcional y con ambientes amplios, muy luminosos y perfectamente aprovechados. Ideal para quienes buscan comodidad, espacio exterior y calidad de vida.\n\nLos metros son orientativos. La propiedad tiene m2 cubiertos no declarados en plano pero si en agrimensura.\n\nEn cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, ley nacional 25.028, ley 2.340, ley 10.973, ley 24.240 de defensa al consumidor, las normas del código civil y comercial de la nación y constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente.\n\nCorredor responsable: diego mastrangelo cucicba 7615 csi 6609 -\ncontacto: nicolas russo \n\n- kp588416 - t102315 - \n -   publicado usando kiteprop crm inmobiliario",
+   "description": "Casa 3 amb + play con terraza - olivos - vicente lopez\nExcelente dúplex de 3 ambientes + playroom, súper luminoso y en impecable estado.\n\n\n- Living comedor \n- amplia cocina comedor diario\n- toilette de recepción\n- 2 dormitorios con placard\n- playroom con espacio de guarda\n- terraza al contrafrente con parrilla\n- cochera al frente con portón eléctrico\n\nla propiedad se destaca por su amplia cocina de 21 m², ideal para disfrutar en familia, con gran espacio de guardado y excelente funcionalidad.\n \nCuenta con baño completo y toilette recientemente remodelados, combinando confort y diseño moderno.\n\nLos dos dormitorios poseen estufas instaladas y el living también cuenta con estufa, generando un ambiente cálido y confortable. Además, la cocina y el dormitorio principal poseen aire acondicionado.\n\nEn el primer piso se encuentra un hermoso patio de 12 m² con parrilla, ideal para disfrutar al aire libre, con espacio para plantas y un entorno muy agradable y luminoso.\n\nDispone de cochera cubierta con portón automático, brindando comodidad y seguridad.\n\nUn hogar cálido, funcional y con ambientes amplios, muy luminosos y perfectamente aprovechados. Ideal para quienes buscan comodidad, espacio exterior y calidad de vida.\n\nLos metros son orientativos. La propiedad tiene m2 cubiertos no declarados en plano pero si en agrimensura.\n\nEn cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, ley nacional 25.028, ley 2.340, ley 10.973, ley 24.240 de defensa al consumidor, las normas del código civil y comercial de la nación y constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente.\n\nCorredor responsable: diego mastrangelo cucicba 7615 csi 6609 -\ncontacto: nicolas russo \n\n- kp588416 - t102620 - d065b48 - \n - publicado con kiteprop  crm inmobiliario",
    "photos": [
-    "https://www.argenprop.com/static-content/23655602/0db7e574-6913-4815-9c52-79ef9915a3e3.jpg",
-    "https://www.argenprop.com/static-content/23655602/cdcdceba-2fcd-4870-b95f-f4195902ae79.jpg",
-    "https://www.argenprop.com/static-content/23655602/7e68d584-866c-4fb1-a3ff-71eb814aff78.jpg",
-    "https://www.argenprop.com/static-content/23655602/806fbd2b-ad4f-4cdf-b630-80d754ca14c5.jpg",
-    "https://www.argenprop.com/static-content/23655602/f6cc3748-7f86-45e9-b445-49f8841c67a8.jpg",
-    "https://www.argenprop.com/static-content/23655602/72075eb8-d164-43e3-ae8e-a94897294f07.jpg",
-    "https://www.argenprop.com/static-content/23655602/2b3cf5e5-3ea2-4877-9ee2-e4e53f9a4ee2.jpg",
-    "https://www.argenprop.com/static-content/23655602/e87199f8-cdc6-4be8-b498-be4f200f8ab2.jpg"
+    "https://www.argenprop.com/static-content/23655602/fdf06ffc-3c3f-49db-9d89-ca2ed22a5a86.jpg",
+    "https://www.argenprop.com/static-content/23655602/99bd5f57-faea-439f-9e80-e86b8065c4dc.jpg",
+    "https://www.argenprop.com/static-content/23655602/d998c3c1-6da1-4657-ad3e-9e55313df259.jpg",
+    "https://www.argenprop.com/static-content/23655602/9facbef6-b89c-487b-aac2-98c23f8f54c6.jpg",
+    "https://www.argenprop.com/static-content/23655602/5f39882f-eea9-4975-a254-4399378472cc.jpg",
+    "https://www.argenprop.com/static-content/23655602/4b6ae07d-4911-4064-8ada-c88560ca2be4.jpg",
+    "https://www.argenprop.com/static-content/23655602/44374226-bb0b-4c73-aa07-9aa9fd8519f0.jpg",
+    "https://www.argenprop.com/static-content/23655602/8b2d513a-5ece-4011-81e2-7e16951cec36.jpg"
    ],
    "tags": {},
    "credit_pill": false,
@@ -143276,7 +143439,7 @@
    "pct": 65,
    "pct_score": 43.6,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 17.8,
@@ -147428,7 +147591,10 @@
      125000.0
     ]
    ],
-   "last_seen": "2026-10-26",
+   "pct": 62,
+   "pct_score": 42.9,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 11.8,
@@ -147516,10 +147682,7 @@
     "sin análisis IA",
     "datos parciales"
    ],
-   "score_calc": 42.9,
-   "pct": 62,
-   "pct_score": 42.9,
-   "pct_n": 1746
+   "score_calc": 42.9
   },
   {
    "id": "tk-7307066",
@@ -150670,7 +150833,7 @@
    "address_exact": true,
    "lat": -34.53266959997406,
    "lng": -58.47914873862305,
-   "description": "Ph al frente de 70m2, totalmente renovado, con terraza propia construible de 65 m² en Florida, Vicente López. Por Reglamento de Copropiedad es apto Vivienda, Comercial y Profesional. Un ph hecho a nuevo. Renovado por completo hace menos de un año, combina el carácter de las casas de antes con techos altos y ambientes espaciosos con instalaciones y terminaciones actuales. Está en primer piso, al frente, con orientación noreste: entra sol de mañana y mucha luz natural durante gran parte del día. A parte hay un pulmón de edificio por el cual entra luz a la cocina y al cuarto de contrafrente. Interior (70 m² cubiertos): -Living comedor luminoso. -2 dormitorios amplios. -Cocina independiente equipada. -1 baño completo. -Lavadero en terraza con termotanque, bacha, conexiones de lavarropa y espacio de guardado. -Instalación eléctrica, de gas y de agua nuevas (renovadas hace un año). -Los pisos del living/comedor y los cuartos son de madera recientemente laqueados ofreciendo una calidez y terminación elegante. -El piso de la cocina y los revestimientos del baño tienen porcelanato de primera calidad. Terraza de 65 m² Superficie propia amplia para construir y/o disfrutar al aire libre (parrilla, reuniones, huerta o para sumar un espacio de descanso) con excelente orientación y disposición. Ventajas. Sin expensas. Al frente y en primer piso. Instalaciones nuevas, para entrar sin obras. Apto vivienda, profesional y comercial. Ubicación en Florida: comercios, gastronomía, colegios y transporte a mano, con acceso rápido a Av. Maipú, Libertador y General Paz. Repleto de medios de transporte en la zona. Listo para escriturar. Apto crédito.",
+   "description": "Ph al frente de 132m2, totalmente renovado, con terraza propia construible en Florida, Vicente López. Por Reglamento de Copropiedad es apto Vivienda, Comercial y Profesional. Apto credito. Un ph hecho a nuevo. Renovado por completo hace menos de un año, combina el carácter de las casas de antes con techos altos y ambientes espaciosos con instalaciones y terminaciones actuales. Está en primer piso, al frente, con orientación noreste: entra sol de mañana y mucha luz natural durante gran parte del día. A parte hay un pulmón de edificio por el cual entra luz a la cocina y al cuarto de contrafrente. Interior (70 m² cubiertos): -Living comedor luminoso. -2 dormitorios amplios. -Cocina independiente equipada. -1 baño completo. -Lavadero en terraza con termotanque, bacha, conexiones de lavarropa y espacio de guardado. -Instalación eléctrica, de gas y de agua nuevas (renovadas hace un año). -Los pisos del living/comedor y los cuartos son de madera recientemente laqueados ofreciendo una calidez y terminación elegante. -El piso de la cocina y los revestimientos del baño tienen porcelanato de primera calidad. Terraza de 65 m² Superficie propia amplia para construir y/o disfrutar al aire libre (parrilla, reuniones, huerta o para sumar un espacio de descanso) con excelente orientación y disposición. Ventajas. Sin expensas. Al frente y en primer piso. Instalaciones nuevas, para entrar sin obras. Apto vivienda, profesional y comercial. Ubicación en Florida: comercios, gastronomía, colegios y transporte a mano, con acceso rápido a Av. Maipú, Libertador y General Paz. Repleto de medios de transporte en la zona. Listo para escriturar. Apto crédito.",
    "photos": [
     "https://imgar.zonapropcdn.com/avisos/1/00/60/53/85/35/720x532/2088016881.jpg?isFirstImage=true",
     "https://imgar.zonapropcdn.com/avisos/1/00/60/53/85/35/720x532/2088018125.jpg",
@@ -150691,9 +150854,9 @@
     "Baño": "1",
     "Antigüedad": "1"
    },
-   "credit_pill": true,
+   "credit_pill": false,
    "publisher": "Ezequiel Ciocci",
-   "modified": "2026-10-26T17:51:48-0400",
+   "modified": "2026-10-26T18:00:59-0400",
    "first_seen": "2026-10-26",
    "price_history": [
     [
@@ -150701,7 +150864,10 @@
      189000
     ]
    ],
-   "last_seen": "2026-10-26",
+   "pct": 60,
+   "pct_score": 42.5,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 0.0,
@@ -150788,10 +150954,7 @@
    "flags": [
     "sin análisis IA"
    ],
-   "score_calc": 42.5,
-   "pct": 60,
-   "pct_score": 42.5,
-   "pct_n": 1746
+   "score_calc": 42.5
   },
   {
    "id": "tk-8151311",
@@ -151210,7 +151373,7 @@
    "pct": 60,
    "pct_score": 42.4,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 12.0,
@@ -153017,6 +153180,199 @@
     "datos parciales"
    ],
    "score_calc": 42.2
+  },
+  {
+   "id": "zp-60541798",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-4-amb.-con-terraza-propia.-sin-expensas.-60541798.html",
+   "title": "PH 3 - 4 Amb. con Terraza Propia. Sin Expensas.",
+   "type": "ph",
+   "price_usd": 140000,
+   "total_m2": 129.0,
+   "covered_m2": 62.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 76.0,
+   "address": "Francisco Narciso de Laprida 2500, Florida",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.54141,
+   "lng": -58.4905005,
+   "description": "Corredor Responsable: Raul Hector Merlo CUCICBA 2407 / CMCPSI 5438 -\nContacto: Galia Paoloski\n-OPORTINIDAD . Venta PH de 4 ambientes  Muy buena Ubicación. Florida, Vicente Lopez .\n-SIN EXPENSAS !\n-PH en planta baja al frente.\n-Cuenta con amplio living comedor\n- 3 habitaciones . Un baño y amplia terraza propia  además de un patio y lavadero independiente.\n-Lote de 6 unidades conectadas por un pasillo en común.\n-Cercanía con la Estación de tren  Juan B. Justo (MITRE) y Colectivos:\t15, 21, 28, 57, 60, 117, 161, 194\n-A modernizar. MUCHO POTENCIAL\nRAU S.R.L. no ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios RE/MAX puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que RAU S.R.L. no interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados.\nComprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045859.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045877.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045867.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045873.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045854.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045869.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045865.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045855.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045849.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045864.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045861.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045847.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045862.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045850.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045851.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045858.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045853.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045860.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045856.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045857.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/54/17/98/720x532/2088045863.jpg"
+   ],
+   "tags": {
+    "Superficie total": "129",
+    "Superficie cubierta": "62",
+    "Ambientes": "4",
+    "Dormitorios": "3",
+    "Baño": "1",
+    "Antigüedad": "76"
+   },
+   "credit_pill": false,
+   "publisher": "RE/MAX Ayres",
+   "modified": "2026-10-26T21:22:49-0400",
+   "first_seen": "2026-10-27",
+   "price_history": [
+    [
+     "2026-10-27",
+     140000
+    ]
+   ],
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 13.4,
+    "puente_blocks": 13.6,
+    "villa_blocks": 33.3,
+    "station": {
+     "name": "Juan B. Justo",
+     "line": "Mitre",
+     "blocks": 4.0,
+     "effective_blocks": 4.0
+    },
+    "park": {
+     "name": "plaza / parque",
+     "m": 789
+    }
+   },
+   "features_text": [
+    "129 m² tot.",
+    "62 m² cub.",
+    "4 amb.",
+    "1 baño",
+    "3 dorm.",
+    "76 años"
+   ],
+   "enriched": true,
+   "photos_v": 2,
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Reciclar baño y cocina a nuevo, hacer instalación eléctrica y de cañerías completa, y pintura general.",
+    "patio": "none",
+    "patio_m2_est": null,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 2,
+    "vertical_potential": 0,
+    "apto_credito": null,
+    "highlights": [
+     "Gran terraza propia de uso exclusivo con parrilla",
+     "Sin expensas y con entrada independiente al frente",
+     "Pisos de parquet originales en aceptable estado"
+    ],
+    "red_flags": [
+     "Falta de patio o jardín propio a nivel del suelo (excluyente)",
+     "Instalaciones originales de 76 años de antigüedad a reemplazar",
+     "Ubicación sobre calle de alto tránsito y colectivos"
+    ],
+    "summary": "Tiene una terraza bárbara al sol, pero al no contar con un verdadero patio en planta baja no cumple con el requisito obligatorio de los compradores.",
+    "photos_key": "581c585c74d3",
+    "analyst": "gemini:gemini-3.6-flash",
+    "analysed_at": "2026-10-24",
+    "prompt_version": 2
+   },
+   "score": 42.2,
+   "components": {
+    "price": {
+     "value": 0.87,
+     "points": 19.1,
+     "max": 22,
+     "why": "USD 158.000 efectivo (incl. reforma 18.000), 1.085/m²"
+    },
+    "space": {
+     "value": 0.13,
+     "points": 2.4,
+     "max": 18,
+     "why": "129 m² tot, 62 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.57,
+     "points": 8.5,
+     "max": 15,
+     "why": "13 cuadras a Maipú, 4 a est. Juan B. Justo (Mitre), plaza a 8 cdas (plaza / parque)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 6.7,
+     "max": 13,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 0,
+     "points": 0,
+     "max": 10,
+     "why": "sin patio"
+    },
+    "vertical": {
+     "value": 0.0,
+     "points": 0.0,
+     "max": 7,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.7,
+     "points": 2.1,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [
+    "sin patio ni jardín",
+    "duplicado de zp-60257262"
+   ],
+   "flags": [],
+   "duplicate_of": "zp-60257262",
+   "score_calc": 42.2,
+   "pct": 59,
+   "pct_score": 42.2,
+   "pct_n": 1750
   },
   {
    "id": "zp-60406739",
@@ -158091,7 +158447,7 @@
    "pct": 56,
    "pct_score": 41.5,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 12.1,
@@ -158704,7 +159060,7 @@
    "pct": 56,
    "pct_score": 41.5,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 17.7,
@@ -201198,7 +201554,7 @@
    },
    "credit_pill": false,
    "publisher": "Basilio Inmobiliaria",
-   "modified": "2026-10-26T17:50:11-0400",
+   "modified": "2026-10-26T20:48:40-0400",
    "first_seen": "2026-10-26",
    "price_history": [
     [
@@ -201206,7 +201562,10 @@
      115000
     ]
    ],
-   "last_seen": "2026-10-26",
+   "pct": 35,
+   "pct_score": 36.8,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 17.3,
@@ -201297,10 +201656,7 @@
     "sin análisis IA"
    ],
    "duplicate_of": "tk-12432347",
-   "score_calc": 36.8,
-   "pct": 35,
-   "pct_score": 36.8,
-   "pct_n": 1746
+   "score_calc": 36.8
   },
   {
    "id": "ap-20701298",
@@ -204080,7 +204436,7 @@
    "pct": 33,
    "pct_score": 36.5,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 21.4,
@@ -209982,7 +210338,7 @@
    "pct": 31,
    "pct_score": 35.9,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 6.5,
@@ -214707,7 +215063,7 @@
    "pct": 29,
    "pct_score": 35.5,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 10.1,
@@ -220334,7 +220690,7 @@
    "pct": 26,
    "pct_score": 34.8,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 1.6,
@@ -228466,7 +228822,7 @@
    "pct": 22,
    "pct_score": 33.7,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 9.7,
@@ -243614,6 +243970,143 @@
    "score_calc": 31.3
   },
   {
+   "id": "ap-20752720",
+   "source": "argenprop",
+   "url": "https://www.argenprop.com/casa-en-venta-en-olivos-3-ambientes--20752720",
+   "title": "Casa en vemta 3 ambientes en venta en olivos, vicente lopez",
+   "type": "casa",
+   "price_usd": 240000.0,
+   "total_m2": null,
+   "covered_m2": 160.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": null,
+   "age_years": 48.0,
+   "address": "Buenos Aires 3116 , Olivos",
+   "geocode_query": "Buenos Aires 3116, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5261337,
+   "lng": -58.5036417,
+   "description": "Casa en vemta 3 ambientes en venta en olivos, vicente lopez\nCasa en venta en olivos, vicente lópez, sobre un lote de 10,56 x 22 metros, con garage cubierto para 2 autos, jardín al fondo y plano aprobado para construir una planta alta. Apta crédito.\n\nQué ofrece esta casa?\nAl ingresar: living comedor integrado con la cocina, 2 dormitorios con placard, 1 baño completo y toilette. El garage tiene portón de madera y capacidad para 2 vehículos. Al fondo: jardín y 2 cuartos de guardado separados.\nTodos los servicios instalados: agua corriente, gas natural, cloaca y electricidad.\n\nTiene posibilidad de ampliar?\nSí. La casa tiene una escalera de acceso directo desde la calle y plano aprobado para construir una planta alta: una oportunidad para comprar hoy y seguir construyendo. Pisos de cerámico.\n\nDónde está ubicada?\nBuenos aires 3116, olivos, partido de vicente lópez, provincia de buenos aires. Zona consolidada, con todos los servicios municipales.\n\nCaracterísticas principales:\n- 3 ambientes: living comedor integrado con cocina y 2 dormitorios con placard\n- 1 baño completo y toilette\n- garage cubierto para 2 vehículos con portón de madera\n- jardín al fondo y 2 cuartos de guardado\n- plano aprobado para planta alta\n- pisos de cerámico\n- lote de 10,56 x 22 m (230 m2), 160 m2 cubiertos\n- servicios: agua, gas, cloaca y electricidad\n\nconsultas y visitas: whatsapp +54 9   \nmarcos calparsoro, martillero y corredor público, cmcpsi mat. 7296.",
+   "photos": [
+    "https://www.argenprop.com/static-content/02725702/4255d7f7-20d4-4b61-b02a-ab605141ce7f.jpg",
+    "https://www.argenprop.com/static-content/02725702/948bb469-0bb0-4652-8b33-f0c5fc83beda.jpg",
+    "https://www.argenprop.com/static-content/02725702/6f180a30-77c6-4384-924b-d9c3df29fc53.jpg",
+    "https://www.argenprop.com/static-content/02725702/cc349a78-5173-4c7b-bbf8-d62937fec9e7.jpg",
+    "https://www.argenprop.com/static-content/02725702/57eea77f-cf72-4467-9cea-1a91079ff625.jpg",
+    "https://www.argenprop.com/static-content/02725702/4b829046-c6b6-4c05-a53e-9973352733a8.jpg",
+    "https://www.argenprop.com/static-content/02725702/3d36218f-8d8f-451a-9fcb-851642c02dfb.jpg",
+    "https://www.argenprop.com/static-content/02725702/e6aaf6fa-ad22-4f75-9189-28755a149e6d.jpg"
+   ],
+   "tags": {},
+   "credit_pill": false,
+   "publisher": "Andrea Liliana Fernandez",
+   "modified": null,
+   "partial_data": true,
+   "first_seen": "2026-10-27",
+   "price_history": [
+    [
+     "2026-10-27",
+     240000.0
+    ]
+   ],
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 17.6,
+    "puente_blocks": 28.5,
+    "villa_blocks": 12.7,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 9.3,
+     "effective_blocks": 9.3
+    },
+    "park": {
+     "name": "Plaza Libertad",
+     "m": 142
+    }
+   },
+   "ai": null,
+   "score": 31.3,
+   "components": {
+    "price": {
+     "value": 0.25,
+     "points": 5.6,
+     "max": 22,
+     "why": "USD 240.000 efectivo"
+    },
+    "space": {
+     "value": 0.24,
+     "points": 4.4,
+     "max": 18,
+     "why": "? m² tot, 160 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.29,
+     "points": 4.4,
+     "max": 15,
+     "why": "18 cuadras a Maipú, 9 a est. Doctor Cetrángolo (Mitre), plaza a 1 cdas (Plaza Libertad)"
+    },
+    "condition": {
+     "value": 0.5,
+     "points": 6.5,
+     "max": 13,
+     "why": "sin IA; antigüedad 48.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 4.0,
+     "max": 10,
+     "why": "menciona patio/jardín"
+    },
+    "vertical": {
+     "value": 0.6,
+     "points": 4.2,
+     "max": 7,
+     "why": "heurística: casa, una planta"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0.7,
+     "points": 2.8,
+     "max": 4,
+     "why": "menciona cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "sin dato"
+    }
+   },
+   "discard": [
+    "a 17.6 cuadras de Maipú (muy lejos)"
+   ],
+   "flags": [
+    "sin análisis IA",
+    "datos parciales",
+    "sobre presupuesto (USD 240.000)"
+   ],
+   "score_calc": 31.3,
+   "pct": 15,
+   "pct_score": 31.3,
+   "pct_n": 1750
+  },
+  {
    "id": "tk-1988226",
    "source": "tokko",
    "url": "https://www.o-duch.com.ar/p/1988226-PH-en-Venta-en-Olivos-Maipu/Uzal-Acassuso-al-1500",
@@ -246868,7 +247361,7 @@
    "pct": 13,
    "pct_score": 30.4,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 2.4,
@@ -249968,7 +250461,10 @@
      240000
     ]
    ],
-   "last_seen": "2026-10-26",
+   "pct": 12,
+   "pct_score": 29.9,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 16.6,
@@ -250056,10 +250552,7 @@
     "sin análisis IA",
     "sobre presupuesto (USD 240.000)"
    ],
-   "score_calc": 29.9,
-   "pct": 12,
-   "pct_score": 29.9,
-   "pct_n": 1746
+   "score_calc": 29.9
   },
   {
    "id": "ml-MLA1638846307",
@@ -257650,7 +258143,7 @@
    "pct": 6,
    "pct_score": 27.9,
    "pct_n": 1603,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": null,
    "ai": null,
@@ -257774,7 +258267,7 @@
    "pct": 9,
    "pct_score": 27.9,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 16.5,
@@ -260334,7 +260827,10 @@
      240000.0
     ]
    ],
-   "last_seen": "2026-10-26",
+   "pct": 8,
+   "pct_score": 27.5,
+   "pct_n": 1746,
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 16.4,
@@ -260423,10 +260919,7 @@
     "datos parciales",
     "sobre presupuesto (USD 240.000)"
    ],
-   "score_calc": 27.5,
-   "pct": 8,
-   "pct_score": 27.5,
-   "pct_n": 1746
+   "score_calc": 27.5
   },
   {
    "id": "zp-60371705",
@@ -265064,7 +265557,7 @@
    "pct": 6,
    "pct_score": 26.0,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 3.8,
@@ -267351,6 +267844,273 @@
    ],
    "duplicate_of": "zp-58989109",
    "score_calc": 25.3
+  },
+  {
+   "id": "zp-60521871",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-4-ambientes-venta-florida-reservada-bna-60521871.html",
+   "title": "Casa 4 Ambientes Venta - Florida Reservada Bna",
+   "type": "casa",
+   "price_usd": 240000,
+   "total_m2": 119.0,
+   "covered_m2": 100.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 2.0,
+   "garage": 0,
+   "age_years": 48.0,
+   "address": "Ignacio Warnes 600, Florida",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.5385882,
+   "lng": -58.4929553,
+   "description": "Corredor Responsable: andrea oliveri csi 6401 / cucicba 7190- Contacto: Gaston Petrola. propiedad reservada con el banco nación. Casa 4 ambientes en venta! Ubicada en calle Warnes 621, en el barrio de Florida, en una zona residencial muy buscada, con cercanía a Av. San Martín, comercios, colegios y excelente acceso a medios de transporte. La propiedad se desarrolla en dos plantas, con ambientes amplios y muy buena distribución. Planta baja: * Ingreso por living/comedor amplio. * Baño completo. * Dormitorio amplio al frente, con placard empotrado. * Cocina/comedor espaciosa, con barra desayunadora y muebles bajo y alto mesada. * Patio con parrilla y lavadero, ideal para disfrutar al aire libre. Planta alta: * 2 dormitorios con placard empotrado y ventana. * Baño completo. * Terraza con vista al patio, parcialmente techada. Propiedad de estilo clásico, muy bien mantenida, con excelente potencial y lista para habitar. Ideal para familias que buscan comodidad, espacios exteriores y una muy buena ubicación en Florida. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548461.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548411.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548382.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548349.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548360.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548441.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548364.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548448.jpg"
+   ],
+   "tags": {
+    "Superficie total": "119",
+    "Superficie cubierta": "100",
+    "Ambientes": "4",
+    "Dormitorios": "3",
+    "Baños": "2",
+    "Antigüedad": "48"
+   },
+   "credit_pill": true,
+   "publisher": "RE/MAX RIO",
+   "modified": "2026-10-23T00:00:00-0400",
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     240000
+    ]
+   ],
+   "pct": 5,
+   "pct_score": 25.3,
+   "pct_n": 1750,
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": {
+    "maipu_blocks": 14.2,
+    "puente_blocks": 15.4,
+    "villa_blocks": 29.5,
+    "station": {
+     "name": "Juan B. Justo",
+     "line": "Mitre",
+     "blocks": 4.6,
+     "effective_blocks": 4.6
+    },
+    "park": {
+     "name": "Eduardo Gonzalez",
+     "m": 705
+    }
+   },
+   "ai": null,
+   "score": 25.3,
+   "components": {
+    "price": {
+     "value": 0.05,
+     "points": 1.2,
+     "max": 22,
+     "why": "USD 240.000 efectivo, 2.017/m²"
+    },
+    "space": {
+     "value": 0.19,
+     "points": 3.4,
+     "max": 18,
+     "why": "119 m² tot, 100 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.53,
+     "points": 8.0,
+     "max": 15,
+     "why": "14 cuadras a Maipú, 5 a est. Juan B. Justo (Mitre), plaza a 7 cdas (Eduardo Gonzalez)"
+    },
+    "condition": {
+     "value": 0.5,
+     "points": 6.5,
+     "max": 13,
+     "why": "sin IA; antigüedad 48.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 4.0,
+     "max": 10,
+     "why": "menciona patio/jardín"
+    },
+    "vertical": {
+     "value": 0.4,
+     "points": 2.8,
+     "max": 7,
+     "why": "heurística: casa"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 2.4,
+     "max": 3,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 1.0,
+     "max": 2,
+     "why": "sin dato"
+    }
+   },
+   "discard": [
+    "USD 2.017/m² (más de 2.000)",
+    "duplicado de zp-58859094"
+   ],
+   "flags": [
+    "sin análisis IA",
+    "sobre presupuesto (USD 240.000)"
+   ],
+   "duplicate_of": "zp-58859094",
+   "score_calc": 25.3
+  },
+  {
+   "id": "ap-20752859",
+   "source": "argenprop",
+   "url": "https://www.argenprop.com/ph-en-venta-en-olivos-quinta-presidencial-4-ambientes--20752859",
+   "title": "Venta ph departamento tipo casa olivos terraza balcón frente",
+   "type": "ph",
+   "price_usd": 235000.0,
+   "total_m2": null,
+   "covered_m2": 104.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 1.0,
+   "garage": null,
+   "age_years": 57.0,
+   "address": "Avenida Maipu 1900, Piso 1°, Olivos Quinta Presidencial",
+   "geocode_query": "Avenida Maipu 1900, Piso 1°, Olivos, Vicente López, Buenos Aires",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": null,
+   "lng": null,
+   "description": "Venta ph departamento tipo casa olivos terraza balcón frente\nApto crédito\n\nun ph con carácter, sol, espacios amplios y una gran terraza propia a nivel de 95 m².\n\nUbicado sobre la avenida maipú, en una zona comercial privilegiada de olivos, a metros de la quinta presidencial, este ph en primer piso por escalera combina la solidez de una construcción tradicional con detalles de estilo, pisos de parquet y múltiples posibilidades de uso.\n\nCon una superficie total de 199 m², de los cuales 104 m² son cubiertos y 95 m² corresponden a una espectacular terraza, se destaca por su luminosidad, sus ambientes generosos y su distribución versátil.\n\nSu ubicación sobre la avenida maipú ofrece una excelente conectividad con la ciudad de buenos aires y las principales localidades de zona norte. Cuenta con acceso al metrobús norte, numerosas líneas de colectivos y cercanía a las estaciones ferroviarias de la línea mitre y el tren de la costa, que conectan con distintos puntos del corredor norte y permiten combinar recorridos hacia la capital. Además, dispone de rápidos accesos a la avenida general paz y a la autopista panamericana.\n\nLa zona ofrece una amplia variedad de comercios, servicios y propuestas gastronómicas, con la quinta presidencial de olivos a pocos metros, lo que combina practicidad, movimiento urbano y una ubicación de referencia en el partido de vicente lópez.\n\nEl acceso se realiza por una escalera que conduce a un hall de entrada, desde el cual se ingresa al amplio living-comedor, un espacio central que conecta los principales ambientes de la propiedad y aporta continuidad y personalidad al conjunto. Desde allí se accede a dos dormitorios, al baño completo y al balcón al frente, que también cuenta con acceso directo desde el dormitorio del frente.\n\nLa cocina, cómoda y con espacio para una mesa, tiene salida directa a la terraza, integrando los espacios interiores con un exterior de dimensiones excepcionales. Orientada al norte, al igual que la terraza y el dormitorio principal, ofrece una excelente entrada de luz natural durante todo el año.\n\nHacia el sector posterior, un pasillo independiente conecta el lavadero, un toilette y un tercer ambiente que puede funcionar como dependencia de servicio, tercer dormitorio, escritorio o espacio de trabajo, según las necesidades de cada propietario.\n\nLa gran protagonista es, sin dudas, su terraza propia de 95 m², orientada al norte, con parrilla y enormes posibilidades para crear un espacio verde, un jardín urbano, un sector de reuniones o un verdadero oasis al aire libre en plena ciudad.\n\nLa propiedad cuenta con orientación suroeste al frente y norte hacia la terraza, la cocina y el dormitorio principal, lo que favorece el ingreso de luz natural y ventilación cruzada en distintos momentos del día.\n\nSe encuentra en muy buen estado de conservación, con las cañerías de baño y cocina renovadas. Su construcción sólida, los detalles de época y el parquet aportan calidez y una identidad difícil de encontrar.\n\nPor su ubicación sobre una avenida de gran circulación, su cercanía a la quinta de olivos, sus dimensiones y la flexibilidad de sus ambientes, ofrece múltiples posibilidades de destino, tanto para vivienda familiar como para usos profesionales o comerciales compatibles con la normativa vigente.\n\nUna propiedad con personalidad y potencial, ideal para quienes buscan amplitud, luz natural y una gran terraza propia en una de las zonas más tradicionales y consolidadas de olivos.\n\nCaracterísticas principales\n\n- tipo: ph en primer piso por escalera.\n- Superficie cubierta: 104 m².\n- Superficie descubierta: 95 m² de terraza.\n- Superficie total: 199 m².\n- Ambientes: living-comedor amplio, dos dormitorios y un tercer ambiente adaptable.\n- Baños: baño completo y toilette.\n- Exterior: balcón al frente y gran terraza con parrilla.\n- Cocina: con espacio para mesa y salida a la terraza.\n- Adicionales: lavadero, hall de entrada y pisos de parquet.\n- Orientación: suroeste al frente y norte hacia la terraza y sectores principales.\n- Estado: muy bueno, con cañerías de baño y cocina renovadas.\n- Entorno: zona comercial, a metros de la quinta presidencial de olivos.\n\nUna oportunidad para quienes valoran las construcciones sólidas, los ambientes con carácter y el privilegio de contar con 95 m² de terraza propia.",
+   "photos": [
+    "https://www.argenprop.com/static-content/95825702/7d5a197f-20f3-46b9-9aae-e5dcf141c1bb.jpg",
+    "https://www.argenprop.com/static-content/95825702/7a0c0f6e-9afd-4eae-bbf7-cd5fc6976d79.jpg",
+    "https://www.argenprop.com/static-content/95825702/288071e3-603a-471e-986e-ec802cb41041.jpg",
+    "https://www.argenprop.com/static-content/95825702/df667caf-2f63-4519-97a5-1a43b83ef5f3.jpg",
+    "https://www.argenprop.com/static-content/95825702/396946a3-cdaf-4e49-9dc5-8108d4422928.jpg",
+    "https://www.argenprop.com/static-content/95825702/dec7f335-d140-489b-92f4-25a07a48754e.jpg",
+    "https://www.argenprop.com/static-content/95825702/a1920a31-1322-4c99-9c72-68325e105143.jpg",
+    "https://www.argenprop.com/static-content/95825702/24dd2e7d-911f-4a8f-a686-684a865f096b.jpg"
+   ],
+   "tags": {},
+   "credit_pill": true,
+   "publisher": "Juan Beckford Servicios Inmobiliarios",
+   "modified": null,
+   "partial_data": true,
+   "first_seen": "2026-10-27",
+   "price_history": [
+    [
+     "2026-10-27",
+     235000.0
+    ]
+   ],
+   "last_seen": "2026-10-27",
+   "active": true,
+   "geo": null,
+   "ai": null,
+   "score": 25.3,
+   "components": {
+    "price": {
+     "value": 0.28,
+     "points": 6.2,
+     "max": 22,
+     "why": "USD 235.000 efectivo"
+    },
+    "space": {
+     "value": 0.16,
+     "points": 2.8,
+     "max": 18,
+     "why": "? m² tot, 104 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.4,
+     "points": 6.0,
+     "max": 15,
+     "why": "sin ubicación"
+    },
+    "condition": {
+     "value": 0.35,
+     "points": 4.5,
+     "max": 13,
+     "why": "sin IA; antigüedad 57.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 4.0,
+     "max": 10,
+     "why": "menciona patio/jardín"
+    },
+    "vertical": {
+     "value": 0.15,
+     "points": 1.1,
+     "max": 7,
+     "why": "heurística: PH"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 4,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.5,
+     "points": 1.5,
+     "max": 3,
+     "why": "intermedio"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 1.5,
+     "max": 2,
+     "why": "luminoso según aviso"
+    }
+   },
+   "discard": [
+    "PH en altura / superpuesto"
+   ],
+   "flags": [
+    "sin ubicación",
+    "sin análisis IA",
+    "datos parciales",
+    "sobre presupuesto (USD 235.000)"
+   ],
+   "score_calc": 25.3,
+   "pct": 5,
+   "pct_score": 25.3,
+   "pct_n": 1750
   },
   {
    "id": "zp-55310536",
@@ -270203,7 +270963,7 @@
    },
    "credit_pill": false,
    "publisher": "Remax Class II - Vila Terra",
-   "modified": "2026-10-26T17:50:11-0400",
+   "modified": "2026-10-26T20:48:40-0400",
    "first_seen": "2026-10-24",
    "price_history": [
     [
@@ -270214,7 +270974,7 @@
    "pct": 3,
    "pct_score": 24.2,
    "pct_n": 1729,
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "active": true,
    "geo": {
     "maipu_blocks": 3.8,
@@ -274417,149 +275177,6 @@
     "sobre presupuesto (USD 239.000)"
    ],
    "score_calc": 21.8
-  },
-  {
-   "id": "zp-60521871",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-4-ambientes-venta-florida-reservada-bna-60521871.html",
-   "title": "Casa 4 Ambientes Venta - Florida Reservada Bna",
-   "type": "casa",
-   "price_usd": 240000,
-   "total_m2": 119.0,
-   "covered_m2": 100.0,
-   "ambientes": 4.0,
-   "bedrooms": 3.0,
-   "bathrooms": 2.0,
-   "garage": 0,
-   "age_years": 48.0,
-   "address": "Ignacio Warnes 600, Florida",
-   "zone": "Florida",
-   "address_exact": true,
-   "lat": -34.5385882,
-   "lng": -58.4929553,
-   "description": "Corredor Responsable: andrea oliveri csi 6401 / cucicba 7190- Contacto: Gaston Petrola. propiedad reservada con el banco nación. Casa 4 ambientes en venta! Ubicada en calle Warnes 621, en el barrio de Florida, en una zona residencial muy buscada, con cercanía a Av. San Martín, comercios, colegios y excelente acceso a medios de transporte. La propiedad se desarrolla en dos plantas, con ambientes amplios y muy buena distribución. Planta baja: * Ingreso por living/comedor amplio. * Baño completo. * Dormitorio amplio al frente, con placard empotrado. * Cocina/comedor espaciosa, con barra desayunadora y muebles bajo y alto mesada. * Patio con parrilla y lavadero, ideal para disfrutar al aire libre. Planta alta: * 2 dormitorios con placard empotrado y ventana. * Baño completo. * Terraza con vista al patio, parcialmente techada. Propiedad de estilo clásico, muy bien mantenida, con excelente potencial y lista para habitar. Ideal para familias que buscan comodidad, espacios exteriores y una muy buena ubicación en Florida. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548461.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548411.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548382.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548349.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548360.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548441.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548364.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/52/18/71/720x532/2087548448.jpg"
-   ],
-   "tags": {
-    "Superficie total": "119",
-    "Superficie cubierta": "100",
-    "Ambientes": "4",
-    "Dormitorios": "3",
-    "Baños": "2",
-    "Antigüedad": "48"
-   },
-   "credit_pill": false,
-   "publisher": "RE/MAX RIO",
-   "modified": "2026-10-23T00:00:00-0400",
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     240000
-    ]
-   ],
-   "pct": 2,
-   "pct_score": 21.7,
-   "pct_n": 1733,
-   "last_seen": "2026-10-26",
-   "active": true,
-   "geo": {
-    "maipu_blocks": 14.2,
-    "puente_blocks": 15.4,
-    "villa_blocks": 29.5,
-    "station": {
-     "name": "Juan B. Justo",
-     "line": "Mitre",
-     "blocks": 4.6,
-     "effective_blocks": 4.6
-    },
-    "park": {
-     "name": "Eduardo Gonzalez",
-     "m": 705
-    }
-   },
-   "ai": null,
-   "score": 21.7,
-   "components": {
-    "price": {
-     "value": 0.05,
-     "points": 1.2,
-     "max": 22,
-     "why": "USD 240.000 efectivo, 2.017/m²"
-    },
-    "space": {
-     "value": 0.19,
-     "points": 3.4,
-     "max": 18,
-     "why": "119 m² tot, 100 cub, 4 amb"
-    },
-    "location": {
-     "value": 0.53,
-     "points": 8.0,
-     "max": 15,
-     "why": "14 cuadras a Maipú, 5 a est. Juan B. Justo (Mitre), plaza a 7 cdas (Eduardo Gonzalez)"
-    },
-    "condition": {
-     "value": 0.5,
-     "points": 6.5,
-     "max": 13,
-     "why": "sin IA; antigüedad 48.0 años"
-    },
-    "patio": {
-     "value": 0.4,
-     "points": 4.0,
-     "max": 10,
-     "why": "menciona patio/jardín"
-    },
-    "vertical": {
-     "value": 0.4,
-     "points": 2.8,
-     "max": 7,
-     "why": "heurística: casa"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 4,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 2.4,
-     "max": 3,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 1.0,
-     "max": 2,
-     "why": "sin dato"
-    }
-   },
-   "discard": [
-    "USD 2.017/m² (más de 2.000)",
-    "duplicado de zp-58859094"
-   ],
-   "flags": [
-    "sin análisis IA",
-    "sobre presupuesto (USD 240.000)"
-   ],
-   "duplicate_of": "zp-58859094",
-   "score_calc": 21.7
   },
   {
    "id": "zp-53021922",
