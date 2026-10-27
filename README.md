@@ -1,6 +1,6 @@
 # House Hunter
 
-Command center for finding a house in Olivos, Florida and La Lucila (Vicente López).
+Command center for finding a house in Olivos, Florida, La Lucila and the Vicente López barrio (partido de Vicente López).
 Scrapes listings, throws out the ones that break hard rules, reads the photos and text with a free
 vision AI, and ranks the rest with our own weighted score. Runs for free on GitHub Actions + Pages.
 

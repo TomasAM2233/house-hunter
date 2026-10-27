@@ -8,9 +8,12 @@ FULL_EVERY_HOURS = 24 * 7  # newest pages daily, full sweep weekly; see zonaprop
 NEW_PAGES = 2
 
 
+SLUGS = {"Vicente López": "vicente-lopez-vicente-lopez"}  # the barrio; plain "vicente-lopez" is the partido
+
+
 def search_url(page, newest=False):
     s = config.SEARCH
-    zones = "-o-".join(z.lower().replace(" ", "-") for z in s["zones"])
+    zones = "-o-".join(SLUGS.get(z) or z.lower().replace(" ", "-") for z in s["zones"])
     q = (["orden-masnuevos"] if newest else []) + ([f"pagina-{page}"] if page > 1 else [])
     return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_ceiling']}" + ("?" + "&".join(q) if q else "")
 

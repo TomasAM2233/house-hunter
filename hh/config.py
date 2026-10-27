@@ -8,7 +8,9 @@ SEARCH = {
     "min_ambientes": 3,
     "min_total_m2": 100,
     "types": ["casa", "ph"],
-    "zones": ["Olivos", "Florida", "La Lucila"],
+    # "Vicente López" is the barrio by the river (east of the Mitre/Maipú, down to Gral. Paz), not the whole partido:
+    # each source names it its own way (see the sources) so Munro, Carapachay, Florida Oeste etc. stay out.
+    "zones": ["Olivos", "Florida", "La Lucila", "Vicente López"],
 }
 
 # Geography, in "cuadras". One cuadra is taken as 100 m of straight-line distance.
@@ -34,8 +36,12 @@ TREN_DE_LA_COSTA = {"Avenida Maipú", "Borges", "Libertador"}
 
 REFORM_BUDGET_USD = 20_000
 
-# AI photo reads only for the best-ranked candidates (ranked by score before the AI read), to save quota.
-AI_TOP_N = 40
+# Gemini free tier: about 20 requests a day per model, across the models in hh/ai.py, resetting at midnight
+# Pacific time. Automatic runs spend up to AI_DAILY_CALLS - AI_MANUAL_RESERVE a day, best-ranked candidates first
+# (each house costs 2 calls: photo read + verdict); the reserve is left for "Evaluar con IA" from the app
+# (3 houses a day plus a retry or two).
+AI_DAILY_CALLS = 120
+AI_MANUAL_RESERVE = 10
 BRIEF_MAX_CHARS = 250
 
 # Phone alerts (ntfy.sh) for new listings at or above either threshold.
