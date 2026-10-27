@@ -113,16 +113,17 @@
   "ts": "2026-10-26T21:59:27Z"
  },
  "zp-56345451": {
-  "score": 58,
-  "brief": "PH al frente en Florida, US$ 176.000, 115 m² totales y 4 amb. Excelente precio por m², sin expensas, con garaje y apto crédito. En contra: patio chico de 7,5 m² y un solo baño.",
+  "score": 56,
+  "brief": "Muy buen precio (USD 176.000, 1.530 USD/m²) para 4 amb (100 m² cub) con cochera, sin expensas, apto crédito y a 6 cdas del tren. En contra: el patio es muy chico (7,5 m²), aunque suma terraza, y tiene un solo baño.",
   "reasons": [
-   "Sube 5 puntos porque el precio total (US$ 176k) y por m² (US$ 1.530) son muy atractivos y prioritarios para Tomás.",
-   "Baja 3 puntos porque el patio de planta baja es muy chico (7,5 m²) frente al deseo de tener más espacio abierto a nivel del suelo."
+   "Precio de USD 176.000 (1.530 USD/m²) muy conveniente, apto crédito y sin expensas.",
+   "Excelente acceso a transporte: a solo 6 cuadras del tren Juan B. Justo.",
+   "Buena distribución de metros cubiertos (100 m²) y 4 ambientes con garage propio."
   ],
-  "input_key": "3d3eb3035d55",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-25",
-  "ts": "2026-10-25T18:50:30Z"
+  "input_key": "bbca4a783096",
+  "model": "gemini-3.6-flash",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T06:56:02Z"
  },
  "zp-59592986": {
   "score": 67,
@@ -1008,5 +1009,17 @@
   "model": "gemini-3.6-flash",
   "at": "2026-10-27",
   "ts": "2026-10-27T02:17:37Z"
+ },
+ "zp-60525887": {
+  "score": 40,
+  "brief": "USD 185.000 (USD 1.423/m²) y reciclado casi a nuevo (USD 3.000 de reformas). A 7 cdas del tren. Lo malo: distribución en tríplex de 3 plantas muy vertical y el 'patio' es solo un pozo de aire y luz de 8 m².",
+  "reasons": [
+   "El patio de 8 m² es solo un tragaluz interno, muy lejos del patio o jardín utilizable que prioriza Tomás.",
+   "Formato tríplex en 3 plantas con muchas escaleras y sin posibilidad de construir hacia arriba."
+  ],
+  "input_key": "ab913abe771d",
+  "model": "gemini-3.5-flash",
+  "at": "2026-10-27",
+  "ts": "2026-10-27T06:56:18Z"
  }
 }
