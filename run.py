@@ -284,7 +284,7 @@ def main():
         else:
             v = ai.final(l, prefs, note(l), compute=l["id"] in top_ids and not requested, log=log)
         if v:
-            l["ai_final"] = {k: v[k] for k in ("score", "brief", "reasons", "at")}
+            l["ai_final"] = {k: v.get(k) for k in ("score", "brief", "reasons", "questions", "general_questions", "at")}
             l["score"] = v["score"]
     # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
     # Frozen the first time a listing gets a score; the app can recompute all of them on demand.
