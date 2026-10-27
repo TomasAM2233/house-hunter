@@ -882,17 +882,17 @@
   "ts": "2026-10-26T21:59:37Z"
  },
  "zp-60405333": {
-  "score": 35,
-  "brief": "Precio excelente de USD 159.000 y 110 m² en Olivos, pero es un tríplex sin patio real a nivel del suelo (tiene terraza) y con unidades superpuestas, lo que viola un requisito excluyente.",
+  "score": 32,
+  "brief": "A USD 159.000 y 110 m² tiene excelente precio y está muy cuidado, pero incumple el obligatorio de tener patio a nivel del suelo (solo tiene terraza en 2° piso y entrada/cochera). Además está lejos: a 14,7 cuadras de Maipú.",
   "reasons": [
-   "Incumple el requisito obligatorio de tener patio o jardín propio a nivel del suelo (es un tríplex con terraza y entrada vehicular semicubierta).",
-   "Es un tríplex en altura y superpuesto, chocando directamente con su negativa a vivir en PHs en planta alta o unidades superpuestas.",
-   "El algoritmo sobreestimó la tipología: al tratarse de un tríplex en altura, no cumple con la estructura de casa o PH de planta baja que exige Tomás."
+   "Incumple requisito obligatorio: no posee patio propio a nivel del suelo (solo terraza en planta alta y garage al frente)",
+   "Ubicación incómoda: está a 14,7 cuadras de Av. Maipú y del tren, en el límite estricto de distancia",
+   "Distribución en tríplex con superficie exterior repartida entre el espacio guarda coche y la terraza superior"
   ],
-  "input_key": "6e40ba363c75",
-  "model": "gemini-flash-lite-latest",
+  "input_key": "48516192eb38",
+  "model": "gemini-3.6-flash",
   "at": "2026-10-27",
-  "ts": "2026-10-27T01:42:46Z"
+  "ts": "2026-10-27T16:52:43Z"
  },
  "zp-60290998": {
   "score": 62,
