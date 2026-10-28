@@ -90,7 +90,7 @@ scheduled runs: a changed note means a fresh read for the top candidates.
 - **Quick runs** every hour from 07:47 to 23:47: only the newest pages of Zonaprop and Argenprop, so a new listing
   is scored, read by the AI and alerted within the hour.
 - **Alerts:** set the `NTFY_TOPIC` secret and subscribe to that topic in the free ntfy app. New listings at or above
-  the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification. So does any new listing with 300+ m²
+  the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification; tapping it opens the house in the app (`#casa=<id>`), with a button for the original listing. So does any new listing with 300+ m²
   (lot surface when the listing or its text gives it, else total m²) under USD 230k, 4 to 8 cuadras from Maipú
   (`ALERT_BIG_LOT` in `hh/config.py`).
 - **Plazas:** `geo/parks.json` comes from OpenStreetMap through `osm_parks.py` (the `osm` workflow refreshes it).

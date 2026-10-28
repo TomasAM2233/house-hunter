@@ -130,7 +130,8 @@ def alert(new):
             continue
         try:
             requests.post("https://ntfy.sh/", timeout=20, json={"topic": topic, "title": title, "message": body,
-                                                                  "click": l["url"], "priority": 4, "tags": ["house"]})
+                                                                  "click": f"{config.SITE_URL}#casa={l['id']}", "priority": 4, "tags": ["house"],
+                                                                  "actions": [{"action": "view", "label": "Ver aviso original", "url": l["url"]}]})
         except Exception as e:
             log(f"alert failed: {e}")
 
