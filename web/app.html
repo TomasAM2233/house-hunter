@@ -313,6 +313,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
     <input id="q" type="search" placeholder="Calle, palabra…" aria-label="Buscar" enterkeyhint="search">
     <select id="sort" aria-label="Ordenar">
       <option value="score">Puntaje</option>
+      <option value="pct">Percentil</option>
       <option value="price">Precio</option>
       <option value="ppm2">USD/m²</option>
       <option value="m2">Más m²</option>
@@ -594,7 +595,7 @@ const RANGES = [
 ];
 const CHOICES = [
   ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
-  ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"]]],
+  ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"], ["Vicente López", "Vicente López"]]],
   ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
   ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
   ["extra", "Tiene que tener", [["garage", "Cochera"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
@@ -651,7 +652,7 @@ function rows() {
   let r = base()[view];
   const q = $("#q").value.trim().toLowerCase();
   if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description + " " + brief(l) + " " + (tag(l.id).note || "")).toLowerCase().includes(q));
-  const key = { score: l => -l.score, price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
+  const key = { score: l => -l.score, pct: l => -((pct(l) ?? -1) * 1000 + l.score), price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
     m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0) }[$("#sort").value];
   return r.slice().sort((a, b) => key(a) - key(b));
 }

@@ -3,7 +3,7 @@
 Provider: Google Gemini free tier (set GEMINI_API_KEY). Without a key, listings are queued in
 data/ai_pending/ as a photo contact sheet + text, so any vision model (or a human) can fill them in
 and save the answer with save_result()."""
-import base64, hashlib, io, json, os, re, time
+import base64, datetime, hashlib, io, json, os, re, time, zoneinfo
 import requests
 from PIL import Image
 from . import config
@@ -200,6 +200,25 @@ vecinos, etc.), específicas para esta casa]}}
 Sus notas pueden tener preguntas de visitas anteriores con su respuesta ("pregunta → respuesta"): esas respuestas
 son datos verificados, usalas para afinar el puntaje y no las vuelvas a preguntar; una pregunta sin respuesta sigue
 pendiente."""
+
+
+def calls_today():
+    """Gemini calls made since the free quota last reset (midnight Pacific), counted from the two caches' timestamps."""
+    pacific = zoneinfo.ZoneInfo("America/Los_Angeles")
+    today = datetime.datetime.now(pacific).date()
+    n = 0
+    for path in (CACHE, FINAL):
+        for v in (json.load(open(path)) if os.path.exists(path) else {}).values():
+            try:
+                n += datetime.datetime.fromisoformat(v["ts"].replace("Z", "+00:00")).astimezone(pacific).date() == today
+            except (KeyError, TypeError, ValueError):
+                pass
+    return n
+
+
+def budget_left():
+    """Calls the automatic runs may still make today, keeping the reserve for the app's on-demand assessments."""
+    return config.AI_DAILY_CALLS - config.AI_MANUAL_RESERVE - calls_today()
 
 
 def _final_text(l, prefs, note):

@@ -18,10 +18,22 @@ _dec = json.JSONDecoder()
 BANDS = [(None, 150_000), (150_000, 185_000), (185_000, 210_000), (210_000, None)]
 
 
-def search_url(page, newest=False, band=(None, None)):
+# Zonaprop's slug for the Vicente López barrio. Combined with other barrios in one URL it widens to the whole
+# partido (Munro, Carapachay…), so it gets a search of its own; it fits in 2 pages, no price bands needed.
+OWN_SEARCH = {"Vicente López": "vicente-lopez-vicente-lopez"}
+
+
+def zone_groups():
+    """[(slug, price bands)]: the regular barrios together, each OWN_SEARCH one on its own."""
+    zs = config.SEARCH["zones"]
+    together = "-".join(z.lower().replace(" ", "-") for z in zs if z not in OWN_SEARCH)
+    return ([(together, BANDS)] if together else []) + [(OWN_SEARCH[z], [(None, None)]) for z in zs if z in OWN_SEARCH]
+
+
+def search_url(page, newest=False, band=(None, None), zones=None):
     s = config.SEARCH
     lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
-    zones = "-".join(z.lower().replace(" ", "-") for z in s["zones"])
+    zones = zones or zone_groups()[0][0]
     suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
     return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{lo}-{hi}-dolar{suffix}.html"
 
@@ -139,26 +151,27 @@ def search(max_pages=9, log=print, newest_only=False):
     if http.API_KEY and not http.ANT_KEY:
         return search_rendered(20 if not newest_only else max_pages, log, newest_only)
     out, failed = [], []
-    for band in [(None, None)] if newest_only else BANDS:
-        page, total_pages = 1, 1
-        while page <= min(total_pages, max_pages):
-            try:
-                st = _state(http.get(search_url(page, newest_only, band), pause=(3, 7), via_api=True).text)["listStore"]
-            except Exception as e:
-                log(f"zonaprop {band} page {page}: {e}")
-                failed.append((band, page))
-                if page == 1 and newest_only:
-                    raise
+    for zones, bands in zone_groups():
+        for band in [(None, None)] if newest_only else bands:
+            page, total_pages = 1, 1
+            while page <= min(total_pages, max_pages):
+                try:
+                    st = _state(http.get(search_url(page, newest_only, band, zones), pause=(3, 7), via_api=True).text)["listStore"]
+                except Exception as e:
+                    log(f"zonaprop {zones} {band} page {page}: {e}")
+                    failed.append((zones, band, page))
+                    if page == 1 and newest_only:
+                        raise
+                    page += 1
+                    continue
+                total_pages = st["paging"]["totalPages"]
+                items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
+                out += items
+                log(f"zonaprop {zones} {band} page {page}/{total_pages}: {len(items)} listings")
+                if total_pages > max_pages and page == 1:
+                    log(f"zonaprop {zones} {band}: {total_pages} pages, only {max_pages} are reachable; narrow BANDS")
+                    failed.append((zones, band, "overflow"))
                 page += 1
-                continue
-            total_pages = st["paging"]["totalPages"]
-            items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
-            out += items
-            log(f"zonaprop {band} page {page}/{total_pages}: {len(items)} listings")
-            if total_pages > max_pages and page == 1:
-                log(f"zonaprop {band}: {total_pages} pages, only {max_pages} are reachable; narrow BANDS")
-                failed.append((band, "overflow"))
-            page += 1
     if failed:
         log(f"zonaprop: pages {failed} failed; their listings keep their previous state")
     search.failed_pages = failed
@@ -166,27 +179,31 @@ def search(max_pages=9, log=print, newest_only=False):
 
 
 def search_rendered(max_pages=20, log=print, newest=False):
-    out, page, total_pages, failed = {}, 1, 1, []
-    while page <= min(total_pages, max_pages):
-        try:
-            html = http.get(search_url(page, newest), via_api=True, render=True).text
-            cards = list(_dom_cards(html))
-            if not cards:
-                raise RuntimeError("no cards in rendered page")
-        except Exception as e:
-            log(f"zonaprop page {page}: {e}")
-            failed.append(page)
+    out, failed = {}, []
+    for g, (zones, _) in enumerate(zone_groups()):
+        page, total_pages = 1, 1
+        while page <= min(total_pages, max_pages):
+            try:
+                html = http.get(search_url(page, newest, zones=zones), via_api=True, render=True).text
+                cards = list(_dom_cards(html))
+                if not cards:
+                    raise RuntimeError("no cards in rendered page")
+            except Exception as e:
+                log(f"zonaprop {zones} page {page}: {e}")
+                failed.append((zones, page))
+                if page == 1 and g == 0:
+                    raise
+                if page == 1:
+                    break
+                page += 1
+                continue
             if page == 1:
-                raise
+                n = re.search(r"<title>\s*([\d.]+)", html)  # "306 Casas o PH ..."; the pager only shows 5 pages
+                total_pages = -(-int(n.group(1).replace(".", "")) // 30) if n else 1
+            for c in cards:
+                out.setdefault(c["id"], c)
+            log(f"zonaprop {zones} page {page}/{total_pages}: {len(cards)} listings (rendered via API)")
             page += 1
-            continue
-        if page == 1:
-            n = re.search(r"<title>\s*([\d.]+)", html)  # "306 Casas o PH ..."; the pager only shows 5 pages
-            total_pages = -(-int(n.group(1).replace(".", "")) // 30) if n else 1
-        for c in cards:
-            out.setdefault(c["id"], c)
-        log(f"zonaprop page {page}/{total_pages}: {len(cards)} listings (rendered via API)")
-        page += 1
     search_rendered.failed_pages = search.failed_pages = failed
     return list(out.values())
 

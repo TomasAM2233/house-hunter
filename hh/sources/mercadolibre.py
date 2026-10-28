@@ -4,7 +4,9 @@ import html as htmllib, json, re
 from .. import http, config
 
 BASE = "https://inmuebles.mercadolibre.com.ar"
-ZONE_SLUGS = {"Olivos": "olivos", "Florida": "florida", "La Lucila": "la-lucila"}
+ZONE_SLUGS = {"Olivos": "olivos", "Florida": "florida", "La Lucila": "la-lucila", "Vicente López": "vicente-lopez"}
+# The Vicente López page also lists a few houses in other barrios of the partido; their location names them.
+OTHER_BARRIOS = re.compile(r"\b(munro|carapachay|villa martelli|villa adelina|florida|olivos|la lucila)\b", re.I)
 _dec = json.JSONDecoder()
 # ML sends most browser fingerprints to an account-verification wall; these older profiles get the page.
 PROFILES = ["edge101", "chrome99", "safari15_5", "edge99"]
@@ -118,6 +120,8 @@ def search(max_pages=6, log=print):
                 cards = [c for c in _cards(html) if c.get("metadata", {}).get("id")] or list(_html_cards(html))
                 for c in cards:
                     item = _normalize(c, kind, zone)
+                    if zone == "Vicente López" and OTHER_BARRIOS.search(item["address"]):
+                        continue
                     out[item["id"]] = item
                 log(f"mercadolibre {kind}/{slug} page {page + 1}: {len(cards)} listings")
                 if len(cards) < 48:

@@ -11,13 +11,16 @@ from .. import http, config
 
 API = "https://www.tokkobroker.com/api/v1/property/search/"
 VICENTE_LOPEZ = 25818
-LOCATIONS = {"Olivos": 25836, "Florida": 25820, "La Lucila": 25829}
+LOCATIONS = {"Olivos": 25836, "Florida": 25820, "La Lucila": 25829, "Vicente López": 25846}
+# Tokko calls the barrio "Barrio Vicente López" (sub-zones "V.Lopez-…"); a bare "Vicente López" is the partido,
+# which is in every listing's full_location.
+NAMES = {"Vicente López": ("barrio vicente lópez", "barrio vicente lopez", "v.lopez")}
 PTYPES = {3: "casa", 13: "ph"}
 
 
 def _zone(name):
     for z in LOCATIONS:
-        if z.lower() in (name or "").lower():
+        if any(n in (name or "").lower() for n in NAMES.get(z, (z.lower(),))):
             return z
     return None
 

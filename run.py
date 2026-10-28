@@ -239,19 +239,22 @@ def main():
         # enrich + AI only for active listings that survive the non-AI filters, best pre-score first
         cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
         cands.sort(key=lambda l: -score.score(l)["score"])
-        enriched = 0
-        for rank, l in enumerate(cands):
+        enriched = reads = 0
+        for l in cands:
             # item pages for new candidates, and once more for ones stored with only the search card's few photos
             stale = not l.get("enriched") or (l.get("photos_v", 0) < PHOTOS_V and len(l.get("photos") or []) <= 8)
             if hasattr(SOURCES.get(l["source"]), "enrich") and stale and enriched < args.max_enrich:
                 enriched += bool(enrich(l))
                 if score.hard_filters(l):  # full data can rule it out before spending an AI read
                     continue
-            if rank >= config.AI_TOP_N or tags.get(l["id"], {}).get("dismissed"):
-                continue  # photo reads only for the top candidates, and never for houses Tomás dismissed
+            if tags.get(l["id"], {}).get("dismissed"):
+                continue  # never for houses Tomás dismissed
+            if ai.budget_left() - reads < 2 and not ai.cached(l, current=True, note=note(l)):
+                continue  # today's automatic quota is spent, keeping one verdict call for each house read in this run
             cache = ai._load()
             if l["id"] not in cache and any(_twins(l, o) and o["id"] in cache for o in listings.values()):
                 continue  # same property already read under another source; dedupe keeps that one
+            reads += not ai.cached(l, current=True, note=note(l))
             ai.analyse(l, note(l), log=log)
 
     cache = ai._load()
@@ -265,13 +268,10 @@ def main():
 
 
     dedupe(listings.values())
-    # Final AI verdict for the top candidates: reads everything, including Tomás's preferences and notes,
-    # and its score overrides ours. Listings he dismissed in the app are skipped.
+    # Final AI verdict for every candidate with a photo read, best first, while today's quota lasts: reads
+    # everything, including Tomás's preferences and notes, and its score overrides ours. Skips what he dismissed.
     prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
-    top = sorted((l for l in listings.values() if l.get("active") and l.get("ai") and not l["discard"]
-                  and not tags.get(l["id"], {}).get("dismissed")), key=lambda l: -l["score"])[:config.AI_TOP_N]
-    top_ids = {l["id"] for l in top}
-    for l in listings.values():
+    for l in sorted(listings.values(), key=lambda l: -l["score"]):
         l["score_calc"] = l["score"]
         if not l.get("ai") or l["discard"]:
             continue
@@ -282,7 +282,8 @@ def main():
                 errors[l["id"]] = "evaluación: " + ("se acabó la cuota gratis de Gemini por hoy" if ai.EXHAUSTED else str(e)[:160])
                 v = None
         else:
-            v = ai.final(l, prefs, note(l), compute=l["id"] in top_ids and not requested, log=log)
+            due = l.get("active") and not tags.get(l["id"], {}).get("dismissed") and not requested
+            v = ai.final(l, prefs, note(l), compute=due and ai.budget_left() >= 1, log=log)
         if v:
             l["ai_final"] = {k: v.get(k) for k in ("score", "brief", "reasons", "questions", "general_questions", "at")}
             l["score"] = v["score"]
