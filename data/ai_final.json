@@ -2472,55 +2472,60 @@
  },
  "ap-20457203": {
   "score": 35,
-  "brief": "Casa en lote propio en Olivos a USD 200.000 con 130 m² totales y cochera. Cumple ubicación (9 cuadras a Maipú) y tiene patio. En contra: tiene inquilinos hasta marzo de 2027, lo que frena mudarse pronto.",
+  "brief": "Es lote propio en Olivos a buen precio, pero tiene un problema grave: está alquilada hasta marzo 2027, lo que mata tu plan de mudarte pronto. El lote de 130m2 es chico y está a casi 10 cuadras de Maipú. Solo sirve como inversión.",
   "reasons": [
-   "Tiene inquilinos hasta marzo de 2027, lo que incumple directamente el requisito de mudarse pronto.",
-   "El tamaño total de 130 m² y terreno de 130 m² está cerca del límite mínimo y deja muy poco patio real (26 m² descubiertos)."
+   "Inquilinos hasta 2027: invalida totalmente tu requisito de mudanza pronta.",
+   "Lote muy ajustado: 130m2 totales para una casa es poco espacio exterior real.",
+   "Ubicación: está en el límite de lo que considerás cómodo para caminar a Maipú (10 cuadras)."
   ],
   "questions": [
    {
-    "q": "¿Hay alguna cláusula en el contrato de alquiler actual que permita rescindir anticipadamente por venta?",
-    "impact": "si aceptan salida anticipada +15; si hay que esperar hasta 2027 -15"
+    "q": "¿Existe posibilidad legal de rescindir el contrato con los inquilinos antes de marzo 2027?",
+    "impact": "Si se puede rescindir +25; si es inamovible el puntaje no sube"
    },
    {
-    "q": "¿Los inquilinos están al día y firmaron acuerdo de desocupación?",
-    "impact": "si hay acuerdo fehaciente +5; si hay riesgo de juicio de desalojo -10"
+    "q": "¿El precio real es 195.000 o 200.000 como indica la ficha técnica?",
+    "impact": "Si es 200.000 -3"
    },
    {
-    "q": "¿El precio es negociable por la condición de entrega con renta?",
-    "impact": "si bajan el precio a menos de USD 185.000 +8; si no se mueven de USD 200.000 0"
+    "q": "¿Cómo está el estado de los techos y las instalaciones de agua/gas?",
+    "impact": "Si hay que hacer todo a nuevo -12; si están bien +5"
    },
    {
-    "q": "¿Se puede visitar la propiedad por dentro actualmente?",
-    "impact": "si se puede coordinar visita +2; si no dejan entrar hasta ofertar -5"
+    "q": "¿Los 104m2 cubiertos están todos declarados en el plano?",
+    "impact": "Si no están declarados y no es apto crédito -15"
+   },
+   {
+    "q": "¿Qué orientación tiene el patio y cuánta luz recibe?",
+    "impact": "Si es sombrío -5; si tiene sol de tarde +4"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo los propietarios deciden vender con contrato vigente?",
+    "q": "¿Cuál es el monto del alquiler actual que percibe la propiedad?",
     "impact": ""
    },
    {
-    "q": "¿Los planos están totalmente aprobados y al día para una futura ampliación en planta alta?",
+    "q": "¿Se puede visitar la propiedad con los inquilinos adentro?",
     "impact": ""
    },
    {
-    "q": "¿Qué impuestos municipales y provinciales adeuda la propiedad?",
+    "q": "¿Aceptan una oferta agresiva por el compromiso del alquiler vigente?",
     "impact": ""
    },
    {
-    "q": "¿La escritura se puede hacer de forma directa o requiere algún trámite sucesorio?",
+    "q": "¿El garaje es cubierto y qué medidas tiene?",
     "impact": ""
    },
    {
-    "q": "¿Qué artefactos o muebles quedan en la propiedad al momento de la entrega?",
+    "q": "¿Cómo es el flujo de tránsito y ruido en esa zona de José María Paz?",
     "impact": ""
    }
   ],
-  "input_key": "96f760b305cf",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-10-27",
-  "ts": "2026-10-27T17:31:27Z"
+  "input_key": "6e6e3aa53c09",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-28",
+  "ts": "2026-10-28T17:23:35Z"
  },
  "zp-60454860": {
   "score": 42,
@@ -2731,38 +2736,38 @@
   "ts": "2026-10-28T02:28:11Z"
  },
  "ml-MLA4128498506": {
-  "score": 55,
-  "brief": "PH al frente con garage y patio en Olivos a precio de oportunidad (USD 825/m2). Ubicación ideal cerca del tren Cetrángolo. Ojo: no hay fotos del interior ni del patio, lo que genera mucha duda sobre el estado real y la luz.",
+  "score": 62,
+  "brief": "Oportunidad por precio en Olivos: USD 825/m² es un regalo para la zona. Es al frente, con garage y sin pasillo, cumpliendo tus filtros. Ojo: no hay fotos, lo que sugiere que la reforma de USD 12.000 podría quedarse corta. Ubicación ideal.",
   "reasons": [
-   "El precio por m2 es excelente para la zona, muy por debajo de tu límite de USD 2.000.",
-   "La falta total de fotos del interior y del patio es una señal de alerta importante sobre el estado de conservación.",
-   "Cumple con ser un PH independiente al frente, evitando el pasillo y la superposición que no querés."
+   "El precio por m² es excepcionalmente bajo para Olivos, lo que te deja margen para una reforma integral si fuera necesaria.",
+   "Es una unidad al frente con entrada independiente y garage, evitando totalmente el 'vivir en un pasillo' que querés eludir.",
+   "La cercanía a la estación Cetrángolo (4 cuadras) es un punto muy fuerte que compensa las 10 cuadras a Maipú."
   ],
   "questions": [
    {
-    "q": "¿Podés enviarme fotos del interior y del patio antes de ir?",
-    "impact": "Si el estado es bueno +10; si está para reciclar a fondo -15"
+    "q": "¿Por qué no hay fotos del interior y cuál es el estado real de cañerías y electricidad?",
+    "impact": "Si requiere reforma total de instalaciones -15; si solo es estética +5"
    },
    {
-    "q": "¿El patio es realmente a nivel de suelo y qué medidas tiene?",
-    "impact": "Si es amplio y privado +8; si es un pulmón chico y oscuro -12"
+    "q": "¿Qué medidas exactas tiene el patio de planta baja y si es 100% privado?",
+    "impact": "Si es muy chico (<15m2) -10; si es amplio y pulmón verde +8"
    },
    {
-    "q": "¿Es apto crédito hipotecario?",
-    "impact": "Si es apto +5; si no lo es 0"
+    "q": "¿Es apto crédito bancario?",
+    "impact": "Si no es apto -5; si es apto +3"
    },
    {
-    "q": "¿En qué estado están las cañerías y la instalación eléctrica?",
-    "impact": "Si están renovadas +7; si son de época -10"
+    "q": "¿La propiedad es estructuralmente independiente o comparte muros/techo con otro PH?",
+    "impact": "Si es totalmente independiente +7; si está muy encajonada -5"
    },
    {
-    "q": "¿Cómo es la orientación y cuánta luz natural entra?",
-    "impact": "Si es luminoso +5; si es sombrío -5"
+    "q": "¿Cuál es la antigüedad real de la construcción?",
+    "impact": "Si es de hace 50+ años sin renovar -8; si fue reciclada hace poco +10"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Tienen los planos de obra aprobados y actualizados?",
+    "q": "¿Tienen los planos de obra aprobados y actualizados con la planta alta?",
     "impact": ""
    },
    {
@@ -2770,26 +2775,22 @@
     "impact": ""
    },
    {
-    "q": "¿Aceptan una oferta por debajo del valor publicado?",
+    "q": "¿El precio es negociable o ya está ajustado por la falta de fotos?",
     "impact": ""
    },
    {
-    "q": "¿Hay deudas de impuestos o servicios?",
+    "q": "¿Cómo es la seguridad de la cuadra y el movimiento de los colegios cercanos?",
     "impact": ""
    },
    {
-    "q": "¿Cómo es el movimiento y la seguridad de la cuadra?",
-    "impact": ""
-   },
-   {
-    "q": "¿Qué antigüedad real tiene la construcción?",
+    "q": "¿Qué orientación tiene el patio y la terraza para el sol?",
     "impact": ""
    }
   ],
-  "input_key": "dc899f3feef7",
+  "input_key": "36b37e9c857a",
   "model": "gemini-3-flash-preview",
-  "at": "2026-10-27",
-  "ts": "2026-10-27T17:22:38Z"
+  "at": "2026-10-28",
+  "ts": "2026-10-28T17:23:19Z"
  },
  "zp-57158279": {
   "score": 63,
