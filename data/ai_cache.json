@@ -301,29 +301,36 @@
  },
  "zp-60505772": {
   "condition": 3,
-  "reform_usd": 8000,
-  "reform_notes": "Baño y cocina de época, sacar revestimientos de madera; pisos de parquet buenos.",
+  "reform_usd": 15000,
+  "reform_notes": "Actualización estética y funcional de baño y cocina originales, retiro de machimbre en living, pintura general y adecuación eléctrica.",
   "patio": "none",
   "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
   "pasillo_ph": false,
-  "natural_light": 5,
+  "natural_light": 4,
   "quiet": 2,
-  "vertical_potential": 0.05,
+  "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Muy luminoso, terraza con parrilla",
-   "Sin expensas",
-   "Pisos de parquet en buen estado"
+   "Terraza amplia de uso exclusivo con parrilla",
+   "Excelente luminosidad y sol directo",
+   "Sin expensas"
   ],
   "red_flags": [
-   "Segundo piso por escalera, sin patio",
-   "A metros de General Paz",
-   "Revestimientos de madera"
+   "No tiene patio en planta baja (2do piso por escalera)",
+   "Contaminación sonora por proximidad inmediata a General Paz",
+   "Acceso incómodo por escalera caracol a terraza y sin ascensor"
   ],
-  "summary": "PH en segundo piso luminoso con terraza, pero sin patio y pegado a la General Paz.",
+  "summary": "Es un PH luminoso en segundo piso con excelente terraza privada, pero queda descartado de plano para la pareja porque no tiene patio en planta baja y está pegado a la General Paz.",
   "photos_key": "117502dc9873",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-29",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-29T09:47:32Z"
  },
  "zp-60150989": {
   "condition": 3,
@@ -1839,30 +1846,37 @@
   "analysed_at": "2026-10-23"
  },
  "zp-60503292": {
-  "condition": 4,
-  "reform_usd": 4000,
-  "reform_notes": "Para entrar; baño y cocina actualizados. Pintura a gusto.",
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Impermeabilización preventiva de terraza, pintura integral y actualización estética de cocina y baño.",
   "patio": "medium",
-  "patio_m2_est": 36,
-  "pasillo_ph": false,
-  "natural_light": 4,
-  "quiet": 4,
-  "vertical_potential": 0.2,
-  "apto_credito": null,
+  "patio_m2_est": 22,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
   "highlights": [
-   "PH tipo casa en PB, sin expensas",
-   "2 patios (36 m²) + terraza de 56 m²",
-   "Baño y cocina actualizados, 6 cuadras de Maipú"
+   "Terraza propia de 56 m2 con lavadero y toilette",
+   "Sin expensas en muy buena zona de Olivos",
+   "Planta baja cómoda con distribución funcional"
   ],
   "red_flags": [
-   "Solo 72 m² cubiertos, 2 dormitorios chicos",
-   "Dormitorio de 3 x 2,45",
-   "Menos fotos disponibles"
+   "No apto crédito por metros construidos sin declarar ni planos al día",
+   "No hay fotos del patio de PB en la publicación, solo de la terraza",
+   "Instalaciones con más de 45 años de antigüedad"
   ],
-  "summary": "PH en PB listo para mudarse, con mucho exterior y en zona tranquila; el límite son los 72 m² cubiertos.",
-  "photos_key": "4ed427f0e9eb",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "summary": "Es un PH habitable con una terraza bárbara que entra en su presupuesto de refacción, pero sospechen de los patios de planta baja que no muestran y descártenlo si necesitan crédito bancario.",
+  "photos_key": "469b4d2cb472",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-29",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-29T10:08:49Z"
  },
  "zp-57689157": {
   "condition": 3,
@@ -2418,29 +2432,36 @@
  },
  "ml-MLA3678890594": {
   "condition": 3,
-  "reform_usd": 10000,
-  "reform_notes": "Habitable; baño azul de los 80, pintura y revestimientos a actualizar.",
-  "patio": "medium",
-  "patio_m2_est": 45,
+  "reform_usd": 15000,
+  "reform_notes": "Renovación integral de baño y cocina, retiro de revestimientos vinílicos autoadhesivos en living con reparación de revoques, pintura y revisión eléctrica.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": true,
+  "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 3,
   "quiet": 3,
-  "vertical_potential": 0.6,
+  "vertical_potential": 1,
   "apto_credito": null,
   "highlights": [
-   "PH tipo casa, independiente, todo en una planta",
-   "Jardín con galería y cochera",
-   "Bajó de USD 180k a 170k"
+   "Entrada totalmente independiente",
+   "Techo de losa propia con potencial de ampliación",
+   "Pisos de parquet conservados"
   ],
   "red_flags": [
-   "Solo 72 m² cubiertos y 2 dormitorios",
-   "Las fotos no muestran el jardín",
-   "Esquina sobre España/Borges, cerca de Maipú"
+   "No publican fotos del supuesto jardín/patio",
+   "Paredes del living con placas plásticas autoadhesivas (suelen tapar humedad)",
+   "Baño y cocina con cañerías y terminaciones de época"
   ],
-  "summary": "PH tipo casa en una planta con jardín y aire para crecer; habitable ya, pero chico adentro.",
+  "summary": "Tiene potencial constructivo por su losa propia, pero es llamativo que no muestren el patio en ninguna foto y las paredes del living están camufladas.",
   "photos_key": "006ec10acae1",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-29",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-29T09:24:40Z"
  },
  "tk-9086265": {
   "condition": 3,
@@ -3558,8 +3579,8 @@
  },
  "ap-20750793": {
   "condition": 3,
-  "reform_usd": 18000,
-  "reform_notes": "Actualización de baños y cocina, pulido de pisos de parquet, pintura integral y revisión de instalaciones (la antigüedad de 2 años es dudosa por la descripción de materiales).",
+  "reform_usd": 12000,
+  "reform_notes": "Pintura general, pulido/plastificado de pisos de parquet y actualización cosmética de cocina y baños.",
   "patio": "medium",
   "patio_m2_est": 25,
   "patio_seen": false,
@@ -3567,27 +3588,27 @@
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 4,
+  "natural_light": 3,
   "quiet": 3,
   "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Ubicación privilegiada en Olivos",
-   "Entrada independiente con garage propio",
-   "Doble espacio abierto (patio en PB y terraza en PA)"
+   "Excelente ubicación residencial en Olivos",
+   "Cuenta con patio con parrilla, terraza y garage propio",
+   "Buena distribución en dos plantas con 3 dormitorios"
   ],
   "red_flags": [
-   "Falta de fotos del patio (punto crítico para el cliente)",
-   "Inconsistencia entre antigüedad declarada (2 años) y materiales (parquet)",
-   "Discrepancia en las superficies totales informadas"
+   "No hay fotos disponibles en la publicación para verificar estado real",
+   "Inconsistencia en la antigüedad informada (2 años pero con parquet tradicional)",
+   "Posible necesidad de renovar instalaciones antiguas de agua y gas"
   ],
-  "summary": "Es un PH con tipología de casa al frente muy buscado, pero la falta de fotos del patio y la posible antigüedad real requieren una inspección técnica antes de avanzar.",
+  "summary": "Propiedad sumamente interesante por tener patio en PB, terraza y cochera en Olivos, aunque exige visita inmediata al no contar con imágenes publicadas.",
   "photos_key": "7bd9dd369ded",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-3.6-flash",
   "analysed_at": "2026-10-29",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-29T01:28:46Z"
+  "ts": "2026-10-29T03:34:00Z"
  },
  "zp-59569736": {
   "condition": 3,
@@ -4084,39 +4105,6 @@
   "note_key": "",
   "ts": "2026-10-29T03:31:51Z"
  },
- "ap-20750793": {
-  "condition": 3,
-  "reform_usd": 12000,
-  "reform_notes": "Pintura general, pulido/plastificado de pisos de parquet y actualización cosmética de cocina y baños.",
-  "patio": "medium",
-  "patio_m2_est": 25,
-  "patio_seen": false,
-  "terrace": true,
-  "corner": false,
-  "ph_stacked": false,
-  "pasillo_ph": false,
-  "natural_light": 3,
-  "quiet": 3,
-  "vertical_potential": 0,
-  "apto_credito": null,
-  "highlights": [
-   "Excelente ubicación residencial en Olivos",
-   "Cuenta con patio con parrilla, terraza y garage propio",
-   "Buena distribución en dos plantas con 3 dormitorios"
-  ],
-  "red_flags": [
-   "No hay fotos disponibles en la publicación para verificar estado real",
-   "Inconsistencia en la antigüedad informada (2 años pero con parquet tradicional)",
-   "Posible necesidad de renovar instalaciones antiguas de agua y gas"
-  ],
-  "summary": "Propiedad sumamente interesante por tener patio en PB, terraza y cochera en Olivos, aunque exige visita inmediata al no contar con imágenes publicadas.",
-  "photos_key": "7bd9dd369ded",
-  "analyst": "gemini:gemini-3.6-flash",
-  "analysed_at": "2026-10-29",
-  "prompt_version": 2,
-  "note_key": "",
-  "ts": "2026-10-29T03:34:00Z"
- },
  "ap-20734026": {
   "condition": 2,
   "reform_usd": 20000,
@@ -4578,5 +4566,71 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-29T05:00:06Z"
+ },
+ "ap-20658257": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de cocina y baño de 45 años de antigüedad, adecuación de cañerías/gas y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 1,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Terraza propia de 78 m2",
+   "Sin expensas",
+   "Excelente luminosidad orientación oeste"
+  ],
+  "red_flags": [
+   "No tiene patio en planta baja (es segundo piso por escalera)",
+   "Frente ruidoso sobre corredor de Av. Maipú",
+   "Instalaciones y terminaciones originales de 45 años"
+  ],
+  "summary": "Queda descartado para esta búsqueda porque es un segundo piso por escalera sin patio a nivel del suelo y está sobre el ruido constante de Maipú.",
+  "photos_key": "07277a6b0cb0",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-29",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-29T09:18:33Z"
+ },
+ "ap-20242908": {
+  "condition": 2,
+  "reform_usd": 40000,
+  "reform_notes": "Reciclado integral de cañerías, electricidad de 50 años, baños, cocina y tratamiento general de humedades/revoques.",
+  "patio": "large",
+  "patio_m2_est": 65,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Lote propio de 8,66 x 20 con jardín al contrafrente",
+   "Buena ubicación residencial en Olivos",
+   "Excelente orientación Este con buena luz"
+  ],
+  "red_flags": [
+   "Reforma estructural e instalaciones que superan ampliamente los USD 20.000",
+   "Estado a reciclar total / perfil para demolición o desarrollo",
+   "50 años de antigüedad sin actualizaciones visibles"
+  ],
+  "summary": "Es un lote propio con excelente potencial y buen fondo en Olivos, pero requiere una inversión en reformas que duplica el presupuesto disponible antes de poder mudarse.",
+  "photos_key": "dc5da397aee4",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-29",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-29T10:18:55Z"
  }
 }

@@ -1,78 +1,17 @@
-zonaprop olivos-florida-la-lucila (None, 150000) page 1/5: 30 listings
-zonaprop olivos-florida-la-lucila (None, 150000) page 2/5: 30 listings
-zonaprop olivos-florida-la-lucila (None, 150000) page 3/5: 30 listings
-zonaprop olivos-florida-la-lucila (None, 150000) page 4/5: 30 listings
-zonaprop olivos-florida-la-lucila (None, 150000) page 5/5: 22 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 1/6: 30 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 2/6: 30 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 3/6: 30 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 4/6: 30 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 5/6: 30 listings
-zonaprop olivos-florida-la-lucila (150000, 185000) page 6/6: 11 listings
-zonaprop olivos-florida-la-lucila (185000, 210000) page 1/4: 30 listings
-zonaprop olivos-florida-la-lucila (185000, 210000) page 2/4: 30 listings
-zonaprop olivos-florida-la-lucila (185000, 210000) page 3/4: 30 listings
-zonaprop olivos-florida-la-lucila (185000, 210000) page 4/4: 26 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 1/6: 29 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 2/6: 30 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 3/6: 30 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 4/6: 30 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 5/6: 30 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 6/6: 27 listings
+zonaprop olivos-florida-la-lucila (None, None) page 1/19: 30 listings
+zonaprop olivos-florida-la-lucila (None, None): 19 pages, only 1 are reachable; narrow BANDS
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
-zonaprop vicente-lopez-vicente-lopez (None, None) page 2/2: 3 listings
+zonaprop vicente-lopez-vicente-lopez (None, None): 2 pages, only 1 are reachable; narrow BANDS
+zonaprop: pages [('olivos-florida-la-lucila', (None, None), 'overflow'), ('vicente-lopez-vicente-lopez', (None, None), 'overflow')] failed; their listings keep their previous state
 argenprop page 1/22: 20 listings
 argenprop page 2/22: 20 listings
-argenprop page 3/22: 0 listings
-argenprop page 4/22: 20 listings
-argenprop page 5/22: 20 listings
-argenprop page 6/22: 20 listings
-argenprop page 7/22: 20 listings
-argenprop page 8/22: 20 listings
-argenprop page 9/22: 20 listings
-argenprop page 10/22: 20 listings
-argenprop page 11/22: 20 listings
-argenprop page 12/22: 20 listings
-argenprop page 13/22: 20 listings
-argenprop page 14/22: 20 listings
-argenprop page 15/22: 20 listings
-argenprop page 16/22: 20 listings
-argenprop page 17/22: 20 listings
-argenprop page 18/22: 20 listings
-argenprop page 19/22: 20 listings
-argenprop page 20/22: 20 listings
-argenprop page 21/22: 20 listings
-argenprop page 22/22: 17 listings
-tokko DIC Propiedades: 101
-tokko Carlos Bezruk Inmuebles: 10
-tokko Caneva Propiedades: 4
-tokko Álvarez Dupot Propiedades: 11
-tokko Real Props: 2
-tokko O'Duch Negocios Inmobiliarios: 39
-tokko Martín Propiedades: 12
-tokko Estudio García: 0
-tokko Molinari Propiedades: 18
-tokko Jorge Becco Bienes Raíces: 0
-tokko Darío Martínez Propiedades: 2
-tokko Basilio Inmobiliaria: 12
-tokko Martín Fonseca Propiedades: 2
-tokko Braulio Inmuebles: 0
-tokko Bellagamba: 13
-mercadolibre casas/olivos page 1: 48 listings
-mercadolibre casas/olivos page 2: 48 listings
-mercadolibre casas/olivos page 3: 48 listings
-mercadolibre casas/olivos page 4: 21 listings
-mercadolibre casas/florida page 1: 48 listings
-mercadolibre casas/florida page 2: 22 listings
-mercadolibre casas/la-lucila page 1: 3 listings
-mercadolibre casas/vicente-lopez page 1: 7 listings
-mercadolibre ph/olivos page 1: 48 listings
-mercadolibre ph/olivos page 2: 48 listings
-mercadolibre ph/olivos page 3: 48 listings
-mercadolibre ph/olivos page 4: 9 listings
-mercadolibre ph/florida page 1: 48 listings
-mercadolibre ph/florida page 2: 48 listings
-mercadolibre ph/florida page 3: 36 listings
-mercadolibre ph/la-lucila page 1: 15 listings
-mercadolibre ph/vicente-lopez page 1: 17 listings
 AI failed for ap-9122500: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-15523293: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-20370235: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ml-MLA3712638112: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-20456461: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+AI failed for ap-19597299: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-17674671: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-16665682: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-16005802: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-18450192: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
