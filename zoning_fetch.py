@@ -70,7 +70,7 @@ def osm():
     """Streets and the partido boundary, to georeference the plan (its street names are drawn, not text)."""
     for url in ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"):
         try:
-            r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers=UA)
+            r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers={"User-Agent": "house-hunter/0.1 (personal project)"})
             r.raise_for_status()
             els = r.json()["elements"]
             break
