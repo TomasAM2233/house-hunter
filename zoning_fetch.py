@@ -4,8 +4,8 @@ The municipality publishes no zoning dataset: only the zoning plan as a PDF (Ane
 Urbano, updated to May 2012) and the code's own text, which bounds each zone street by street. Their hosts don't
 answer from everywhere, so .github/workflows/zoning.yml runs this on GitHub's runners.
 
-Step 1 (this file for now): download both and write what's inside the plan (vector paths, fill colours, labels)
-to geo/zoning/probe.json, to see how to turn it into polygons with coordinates.
+This downloads both, plus OpenStreetMap's streets to place the plan on the map (zoning_build.py does that), and
+writes a summary of what's inside the plan (fill colours, labels) to geo/zoning/probe.json.
 """
 import collections, json, os
 import requests
@@ -23,6 +23,9 @@ UA = {"User-Agent": "Mozilla/5.0 (house-hunter; zoning)"}
 def download():
     got = {}
     for name, url in SOURCES.items():
+        if os.path.exists(os.path.join(OUT, name)):  # the 2012 plan and the code text don't change
+            got[name] = os.path.getsize(os.path.join(OUT, name))
+            continue
         try:
             r = requests.get(url, headers=UA, timeout=120)
             r.raise_for_status()
@@ -60,7 +63,7 @@ OSM_Q = """
 [out:json][timeout:120];
 (
   way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street)$"](-34.56,-58.54,-34.48,-58.45);
-  relation["boundary"="administrative"]["name"~"Vicente L"]["admin_level"="5"];
+  relation["boundary"="administrative"]["admin_level"="5"]["name"~"Vicente L"](-34.56,-58.54,-34.48,-58.45);
 );
 out geom;
 """
@@ -68,9 +71,9 @@ out geom;
 
 def osm():
     """Streets and the partido boundary, to georeference the plan (its street names are drawn, not text)."""
-    for url in ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"):
+    for url in ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"] * 2:
         try:
-            r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers=UA)
+            r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers={"User-Agent": "house-hunter/0.1 (personal project)"})
             r.raise_for_status()
             els = r.json()["elements"]
             break

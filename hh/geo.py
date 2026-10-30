@@ -82,12 +82,14 @@ def villa_blocks(lat, lon):
 
 
 def describe(lat, lon):
+    from . import zoning  # it builds on the helpers above
     return {
         "maipu_blocks": round(maipu_m(lat, lon) / config.BLOCK_M, 1),
         "puente_blocks": round(dist_m((lat, lon), config.PUENTE_SAAVEDRA) / config.BLOCK_M, 1),
         "villa_blocks": round(villa_blocks(lat, lon), 1),
         "station": nearest_station(lat, lon),
         "park": nearest_park(lat, lon),
+        "zoning": zoning.at(lat, lon),
     }
 
 

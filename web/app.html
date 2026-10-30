@@ -580,7 +580,7 @@ const side = l => l.pcts || {};
 function sideFallback() {
   if (DATA.listings.some(l => l.pcts)) return;
   const ls = DATA.listings.filter(l => !l.duplicate_of);
-  const bld = l => l.type === "casa" && l.covered_m2 && (l.lot_m2 || l.total_m2) ? Math.max(0, Math.round((l.lot_m2 || l.total_m2) * 0.9 - l.covered_m2)) : null;
+  const bld = l => l.type === "casa" && l.covered_m2 && (l.lot_m2 || l.total_m2) ? Math.max(0, Math.round((l.lot_m2 || l.total_m2) * (l.geo?.zoning?.fot || 0.9) - l.covered_m2)) : null;
   const get = { m2: l => l.covered_m2 ?? null, ppm2: l => ppm2(l) ?? null, build: bld };
   for (const l of ls) { l.pcts = {}; l.build_m2 = bld(l); }
   for (const [k, f] of Object.entries(get)) {
@@ -620,6 +620,7 @@ const RANGES = [
 const CHOICES = [
   ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
   ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"], ["Vicente López", "Vicente López"]]],
+  ["zoning", "Zona del código urbano", [["R1", "R1"], ["R2", "R2"], ["R3", "R3"], ["C", "Comercial (C)"], ["T", "Torres (T)"], ["I1", "I1"], ["other", "Otra"]]],
   ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
   ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
   ["extra", "Tiene que tener", [["garage", "Cochera"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
@@ -650,9 +651,21 @@ function passF(l) {
   if (c.type?.length && !c.type.includes(l.type)) return false;
   if (c.zone?.length && !c.zone.includes(l.zone)) return false;
   if (c.src?.length && !c.src.includes(l.source)) return false;
+  if (c.zoning?.length && !c.zoning.includes(zoningGroup(l))) return false;
   if (c.patio?.length && !((PATIO_RANK[l.ai?.patio] ?? -1) >= Math.min(...c.patio.map(x => PATIO_RANK[x])))) return false;
   for (const x of c.extra || []) if (!EXTRA[x](l)) return false;
   return true;
+}
+// Official zone (geo/zoning.json, looked up by run.py): R1, R2, R3 and I1 on their own, the rest by family.
+function zoningGroup(l) {
+  const z = l.geo?.zoning?.code;
+  return !z ? null : ["R1", "R2", "R3", "I1"].includes(z) ? z : /^C\d/.test(z) ? "C" : /^T\d/.test(z) ? "T" : "other";
+}
+function zoningFact(l) {
+  const z = l.geo?.zoning;
+  if (!z) return "?";
+  const lim = z.fot ? `FOS ${String(z.fos).replace(".", ",")} · FOT ${String(z.fot).replace(".", ",")}` : "ver el código";
+  return `${esc(z.code)} <small style="font-size:11px;color:var(--muted)">${lim}${z.edge ? ` · límite con ${esc(z.edge)}, confirmar` : ""}</small>`;
 }
 const nFilt = () => Object.keys(FILT.r).length + Object.values(FILT.c).filter(v => v?.length).length;
 
@@ -738,6 +751,7 @@ function specs(l) {
     <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
     <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
     ${g ? `<span><b class="num">${blk(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${blk(g.station.blocks)}</b> cdas</span>` : ""}
+    ${g?.zoning ? `<span title="Zona del código urbano${g.zoning.edge ? ", en el límite con " + esc(g.zoning.edge) : ""}">zona <b>${esc(g.zoning.code)}${g.zoning.edge ? "?" : ""}</b></span>` : ""}
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
 }
@@ -871,6 +885,7 @@ function renderDetail(l) {
         <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
         <div class="fact"><span>Percentil m² cub.</span><b>${side(l).m2 ?? "?"}</b></div>
         <div class="fact"><span>Percentil USD/m²</span><b>${side(l).ppm2 ?? "?"} <small style="font-size:11px;color:var(--muted)">más = más barata</small></b></div>
+        <div class="fact"><span>Zona</span><b>${zoningFact(l)}</b></div>
         <div class="fact"><span>Por construir</span><b>${l.build_m2 != null ? `~${fmt(l.build_m2)} m² <small style="font-size:11px;color:var(--muted)">P${side(l).build}</small>` : l.type === "ph" ? "PH" : "?"}</b></div>
       </div>
       <div class="actions">

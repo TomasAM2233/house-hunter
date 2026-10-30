@@ -185,7 +185,8 @@ motivos. Si algo choca con un
 requisito obligatorio suyo, bajá mucho el puntaje.
 Además, Tomás quiere comprar una casa donde quiera vivir que también sea una buena inversión. Ponderá cuánto
 valor va a sostener al revenderla: que el precio esté abajo del mercado (USD/m² de lote y cubierto contra la zona); el terreno, que no
-se deprecia (lote grande y barato por m², buen frente, m² que todavía se pueden construir); no pagar el sobreprecio
+se deprecia (lote grande y barato por m², buen frente, m² que todavía se pueden construir según el FOT de su zona
+oficial: R1 0,8 veces el lote, R2 1,0, R3 1,1; una zona más densa también vale más como terreno); no pagar el sobreprecio
 de una casa nueva o recién reciclada, que se pierde en pocos años; que una reforma razonable sume m², baños o
 cocina en planos aprobados; la ubicación (de 4 a 8 cuadras de Maipú o del tren, cerca de una plaza, calle
 tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, y nada que achique la lista de
@@ -237,7 +238,11 @@ def _final_text(l, prefs, note):
     ppm2 = round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
     # only numbers that stay put between runs: the verdict is cached by its input, and the side percentiles
     # move a little with every new listing
-    inv = (f"~{l.get('build_m2')} m² por construir (FOT {config.FOT_ASSUMED} supuesto), "
+    z = g.get("zoning") or {}
+    zone = (f"zona {z['code']} ({z['name']}; FOS {z['fos']}, FOT {z['fot']}" if z.get("fot") else
+            f"zona {z['code']} ({z['name']}" if z else f"zona desconocida (FOT {config.FOT_ASSUMED} supuesto")
+    zone += f"; en el límite con {z['edge']}, confirmar)" if z.get("edge") else ")"
+    inv = (f"{zone}, ~{l.get('build_m2')} m² por construir, "
            f"percentil del puntaje {l.get('pct')} | {(l.get('components') or {}).get('investment', {}).get('why', '')}")
     comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
     return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
