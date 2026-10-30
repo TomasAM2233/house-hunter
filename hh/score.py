@@ -41,13 +41,22 @@ def lot_m2(l):
     return l.get("total_m2"), "totales"
 
 
+def zoning(l):
+    return (l.get("geo") or {}).get("zoning") or {}
+
+
+def fot(l):
+    """The official FOT of the house's zone (hh/zoning.py), or config.FOT_ASSUMED when it isn't known."""
+    return zoning(l).get("fot") or config.FOT_ASSUMED
+
+
 def buildable_left(l):
-    """m2 that could still be built on the lot (lot x the assumed FOT, minus what's covered), for houses only:
+    """m2 that could still be built on the lot (lot x the zone's FOT, minus what's covered), for houses only:
     a PH shares its lot, so there it depends on the consortium. None when the lot or covered m2 are unknown."""
     if l.get("type") != "casa" or not l.get("covered_m2"):
         return None
     lot, _ = lot_m2(l)
-    return max(0, round(lot * config.FOT_ASSUMED - l["covered_m2"])) if lot else None
+    return max(0, round(lot * fot(l) - l["covered_m2"])) if lot else None
 
 
 def investment(l):
@@ -69,7 +78,9 @@ def investment(l):
     b = buildable_left(l)
     if b is not None:
         parts.append((0.35, lerp(b, 0, 0, config.BUILDABLE_FULL_M2, 1)))
-        why.append(f"~{n(b)} m² por construir")
+        z = zoning(l)
+        why.append(f"~{n(b)} m² por construir" + (f" (zona {z['code']}, FOT {z['fot']:g}" + (
+            f", en el límite con {z['edge']}" if z.get("edge") else "") + ")" if z.get("fot") else ""))
     else:
         parts.append((0.35, 0.2))
     if cov:

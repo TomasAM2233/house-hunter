@@ -36,8 +36,8 @@ TREN_DE_LA_COSTA = {"Avenida Maipú", "Borges", "Libertador"}
 
 REFORM_BUDGET_USD = 20_000
 
-# Investment side of a house (see score.investment). The zoning isn't known per listing: R1 allows ~0.8-0.85 and
-# R2 1.0 times the lot in Vicente López, so 0.9 stands in for both. Land doesn't depreciate and the building does,
+# Investment side of a house (see score.investment). m2 still buildable use the FOT of the house's official zone
+# (hh/zoning.py: R1 0.8, R2 1.0 times the lot...); FOT_ASSUMED stands in where it isn't known. Land doesn't depreciate and the building does,
 # so a cheap m2 of lot and m2 still left to build are what hold value; a high price per covered m2 is mostly a
 # new-build premium that's lost within a few years (in the hunt's data: ~USD 2.500/m2 at 0-5 years, ~1.600 at 40-60).
 FOT_ASSUMED = 0.9

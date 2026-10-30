@@ -1,11 +1,12 @@
 name: zoning
 
-# Fetch Vicente López's official zoning plan and code text into geo/zoning/ (see zoning_fetch.py). Their hosts
-# don't answer from every network, but they do from GitHub's runners.
+# Fetch Vicente López's official zoning plan and code text into geo/zoning/ (see zoning_fetch.py), then place the
+# plan on the map as geo/zoning.json (zoning_build.py). Their hosts don't answer from every network, but they do
+# from GitHub's runners.
 on:
   workflow_dispatch:
   push:
-    paths: ["zoning_fetch.py", ".github/workflows/zoning.yml"]
+    paths: ["zoning_fetch.py", "zoning_build.py", ".github/workflows/zoning.yml"]
 
 permissions:
   contents: write
@@ -19,13 +20,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests pymupdf
+      - run: pip install requests pymupdf shapely numpy scipy
       - run: python zoning_fetch.py
+      - run: python zoning_build.py
       - name: Commit zoning sources
         run: |
           git config user.name "house-hunter-bot"
           git config user.email "house-hunter-bot@users.noreply.github.com"
-          git add geo/zoning
+          git add geo/zoning geo/zoning.json
           git diff --cached --quiet && exit 0
           git commit -qm "zoning: fuentes oficiales"
           for i in 1 2 3; do git push -q && exit 0; git pull -q --rebase; done

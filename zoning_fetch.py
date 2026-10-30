@@ -4,8 +4,8 @@ The municipality publishes no zoning dataset: only the zoning plan as a PDF (Ane
 Urbano, updated to May 2012) and the code's own text, which bounds each zone street by street. Their hosts don't
 answer from everywhere, so .github/workflows/zoning.yml runs this on GitHub's runners.
 
-Step 1 (this file for now): download both and write what's inside the plan (vector paths, fill colours, labels)
-to geo/zoning/probe.json, to see how to turn it into polygons with coordinates.
+This downloads both, plus OpenStreetMap's streets to place the plan on the map (zoning_build.py does that), and
+writes a summary of what's inside the plan (fill colours, labels) to geo/zoning/probe.json.
 """
 import collections, json, os
 import requests
