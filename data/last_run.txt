@@ -1,0 +1,18 @@
+zonaprop olivos-florida-la-lucila (None, None) page 1: GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-80000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+Traceback (most recent call last):
+  File "/home/runner/work/house-hunter/house-hunter/run.py", line 197, in main
+    fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/house-hunter/house-hunter/hh/sources/zonaprop.py", line 159, in search
+    st = _state(http.get(search_url(page, newest_only, band, zones), pause=(3, 7), via_api=True).text)["listStore"]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/house-hunter/house-hunter/hh/http.py", line 43, in get
+    raise RuntimeError(f"GET {url} failed: {'; '.join(errors)}")
+RuntimeError: GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-80000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+argenprop page 1/22: 20 listings
+argenprop page 2/22: 20 listings
+AI failed for zp-59530825: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for zp-57832119: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-19542996: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for zp-60499277: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+AI failed for ap-17961987: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
