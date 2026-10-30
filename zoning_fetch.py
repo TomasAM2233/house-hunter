@@ -23,6 +23,9 @@ UA = {"User-Agent": "Mozilla/5.0 (house-hunter; zoning)"}
 def download():
     got = {}
     for name, url in SOURCES.items():
+        if os.path.exists(os.path.join(OUT, name)):  # the 2012 plan and the code text don't change
+            got[name] = os.path.getsize(os.path.join(OUT, name))
+            continue
         try:
             r = requests.get(url, headers=UA, timeout=120)
             r.raise_for_status()
@@ -60,7 +63,7 @@ OSM_Q = """
 [out:json][timeout:120];
 (
   way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street)$"](-34.56,-58.54,-34.48,-58.45);
-  relation["boundary"="administrative"]["name"~"Vicente L"]["admin_level"="5"];
+  relation["boundary"="administrative"]["admin_level"="5"]["name"~"Vicente L"](-34.56,-58.54,-34.48,-58.45);
 );
 out geom;
 """
@@ -68,7 +71,7 @@ out geom;
 
 def osm():
     """Streets and the partido boundary, to georeference the plan (its street names are drawn, not text)."""
-    for url in ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"):
+    for url in ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"] * 2:
         try:
             r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers={"User-Agent": "house-hunter/0.1 (personal project)"})
             r.raise_for_status()
