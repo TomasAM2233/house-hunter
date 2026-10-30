@@ -4267,36 +4267,36 @@
  },
  "zp-59992111": {
   "condition": 2,
-  "reform_usd": 22000,
-  "reform_notes": "Reconstruir y revocar garage, living y comedor que están en bruto; equipar cocina completa; reparar filtraciones de techo y pintura general.",
+  "reform_usd": 18000,
+  "reform_notes": "Requiere terminación de revoques, pulido/reemplazo de parquets dañados, completar mobiliario de cocina, cielorrasos y pintura integral. Las instalaciones eléctricas y de agua se declaran nuevas.",
   "patio": "small",
-  "patio_m2_est": 6,
+  "patio_m2_est": 3,
   "patio_seen": true,
   "terrace": true,
   "corner": false,
-  "ph_stacked": true,
-  "pasillo_ph": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
   "natural_light": 2,
-  "quiet": 3,
+  "quiet": 1,
   "vertical_potential": 0,
-  "apto_credito": false,
+  "apto_credito": null,
   "highlights": [
-   "Muy buena ubicación cerca de estación Rivadavia y accesos",
-   "Garage cubierto propio",
-   "Instalaciones eléctricas y sanitarias renovadas"
+   "Cercanía a estación Rivadavia",
+   "Instalaciones básicas renovadas",
+   "Terraza propia transitable"
   ],
   "red_flags": [
-   "Obra a medio terminar con sectores en demolición/bruto",
-   "Filtraciones y manchas de humedad visibles en techos",
-   "Patio diminuto tipo pozo de aire y luz sin nada de verde"
+   "No tiene patio ni jardín (solo un aire y luz de 3m2)",
+   "Humedad de cimientos visible en living y dormitorios",
+   "Ubicación sobre calle de alto tránsito y ruido"
   ],
-  "summary": "Es un proyecto de flipping clavado a mitad de camino, cuyo presupuesto de obra excede lo que tienen y cuyo patio es apenas un lavadero encajonado que no cumple su requisito.",
-  "photos_key": "46e130f00578",
-  "analyst": "gemini:gemini-flash-latest",
+  "summary": "Es un clavo para lo que buscan: no tiene el jardín que exigen, es una obra a medio terminar y está sobre una calle muy ruidosa.",
+  "photos_key": "cb7cbb282eca",
+  "analyst": "gemini:gemini-3-flash-preview",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T04:25:25Z"
+  "ts": "2026-10-30T19:00:54Z"
  },
  "ap-20734026": {
   "condition": 2,
@@ -5850,36 +5850,35 @@
  },
  "ap-20317430": {
   "condition": 5,
-  "reform_usd": 2000,
-  "reform_notes": "La unidad es a estrenar. El gasto sería solo para equipamiento básico como aires acondicionados, luminarias e interiores de placard.",
+  "reform_usd": 0,
+  "reform_notes": "La propiedad es a estrenar/moderna, no requiere reformas estructurales ni de mantenimiento urgente.",
   "patio": "none",
-  "patio_m2_est": 0,
+  "patio_m2_est": null,
   "patio_seen": false,
-  "terrace": true,
+  "terrace": false,
   "corner": false,
   "ph_stacked": true,
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 4,
   "vertical_potential": 0,
-  "apto_credito": null,
+  "apto_credito": true,
   "highlights": [
-   "Estado a estrenar",
    "Cochera cubierta propia",
-   "Ubicación residencial excelente"
+   "Quincho con parrilla",
+   "Excelente ubicación en Olivos"
   ],
   "red_flags": [
-   "No tiene patio ni jardín (solo balcón y terraza)",
-   "Superficie muy fragmentada en 3 plantas",
-   "60m2 cubiertos es poco para un 3 ambientes"
+   "No tiene patio ni jardín a nivel del suelo",
+   "Distribución en 3 plantas (muchas escalera para el día a día)"
   ],
-  "summary": "Es un triplex moderno e impecable, pero no cumple con el requisito obligatorio de tener patio o jardín en planta baja.",
-  "photos_key": "595ed84fbdf6",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "summary": "Es un PH trifamiliar moderno pero no les sirve porque es en altura y no tiene un pedazo de tierra.",
+  "photos_key": "936a8bf3315e",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T04:46:50Z"
+  "ts": "2026-10-30T19:33:44Z"
  },
  "zp-60541425": {
   "condition": 3,
@@ -7792,42 +7791,10 @@
   "note_key": "",
   "ts": "2026-10-30T16:03:59Z"
  },
- "ap-19715487": {
-  "condition": 4,
-  "reform_usd": 3000,
-  "reform_notes": "Trabajos de pintura general y eventuales personalizaciones estéticas o de iluminación.",
-  "patio": "none",
-  "patio_m2_est": null,
-  "patio_seen": false,
-  "terrace": true,
-  "corner": false,
-  "ph_stacked": true,
-  "pasillo_ph": false,
-  "natural_light": 4,
-  "quiet": 3,
-  "vertical_potential": 0,
-  "apto_credito": null,
-  "highlights": [
-   "Excelente ubicación residencial en Olivos",
-   "Unidad al frente muy luminosa y sin expensas",
-   "Estado general muy bueno, listo para habitar"
-  ],
-  "red_flags": [
-   "Es un primer piso por escalera, no cuenta con patio en planta baja",
-   "PH superpuesto sobre otra propiedad en planta baja"
-  ],
-  "summary": "Es una excelente propiedad en Olivos en muy buen estado, pero queda totalmente descartada para esta pareja porque el espacio exterior es un patio/terraza en primer piso y no a nivel del suelo.",
-  "photos_key": "d13d47fac6df",
-  "analyst": "gemini:gemini-3.6-flash",
-  "analysed_at": "2026-10-30",
-  "prompt_version": 2,
-  "note_key": "",
-  "ts": "2026-10-30T17:06:56Z"
- },
- "ap-13077185": {
+ "zp-60582903": {
   "condition": 3,
-  "reform_usd": 12000,
-  "reform_notes": "Actualización preventiva de instalaciones (gas y electricidad), modernización de cocina y pintura general.",
+  "reform_usd": 18000,
+  "reform_notes": "Actualizar cocina y baños completos, refaccionar pisos, pintura general y revisar instalaciones.",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -7838,31 +7805,31 @@
   "natural_light": 3,
   "quiet": 3,
   "vertical_potential": 0,
-  "apto_credito": true,
+  "apto_credito": false,
   "highlights": [
-   "Excelente ubicación en Olivos cerca de Av. Maipú",
-   "Es apto crédito hipotecario",
-   "Cuenta con terraza propia al frente"
+   "Amplia superficie en dos plantas",
+   "Terraza propia",
+   "Entrada independiente"
   ],
   "red_flags": [
-   "No tiene patio en planta baja (es un PH en planta alta)",
-   "Unidad superpuesta con otro vecino abajo",
-   "Antigüedad de 45 años con posibles cañerías e instalaciones originales"
+   "No tiene patio ni jardín en planta baja",
+   "Cocina y baños de época con revestimientos antiguos",
+   "Instalaciones y mobiliario desgastados por los años"
   ],
-  "summary": "Queda descartado para ustedes porque es un PH en planta alta con terraza y necesitan sí o sí un patio o jardín propio a nivel del suelo.",
-  "photos_key": "f408e2d03338",
-  "analyst": "gemini:gemini-3.6-flash",
+  "summary": "Es un PH amplio al frente con terraza propia, pero no tiene el patio en planta baja que buscaban.",
+  "photos_key": "0a1655bf3d0f",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T17:16:00Z"
+  "ts": "2026-10-30T19:01:22Z"
  },
- "ap-19733071": {
-  "condition": 5,
-  "reform_usd": 0,
-  "reform_notes": "Propiedad de 2 años de antigüedad en excelente estado; lista para habitar sin necesidad de reformas.",
+ "ap-20775836": {
+  "condition": 4,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización estética y de baños/cocina de la segunda unidad, pintura general y puesta a punto de espacios exteriores.",
   "patio": "medium",
-  "patio_m2_est": 25,
+  "patio_m2_est": 30,
   "patio_seen": false,
   "terrace": false,
   "corner": false,
@@ -7870,162 +7837,131 @@
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 4,
-  "vertical_potential": 0,
-  "apto_credito": true,
+  "vertical_potential": 1,
+  "apto_credito": false,
   "highlights": [
-   "Estado impecable (2 años de antigüedad)",
-   "Patio propio con parrilla en planta baja",
-   "Apto crédito y con cochera propia"
+   "Dos viviendas independientes en un mismo lote",
+   "Excelente ubicación en Olivos",
+   "Espacio verde y cochera"
   ],
   "red_flags": [
-   "Superficie cubierta algo ajustada para 3 dormitorios (87 m²)",
-   "Planta alta con un solo baño completo para los 3 dormitorios"
+   "Servicios compartidos (agua)",
+   "Falta de fotos claras del patio en la publicación",
+   "Segunda vivienda a modernizar"
   ],
-  "summary": "Una opción ideal para mudarse de inmediato sin gastar en reformas, con el patio en planta baja que la pareja exige.",
-  "photos_key": "7890fe72e2e4",
-  "analyst": "gemini:gemini-3.6-flash",
+  "summary": "Una excelente opción en Olivos con dos casas en el mismo lote, ideal para dos familias o renta, entrando cómodamente con el presupuesto de refacción.",
+  "photos_key": "2eb06fdb26e8",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T17:25:49Z"
+  "ts": "2026-10-30T19:17:25Z"
  },
- "ap-19733450": {
-  "condition": 5,
-  "reform_usd": 2000,
-  "reform_notes": "Propiedad prácticamente a estrenar (2 años); solo requiere gastos menores de personalización o pintura.",
+ "ap-15608338": {
+  "condition": 2,
+  "reform_usd": 25000,
+  "reform_notes": "Recambio total de cañerías y electricidad, actualización de baño y cocina, arreglos por humedad de cimientos y puesta a punto de pisos y carpinterías.",
   "patio": "medium",
-  "patio_m2_est": 25,
+  "patio_m2_est": 40,
   "patio_seen": false,
   "terrace": false,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 4,
+  "natural_light": 3,
   "quiet": 3,
-  "vertical_potential": 0,
-  "apto_credito": true,
+  "vertical_potential": 1,
+  "apto_credito": false,
   "highlights": [
-   "Excelente estado general (prácticamente a estrenar)",
-   "Patio en PB con parrilla y lavadero",
-   "Apto crédito y cochera propia"
+   "Buen terreno propio de 319 m2",
+   "Incluye local comercial independiente",
+   "Ubicación en zona residencial de Vicente López"
   ],
   "red_flags": [
-   "Dormitorios chicos para 87 m² cubiertos totales",
-   "Poca posibilidad de ampliación por reglamento de dúplex"
+   "Antigüedad de 70 años sin mantenimiento visible",
+   "Instalaciones muy viejas a reciclar a nuevo",
+   "Supuesto local comercial integrado que requiere readaptación"
   ],
-  "summary": "Un dúplex impecable en Olivos listo para mudarse de inmediato sin necesidad de encarar obras grandes.",
-  "photos_key": "c074e57fb94c",
-  "analyst": "gemini:gemini-3.6-flash",
+  "summary": "Es una casa antigua a reciclar fuerte con buen terreno, pero te vas a pasar de largo con los 20 mil dólares de presupuesto para dejarla habitable.",
+  "photos_key": "f730d9f3d619",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T17:35:30Z"
+  "ts": "2026-10-30T19:44:08Z"
  },
- "ap-19965465": {
+ "ap-18348546": {
   "condition": 3,
-  "reform_usd": 18000,
-  "reform_notes": "Actualización de cocina y baños, pintura integral, revisión de instalación eléctrica y pulido de pisos flotantes/cerámicos.",
-  "patio": "small",
-  "patio_m2_est": 12,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar baño completo y cocina de época, revisar instalaciones eléctricas y de gas, pintura general y puesta a punto de galería/jardín.",
+  "patio": "medium",
+  "patio_m2_est": 45,
   "patio_seen": true,
   "terrace": false,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 4,
-  "quiet": 2,
-  "vertical_potential": 0,
+  "quiet": 4,
+  "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Orientación Norte (sol todo el día)",
-   "Apto crédito bancario",
-   "Tercera planta versátil (playroom o 3er dormitorio)"
+   "Jardín propio al frente/fondo con galería y parrilla",
+   "PH al frente con entrada independiente y sin expensas",
+   "Lote propio de 178 m2 con potencial"
   ],
   "red_flags": [
-   "Ruido constante por proximidad a Panamericana",
-   "Lote muy angosto (solo 3 metros de frente)",
-   "Instalaciones originales de 35 años de antigüedad"
+   "Cocina y baño de época que requieren inversión",
+   "Antigüedad de 50 años a revisar instalaciones",
+   "Posibles humedades de cimientos por los años"
   ],
-  "summary": "Es un dúplex típico de la zona, muy luminoso por su orientación, pero el lote es angosto y el ruido de la autopista penaliza el uso del patio.",
-  "photos_key": "cce034c0920a",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "summary": "Un PH al frente con lindo jardín y buen terreno en Villa Adelina, ideal para meterle mano y dejarlo joya sin pasarse del presupuesto.",
+  "photos_key": "9975617e93d1",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T17:44:42Z"
+  "ts": "2026-10-30T19:54:24Z"
  },
- "ap-19540573": {
-  "condition": 4,
+ "ap-17366650": {
+  "condition": 3,
   "reform_usd": 12000,
-  "reform_notes": "Pintura general, revisión de aires acondicionados, service de pileta y actualización de detalles de cocina/baños por antigüedad.",
+  "reform_notes": "Actualización de instalaciones viejas (cañerías y electricidad), pintura general, optimización del patio chico con techo corredizo y refacción de entrepisos o desniveles.",
   "patio": "small",
-  "patio_m2_est": 10,
+  "patio_m2_est": 5,
   "patio_seen": false,
   "terrace": false,
   "corner": false,
-  "ph_stacked": false,
+  "ph_stacked": true,
   "pasillo_ph": false,
-  "natural_light": 4,
+  "natural_light": 3,
   "quiet": 3,
   "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Triplex moderno de 20 años en Olivos",
-   "3 dormitorios con cochera propia",
-   "Jardín con pileta y parrilla"
+   "Excelente ubicación en Vicente López a una cuadra de Av. Maipú",
+   "Planta baja con ambiente apto profesional",
+   "Precio relativamente competitivo para la zona"
   ],
   "red_flags": [
-   "Publicación confusa que menciona alquiler y seguro de caución en un aviso de venta",
-   "Calefacción solo por aire acondicionado",
-   "Falta de fotos reales del jardín en la publicación"
+   "Patio extremadamente chico (2x2.5m) cubierto con techo corredizo",
+   "Distribución en altura y desnivel que puede ser incómoda",
+   "Antigüedad y posibles refacciones ocultas en instalaciones"
   ],
-  "summary": "Es un triplex piola en Olivos con cochera y pileta, ideal para entrar a vivir con unas refacciones menores.",
-  "photos_key": "db3af5a574c1",
+  "summary": "Un PH en planta baja bien ubicado pero con un patio muy acotado y detalles a revisar antes de mudarse.",
+  "photos_key": "23d8bd5cb264",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T17:53:55Z"
+  "ts": "2026-10-30T20:04:46Z"
  },
- "ap-20479711": {
+ "ap-10822728": {
   "condition": 4,
   "reform_usd": 5000,
-  "reform_notes": "Pintura general, detalles de terminación y adecuación de espacios exteriores según uso.",
+  "reform_notes": "Pintura general, detalles de terminación y revisión de griferías o artefactos.",
   "patio": "small",
-  "patio_m2_est": 12,
-  "patio_seen": false,
-  "terrace": true,
-  "corner": false,
-  "ph_stacked": true,
-  "pasillo_ph": false,
-  "natural_light": 4,
-  "quiet": 3,
-  "vertical_potential": 0,
-  "apto_credito": true,
-  "highlights": [
-   "Instalaciones nuevas de luz, agua y gas",
-   "Excelente ubicación a tres cuadras de Av. Maipú",
-   "Distribución versátil con planta alta independiente"
-  ],
-  "red_flags": [
-   "PH superpuesto con otra unidad",
-   "Falta de verificación visual certera del patio en las fotos",
-   "Orientación sur"
-  ],
-  "summary": "Es un PH moderno y bien ubicado, ideal para entrar a vivir rápido sin gastar fortuna en arreglos.",
-  "photos_key": "1868fd381b7c",
-  "analyst": "gemini:gemini-flash-lite-latest",
-  "analysed_at": "2026-10-30",
-  "prompt_version": 2,
-  "note_key": "",
-  "ts": "2026-10-30T18:03:48Z"
- },
- "ap-15374333": {
-  "condition": 3,
-  "reform_usd": 12000,
-  "reform_notes": "Actualización de cocina y baños, pintura general, revisión de techos y optimización del espacio de cochera convertida.",
-  "patio": "small",
-  "patio_m2_est": 18,
+  "patio_m2_est": 21,
   "patio_seen": true,
   "terrace": true,
   "corner": false,
@@ -8034,122 +7970,121 @@
   "natural_light": 4,
   "quiet": 4,
   "vertical_potential": 1,
-  "apto_credito": null,
+  "apto_credito": true,
   "highlights": [
-   "Lote propio en planta baja",
-   "Patio con parrilla y terraza propia",
-   "Zona residencial tranquila en Olivos"
+   "PH al frente en planta baja sin expensas",
+   "Cochera propia con entrada independiente",
+   "Patio y terraza propia"
   ],
   "red_flags": [
-   "Cochera original convertida a taller/depósito",
-   "Antigüedad de 40 años sin refacciones visibles en fotos",
-   "Posibles humedades en muros y espacios semicubiertos"
+   "Orientación sur (menos sol directo en invierno)",
+   "Falta verificar planos y reglamento de copropiedad"
   ],
-  "summary": "Un chalet clásico en Olivos con lote propio, patio y terraza, ideal para meterle unos mangos y dejarlo a tu gusto.",
-  "photos_key": "e4f872d3b1c4",
+  "summary": "Un PH al frente con cochera, patio y terraza que encaja perfecto con lo que buscan y entra cómodamente en presupuesto de refacción.",
+  "photos_key": "aa859fc358e9",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T18:12:23Z"
+  "ts": "2026-10-30T20:15:24Z"
  },
- "ap-9204509": {
-  "condition": 5,
-  "reform_usd": 0,
-  "reform_notes": "Propiedad reciclada a nuevo recientemente, no requiere reformas estructurales ni de importancia para entrar a vivir.",
-  "patio": "medium",
-  "patio_m2_est": 40,
-  "patio_seen": false,
-  "terrace": true,
+ "ap-17660587": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización de cocina y baño, pintura general, pulido de pisos y revisión de instalaciones de 50 años.",
+  "patio": "large",
+  "patio_m2_est": 150,
+  "patio_seen": true,
+  "terrace": false,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 4,
-  "quiet": 3,
-  "vertical_potential": 0,
-  "apto_credito": true,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": null,
   "highlights": [
-   "Reciclado a nuevo con excelentes terminaciones",
-   "Amplio espacio descubiero en planta baja y múltiples terrazas",
-   "Muy buena ubicación en Olivos cerca de Av. Maipú"
+   "Lote propio de 342 m2 con gran jardín al fondo",
+   "Distribución en una sola planta cómoda y funcional",
+   "Excelente capacidad de cochera pasante"
   ],
   "red_flags": [
-   "Venta con renta mensual (plazo de desocupación a confirmar)",
-   "Falta visualización del patio en las fotos publicadas",
-   "Tres plantas por escalera puede resultar incómodo para el día a día"
+   "Antigüedad de 50 años con instalaciones originales probables",
+   "Baño único para actualizar",
+   "Posibles humedades de cimientos por los años"
   ],
-  "summary": "Un PH moderno y reciclado en Olivos que pinta joya, pero ojo que se vende con inquilino y hay que chequear bien ese patio.",
-  "photos_key": "5ec7aded2c57",
+  "summary": "Es una linda casa en lote propio con un fondo bárbaro, ideal para entrar con una lavada de cara sin gastar una fortuna.",
+  "photos_key": "600835f0b2b5",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T18:21:13Z"
+  "ts": "2026-10-30T20:25:05Z"
  },
- "ap-19375655": {
+ "ap-20738230": {
   "condition": 3,
   "reform_usd": 12000,
-  "reform_notes": "Actualización general de cocina y pintura, revisión de humedades y detalles estéticos.",
+  "reform_notes": "Actualización de cocina y baños, pintura general y revisión de instalaciones por antigüedad de 40 años.",
   "patio": "small",
-  "patio_m2_est": 8,
-  "patio_seen": false,
+  "patio_m2_est": 19,
+  "patio_seen": true,
   "terrace": false,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 3,
-  "quiet": 2,
+  "natural_light": 4,
+  "quiet": 4,
   "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Planta baja al frente",
-   "Próximo a Av. Maipú y estación",
-   "Instalaciones de gas y electricidad nuevas"
+   "PH en planta baja al frente con entrada independiente",
+   "Patio propio con parrilla",
+   "Sin expensas y zona residencial tranquila"
   ],
   "red_flags": [
-   "Antigüedad de 60 años",
-   "Patio muy pequeño o no visible",
-   "Cercanía a avenida ruidosa"
+   "40 años de antigüedad con posibles instalaciones originales",
+   "Solo 1 dormitorio principal con ambiente adaptable",
+   "Superficie descubierta acotada de 19 m2"
   ],
-  "summary": "Un PH al frente con buena ubicación en Olivos, aunque el patio es chico y hay que invertirle unos buenos mangos para dejarlo joya.",
-  "photos_key": "aaaa4d057158",
+  "summary": "Un PH al frente con lindo patio y sin expensas en Vicente López, ideal para refaccionar a gusto sin pasarse del presupuesto.",
+  "photos_key": "a2ae85a86e59",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T18:31:16Z"
+  "ts": "2026-10-30T20:35:11Z"
  },
- "ap-20213386": {
+ "ap-19353726": {
   "condition": 3,
   "reform_usd": 12000,
-  "reform_notes": "Actualización de cocina y baño, pintura general, pulido de pisos y revisión de instalaciones.",
-  "patio": "none",
-  "patio_m2_est": null,
-  "patio_seen": false,
+  "reform_notes": "Actualizar cocina y baño, pintura general, revisión de instalaciones y optimización de espacios reducidos.",
+  "patio": "small",
+  "patio_m2_est": 5,
+  "patio_seen": true,
   "terrace": false,
   "corner": false,
   "ph_stacked": true,
-  "pasillo_ph": false,
-  "natural_light": 3,
+  "pasillo_ph": true,
+  "natural_light": 2,
   "quiet": 4,
   "vertical_potential": 0,
   "apto_credito": true,
   "highlights": [
-   "Sin expensas",
-   "Zona residencial muy tranquila en Olivos",
-   "Venta directa sin condicionantes"
+   "Excelente ubicación en Vicente López",
+   "A media cuadra de Avenida Maipú",
+   "Zona residencial muy tranquila"
   ],
   "red_flags": [
-   "Es un PH en primer piso sin patio ni jardín propio",
-   "Antigüedad de 55 años con posibles instalaciones originales",
-   "Superficie descubierta muy justa (balcón/lavadero o pequeña terraza técnica sin uso como jardín)"
+   "PH interno con ventilación limitada",
+   "Superficie cubierta muy ajustada (33 m²)",
+   "Distribución en varios niveles con escalera"
   ],
-  "summary": "Olvídense de este PH porque está en planta alta y no tiene el patio que tanto quieren.",
-  "photos_key": "816976fd7397",
+  "summary": "Es un PH interno chiquito y medio incómodo, pero zafa por la ubicación en Vicente López y tiene el patiecito que buscaban.",
+  "photos_key": "4c7c80974dac",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T18:41:43Z"
+  "ts": "2026-10-30T20:45:09Z"
  }
 }
