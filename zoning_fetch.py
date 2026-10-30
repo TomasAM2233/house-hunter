@@ -56,6 +56,40 @@ def probe(path):
     return pages
 
 
+OSM_Q = """
+[out:json][timeout:120];
+(
+  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street)$"](-34.56,-58.54,-34.48,-58.45);
+  relation["boundary"="administrative"]["name"~"Vicente L"]["admin_level"="5"];
+);
+out geom;
+"""
+
+
+def osm():
+    """Streets and the partido boundary, to georeference the plan (its street names are drawn, not text)."""
+    for url in ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"):
+        try:
+            r = requests.post(url, data={"data": OSM_Q}, timeout=180, headers=UA)
+            r.raise_for_status()
+            els = r.json()["elements"]
+            break
+        except Exception as e:
+            print(f"overpass {url}: {e}")
+    else:
+        return 0
+    ways, bound = [], []
+    for e in els:
+        if e["type"] == "way" and e.get("geometry"):
+            ways.append({"name": e.get("tags", {}).get("name", ""), "hw": e["tags"]["highway"],
+                         "g": [[round(p["lat"], 6), round(p["lon"], 6)] for p in e["geometry"]]})
+        elif e["type"] == "relation":
+            bound += [[[round(p["lat"], 6), round(p["lon"], 6)] for p in m["geometry"]]
+                      for m in e.get("members", []) if m.get("role") == "outer" and m.get("geometry")]
+    json.dump({"ways": ways, "boundary": bound}, open(os.path.join(OUT, "osm.json"), "w"), separators=(",", ":"))
+    return len(ways)
+
+
 def text_of(path):
     import fitz
     return "\n".join(p.get_text() for p in fitz.open(path))
@@ -64,7 +98,7 @@ def text_of(path):
 def main():
     os.makedirs(OUT, exist_ok=True)
     got = download()
-    res = {"downloads": got}
+    res = {"downloads": got, "osm_ways": osm()}
     if isinstance(got.get("plano.pdf"), int):
         res["plano"] = probe(os.path.join(OUT, "plano.pdf"))
     for name in ("cou_5_zonificacion.pdf", "cou_7_morfologia.pdf"):
