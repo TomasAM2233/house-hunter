@@ -1193,29 +1193,37 @@
   "analysed_at": "2026-10-23"
  },
  "zp-60277101": {
-  "condition": 3,
-  "reform_usd": 7000,
-  "reform_notes": "Cuidado pero de época: baños grises, alfombras a cambiar, cocina a actualizar.",
-  "patio": "small",
-  "patio_m2_est": 25,
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, revisión de calefacción y actualización estética menor.",
+  "patio": "medium",
+  "patio_m2_est": 30,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 3,
+  "natural_light": 4,
   "quiet": 4,
-  "vertical_potential": 0.0,
+  "vertical_potential": 0,
   "apto_credito": false,
   "highlights": [
-   "Fondo de 10 m y entrada de auto",
-   "Play-room en altillo"
+   "Amplio living comedor con entrada de auto",
+   "Playroom en segundo nivel con techos de madera",
+   "Fondo de 10 metros mencionado en descripción"
   ],
   "red_flags": [
-   "NO apto crédito",
-   "Ninguna foto del fondo",
-   "Precio al tope del presupuesto"
+   "No apto crédito",
+   "Calefacción por pico de gas (sin estufas instaladas)",
+   "Falta de fotos reales del jardín en la publicación"
   ],
-  "summary": "Dúplex prolijo con fondo y entrada de auto, pero caro para lo que es y no apto crédito.",
+  "summary": "Es un lindo dúplex en Florida que zafa bastante, pero hay que ir a ver ese fondo porque en las fotos brillan por su ausencia.",
   "photos_key": "4a9b7467fc96",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:15:03Z"
  },
  "zp-58603868": {
   "condition": 2,
@@ -4465,8 +4473,8 @@
  },
  "ap-20329187": {
   "condition": 3,
-  "reform_usd": 12000,
-  "reform_notes": "Terminar sectores faltantes (garage, living y comedor), pintura general y detalles de terminación.",
+  "reform_usd": 15000,
+  "reform_notes": "Terminaciones de obra inconclusa en garage, living y comedor (revestimientos, yesería, pintura general y detalles).",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -4475,26 +4483,26 @@
   "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 3,
-  "quiet": 3,
-  "vertical_potential": 1,
+  "quiet": 2,
+  "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "A metros de estación Rivadavia",
-   "Instalaciones de agua y electricidad renovadas",
-   "Garage amplio"
+   "Cochera propia cubierta",
+   "Terraza propia transitable",
+   "Excelente conectividad cerca de estación e ingresos a CABA"
   ],
   "red_flags": [
-   "No tiene patio ni jardín propio a nivel del suelo",
-   "Sectores inconclusos (living, comedor y garage)",
-   "Orientación sur"
+   "No posee patio en planta baja (superficie casi 100% cubierta)",
+   "Obra por la mitad que requiere terminar varios ambientes",
+   "Zona ruidosa por cercanía a autopista/estación"
   ],
-  "summary": "Ojo que este PH no tiene patio, asá que descartalo de una si querés verde abajo, por más que la ubicación esté buena.",
-  "photos_key": "4a0a23803ec8",
-  "analyst": "gemini:gemini-flash-lite-latest",
-  "analysed_at": "2026-10-29",
+  "summary": "Es una buena oportunidad para reciclar y cuenta con terraza y cochera, pero queda totalmente descartada por no tener patio en planta baja.",
+  "photos_key": "a0075225a973",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-29T03:57:28Z"
+  "ts": "2026-10-30T21:55:21Z"
  },
  "ap-20114580": {
   "condition": 4,
@@ -5851,7 +5859,7 @@
  "ap-20317430": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "La propiedad es a estrenar/moderna, no requiere reformas estructurales ni de mantenimiento urgente.",
+  "reform_notes": "Es una propiedad a estrenar, no requiere reformas estructurales ni de puesta a punto para mudarse.",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -5860,25 +5868,26 @@
   "ph_stacked": true,
   "pasillo_ph": false,
   "natural_light": 4,
-  "quiet": 4,
+  "quiet": 3,
   "vertical_potential": 0,
-  "apto_credito": true,
+  "apto_credito": null,
   "highlights": [
+   "A estrenar con diseño moderno en tres plantas",
    "Cochera cubierta propia",
-   "Quincho con parrilla",
-   "Excelente ubicación en Olivos"
+   "Quincho con parrilla"
   ],
   "red_flags": [
    "No tiene patio ni jardín a nivel del suelo",
-   "Distribución en 3 plantas (muchas escalera para el día a día)"
+   "Es un PH tríplex desarrollado en altura con varios niveles de escalera",
+   "Disposición lateral"
   ],
-  "summary": "Es un PH trifamiliar moderno pero no les sirve porque es en altura y no tiene un pedazo de tierra.",
-  "photos_key": "936a8bf3315e",
+  "summary": "Es un PH tríplex a estrenar re moderno pero no les sirve porque es en altura y no tiene un mísero patio de tierra para el perro.",
+  "photos_key": "595ed84fbdf6",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T19:33:44Z"
+  "ts": "2026-10-30T22:14:59Z"
  },
  "zp-60541425": {
   "condition": 3,
@@ -7826,36 +7835,36 @@
  },
  "ap-20775836": {
   "condition": 4,
-  "reform_usd": 12000,
-  "reform_notes": "Actualización estética y de baños/cocina de la segunda unidad, pintura general y puesta a punto de espacios exteriores.",
+  "reform_usd": 15000,
+  "reform_notes": "Modernización de cocina y baño en la unidad del fondo, pintura general y posible división física de los patios para mayor privacidad.",
   "patio": "medium",
-  "patio_m2_est": 30,
-  "patio_seen": false,
+  "patio_m2_est": 55,
+  "patio_seen": true,
   "terrace": false,
   "corner": false,
   "ph_stacked": false,
-  "pasillo_ph": false,
+  "pasillo_ph": true,
   "natural_light": 4,
   "quiet": 4,
-  "vertical_potential": 1,
-  "apto_credito": false,
+  "vertical_potential": 0,
+  "apto_credito": null,
   "highlights": [
-   "Dos viviendas independientes en un mismo lote",
-   "Excelente ubicación en Olivos",
-   "Espacio verde y cochera"
+   "Dos unidades independientes en un mismo lote",
+   "Excelente ubicación residencial en Olivos",
+   "Unidad principal en estado impecable"
   ],
   "red_flags": [
-   "Servicios compartidos (agua)",
-   "Falta de fotos claras del patio en la publicación",
-   "Segunda vivienda a modernizar"
+   "Segunda unidad requiere inversión en modernización",
+   "Privacidad compartida por el pasillo lateral",
+   "Superficie descubierta fragmentada entre frente y fondo"
   ],
-  "summary": "Una excelente opción en Olivos con dos casas en el mismo lote, ideal para dos familias o renta, entrando cómodamente con el presupuesto de refacción.",
-  "photos_key": "2eb06fdb26e8",
-  "analyst": "gemini:gemini-flash-lite-latest",
+  "summary": "Es una oportunidad ideal para vivir en una casa moderna y tener una segunda unidad para renta o familia, con el patio reglamentario que buscan aunque dividido.",
+  "photos_key": "6203258761bf",
+  "analyst": "gemini:gemini-3-flash-preview",
   "analysed_at": "2026-10-30",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-10-30T19:17:25Z"
+  "ts": "2026-10-30T22:05:35Z"
  },
  "ap-15608338": {
   "condition": 2,
@@ -8086,5 +8095,335 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-30T20:45:09Z"
+ },
+ "ap-18348657": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baño de época, pintura general, revisión de instalaciones y arreglos menores en galería.",
+  "patio": "medium",
+  "patio_m2_est": 90,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "PH al frente con entrada independiente",
+   "Jardín propio de buen tamaño con galería y parrilla",
+   "Sin expensas y con cochera"
+  ],
+  "red_flags": [
+   "Cocina y baño de época que requieren inversión",
+   "50 años de antigüedad con posibles instalaciones originales",
+   "Necesidad de mantenimiento general"
+  ],
+  "summary": "Un PH al frente con gran jardín y potencial para modernizar, ideal para entrar con un remozado sin pasarse del presupuesto.",
+  "photos_key": "b7915bdc8973",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T22:25:28Z"
+ },
+ "ap-6614913": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de cocina y baño, revisión de instalaciones eléctricas y sanitarias de 50 años, pintura general y puesta a punto del patio.",
+  "patio": "small",
+  "patio_m2_est": 10.78,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Excelente ubicación cerca de Libertador y estación Aristóbulo del Valle",
+   "Sin expensas",
+   "Cuenta con patio propio y parrilla"
+  ],
+  "red_flags": [
+   "50 años de antigüedad sin detalles claros de refacción",
+   "Disposición lateral y características de PH al fondo/pasillo",
+   "Superficie cubierta acotada (38 m2)"
+  ],
+  "summary": "Un PH piola en Vicente López con patio propio y sin expensas, ideal para refaccionar un toque y mudarse rápido dentro del presupuesto.",
+  "photos_key": "0564cc52d5be",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T22:34:49Z"
+ },
+ "zp-60372865": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Reparar filtraciones y humedades graves en techos y paredes, pintura general, revisión de instalaciones eléctricas y sanitarias.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Excelente ubicación en Vicente López",
+   "Gran terraza propia con quincho",
+   "Pisos de parquet originales en buen estado"
+  ],
+  "red_flags": [
+   "Evidencias claras de filtraciones y humedad de techos",
+   "Primer piso por escalera",
+   "Falta total de patio o jardín a nivel del suelo"
+  ],
+  "summary": "Tiene una terraza hermosa con quincho, pero no le sirve a la pareja porque buscaban un patio de tierra y hay que meterle plata a las humedades.",
+  "photos_key": "9b27f68f0eba",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T22:35:10Z"
+ },
+ "ap-20627764": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura general, revisión de cañerías antiguas por los 75 años de antigüedad del edificio, y actualización de detalles menores de estética.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Cocina y baño ya refaccionados a nuevo",
+   "Gran terraza propia con quincho",
+   "Excelente ubicación en Vicente López"
+  ],
+  "red_flags": [
+   "Es un PH en primer piso por escalera (superpuesto)",
+   "No tiene patio ni jardín en planta baja",
+   "75 años de antigüedad requiere revisión de instalaciones"
+  ],
+  "summary": "Tiene una terraza hermosa y cocina nueva, pero al ser un PH en primer piso sin patio descartalo porque no cumple con lo que buscaban.",
+  "photos_key": "5b35e4b99595",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T22:44:59Z"
+ },
+ "ap-18262983": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualización de baños y cocina, pintura general, revisión de humedad y puesta a punto de la pileta.",
+  "patio": "medium",
+  "patio_m2_est": null,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio con jardín al frente y patio con pileta",
+   "Cochera cubierta",
+   "Muy buena distribución en dos plantas"
+  ],
+  "red_flags": [
+   "Antigüedad de 45 años requiere revisión de instalaciones",
+   "Posible humedad por cercanía a la pileta",
+   "Dependencia de servicio a reciclar"
+  ],
+  "summary": "Una casa clásica en Villa Adelina con buen terreno y pileta, ideal para meterle unos mangos en arreglos y mudarse ya.",
+  "photos_key": "5c125804e7af",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T22:54:53Z"
+ },
+ "ap-11540751": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, revisión de instalación eléctrica y pequeños detalles de terminación tras el reciclaje.",
+  "patio": "small",
+  "patio_m2_est": 4,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Reciclado a nuevo cocina y baño",
+   "Excelente ubicación a una cuadra de Av. Maipú",
+   "Planta baja al frente con baja superficie descubierta"
+  ],
+  "red_flags": [
+   "Patio lavadero muy pequeño de solo 4 m2",
+   "Todo eléctrico sin gas natural",
+   "Expensas elevadas para un PH chico"
+  ],
+  "summary": "Un PH reciclado piola cerca de Maipú, pero el patio es diminuto y queda justo en tu presupuesto de readecuación.",
+  "photos_key": "5791d60de2af",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:04:26Z"
+ },
+ "ap-16651402": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, revisión de instalación eléctrica y pequeños detalles de terminación tras el reciclaje.",
+  "patio": "small",
+  "patio_m2_est": 4,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Planta baja al frente reciclada",
+   "Excelente ubicación a una cuadra de Av. Maipú",
+   "Bajo costo de reformas necesario"
+  ],
+  "red_flags": [
+   "Patio lavadero muy chico (apenas 4 m2)",
+   "Todo eléctrico sin gas natural",
+   "Expensas declaradas a pesar de ser PH"
+  ],
+  "summary": "Ph reciclado en planta baja bien ubicado, pero con un patio muy chico que apenas sirve de pulmón y lavadero.",
+  "photos_key": "45eca69e5fd2",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:14:06Z"
+ },
+ "tk-12029784": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, actualización estética de baños y cocina, y revisión de artefactos.",
+  "patio": "medium",
+  "patio_m2_est": 29,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Patio propio con parrilla",
+   "Planta baja al frente sin expensas",
+   "Metrajes cómodos y luminosos"
+  ],
+  "red_flags": [
+   "Unidad superior (aire acondicionado y estructura arriba del patio)",
+   "Antigüedad de 40 años que requiere mantenimiento preventivo",
+   "Falta de cochera"
+  ],
+  "summary": "Hermoso PH en planta baja con un patio disfrutable, ideal para entrar a vivir con mínimos arreglos.",
+  "photos_key": "530efb38c76c",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:14:49Z"
+ },
+ "ml-MLA1674775937": {
+  "condition": 2,
+  "reform_usd": 15000,
+  "reform_notes": "Pintura general, arreglos de humedad en paredes, actualización de cocina y baños, y pulido de pisos.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": false,
+  "highlights": [
+   "Muy buena ubicación en Olivos",
+   "Lote propio con cochera",
+   "Distribución amplia en dos plantas"
+  ],
+  "red_flags": [
+   "Falta de planos actualizados (excluye bancos estatales)",
+   "Humedad visible en paredes interiores",
+   "Instalaciones y detalles de época que requieren inversión"
+  ],
+  "summary": "Una casa clásica en Olivos con buen potencial pero que necesita una lavada de cara urgente y papeles al día para entrar a vivir.",
+  "photos_key": "c3a6f62e199a",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:15:21Z"
+ },
+ "ap-19715487": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, revisión de artefactos de gas y detalles menores de terminación.",
+  "patio": "small",
+  "patio_m2_est": 21,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Sin expensas",
+   "Ambientes amplios y luminosos",
+   "Muy buena ubicación en Olivos"
+  ],
+  "red_flags": [
+   "Es un PH en primer piso por escalera, el 'patio' mencionado es una terraza o balcón, no nivel de suelo",
+   "Al ser primer piso no cumple con el requisito de jardín en planta baja",
+   "Orientación Sureste"
+  ],
+  "summary": "Ojo que es un primer piso por escalera y el patio descripto probablemente sea una terraza o balcón, así que no cumple con lo que buscan.",
+  "photos_key": "d13d47fac6df",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-30",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-30T23:24:53Z"
  }
 }
