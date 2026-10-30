@@ -5,7 +5,6 @@ zonaprop vicente-lopez-vicente-lopez (None, None): 2 pages, only 1 are reachable
 zonaprop: pages [('olivos-florida-la-lucila', (None, None), 'overflow'), ('vicente-lopez-vicente-lopez', (None, None), 'overflow')] failed; their listings keep their previous state
 argenprop page 1/22: 20 listings
 argenprop page 2/22: 20 listings
-AI failed for ml-MLA2243491031: Extra data: line 28 column 1 (char 976)
-AI failed for zp-58224676: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
-AI failed for zp-60420878: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
-AI failed for zp-60541425: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+enrich failed zp-59992111: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-de-ph-en-vicente-lopez-ideal-para-flipping-59992111.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+AI failed for zp-59992111: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)
+enrich failed zp-60562837: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-casa-3-amb-c-dep-quincho-garage-pque-olivos-60562837.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
