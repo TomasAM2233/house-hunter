@@ -41,6 +41,46 @@ def lot_m2(l):
     return l.get("total_m2"), "totales"
 
 
+def buildable_left(l):
+    """m2 that could still be built on the lot (lot x the assumed FOT, minus what's covered), for houses only:
+    a PH shares its lot, so there it depends on the consortium. None when the lot or covered m2 are unknown."""
+    if l.get("type") != "casa" or not l.get("covered_m2"):
+        return None
+    lot, _ = lot_m2(l)
+    return max(0, round(lot * config.FOT_ASSUMED - l["covered_m2"])) if lot else None
+
+
+def investment(l):
+    """(0..1, why): 40% price per m2 of lot, 35% m2 still buildable, 25% price per covered m2 (low = not paying
+    a new-build premium)."""
+    p = l.get("price_usd")
+    if not p:
+        return 0.3, "sin precio"
+    lot, what = lot_m2(l)
+    cov = l.get("covered_m2")
+    parts, why = [], []
+    if lot and l.get("type") == "casa":
+        v = p / lot
+        parts.append((0.4, lerp(v, config.LOT_PPM2[0], 1, config.LOT_PPM2[1], 0)))
+        why.append(f"USD {n(v)}/m² de lote" + ("" if what == "terreno" else " (m² totales)"))
+    else:
+        parts.append((0.4, 0.3))
+        why.append("PH: el lote es compartido" if l.get("type") == "ph" else "sin m² de lote")
+    b = buildable_left(l)
+    if b is not None:
+        parts.append((0.35, lerp(b, 0, 0, config.BUILDABLE_FULL_M2, 1)))
+        why.append(f"~{n(b)} m² por construir")
+    else:
+        parts.append((0.35, 0.2))
+    if cov:
+        v = p / cov
+        parts.append((0.25, lerp(v, config.COVERED_PPM2[0], 1, config.COVERED_PPM2[1], 0)))
+        why.append(f"USD {n(v)}/m² cubierto")
+    else:
+        parts.append((0.25, 0.4))
+    return sum(w * x for w, x in parts) / sum(w for w, _ in parts), ", ".join(why)
+
+
 def maipu_sweet(blocks):
     """1 around the sweet spot (6 cuadras from Maipú), falling off towards the 3 and 15 cuadra limits."""
     s = config.MAIPU_SWEET_BLOCKS
@@ -157,6 +197,9 @@ def components(l, ai=None):
         c["patio"] = (lerp(um2, 0, 0, 60, 1), f"{um2} m² descubiertos según aviso")
     else:
         c["patio"] = (0.4 if text.has_patio_words(desc) else 0.1, "menciona patio/jardín" if text.has_patio_words(desc) else "no menciona patio")
+
+    # investment: what holds value at resale
+    c["investment"] = investment(l)
 
     # vertical
     if ai and ai.get("vertical_potential") is not None:

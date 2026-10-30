@@ -99,6 +99,21 @@ def dedupe(listings):
             kept.append(l)
 
 
+def side_percentiles(listings):
+    """Percentiles that sit next to the score's (and matter less): covered m2, USD/m2 (cheaper = higher) and m2 still
+    buildable, each among every listing that has the number. Recomputed on every run, unlike the score's."""
+    ls = [l for l in listings if not l.get("duplicate_of")]
+    get = {"m2": lambda l: l.get("covered_m2"), "ppm2": score.ppm2, "build": score.buildable_left}
+    for l in ls:
+        l["pcts"], l["build_m2"] = {}, score.buildable_left(l)
+    for k, f in get.items():
+        vals = sorted(v for v in map(f, ls) if v is not None)
+        for l in ls:
+            v = f(l)
+            below = None if v is None else bisect.bisect_left(vals, v) if k != "ppm2" else len(vals) - bisect.bisect_right(vals, v)
+            l["pcts"][k] = None if v is None else round(100 * below / max(1, len(vals)))
+
+
 def big_lot(l):
     """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú."""
     r = config.ALERT_BIG_LOT
@@ -269,6 +284,7 @@ def main():
 
 
     dedupe(listings.values())
+    side_percentiles(listings.values())
     # Final AI verdict for every candidate with a photo read, best first, while today's quota lasts: reads
     # everything, including Tomás's preferences and notes, and its score overrides ours. Skips what he dismissed.
     prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
@@ -286,7 +302,7 @@ def main():
             due = l.get("active") and not tags.get(l["id"], {}).get("dismissed") and not requested
             v = ai.final(l, prefs, note(l), compute=due and ai.budget_left() >= 1, log=log)
         if v:
-            l["ai_final"] = {k: v.get(k) for k in ("score", "brief", "reasons", "questions", "general_questions", "at")}
+            l["ai_final"] = {k: v.get(k) for k in ("score", "brief", "reasons", "investment", "questions", "general_questions", "at")}
             l["score"] = v["score"]
     # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
     # Frozen the first time a listing gets a score; the app can recompute all of them on demand.

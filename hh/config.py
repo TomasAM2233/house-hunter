@@ -36,6 +36,15 @@ TREN_DE_LA_COSTA = {"Avenida Maipú", "Borges", "Libertador"}
 
 REFORM_BUDGET_USD = 20_000
 
+# Investment side of a house (see score.investment). The zoning isn't known per listing: R1 allows ~0.8-0.85 and
+# R2 1.0 times the lot in Vicente López, so 0.9 stands in for both. Land doesn't depreciate and the building does,
+# so a cheap m2 of lot and m2 still left to build are what hold value; a high price per covered m2 is mostly a
+# new-build premium that's lost within a few years (in the hunt's data: ~USD 2.500/m2 at 0-5 years, ~1.600 at 40-60).
+FOT_ASSUMED = 0.9
+LOT_PPM2 = (500, 1_500)       # USD per m2 of lot: best .. worst
+COVERED_PPM2 = (1_300, 2_500) # USD per covered m2: best .. worst
+BUILDABLE_FULL_M2 = 150       # m2 still buildable that count as "a whole extra floor"
+
 # Gemini free tier: about 20 requests a day per model, across the models in hh/ai.py, resetting at midnight
 # Pacific time. Automatic runs spend up to AI_DAILY_CALLS - AI_MANUAL_RESERVE a day, best-ranked candidates first
 # (each house costs 2 calls: photo read + verdict); the reserve is left for "Evaluar con IA" from the app
@@ -52,18 +61,20 @@ ALERT_AI_SCORE = 70
 # is used when the listing or its text gives it, otherwise the total m2.
 ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8)}
 
-# Weights add up to 100, in the order of importance Tomás gave.
+# Weights add up to 100, in the order of importance Tomás gave. "investment" was added on 2026-10-30, when he
+# decided to buy where they want to live but to make it as good an investment as possible.
 WEIGHTS = {
-    "price": 22,        # effective price (asking + estimated reform) and $/m2
-    "space": 18,        # total m2, covered m2, ambientes
+    "price": 20,        # effective price (asking + estimated reform) and $/m2
+    "space": 16,        # total m2, covered m2, ambientes
     "location": 15,     # cuadras to Av. Maipú (peak at 6) or a train station, plus a nearby plaza/park
     "condition": 13,    # AI: how habitable it is and how much reform it needs
     "patio": 10,        # AI + text: size of garden / patio
-    "vertical": 7,      # AI + text: room to build upwards
+    "investment": 8,    # resale value: cheap lot m2, m2 still buildable, not paying a new-build premium
+    "vertical": 6,      # AI + text: room to build upwards
     "credit": 6,        # apto crédito hipotecario
-    "garage": 4,        # highly desirable, not required
-    "quiet": 3,         # distance from avenues + AI read of the street
-    "light": 2,         # AI + listing tags
+    "garage": 3,        # highly desirable, not required
+    "quiet": 2,         # distance from avenues + AI read of the street
+    "light": 1,         # AI + listing tags
 }
 assert sum(WEIGHTS.values()) == 100
 

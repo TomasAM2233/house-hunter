@@ -182,13 +182,23 @@ de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algori
 él verificó (visitas, llamados a la inmobiliaria) y mandan sobre el aviso, las fotos y el algoritmo: si una nota
 corrige algo (patio, estado, precio, expensas, m², ubicación), puntuá con lo que dice la nota y mencionalo en los
 motivos. Si algo choca con un
-requisito obligatorio suyo, bajá mucho el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
+requisito obligatorio suyo, bajá mucho el puntaje.
+Además, Tomás quiere comprar una casa donde quiera vivir que también sea una buena inversión. Ponderá cuánto
+valor va a sostener al revenderla: que el precio esté abajo del mercado (USD/m² de lote y cubierto contra la zona); el terreno, que no
+se deprecia (lote grande y barato por m², buen frente, m² que todavía se pueden construir); no pagar el sobreprecio
+de una casa nueva o recién reciclada, que se pierde en pocos años; que una reforma razonable sume m², baños o
+cocina en planos aprobados; la ubicación (de 4 a 8 cuadras de Maipú o del tren, cerca de una plaza, calle
+tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, y nada que achique la lista de
+compradores (pasillo, planta rara, construcciones sin declarar). Esto pesa menos que sus criterios de vida, pero
+mueve el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
 que pasan los filtros, 45 es floja, 55 buena, 65 muy buena y 75 o más solo para una oportunidad excepcional que
 Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con motivos concretos (cada motivo
 vale entre 3 y 15 puntos). Sé exigente: la mayoría de los avisos no son excepcionales. Respondé SOLO un JSON:
 {{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
 rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
 inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"],
+"investment": {{"score": 1-10 (qué tan buena inversión es: valor que sostiene al revender), "why": "una oración
+con los números que lo explican"}},
 "questions": [hasta 6 preguntas para que Tomás haga en la visita o al llamar a la inmobiliaria, cuya respuesta
 cambiaría tu puntaje: lo que hoy no se sabe o asumiste (patio real, humedad, estado del techo y las instalaciones,
 m² y planos aprobados, expensas, si es apto crédito, ruido, orientación, qué hay al fondo o al lado, etc.), las más
@@ -225,13 +235,26 @@ def _final_text(l, prefs, note):
     a, g = l.get("ai") or {}, l.get("geo") or {}
     st = g.get("station") or {}
     ppm2 = round(l["price_usd"] / l["total_m2"]) if l.get("price_usd") and l.get("total_m2") else None
+    # only numbers that stay put between runs: the verdict is cached by its input, and the side percentiles
+    # move a little with every new listing
+    inv = (f"~{l.get('build_m2')} m² por construir (FOT {config.FOT_ASSUMED} supuesto), "
+           f"percentil del puntaje {l.get('pct')} | {(l.get('components') or {}).get('investment', {}).get('why', '')}")
     comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
     return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
             f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
             f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} ({st.get('line')}) a {st.get('blocks')} cuadras | "
             f"Cuadras a Puente Saavedra: {g.get('puente_blocks')}\n"
+            f"INVERSIÓN: {inv}\n"
             f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"
             f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
+
+
+def _investment(x):
+    """{score 1-10, why} or None, from whatever the model answered."""
+    try:
+        return {"score": max(1, min(10, int(round(float(x["score"]))))), "why": str(x.get("why") or "").strip()[:300]}
+    except (TypeError, KeyError, ValueError):
+        return None
 
 
 def _questions(qs):
@@ -265,6 +288,7 @@ def final(listing, prefs, note="", compute=True, force=False, log=print):
             brief = brief[:config.BRIEF_MAX_CHARS - 1].rsplit(" ", 1)[0] + "…"
         out = {"score": max(0, min(100, int(round(float(res["score"]))))), "brief": brief,
                "reasons": [str(x) for x in (res.get("reasons") or [])][:3],
+               "investment": _investment(res.get("investment")),
                "questions": _questions(res.get("questions")), "general_questions": _questions(res.get("general_questions")),
                "input_key": h,
                "model": GEMINI_MODEL, "at": time.strftime("%Y-%m-%d"), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
