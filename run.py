@@ -28,9 +28,11 @@ def log(*a):
 
 
 def load():
-    if os.path.exists(DATA):
-        return {l["id"]: l for l in json.load(open(DATA))["listings"]}
-    return {}
+    out = {}
+    for l in (json.load(open(DATA))["listings"] if os.path.exists(DATA) else []):
+        if l["id"] not in out or (l.get("last_seen") or "") >= (out[l["id"]].get("last_seen") or ""):
+            out[l["id"]] = l  # a listing stored twice (from a bad merge) keeps its latest copy
+    return out
 
 
 def merge(old, fresh):

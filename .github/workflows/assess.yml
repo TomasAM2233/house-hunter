@@ -52,15 +52,13 @@ jobs:
           for i in 1 2 3 4; do
             git push -q && exit 0
             git fetch -q origin main
-            if ! git rebase -q -X theirs origin/main; then
-              # take main as it is and lay this run's AI results on top (the next hunt run rebuilds listings.json from them)
-              git rebase --abort
-              mkdir -p /tmp/out && cp -r --parents data/ai_cache.json data/ai_final.json data/ai_results.json /tmp/out/
-              DONE=$(git diff --name-only --diff-filter=D HEAD~1 HEAD -- data/ai_requests)
-              git reset -q --hard origin/main
-              python merge_ai.py /tmp/out && for f in $DONE; do git rm -q --ignore-unmatch "$f"; done
-              python build.py && git add -A data web
-              git commit -qm "assess: $(date -u +%Y-%m-%dT%H:%MZ)"
-            fi
+            # take main as it is and lay this run's AI results on top (the next hunt run rebuilds listings.json from
+            # them). Never rebase: a text merge of two listings.json versions duplicates listings.
+            mkdir -p /tmp/out && cp -r --parents data/ai_cache.json data/ai_final.json data/ai_results.json /tmp/out/
+            DONE=$(git diff --name-only --diff-filter=D HEAD~1 HEAD -- data/ai_requests)
+            git reset -q --hard origin/main
+            python merge_ai.py /tmp/out && for f in $DONE; do git rm -q --ignore-unmatch "$f"; done
+            python build.py && git add -A data web
+            git commit -qm "assess: $(date -u +%Y-%m-%dT%H:%MZ)"
           done
           exit 1
