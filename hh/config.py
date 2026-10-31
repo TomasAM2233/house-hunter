@@ -41,9 +41,20 @@ REFORM_BUDGET_USD = 20_000
 # so a cheap m2 of lot and m2 still left to build are what hold value; a high price per covered m2 is mostly a
 # new-build premium that's lost within a few years (in the hunt's data: ~USD 2.500/m2 at 0-5 years, ~1.600 at 40-60).
 FOT_ASSUMED = 0.9
-LOT_PPM2 = (500, 1_500)       # USD per m2 of lot: best .. worst
-COVERED_PPM2 = (1_300, 2_500) # USD per covered m2: best .. worst
 BUILDABLE_FULL_M2 = 150       # m2 still buildable that count as "a whole extra floor"
+# Land holds its value and the building wears out (Tomás, 2026-10-31). A house is split into what its building is
+# worth (covered m2 x what it costs to build x what's left of it at its age) and the land it sits on, which is the rest
+# of the price. The land is then valued at what nearby houses implicitly pay per m2 of lot (geo/land_market.json, built
+# by land_market_build.py) and the building is aged HORIZON_YEARS: "value at the horizon / price" is how much of what
+# they pay is still there then, in today's dollars. See score.land_value.
+BUILD_COST_M2 = 1_480         # USD per m2 to build a house here today
+DEPRECIATION_PER_YEAR = 0.012 # share of the building's value lost each year (straight line, ~80 years of life)...
+BUILDING_FLOOR = 0.25         # ...down to this share, which an old house that still stands keeps
+AGE_ASSUMED = 40              # years, when the listing doesn't say (the hunt's median; "0" mostly means not given)
+HORIZON_YEARS = 10
+PH_LAND_SHARE = 0.8           # share of a PH's total m2 taken as its piece of the shared lot
+LAND_NEIGHBOURS = 20          # houses around it that set a listing's market price per m2 of lot
+VALUE_KEPT = (0.6, 1.2)       # value at the horizon / price: worst .. best for the investment score
 
 # Gemini free tier: about 20 requests a day per model, across the models in hh/ai.py, resetting at midnight
 # Pacific time. Automatic runs spend up to AI_DAILY_CALLS - AI_MANUAL_RESERVE a day, best-ranked candidates first
@@ -62,16 +73,17 @@ ALERT_AI_SCORE = 70
 ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8)}
 
 # Weights add up to 100, in the order of importance Tomás gave. "investment" was added on 2026-10-30, when he
-# decided to buy where they want to live but to make it as good an investment as possible.
+# decided to buy where they want to live but to make it as good an investment as possible, and raised to one of
+# the two heaviest on 2026-10-31 (he asked for it), mostly taken from "vertical", which it now covers.
 WEIGHTS = {
-    "price": 20,        # effective price (asking + estimated reform) and $/m2
-    "space": 16,        # total m2, covered m2, ambientes
-    "location": 15,     # cuadras to Av. Maipú (peak at 6) or a train station, plus a nearby plaza/park
-    "condition": 13,    # AI: how habitable it is and how much reform it needs
-    "patio": 10,        # AI + text: size of garden / patio
-    "investment": 8,    # resale value: cheap lot m2, m2 still buildable, not paying a new-build premium
-    "vertical": 6,      # AI + text: room to build upwards
+    "price": 18,        # effective price (asking + estimated reform) and $/m2
+    "investment": 18,   # resale value: what's still there in 10 years (land at the area's price + aged building), m2 still buildable
+    "space": 14,        # total m2, covered m2, ambientes
+    "location": 14,     # cuadras to Av. Maipú (peak at 6) or a train station, plus a nearby plaza/park
+    "condition": 11,    # AI: how habitable it is and how much reform it needs
+    "patio": 9,         # AI + text: size of garden / patio
     "credit": 6,        # apto crédito hipotecario
+    "vertical": 4,      # AI + text: room to build upwards
     "garage": 3,        # highly desirable, not required
     "quiet": 2,         # distance from avenues + AI read of the street
     "light": 1,         # AI + listing tags

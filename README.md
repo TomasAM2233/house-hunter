@@ -32,16 +32,25 @@ Score out of 100, in our order of importance:
 
 | Criterion | Pts | What it looks at |
 |---|---|---|
-| Price | 22 | asking + estimated reform, and USD/m² |
-| Space | 18 | total m², covered m², ambientes |
-| Location | 15 | 75%: cuadras to Maipú, best at 6 and falling off both ways (a nearby Mitre/Belgrano station can stand in, capped); 25%: distance to the nearest plaza/park |
-| Condition | 13 | AI condition 1–5 and reform estimate vs the USD 20k budget |
-| Patio | 10 | AI patio size, or m² descubiertos from the text |
-| Build upwards | 7 | AI read: own lot, one storey, no consorcio |
+| Price | 18 | asking + estimated reform, and USD/m² |
+| Investment | 18 | 65%: value in 10 years over the price (land at what nearby houses pay per m² of lot + the building aged 10 more years; see below); 35%: m² still buildable under the zone's FOT |
+| Space | 14 | total m², covered m², ambientes |
+| Location | 14 | 75%: cuadras to Maipú, best at 6 and falling off both ways (a nearby Mitre/Belgrano station can stand in, capped); 25%: distance to the nearest plaza/park |
+| Condition | 11 | AI condition 1–5 and reform estimate vs the USD 20k budget |
+| Patio | 9 | AI patio size, or m² descubiertos from the text |
 | Apto crédito | 6 | text, listing pill, AI |
-| Garage | 4 | listing data or mention |
-| Quiet | 3 | distance from Maipú + AI read of the street |
-| Light | 2 | AI + listing tags |
+| Build upwards | 4 | AI read: own lot, one storey, no consorcio |
+| Garage | 3 | listing data or mention |
+| Quiet | 2 | distance from Maipú + AI read of the street |
+| Light | 1 | AI + listing tags |
+
+Investment: land holds its value and the building wears out. The building is worth covered m² × USD 1,480 (cost to
+build) × what's left at its age (−1.2% a year, never below 25%; ±15% for the AI's condition). The rest of the price is
+the land, per m² of lot (for a PH, 80% of its total m²). `geo/land_market.json` freezes that number for every house in
+the hunt, so a listing's area price of land is the median of its 20 nearest houses; rebuild it with
+`python land_market_build.py` every few months. Cards show the implied land price and the value in 10 years, with
+their percentiles. The AI verdict gets the same numbers, does its own investment analysis, and moves its score
+about 3 points per point of its 1–10 investment grade.
 
 ## Sources
 
