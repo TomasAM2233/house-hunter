@@ -68,7 +68,7 @@ def _from_api(o, agency):
         "description": htmllib.unescape(o.get("description") or ""),
         "photos": [p.get("image") for p in o.get("photos") or [] if p.get("image")],
         "tags": {t.get("name"): True for t in o.get("tags") or []},
-        "features_text": [o.get("property_condition") or "", o.get("disposition") or "", o.get("orientation") or ""],
+        "features_text": [str(o.get(k)) for k in ("property_condition", "disposition", "orientation") if o.get(k)],  # some agencies send numeric codes
         "credit_pill": o.get("credit_eligible") == "Apto crédito",
         "apto_credito_field": {"Apto crédito": True, "No apto crédito": False}.get(o.get("credit_eligible")),
         "publisher": agency["name"],
