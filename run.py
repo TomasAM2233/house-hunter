@@ -263,7 +263,11 @@ def main():
             try:
                 ai.analyse(l, note(l), force=True, log=log)
             except Exception as e:
-                errors[i] = "lectura de fotos: " + ("se acabó la cuota gratis de Gemini por hoy" if ai.EXHAUSTED else str(e)[:160])
+                if l.get("ai"):  # its own earlier read, or its twin's on another site
+                    # the fresh photo read failed, but an earlier one exists: still give him the verdict and questions
+                    log(f"{i}: fresh photo read failed ({str(e)[:80]}); the verdict uses the previous one")
+                else:
+                    errors[i] = "lectura de fotos: " + ("se acabó la cuota gratis de Gemini por hoy" if ai.EXHAUSTED else str(e)[:160])
     else:
         # enrich + AI only for active listings that survive the non-AI filters, best pre-score first
         cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
@@ -302,12 +306,14 @@ def main():
     side_percentiles(listings.values())
     # Final AI verdict for every candidate with a photo read, best first, while today's quota lasts: reads
     # everything, including Tomás's preferences and notes, and its score overrides ours. Skips what he dismissed.
+    # A house he asks about from the app gets one even if a filter ruled it out (he wants the visit questions).
     prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
     for l in sorted(listings.values(), key=lambda l: -l["score"]):
         l["score_calc"] = l["score"]
-        if not l.get("ai") or l["discard"]:
+        asked = requested and l["id"] in requested and l["id"] not in errors
+        if not l.get("ai") or (l["discard"] and not asked):
             continue
-        if requested and l["id"] in requested and l["id"] not in errors:
+        if asked:
             try:
                 v = ai.final(l, prefs, note(l), force=True, log=log)
             except Exception as e:

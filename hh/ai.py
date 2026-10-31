@@ -135,9 +135,9 @@ NOTE_PROMPT = """NOTAS DE TOMÁS SOBRE ESTA CASA: lo que él averiguó (visita, 
 Es información verificada y tiene prioridad sobre el aviso y las fotos: si algo choca, creele a él."""
 
 
-def _gemini(listing, note=""):
+def _gemini(listing, note="", max_photos=MAX_PHOTOS):
     parts = [{"text": PROMPT + "\n\n" + _listing_text(listing) + (f"\n\n{NOTE_PROMPT}\n{note.strip()}" if note.strip() else "")}]
-    for im in _download(listing["photos"]):
+    for im in _download(listing["photos"][:max_photos]):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
         parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(buf.getvalue()).decode()}})
@@ -179,11 +179,16 @@ def _call(body, timeout):
             r.raise_for_status()
             out = json.loads(_text(r.json()))
             return out[0] if isinstance(out, list) and out else out
-        i = MODELS.index(GEMINI_MODEL)
-        if i + 1 >= len(MODELS):
-            EXHAUSTED = "Gemini free quota used up for today on every model"
-        else:
-            GEMINI_MODEL = MODELS[i + 1]
+        _next_model()
+
+
+def _next_model():
+    global EXHAUSTED, GEMINI_MODEL
+    i = MODELS.index(GEMINI_MODEL)
+    if i + 1 >= len(MODELS):
+        EXHAUSTED = "Gemini free quota used up for today on every model"
+    else:
+        GEMINI_MODEL = MODELS[i + 1]
 
 
 FINAL = os.path.join(ROOT, "data", "ai_final.json")
@@ -332,7 +337,15 @@ def analyse(listing, note="", force=False, log=print):
             return None  # quota's gone (or Gemini isn't answering) for this run; don't spend photo downloads on it
         try:
             t = time.time()
-            res = _gemini(listing, note)
+            try:
+                res = _gemini(listing, note)
+            except requests.Timeout:
+                if not force:
+                    raise
+                # asked for from the app: one more go with the next model and half the photos before giving up
+                _next_model()
+                log(f"AI read {listing['id']} timed out; retrying with {GEMINI_MODEL} and fewer photos")
+                res = _gemini(listing, note, max_photos=MAX_PHOTOS // 2)
             log(f"AI read {listing['id']}: ok in {time.time() - t:.0f}s ({GEMINI_MODEL})")
             time.sleep(6)  # stay under the free tier's requests-per-minute
             return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}", note)
