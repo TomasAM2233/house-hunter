@@ -2308,29 +2308,36 @@
  },
  "ml-MLA1787872515": {
   "condition": 4,
-  "reform_usd": 5000,
-  "reform_notes": "Habitable y cuidado: parquet, cocina con granito, baño reciente; pintura y revestimientos decorativos a cambiar.",
+  "reform_usd": 3500,
+  "reform_notes": "Pintura general, actualización de detalles estéticos y revisión menor de griferías o artefactos.",
   "patio": "small",
-  "patio_m2_est": 15,
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 4,
-  "vertical_potential": 0.2,
+  "vertical_potential": 1,
   "apto_credito": null,
   "highlights": [
-   "PH al frente en una planta, sin expensas",
-   "Cerca de estación Juan B. Justo (Mitre)",
-   "Patio y terraza"
+   "Excelente ubicación en Florida Mitre cerca de estación",
+   "PH al frente en planta baja con entrada independiente",
+   "Buen estado general de pisos y revestimientos"
   ],
   "red_flags": [
-   "Alquilado hasta fines de 2026",
-   "Solo 80 m² cubiertos, 2 dormitorios",
-   "Patio chico"
+   "Venta con renta hasta fines de 2026 (no se pueden mudar ya)",
+   "Papel mural o revestimiento texturado en paredes del living algo invasivo",
+   "Patio pequeño y embaldosado"
   ],
-  "summary": "PH al frente en una planta, cuidado y cerca del Mitre, pero chico y alquilado hasta fin de año.",
+  "summary": "Hermoso PH al frente en Florida con patio, pero está alquilado hasta 2026 así que no se pueden mudar ya.",
   "photos_key": "255ec60cf46a",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:25:24Z"
  },
  "ml-MLA3389403204": {
   "condition": 3,
@@ -10348,5 +10355,268 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-31T18:51:45Z"
+ },
+ "zp-60591296": {
+  "condition": 3,
+  "reform_usd": 10000,
+  "reform_notes": "Pintura general, mantenimiento del deck de madera exterior y modernización cosmética de cocina y baños.",
+  "patio": "medium",
+  "patio_m2_est": 35,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Patio propio en planta baja con deck de madera y espacio guarda coche",
+   "Casa en lote propio de 160 m2, apto crédito y sin expensas",
+   "Distribución funcional con tres dormitorios arriba (principal en suite)"
+  ],
+  "red_flags": [
+   "Detalles de humedad de cimiento/exterior visibles en zócalos de entrada",
+   "Cocina y baños funcionales pero con terminaciones de época",
+   "Cercanía a vías de acceso rápido que pueden aportar ruido"
+  ],
+  "summary": "Es una opción excelente en Florida con un patio con deck muy aprovechable, en estado habitable para mudarse ya y con presupuesto de sobra dentro de los 20.000 USD para renovar cocina y baños.",
+  "photos_key": "2db4d6347a0a",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:20:45Z"
+ },
+ "ap-20572423": {
+  "condition": 4,
+  "reform_usd": 15000,
+  "reform_notes": "Pintura general, adecuación del taller en PB para integrarlo como espacio habitable y revisión de aislaciones por el uso previo de chapa y pintura.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": true,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Propiedad en esquina con excelente luz natural",
+   "Gran superficie cubierta total",
+   "Sin expensas y con entrada independiente"
+  ],
+  "red_flags": [
+   "No tiene patio o jardín en planta baja (requisito excluyente)",
+   "Planta baja ocupada íntegramente por un taller/depósito",
+   "Ubicación en zona de talleres, potencialmente ruidosa"
+  ],
+  "summary": "Es un bloque comercial con vivienda arriba; no tiene el jardín en planta baja que buscan y el entorno es más industrial que residencial.",
+  "photos_key": "e6ace470cbab",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:24:47Z"
+ },
+ "tk-8415483": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura general, actualización de baños y cocina, y limpieza profunda del jardín.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Ubicación excelente cerca de Av. Maipú y estación",
+   "Jardín propio con parrilla",
+   "Muy buena superficie cubierta y distribución"
+  ],
+  "red_flags": [
+   "PH superpuesto (entrada compartida / fachada con rejas comunes)",
+   "Baños y cocina con estética antigua",
+   "Techo de chapa y teja que requiere revisión"
+  ],
+  "summary": "Es un dúplex pasable en Olivos con jardín propio, pero al ser un PH compartido y requerir arreglos cosméticos, hay que afinar bien el lápiz con la oferta.",
+  "photos_key": "58b495b19f38",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:25:04Z"
+ },
+ "ml-MLA2830625170": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización completa de cañerías de agua y gas, renovación de baño y cocina, pintura general, arreglos por humedad y revisión de pisos.",
+  "patio": "medium",
+  "patio_m2_est": 34.0,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Excelente ubicación en La Lucila a metros de la estación",
+   "Buen metraje de jardín y patio propio",
+   "Sin expensas"
+  ],
+  "red_flags": [
+   "Antigüedad de 55 años a refaccionar por completo",
+   "PH al fondo con pasillo",
+   "Instalaciones originales obsoletas"
+  ],
+  "summary": "Es un PH bien ubicado en La Lucila pero pide a gritos una guita importante arriba para dejarlo habitable, ojo con las sorpresas de cañerías viejas.",
+  "photos_key": "8d4b6dbe1638",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:25:13Z"
+ },
+ "zp-60277452": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de cocina y baños, pintura general, pulido y planchado de pisos de madera.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Sin expensas",
+   "Amplia superficie de 120 m²",
+   "Terraza propia con cuarto de herramientas"
+  ],
+  "red_flags": [
+   "No tiene patio ni jardín propio en planta baja",
+   "Instalaciones y detalles de época que requieren inversión",
+   "PH en dos plantas superpuesto"
+  ],
+  "summary": "Es un PH amplio pero no les sirve porque buscaban patio en planta baja y este solo tiene terraza.",
+  "photos_key": "1e8a0d84d990",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:25:38Z"
+ },
+ "ap-20505772": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "La propiedad se encuentra reciclada a nuevo hace 4 años, no requiere inversiones para entrar a vivir.",
+  "patio": "small",
+  "patio_m2_est": 10,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 5,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Reciclado íntegramente a nuevo hace 4 años",
+   "Terraza inmensa de 90 m² con quincho",
+   "Sin expensas y solo dos unidades funcionales"
+  ],
+  "red_flags": [
+   "Es un PH en planta alta o superpuesto (tiene terraza propia pero el patio en PB es muy chico)",
+   "Techo vidriado puede levantar temperatura en verano"
+  ],
+  "summary": "Hermoso PH moderno en Olivos en impecable estado, ideal por su terraza y luz, aunque el patio en planta baja es bastante chico.",
+  "photos_key": "27c1058e89c5",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:29:21Z"
+ },
+ "zp-60420473": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, actualización de detalles estéticos y revisión menor de griferías.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Muy buena distribución en dos plantas",
+   "Patio con parrilla en planta baja",
+   "Ambientes amplios y luminosos"
+  ],
+  "red_flags": [
+   "Garage reconvertido a ambiente",
+   "Falta de mantenimiento en medianeras del patio",
+   "Termotanque eléctrico individual"
+  ],
+  "summary": "Una casa cómoda en Olivos con lindo patio, ideal para entrar a vivir sin gastar una fortuna en arreglos.",
+  "photos_key": "834b4bd2619d",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:29:35Z"
+ },
+ "ap-18196668": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualización de cocina y baño, revisión de cañerías antiguas de 60 años, pintura general y pulido de pisos de pinotea.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "PH en planta baja al frente sin expensas",
+   "Patio propio con quincho y parrilla",
+   "Ambientes amplios con techos altos y pisos de pinotea"
+  ],
+  "red_flags": [
+   "Antigüedad de 60 años con instalaciones de época",
+   "No apto crédito hipotecario",
+   "Orientación Sur (menos luz directa en invierno)"
+  ],
+  "summary": "Es un PH antiguo en planta baja con buen patio y quincho, ideal para meterle unos mangos en arreglos sin pasarse del presupuesto.",
+  "photos_key": "c62ec0786571",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T20:33:29Z"
  }
 }
