@@ -6,7 +6,7 @@ and save the answer with save_result()."""
 import base64, datetime, hashlib, io, json, os, re, time, zoneinfo
 import requests
 from PIL import Image
-from . import config
+from . import config, score
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "ai_cache.json")
@@ -200,23 +200,33 @@ de importancia, lo subjetivo de sus preferencias y sus notas, y lo que el algori
 corrige algo (patio, estado, precio, expensas, m², ubicación), puntuá con lo que dice la nota y mencionalo en los
 motivos. Si algo choca con un
 requisito obligatorio suyo, bajá mucho el puntaje.
-Además, Tomás quiere comprar una casa donde quiera vivir que también sea una buena inversión. Ponderá cuánto
-valor va a sostener al revenderla: que el precio esté abajo del mercado (USD/m² de lote y cubierto contra la zona); el terreno, que no
-se deprecia (lote grande y barato por m², buen frente, m² que todavía se pueden construir según el FOT de su zona
-oficial: R1 0,8 veces el lote, R2 1,0, R3 1,1; una zona más densa también vale más como terreno); no pagar el sobreprecio
-de una casa nueva o recién reciclada, que se pierde en pocos años; que una reforma razonable sume m², baños o
-cocina en planos aprobados; la ubicación (de 4 a 8 cuadras de Maipú o del tren, cerca de una plaza, calle
-tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, y nada que achique la lista de
-compradores (pasillo, planta rara, construcciones sin declarar). Esto pesa menos que sus criterios de vida, pero
-mueve el puntaje. Usá la misma escala que el algoritmo: entre las candidatas
+Además, Tomás quiere comprar una casa donde quiera vivir que sea también una MUY buena inversión: es de lo que más
+pesa, a la par del precio. Antes de puntuar, hacé un análisis de inversión a fondo y razonado. La idea central: el
+terreno sigue al mercado y la construcción se deprecia. Te damos una estimación (en INVERSIÓN): el precio separado en
+lo que vale la construcción (m² cubiertos × USD {config.BUILD_COST_M2} por m² × lo que le queda por antigüedad) y el
+terreno implícito, que es el resto, comparado con lo que pagan por m² de lote las casas de alrededor; y cuánto vale
+la casa en {config.HORIZON_YEARS} años (terreno a precio de la zona + construcción envejecida) contra el precio. Es una cuenta gruesa:
+corregila con lo que ves en las fotos y el texto (calidad real de la construcción, si está reciclada o para tirar,
+si hay m² sin declarar, si son dos unidades). Tené en cuenta también: que el precio esté abajo del mercado; el lote
+(grande, buen frente, m² que todavía se pueden construir según el FOT de su zona oficial: R1 0,8 veces el lote, R2
+1,0, R3 1,1; una zona más densa vale más como terreno); no pagar el sobreprecio de una casa nueva o recién reciclada,
+que se pierde en pocos años; si una reforma razonable puede sumar m², baños o cocina en planos aprobados por menos de
+lo que el mercado paga (construir sale ~USD {config.BUILD_COST_M2}/m², el m² nuevo se vende a ~2.000-2.500; contá 20-30% de desvío);
+ingresos posibles (una unidad al fondo que se pueda alquilar); la ubicación (de 4 a 8 cuadras de Maipú o del tren,
+cerca de una plaza, calle tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, menos de
+USD 250.000, y nada que achique la lista de compradores (PH con pasillo, planta rara, construcciones sin declarar).
+La nota de inversión (1-10) mueve tu puntaje final: partiendo de 5 como neutra, cada punto arriba o abajo vale unos
+3 puntos del puntaje. Usá la misma escala que el algoritmo: entre las candidatas
 que pasan los filtros, 45 es floja, 55 buena, 65 muy buena y 75 o más solo para una oportunidad excepcional que
 Tomás tendría que ir a ver hoy. Partí del puntaje calculado y movete solo con motivos concretos (cada motivo
 vale entre 3 y 15 puntos). Sé exigente: la mayoría de los avisos no son excepcionales. Respondé SOLO un JSON:
 {{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
 rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
 inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"],
-"investment": {{"score": 1-10 (qué tan buena inversión es: valor que sostiene al revender), "why": "una oración
-con los números que lo explican"}},
+"investment": {{"score": 1-10 (qué tan buena inversión es: valor que sostiene al revender), "why": "dos o tres
+oraciones con los números que lo explican", "value_10y_pct": tu estimación del valor en {config.HORIZON_YEARS} años como % del precio,
+en dólares de hoy (entero), "upside": ["hasta 3 cosas que la hacen mejor inversión"], "risks": ["hasta 3 cosas que
+le restan valor o la hacen difícil de vender"]}},
 "questions": [hasta 6 preguntas para que Tomás haga en la visita o al llamar a la inmobiliaria, cuya respuesta
 cambiaría tu puntaje: lo que hoy no se sabe o asumiste (patio real, humedad, estado del techo y las instalaciones,
 m² y planos aprobados, expensas, si es apto crédito, ruido, orientación, qué hay al fondo o al lado, etc.), las más
@@ -259,8 +269,15 @@ def _final_text(l, prefs, note):
     zone = (f"zona {z['code']} ({z['name']}; FOS {z['fos']}, FOT {z['fot']}" if z.get("fot") else
             f"zona {z['code']} ({z['name']}" if z else f"zona desconocida (FOT {config.FOT_ASSUMED} supuesto")
     zone += f"; en el límite con {z['edge']}, confirmar)" if z.get("edge") else ")"
-    inv = (f"{zone}, ~{l.get('build_m2')} m² por construir, "
-           f"percentil del puntaje {l.get('pct')} | {(l.get('components') or {}).get('investment', {}).get('why', '')}")
+    v = score.land_value(l, a)
+    split = (f"; terreno ~{v['land_m2']:.0f} m²{' (parte de un lote compartido, estimado)' if l.get('type') == 'ph' else ''}, "
+             f"construcción hoy ~USD {v['building']} y en {config.HORIZON_YEARS} años ~USD {v['building_h']}"
+             f"{' (antigüedad no informada: supuse ' + str(config.AGE_ASSUMED) + ' años)' if v['age_assumed'] else ''}, "
+             f"terreno implícito USD {v['implied']}/m² contra ~USD {v['market']}/m² en la zona, "
+             f"valor estimado a {config.HORIZON_YEARS} años ~USD {v['value_h']} ({v['kept'] * 100:.0f}% del precio)"
+             if v else "; sin datos para separar terreno y construcción")
+    inv = (f"{zone}, ~{l.get('build_m2')} m² por construir{split}, "
+           f"percentil del puntaje {l.get('pct')}")
     comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
     return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
             f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
@@ -272,9 +289,16 @@ def _final_text(l, prefs, note):
 
 
 def _investment(x):
-    """{score 1-10, why} or None, from whatever the model answered."""
+    """{score 1-10, why, value_10y_pct, upside, risks} or None, from whatever the model answered."""
     try:
-        return {"score": max(1, min(10, int(round(float(x["score"]))))), "why": str(x.get("why") or "").strip()[:300]}
+        out = {"score": max(1, min(10, int(round(float(x["score"]))))), "why": str(x.get("why") or "").strip()[:500]}
+        try:
+            out["value_10y_pct"] = int(round(float(x["value_10y_pct"])))
+        except (TypeError, KeyError, ValueError):
+            pass
+        for k in ("upside", "risks"):
+            out[k] = [str(i).strip() for i in (x.get(k) if isinstance(x.get(k), list) else [])][:3]
+        return out
     except (TypeError, KeyError, ValueError):
         return None
 

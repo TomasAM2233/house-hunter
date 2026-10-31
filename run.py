@@ -100,17 +100,21 @@ def dedupe(listings):
 
 
 def side_percentiles(listings):
-    """Percentiles that sit next to the score's (and matter less): covered m2, USD/m2 (cheaper = higher) and m2 still
-    buildable, each among every listing that has the number. Recomputed on every run, unlike the score's."""
+    """Percentiles that sit next to the score's (and matter less): covered m2, USD/m2 (cheaper = higher), m2 still
+    buildable, USD per m2 of land paid (cheaper = higher) and the value kept at the horizon, each among every
+    listing that has the number. Recomputed on every run, unlike the score's."""
     ls = [l for l in listings if not l.get("duplicate_of")]
-    get = {"m2": lambda l: l.get("covered_m2"), "ppm2": score.ppm2, "build": score.buildable_left}
     for l in ls:
-        l["pcts"], l["build_m2"] = {}, score.buildable_left(l)
+        l["pcts"], l["build_m2"], l["land"] = {}, score.buildable_left(l), score.land_value(l, l.get("ai"))
+    lv = lambda k: lambda l: (l["land"] or {}).get(k)
+    get = {"m2": lambda l: l.get("covered_m2"), "ppm2": score.ppm2, "build": score.buildable_left,
+           "land": lv("implied"), "kept": lv("kept")}
+    cheaper = {"ppm2", "land"}
     for k, f in get.items():
         vals = sorted(v for v in map(f, ls) if v is not None)
         for l in ls:
             v = f(l)
-            below = None if v is None else bisect.bisect_left(vals, v) if k != "ppm2" else len(vals) - bisect.bisect_right(vals, v)
+            below = None if v is None else len(vals) - bisect.bisect_right(vals, v) if k in cheaper else bisect.bisect_left(vals, v)
             l["pcts"][k] = None if v is None else round(100 * below / max(1, len(vals)))
 
 
