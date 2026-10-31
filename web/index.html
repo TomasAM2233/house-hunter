@@ -119,6 +119,9 @@ button, select, input { font: inherit; color: inherit; }
 .cprice { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 .cprice b { font: 600 21px/1.2 var(--font-display); }
 .cprice span { color: var(--muted); font-size: 13px; }
+/* side percentiles: next to the score's, quieter because they matter less */
+.side { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: var(--muted); }
+.side b { font-family: var(--font-data); font-weight: 500; color: var(--fg); }
 .specs { display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 13.5px; color: var(--muted); }
 .specs b { color: var(--fg); font-weight: 600; }
 .brief { margin: 0; font-size: 14.5px; line-height: 1.45; }
@@ -320,6 +323,9 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
       <option value="pct">Percentil</option>
       <option value="price">Precio</option>
       <option value="ppm2">USD/m²</option>
+      <option value="pm2">Percentil m²</option>
+      <option value="pppm2">Percentil USD/m²</option>
+      <option value="pbuild">Percentil m² por construir</option>
       <option value="m2">Más m²</option>
       <option value="new">Nuevas</option>
     </select>
@@ -346,9 +352,9 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
 
 <script type="application/json" id="hh-data"></script>
 <script>
-const LABELS = { price: "Precio", space: "Espacio", location: "Ubicación", condition: "Estado", patio: "Patio",
+const LABELS = { price: "Precio", space: "Espacio", location: "Ubicación", condition: "Estado", patio: "Patio", investment: "Inversión",
   vertical: "Crecer arriba", credit: "Apto crédito", garage: "Cochera", quiet: "Tranquilidad", light: "Luz" };
-const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condition: "#1f8a6a", patio: "#4fa35a",
+const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condition: "#1f8a6a", patio: "#4fa35a", investment: "#3f6f8f",
   vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
@@ -572,6 +578,24 @@ function img(l, i) { return (l.thumbs && l.thumbs[i]) || (l.photos && l.photos[i
 function ppm2(l) { return l.price_usd && l.total_m2 ? Math.round(l.price_usd / l.total_m2) : null; }
 const brief = l => l.ai_final?.brief || l.ai?.brief || l.ai?.summary || "";
 const pct = l => pctMode === "now" ? l.pct_now : l.pct;
+// Side percentiles (covered m², USD/m² with cheaper = higher, m² still buildable), computed by run.py on every run.
+// Until a run has added them, they're worked out here the same way (lot = total m² for houses).
+const side = l => l.pcts || {};
+function sideFallback() {
+  if (DATA.listings.some(l => l.pcts)) return;
+  const ls = DATA.listings.filter(l => !l.duplicate_of);
+  const bld = l => l.type === "casa" && l.covered_m2 && (l.lot_m2 || l.total_m2) ? Math.max(0, Math.round((l.lot_m2 || l.total_m2) * (l.geo?.zoning?.fot || 0.9) - l.covered_m2)) : null;
+  const get = { m2: l => l.covered_m2 ?? null, ppm2: l => ppm2(l) ?? null, build: bld };
+  for (const l of ls) { l.pcts = {}; l.build_m2 = bld(l); }
+  for (const [k, f] of Object.entries(get)) {
+    const v = ls.map(f).filter(x => x != null).sort((a, b) => a - b);
+    for (const l of ls) { const x = f(l); l.pcts[k] = x == null ? null : Math.round(100 * (k === "ppm2" ? v.filter(y => y > x).length : v.filter(y => y < x).length) / v.length); }
+  }
+}
+function sideLine(l) {
+  const p = side(l), it = [["m2", "m²"], ["ppm2", "USD/m²"], ["build", "por construir"]].filter(([k]) => p[k] != null);
+  return it.length ? `<div class="side" title="Percentiles secundarios: qué parte de las casas queda por debajo. En USD/m², más alto = más barato.">${it.map(([k, n]) => `<span>${n} <b>P${p[k]}</b></span>`).join("")}</div>` : "";
+}
 
 function recalcPct() {
   const sc = l => l.score_calc ?? l.score;   // same scale for everyone: the algorithm's score
@@ -600,6 +624,7 @@ const RANGES = [
 const CHOICES = [
   ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
   ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"], ["Vicente López", "Vicente López"]]],
+  ["zoning", "Zona del código urbano", [["R1", "R1"], ["R2", "R2"], ["R3", "R3"], ["C", "Comercial (C)"], ["T", "Torres (T)"], ["I1", "I1"], ["other", "Otra"]]],
   ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
   ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
   ["extra", "Tiene que tener", [["garage", "Cochera"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
@@ -630,9 +655,21 @@ function passF(l) {
   if (c.type?.length && !c.type.includes(l.type)) return false;
   if (c.zone?.length && !c.zone.includes(l.zone)) return false;
   if (c.src?.length && !c.src.includes(l.source)) return false;
+  if (c.zoning?.length && !c.zoning.includes(zoningGroup(l))) return false;
   if (c.patio?.length && !((PATIO_RANK[l.ai?.patio] ?? -1) >= Math.min(...c.patio.map(x => PATIO_RANK[x])))) return false;
   for (const x of c.extra || []) if (!EXTRA[x](l)) return false;
   return true;
+}
+// Official zone (geo/zoning.json, looked up by run.py): R1, R2, R3 and I1 on their own, the rest by family.
+function zoningGroup(l) {
+  const z = l.geo?.zoning?.code;
+  return !z ? null : ["R1", "R2", "R3", "I1"].includes(z) ? z : /^C\d/.test(z) ? "C" : /^T\d/.test(z) ? "T" : "other";
+}
+function zoningFact(l) {
+  const z = l.geo?.zoning;
+  if (!z) return "?";
+  const lim = z.fot ? `FOS ${String(z.fos).replace(".", ",")} · FOT ${String(z.fot).replace(".", ",")}` : "ver el código";
+  return `${esc(z.code)} <small style="font-size:11px;color:var(--muted)">${lim}${z.edge ? ` · límite con ${esc(z.edge)}, confirmar` : ""}</small>`;
 }
 const nFilt = () => Object.keys(FILT.r).length + Object.values(FILT.c).filter(v => v?.length).length;
 
@@ -657,7 +694,8 @@ function rows() {
   const q = $("#q").value.trim().toLowerCase();
   if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description + " " + brief(l) + " " + (tag(l.id).note || "")).toLowerCase().includes(q));
   const key = { score: l => -l.score, pct: l => -((pct(l) ?? -1) * 1000 + l.score), price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
-    m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0) }[$("#sort").value];
+    m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0),
+    pm2: l => -((side(l).m2 ?? -1) * 1000 + l.score), pppm2: l => -((side(l).ppm2 ?? -1) * 1000 + l.score), pbuild: l => -((side(l).build ?? -1) * 1000 + l.score) }[$("#sort").value];
   return r.slice().sort((a, b) => key(a) - key(b));
 }
 
@@ -717,6 +755,7 @@ function specs(l) {
     <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
     <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
     ${g ? `<span><b class="num">${blk(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${blk(g.station.blocks)}</b> cdas</span>` : ""}
+    ${g?.zoning ? `<span title="Zona del código urbano${g.zoning.edge ? ", en el límite con " + esc(g.zoning.edge) : ""}">zona <b>${esc(g.zoning.code)}${g.zoning.edge ? "?" : ""}</b></span>` : ""}
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
 }
@@ -760,6 +799,7 @@ function card(l, i) {
     <div class="cbody">
       <div class="cprice"><b class="num">${usd(l.price_usd)}</b><span class="num">${ppm2(l) ? ppm2(l).toLocaleString("es-AR") + " USD/m²" : ""}</span></div>
       ${specs(l)}
+      ${sideLine(l)}
       ${text ? `<p class="brief">${esc(text)}</p>` : `<p class="brief none">${l.discard.length ? "" : "Todavía sin evaluación de la IA: el puntaje sale solo del aviso."}</p>`}
       ${miniBar(l)}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
@@ -826,7 +866,8 @@ function renderDetail(l) {
       <div><h2>${esc(l.title)}</h2><div class="addr">${esc(l.address)} · vista desde el ${day(l.first_seen)}${l.active === false ? ` · <b>Reservada</b> (bajada el ${day(l.gone_at || l.last_seen)})` : ""}</div></div>
       ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
       ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
-        ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}</div>` : ""}
+        ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
+        ${f?.investment ? `<p><b>Como inversión: ${f.investment.score}/10.</b> ${esc(f.investment.why)}</p>` : ""}</div>` : ""}
       <div class="mine">
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
         <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
@@ -846,6 +887,10 @@ function renderDetail(l) {
         <div class="fact"><span>${g ? "Est. " + esc(g.station.name) : "Tren"}</span><b>${g ? blk(g.station.blocks) + " cdas" : "?"}</b></div>
         <div class="fact"><span>Cochera</span><b>${l.garage ? fmt(l.garage) : "no"}</b></div>
         <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
+        <div class="fact"><span>Percentil m² cub.</span><b>${side(l).m2 ?? "?"}</b></div>
+        <div class="fact"><span>Percentil USD/m²</span><b>${side(l).ppm2 ?? "?"} <small style="font-size:11px;color:var(--muted)">más = más barata</small></b></div>
+        <div class="fact"><span>Zona</span><b>${zoningFact(l)}</b></div>
+        <div class="fact"><span>Por construir</span><b>${l.build_m2 != null ? `~${fmt(l.build_m2)} m² <small style="font-size:11px;color:var(--muted)">P${side(l).build}</small>` : l.type === "ph" ? "PH" : "?"}</b></div>
       </div>
       <div class="actions">
         <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
@@ -1079,12 +1124,12 @@ function renderInfo() {
   };
   $("#toksave").onclick = () => { const v = $("#tok").value.trim(); if (!v || v.startsWith("••")) return; store.set("hh-token", v); saveTags(); loadShared(); };
   if ($("#tokdel")) $("#tokdel").onclick = () => { store.set("hh-token", ""); setSync(""); renderInfo(); };
-  $("#foot").textContent = "Bandeja = lo que todavía no procesaste, por puntaje. Filtradas = no cumplen algún filtro duro. Percentil = qué parte de todas las casas puntuadas por el algoritmo quedó por debajo.";
+  $("#foot").textContent = "Bandeja = lo que todavía no procesaste, por puntaje. Filtradas = no cumplen algún filtro duro. Percentil = qué parte de todas las casas puntuadas por el algoritmo quedó por debajo. Abajo del precio, los percentiles de m² cubiertos, USD/m² (más alto = más barata) y m² por construir, que pesan menos.";
 }
 
 function boot(d) {
   DATA = d;
-  calcBounds(); fbtnLabel();
+  sideFallback(); calcBounds(); fbtnLabel();
   renderInfo(); renderList();
   loadShared();
   $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
