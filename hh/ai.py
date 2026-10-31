@@ -86,13 +86,15 @@ def save_result(listing_id, result, photos_key, analyst, note=""):
     return result
 
 
-def _download(urls):
-    imgs = []
+def _download(urls, max_seconds=120):
+    imgs, start = [], time.time()
     for u in urls[:MAX_PHOTOS]:
+        if time.time() - start > max_seconds and imgs:
+            break  # a slow unblocking API shouldn't hold the run: read with the photos we have
         try:
             if "argenprop.com/" in u:  # its WAF blocks cloud IPs for photos too
                 from . import http
-                r = http.get(u, via_api=True, binary=True)
+                r = http.get(u, via_api=True, binary=True, timeout=45, api_tries=1)
             else:
                 r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
@@ -139,20 +141,30 @@ def _gemini(listing, note=""):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
         parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(buf.getvalue()).decode()}})
-    return _call({"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 120)
+    return _call({"contents": [{"parts": parts}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 90)
 
 
 EXHAUSTED = None  # set to the error once the free quota runs out, so the rest of the run doesn't wait on it
+DOWN = None       # set when Gemini keeps timing out: the automatic run stops asking and moves on (next run retries)
+FAILS = 0         # consecutive calls that got no answer at all (timeouts, connection errors, 5xx)
+MAX_FAILS = 3
 
 
 def _call(body, timeout):
-    global EXHAUSTED, GEMINI_MODEL
+    global EXHAUSTED, GEMINI_MODEL, FAILS, DOWN
     while True:
         if EXHAUSTED:
             raise RuntimeError(EXHAUSTED)
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={os.environ['GEMINI_API_KEY']}"
         for attempt in range(3):
-            r = requests.post(url, json=body, timeout=timeout)
+            try:
+                r = requests.post(url, json=body, timeout=timeout)
+            except requests.RequestException:
+                FAILS += 1
+                if FAILS >= MAX_FAILS:
+                    DOWN = f"Gemini didn't answer {FAILS} times in a row"
+                raise
+            FAILS = 0 if r.status_code < 500 else FAILS + 1
             if r.status_code == 429 and "PerDay" in r.text:
                 break  # this model is done for today; try the next one
             if r.status_code == 429:
@@ -283,7 +295,7 @@ def final(listing, prefs, note="", compute=True, force=False, log=print):
     if hit and hit.get("input_key") == h and not force:
         return hit
     key = os.environ.get("GEMINI_API_KEY")
-    if not compute or not key:
+    if not compute or not key or (DOWN and not force):
         return hit  # stale verdict is better than none until the next run with a key
     try:
         res = _call({"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
@@ -316,14 +328,18 @@ def analyse(listing, note="", force=False, log=print):
     if hit:
         return hit
     if os.environ.get("GEMINI_API_KEY"):
-        if EXHAUSTED and not force:
-            return None  # quota's gone for this run; don't spend photo downloads on it
+        if (EXHAUSTED or DOWN) and not force:
+            return None  # quota's gone (or Gemini isn't answering) for this run; don't spend photo downloads on it
         try:
+            t = time.time()
             res = _gemini(listing, note)
+            log(f"AI read {listing['id']}: ok in {time.time() - t:.0f}s ({GEMINI_MODEL})")
             time.sleep(6)  # stay under the free tier's requests-per-minute
             return save_result(listing["id"], res, _photos_key(listing), f"gemini:{GEMINI_MODEL}", note)
         except Exception as e:
             log(f"AI failed for {listing['id']}: {e}")
+            if DOWN and not force:
+                log(f"{DOWN}: no more AI reads this run")
             if force:
                 raise
         return None

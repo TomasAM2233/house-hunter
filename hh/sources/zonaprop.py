@@ -168,7 +168,7 @@ def search(max_pages=9, log=print, newest_only=False):
                 items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
                 out += items
                 log(f"zonaprop {zones} {band} page {page}/{total_pages}: {len(items)} listings")
-                if total_pages > max_pages and page == 1:
+                if total_pages > max_pages and page == 1 and not newest_only:  # newest-only reads just page 1 on purpose
                     log(f"zonaprop {zones} {band}: {total_pages} pages, only {max_pages} are reachable; narrow BANDS")
                     failed.append((zones, band, "overflow"))
                 page += 1

@@ -159,7 +159,20 @@ def main():
     ap.add_argument("--quick", action="store_true", help="only the newest pages of the sites that support it, to catch new listings fast")
     ap.add_argument("--assess", default="", help="comma-separated ids: fresh AI read + verdict for just these, now")
     ap.add_argument("--assess-queue", action="store_true", help="--assess with the ids the app queued in data/ai_requests/")
+    ap.add_argument("--ai-minutes", type=float, default=float(os.environ.get("HH_AI_MINUTES", 0)) or None,
+                    help="wall-clock cap on item pages + AI calls (default 10 for --quick, 45 otherwise), so the run always "
+                         "gets to write listings.json; what's left waits for the next run")
     args = ap.parse_args()
+    ai_minutes = args.ai_minutes or (10 if args.quick else 45)
+    ai_deadline = time.time() + 60 * ai_minutes
+    def ai_time_left():
+        if time.time() < ai_deadline:
+            return True
+        if not ai_time_left.said:
+            log(f"AI time cap reached ({ai_minutes:g} min): the rest waits for the next run")
+            ai_time_left.said = True
+        return False
+    ai_time_left.said = False
     queued = sorted(f for f in os.listdir(REQUESTS) if f.endswith(".json")) if args.assess_queue and os.path.isdir(REQUESTS) else []
     requested = {}  # id -> when it was asked for
     for f in queued:
@@ -257,6 +270,8 @@ def main():
         cands.sort(key=lambda l: -score.score(l)["score"])
         enriched = reads = 0
         for l in cands:
+            if not ai_time_left() or ai.DOWN:
+                break
             # item pages for new candidates, and once more for ones stored with only the search card's few photos
             stale = not l.get("enriched") or (l.get("photos_v", 0) < PHOTOS_V and len(l.get("photos") or []) <= 8)
             if hasattr(SOURCES.get(l["source"]), "enrich") and stale and enriched < args.max_enrich:
@@ -300,7 +315,7 @@ def main():
                 v = None
         else:
             due = l.get("active") and not tags.get(l["id"], {}).get("dismissed") and not requested
-            v = ai.final(l, prefs, note(l), compute=due and ai.budget_left() >= 1, log=log)
+            v = ai.final(l, prefs, note(l), compute=due and ai.budget_left() >= 1 and ai_time_left(), log=log)
         if v:
             l["ai_final"] = {k: v.get(k) for k in ("score", "brief", "reasons", "investment", "questions", "general_questions", "at")}
             l["score"] = v["score"]

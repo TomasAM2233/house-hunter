@@ -21,16 +21,17 @@ def _routes(url, render, binary):
     return ant + sa
 
 
-def get(url, tries=5, impersonate="chrome", pause=(1.5, 3.5), blocked=None, via_api=False, render=False, binary=False):
+def get(url, tries=5, impersonate="chrome", pause=(1.5, 3.5), blocked=None, via_api=False, render=False, binary=False,
+        timeout=150, api_tries=2):
     """impersonate may be a list of browser profiles, tried in turn. blocked(r) -> True marks a 200 as a bot wall.
     via_api=True sends the request through the unblocking APIs above, in order, when their keys are set.
     render=True asks ScraperAPI for a browser render (10 credits instead of 1); binary=True is for images."""
     if via_api and _routes(url, render, binary):
         errors = []
         for api in _routes(url, render, binary):
-            for attempt in range(2):
+            for attempt in range(api_tries):
                 try:
-                    r = requests.get(api, timeout=150)
+                    r = requests.get(api, timeout=timeout)
                 except Exception as e:
                     errors.append(f"{api.split('/')[2]}: {str(e)[:80]}")
                     continue
