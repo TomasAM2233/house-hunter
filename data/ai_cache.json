@@ -10283,5 +10283,70 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-31T17:10:38Z"
+ },
+ "ap-20675563": {
+  "condition": 5,
+  "reform_usd": 2000,
+  "reform_notes": "Propiedad a estrenar; solo requiere artefactos de iluminación, interiores de placard o detalles menores de personalización.",
+  "patio": "small",
+  "patio_m2_est": 10,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "A estrenar en impecable estado",
+   "Cochera descubierta propia",
+   "Apto crédito bancario"
+  ],
+  "red_flags": [
+   "Patio presumiblemente muy reducido al declarar 110 m² cubiertos y totales",
+   "Un solo baño completo en planta alta para tres dormitorios",
+   "Proximidad inmediata a Av. Maipú con eventual tránsito y ruido"
+  ],
+  "summary": "Dúplex moderno e impecable con cochera y listo para entrar, aunque con patio probablemente chico y un único baño completo arriba.",
+  "photos_key": "e0c8cc11ea7a",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T18:47:38Z"
+ },
+ "ap-20070543": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "No requiere reformas, está reciclado íntegramente a nuevo y listo para habitar.",
+  "patio": "small",
+  "patio_m2_est": 10,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Reciclado a nuevo con excelentes terminaciones y cañerías renovadas",
+   "Dormitorio principal en suite con vestidor",
+   "Doble ingreso (principal al frente y servicio por pasillo lateral)"
+  ],
+  "red_flags": [
+   "El espacio exterior es muy acotado (galería/patio de solo 10 m²)",
+   "Al ser PH en condominio no tiene posibilidad de construir hacia arriba"
+  ],
+  "summary": "Un PH impecable en planta baja listo para mudarse ya mismo en Olivos, aunque el patio es en realidad una galería chica de apenas 10 m².",
+  "photos_key": "b0abe6e65cd1",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T18:51:45Z"
  }
 }
