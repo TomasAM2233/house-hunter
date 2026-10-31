@@ -2940,5 +2940,66 @@
   "model": "gemini-3.6-flash",
   "at": "2026-10-28",
   "ts": "2026-10-28T02:27:46Z"
+ },
+ "tk-10170090": {
+  "score": 68,
+  "brief": "PH independiente con alma de casa a 1 cuadra del tren. Precio por m² imbatible (USD 972) y patio en L confirmado por vos. Son 108m² cubiertos más un quincho grande arriba. Está de época, pero con tus USD 20.000 de presupuesto lo dejás impecable.",
+  "reasons": [
+   "Ubicación estratégica: a solo 100 metros de la estación Cetrángolo, cumpliendo con creces tu prioridad de caminar al transporte.",
+   "Relación precio/m² excelente: USD 972/m² total es de lo más bajo de Florida para una propiedad con entrada independiente y sin expensas.",
+   "Potencial de inversión: Zona R2 con FOT 1.0, permite duplicar los m² cubiertos actuales legalmente sobre el lote propio."
+  ],
+  "investment": {
+   "score": 8,
+   "why": "El valor del lote (USD 972/m²) está muy por debajo del promedio de la zona y el FOT permite construir 108m² adicionales."
+  },
+  "questions": [
+   {
+    "q": "¿Los m² del quincho y el lavadero en planta alta están declarados en el plano aprobado?",
+    "impact": "Si no están en planos, el banco no los tasa para el crédito y podrías tener problemas para habilitar reformas -10"
+   },
+   {
+    "q": "¿Cuál es el estado real de las instalaciones de agua, luz y gas?",
+    "impact": "Con 45 años, si no fueron renovadas, los USD 20.000 de reforma se te van solo en caños y cables -8"
+   },
+   {
+    "q": "¿El patio en L figura como superficie propia por escritura?",
+    "impact": "Al ser PH, es vital que no sea un espacio común de uso exclusivo para evitar conflictos futuros +5"
+   },
+   {
+    "q": "¿Qué tan fuerte se siente el ruido del tren estando a 100 metros?",
+    "impact": "Si el ruido es invasivo en los dormitorios, baja la calidad de vida y el valor de reventa -7"
+   },
+   {
+    "q": "¿Hay humedad de cimientos en las paredes de planta baja?",
+    "impact": "En casas de esta antigüedad es común; si está seco es un gran punto a favor +5"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Es venta directa o los dueños necesitan comprar algo para mudarse?",
+    "impact": ""
+   },
+   {
+    "q": "¿Hace cuánto está publicada la propiedad?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cómo es la seguridad de la cuadra y la relación con los vecinos linderos?",
+    "impact": ""
+   },
+   {
+    "q": "¿Aceptan una oferta agresiva considerando que hay que actualizar baños y cocina?",
+    "impact": ""
+   },
+   {
+    "q": "¿La cochera es apta para un vehículo grande o solo auto chico?",
+    "impact": ""
+   }
+  ],
+  "input_key": "6b35793a71a2",
+  "model": "gemini-3-flash-preview",
+  "at": "2026-10-31",
+  "ts": "2026-10-31T14:43:05Z"
  }
 }

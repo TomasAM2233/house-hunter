@@ -2100,9 +2100,9 @@
   }
  },
  "tk-10170090": {
-  "requested_at": "2026-10-31T13:33:59.941Z",
-  "done_at": "2026-10-31T13:37:01Z",
-  "error": "lectura de fotos: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)",
+  "requested_at": "2026-10-31T14:41:45.451Z",
+  "done_at": "2026-10-31T14:43:10Z",
+  "error": null,
   "listing": {
    "id": "tk-10170090",
    "source": "tokko",
@@ -2184,8 +2184,8 @@
      210000.0
     ]
    ],
-   "pct": 96,
-   "pct_score": 60.8,
+   "pct": 94,
+   "pct_score": 58.4,
    "pct_n": 1805,
    "last_seen": "2026-10-28",
    "active": true,
@@ -2213,43 +2213,45 @@
     }
    },
    "ai": {
-    "condition": 4,
-    "reform_usd": 5000,
-    "reform_notes": "Pintura general, revisión de griferías y actualización estética menor de baños y cocina.",
-    "patio": "none",
-    "patio_m2_est": null,
+    "condition": 3,
+    "reform_usd": 15000,
+    "reform_notes": "Pintura general, actualización de muebles de cocina, pulido de pisos y revisión preventiva de instalaciones de agua y luz por antigüedad.",
+    "patio": "medium",
+    "patio_m2_est": 35,
     "patio_seen": false,
     "terrace": true,
     "corner": false,
-    "ph_stacked": true,
+    "ph_stacked": false,
     "pasillo_ph": false,
     "natural_light": 4,
     "quiet": 4,
     "vertical_potential": 0,
-    "apto_credito": null,
+    "apto_credito": true,
     "highlights": [
-     "Excelente ubicación en Florida con gran conectividad",
-     "Quincho cerrado de gran categoría con parrilla",
-     "Cochera semicubierta al frente y entrada independiente"
+     "Ubicación premium en Florida cerca del tren",
+     "Entrada totalmente independiente sin expensas",
+     "Excelente quincho cubierto para uso social"
     ],
     "red_flags": [
-     "No se visualiza patio o jardín propio a nivel del suelo en las fotos",
-     "Instalaciones y sanitarios con estética vintage de época",
-     "PH en dos plantas tipo duplex"
+     "Instalaciones originales de 45 años",
+     "Estética de ladrillo visto y madera muy pesada",
+     "El patio en L no se muestra claramente en las fotos"
     ],
-    "summary": "Es un PH en dos plantas muy bien ubicado y en excelente estado general, pero no le sirve a la pareja porque no tiene patio en planta baja.",
-    "photos_key": "10503780d9e9",
-    "analyst": "gemini:gemini-flash-lite-latest",
-    "analysed_at": "2026-10-24",
-    "prompt_version": 2
+    "summary": "Es un PH con alma de casa, muy sólido y en ubicación estratégica, que permite entrar y reformar por etapas dentro del presupuesto.",
+    "photos_key": "97d528a9be3a",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-31",
+    "prompt_version": 2,
+    "note_key": "ebe6847f",
+    "ts": "2026-10-31T14:42:49Z"
    },
-   "score": 60.8,
+   "score": 68,
    "components": {
     "price": {
-     "value": 0.59,
-     "points": 11.8,
+     "value": 0.54,
+     "points": 10.7,
      "max": 20,
-     "why": "USD 215.000 efectivo (incl. reforma 5.000), 972/m²"
+     "why": "USD 225.000 efectivo (incl. reforma 15.000), 972/m²"
     },
     "space": {
      "value": 0.5,
@@ -2264,16 +2266,16 @@
      "why": "9 cuadras a Maipú, 1 a est. Doctor Cetrángolo (Mitre), plaza a 5 cdas (Plaza Amigos de Florida)"
     },
     "condition": {
-     "value": 0.88,
-     "points": 11.4,
+     "value": 0.57,
+     "points": 7.4,
      "max": 13,
-     "why": "estado 4/5, reforma ~USD 5.000"
+     "why": "estado 3/5, reforma ~USD 15.000"
     },
     "patio": {
-     "value": 0.75,
-     "points": 7.5,
+     "value": 0.65,
+     "points": 6.5,
      "max": 10,
-     "why": "sin patio ~45 m²"
+     "why": "patio mediano ~35 m²"
     },
     "investment": {
      "value": 0.58,
@@ -2288,10 +2290,10 @@
      "why": "según IA"
     },
     "credit": {
-     "value": 0.4,
-     "points": 2.4,
+     "value": 1,
+     "points": 6,
      "max": 6,
-     "why": "no aclara"
+     "why": "apto crédito"
     },
     "garage": {
      "value": 1,
@@ -2312,17 +2314,73 @@
      "why": "luz 4/5"
     }
    },
-   "discard": [
-    "sin patio ni jardín"
-   ],
+   "discard": [],
    "flags": [],
-   "score_calc": 60.8,
+   "score_calc": 58.4,
    "pcts": {
     "m2": 69,
     "ppm2": 80,
     "build": 78
    },
-   "build_m2": 108
+   "build_m2": 108,
+   "ai_final": {
+    "score": 68,
+    "brief": "PH independiente con alma de casa a 1 cuadra del tren. Precio por m² imbatible (USD 972) y patio en L confirmado por vos. Son 108m² cubiertos más un quincho grande arriba. Está de época, pero con tus USD 20.000 de presupuesto lo dejás impecable.",
+    "reasons": [
+     "Ubicación estratégica: a solo 100 metros de la estación Cetrángolo, cumpliendo con creces tu prioridad de caminar al transporte.",
+     "Relación precio/m² excelente: USD 972/m² total es de lo más bajo de Florida para una propiedad con entrada independiente y sin expensas.",
+     "Potencial de inversión: Zona R2 con FOT 1.0, permite duplicar los m² cubiertos actuales legalmente sobre el lote propio."
+    ],
+    "investment": {
+     "score": 8,
+     "why": "El valor del lote (USD 972/m²) está muy por debajo del promedio de la zona y el FOT permite construir 108m² adicionales."
+    },
+    "questions": [
+     {
+      "q": "¿Los m² del quincho y el lavadero en planta alta están declarados en el plano aprobado?",
+      "impact": "Si no están en planos, el banco no los tasa para el crédito y podrías tener problemas para habilitar reformas -10"
+     },
+     {
+      "q": "¿Cuál es el estado real de las instalaciones de agua, luz y gas?",
+      "impact": "Con 45 años, si no fueron renovadas, los USD 20.000 de reforma se te van solo en caños y cables -8"
+     },
+     {
+      "q": "¿El patio en L figura como superficie propia por escritura?",
+      "impact": "Al ser PH, es vital que no sea un espacio común de uso exclusivo para evitar conflictos futuros +5"
+     },
+     {
+      "q": "¿Qué tan fuerte se siente el ruido del tren estando a 100 metros?",
+      "impact": "Si el ruido es invasivo en los dormitorios, baja la calidad de vida y el valor de reventa -7"
+     },
+     {
+      "q": "¿Hay humedad de cimientos en las paredes de planta baja?",
+      "impact": "En casas de esta antigüedad es común; si está seco es un gran punto a favor +5"
+     }
+    ],
+    "general_questions": [
+     {
+      "q": "¿Es venta directa o los dueños necesitan comprar algo para mudarse?",
+      "impact": ""
+     },
+     {
+      "q": "¿Hace cuánto está publicada la propiedad?",
+      "impact": ""
+     },
+     {
+      "q": "¿Cómo es la seguridad de la cuadra y la relación con los vecinos linderos?",
+      "impact": ""
+     },
+     {
+      "q": "¿Aceptan una oferta agresiva considerando que hay que actualizar baños y cocina?",
+      "impact": ""
+     },
+     {
+      "q": "¿La cochera es apta para un vehículo grande o solo auto chico?",
+      "impact": ""
+     }
+    ],
+    "at": "2026-10-31"
+   }
   }
  }
 }
