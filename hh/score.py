@@ -153,7 +153,7 @@ def hard_filters(l, ai=None):
 
 
 def components(l, ai=None):
-    desc = (l.get("description") or "") + " " + (l.get("title") or "") + " " + " ".join(l.get("features_text") or [])
+    desc = (l.get("description") or "") + " " + (l.get("title") or "") + " " + " ".join(str(x) for x in l.get("features_text") or [] if x)
     c = {}
     reform = (ai or {}).get("reform_usd")
     reform = reform if isinstance(reform, (int, float)) else None

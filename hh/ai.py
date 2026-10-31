@@ -109,7 +109,7 @@ def _listing_text(l):
     return (f"Tipo: {l['type']} | Precio: USD {l['price_usd']} | Sup. total: {l['total_m2']} m2 | "
             f"Cubierta: {l['covered_m2']} m2 | Ambientes: {l['ambientes']} | Antigüedad: {l.get('age_years')} | "
             f"Dirección: {l['address']}\nTítulo: {l['title']}\nDescripción: {l['description'][:3500]}\n"
-            f"Características: {', '.join(l.get('features_text') or [])}")
+            f"Características: {', '.join(str(x) for x in l.get('features_text') or [] if x)}")
 
 
 def contact_sheet(imgs, cols=4, cell=(400, 300)):
