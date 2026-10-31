@@ -160,10 +160,10 @@ def main():
     ap.add_argument("--assess", default="", help="comma-separated ids: fresh AI read + verdict for just these, now")
     ap.add_argument("--assess-queue", action="store_true", help="--assess with the ids the app queued in data/ai_requests/")
     ap.add_argument("--ai-minutes", type=float, default=float(os.environ.get("HH_AI_MINUTES", 0)) or None,
-                    help="wall-clock cap on item pages + AI calls (default 10 for --quick, 45 otherwise), so the run always "
+                    help="wall-clock cap on item pages + AI calls (default 45 for full scrapes, 10 for --quick and --no-scrape), so the run always "
                          "gets to write listings.json; what's left waits for the next run")
     args = ap.parse_args()
-    ai_minutes = args.ai_minutes or (10 if args.quick else 45)
+    ai_minutes = args.ai_minutes or (10 if args.quick or args.no_scrape else 45)
     ai_deadline = time.time() + 60 * ai_minutes
     def ai_time_left():
         if time.time() < ai_deadline:
