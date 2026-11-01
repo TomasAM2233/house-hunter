@@ -15,11 +15,12 @@ zonaprop olivos-florida-la-lucila (185000, 210000) page 3/4: 30 listings
 zonaprop olivos-florida-la-lucila (185000, 210000) page 4/4: 21 listings
 zonaprop olivos-florida-la-lucila (210000, None) page 1/6: 29 listings
 zonaprop olivos-florida-la-lucila (210000, None) page 2/6: 30 listings
-zonaprop olivos-florida-la-lucila (210000, None) page 3/6: 30 listings
+zonaprop olivos-florida-la-lucila (210000, None) page 3: GET https://www.zonaprop.com.ar/casas-ph-venta-olivos-florida-la-lucila-mas-de-3-ambientes-210000-240000-dolar-pagina-3.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
 zonaprop olivos-florida-la-lucila (210000, None) page 4/6: 30 listings
 zonaprop olivos-florida-la-lucila (210000, None) page 5/6: 30 listings
 zonaprop olivos-florida-la-lucila (210000, None) page 6/6: 23 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/1: 30 listings
+zonaprop: pages [('olivos-florida-la-lucila', (210000, None), 3)] failed; their listings keep their previous state
 argenprop page 1/22: 20 listings
 argenprop page 2/22: 20 listings
 argenprop page 3/22: 20 listings
@@ -74,20 +75,4 @@ mercadolibre ph/florida page 2: 48 listings
 mercadolibre ph/florida page 3: 34 listings
 mercadolibre ph/la-lucila page 1: 14 listings
 mercadolibre ph/vicente-lopez page 1: 16 listings
-AI read zp-45432230: ok in 35s (gemini-flash-latest)
-AI read ml-MLA3915233016: ok in 67s (gemini-3.7-flash)
-AI read ap-20481493: ok in 52s (gemini-3.6-flash)
-AI read ap-17672156: ok in 68s (gemini-3-flash-preview)
-AI read ap-20165159: ok in 41s (gemini-flash-lite-latest)
-AI read zp-58603868: ok in 5s (gemini-flash-lite-latest)
-AI read ap-19903581: ok in 62s (gemini-flash-lite-latest)
-AI read ap-16903739: ok in 61s (gemini-flash-lite-latest)
-AI read ml-MLA3757214370: ok in 4s (gemini-flash-lite-latest)
-AI read zp-58565238: ok in 6s (gemini-flash-lite-latest)
-AI read ml-MLA4085949912: ok in 4s (gemini-flash-lite-latest)
-AI read ap-20740809: ok in 41s (gemini-flash-lite-latest)
-AI read ap-20640725: ok in 62s (gemini-flash-lite-latest)
-AI read ap-20311587: ok in 61s (gemini-flash-lite-latest)
-AI read ap-19225713: ok in 61s (gemini-flash-lite-latest)
-final verdict failed for tk-7333929: Expecting property name enclosed in double quotes: line 13 column 5 (char 840)
-1950 listings, 186 on the shortlist, 14 waiting for AI
+1952 listings, 186 on the shortlist, 14 waiting for AI
