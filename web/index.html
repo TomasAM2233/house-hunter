@@ -326,6 +326,8 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
       <option value="pm2">Percentil m²</option>
       <option value="pppm2">Percentil USD/m²</option>
       <option value="pbuild">Percentil m² por construir</option>
+      <option value="pkept">Percentil inversión (valor a 10 años)</option>
+      <option value="pland">Percentil terreno barato</option>
       <option value="m2">Más m²</option>
       <option value="new">Nuevas</option>
     </select>
@@ -593,8 +595,8 @@ function sideFallback() {
   }
 }
 function sideLine(l) {
-  const p = side(l), it = [["m2", "m²"], ["ppm2", "USD/m²"], ["build", "por construir"]].filter(([k]) => p[k] != null);
-  return it.length ? `<div class="side" title="Percentiles secundarios: qué parte de las casas queda por debajo. En USD/m², más alto = más barato.">${it.map(([k, n]) => `<span>${n} <b>P${p[k]}</b></span>`).join("")}</div>` : "";
+  const p = side(l), it = [["kept", "inversión"], ["land", "terreno"], ["m2", "m²"], ["ppm2", "USD/m²"], ["build", "por construir"]].filter(([k]) => p[k] != null);
+  return it.length ? `<div class="side" title="Percentiles secundarios: qué parte de las casas queda por debajo. Inversión = valor estimado a 10 años contra el precio. En terreno y USD/m², más alto = más barato.">${it.map(([k, n]) => `<span>${n} <b>P${p[k]}</b></span>`).join("")}</div>` : "";
 }
 
 function recalcPct() {
@@ -695,7 +697,8 @@ function rows() {
   if (q) r = r.filter(l => (l.title + " " + l.address + " " + l.description + " " + brief(l) + " " + (tag(l.id).note || "")).toLowerCase().includes(q));
   const key = { score: l => -l.score, pct: l => -((pct(l) ?? -1) * 1000 + l.score), price: l => l.price_usd ?? 1e9, ppm2: l => ppm2(l) ?? 1e9,
     m2: l => -(l.total_m2 ?? 0), new: l => -(Date.parse(l.first_seen) || 0),
-    pm2: l => -((side(l).m2 ?? -1) * 1000 + l.score), pppm2: l => -((side(l).ppm2 ?? -1) * 1000 + l.score), pbuild: l => -((side(l).build ?? -1) * 1000 + l.score) }[$("#sort").value];
+    pm2: l => -((side(l).m2 ?? -1) * 1000 + l.score), pppm2: l => -((side(l).ppm2 ?? -1) * 1000 + l.score), pbuild: l => -((side(l).build ?? -1) * 1000 + l.score),
+    pkept: l => -((side(l).kept ?? -1) * 1000 + l.score), pland: l => -((side(l).land ?? -1) * 1000 + l.score) }[$("#sort").value];
   return r.slice().sort((a, b) => key(a) - key(b));
 }
 
@@ -867,7 +870,7 @@ function renderDetail(l) {
       ${l.discard.length ? `<div class="discard"><b>Filtrada:</b> ${l.discard.map(esc).join(" · ")}</div>` : ""}
       ${text ? `<div class="lead"><span class="label">${f ? `Evaluación de la IA · ${f.score}/100` : "Resumen"}${f && l.score_calc != null ? ` (algoritmo ${Math.round(l.score_calc)})` : ""}</span><p>${esc(text)}</p>
         ${f?.reasons?.length ? `<ul class="reasons">${f.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
-        ${f?.investment ? `<p><b>Como inversión: ${f.investment.score}/10.</b> ${esc(f.investment.why)}</p>` : ""}</div>` : ""}
+        ${f?.investment ? `<p><b>Como inversión: ${f.investment.score}/10${f.investment.value_10y_pct ? ` · a 10 años ~${f.investment.value_10y_pct}% del precio` : ""}.</b> ${esc(f.investment.why)}</p>${f.investment.upside?.length ? `<p>A favor: ${f.investment.upside.map(esc).join(" · ")}</p>` : ""}${f.investment.risks?.length ? `<p>En contra: ${f.investment.risks.map(esc).join(" · ")}</p>` : ""}` : ""}</div>` : ""}
       <div class="mine">
         <button class="btn" data-tag="fav" aria-pressed="${!!t.fav}">★ Me interesa</button>
         <button class="btn" data-tag="visited" aria-pressed="${!!t.visited}">✓ Visitada</button>
@@ -890,6 +893,8 @@ function renderDetail(l) {
         <div class="fact"><span>Percentil m² cub.</span><b>${side(l).m2 ?? "?"}</b></div>
         <div class="fact"><span>Percentil USD/m²</span><b>${side(l).ppm2 ?? "?"} <small style="font-size:11px;color:var(--muted)">más = más barata</small></b></div>
         <div class="fact"><span>Zona</span><b>${zoningFact(l)}</b></div>
+        <div class="fact"><span>Terreno implícito</span><b>${l.land ? `${l.land.implied > 0 ? "USD " + fmt(l.land.implied) + "/m²" : "≤ 0"} <small style="font-size:11px;color:var(--muted)">zona ~${fmt(l.land.market)} · P${side(l).land}</small>` : "?"}</b></div>
+        <div class="fact"><span>Valor a 10 años</span><b>${l.land ? `${Math.round(l.land.kept * 100)}% del precio <small style="font-size:11px;color:var(--muted)">P${side(l).kept}</small>` : "?"}</b></div>
         <div class="fact"><span>Por construir</span><b>${l.build_m2 != null ? `~${fmt(l.build_m2)} m² <small style="font-size:11px;color:var(--muted)">P${side(l).build}</small>` : l.type === "ph" ? "PH" : "?"}</b></div>
       </div>
       <div class="actions">

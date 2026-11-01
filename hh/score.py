@@ -1,5 +1,5 @@
 """The house score: hard filters (discard reasons) + ten weighted components, each 0..1, with a short why."""
-import re
+import json, os, re, statistics
 from . import config, text
 
 S = config.SEARCH
@@ -59,37 +59,116 @@ def buildable_left(l):
     return max(0, round(lot * fot(l) - l["covered_m2"])) if lot else None
 
 
-def investment(l):
-    """(0..1, why): 40% price per m2 of lot, 35% m2 still buildable, 25% price per covered m2 (low = not paying
-    a new-build premium)."""
-    p = l.get("price_usd")
-    if not p:
+def house_age(l):
+    """Years, or None when the listing doesn't say. Some give the year built instead; "0" mostly means not given,
+    so it counts only when the text says it's new (a estrenar)."""
+    a = l.get("age_years")
+    if a is None:
+        return None
+    a = 2026 - a if a > 1800 else a
+    if a == 0 and "estren" not in text.norm((l.get("description") or "") + " " + (l.get("title") or "")):
+        return None
+    return max(0, a)
+
+
+def land_m2(l):
+    """m2 of land the price buys: the lot for a house (when it's believable: a complex's whole lot quoted in a unit's
+    text is not), PH_LAND_SHARE of the total m2 for a PH, whose lot is shared. None when unknown."""
+    tot, cov = l.get("total_m2"), l.get("covered_m2")
+    if l.get("type") == "ph":
+        return round(config.PH_LAND_SHARE * tot) if tot else None
+    lot, _ = lot_m2(l)
+    if lot and lot > 3 * max(tot or 0, cov or 0):
+        lot = tot
+    return lot or None
+
+
+def building_factor(age, condition=None):
+    """Share of a new building's value that a house of this age keeps; the AI's condition (1-5) moves it ±15%."""
+    f = max(config.BUILDING_FLOOR, 1 - config.DEPRECIATION_PER_YEAR * age)
+    return f * (lerp(condition, 1, 0.85, 5, 1.15) if condition else 1)
+
+
+def implied_land(l, ai=None):
+    """USD per m2 of land the asking price implies once the building is taken out at what it's worth, or None."""
+    p, cov, lm = l.get("price_usd"), l.get("covered_m2"), land_m2(l)
+    if not (p and cov and lm):
+        return None
+    age = house_age(l)
+    b = config.BUILD_COST_M2 * cov * building_factor(config.AGE_ASSUMED if age is None else age, (ai or {}).get("condition"))
+    return (p - b) / lm
+
+
+_MARKET = None
+
+
+def land_market():
+    """Reference points (lat, lng, USD per m2 of lot) from geo/land_market.json, frozen so that scores (and the AI
+    verdict, cached by its input) don't move with every new listing. Rebuilt by land_market_build.py."""
+    global _MARKET
+    if _MARKET is None:
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "geo", "land_market.json")
+        _MARKET = json.load(open(path)) if os.path.exists(path) else {"points": [], "median": None}
+    return _MARKET
+
+
+def market_land(l):
+    """Median USD per m2 of lot implied by the LAND_NEIGHBOURS nearest houses (not this one), or the overall median."""
+    m = land_market()
+    pts = [p for p in m["points"] if p[3] != l.get("id")]
+    if l.get("lat") is None or not pts:
+        return m.get("median")
+    k = sorted(pts, key=lambda p: (p[0] - l["lat"]) ** 2 + ((p[1] - l["lng"]) * 0.823) ** 2)[:config.LAND_NEIGHBOURS]
+    return statistics.median(p[2] for p in k)
+
+
+def land_value(l, ai=None):
+    """The land-vs-building split of a house and what it's worth at the horizon, or None without price, covered m2
+    or land m2. {land_m2, implied (USD/m2 of land paid), market (USD/m2 around it), building, building_h (building
+    value today and at the horizon), value_h (market land + aged building), kept (value_h / price), age_assumed}."""
+    p, cov, lm = l.get("price_usd"), l.get("covered_m2"), land_m2(l)
+    imp, mk = implied_land(l, ai), market_land(l)
+    if imp is None or mk is None:
+        return None
+    age = house_age(l)
+    a = config.AGE_ASSUMED if age is None else age
+    cond = (ai or {}).get("condition")
+    b = config.BUILD_COST_M2 * cov * building_factor(a, cond)
+    bh = config.BUILD_COST_M2 * cov * building_factor(a + config.HORIZON_YEARS, cond)
+    vh = mk * lm + bh
+    return {"land_m2": lm, "implied": round(imp), "market": round(mk), "building": round(b), "building_h": round(bh),
+            "value_h": round(vh), "kept": round(vh / p, 3), "age_assumed": age is None}
+
+
+def investment(l, ai=None):
+    """(0..1, why): 65% how much of the price is still there at the horizon (market value of the land + the aged
+    building, over the price: buying below the area, a big cheap lot and an old building all push it up; a new-build
+    premium pushes it down), 35% m2 still buildable."""
+    if not l.get("price_usd"):
         return 0.3, "sin precio"
-    lot, what = lot_m2(l)
-    cov = l.get("covered_m2")
-    parts, why = [], []
-    if lot and l.get("type") == "casa":
-        v = p / lot
-        parts.append((0.4, lerp(v, config.LOT_PPM2[0], 1, config.LOT_PPM2[1], 0)))
-        why.append(f"USD {n(v)}/m² de lote" + ("" if what == "terreno" else " (m² totales)"))
+    v, why = land_value(l, ai), []
+    if v:
+        lo, hi = config.VALUE_KEPT
+        kept = lerp(v["kept"], lo, 0, hi, 1)
+        why.append((f"terreno implícito USD {n(v['implied'])}/m²" if v["implied"] > 0 else
+                    "la construcción sola vale más que el precio") + f" (zona ~USD {n(v['market'])}/m²)")
+        why.append(f"en {config.HORIZON_YEARS} años la construcción pierde ~USD {n(v['building'] - v['building_h'])}"
+                   + (" (antigüedad supuesta)" if v["age_assumed"] else ""))
+        why.append(f"valor estimado a {config.HORIZON_YEARS} años ~{v['kept'] * 100:.0f}% del precio")
+        if l.get("type") == "ph":
+            why.append("PH: lote compartido, estimado")
     else:
-        parts.append((0.4, 0.3))
-        why.append("PH: el lote es compartido" if l.get("type") == "ph" else "sin m² de lote")
+        kept = 0.35
+        why.append("sin m² cubiertos o de lote para separar terreno y construcción")
     b = buildable_left(l)
     if b is not None:
-        parts.append((0.35, lerp(b, 0, 0, config.BUILDABLE_FULL_M2, 1)))
+        bv = lerp(b, 0, 0, config.BUILDABLE_FULL_M2, 1)
         z = zoning(l)
         why.append(f"~{n(b)} m² por construir" + (f" (zona {z['code']}, FOT {z['fot']:g}" + (
             f", en el límite con {z['edge']}" if z.get("edge") else "") + ")" if z.get("fot") else ""))
     else:
-        parts.append((0.35, 0.2))
-    if cov:
-        v = p / cov
-        parts.append((0.25, lerp(v, config.COVERED_PPM2[0], 1, config.COVERED_PPM2[1], 0)))
-        why.append(f"USD {n(v)}/m² cubierto")
-    else:
-        parts.append((0.25, 0.4))
-    return sum(w * x for w, x in parts) / sum(w for w, _ in parts), ", ".join(why)
+        bv = 0.2
+    return 0.65 * kept + 0.35 * bv, ", ".join(why)
 
 
 def maipu_sweet(blocks):
@@ -210,7 +289,7 @@ def components(l, ai=None):
         c["patio"] = (0.4 if text.has_patio_words(desc) else 0.1, "menciona patio/jardín" if text.has_patio_words(desc) else "no menciona patio")
 
     # investment: what holds value at resale
-    c["investment"] = investment(l)
+    c["investment"] = investment(l, ai)
 
     # vertical
     if ai and ai.get("vertical_potential") is not None:
