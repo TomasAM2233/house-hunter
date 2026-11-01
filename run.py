@@ -37,6 +37,8 @@ def load():
 
 def merge(old, fresh):
     for l in fresh:
+        # some sources (Tokko agencies) send numeric codes in the features: keep them all as text
+        l["features_text"] = [str(x) for x in l.get("features_text") or [] if x not in (None, "")]
         prev = old.get(l["id"])
         if prev:
             l["first_seen"] = prev.get("first_seen", TODAY)
