@@ -10995,5 +10995,203 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-10-31T21:19:13Z"
+ },
+ "zp-58837617": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Reparación de revoques y pintura por humedad en muros del patio/pasillo, y actualización estética de cocina y baño en la unidad de planta alta.",
+  "patio": "medium",
+  "patio_m2_est": 25,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Venta en block de dos unidades independientes (PB y PA)",
+   "Planta baja habitable de inmediato con pisos de parquet cuidados",
+   "Patio propio a nivel en PB más terraza transitable en PA"
+  ],
+  "red_flags": [
+   "Humedad visible y revoques descascarados en muros exteriores del patio",
+   "Acceso al fondo por pasillo compartido",
+   "Unidad de planta alta desactualizada que requiere reformas"
+  ],
+  "summary": "Es una buena opción en block al fondo que cumple con el patio en planta baja y permite mudarse ya a la PB, destinando el presupuesto a emprolijar muros y actualizar la planta alta.",
+  "photos_key": "a1a2d0571c61",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T23:49:37Z"
+ },
+ "ml-MLA3029365536": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Pintura general, revisión de griferías y colocación de equipos de aire acondicionado.",
+  "patio": "medium",
+  "patio_m2_est": 30,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación residencial en Olivos",
+   "Listo para habitar sin necesidad de obras estructurales",
+   "Patio con parrilla en planta baja y cochera propia"
+  ],
+  "red_flags": [
+   "No hay fotos detalladas del patio trasero ni de la parrilla",
+   "Techos de tejas que requieren mantenimiento de impermeabilización",
+   "Dormitorios en planta alta con metros ajustados"
+  ],
+  "summary": "Es un dúplex en impecable estado en Olivos, listo para mudarse ya mismo sin gastar casi nada de los 20.000 dólares de presupuesto.",
+  "photos_key": "4b73533af1c9",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T23:49:57Z"
+ },
+ "ap-20788581": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Actualización de instalación eléctrica (crítico por ser casa 100% eléctrica), modernización de cocina y baños, y pintura general.",
+  "patio": "medium",
+  "patio_m2_est": 41,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Ubicación estratégica en Olivos",
+   "Tres dormitorios en planta alta",
+   "Patio con parrilla y galería"
+  ],
+  "red_flags": [
+   "Ubicación sobre avenida principal (ruido y polución)",
+   "Casa 100% eléctrica (alto costo operativo y dependencia)",
+   "Antigüedad de 30 años con instalaciones originales"
+  ],
+  "summary": "Es una casa funcional con el patio que buscan, pero el ruido de la avenida y la falta de gas natural son factores que restan confort.",
+  "photos_key": "0572131c7d40",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T23:54:02Z"
+ },
+ "ap-10325369": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de cocina y baño, pintura general, revisión de cañerías e impermeabilización de la terraza.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Sin expensas",
+   "Terraza propia de 25 m² con parrilla",
+   "Muy buena ubicación cerca de Av. Maipú y Unicenter"
+  ],
+  "red_flags": [
+   "Es un PH en planta alta (no tiene patio a nivel de suelo)",
+   "No apto crédito",
+   "Antigüedad de 40 años con posibles instalaciones originales"
+  ],
+  "summary": "Olvídense, este PH es en planta alta y no tiene el patio que querían, por más que tenga linda terraza.",
+  "photos_key": "4d9e79101c90",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T23:57:47Z"
+ },
+ "tk-3605366": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Pintura general, actualización estética menor de cocina o baño y revisión de impermeabilización.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": true,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Muy buen estado general de conservación",
+   "Una sola planta sin escaleras",
+   "Ubicación tranquila en Olivos"
+  ],
+  "red_flags": [
+   "No tiene patio ni jardín propio visible (solo cochera al frente)",
+   "Falta de ventilación cruzada en algunos ambientes",
+   "Techo de chapa a la vista en la fachada"
+  ],
+  "summary": "Impecable PH o chalet en planta baja, pero ojo que no tiene patio real, es todo cemento y cochera.",
+  "photos_key": "06e687c6467d",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-10-31",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-10-31T23:57:58Z"
+ },
+ "ap-20600710": {
+  "condition": 2,
+  "reform_usd": 20000,
+  "reform_notes": "Actualización de instalaciones de cañerías y electricidad, arreglos de humedad general, pintura, renovación de baños y cocina.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Sin expensas",
+   "Muy buena ubicación en Olivos con cochera",
+   "Terraza propia con quincho y parrilla"
+  ],
+  "red_flags": [
+   "Antigüedad de 63 años a refaccionar integralmente",
+   "PH con múltiples unidades funcionales",
+   "Posibles problemas de humedad y cañerías obsoletas"
+  ],
+  "summary": "Es un PH grande pero viejito en Olivos; con los 20 mil dólares vas a tener que correr atrás de las refacciones para dejarlo habitable.",
+  "photos_key": "961bfeeccf34",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T00:01:48Z"
  }
 }
