@@ -86,22 +86,29 @@ def save_result(listing_id, result, photos_key, analyst, note=""):
     return result
 
 
-def _download(urls, max_seconds=120):
-    imgs, start = [], time.time()
-    for u in urls[:MAX_PHOTOS]:
-        if time.time() - start > max_seconds and imgs:
-            break  # a slow unblocking API shouldn't hold the run: read with the photos we have
-        try:
-            if "argenprop.com/" in u:  # its WAF blocks cloud IPs for photos too
-                from . import http
-                r = http.get(u, via_api=True, binary=True, timeout=45, api_tries=1)
-            else:
-                r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
-            im = Image.open(io.BytesIO(r.content)).convert("RGB")
-            im.thumbnail((768, 768))
-            imgs.append(im)
-        except Exception:
-            continue
+def _download(urls, max_seconds=60):
+    """Photos in parallel with a hard wall-clock cap: Argenprop's go through the unblocking API, which can take
+    30-45 s each, and fetched one by one they made every ap-* read take ~4 minutes (seen 2026-10-31)."""
+    from concurrent.futures import ThreadPoolExecutor, wait
+
+    def one(u):
+        if "argenprop.com/" in u:  # its WAF blocks cloud IPs for photos too
+            from . import http
+            r = http.get(u, via_api=True, binary=True, timeout=40, api_tries=1)
+        else:
+            r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+        im = Image.open(io.BytesIO(r.content)).convert("RGB")
+        im.thumbnail((768, 768))
+        return im
+
+    pool = ThreadPoolExecutor(max_workers=4)  # the free scraping-API plans allow ~5 concurrent requests
+    futs = [pool.submit(one, u) for u in urls[:MAX_PHOTOS]]
+    wait(futs, timeout=max_seconds)
+    pool.shutdown(wait=False, cancel_futures=True)  # stragglers are dropped: read with the photos we have
+    imgs = []
+    for f in futs:  # keep the listing's photo order
+        if f.done() and not f.cancelled() and f.exception() is None:
+            imgs.append(f.result())
     return imgs
 
 
