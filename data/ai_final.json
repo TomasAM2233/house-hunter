@@ -3670,5 +3670,64 @@
   "model": "gemini-flash-lite-latest",
   "at": "2026-11-01",
   "ts": "2026-11-01T01:23:12Z"
+ },
+ "zp-56933694": {
+  "score": 74,
+  "brief": "Loteazo de 400 m² (10x40) en Olivos a USD 600/m² total, por debajo del valor del terreno. Espacio enorme (296 m² cubiertos, jardín de 150 m²). Sin gas natural. Al no contar la reforma por tu nota, es una gran oportunidad.",
+  "reasons": [
+   "Tu nota elimina el castigo por sobrepasar presupuesto y costo de reformas, levantando la calificación.",
+   "Lote excepcional de 400 m² en Olivos a precio por debajo del m² de terreno en la zona (USD 600 vs USD 696/m²).",
+   "Falta de conexión a red de gas natural es la principal contra técnica pero solucionable."
+  ],
+  "investment": {
+   "score": 9,
+   "why": "Se vende a USD 240.000 un terreno de 400 m² en Olivos (Borges) que solo como lote vale cerca de USD 280.000. El valor está 100% resguardado en la tierra y la zona.",
+   "value_10y_pct": 178,
+   "upside": [
+    "Terreno de 400 m² (10x40) en Olivos que vale más que la propiedad entera",
+    "Precio por m² total muy bajo (USD 600/m²)",
+    "Potencial de subdivisión o desarrollo según normativa de la zona"
+   ],
+   "risks": [
+    "Falta de gas natural dificulta la reventa directa sin resolver el tema energético",
+    "Casa de 45 años cargada de madera que requiere mantenimiento constante"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿A qué altura exacta de la calle Borges se encuentra y a cuántas cuadras de la estación/Maipú?",
+    "impact": "Si está a menos de 8 cuadras de Maipú/tren +4; si está lejos -4"
+   },
+   {
+    "q": "¿Qué trámite o costo implica conectar el gas natural o si la red pasa por la puerta?",
+    "impact": "Si la red pasa por la puerta y es fácil conectar +3; si la zona o cuadra no tiene gas -5"
+   },
+   {
+    "q": "¿Están los 296 m² cubiertos 100% declarados en planos aprobados?",
+    "impact": "Si están en regla +4; si hay m² no declarados que impidan crédito -8"
+   },
+   {
+    "q": "¿La propiedad es apta crédito hipotecario?",
+    "impact": "Si es apta crédito +3; si no lo es -4"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Por qué motivo vende el propietario y cuál es el plazo de entrega/escrituración?",
+    "impact": ""
+   },
+   {
+    "q": "¿Hay deudas de ABL o Arba sobre la propiedad?",
+    "impact": ""
+   },
+   {
+    "q": "¿Aceptan ofertas por debajo de los USD 240.000?",
+    "impact": ""
+   }
+  ],
+  "input_key": "51f03f1e983f",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-01",
+  "ts": "2026-11-01T02:42:52Z"
  }
 }
