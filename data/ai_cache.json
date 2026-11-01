@@ -1424,29 +1424,37 @@
   "analysed_at": "2026-10-23"
  },
  "zp-60369743": {
-  "condition": 5,
-  "reform_usd": 0,
-  "reform_notes": "En obra, se entrega a nuevo (fin de obra octubre). Las fotos 'terminadas' son renders.",
+  "condition": 2,
+  "reform_usd": 12000,
+  "reform_notes": "Terminar la obra en curso: instalación de artefactos, terminaciones de pintura, revestimientos, electricidad y detalles de yesería.",
   "patio": "none",
   "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 3,
-  "vertical_potential": 0.0,
-  "apto_credito": null,
+  "vertical_potential": 0,
+  "apto_credito": false,
   "highlights": [
-   "Reciclado a nuevo, al frente, techos altos",
-   "SUM / terraza en tercer nivel"
+   "Excelente ubicación residencial en Florida",
+   "Terraza propia en último nivel con espacio para quincho",
+   "Distribución moderna y funcional"
   ],
   "red_flags": [
-   "Sin patio ni jardín a nivel, solo terraza",
-   "Fotos de obra y renders",
-   "Tope del presupuesto"
+   "Sin patio a nivel del suelo (los m2 descubiertos son solo de la terraza)",
+   "Obra inconclusa disfrazada con renders e imágenes digitales",
+   "Plazos de entrega inciertos por fin de obra pendiente"
   ],
-  "summary": "PH al frente reciclado a nuevo en tres niveles con terraza arriba; no tiene patio en suelo y está en el tope del precio.",
+  "summary": "Descartalo de una: no tiene el patio en planta baja que exigen (solo tiene terraza arriba) y encima es una obra en curso vendida con renders.",
   "photos_key": "09bf00a24f80",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T21:45:02Z"
  },
  "zp-59854365": {
   "condition": 5,
@@ -1499,28 +1507,36 @@
  },
  "zp-59985972": {
   "condition": 4,
-  "reform_usd": 4000,
-  "reform_notes": "Muy cuidado: cocina con isla reciente, pisos ok; detalles de pintura y terminaciones.",
-  "patio": "small",
-  "patio_m2_est": 10,
+  "reform_usd": 3000,
+  "reform_notes": "Pintura general, verificación de aislación en techos de madera y eventual reubicación del caño de la salamandra en planta alta.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": true,
+  "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 5,
-  "quiet": 4,
-  "vertical_potential": 0.05,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "PH en esquina con entrada independiente",
-   "Orientación norte, muy luminoso",
-   "4 ambientes, listo para mudarse"
+   "Esquina muy luminosa con orientación norte",
+   "Cocina integrada moderna y reciclada con isla",
+   "Entrada totalmente independiente a la calle"
   ],
   "red_flags": [
-   "Solo 10 m² descubiertos",
-   "Sin cochera"
+   "No muestran fotos del patio (según texto apenas son 10 m2 descubiertos)",
+   "Caño de salamandra expuesto y peligroso en el descanso de la escalera",
+   "Falta de espacio guardacoche en ochava"
   ],
-  "summary": "PH en esquina luminoso y muy bien mantenido con entrada propia; lindo para vivir pero el exterior es mínimo.",
-  "photos_key": "4959b088cadf",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "summary": "Dúplex en esquina muy prolijo y habitable de inmediato, pero descártenlo si el patio es excluyente porque ni lo muestran y como mucho es un aire y luz diminuto.",
+  "photos_key": "ae8c94f0cf5c",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T21:40:03Z"
  },
  "zp-60420822": {
   "condition": 3,
@@ -11664,8 +11680,8 @@
  },
  "ap-20790650": {
   "condition": 4,
-  "reform_usd": 4000,
-  "reform_notes": "Pintura general, revisión preventiva de cañerías/instalación eléctrica por la antigüedad y eventuales detalles cosméticos.",
+  "reform_usd": 6000,
+  "reform_notes": "Pintura general, revisión preventiva de instalaciones sanitarias/gas por antigüedad (32 años) y modernización estética de artefactos.",
   "patio": "medium",
   "patio_m2_est": 26,
   "patio_seen": false,
@@ -11678,21 +11694,120 @@
   "vertical_potential": 0,
   "apto_credito": true,
   "highlights": [
-   "Patio propio de 26 m2 con cuarto de guardado",
-   "Interno y seguro en complejo de solo 5 unidades",
-   "Distribución en 3 plantas con playroom aprovechable"
+   "Patio propio de 26 m² con orientación de sol de tarde",
+   "Ubicación interna tranquila y segura dentro del complejo",
+   "Distribución práctica en 3 plantas con cochera y playroom"
   ],
   "red_flags": [
-   "Planta angosta (3.40 m de ancho)",
-   "Servidumbre de paso vehicular compartida",
-   "Instalaciones originales con más de 30 años"
+   "32 años de antigüedad con posibles instalaciones de origen",
+   "Planta angosta (3,40 m de ancho) distribuida en tres niveles",
+   "Acceso vehicular y peatonal compartido por pasillo común"
   ],
-  "summary": "Dúplex interno súper tranquilo con patio propio y metraje cómodo, listo para entrar haciéndole solo un lavado de cara.",
+  "summary": "Dúplex interno súper tranquilo en Olivos con un lindo patio propio en planta baja, habitable desde el primer día y con presupuesto de sobra para dejarlo a punto.",
   "photos_key": "b5dca5f7796a",
   "analyst": "gemini:gemini-flash-latest",
   "analysed_at": "2026-11-01",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-01T21:31:10Z"
+  "ts": "2026-11-01T21:38:52Z"
+ },
+ "ap-17598144": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Pintura general y puesta a punto de mantenimiento; la propiedad se encuentra en muy buen estado general.",
+  "patio": "small",
+  "patio_m2_est": 5,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación en La Lucila a metros de estación y centro",
+   "Sin expensas con entrada independiente al frente",
+   "Último piso vidriado ideal estudio o segundo dormitorio"
+  ],
+  "red_flags": [
+   "Venta con renta (impide mudanza inmediata)",
+   "Patio minúsculo de solo 5 m2 que funciona como lavadero",
+   "Distribución en 3 plantas con escalera continua poco práctica"
+  ],
+  "summary": "Es un triplex muy bien ubicado en La Lucila, pero el patio es diminuto y no es apto para mudarse ya porque se vende con contrato de alquiler vigente.",
+  "photos_key": "c9a9d5b38283",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T21:41:25Z"
+ },
+ "zp-58693304": {
+  "condition": 3,
+  "reform_usd": 14000,
+  "reform_notes": "Actualización completa del baño principal, modernización estética de cocina, pintura integral interior/exterior y puesta en valor del jardín con revoques de medianeras.",
+  "patio": "medium",
+  "patio_m2_est": 25,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Jardín propio al fondo con parrilla y cuartito",
+   "Cochera fija al frente",
+   "Excelente ubicación residencial en Olivos cerca de Maipú"
+  ],
+  "red_flags": [
+   "Baño y cocina de época con instalaciones de 30 años",
+   "Humedad visible y revoques deteriorados en muros del patio",
+   "Planta baja profunda con luz natural justa"
+  ],
+  "summary": "Es un dúplex noventero sólido y bien ubicado con el jardín propio que buscan, que con una puesta a punto estética entra perfecto en sus 20.000 dólares de presupuesto.",
+  "photos_key": "0708eb5f40b9",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T21:44:35Z"
+ },
+ "ap-20461390": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Pintura general, actualización estética puntual de baños/cocina y verificación de bombas/pileta. Muy buen estado general.",
+  "patio": "medium",
+  "patio_m2_est": 30,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Apto crédito y listo para habitar sin grandes reformas",
+   "Jardín propio al fondo con pileta en muy buena zona de Olivos",
+   "Orientación Norte con excelente entrada de luz solar"
+  ],
+  "red_flags": [
+   "Frente extremadamente angosto (3 metros de ancho)",
+   "Distribución vertical en 3 plantas con bastantes escaleras",
+   "Fotos del aviso editadas digitalmente (verificar terminaciones reales)"
+  ],
+  "summary": "Es una muy buena opción en Olivos lista para entrar sin gastar el presupuesto de reforma, aunque tené en cuenta que al ser tan angosta de frente se siente un poco encajonada y requiere subir muchas escaleras.",
+  "photos_key": "902d6c8daafb",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-01",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-01T21:46:26Z"
  }
 }
