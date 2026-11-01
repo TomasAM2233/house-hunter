@@ -2384,8 +2384,8 @@
   }
  },
  "zp-56933694": {
-  "requested_at": "2026-11-01T02:40:51.284Z",
-  "done_at": "2026-11-01T02:42:57Z",
+  "requested_at": "2026-11-01T02:48:22.305Z",
+  "done_at": "2026-11-01T02:51:39Z",
   "error": null,
   "listing": {
    "id": "zp-56933694",
@@ -2469,52 +2469,52 @@
    ],
    "enriched": true,
    "photos_v": 2,
-   "pct": 83,
-   "pct_score": 49.8,
+   "pct": 84,
+   "pct_score": 50.8,
    "pct_n": 1952,
    "last_seen": "2026-11-01",
    "active": true,
    "geo": null,
    "ai": {
     "condition": 3,
-    "reform_usd": 25000,
-    "reform_notes": "Conexión/instalación de red de gas o electrificación total, modernización de cocina y 3 baños, y renovación de revestimientos/pintura.",
+    "reform_usd": 30000,
+    "reform_notes": "Obra/reconexión de gas o electrificación total, actualización de cocina y baños antiguos, y pintura general.",
     "patio": "large",
-    "patio_m2_est": 150,
-    "patio_seen": true,
+    "patio_m2_est": 110,
+    "patio_seen": false,
     "terrace": true,
     "corner": false,
     "ph_stacked": false,
     "pasillo_ph": false,
-    "natural_light": 3,
+    "natural_light": 4,
     "quiet": 4,
-    "vertical_potential": 0,
-    "apto_credito": null,
+    "vertical_potential": 1,
+    "apto_credito": false,
     "highlights": [
-     "Gran lote propio de 10x40 m con amplio jardín en planta baja",
-     "Excelente ubicación residencial en Olivos",
-     "Amplia superficie construida (296 m2) con ambientes generosos"
+     "Excelente lote propio de 10x40 m con fondo libre",
+     "Ambientes muy amplios con techos altos y hogar",
+     "Garage cubierto más entrada pasante para varios autos"
     ],
     "red_flags": [
-     "No cuenta con servicio de gas natural",
-     "Propiedad de 45 años a refaccionar (estilo muy cargado de madera/machimbre)",
-     "El costo de obra básica para actualizarla supera el tope de USD 20,000"
+     "No tiene servicio de gas natural (requiere obra o reconversión)",
+     "Gran metraje cubierto a refaccionar que encarece la obra",
+     "Instalaciones y sanitarios de 45 años de antigüedad"
     ],
-    "summary": "Es un chaletazo sobre un lote tremendo en Olivos con el jardín que buscan, pero entre la falta de gas y lo que hay que ponerle encima se les pasa del presupuesto de USD 20.000.",
+    "summary": "Un chalet de construcción noble sobre un loteazo en Olivos, ideal por su jardín pero que requiere una reforma importante para dejarlo a punto.",
     "photos_key": "3f4cc45065b5",
     "analyst": "gemini:gemini-3.6-flash",
     "analysed_at": "2026-11-01",
     "prompt_version": 2,
-    "note_key": "6161d223",
-    "ts": "2026-11-01T02:42:34Z"
+    "note_key": "a2295066",
+    "ts": "2026-11-01T02:50:50Z"
    },
-   "score": 74,
+   "score": 72,
    "components": {
     "price": {
      "value": 0.4,
      "points": 7.2,
      "max": 18,
-     "why": "USD 265.000 efectivo (incl. reforma 25.000), 600/m²"
+     "why": "USD 270.000 efectivo (incl. reforma 30.000), 600/m²"
     },
     "space": {
      "value": 0.87,
@@ -2529,16 +2529,16 @@
      "why": "sin ubicación"
     },
     "condition": {
-     "value": 0.4,
-     "points": 4.4,
+     "value": 0.33,
+     "points": 3.6,
      "max": 11,
-     "why": "estado 3/5, reforma ~USD 25.000"
+     "why": "estado 3/5, reforma ~USD 30.000"
     },
     "patio": {
      "value": 1,
      "points": 9,
      "max": 9,
-     "why": "patio grande ~150 m²"
+     "why": "patio grande ~110 m²"
     },
     "investment": {
      "value": 0.8,
@@ -2547,16 +2547,16 @@
      "why": "terreno implícito USD 96/m² (zona ~USD 696/m²), en 10 años la construcción pierde ~USD 52.570, valor estimado a 10 años ~178% del precio, ~64 m² por construir"
     },
     "vertical": {
-     "value": 0.0,
-     "points": 0.0,
+     "value": 1.0,
+     "points": 4.0,
      "max": 4,
      "why": "según IA"
     },
     "credit": {
-     "value": 0.4,
-     "points": 2.4,
+     "value": 0,
+     "points": 0,
      "max": 6,
-     "why": "no aclara"
+     "why": "no apto crédito"
     },
     "garage": {
      "value": 1,
@@ -2571,10 +2571,10 @@
      "why": "intermedio"
     },
     "light": {
-     "value": 0.5,
-     "points": 0.5,
+     "value": 0.75,
+     "points": 0.8,
      "max": 1,
-     "why": "luz 3/5"
+     "why": "luz 4/5"
     }
    },
    "discard": [],
@@ -2600,58 +2600,55 @@
     "kept": 1.781,
     "age_assumed": false
    },
-   "score_calc": 49.8,
+   "score_calc": 50.8,
    "ai_final": {
-    "score": 74,
-    "brief": "Loteazo de 400 m² (10x40) en Olivos a USD 600/m² total, por debajo del valor del terreno. Espacio enorme (296 m² cubiertos, jardín de 150 m²). Sin gas natural. Al no contar la reforma por tu nota, es una gran oportunidad.",
+    "score": 72,
+    "brief": "Lote de 10x40 m (400 m²) en Olivos a precio casi de terreno (USD 600/m² total). Casa enorme de 296 m² a 11,5 c. de Maipú. Falta gas natural y pide USD 240.000, pero la reserva de valor del lote es excelente.",
     "reasons": [
-     "Tu nota elimina el castigo por sobrepasar presupuesto y costo de reformas, levantando la calificación.",
-     "Lote excepcional de 400 m² en Olivos a precio por debajo del m² de terreno en la zona (USD 600 vs USD 696/m²).",
-     "Falta de conexión a red de gas natural es la principal contra técnica pero solucionable."
+     "Excelente oportunidad de inversión: se compra un lote de 400 m² en Olivos casi a valor de tierra.",
+     "Se clarificó la ubicación exacta (Borges 2661, a 11,5 cuadras de Maipú), cumpliendo el rango deseado.",
+     "Al considerar que se cuenta con el dinero y no se exige reformar de entrada, el costo no margina la propiedad."
     ],
     "investment": {
      "score": 9,
-     "why": "Se vende a USD 240.000 un terreno de 400 m² en Olivos (Borges) que solo como lote vale cerca de USD 280.000. El valor está 100% resguardado en la tierra y la zona.",
+     "why": "El terreno de 400 m² (10x40) en esa zona de Olivos vale por sí solo casi la totalidad del precio pedido. Se paga la construcción a valor testimonial, protegiendo fuertemente el capital ante cualquier revés del mercado.",
      "value_10y_pct": 178,
      "upside": [
-      "Terreno de 400 m² (10x40) en Olivos que vale más que la propiedad entera",
-      "Precio por m² total muy bajo (USD 600/m²)",
-      "Potencial de subdivisión o desarrollo según normativa de la zona"
+      "Lote propio grande (10x40 m) en zona residencial consolidada de Olivos",
+      "Precio por m² total bajísimo (USD 600/m²)",
+      "Potencial de valorización o desarrollo por m² de tierra y FOT del lote"
      ],
      "risks": [
-      "Falta de gas natural dificulta la reventa directa sin resolver el tema energético",
-      "Casa de 45 años cargada de madera que requiere mantenimiento constante"
+      "Ausencia de red/servicio de gas natural",
+      "Superficie cubierta muy grande de 45 años que puede requerir mantenimiento futuro",
+      "Posible falta de aptitud crédito si los metros no están 100% en plano"
      ]
     },
     "questions": [
      {
-      "q": "¿A qué altura exacta de la calle Borges se encuentra y a cuántas cuadras de la estación/Maipú?",
-      "impact": "Si está a menos de 8 cuadras de Maipú/tren +4; si está lejos -4"
+      "q": "¿Por qué no tiene servicio de gas natural y si la red pasa por la puerta para hacer la reconexión?",
+      "impact": "Si la red pasa y la reconexión es simple +4; si requiere extensión de red o es inviable -8"
      },
      {
-      "q": "¿Qué trámite o costo implica conectar el gas natural o si la red pasa por la puerta?",
-      "impact": "Si la red pasa por la puerta y es fácil conectar +3; si la zona o cuadra no tiene gas -5"
+      "q": "¿Los 296 m² cubiertos están totalmente aprobados en planos y la propiedad es apta crédito?",
+      "impact": "Si está en regla y es apta crédito +6; si hay metros sin declarar -5"
      },
      {
-      "q": "¿Están los 296 m² cubiertos 100% declarados en planos aprobados?",
-      "impact": "Si están en regla +4; si hay m² no declarados que impidan crédito -8"
-     },
-     {
-      "q": "¿La propiedad es apta crédito hipotecario?",
-      "impact": "Si es apta crédito +3; si no lo es -4"
+      "q": "¿En qué estado se encuentran los techos, la estructura y las instalaciones de agua y electricidad?",
+      "impact": "Si la estructura y techos están sanos +3; si hay humedad grave de cimientos o falla estructural -12"
      }
     ],
     "general_questions": [
      {
-      "q": "¿Por qué motivo vende el propietario y cuál es el plazo de entrega/escrituración?",
+      "q": "¿Cuál es el margen de negociación sobre los USD 240.000 partiendo de que está retasada?",
       "impact": ""
      },
      {
-      "q": "¿Hay deudas de ABL o Arba sobre la propiedad?",
+      "q": "¿Qué plazos manejan los propietarios para la escritura y entrega de la posesión?",
       "impact": ""
      },
      {
-      "q": "¿Aceptan ofertas por debajo de los USD 240.000?",
+      "q": "¿Hay deudas pendientes de ABL o ARBA en la propiedad?",
       "impact": ""
      }
     ],

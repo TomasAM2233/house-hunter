@@ -6395,36 +6395,36 @@
  },
  "zp-56933694": {
   "condition": 3,
-  "reform_usd": 25000,
-  "reform_notes": "Conexión/instalación de red de gas o electrificación total, modernización de cocina y 3 baños, y renovación de revestimientos/pintura.",
+  "reform_usd": 30000,
+  "reform_notes": "Obra/reconexión de gas o electrificación total, actualización de cocina y baños antiguos, y pintura general.",
   "patio": "large",
-  "patio_m2_est": 150,
-  "patio_seen": true,
+  "patio_m2_est": 110,
+  "patio_seen": false,
   "terrace": true,
   "corner": false,
   "ph_stacked": false,
   "pasillo_ph": false,
-  "natural_light": 3,
+  "natural_light": 4,
   "quiet": 4,
-  "vertical_potential": 0,
-  "apto_credito": null,
+  "vertical_potential": 1,
+  "apto_credito": false,
   "highlights": [
-   "Gran lote propio de 10x40 m con amplio jardín en planta baja",
-   "Excelente ubicación residencial en Olivos",
-   "Amplia superficie construida (296 m2) con ambientes generosos"
+   "Excelente lote propio de 10x40 m con fondo libre",
+   "Ambientes muy amplios con techos altos y hogar",
+   "Garage cubierto más entrada pasante para varios autos"
   ],
   "red_flags": [
-   "No cuenta con servicio de gas natural",
-   "Propiedad de 45 años a refaccionar (estilo muy cargado de madera/machimbre)",
-   "El costo de obra básica para actualizarla supera el tope de USD 20,000"
+   "No tiene servicio de gas natural (requiere obra o reconversión)",
+   "Gran metraje cubierto a refaccionar que encarece la obra",
+   "Instalaciones y sanitarios de 45 años de antigüedad"
   ],
-  "summary": "Es un chaletazo sobre un lote tremendo en Olivos con el jardín que buscan, pero entre la falta de gas y lo que hay que ponerle encima se les pasa del presupuesto de USD 20.000.",
+  "summary": "Un chalet de construcción noble sobre un loteazo en Olivos, ideal por su jardín pero que requiere una reforma importante para dejarlo a punto.",
   "photos_key": "3f4cc45065b5",
   "analyst": "gemini:gemini-3.6-flash",
   "analysed_at": "2026-11-01",
   "prompt_version": 2,
-  "note_key": "6161d223",
-  "ts": "2026-11-01T02:42:34Z"
+  "note_key": "a2295066",
+  "ts": "2026-11-01T02:50:50Z"
  },
  "ap-19888661": {
   "condition": 3,
