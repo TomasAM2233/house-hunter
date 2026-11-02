@@ -1,12 +1,11 @@
 name: osm
 
-# Refresh geo/parks.json (plazas and parks from OpenStreetMap, used by the location score) and geo/subte.json
-# (Subte B and D stations, the location reference in CABA). Overpass doesn't
+# Refresh geo/parks.json (plazas and parks from OpenStreetMap, used by the location score). Overpass doesn't
 # answer from every network, but it does from GitHub's runners. Rescoring happens on the next hunt run.
 on:
   workflow_dispatch:
   push:
-    paths: ["osm_parks.py", "subte_fetch.py", ".github/workflows/osm.yml"]
+    paths: ["osm_parks.py"]
 
 permissions:
   contents: write
@@ -22,13 +21,12 @@ jobs:
           python-version: "3.12"
       - run: pip install requests
       - run: python osm_parks.py
-      - run: python subte_fetch.py
       - name: Commit parks
         run: |
           git config user.name "house-hunter-bot"
           git config user.email "house-hunter-bot@users.noreply.github.com"
-          git add geo/parks.json geo/subte.json
+          git add geo/parks.json
           git diff --cached --quiet && exit 0
-          git commit -qm "osm: plazas, parques y subte"
+          git commit -qm "osm: plazas y parques"
           for i in 1 2 3; do git push -q && exit 0; git pull -q --rebase; done
           exit 1

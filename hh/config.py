@@ -25,7 +25,7 @@ CABA_ALIASES = {
     "villa crespo": "Villa Crespo", "almagro": "Almagro", "boedo": None, "chacarita": "Chacarita",
     "villa ortuzar": "Villa Ortúzar", "villa ortúzar": "Villa Ortúzar", "parque chas": "Parque Chas",
     "villa urquiza": "Villa Urquiza", "urquiza": "Villa Urquiza", "balvanera": "Balvanera", "once": "Balvanera",
-    "abasto": "Balvanera", "congreso": "Balvanera", "san nicolas": "San Nicolás", "san nicolás": "San Nicolás",
+    "abasto": "Balvanera", "botánico": "Palermo", "botanico": "Palermo", "alto palermo": "Palermo", "congreso": "Balvanera", "san nicolas": "San Nicolás", "san nicolás": "San Nicolás",
     "microcentro": "San Nicolás", "centro / microcentro": "San Nicolás", "tribunales": "San Nicolás",
 }
 
@@ -51,9 +51,10 @@ def barrio(*names):
     return None
 
 
-def geocode_suffix(zone):
-    """What follows the street in a geocoder query for a listing in this zone."""
-    return f"{zone}, Ciudad Autónoma de Buenos Aires" if caba(zone) else f"{zone}, Vicente López, Buenos Aires"
+def geocode_suffix(zone, in_caba=None):
+    """What follows the street in a geocoder query for a listing in this zone (in_caba for a zone we don't know)."""
+    in_caba = caba(zone) if in_caba is None or zone in SEARCH["zones"] else in_caba
+    return f"{zone}, Ciudad Autónoma de Buenos Aires" if in_caba else f"{zone}, Vicente López, Buenos Aires"
 
 # Geography, in "cuadras". One cuadra is taken as 100 m of straight-line distance.
 # In Vicente López the reference is Av. Maipú; in the CABA barrios it's the nearest Subte B or D station (geo/subte.json),

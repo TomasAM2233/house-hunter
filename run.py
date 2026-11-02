@@ -218,17 +218,25 @@ def main():
                 every = getattr(src, "FULL_EVERY_HOURS", None) if http.API_KEY and not http.ANT_KEY else None
                 newest = bool(every and age(last.get("full_at")) < every)
             try:
-                fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
+                fn = SOURCES[name].search
+                fn.swept = None
+                fresh = fn(log=log, **({"newest_only": True} if newest else {}))
                 seen = {l["id"] for l in fresh}
-                complete = not newest and not getattr(SOURCES[name].search, "failed_pages", None)
+                complete = not newest and not getattr(fn, "failed_pages", None)
+                # sources that sweep some groups in full and only the newest page of others say which zones they
+                # covered completely; a listing elsewhere that wasn't seen is just not on the newest page
+                swept = getattr(fn, "swept", None)
                 for l in listings.values():
-                    if complete and l["source"] == name and l["id"] not in seen:
+                    if l["source"] == name and l["id"] not in seen and (l.get("zone") in swept if swept is not None else complete):
                         l["active"] = False  # kept for the percentile history; shown as "Reservada"
                         l.setdefault("gone_at", TODAY)
                 listings = merge(listings, fresh)
                 now = time.strftime("%Y-%m-%d %H:%M")
-                status[name] = {"ok": True, "count": len(fresh) if not newest else last.get("count"), "complete": complete, "at": now,
-                                "mode": "newest" if newest else "full", "full_at": now if complete else last.get("full_at")}
+                if swept is not None:  # partly full, partly newest: "full" when every group was swept this time
+                    complete = not newest and swept >= set(config.SEARCH["zones"])
+                status[name] = {"ok": True, "count": len(fresh) if not newest and complete else last.get("count") or len(fresh),
+                                "complete": complete, "at": now, "mode": "full" if complete else "newest" if newest or not swept else "partial",
+                                "full_at": now if complete else last.get("full_at")}
             except Exception as e:
                 traceback.print_exc()
                 status[name] = {"ok": False, "error": str(e)[:200], "at": time.strftime("%Y-%m-%d %H:%M")}

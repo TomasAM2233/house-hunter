@@ -8,7 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _REF = json.load(open(os.path.join(ROOT, "geo", "reference.json")))
 GEOCODE_CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
 PARKS = os.path.join(ROOT, "geo", "parks.json")  # written by osm_parks.py
-_SUBTE = json.load(open(os.path.join(ROOT, "geo", "subte.json")))  # Subte B and D stations, from OpenStreetMap
+_SUBTE = json.load(open(os.path.join(ROOT, "geo", "subte.json")))  # Subte B and D stations (OpenStreetMap), in line order
 _parks = None
 
 
@@ -55,6 +55,8 @@ def nearest_subte(lat, lon):
     """Closest Subte B/D station: {name, line, blocks}."""
     best = None
     for name, line, slat, slon in _SUBTE["stations"]:
+        if line not in config.SUBTE_LINES:
+            continue
         d = dist_m((lat, lon), (slat, slon))
         if best is None or d < best[0]:
             best = (d, name, line)
@@ -65,8 +67,10 @@ def nearest_subte(lat, lon):
 def is_caba(lat, lon, zone=None):
     """CABA or Vicente López: by the listing's zone when it has one, else by the side of General Paz (taken as the
     point being closer to a Subte B/D station than to Av. Maipú, which holds well away from the border)."""
-    if zone:
-        return config.caba(zone)
+    if zone in config.SEARCH["zones_caba"]:
+        return True
+    if zone in config.SEARCH["zones_gba"]:
+        return False
     return nearest_subte(lat, lon)["blocks"] * config.BLOCK_M < maipu_m(lat, lon)
 
 
@@ -134,7 +138,9 @@ AREA_CABA = (-58.52, -34.63, -58.36, -34.53)  # the CABA barrios along Subte B a
 
 
 def _box(zone):
-    return AREA_CABA if zone and config.caba(zone) else AREA
+    if zone in config.SEARCH["zones_gba"]:
+        return AREA
+    return AREA_CABA if config.caba(zone) else (AREA[0], AREA_CABA[1], AREA_CABA[2], AREA[3])  # unknown: both
 
 
 def in_area(lat, lon, zone=None):
@@ -171,7 +177,7 @@ def reference():
     ov = os.path.join(ROOT, "geo", "overlays.json")
     return {"maipu": [[[round(a, 5), round(b, 5)] for a, b in w] for w in _REF["maipu"]],
             "stations": _REF["stations"], "puente": list(config.PUENTE_SAAVEDRA),
-            "subte": _SUBTE["stations"], "subte_lines": _SUBTE.get("lines", {}),
+            "subte": [s for s in _SUBTE["stations"] if s[1] in config.SUBTE_LINES],
             "parks": [{"name": p["name"], "ring": p["ring"]} for p in parks()],
             "villa": {"center": list(config.VILLA_BORGES),
                       "radius_m": config.VILLA_BORGES_RADIUS_M + config.VILLA_BORGES_MIN_BLOCKS * config.BLOCK_M},

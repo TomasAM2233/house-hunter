@@ -945,7 +945,7 @@ function initMap() {
   lines(ref.mitre, { color: "#b3322d", weight: 3, opacity: .85, dashArray: "8 5" }, "Tren Mitre");
   lines(ref.maipu, { color: "#c9a227", weight: 5, opacity: .9 }, "Av. Maipú");
   const SUBTE_C = { B: "#e1251b", D: "#00a160" };
-  for (const [ln, ways] of Object.entries(ref.subte_lines || {})) lines(ways, { color: SUBTE_C[ln] || "#555", weight: 4, opacity: .8 }, "Subte " + ln);
+  for (const ln of new Set((ref.subte || []).map(s => s[1]))) lines([(ref.subte || []).filter(s => s[1] === ln).map(s => [s[2], s[3]])], { color: SUBTE_C[ln] || "#555", weight: 4, opacity: .75 }, "Subte " + ln);
   for (const [n, ln, la, lo] of ref.subte || []) L.circleMarker([la, lo], { radius: 5, color: "#fff", weight: 2, fillColor: SUBTE_C[ln] || "#555", fillOpacity: 1 }).addTo(MAP)
     .bindTooltip(`${n} (${ln})`, { direction: "right", offset: [4, 0] });
   (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(MAP).bindTooltip("Cementerio de Olivos"));
