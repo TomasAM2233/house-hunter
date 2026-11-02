@@ -45,6 +45,9 @@ def barrio(*names):
         for z in SEARCH["zones"]:
             if k == z.lower():
                 return z
+        for z in SEARCH["zones_gba"]:  # Argenprop's sub-zones: "Olivos Vías/Maipú", "Vicente López Vías / Río"...
+            if k.startswith(z.lower() + " ") or k.startswith(z.lower() + "-"):
+                return z
         for a, z in CABA_ALIASES.items():
             if z and k.startswith(a + " "):  # "palermo hollywood", "belgrano r", "villa urquiza norte"...
                 return z

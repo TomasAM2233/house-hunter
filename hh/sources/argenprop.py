@@ -138,8 +138,9 @@ def search(max_pages=MAX_PAGES, log=print, newest_only=False):
             except Exception as e:
                 failed.append(f"{name}:{band}")
                 err = e
+        if full:
+            sweeps.done(key)  # even with a failed page: one full sweep a day is what the free credits allow
         if full and len(failed) == before:
-            sweeps.done(key)
             swept |= set(zones)
     search.failed_pages, search.swept = failed, swept
     if not out and failed:

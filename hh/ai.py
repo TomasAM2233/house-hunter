@@ -19,7 +19,7 @@ MODELS = os.environ.get("GEMINI_MODELS", "gemini-flash-latest,gemini-3.7-flash,g
 GEMINI_MODEL = MODELS[0]
 
 PROMPT_VERSION = 2
-PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte). Analizá esta publicación de venta
+PROMPT = f"""Sos un tasador y arquitecto en Vicente López (GBA Norte) y CABA. Analizá esta publicación de venta
 (fotos + texto) para una pareja que quiere mudarse pronto y puede invertir como máximo
 USD {config.REFORM_BUDGET_USD:,} en reformas antes de entrar. Un patio o jardín propio a nivel del suelo es
 obligatorio para ellos: miralo en las fotos con mucho cuidado. Respondé SOLO un JSON con estas claves:

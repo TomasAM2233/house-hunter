@@ -221,8 +221,9 @@ def search(max_pages=MAX_PAGES, log=print, newest_only=False):
                 _sweep(zones, band, not full, max_pages if full else NEW_PAGES, log, out, failed)
             except Exception as e:  # a newest page that didn't come through; the other groups still get read
                 err = e
+        if full:
+            sweeps.done(key)  # even with a failed page: one full sweep a day is what the free credits allow
         if full and len(failed) == before:
-            sweeps.done(key)
             swept |= group_zones(zones)
     if failed:
         log(f"zonaprop: pages {failed} failed; their listings keep their previous state")
