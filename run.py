@@ -123,14 +123,14 @@ def side_percentiles(listings):
 
 
 def big_lot(l):
-    """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú (from the nearest
-    Subte B/D station in CABA)."""
+    """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú (in CABA 2 to 6
+    from the nearest Subte B/D station)."""
     r = config.ALERT_BIG_LOT
     m2, _ = score.lot_m2(l)
     g = l.get("geo") or {}
     rb = score.ref_blocks(g) if g else None
     return bool(m2 and m2 >= r["min_m2"] and l.get("price_usd") and l["price_usd"] < r["max_price"]
-                and rb is not None and r["maipu_blocks"][0] <= rb <= r["maipu_blocks"][1])
+                and rb is not None and (lambda a, b: a <= rb <= b)(*r["subte_blocks" if g.get("region") == "caba" else "maipu_blocks"]))
 
 
 def alert(new):

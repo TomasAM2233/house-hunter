@@ -61,12 +61,15 @@ def geocode_suffix(zone, in_caba=None):
 
 # Geography, in "cuadras". One cuadra is taken as 100 m of straight-line distance.
 # In Vicente López the reference is Av. Maipú; in the CABA barrios it's the nearest Subte B or D station (geo/subte.json),
-# with the same limits and sweet spot (Tomás, 2026-11-02).
+# with limits and sweet spot of their own (Tomás, 2026-11-02: 1 to 7 cuadras, best at 4).
 BLOCK_M = 100
-MAIPU_MIN_BLOCKS = 3        # closer than this to Av. Maipú (or the subte, on an avenue) is too noisy
+MAIPU_MIN_BLOCKS = 3        # closer than this to Av. Maipú is too noisy
 MAIPU_MAX_BLOCKS = 15       # farther than this is out of the zone
 MAIPU_SWEET_BLOCKS = 6      # the location score peaks here and falls off on both sides
 SUBTE_LINES = ("B", "D")
+SUBTE_MIN_BLOCKS = 1        # CABA: closer than this to the station is discarded
+SUBTE_MAX_BLOCKS = 7        # farther than this is discarded
+SUBTE_SWEET_BLOCKS = 4      # the location score peaks here
 PUENTE_SAAVEDRA = (-34.5383, -58.4762)
 PUENTE_MIN_BLOCKS = 5
 # Villa Borges (La Loma de Olivos, around Rosetti y Borges): anything within 4 cuadras of it is discarded.
@@ -122,8 +125,8 @@ ALERT_MAX_PER_RUN = 5
 ALERT_AI_SCORE = 70
 # ...and, whatever the score, a big lot at a good price around the Maipú sweet spot. The lot surface (terreno)
 # is used when the listing or its text gives it, otherwise the total m2.
-# In CABA the same 4 to 8 cuadras count from the nearest Subte B/D station.
-ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8)}
+# In CABA it's 2 to 6 cuadras from the nearest Subte B/D station (its sweet spot ± 2, like Maipú's).
+ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8), "subte_blocks": (2, 6)}
 
 # Weights add up to 100, in the order of importance Tomás gave. "investment" was added on 2026-10-30, when he
 # decided to buy where they want to live but to make it as good an investment as possible, and raised to one of

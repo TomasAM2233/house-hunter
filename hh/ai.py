@@ -219,7 +219,7 @@ si hay m² sin declarar, si son dos unidades). Tené en cuenta también: que el 
 1,0, R3 1,1; una zona más densa vale más como terreno); no pagar el sobreprecio de una casa nueva o recién reciclada,
 que se pierde en pocos años; si una reforma razonable puede sumar m², baños o cocina en planos aprobados por menos de
 lo que el mercado paga (construir sale ~USD {config.BUILD_COST_M2}/m², el m² nuevo se vende a ~2.000-2.500; contá 20-30% de desvío);
-ingresos posibles (una unidad al fondo que se pueda alquilar); la ubicación (de 4 a 8 cuadras de Maipú o del tren; en CABA, de la estación de subte B o D más cercana;
+ingresos posibles (una unidad al fondo que se pueda alquilar); la ubicación (de 4 a 8 cuadras de Maipú o del tren; en CABA, de 2 a 6 cuadras de la estación de subte B o D más cercana, ideal 4;
 cerca de una plaza, calle tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, menos de
 USD 250.000, y nada que achique la lista de compradores (PH con pasillo, planta rara, construcciones sin declarar).
 La nota de inversión (1-10) mueve tu puntaje final: partiendo de 5 como neutra, cada punto arriba o abajo vale unos

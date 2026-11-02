@@ -184,16 +184,27 @@ def ref_name(g):
     return "Maipú" if g.get("region") != "caba" else f"el subte ({g['station']['name']}, {g['station']['line']})"
 
 
-def maipu_sweet(blocks):
-    """1 around the sweet spot (6 cuadras from Maipú, or the subte in CABA), falling off towards the 3 and 15 cuadra limits."""
-    s = config.MAIPU_SWEET_BLOCKS
+def limits(g):
+    """(min, sweet spot, max) cuadras for the place's reference: Av. Maipú, or the Subte B/D station in CABA."""
+    if g and g.get("region") == "caba":
+        return config.SUBTE_MIN_BLOCKS, config.SUBTE_SWEET_BLOCKS, config.SUBTE_MAX_BLOCKS
+    return config.MAIPU_MIN_BLOCKS, config.MAIPU_SWEET_BLOCKS, config.MAIPU_MAX_BLOCKS
+
+
+def maipu_sweet(blocks, lo=None, s=None, hi=None):
+    """1 around the sweet spot (6 cuadras from Maipú; in CABA 4 from the subte), 0.3 at the near limit, and on the far
+    side down to 0.6 four ninths of the way to the far limit, then to 0 at it (Maipú: 0.6 at 10, 0 at 15)."""
+    lo = config.MAIPU_MIN_BLOCKS if lo is None else lo
+    s = config.MAIPU_SWEET_BLOCKS if s is None else s
+    hi = config.MAIPU_MAX_BLOCKS if hi is None else hi
+    mid = s + (hi - s) * 4 / 9
     if blocks <= s - 0.5:
-        return lerp(blocks, 3, 0.3, s - 0.5, 1)
+        return lerp(blocks, lo, 0.3, s - 0.5, 1)
     if blocks <= s + 0.5:
         return 1.0
-    if blocks <= 10:
-        return lerp(blocks, s + 0.5, 1, 10, 0.6)
-    return lerp(blocks, 10, 0.6, 15, 0)
+    if blocks <= mid:
+        return lerp(blocks, s + 0.5, 1, mid, 0.6)
+    return lerp(blocks, mid, 0.6, hi, 0)
 
 
 def park_value(m):
@@ -220,9 +231,10 @@ def hard_filters(l, ai=None):
     g = l.get("geo")
     if g:
         rb, where = ref_blocks(g), "Maipú" if g.get("region") != "caba" else "la estación de subte B/D más cercana"
-        if rb < config.MAIPU_MIN_BLOCKS:
+        lo, _, hi = limits(g)
+        if rb < lo:
             r.append(f"a {rb} cuadras de {where} (muy cerca)")
-        if rb > config.MAIPU_MAX_BLOCKS:
+        if rb > hi:
             r.append(f"a {rb} cuadras de {where} (muy lejos)")
         if g["puente_blocks"] < config.PUENTE_MIN_BLOCKS:
             r.append(f"a {g['puente_blocks']} cuadras de Puente Saavedra")
@@ -273,7 +285,7 @@ def components(l, ai=None):
         st, pk = g["station"], g.get("park")
         if g.get("region") == "caba":
             # the subte station is the reference itself, so it doesn't stand in a second time
-            mv = maipu_sweet(ref_blocks(g))
+            mv = maipu_sweet(ref_blocks(g), *limits(g))
             why = f"{n(st['blocks'])} cuadras al subte ({st['name']}, {st['line']})"
         else:
             mv = max(maipu_sweet(g["maipu_blocks"]), 0.7 * lerp(st["effective_blocks"], 4, 1, 10, 0))
@@ -337,7 +349,8 @@ def components(l, ai=None):
         c["garage"] = (0, "sin cochera")
 
     # quiet
-    gq = lerp(ref_blocks(g), 3, 0.3, 7, 1) if g else 0.5
+    lo, sw, _ = limits(g)
+    gq = lerp(ref_blocks(g), lo, 0.3, sw + 1, 1) if g else 0.5
     aq = ((ai.get("quiet") or 3) - 1) / 4 if ai else 0.5
     far = "lejos de Maipú" if not g or g.get("region") != "caba" else "lejos de la avenida del subte"
     c["quiet"] = (0.6 * gq + 0.4 * aq, far if gq > 0.8 else "cerca de avenida" if gq < 0.5 else "intermedio")
