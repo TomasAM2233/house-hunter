@@ -4,7 +4,14 @@ import html as htmllib, json, re
 from .. import http, config
 
 BASE = "https://inmuebles.mercadolibre.com.ar"
-ZONE_SLUGS = {"Olivos": "olivos", "Florida": "florida", "La Lucila": "la-lucila", "Vicente López": "vicente-lopez"}
+ZONE_SLUGS = {"Olivos": "olivos", "Florida": "florida", "La Lucila": "la-lucila", "Vicente López": "vicente-lopez",
+              "Núñez": "nunez", "Villa Ortúzar": "villa-ortuzar", "San Nicolás": "san-nicolas"}
+
+
+def zone_path(zone):
+    """ML's path for a search zone: bsas-gba-norte/vicente-lopez/<barrio> or capital-federal/<barrio>."""
+    slug = ZONE_SLUGS.get(zone) or zone.lower().replace(" ", "-")
+    return f"capital-federal/{slug}" if config.caba(zone) else f"bsas-gba-norte/vicente-lopez/{slug}"
 # The Vicente López page also lists a few houses in other barrios of the partido; their location names them.
 OTHER_BARRIOS = re.compile(r"\b(munro|carapachay|villa martelli|villa adelina|florida|olivos|la lucila)\b", re.I)
 _dec = json.JSONDecoder()
@@ -20,10 +27,10 @@ def fetch(url):
     return http.get(url, impersonate=PROFILES, blocked=_walled, tries=6)
 
 
-def search_url(kind, zone_slug, offset):
+def search_url(kind, zone, offset):
     s = config.SEARCH
     page = "" if offset == 0 else f"_Desde_{offset + 1}"
-    return f"{BASE}/{kind}/venta/bsas-gba-norte/vicente-lopez/{zone_slug}/{page}_PriceRange_{s['price_min']}USD-{s['price_ceiling']}USD_NoIndex_True"
+    return f"{BASE}/{kind}/venta/{zone_path(zone)}/{page}_PriceRange_{s['price_min']}USD-{s['price_ceiling']}USD_NoIndex_True"
 
 
 def _cards(html):
@@ -91,7 +98,7 @@ def _normalize(card, kind, zone):
         "garage": None,
         "age_years": None,
         "address": loc,
-        "geocode_query": f"{street}, {zone}, Vicente López, Buenos Aires",
+        "geocode_query": f"{street}, {config.geocode_suffix(zone)}",
         "zone": zone,
         "address_exact": bool(re.search(r"\d", street)),
         "lat": None,
@@ -109,10 +116,11 @@ def _normalize(card, kind, zone):
 def search(max_pages=6, log=print):
     out, failed = {}, []
     for kind in ("casas", "ph"):
-        for zone, slug in ZONE_SLUGS.items():
+        for zone in config.SEARCH["zones"]:
+            slug = zone_path(zone).rsplit("/", 1)[1]
             for page in range(max_pages):
                 try:
-                    html = fetch(search_url(kind, slug, page * 48)).text
+                    html = fetch(search_url(kind, zone, page * 48)).text
                 except RuntimeError as e:
                     log(f"mercadolibre {kind}/{slug} p{page + 1}: {e}")
                     failed.append(f"{kind}/{slug}/{page + 1}")

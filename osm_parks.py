@@ -1,4 +1,5 @@
-"""Pull plazas and parks around Olivos / Florida / La Lucila from OpenStreetMap into geo/parks.json.
+"""Pull plazas and parks around Olivos / Florida / La Lucila / Vicente López and the CABA barrios along Subte B and D
+from OpenStreetMap into geo/parks.json.
 
 Run by .github/workflows/osm.yml (and by run.py when the file is missing); Overpass doesn't answer from everywhere.
 """
@@ -7,7 +8,7 @@ import requests
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "geo", "parks.json")
-BBOX = "-34.56,-58.54,-34.48,-58.45"  # south,west,north,east, a bit wider than the search area
+BBOX = "-34.64,-58.54,-34.48,-58.35"  # south,west,north,east, a bit wider than the search area (Vicente López + CABA)
 Q = f"""
 [out:json][timeout:90];
 (

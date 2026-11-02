@@ -10,14 +10,63 @@ SEARCH = {
     "types": ["casa", "ph"],
     # "Vicente López" is the barrio by the river (east of the Mitre/Maipú, down to Gral. Paz), not the whole partido:
     # each source names it its own way (see the sources) so Munro, Carapachay, Florida Oeste etc. stay out.
-    "zones": ["Olivos", "Florida", "La Lucila", "Vicente López"],
+    "zones_gba": ["Olivos", "Florida", "La Lucila", "Vicente López"],
+    # Every CABA barrio with a station of Subte B or D (Tomás, 2026-11-02). There the location is measured from the
+    # nearest B/D station instead of Av. Maipú, with the same cuadras (see SUBTE below).
+    "zones_caba": ["Palermo", "Belgrano", "Núñez", "Colegiales", "Recoleta", "Villa Crespo", "Almagro", "Chacarita",
+                   "Villa Ortúzar", "Parque Chas", "Villa Urquiza", "Balvanera", "San Nicolás"],
+}
+SEARCH["zones"] = SEARCH["zones_gba"] + SEARCH["zones_caba"]
+
+# Names the portals use for parts of those barrios (Zonaprop and Mercado Libre go down to sub-barrios).
+CABA_ALIASES = {
+    "palermo": "Palermo", "las cañitas": "Palermo", "belgrano": "Belgrano", "barrio chino": "Belgrano",
+    "nuñez": "Núñez", "núñez": "Núñez", "colegiales": "Colegiales", "recoleta": "Recoleta", "barrio norte": "Recoleta",
+    "villa crespo": "Villa Crespo", "almagro": "Almagro", "boedo": None, "chacarita": "Chacarita",
+    "villa ortuzar": "Villa Ortúzar", "villa ortúzar": "Villa Ortúzar", "parque chas": "Parque Chas",
+    "villa urquiza": "Villa Urquiza", "urquiza": "Villa Urquiza", "balvanera": "Balvanera", "once": "Balvanera",
+    "abasto": "Balvanera", "botánico": "Palermo", "botanico": "Palermo", "alto palermo": "Palermo", "congreso": "Balvanera", "san nicolas": "San Nicolás", "san nicolás": "San Nicolás",
+    "microcentro": "San Nicolás", "centro / microcentro": "San Nicolás", "tribunales": "San Nicolás",
 }
 
+
+def caba(zone):
+    return zone in SEARCH["zones_caba"]
+
+
+def barrio(*names):
+    """The search zone a listing belongs to, from the location names a portal gives (most specific first), or None.
+    CABA names are matched whole, so "Florida" (a Subte B station and a street downtown) stays a Vicente López barrio
+    only when the portal says it is one."""
+    for n in names:
+        k = " ".join((n or "").lower().replace("-", " ").split())
+        if k in CABA_ALIASES:
+            return CABA_ALIASES[k]
+        for z in SEARCH["zones"]:
+            if k == z.lower():
+                return z
+        for z in SEARCH["zones_gba"]:  # Argenprop's sub-zones: "Olivos Vías/Maipú", "Vicente López Vías / Río"...
+            if k.startswith(z.lower() + " ") or k.startswith(z.lower() + "-"):
+                return z
+        for a, z in CABA_ALIASES.items():
+            if z and k.startswith(a + " "):  # "palermo hollywood", "belgrano r", "villa urquiza norte"...
+                return z
+    return None
+
+
+def geocode_suffix(zone, in_caba=None):
+    """What follows the street in a geocoder query for a listing in this zone (in_caba for a zone we don't know)."""
+    in_caba = caba(zone) if in_caba is None or zone in SEARCH["zones"] else in_caba
+    return f"{zone}, Ciudad Autónoma de Buenos Aires" if in_caba else f"{zone}, Vicente López, Buenos Aires"
+
 # Geography, in "cuadras". One cuadra is taken as 100 m of straight-line distance.
+# In Vicente López the reference is Av. Maipú; in the CABA barrios it's the nearest Subte B or D station (geo/subte.json),
+# with the same limits and sweet spot (Tomás, 2026-11-02).
 BLOCK_M = 100
-MAIPU_MIN_BLOCKS = 3        # closer than this to Av. Maipú is too noisy
+MAIPU_MIN_BLOCKS = 3        # closer than this to Av. Maipú (or the subte, on an avenue) is too noisy
 MAIPU_MAX_BLOCKS = 15       # farther than this is out of the zone
 MAIPU_SWEET_BLOCKS = 6      # the location score peaks here and falls off on both sides
+SUBTE_LINES = ("B", "D")
 PUENTE_SAAVEDRA = (-34.5383, -58.4762)
 PUENTE_MIN_BLOCKS = 5
 # Villa Borges (La Loma de Olivos, around Rosetti y Borges): anything within 4 cuadras of it is discarded.
@@ -70,6 +119,7 @@ ALERT_PERCENTILE = 90
 ALERT_AI_SCORE = 70
 # ...and, whatever the score, a big lot at a good price around the Maipú sweet spot. The lot surface (terreno)
 # is used when the listing or its text gives it, otherwise the total m2.
+# In CABA the same 4 to 8 cuadras count from the nearest Subte B/D station.
 ALERT_BIG_LOT = {"min_m2": 300, "max_price": 230_000, "maipu_blocks": (4, 8)}
 
 # Weights add up to 100, in the order of importance Tomás gave. "investment" was added on 2026-10-30, when he
@@ -79,7 +129,7 @@ WEIGHTS = {
     "price": 18,        # effective price (asking + estimated reform) and $/m2
     "investment": 18,   # resale value: what's still there in 10 years (land at the area's price + aged building), m2 still buildable
     "space": 14,        # total m2, covered m2, ambientes
-    "location": 14,     # cuadras to Av. Maipú (peak at 6) or a train station, plus a nearby plaza/park
+    "location": 14,     # cuadras to Av. Maipú, or the Subte B/D in CABA (peak at 6), or a train station, plus a plaza/park
     "condition": 11,    # AI: how habitable it is and how much reform it needs
     "patio": 9,         # AI + text: size of garden / patio
     "credit": 6,        # apto crédito hipotecario
@@ -109,4 +159,13 @@ AGENCIES = [
     {"name": "Martín Fonseca Propiedades", "site": "https://www.martinfonsecaprop.com"},
     {"name": "Braulio Inmuebles", "site": "https://www.braulioinmuebles.com"},
     {"name": "Bellagamba", "key": "dd0e6daf8ddc52df5b91f3f57224ac4d752c9db7", "site": "https://bellagamba.com"},
+    # CABA barrios along Subte B/D (2026-11-02): agencies with houses/PH there in the portals that run Tokko's site.
+    # Braulio Inmuebles and Real Props above also list in CABA. The biggest CABA publishers (Belga, Yacoub, MUV,
+    # Lexinton, Brick, Pallarols Santander...) are covered through Zonaprop and Argenprop.
+    {"name": "Crecer Inmobiliaria", "site": "https://www.crecer.com.ar"},                    # Villa Urquiza, Colegiales
+    {"name": "Martina Domínguez Realty", "site": "https://www.martinadominguezrealty.com.ar"},  # Núñez, Belgrano
+    {"name": "Karas Propiedades", "site": "https://www.karaspropiedades.com.ar"},             # Villa Crespo, Villa Urquiza
+    {"name": "Carlos D'Odorico", "site": "https://www.carlosdodorico.com"},                   # Colegiales
+    {"name": "Idea Cinco", "site": "https://www.ideacinco.com.ar"},                           # Palermo
+    {"name": "Inteligencia Urbana", "site": "https://www.inteligenciaurbana.com.ar"},         # Palermo
 ]

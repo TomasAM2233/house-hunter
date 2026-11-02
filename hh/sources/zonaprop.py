@@ -1,7 +1,7 @@
 """Zonaprop: search pages embed window.__PRELOADED_STATE__ with full posting data incl. coordinates."""
 import json, re, time
 from bs4 import BeautifulSoup
-from .. import http, config
+from .. import http, config, sweeps
 
 BASE = "https://www.zonaprop.com.ar"
 # Zonaprop blocks cloud IPs, so requests go through the unblocking APIs in http.py. With ScrapingAnt the page
@@ -14,26 +14,49 @@ _dec = json.JSONDecoder()
 
 
 # Zonaprop answers pages 10+ of a search with a bot wall (HTTP 423 through ScrapingAnt), so the full sweep
-# splits the price range into bands that each fit in fewer pages.
+# splits the price range into bands that each fit in fewer pages (and splits a band again if it still overflows).
 BANDS = [(None, 150_000), (150_000, 185_000), (185_000, 210_000), (210_000, None)]
+# The CABA barrios along Subte B/D: ~1.200 listings in one search (2026-11-02), mostly at the top of the range.
+BANDS_CABA = [(None, 140_000), (140_000, 160_000), (160_000, 175_000), (175_000, 190_000), (190_000, 205_000),
+              (205_000, 215_000), (215_000, 228_000), (228_000, None)]
+MAX_PAGES = 9
 
 
 # Zonaprop's slug for the Vicente López barrio. Combined with other barrios in one URL it widens to the whole
 # partido (Munro, Carapachay…), so it gets a search of its own; it fits in 2 pages, no price bands needed.
 OWN_SEARCH = {"Vicente López": "vicente-lopez-vicente-lopez"}
+CABA_SLUGS = {"Núñez": "nunez", "Villa Ortúzar": "villa-ortuzar", "San Nicolás": "san-nicolas"}
+# Each group gets a full sweep once every EVERY_HOURS (see hh/sweeps.py); the other runs read its newest page.
+EVERY_HOURS = 24
+
+
+def _slug(z):
+    return CABA_SLUGS.get(z) or z.lower().replace(" ", "-")
 
 
 def zone_groups():
-    """[(slug, price bands)]: the regular barrios together, each OWN_SEARCH one on its own."""
-    zs = config.SEARCH["zones"]
-    together = "-".join(z.lower().replace(" ", "-") for z in zs if z not in OWN_SEARCH)
-    return ([(together, BANDS)] if together else []) + [(OWN_SEARCH[z], [(None, None)]) for z in zs if z in OWN_SEARCH]
+    """[(slug, price bands)]: the regular Vicente López barrios together, each OWN_SEARCH one on its own, and the
+    CABA barrios together (Zonaprop keeps a multi-barrio CABA search within those barrios)."""
+    zs = config.SEARCH["zones_gba"]
+    together = "-".join(_slug(z) for z in zs if z not in OWN_SEARCH)
+    caba = "-".join(_slug(z) for z in config.SEARCH["zones_caba"])
+    return (([(together, BANDS)] if together else []) + [(OWN_SEARCH[z], [(None, None)]) for z in zs if z in OWN_SEARCH]
+            + ([(caba, BANDS_CABA)] if caba else []))
+
+
+def group_zones(slug):
+    """The search zones a group covers, for marking what a complete sweep didn't see as gone."""
+    if slug in OWN_SEARCH.values():
+        return {z for z, v in OWN_SEARCH.items() if v == slug}
+    return {z for z in config.SEARCH["zones"] if z not in OWN_SEARCH and re.search(rf"(^|-){_slug(z)}(-|$)", slug)}
 
 
 def search_url(page, newest=False, band=(None, None), zones=None):
     s = config.SEARCH
     lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
     zones = zones or zone_groups()[0][0]
+    if lo >= hi:
+        raise ValueError(f"empty band {band}")
     suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
     return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{lo}-{hi}-dolar{suffix}.html"
 
@@ -49,6 +72,15 @@ def _feat(p, fid):
         return float(f["value"]) if f else None
     except (TypeError, ValueError):
         return None
+
+
+def _zone(loc):
+    """Search zone from Zonaprop's location chain ("Palermo Soho" < "Palermo" < "Capital Federal"), or its own name."""
+    chain, l = [], loc
+    while l:
+        chain.append(l.get("name"))
+        l = l.get("parent")
+    return config.barrio(*chain) or loc.get("name")
 
 
 def _normalize(p):
@@ -78,7 +110,7 @@ def _normalize(p):
         "garage": _feat(p, "CFT7") or 0,
         "age_years": _feat(p, "CFT5"),
         "address": ((loc.get("address") or {}).get("name") or "") + ", " + ((loc.get("location") or {}).get("name") or ""),
-        "zone": (loc.get("location") or {}).get("name"),
+        "zone": _zone(loc.get("location") or {}),
         "address_exact": (loc.get("address") or {}).get("visibility") == "EXACT",
         "lat": geo.get("latitude"),
         "lng": geo.get("longitude"),
@@ -109,7 +141,7 @@ def _dom_cards(html):
         where = c.select_one('[data-qa="POSTING_CARD_LOCATION"]')
         where = where.get_text(" ", strip=True) if where else ""
         street = street.get_text(" ", strip=True) if street else ""
-        zone = next((z for z in config.SEARCH["zones"] if z.lower() in where.lower()), where.split(",")[0])
+        zone = config.barrio(*[w.strip() for w in where.split(",")]) or where.split(",")[0]
         imgs = [i.get("src") or i.get("data-flickity-lazyload") or "" for i in c.select('[data-qa="POSTING_CARD_GALLERY"] img')]
         alt = (c.select_one('[data-qa="POSTING_CARD_GALLERY"] img') or {}).get("alt", "") if c.select_one('[data-qa="POSTING_CARD_GALLERY"] img') else ""
         logo = c.select_one('[data-qa="POSTING_CARD_PUBLISHER"] img, [class*="publisher"] img')
@@ -130,7 +162,7 @@ def _dom_cards(html):
             "garage": f(r"coch"),
             "age_years": None,
             "address": f"{street}, {zone}",
-            "geocode_query": f"{re.sub(r' al ', ' ', street, flags=re.I)}, {zone}, Vicente López, Buenos Aires" if street else None,
+            "geocode_query": f"{re.sub(r' al ', ' ', street, flags=re.I)}, {config.geocode_suffix(zone)}" if street else None,
             "zone": zone,
             "address_exact": bool(re.search(r"\d", street)) and " al " not in street,
             "lat": None,
@@ -145,36 +177,59 @@ def _dom_cards(html):
         }
 
 
-def search(max_pages=9, log=print, newest_only=False):
-    if newest_only:
-        max_pages = NEW_PAGES
+def _sweep(zones, band, newest, max_pages, log, out, failed):
+    """Read one search (a group, a price band) page by page. A band that doesn't fit in max_pages is split in two."""
+    page, total_pages = 1, 1
+    while page <= min(total_pages, max_pages):
+        try:
+            st = _state(http.get(search_url(page, newest, band, zones), pause=(3, 7), via_api=True).text)["listStore"]
+        except Exception as e:
+            log(f"zonaprop {zones[:40]} {band} page {page}: {e}")
+            failed.append((zones, band, page))
+            if page == 1 and newest:
+                raise
+            page += 1
+            continue
+        total_pages = st["paging"]["totalPages"]
+        if page == 1 and total_pages > max_pages and not newest:
+            lo, hi = band[0] or config.SEARCH["price_min"], band[1] or config.SEARCH["price_ceiling"]
+            if hi - lo >= 10_000:
+                mid = (lo + hi) // 2 // 1000 * 1000
+                log(f"zonaprop {zones[:40]} {band}: {total_pages} pages, splitting at {mid}")
+                _sweep(zones, (band[0], mid), newest, max_pages, log, out, failed)
+                _sweep(zones, (mid, band[1]), newest, max_pages, log, out, failed)
+                return
+            failed.append((zones, band, "overflow"))
+        items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
+        out += items
+        log(f"zonaprop {zones[:40]} {band} page {page}/{total_pages}: {len(items)} listings")
+        page += 1
+
+
+def search(max_pages=MAX_PAGES, log=print, newest_only=False):
+    """Every group: a full sweep when it's due (hh/sweeps.py), else its newest page. search.swept = the zones of
+    the groups swept in full without failures, the only ones where a listing not seen means it's gone."""
     if http.API_KEY and not http.ANT_KEY:
-        return search_rendered(20 if not newest_only else max_pages, log, newest_only)
-    out, failed = [], []
+        return search_rendered(20 if not newest_only else NEW_PAGES, log, newest_only)
+    out, failed, swept, err = [], [], set(), None
     for zones, bands in zone_groups():
-        for band in [(None, None)] if newest_only else bands:
-            page, total_pages = 1, 1
-            while page <= min(total_pages, max_pages):
-                try:
-                    st = _state(http.get(search_url(page, newest_only, band, zones), pause=(3, 7), via_api=True).text)["listStore"]
-                except Exception as e:
-                    log(f"zonaprop {zones} {band} page {page}: {e}")
-                    failed.append((zones, band, page))
-                    if page == 1 and newest_only:
-                        raise
-                    page += 1
-                    continue
-                total_pages = st["paging"]["totalPages"]
-                items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
-                out += items
-                log(f"zonaprop {zones} {band} page {page}/{total_pages}: {len(items)} listings")
-                if total_pages > max_pages and page == 1 and not newest_only:  # newest-only reads just page 1 on purpose
-                    log(f"zonaprop {zones} {band}: {total_pages} pages, only {max_pages} are reachable; narrow BANDS")
-                    failed.append((zones, band, "overflow"))
-                page += 1
+        key = f"zonaprop:{zones}"
+        full = not newest_only and sweeps.due(key, EVERY_HOURS)
+        before = len(failed)
+        for band in bands if full else [(None, None)]:
+            try:
+                _sweep(zones, band, not full, max_pages if full else NEW_PAGES, log, out, failed)
+            except Exception as e:  # a newest page that didn't come through; the other groups still get read
+                err = e
+        if full:
+            sweeps.done(key)  # even with a failed page: one full sweep a day is what the free credits allow
+        if full and len(failed) == before:
+            swept |= group_zones(zones)
     if failed:
         log(f"zonaprop: pages {failed} failed; their listings keep their previous state")
-    search.failed_pages = failed
+    search.failed_pages, search.swept = failed, swept
+    if not out and failed:
+        raise err or RuntimeError("zonaprop: no page got through")
     return out
 
 

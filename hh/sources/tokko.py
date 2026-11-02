@@ -1,4 +1,4 @@
-"""Local agencies that run on Tokko Broker, the CRM most zona norte inmobiliarias use.
+"""Local agencies that run on Tokko Broker, the CRM most zona norte (and many CABA) inmobiliarias use.
 
 Two flavours, both listed in config.AGENCIES:
 - "key": sites built on MediaCore/Gatsby ship the agency's public Tokko web key in the page, so we
@@ -11,7 +11,14 @@ from .. import http, config
 
 API = "https://www.tokkobroker.com/api/v1/property/search/"
 VICENTE_LOPEZ = 25818
+CAPITAL_FEDERAL = 146  # a Tokko "state"; its barrios are the ids below
+# (Tokko location id, its search zone): the Vicente López barrios, and the CABA ones along Subte B/D with the
+# names Tokko gives parts of them (Abasto, Once, Congreso, Barrio Norte), from Tokko's location list (2026-11-02).
 LOCATIONS = {"Olivos": 25836, "Florida": 25820, "La Lucila": 25829, "Vicente López": 25846}
+CABA_LOCATIONS = {24728: "Palermo", 24682: "Belgrano", 24721: "Núñez", 24707: "Colegiales", 24681: "Recoleta",
+                  24678: "Recoleta", 24740: "Villa Crespo", 24673: "Almagro", 24705: "Chacarita", 24746: "Villa Ortúzar",
+                  24755: "Parque Chas", 24753: "Villa Urquiza", 24676: "Balvanera", 24671: "Balvanera", 24724: "Balvanera",
+                  24708: "Balvanera", 24703: "San Nicolás"}
 # Tokko calls the barrio "Barrio Vicente López" (sub-zones "V.Lopez-…"); a bare "Vicente López" is the partido,
 # which is in every listing's full_location.
 NAMES = {"Vicente López": ("barrio vicente lópez", "barrio vicente lopez", "v.lopez")}
@@ -19,6 +26,12 @@ PTYPES = {3: "casa", 13: "ph"}
 
 
 def _zone(name):
+    # CABA: Tokko's names, most specific last ("Argentina | Capital Federal | Palermo"); a bare "Vicente López" is the
+    # partido and stays out of this
+    parts = [p.strip() for p in re.split(r"[|,]", name or "") if p.strip()][::-1]
+    z = config.barrio(*[p for p in parts if p.lower() not in ("vicente lopez", "vicente lópez")])
+    if z and config.caba(z):
+        return z
     for z in LOCATIONS:
         if any(n in (name or "").lower() for n in NAMES.get(z, (z.lower(),))):
             return z
@@ -79,20 +92,23 @@ def _from_api(o, agency):
 
 def search_api(agency, log=print):
     s = config.SEARCH
-    data = {"current_localization_id": VICENTE_LOPEZ, "current_localization_type": "division",
-            "price_from": s["price_min"], "price_to": s["price_ceiling"], "currency": "USD",
-            "operation_types": [1], "property_types": list(PTYPES), "filters": []}
-    out, offset = [], 0
-    while True:
-        r = http.get(API + "?" + http.urlencode({"key": agency["key"], "format": "json", "lang": "es_ar", "limit": 50,
-                                                 "offset": offset, "data": json.dumps(data)}))
-        d = r.json()
-        for o in d.get("objects", []):
-            if _zone((o.get("location") or {}).get("full_location")):
-                out.append(_from_api(o, agency))
-        offset += 50
-        if not d.get("meta", {}).get("next"):
-            return out
+    out = []
+    for loc, kind in ((VICENTE_LOPEZ, "division"), (CAPITAL_FEDERAL, "state")):
+        data = {"current_localization_id": loc, "current_localization_type": kind,
+                "price_from": s["price_min"], "price_to": s["price_ceiling"], "currency": "USD",
+                "operation_types": [1], "property_types": list(PTYPES), "filters": []}
+        offset = 0
+        while True:
+            r = http.get(API + "?" + http.urlencode({"key": agency["key"], "format": "json", "lang": "es_ar", "limit": 50,
+                                                     "offset": offset, "data": json.dumps(data)}))
+            d = r.json()
+            for o in d.get("objects", []):
+                if _zone((o.get("location") or {}).get("full_location")):
+                    out.append(_from_api(o, agency))
+            offset += 50
+            if not d.get("meta", {}).get("next"):
+                break
+    return out
 
 
 # ---------- tfw website flavour ----------
@@ -160,7 +176,7 @@ def _from_page(pid, slug, html, agency):
         "address": f"{address}, {where}",
         "zone": _zone(where) or _zone(slug),
         "address_exact": ll is not None,
-        "geocode_query": None if ll else f"{re.sub(r' al ', ' ', address, flags=re.I)}, {_zone(where) or where}, Vicente López, Buenos Aires",
+        "geocode_query": None if ll else f"{re.sub(r' al ', ' ', address, flags=re.I)}, {config.geocode_suffix(_zone(where) or where)}",
         "lat": float(ll.group(1)) if ll else None,
         "lng": float(ll.group(2)) if ll else None,
         "description": desc,
@@ -177,7 +193,7 @@ def _from_page(pid, slug, html, agency):
 def search_site(agency, log=print, max_pages=10):
     s = config.SEARCH
     base = (f"{agency['site']}/Buscar?operation=1&ptypes={','.join(map(str, PTYPES))}"
-            f"&locations={','.join(map(str, LOCATIONS.values()))}"
+            f"&locations={','.join(map(str, list(LOCATIONS.values()) + list(CABA_LOCATIONS)))}"
             f"&min-price={s['price_min']}&max-price={s['price_ceiling']}&currency=USD&o=2,2")
     found = {}
     for page in range(1, max_pages + 1):

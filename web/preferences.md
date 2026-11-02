@@ -1,12 +1,12 @@
 # Lo que busco
 
-Casa o PH para mudarnos pronto, en Olivos, Florida o La Lucila (Vicente López).
+Casa o PH para mudarnos pronto, en Olivos, Florida, La Lucila o Vicente López, o en un barrio de CABA con subte B o D (Palermo, Belgrano, Núñez, Colegiales, Recoleta, Villa Crespo, Almagro, Chacarita, Villa Ortúzar, Parque Chas, Villa Urquiza, Balvanera, San Nicolás).
 
 **Obligatorio**
 - Precio hasta USD 210.000 y hasta USD 2.000 por m² total. Más barato es mejor: un precio por m² bajo no es motivo para descartar. Si piden un poco más (hasta USD 240.000), es negociable pero cuenta en contra.
 - Patio o jardín propio, a nivel del suelo. Cuanto más grande mejor. Una terraza no reemplaza al patio.
 - 3 ambientes o más y 100 m² totales o más.
-- Entre 3 y 15 cuadras de Av. Maipú (ideal 8 o menos), o cerca de una estación del tren.
+- Entre 3 y 15 cuadras de Av. Maipú (ideal 6), o cerca de una estación del tren. En CABA, lo mismo pero contado desde la estación de subte B o D más cercana.
 - A más de 5 cuadras de Puente Saavedra.
 - Nada de PH por pasillo ni unidades muy alargadas: no quiero vivir en un pasillo.
 - Nada de PH en planta alta o superpuestos con otra unidad.
@@ -15,7 +15,7 @@ Casa o PH para mudarnos pronto, en Olivos, Florida o La Lucila (Vicente López).
 **Lo que más me importa, en este orden**
 1. Precio
 2. Espacio
-3. Poder caminar a Maipú o al tren
+3. Poder caminar a Maipú o al tren (en CABA, al subte B o D)
 4. Estado: puedo invertir hasta USD 20.000 en reformas antes de entrar
 5. Patio
 6. Poder construir hacia arriba

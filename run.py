@@ -7,7 +7,7 @@ python run.py --assess-queue  # AI reads asked for from the app (data/ai_request
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
 import requests
 from hh import ai, config, geo, http, score, text
-import osm_parks
+import land_market_build, osm_parks
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -123,12 +123,14 @@ def side_percentiles(listings):
 
 
 def big_lot(l):
-    """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú."""
+    """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú (from the nearest
+    Subte B/D station in CABA)."""
     r = config.ALERT_BIG_LOT
     m2, _ = score.lot_m2(l)
     g = l.get("geo") or {}
+    rb = score.ref_blocks(g) if g else None
     return bool(m2 and m2 >= r["min_m2"] and l.get("price_usd") and l["price_usd"] < r["max_price"]
-                and g.get("maipu_blocks") is not None and r["maipu_blocks"][0] <= g["maipu_blocks"] <= r["maipu_blocks"][1])
+                and rb is not None and r["maipu_blocks"][0] <= rb <= r["maipu_blocks"][1])
 
 
 def alert(new):
@@ -147,7 +149,8 @@ def alert(new):
         m2, what = score.lot_m2(l)
         title = (f"{m2:.0f} m² {what} · " if lot else "") + f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
         body = (brief if (brief := (l.get("ai_final") or {}).get("brief")) else
-                f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {g.get('maipu_blocks', '?')} cdas a Maipú. {l.get('address', '')}")
+                f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {score.ref_blocks(g) if g else '?'} cdas a "
+                f"{score.ref_name(g) if g else 'Maipú'}. {l.get('address', '')}")
         log(f"ALERT {l['id']}: {title}")
         if not topic:
             continue
@@ -215,17 +218,25 @@ def main():
                 every = getattr(src, "FULL_EVERY_HOURS", None) if http.API_KEY and not http.ANT_KEY else None
                 newest = bool(every and age(last.get("full_at")) < every)
             try:
-                fresh = SOURCES[name].search(log=log, **({"newest_only": True} if newest else {}))
+                fn = SOURCES[name].search
+                fn.swept = None
+                fresh = fn(log=log, **({"newest_only": True} if newest else {}))
                 seen = {l["id"] for l in fresh}
-                complete = not newest and not getattr(SOURCES[name].search, "failed_pages", None)
+                complete = not newest and not getattr(fn, "failed_pages", None)
+                # sources that sweep some groups in full and only the newest page of others say which zones they
+                # covered completely; a listing elsewhere that wasn't seen is just not on the newest page
+                swept = getattr(fn, "swept", None)
                 for l in listings.values():
-                    if complete and l["source"] == name and l["id"] not in seen:
+                    if l["source"] == name and l["id"] not in seen and (l.get("zone") in swept if swept is not None else complete):
                         l["active"] = False  # kept for the percentile history; shown as "Reservada"
                         l.setdefault("gone_at", TODAY)
                 listings = merge(listings, fresh)
                 now = time.strftime("%Y-%m-%d %H:%M")
-                status[name] = {"ok": True, "count": len(fresh) if not newest else last.get("count"), "complete": complete, "at": now,
-                                "mode": "newest" if newest else "full", "full_at": now if complete else last.get("full_at")}
+                if swept is not None:  # partly full, partly newest: "full" when every group was swept this time
+                    complete = not newest and swept >= set(config.SEARCH["zones"])
+                status[name] = {"ok": True, "count": len(fresh) if not newest and complete else last.get("count") or len(fresh),
+                                "complete": complete, "at": now, "mode": "full" if complete else "newest" if newest or not swept else "partial",
+                                "full_at": now if complete else last.get("full_at")}
             except Exception as e:
                 traceback.print_exc()
                 status[name] = {"ok": False, "error": str(e)[:200], "at": time.strftime("%Y-%m-%d %H:%M")}
@@ -236,23 +247,24 @@ def main():
     for l in listings.values():
         if not l.get("price_usd") and text.usd_price(l.get("description")):
             l["price_usd"] = text.usd_price(l["description"])  # cards that only say "consultar" or show pesos
-        if l.get("lat") is not None and l.get("zone") and not geo.in_area(l["lat"], l["lng"]):
+        if l.get("lat") is not None and l.get("zone") and not geo.in_area(l["lat"], l["lng"], l["zone"]):
             # the agent dropped the pin somewhere else (seen: a CABA street with the same name); trust the address
             l["lat"] = l["lng"] = None
             l["address_exact"] = False
-            l["geocode_query"] = l.get("geocode_query") or f"{re.sub(r' al ', ' ', l.get('address') or '', flags=re.I)}, Vicente López, Buenos Aires"
+            street = re.sub(r' al ', ' ', (l.get('address') or '').split(',')[0], flags=re.I)
+            l["geocode_query"] = l.get("geocode_query") or f"{street}, {config.geocode_suffix(l['zone'])}"
         if l.get("lat") is None and l.get("geocode_query"):
-            ll = geo.geocode(l["geocode_query"])
+            ll = geo.geocode(l["geocode_query"], l.get("zone"))
             if ll:
                 l["lat"], l["lng"] = ll
-        l["geo"] = geo.describe(l["lat"], l["lng"]) if l.get("lat") is not None else None
+        l["geo"] = geo.describe(l["lat"], l["lng"], l.get("zone")) if l.get("lat") is not None else None
 
     def enrich(l):
         try:
             SOURCES[l["source"]].enrich(l)
             l["photos_v"] = PHOTOS_V
             if l.get("lat") is not None:
-                l["geo"] = geo.describe(l["lat"], l["lng"])
+                l["geo"] = geo.describe(l["lat"], l["lng"], l.get("zone"))
             return True
         except Exception as e:
             log(f"enrich failed {l['id']}: {e}")
@@ -299,6 +311,11 @@ def main():
                 continue  # same property already read under another source; dedupe keeps that one
             reads += not ai.cached(l, current=True, note=note(l))
             ai.analyse(l, note(l), log=log)
+
+    # CABA's price of land is frozen the first time there are enough houses there (land_market_build.py)
+    for side in land_market_build.missing():
+        if land_market_build.build(listings.values(), sides=(side,), log=log):
+            log(f"land market: froze {side}")
 
     cache = ai._load()
     for l in listings.values():
