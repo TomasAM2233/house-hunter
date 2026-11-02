@@ -27,7 +27,7 @@ build.py                      web/index.html for GitHub Pages (reads web/listing
 Hard filters, a listing is discarded if it breaks any:
 - Up to USD 210k (asking prices up to 240k are scored with a penalty, for negotiation) and USD 2,000 per total m² (no floor: portals are searched from USD 80k)
 - Casa or PH, 3+ ambientes, 100+ m² totales
-- 3 to 15 cuadras from Av. Maipú (in CABA: from the nearest Subte B or D station), 5+ cuadras from Puente Saavedra, 4+ cuadras from Villa Borges (Rosetti y Borges)
+- 3 to 15 cuadras from Av. Maipú (in CABA: 1 to 7 cuadras from the nearest Subte B or D station), 5+ cuadras from Puente Saavedra, 4+ cuadras from Villa Borges (Rosetti y Borges)
 - Has a patio or garden (AI), is not a PH al fondo por pasillo (AI)
 - Reform estimate under ~USD 35k (AI)
 - Not a duplicate of another agency's post (same price and m², within 200 m)
@@ -39,7 +39,7 @@ Score out of 100, in our order of importance:
 | Price | 18 | asking + estimated reform, and USD/m² |
 | Investment | 18 | 65%: value in 10 years over the price (land at what nearby houses pay per m² of lot + the building aged 10 more years; see below); 35%: m² still buildable under the zone's FOT |
 | Space | 14 | total m², covered m², ambientes |
-| Location | 14 | 75%: cuadras to Maipú (CABA: to the nearest Subte B/D station), best at 6 and falling off both ways (in Vicente López a nearby Mitre/Belgrano station can stand in, capped); 25%: distance to the nearest plaza/park |
+| Location | 14 | 75%: cuadras to Maipú (CABA: to the nearest Subte B/D station, best at 4), best at 6 and falling off both ways (in Vicente López a nearby Mitre/Belgrano station can stand in, capped); 25%: distance to the nearest plaza/park |
 | Condition | 11 | AI condition 1–5 and reform estimate vs the USD 20k budget |
 | Patio | 9 | AI patio size, or m² descubiertos from the text |
 | Apto crédito | 6 | text, listing pill, AI |
@@ -105,6 +105,6 @@ scheduled runs: a changed note means a fresh read for the top candidates.
   is scored, read by the AI and alerted within the hour.
 - **Alerts:** set the `NTFY_TOPIC` secret and subscribe to that topic in the free ntfy app. New listings at or above
   the alert thresholds (90th percentile or AI score 70+ by default; editable in the app, saved in `data/settings.json`) send a push notification; tapping it opens the house in the app (`#casa=<id>`), with a button for the original listing. So does any new listing with 300+ m²
-  (lot surface when the listing or its text gives it, else total m²) under USD 230k, 4 to 8 cuadras from Maipú (CABA: from the nearest Subte B/D station)
+  (lot surface when the listing or its text gives it, else total m²) under USD 230k, 4 to 8 cuadras from Maipú (CABA: 2 to 6 cuadras from the nearest Subte B/D station)
   (`ALERT_BIG_LOT` in `hh/config.py`).
 - **Plazas:** `geo/parks.json` comes from OpenStreetMap through `osm_parks.py` (the `osm` workflow refreshes it).
