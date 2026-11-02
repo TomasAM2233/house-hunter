@@ -59,7 +59,7 @@ jobs:
             # is and lay this run's outputs on top. Never rebase: a text merge of two listings.json versions
             # leaves the same listing in it twice (seen 2026-10-31, one copy with the old price).
             git fetch -q origin main
-            OUT="data/listings.json data/ai_cache.json data/ai_final.json data/geocode_cache.json data/last_run.txt data/ai_pending web/listings.json geo/parks.json"
+            OUT="data/listings.json data/ai_cache.json data/ai_final.json data/geocode_cache.json data/last_run.txt data/ai_pending data/sweeps.json web/listings.json geo/parks.json geo/land_market.json"
             mkdir -p /tmp/out && cp -r --parents $OUT /tmp/out/ 2>/dev/null || true
             git reset -q --hard origin/main
             python merge_ai.py /tmp/out   # keep reads made meanwhile from the app ("Evaluar con IA")

@@ -19,11 +19,19 @@ def groups():
     return [(n, zs) for n, zs in (("gba", s["zones_gba"]), ("caba", s["zones_caba"])) if zs]
 
 
-def search_url(page, newest=False, zones=None):
+# The CABA search has ~1.300 listings (64 pages) and Argenprop's deep pages come back empty, so its full sweep goes
+# by price bands, each split again when it still has more than MAX_PAGES pages.
+BANDS_CABA = [(None, 140_000), (140_000, 160_000), (160_000, 175_000), (175_000, 190_000), (190_000, 205_000),
+              (205_000, 215_000), (215_000, 228_000), (228_000, None)]
+MAX_PAGES = 25
+
+
+def search_url(page, newest=False, zones=None, band=(None, None)):
     s = config.SEARCH
     zones = "-o-".join(SLUGS.get(z) or z.lower().replace(" ", "-") for z in (zones or s["zones_gba"]))
+    lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
     q = (["orden-masnuevos"] if newest else []) + ([f"pagina-{page}"] if page > 1 else [])
-    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{s['price_min']}-{s['price_ceiling']}" + ("?" + "&".join(q) if q else "")
+    return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{lo}-{hi}" + ("?" + "&".join(q) if q else "")
 
 
 def _n(text):
@@ -85,11 +93,11 @@ def _card(it, in_caba=False):
     }
 
 
-def _sweep(zones, in_caba, newest, max_pages, log, out, failed):
+def _sweep(zones, in_caba, newest, max_pages, log, out, failed, band=(None, None)):
     page, last = 1, 1
     while page <= min(last, max_pages):
         try:
-            html = http.get(search_url(page, newest, zones), via_api=True).text
+            html = http.get(search_url(page, newest, zones, band), via_api=True).text
         except Exception as e:
             log(f"argenprop {'CABA' if in_caba else 'VL'} page {page}: {e}")
             failed.append(page)
@@ -101,14 +109,21 @@ def _sweep(zones, in_caba, newest, max_pages, log, out, failed):
         if page == 1:
             pages = [int(p) for p in re.findall(r"[?&]pagina-(\d+)", html)]
             last = max(pages, default=1)
+            lo, hi = band[0] or config.SEARCH["price_min"], band[1] or config.SEARCH["price_ceiling"]
+            if last > max_pages and not newest and hi - lo >= 10_000:
+                mid = (lo + hi) // 2 // 1000 * 1000
+                log(f"argenprop {band}: {last} pages, splitting at {mid}")
+                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (band[0], mid))
+                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (mid, band[1]))
+                return
         items = [c for c in (_card(it, in_caba) for it in s.select("div.listing__item") if not it.find_parent(class_="listing-container--suggested")) if c]
         for c in items:
             out.setdefault(c["id"], c)
-        log(f"argenprop {'CABA' if in_caba else 'VL'} page {page}/{last}: {len(items)} listings")
+        log(f"argenprop {'CABA' if in_caba else 'VL'} {band if band != (None, None) else ''} page {page}/{last}: {len(items)} listings")
         page += 1
 
 
-def search(max_pages=90, log=print, newest_only=False):
+def search(max_pages=MAX_PAGES, log=print, newest_only=False):
     """Each group: a full sweep when due (hh/sweeps.py), else its newest pages. search.swept = zones swept in full."""
     out, failed, swept, err = {}, [], set(), None
     for name, zones in groups():
@@ -116,12 +131,13 @@ def search(max_pages=90, log=print, newest_only=False):
         # with only ScraperAPI, run.py already spaces out full sweeps (newest_only); with ScrapingAnt, once a day
         full = not newest_only and (not http.ANT_KEY or sweeps.due(key, EVERY_HOURS))
         before = len(failed)
-        try:
-            _sweep(zones, name == "caba", not full, max_pages if full else NEW_PAGES, log, out, failed)
-        except Exception as e:
-            failed.append(f"{name}:1")
-            err = e
-            continue
+        bands = BANDS_CABA if full and name == "caba" else [(None, None)]
+        for band in bands:
+            try:
+                _sweep(zones, name == "caba", not full, max_pages if full else NEW_PAGES, log, out, failed, band)
+            except Exception as e:
+                failed.append(f"{name}:{band}")
+                err = e
         if full and len(failed) == before:
             sweeps.done(key)
             swept |= set(zones)

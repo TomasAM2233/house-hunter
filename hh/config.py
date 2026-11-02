@@ -156,4 +156,13 @@ AGENCIES = [
     {"name": "Martín Fonseca Propiedades", "site": "https://www.martinfonsecaprop.com"},
     {"name": "Braulio Inmuebles", "site": "https://www.braulioinmuebles.com"},
     {"name": "Bellagamba", "key": "dd0e6daf8ddc52df5b91f3f57224ac4d752c9db7", "site": "https://bellagamba.com"},
+    # CABA barrios along Subte B/D (2026-11-02): agencies with houses/PH there in the portals that run Tokko's site.
+    # Braulio Inmuebles and Real Props above also list in CABA. The biggest CABA publishers (Belga, Yacoub, MUV,
+    # Lexinton, Brick, Pallarols Santander...) are covered through Zonaprop and Argenprop.
+    {"name": "Crecer Inmobiliaria", "site": "https://www.crecer.com.ar"},                    # Villa Urquiza, Colegiales
+    {"name": "Martina Domínguez Realty", "site": "https://www.martinadominguezrealty.com.ar"},  # Núñez, Belgrano
+    {"name": "Karas Propiedades", "site": "https://www.karaspropiedades.com.ar"},             # Villa Crespo, Villa Urquiza
+    {"name": "Carlos D'Odorico", "site": "https://www.carlosdodorico.com"},                   # Colegiales
+    {"name": "Idea Cinco", "site": "https://www.ideacinco.com.ar"},                           # Palermo
+    {"name": "Inteligencia Urbana", "site": "https://www.inteligenciaurbana.com.ar"},         # Palermo
 ]

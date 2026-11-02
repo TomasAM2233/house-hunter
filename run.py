@@ -312,6 +312,11 @@ def main():
             reads += not ai.cached(l, current=True, note=note(l))
             ai.analyse(l, note(l), log=log)
 
+    # CABA's price of land is frozen the first time there are enough houses there (land_market_build.py)
+    for side in land_market_build.missing():
+        if land_market_build.build(listings.values(), sides=(side,), log=log):
+            log(f"land market: froze {side}")
+
     cache = ai._load()
     for l in listings.values():
         res = cache.get(l["id"])
