@@ -211,19 +211,24 @@ def search(max_pages=MAX_PAGES, log=print, newest_only=False):
     the groups swept in full without failures, the only ones where a listing not seen means it's gone."""
     if http.API_KEY and not http.ANT_KEY:
         return search_rendered(20 if not newest_only else NEW_PAGES, log, newest_only)
-    out, failed, swept = [], [], set()
+    out, failed, swept, err = [], [], set(), None
     for zones, bands in zone_groups():
         key = f"zonaprop:{zones}"
         full = not newest_only and sweeps.due(key, EVERY_HOURS)
         before = len(failed)
         for band in bands if full else [(None, None)]:
-            _sweep(zones, band, not full, max_pages if full else NEW_PAGES, log, out, failed)
+            try:
+                _sweep(zones, band, not full, max_pages if full else NEW_PAGES, log, out, failed)
+            except Exception as e:  # a newest page that didn't come through; the other groups still get read
+                err = e
         if full and len(failed) == before:
             sweeps.done(key)
             swept |= group_zones(zones)
     if failed:
         log(f"zonaprop: pages {failed} failed; their listings keep their previous state")
     search.failed_pages, search.swept = failed, swept
+    if not out and failed:
+        raise err or RuntimeError("zonaprop: no page got through")
     return out
 
 
