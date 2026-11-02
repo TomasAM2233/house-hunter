@@ -1,9 +1,5 @@
-AI read zp-60379464: ok in 244s (gemini-3.6-flash)
-AI failed for zp-59799133: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read zp-59632007: ok in 100s (gemini-3.6-flash)
-AI read zp-59049214: ok in 21s (gemini-3.6-flash)
-AI read zp-60347774: ok in 17s (gemini-3.6-flash)
-enrich failed zp-57016532: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-local-y-vivienda-de-2-plantas-en-lote-propio-57016532.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
-AI read zp-57016532: ok in 89s (gemini-3.6-flash)
-AI time cap reached (10 min): the rest waits for the next run
-5293 listings, 2048 on the shortlist, 1873 waiting for AI
+AI failed for zp-60513019: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+enrich failed zp-60364066: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-balvanera-4-ambientes-refaccionado-60364066.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+AI failed for zp-60364066: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+Gemini didn't answer 3 times in a row: no more AI reads this run
+5293 listings, 1324 on the shortlist, 1150 waiting for AI
