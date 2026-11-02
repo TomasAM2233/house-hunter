@@ -116,6 +116,9 @@ BRIEF_MAX_CHARS = 250
 # Phone alerts (ntfy.sh) for new listings at or above either threshold. Tapping one opens the house in the app.
 SITE_URL = "https://tomasam2233.github.io/house-hunter/"
 ALERT_PERCENTILE = 90
+# At most this many phone alerts a run, best first; the rest go in one summary. A new area or a site coming back
+# after a failure makes hundreds of listings "new" at once (2026-11-02: 123 alerts when CABA was added).
+ALERT_MAX_PER_RUN = 5
 ALERT_AI_SCORE = 70
 # ...and, whatever the score, a big lot at a good price around the Maipú sweet spot. The lot surface (terreno)
 # is used when the listing or its text gives it, otherwise the total m2.

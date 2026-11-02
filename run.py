@@ -140,11 +140,20 @@ def alert(new):
     st = json.load(open(SETTINGS)) if os.path.exists(SETTINGS) else {}   # thresholds edited in the app
     min_pct = st.get("alert_percentile", config.ALERT_PERCENTILE)
     min_ai = st.get("alert_ai_score", config.ALERT_AI_SCORE)
-    for l in sorted(new, key=lambda l: -l["score"]):
+    hits = [l for l in sorted(new, key=lambda l: -l["score"])
+            if big_lot(l) or l.get("pct", 0) >= min_pct or (l.get("ai_final") or {}).get("score", 0) >= min_ai]
+    extra = hits[config.ALERT_MAX_PER_RUN:]
+    if extra and topic:
+        log(f"ALERT summary: {len(extra)} more")
+        try:
+            requests.post("https://ntfy.sh/", timeout=20, json={
+                "topic": topic, "title": f"{len(extra)} casas nuevas más arriba del umbral",
+                "message": "Están en la app, ordenadas por puntaje. " + ", ".join(sorted({l.get('zone') or '?' for l in extra}))[:300],
+                "click": config.SITE_URL, "priority": 3, "tags": ["house"]})
+        except Exception as e:
+            log(f"alert failed: {e}")
+    for l in hits[:config.ALERT_MAX_PER_RUN]:
         lot = big_lot(l)
-        good = l.get("pct", 0) >= min_pct or (l.get("ai_final") or {}).get("score", 0) >= min_ai
-        if not (good or lot):
-            continue
         g = l.get("geo") or {}
         m2, what = score.lot_m2(l)
         title = (f"{m2:.0f} m² {what} · " if lot else "") + f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
