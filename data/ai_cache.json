@@ -1459,51 +1459,68 @@
  "zp-59854365": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "Obra nueva en pozo; sin reforma pero con riesgo y plazos de obra.",
+  "reform_notes": "Es una obra en pozo a estrenar; no requiere reformas pero no está lista para habitar ya.",
   "patio": "none",
   "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 3,
-  "vertical_potential": 0.0,
+  "vertical_potential": 0,
   "apto_credito": false,
   "highlights": [
-   "Complejo de 3 unidades, cochera y terraza propia",
-   "Construcción de calidad (DVH, radiadores)"
+   "Construcción moderna a estrenar",
+   "Terraza y cochera propia",
+   "Carpintería con DVH y caldera dual"
   ],
   "red_flags": [
-   "En pozo por fideicomiso: no se puede usar crédito hipotecario",
-   "Solo la unidad más grande tiene jardín",
-   "Imágenes son renders"
+   "Venta en pozo (no disponible para mudanza inmediata)",
+   "Son solo renders 3D, no hay fotos reales",
+   "Esta unidad de 3 amb no tiene jardín en PB (solo terraza)"
   ],
-  "summary": "Triplex en pozo en complejo chico; el jardín es solo de la unidad mayor y la compra en fideicomiso no admite crédito.",
+  "summary": "Es un proyecto en pozo vendido por fideicomiso, por lo que no sirve para mudarse pronto ni cuenta con jardín propio en planta baja.",
   "photos_key": "621bbe6d32d2",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T01:09:20Z"
  },
  "zp-59946640": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "Obra nueva en pozo (mismo complejo que zp-59854365).",
+  "reform_notes": "Propiedad en pozo / a estrenar; no requiere reformas pero no está lista para habitar.",
   "patio": "none",
   "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
   "pasillo_ph": false,
   "natural_light": 4,
   "quiet": 3,
-  "vertical_potential": 0.0,
+  "vertical_potential": 0,
   "apto_credito": false,
   "highlights": [
-   "Cochera propia y terraza con parrilla",
-   "Anticipo USD 18.8k y 20 cuotas"
+   "A estrenar con cochera propia",
+   "Terraza privada con parrilla",
+   "Financiación con anticipo y cuotas"
   ],
   "red_flags": [
-   "En pozo por fideicomiso, sin crédito hipotecario",
-   "Sin patio ni jardín, solo terraza"
+   "Es una compra en pozo, inviable para mudarse pronto",
+   "No posee patio ni jardín en planta baja (solo terraza en altura)",
+   "Fideicomiso al costo con riesgo de mayores costos y demoras"
   ],
-  "summary": "Otra unidad del mismo triplex en pozo de Juan B. Justo: terraza y cochera pero sin patio a nivel.",
+  "summary": "Es un triplex en pozo con terraza y cochera que queda totalmente descartado porque no tiene patio en planta baja y no permite mudanza inmediata.",
   "photos_key": "ef4bfd142ed0",
-  "analyst": "claude",
-  "analysed_at": "2026-10-23"
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T01:08:22Z"
  },
  "zp-59985972": {
   "condition": 4,
@@ -11809,5 +11826,104 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-01T21:46:26Z"
+ },
+ "ap-18519036": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "Propiedad totalmente reciclada a nuevo entre 2023 y 2025 (instalaciones, techos y aberturas DVH), lista para entrar sin reformas urgentes.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Reciclado integral reciente con aberturas DVH",
+   "Excelente ancho de frente (5,30 m) y orientación norte",
+   "Apto crédito y listo para habitar"
+  ],
+  "red_flags": [
+   "Patio de dimensiones acotadas (comparte los 27 m2 descubiertos con el retiro)",
+   "Proximidad a nudo de tránsito/Panamericana que puede aportar ruido",
+   "Un solo baño completo en planta alta para 3 dormitorios"
+  ],
+  "summary": "Dúplex al frente impecable y reciclado a fondo, ideal para mudarse ya sin poner un peso extra, aunque con un patio chico.",
+  "photos_key": "9ceaadbb0f4f",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T01:07:11Z"
+ },
+ "ap-19841064": {
+  "condition": 4,
+  "reform_usd": 7000,
+  "reform_notes": "Actualización estética puntual de baño y cocina, y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Ubicación privilegiada en el Bajo de La Lucila",
+   "Entrada independiente y sin expensas",
+   "Muy buen estado general y ambientes amplios"
+  ],
+  "red_flags": [
+   "Es en 1er piso por escalera y no tiene patio en planta baja",
+   "Instalaciones originales de 50 años a revisar",
+   "Sin potencial de construcción vertical"
+  ],
+  "summary": "Es un PH impecable en la mejor zona de La Lucila, pero queda descartado de entrada porque está en primer piso y no tiene jardín o patio a nivel del suelo.",
+  "photos_key": "37b2f308a6e6",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T01:13:05Z"
+ },
+ "ap-20710766": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Modernización de cocina y baños de 37 años de antigüedad, revisión de instalaciones eléctricas/cañerías e impermeabilización de terraza.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Jardín en PB y terraza con parrilla",
+   "Cochera propia y toilette en PB",
+   "Ubicación estratégica residencial en Olivos y apto crédito"
+  ],
+  "red_flags": [
+   "Sup. descubierta total de 29 m² (jardín más reducido de lo que sugiere el aviso)",
+   "Disposición interna por pasillo",
+   "Antigüedad de 37 años con posibles cañerías/instalaciones de época"
+  ],
+  "summary": "Es un PH funcional en dos plantas muy bien ubicado en Olivos, que entra en el presupuesto de reforma aunque el jardín es bastante más compacto de lo que promete la descripción.",
+  "photos_key": "f46c69588679",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T01:14:33Z"
  }
 }
