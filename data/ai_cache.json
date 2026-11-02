@@ -12206,5 +12206,170 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-02T02:54:10Z"
+ },
+ "zp-60379464": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Pintura general, modernización de cocina y baños, y readecuación para unificar la vivienda hoy dividida para estudiantes.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Amplia superficie total con terraza propia de 123 m2",
+   "Entrada independiente a la calle y sin expensas",
+   "Detalles antiguos de categoría como pisos de pinotea"
+  ],
+  "red_flags": [
+   "Está en primer piso por escalera, no tiene patio en PB",
+   "Layout subdividido para renta estudiantil que exige obra",
+   "Entorno muy ruidoso y transitado cerca de Plaza Miserere"
+  ],
+  "summary": "Inmueble descartado para los compradores porque es un primer piso sin patio a nivel del suelo, requisito que resulta excluyente para ellos.",
+  "photos_key": "5c490ffda76b",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T16:09:11Z"
+ },
+ "zp-59632007": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Modernización de cocina y baño principal, pintura general y actualización preventiva de cañerías e instalación eléctrica.",
+  "patio": "small",
+  "patio_m2_est": 8,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación a 300 metros de Parque Centenario",
+   "Ambientes amplios de estilo con techos altos y pinotea",
+   "Entrada independiente al frente y sin expensas"
+  ],
+  "red_flags": [
+   "El patio es apenas un aire y luz de 8 m2, lejos de ser un jardín",
+   "Hay otra propiedad construida en planta alta encima de esta",
+   "Solo un baño completo y un toilette para más de 180 m2"
+  ],
+  "summary": "Es un PH chorizo clásico con mucha categoría y metros cubiertos en una zona bárbara, pero si la prioridad es un patio real o jardín, estos 8 metros de aire y luz les van a quedar muy cortos.",
+  "photos_key": "b0db718aaf98",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T16:12:54Z"
+ },
+ "zp-59049214": {
+  "condition": 2,
+  "reform_usd": 25000,
+  "reform_notes": "Reciclado de instalaciones eléctricas y sanitarias, actualización de baño/cocina principales, pintura general y arreglo de humedades.",
+  "patio": "medium",
+  "patio_m2_est": 30,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Patio propio en planta baja con parrilla y amplia terraza",
+   "Entrada independiente al frente con cochera",
+   "Muchos metros cuadrados con gran potencial de construcción"
+  ],
+  "red_flags": [
+   "Instalaciones de época (80 años) a rehacer a nuevo",
+   "Presupuesto de USD 20.000 queda justo para la superficie cubierta total (170 m²)",
+   "Distribución vieja de varias habitaciones chicas y dos cocinas"
+  ],
+  "summary": "Tiene el patio en PB que buscan y un potencial enorme por metros, pero para poner a punto una propiedad de este tamaño van a andar muy al límite o por encima de los USD 20.000.",
+  "photos_key": "b245b7de73c7",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T16:13:24Z"
+ },
+ "zp-60347774": {
+  "condition": 4,
+  "reform_usd": 5000,
+  "reform_notes": "Retocar pintura, controlar filtraciones en techos de madera y emprolijar detalles en aberturas antiguas.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Excelente aprovechamiento del espacio vertical con entrepisos",
+   "Reciclado de diseño industrial listo para habitar",
+   "Apto crédito bancario"
+  ],
+  "red_flags": [
+   "El patio es en realidad una galería interna bastante angosta",
+   "Luz natural acotada por la tipología de patio interno cerrado",
+   "Ubicación sobre avenida/calle de alto tránsito en Balvanera"
+  ],
+  "summary": "Está habitable de entrada y entra holgado en el presupuesto de reforma, pero ojo que el patio es muy angosto y tipo galería, por lo que tal vez no sea el espacio al aire libre que la pareja busca.",
+  "photos_key": "d5b64a7b4700",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T16:13:55Z"
+ },
+ "zp-57016532": {
+  "condition": 2,
+  "reform_usd": 40000,
+  "reform_notes": "Reciclado integral de instalaciones (agua, gas, electricidad), adecuación de PB comercial a vivienda y modernización de cocina/baños.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 2,
+  "quiet": 2,
+  "vertical_potential": 1,
+  "apto_credito": true,
+  "highlights": [
+   "Lote propio sin expensas en Chacarita",
+   "Terraza propia de buena superficie con quincho",
+   "Gran superficie total para redistribuir"
+  ],
+  "red_flags": [
+   "Sin patio ni jardín descubierto en planta baja (100% construido)",
+   "Reforma necesaria excede por mucho el presupuesto de USD 20.000",
+   "Planta baja con estética comercial/industrial muy envejecida y azulejada"
+  ],
+  "summary": "No les sirve: carece por completo de patio verde/descubierto en planta baja y la reforma para hacerlo habitable supera ampliamente su presupuesto.",
+  "photos_key": "5eceb55758ec",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T16:17:58Z"
  }
 }
