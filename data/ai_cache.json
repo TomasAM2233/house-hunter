@@ -12341,8 +12341,8 @@
  },
  "zp-57016532": {
   "condition": 2,
-  "reform_usd": 40000,
-  "reform_notes": "Reciclado integral de instalaciones (agua, gas, electricidad), adecuación de PB comercial a vivienda y modernización de cocina/baños.",
+  "reform_usd": 28000,
+  "reform_notes": "Actualización completa de instalaciones (agua, gas, electricidad), modernización de baños y cocina sesentosos, y retiro de revestimientos cerámicos comerciales en PB.",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -12352,24 +12352,57 @@
   "pasillo_ph": false,
   "natural_light": 2,
   "quiet": 2,
-  "vertical_potential": 1,
+  "vertical_potential": 1.0,
   "apto_credito": true,
   "highlights": [
-   "Lote propio sin expensas en Chacarita",
-   "Terraza propia de buena superficie con quincho",
-   "Gran superficie total para redistribuir"
+   "Lote propio sin expensas",
+   "Terraza amplia con quincho",
+   "Gran metraje total cubierto"
   ],
   "red_flags": [
-   "Sin patio ni jardín descubierto en planta baja (100% construido)",
-   "Reforma necesaria excede por mucho el presupuesto de USD 20.000",
-   "Planta baja con estética comercial/industrial muy envejecida y azulejada"
+   "Sin patio abierto en planta baja (el patio existente está totalmente techado)",
+   "Instalaciones y terminaciones de 60 años para reciclar a fondo",
+   "Ubicada sobre arteria transitada y ruidosa (Av. Dorrego)"
   ],
-  "summary": "No les sirve: carece por completo de patio verde/descubierto en planta baja y la reforma para hacerlo habitable supera ampliamente su presupuesto.",
-  "photos_key": "5eceb55758ec",
-  "analyst": "gemini:gemini-3.6-flash",
+  "summary": "Es un lote propio con mucho metraje pero descartable para la pareja, ya que no tiene patio abierto en planta baja y la reforma mínima para vivienda digna supera los 20.000 dólares.",
+  "photos_key": "6a882e5b855e",
+  "analyst": "gemini:gemini-flash-latest",
   "analysed_at": "2026-11-02",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-02T16:17:58Z"
+  "ts": "2026-11-02T20:42:06Z"
+ },
+ "zp-54037568": {
+  "condition": 2,
+  "reform_usd": 40000,
+  "reform_notes": "Reciclado integral de cañerías e instalación eléctrica, renovación total de cocina y dos baños, y tratamiento de humedad en muros.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 2,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Arquitectura de época con aberturas y molduras de gran valor",
+   "Excelente ubicación en Almagro cerca de subtes y avenidas",
+   "Generosa superficie cubierta para redistribuir"
+  ],
+  "red_flags": [
+   "La reforma necesaria supera con creces el límite de USD 20.000",
+   "Instalaciones eléctricas y sanitarias totalmente obsoletas",
+   "Humedad visible en muros del patio y ambientes internos"
+  ],
+  "summary": "Es un PH de época con patio interno propio en planta baja, pero está para reciclar a fondo y la obra excede ampliamente el presupuesto que tienen.",
+  "photos_key": "95edb630f528",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-02",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-02T20:41:25Z"
  }
 }

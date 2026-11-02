@@ -1,5 +1,14 @@
+zonaprop olivos-florida-la-lucila (None, None) page 1/18: 30 listings
+zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
+zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1: GET https://www.zonaprop.com.ar/casas-ph-venta-palermo-belgrano-nunez-colegiales-recoleta-villa-crespo-almagro-chacarita-villa-ortuzar-parque-chas-villa-urquiza-balvanera-san-nicolas-mas-de-3-ambientes-80000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
+zonaprop: pages [('palermo-belgrano-nunez-colegiales-recoleta-villa-crespo-almagro-chacarita-villa-ortuzar-parque-chas-villa-urquiza-balvanera-san-nicolas', (None, None), 1)] failed; their listings keep their previous state
+argenprop VL  page 1/22: 20 listings
+argenprop VL  page 2/22: 20 listings
+argenprop CABA  page 1/64: 20 listings
+argenprop CABA  page 2/64: 20 listings
 AI failed for zp-60513019: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-enrich failed zp-60364066: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-balvanera-4-ambientes-refaccionado-60364066.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
 AI failed for zp-60364066: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 3 times in a row: no more AI reads this run
-5293 listings, 1324 on the shortlist, 1150 waiting for AI
+AI read zp-54037568: ok in 71s (gemini-flash-latest)
+AI read zp-57016532: ok in 28s (gemini-flash-latest)
+AI time cap reached (10 min): the rest waits for the next run
+5337 listings, 1340 on the shortlist, 1166 waiting for AI
