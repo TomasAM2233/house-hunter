@@ -613,15 +613,17 @@ const RANGES = [
   ["bed", "Dormitorios", l => l.bedrooms, 1, v => v],
   ["bath", "Baños", l => l.bathrooms, 1, v => v],
   ["ppm2", "USD por m² total", l => ppm2(l), 50, v => v.toLocaleString("es-AR")],
-  ["maipu", "Cuadras a Av. Maipú", l => l.geo?.maipu_blocks, 1, v => v],
-  ["train", "Cuadras al tren", l => l.geo?.station?.blocks, 1, v => v],
+  ["maipu", "Cuadras a Maipú (CABA: al subte B/D)", l => refBlocks(l.geo), 1, v => v],
+  ["train", "Cuadras al tren o subte", l => l.geo?.station?.blocks, 1, v => v],
   ["score", "Puntaje", l => l.score, 1, v => v],
   ["age", "Antigüedad (años)", l => l.age_years, 1, v => v],
   ["reform", "Reforma estimada por la IA", l => l.ai?.reform_usd, 2500, v => "USD " + Math.round(v / 1000) + "k"],
 ];
 const CHOICES = [
   ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
-  ["zone", "Barrio", [["Olivos", "Olivos"], ["Florida", "Florida"], ["La Lucila", "La Lucila"], ["Vicente López", "Vicente López"]]],
+  ["region", "Zona", [["gba", "Vicente López"], ["caba", "CABA (subte B/D)"]]],
+  ["zone", "Barrio", ["Olivos", "Florida", "La Lucila", "Vicente López", "Palermo", "Belgrano", "Núñez", "Colegiales", "Recoleta",
+    "Villa Crespo", "Almagro", "Chacarita", "Villa Ortúzar", "Parque Chas", "Villa Urquiza", "Balvanera", "San Nicolás"].map(z => [z, z])],
   ["zoning", "Zona del código urbano", [["R1", "R1"], ["R2", "R2"], ["R3", "R3"], ["C", "Comercial (C)"], ["T", "Torres (T)"], ["I1", "I1"], ["other", "Otra"]]],
   ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
   ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
@@ -652,6 +654,7 @@ function passF(l) {
   const c = FILT.c;
   if (c.type?.length && !c.type.includes(l.type)) return false;
   if (c.zone?.length && !c.zone.includes(l.zone)) return false;
+  if (c.region?.length && !c.region.includes(isCaba(l) ? "caba" : "gba")) return false;
   if (c.src?.length && !c.src.includes(l.source)) return false;
   if (c.zoning?.length && !c.zoning.includes(zoningGroup(l))) return false;
   if (c.patio?.length && !((PATIO_RANK[l.ai?.patio] ?? -1) >= Math.min(...c.patio.map(x => PATIO_RANK[x])))) return false;
@@ -748,12 +751,16 @@ function badge(l, cls = "") {
   const p = pct(l);
   return `<span class="badge ${band(l.score, l)} ${l.discard.length ? "dash" : ""} ${cls}" title="${l.ai_final ? "Puntaje de la IA" : "Puntaje del algoritmo"}${p != null ? ` · percentil ${p}` : ""}">${l.discard.length ? "—" : Math.round(l.score)}${!l.discard.length && p != null ? `<small>P${p}</small>` : ""}</span>`;
 }
+const ZONES_CABA = ["Palermo", "Belgrano", "Núñez", "Colegiales", "Recoleta", "Villa Crespo", "Almagro", "Chacarita", "Villa Ortúzar", "Parque Chas", "Villa Urquiza", "Balvanera", "San Nicolás"];
+const isCaba = l => l.geo ? l.geo.region === "caba" : ZONES_CABA.includes(l.zone);
+const refBlocks = g => g ? (g.ref_blocks ?? g.maipu_blocks) : undefined;
 function specs(l) {
   const g = l.geo;
   return `<div class="specs">
     <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
     <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
-    ${g ? `<span><b class="num">${blk(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${blk(g.station.blocks)}</b> cdas</span>` : ""}
+    ${g ? (g.region === "caba" ? `<span>subte ${esc(g.station.line.slice(-1))} <b class="num">${blk(g.station.blocks)}</b> cdas</span>`
+      : `<span><b class="num">${blk(g.maipu_blocks)}</b> cdas Maipú</span><span>tren <b class="num">${blk(g.station.blocks)}</b> cdas</span>`) : ""}
     ${g?.zoning ? `<span title="Zona del código urbano${g.zoning.edge ? ", en el límite con " + esc(g.zoning.edge) : ""}">zona <b>${esc(g.zoning.code)}${g.zoning.edge ? "?" : ""}</b></span>` : ""}
     ${l.ai?.patio ? `<span>${PATIO[l.ai.patio] || esc(l.ai.patio)}</span>` : ""}
   </div>`;
@@ -882,8 +889,9 @@ function renderDetail(l) {
         <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
         <div class="fact"><span>Cubierta</span><b>${fmt(l.covered_m2)} m²</b></div>
         <div class="fact"><span>Ambientes</span><b>${fmt(l.ambientes)}</b></div>
-        <div class="fact"><span>A Maipú</span><b>${g ? blk(g.maipu_blocks) + " cdas" : "?"}</b></div>
-        <div class="fact"><span>${g ? "Est. " + esc(g.station.name) : "Tren"}</span><b>${g ? blk(g.station.blocks) + " cdas" : "?"}</b></div>
+        ${g?.region === "caba" ? `<div class="fact"><span>Subte ${esc(g.station.line.slice(-1))} · ${esc(g.station.name)}</span><b>${blk(g.station.blocks)} cdas</b></div>`
+          : `<div class="fact"><span>A Maipú</span><b>${g ? blk(g.maipu_blocks) + " cdas" : "?"}</b></div>
+        <div class="fact"><span>${g ? "Est. " + esc(g.station.name) : "Tren"}</span><b>${g ? blk(g.station.blocks) + " cdas" : "?"}</b></div>`}
         <div class="fact"><span>Cochera</span><b>${l.garage ? fmt(l.garage) : "no"}</b></div>
         <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
         <div class="fact"><span>Percentil m² cub.</span><b>${side(l).m2 ?? "?"}</b></div>
@@ -895,7 +903,7 @@ function renderDetail(l) {
       </div>
       <div class="actions">
         <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + ", Vicente López")}" target="_blank" rel="noopener">Maps ↗</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + (isCaba(l) ? ", CABA" : ", Vicente López"))}" target="_blank" rel="noopener">Maps ↗</a>
         <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
       </div>
       <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa: lo que averigües (patio, estado, expensas…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
@@ -936,6 +944,10 @@ function initMap() {
   lines(ref.belgrano, { color: "#2e7fa8", weight: 2.5, opacity: .7, dashArray: "6 5" }, "Belgrano Norte");
   lines(ref.mitre, { color: "#b3322d", weight: 3, opacity: .85, dashArray: "8 5" }, "Tren Mitre");
   lines(ref.maipu, { color: "#c9a227", weight: 5, opacity: .9 }, "Av. Maipú");
+  const SUBTE_C = { B: "#e1251b", D: "#00a160" };
+  for (const [ln, ways] of Object.entries(ref.subte_lines || {})) lines(ways, { color: SUBTE_C[ln] || "#555", weight: 4, opacity: .8 }, "Subte " + ln);
+  for (const [n, ln, la, lo] of ref.subte || []) L.circleMarker([la, lo], { radius: 5, color: "#fff", weight: 2, fillColor: SUBTE_C[ln] || "#555", fillOpacity: 1 }).addTo(MAP)
+    .bindTooltip(`${n} (${ln})`, { direction: "right", offset: [4, 0] });
   (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(MAP).bindTooltip("Cementerio de Olivos"));
   (ref.parks || []).forEach(p => L.polygon(p.ring, { color: "#4fa35a", weight: 1, fillOpacity: .35 }).addTo(MAP).bindTooltip(p.name));
   if (ref.villa) L.circle(ref.villa.center, { radius: ref.villa.radius_m, color: "#b3322d", weight: 1.5, dashArray: "5 4", fillOpacity: .08 }).addTo(MAP).bindTooltip("Villa Borges + 4 cuadras (descartado)", { sticky: true });
@@ -947,7 +959,7 @@ function initMap() {
   if (ref.puente) place(ref.puente, "Puente Saavedra", "#b3322d");
   if (ref.cementerio?.[0]) { const c = ref.cementerio[0]; place(c[Math.floor(c.length / 2)], "Cementerio de Olivos", "#4fa35a"); }
   MARKERS = L.layerGroup().addTo(MAP);
-  $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span><i style="background:#4fa35a"></i>Plazas</span><span><i style="background:#b3322d;opacity:.4"></i>Villa Borges (no)</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
+  $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#e1251b"></i>Subte B</span><span><i style="background:#00a160"></i>Subte D</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span><i style="background:#4fa35a"></i>Plazas</span><span><i style="background:#b3322d;opacity:.4"></i>Villa Borges (no)</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
 }
 function renderMap() {
   if (!window.L) { $("#lmap").innerHTML = `<div class="empty">El mapa necesita conexión a internet.</div>`; return; }
@@ -1051,7 +1063,7 @@ async function findAddress(q) {
   box.hidden = false; box.innerHTML = `<button type="button" disabled>Buscando…</button>`;
   const url = "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=ar&accept-language=es&q=";
   try {
-    let res = await fetch(url + encodeURIComponent(q) + "&viewbox=-58.56,-34.47,-58.44,-34.57&bounded=1").then(r => r.json());
+    let res = await fetch(url + encodeURIComponent(q) + "&viewbox=-58.56,-34.47,-58.36,-34.64&bounded=1").then(r => r.json());
     if (!res.length) res = await fetch(url + encodeURIComponent(q + ", Vicente López, Buenos Aires")).then(r => r.json());
     if (!res.length) { box.innerHTML = `<button type="button" disabled>No encontré esa dirección. Probá "calle número, barrio".</button>`; return; }
     if (res.length === 1) { box.hidden = true; return showHere(res[0]); }
@@ -1073,10 +1085,12 @@ function showHere(r) {
   const p = [+r.lat, +r.lon], ref = DATA.reference || {};
   const maipu = distLine(p, ref.maipu) / 100;
   const st = Object.entries(ref.stations || {}).map(([n, s]) => [n, Math.hypot(...toM(s, p)) / 100]).sort((a, b) => a[1] - b[1])[0];
+  const sub = (ref.subte || []).map(([n, ln, la, lo]) => [`${n} (${ln})`, Math.hypot(...toM([la, lo], p)) / 100]).sort((a, b) => a[1] - b[1])[0];
+  const caba = sub && sub[1] * 100 < distLine(p, ref.maipu);
   const near = rows().filter(l => l.lat && Math.hypot(...toM([l.lat, l.lng], p)) < 500).length;
   if (HERE) HERE.remove();
   HERE = L.marker(p, { icon: L.divIcon({ className: "", html: `<div class="pin here"></div>`, iconSize: [18, 18], iconAnchor: [9, 9] }), zIndexOffset: 2000 }).addTo(MAP)
-    .bindPopup(`<b>${esc(r.display_name.split(",").slice(0, 2).join(","))}</b><br>${blk(maipu)} cdas de Maipú${st ? ` · Est. ${esc(st[0])} a ${blk(st[1])} cdas` : ""}<br>${near} casa${near === 1 ? "" : "s"} de la lista a menos de 5 cuadras`).openPopup();
+    .bindPopup(`<b>${esc(r.display_name.split(",").slice(0, 2).join(","))}</b><br>${caba ? `Subte ${esc(sub[0])} a ${blk(sub[1])} cdas` : `${blk(maipu)} cdas de Maipú${st ? ` · Est. ${esc(st[0])} a ${blk(st[1])} cdas` : ""}`}<br>${near} casa${near === 1 ? "" : "s"} de la lista a menos de 5 cuadras`).openPopup();
   MAP.setView(p, 16);
 }
 
@@ -1087,7 +1101,7 @@ function renderInfo() {
   $("#sub").textContent = `Actualizado ${DATA.generated_at}`;
   const tok = gh.token();
   $("#info").innerHTML = `
-    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k (se aceptan hasta ${(S.price_ceiling || S.price_max) / 1000}k con penalización) y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú.</p>
+    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k (se aceptan hasta ${(S.price_ceiling || S.price_max) / 1000}k con penalización) y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú (ideal 6) o, en CABA, de la estación de subte B o D más cercana.</p>
     <div><span class="label">Fuentes</span><div class="status" style="margin-top:6px">${Object.entries(DATA.status || {}).map(([k, s]) =>
       `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc((s.at || "").slice(5)) : "falló " + esc((s.at || "").slice(5))}</span>`).join("")}</div></div>
     <div><span class="label">Cómo puntúa el algoritmo (sobre 100)</span>

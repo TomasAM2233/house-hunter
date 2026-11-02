@@ -113,11 +113,15 @@ def land_market():
 
 
 def market_land(l):
-    """Median USD per m2 of lot implied by the LAND_NEIGHBOURS nearest houses (not this one), or the overall median."""
+    """Median USD per m2 of lot implied by the LAND_NEIGHBOURS nearest houses (not this one) on the same side of
+    General Paz, or that side's overall median. None for a side with no reference points yet (CABA until
+    land_market_build.py has frozen its points), rather than borrowing Vicente López's price of land."""
     m = land_market()
-    pts = [p for p in m["points"] if p[3] != l.get("id")]
+    caba = (l.get("geo") or {}).get("region") == "caba" or config.caba(l.get("zone"))
+    side = "caba" if caba else "gba"
+    pts = [p for p in m["points"] if p[3] != l.get("id") and (p[4] if len(p) > 4 else "gba") == side]
     if l.get("lat") is None or not pts:
-        return m.get("median")
+        return (m.get("medians") or {}).get(side, m.get("median") if side == "gba" else None)
     k = sorted(pts, key=lambda p: (p[0] - l["lat"]) ** 2 + ((p[1] - l["lng"]) * 0.823) ** 2)[:config.LAND_NEIGHBOURS]
     return statistics.median(p[2] for p in k)
 
@@ -171,8 +175,17 @@ def investment(l, ai=None):
     return 0.65 * kept + 0.35 * bv, ", ".join(why)
 
 
+def ref_blocks(g):
+    """Cuadras the location rules measure: to Av. Maipú, or to the nearest Subte B/D station in CABA."""
+    return g.get("ref_blocks", g.get("maipu_blocks"))
+
+
+def ref_name(g):
+    return "Maipú" if g.get("region") != "caba" else f"el subte ({g['station']['name']}, {g['station']['line']})"
+
+
 def maipu_sweet(blocks):
-    """1 around the sweet spot (6 cuadras from Maipú), falling off towards the 3 and 15 cuadra limits."""
+    """1 around the sweet spot (6 cuadras from Maipú, or the subte in CABA), falling off towards the 3 and 15 cuadra limits."""
     s = config.MAIPU_SWEET_BLOCKS
     if blocks <= s - 0.5:
         return lerp(blocks, 3, 0.3, s - 0.5, 1)
@@ -206,10 +219,11 @@ def hard_filters(l, ai=None):
         r.append(f"USD {n(v)}/m² (más de {n(S['ppm2_max'])})")
     g = l.get("geo")
     if g:
-        if g["maipu_blocks"] < config.MAIPU_MIN_BLOCKS:
-            r.append(f"a {g['maipu_blocks']} cuadras de Maipú (muy cerca)")
-        if g["maipu_blocks"] > config.MAIPU_MAX_BLOCKS:
-            r.append(f"a {g['maipu_blocks']} cuadras de Maipú (muy lejos)")
+        rb, where = ref_blocks(g), "Maipú" if g.get("region") != "caba" else "la estación de subte B/D más cercana"
+        if rb < config.MAIPU_MIN_BLOCKS:
+            r.append(f"a {rb} cuadras de {where} (muy cerca)")
+        if rb > config.MAIPU_MAX_BLOCKS:
+            r.append(f"a {rb} cuadras de {where} (muy lejos)")
         if g["puente_blocks"] < config.PUENTE_MIN_BLOCKS:
             r.append(f"a {g['puente_blocks']} cuadras de Puente Saavedra")
         if g.get("villa_blocks") is not None and g["villa_blocks"] < config.VILLA_BORGES_MIN_BLOCKS:
@@ -257,8 +271,13 @@ def components(l, ai=None):
     g = l.get("geo")
     if g:
         st, pk = g["station"], g.get("park")
-        mv = max(maipu_sweet(g["maipu_blocks"]), 0.7 * lerp(st["effective_blocks"], 4, 1, 10, 0))
-        why = f"{n(g['maipu_blocks'])} cuadras a Maipú, {n(st['blocks'])} a est. {st['name']} ({st['line']})"
+        if g.get("region") == "caba":
+            # the subte station is the reference itself, so it doesn't stand in a second time
+            mv = maipu_sweet(ref_blocks(g))
+            why = f"{n(st['blocks'])} cuadras al subte ({st['name']}, {st['line']})"
+        else:
+            mv = max(maipu_sweet(g["maipu_blocks"]), 0.7 * lerp(st["effective_blocks"], 4, 1, 10, 0))
+            why = f"{n(g['maipu_blocks'])} cuadras a Maipú, {n(st['blocks'])} a est. {st['name']} ({st['line']})"
         if pk:
             pv = park_value(pk["m"])
             v = (1 - config.PARK_SHARE) * mv + config.PARK_SHARE * pv
@@ -318,9 +337,10 @@ def components(l, ai=None):
         c["garage"] = (0, "sin cochera")
 
     # quiet
-    gq = lerp(g["maipu_blocks"], 3, 0.3, 7, 1) if g else 0.5
+    gq = lerp(ref_blocks(g), 3, 0.3, 7, 1) if g else 0.5
     aq = ((ai.get("quiet") or 3) - 1) / 4 if ai else 0.5
-    c["quiet"] = (0.6 * gq + 0.4 * aq, "lejos de Maipú" if gq > 0.8 else "cerca de avenida" if gq < 0.5 else "intermedio")
+    far = "lejos de Maipú" if not g or g.get("region") != "caba" else "lejos de la avenida del subte"
+    c["quiet"] = (0.6 * gq + 0.4 * aq, far if gq > 0.8 else "cerca de avenida" if gq < 0.5 else "intermedio")
 
     # light
     if ai and ai.get("natural_light"):

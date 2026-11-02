@@ -219,7 +219,7 @@ si hay m² sin declarar, si son dos unidades). Tené en cuenta también: que el 
 1,0, R3 1,1; una zona más densa vale más como terreno); no pagar el sobreprecio de una casa nueva o recién reciclada,
 que se pierde en pocos años; si una reforma razonable puede sumar m², baños o cocina en planos aprobados por menos de
 lo que el mercado paga (construir sale ~USD {config.BUILD_COST_M2}/m², el m² nuevo se vende a ~2.000-2.500; contá 20-30% de desvío);
-ingresos posibles (una unidad al fondo que se pueda alquilar); la ubicación (de 4 a 8 cuadras de Maipú o del tren,
+ingresos posibles (una unidad al fondo que se pueda alquilar); la ubicación (de 4 a 8 cuadras de Maipú o del tren; en CABA, de la estación de subte B o D más cercana;
 cerca de una plaza, calle tranquila); y que se pueda vender fácil: apta crédito, planos y papeles en regla, menos de
 USD 250.000, y nada que achique la lista de compradores (PH con pasillo, planta rara, construcciones sin declarar).
 La nota de inversión (1-10) mueve tu puntaje final: partiendo de 5 como neutra, cada punto arriba o abajo vale unos
@@ -288,7 +288,9 @@ def _final_text(l, prefs, note):
     comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
     return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTA CASA: {note or '(ninguna)'}\n\n"
             f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nUSD/m² total: {ppm2} | Cochera: {l.get('garage')} | "
-            f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} ({st.get('line')}) a {st.get('blocks')} cuadras | "
+            + (f"Barrio de CABA. Cuadras al subte: {st.get('blocks')} (estación {st.get('name')}, {st.get('line')}) | "
+               if g.get("region") == "caba" else
+               f"Cuadras a Maipú: {g.get('maipu_blocks')} | Tren: {st.get('name')} ({st.get('line')}) a {st.get('blocks')} cuadras | ") +
             f"Cuadras a Puente Saavedra: {g.get('puente_blocks')}\n"
             f"INVERSIÓN: {inv}\n"
             f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS if k != 'summary'}, ensure_ascii=False)}\n"

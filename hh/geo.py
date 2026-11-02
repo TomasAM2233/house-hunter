@@ -1,4 +1,5 @@
-"""Distances to Av. Maipú, Puente Saavedra, train stations, Villa Borges and plazas/parks, plus a cached Nominatim geocoder."""
+"""Distances to Av. Maipú (or the nearest Subte B/D station in CABA), Puente Saavedra, train stations, Villa Borges and
+plazas/parks, plus a cached Nominatim geocoder."""
 import json, math, os, time
 import requests
 from . import config
@@ -7,6 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _REF = json.load(open(os.path.join(ROOT, "geo", "reference.json")))
 GEOCODE_CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
 PARKS = os.path.join(ROOT, "geo", "parks.json")  # written by osm_parks.py
+_SUBTE = json.load(open(os.path.join(ROOT, "geo", "subte.json")))  # Subte B and D stations, from OpenStreetMap
 _parks = None
 
 
@@ -49,6 +51,25 @@ def nearest_station(lat, lon):
     return best
 
 
+def nearest_subte(lat, lon):
+    """Closest Subte B/D station: {name, line, blocks}."""
+    best = None
+    for name, line, slat, slon in _SUBTE["stations"]:
+        d = dist_m((lat, lon), (slat, slon))
+        if best is None or d < best[0]:
+            best = (d, name, line)
+    return {"name": best[1], "line": f"Subte {best[2]}", "blocks": round(best[0] / config.BLOCK_M, 1),
+            "effective_blocks": round(best[0] / config.BLOCK_M, 1)}
+
+
+def is_caba(lat, lon, zone=None):
+    """CABA or Vicente López: by the listing's zone when it has one, else by the side of General Paz (taken as the
+    point being closer to a Subte B/D station than to Av. Maipú, which holds well away from the border)."""
+    if zone:
+        return config.caba(zone)
+    return nearest_subte(lat, lon)["blocks"] * config.BLOCK_M < maipu_m(lat, lon)
+
+
 def parks():
     global _parks
     if _parks is None:
@@ -81,11 +102,23 @@ def villa_blocks(lat, lon):
     return max(0, dist_m((lat, lon), config.VILLA_BORGES) - config.VILLA_BORGES_RADIUS_M) / config.BLOCK_M
 
 
-def describe(lat, lon):
+def describe(lat, lon, zone=None):
+    """Everything the score needs about a point. "ref_blocks" is what the location rules measure: cuadras to Av. Maipú
+    in Vicente López, to the nearest Subte B/D station in CABA ("ref" says which, for the app and the AI)."""
     from . import zoning  # it builds on the helpers above
+    puente = round(dist_m((lat, lon), config.PUENTE_SAAVEDRA) / config.BLOCK_M, 1)
+    if is_caba(lat, lon, zone):
+        sub = nearest_subte(lat, lon)
+        return {
+            "region": "caba", "ref": f"subte {sub['name']} ({sub['line'][-1]})", "ref_blocks": sub["blocks"],
+            "maipu_blocks": None, "puente_blocks": puente, "villa_blocks": None,
+            "station": sub, "park": nearest_park(lat, lon), "zoning": None,
+        }
+    maipu = round(maipu_m(lat, lon) / config.BLOCK_M, 1)
     return {
-        "maipu_blocks": round(maipu_m(lat, lon) / config.BLOCK_M, 1),
-        "puente_blocks": round(dist_m((lat, lon), config.PUENTE_SAAVEDRA) / config.BLOCK_M, 1),
+        "region": "gba", "ref": "Maipú", "ref_blocks": maipu,
+        "maipu_blocks": maipu,
+        "puente_blocks": puente,
         "villa_blocks": round(villa_blocks(lat, lon), 1),
         "station": nearest_station(lat, lon),
         "park": nearest_park(lat, lon),
@@ -96,14 +129,20 @@ def describe(lat, lon):
 _cache = None
 
 
-AREA = (-58.53, -34.55, -58.46, -34.49)  # lon/lat box around Olivos, Florida and La Lucila, as in geocode()
+AREA = (-58.53, -34.55, -58.46, -34.49)       # lon/lat box around Olivos, Florida, La Lucila and Vicente López
+AREA_CABA = (-58.52, -34.63, -58.36, -34.53)  # the CABA barrios along Subte B and D
 
 
-def in_area(lat, lon):
-    return AREA[0] <= lon <= AREA[2] and AREA[1] <= lat <= AREA[3]
+def _box(zone):
+    return AREA_CABA if zone and config.caba(zone) else AREA
 
 
-def geocode(address):
+def in_area(lat, lon, zone=None):
+    a = _box(zone)
+    return a[0] <= lon <= a[2] and a[1] <= lat <= a[3]
+
+
+def geocode(address, zone=None):
     """Street address -> [lat, lon] via OpenStreetMap Nominatim, cached on disk, 1 req/s."""
     global _cache
     if _cache is None:
@@ -114,7 +153,7 @@ def geocode(address):
     try:
         r = requests.get("https://nominatim.openstreetmap.org/search", timeout=30,
                          params={"q": address, "format": "json", "limit": 1, "countrycodes": "ar",
-                                 "viewbox": "-58.53,-34.49,-58.46,-34.55", "bounded": 1},
+                                 "viewbox": "{},{},{},{}".format(*(lambda a: (a[0], a[3], a[2], a[1]))(_box(zone))), "bounded": 1},
                          headers={"User-Agent": "house-hunter/0.1 (personal project)"})
         res = r.json()
         _cache[address] = [float(res[0]["lat"]), float(res[0]["lon"])] if res else None
@@ -132,6 +171,7 @@ def reference():
     ov = os.path.join(ROOT, "geo", "overlays.json")
     return {"maipu": [[[round(a, 5), round(b, 5)] for a, b in w] for w in _REF["maipu"]],
             "stations": _REF["stations"], "puente": list(config.PUENTE_SAAVEDRA),
+            "subte": _SUBTE["stations"], "subte_lines": _SUBTE.get("lines", {}),
             "parks": [{"name": p["name"], "ring": p["ring"]} for p in parks()],
             "villa": {"center": list(config.VILLA_BORGES),
                       "radius_m": config.VILLA_BORGES_RADIUS_M + config.VILLA_BORGES_MIN_BLOCKS * config.BLOCK_M},
