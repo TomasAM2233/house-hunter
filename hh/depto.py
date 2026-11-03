@@ -71,7 +71,7 @@ def build_market(listings, log=print):
         if not is_depto(l) or not l.get("active") or l.get("duplicate_of") or l.get("lat") is None:
             continue
         v = ppm2_cov(l)
-        if v and 800 <= v <= 6_000:
+        if v and 800 <= v <= 6_000 and (l.get("total_m2") or 0) >= 70:  # small units cost more per m2: compare like with like
             pts.append([round(l["lat"], 5), round(l["lng"], 5), v, l["id"]])
     if len(pts) < config.DEPTO_MARKET_MIN:
         return False
@@ -134,8 +134,12 @@ def hard_filters(l, ai=None):
     if balcony(l, ai)[2]:
         r.append("sin balcón")
     g = garage(l, ai)
-    if g is False or (g is None and l.get("enriched") and not l.get("card_only") and ai and ai.get("garage") is False):
+    if g is False:
         r.append("sin cochera")
+    elif g is None and (l.get("source") == "zonaprop" or (l.get("enriched") and not l.get("card_only"))):
+        # Zonaprop's search card already has the garage field and the whole description; other sites once the item
+        # page is read. Garage is a must for Tomás, so a listing that doesn't even mention one is out.
+        r.append("no menciona cochera")
     if ai:
         if (ai.get("condition") or 5) < D["min_condition"]:
             r.append(f"estado {ai['condition']}/5 (venido abajo)")
