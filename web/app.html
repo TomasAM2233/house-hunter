@@ -188,7 +188,6 @@ label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted)
 .fact span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .fact b { font: 500 15px var(--font-data); }
 .fact b.t { font: 500 13.5px/1.35 var(--font-body); }
-.actions { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); min-height: 44px; padding: 0 14px; border-radius: 12px; cursor: pointer; text-decoration: none; color: var(--fg); font-weight: 500; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
@@ -266,8 +265,10 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
 .pin.here { background: var(--accent); width: 18px; height: 18px; border-width: 3px; }
 
 /* ── AI on demand + percentile ── */
-.aiact { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 8px; }
-.aiact .btn { padding: 0 10px; }
+.aiact { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+.aiact .btn { padding: 0 8px; font-size: 14px; white-space: nowrap; }
+.aiact .wide { grid-column: span 2; }
+#minimap { height: 220px; border-radius: 12px; overflow: hidden; background: var(--sunk); border: 1px solid var(--line); }
 .aiact .btn[disabled] { opacity: .6; cursor: progress; }
 .pctout { background: var(--sunk); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; display: flex; flex-direction: column; gap: 2px; }
 .pctout b { font-family: var(--font-data); font-weight: 500; }
@@ -922,10 +923,17 @@ function renderDetail(l) {
         <button class="btn" data-tag="dismissed" aria-pressed="${!!t.dismissed}">✕ Descartar</button>
       </div>
       <div class="section">
-        <div class="aiact"><button class="btn primary" id="aibtn">✨ Evaluar con IA</button><button class="btn" id="pctcalc">Calcular percentil</button></div>
+        <div class="aiact">
+          <button class="btn primary" id="aibtn">✨ Evaluar con IA</button>
+          <a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + (isCaba(l) ? ", CABA" : ", Vicente López"))}" target="_blank" rel="noopener">Maps ↗</a>
+          <button class="btn" id="pctcalc">Calcular percentil</button>
+          <button class="btn wide" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
+        </div>
         <span class="saved" id="aistate"></span>
         ${PCTSHOW.has(l.id) ? `<div class="pctout">${pctLines(l)}</div>` : ""}
       </div>
+      <div class="section"><textarea class="note" id="note" placeholder="Tus notas: lo que averigües (${isD(l) ? "expensas, cochera, vista, estado del edificio" : "patio, estado, expensas"}…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
       ${isD(l) ? `<div class="facts">
         <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
         <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
@@ -956,12 +964,7 @@ function renderDetail(l) {
         <div class="fact"><span>Valor a 10 años</span><b>${l.land ? `${Math.round(l.land.kept * 100)}% del precio <small style="font-size:11px;color:var(--muted)">P${side(l).kept}</small>` : "?"}</b></div>
         <div class="fact"><span>Por construir</span><b>${l.build_m2 != null ? `~${fmt(l.build_m2)} m² <small style="font-size:11px;color:var(--muted)">P${side(l).build}</small>` : l.type === "ph" ? "PH" : "?"}</b></div>
       </div>`}
-      <div class="actions">
-        <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + (isCaba(l) ? ", CABA" : ", Vicente López"))}" target="_blank" rel="noopener">Maps ↗</a>
-        <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
-      </div>
-      <div class="section"><textarea class="note" id="note" placeholder="Tus notas: lo que averigües (${isD(l) ? "expensas, cochera, vista, estado del edificio" : "patio, estado, expensas"}…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
+      ${l.lat ? `<div class="section"><span class="label">Ubicación</span><div id="minimap" role="img" aria-label="Mapa con la ubicación de esta publicación"></div></div>` : ""}
       ${visitBox(l, t)}
       ${aiBox}
       <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
@@ -983,17 +986,18 @@ function renderDetail(l) {
   $("#aibtn").onclick = () => requestAI(l);
   $("#pctcalc").onclick = () => { PCTSHOW.add(l.id); renderDetail(l); };
   renderAIState(l);
+  renderMiniMap(l);
 }
 
 /* ── map: OpenStreetMap streets + Tomás's reference points ── */
-let MAP = null, MARKERS = null;
-function initMap() {
-  if (MAP || !window.L) return;
-  const ref = DATA.reference || {};
-  MAP = L.map("lmap", { zoomControl: true, attributionControl: true }).setView([-34.515, -58.49], 14);
+let MAP = null, MARKERS = null, MINI = null;
+function baseTiles(map) {
   L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" + (CARTO_KEY.startsWith("__") ? "" : "?key=" + CARTO_KEY), {
-    maxZoom: 19, subdomains: "abcd", attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>' }).addTo(MAP);
-  const lines = (ws, style, name) => (ws || []).forEach((w, i) => { const pl = L.polyline(w, style).addTo(MAP); if (i === 0 && name) pl.bindTooltip(name, { sticky: true }); });
+    maxZoom: 19, subdomains: "abcd", attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>' }).addTo(map);
+}
+function addRefLayers(map) {
+  const ref = DATA.reference || {};
+  const lines = (ws, style, name) => (ws || []).forEach((w, i) => { const pl = L.polyline(w, style).addTo(map); if (i === 0 && name) pl.bindTooltip(name, { sticky: true }); });
   lines(ref.general_paz, { color: "#6b6578", weight: 6, opacity: .55 }, "Av. General Paz");
   lines(ref.panamericana, { color: "#6b6578", weight: 6, opacity: .55 }, "Panamericana");
   lines(ref.belgrano, { color: "#2e7fa8", weight: 2.5, opacity: .7, dashArray: "6 5" }, "Belgrano Norte");
@@ -1001,18 +1005,39 @@ function initMap() {
   lines(ref.maipu, { color: "#c9a227", weight: 5, opacity: .9 }, "Av. Maipú");
   const SUBTE_C = { B: "#e1251b", D: "#00a160" };
   for (const ln of new Set((ref.subte || []).map(s => s[1]))) lines([(ref.subte || []).filter(s => s[1] === ln).map(s => [s[2], s[3]])], { color: SUBTE_C[ln] || "#555", weight: 4, opacity: .75 }, "Subte " + ln);
-  for (const [n, ln, la, lo] of ref.subte || []) L.circleMarker([la, lo], { radius: 5, color: "#fff", weight: 2, fillColor: SUBTE_C[ln] || "#555", fillOpacity: 1 }).addTo(MAP)
+  for (const [n, ln, la, lo] of ref.subte || []) L.circleMarker([la, lo], { radius: 5, color: "#fff", weight: 2, fillColor: SUBTE_C[ln] || "#555", fillOpacity: 1 }).addTo(map)
     .bindTooltip(`${n} (${ln})`, { direction: "right", offset: [4, 0] });
-  (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(MAP).bindTooltip("Cementerio de Olivos"));
-  (ref.parks || []).forEach(p => L.polygon(p.ring, { color: "#4fa35a", weight: 1, fillOpacity: .35 }).addTo(MAP).bindTooltip(p.name));
-  if (ref.villa) L.circle(ref.villa.center, { radius: ref.villa.radius_m, color: "#b3322d", weight: 1.5, dashArray: "5 4", fillOpacity: .08 }).addTo(MAP).bindTooltip("Villa Borges + 4 cuadras (descartado)", { sticky: true });
-  const place = (ll, name, color) => L.circleMarker(ll, { radius: 6, color: "#fff", weight: 2, fillColor: color, fillOpacity: 1 }).addTo(MAP)
+  (ref.cementerio || []).forEach(poly => L.polygon(poly, { color: "#4fa35a", weight: 1, fillOpacity: .25 }).addTo(map).bindTooltip("Cementerio de Olivos"));
+  (ref.parks || []).forEach(p => L.polygon(p.ring, { color: "#4fa35a", weight: 1, fillOpacity: .35 }).addTo(map).bindTooltip(p.name));
+  if (ref.villa) L.circle(ref.villa.center, { radius: ref.villa.radius_m, color: "#b3322d", weight: 1.5, dashArray: "5 4", fillOpacity: .08 }).addTo(map).bindTooltip("Villa Borges + 4 cuadras (descartado)", { sticky: true });
+  const place = (ll, name, color) => L.circleMarker(ll, { radius: 6, color: "#fff", weight: 2, fillColor: color, fillOpacity: 1 }).addTo(map)
     .bindTooltip(name, { permanent: true, direction: "right", className: "ref-label", offset: [6, 0] });
-  for (const [n, [la, lo]] of Object.entries(ref.stations || {})) L.circleMarker([la, lo], { radius: 4, color: "#1d1a24", weight: 1.5, fillColor: "#fff", fillOpacity: 1 }).addTo(MAP)
+  for (const [n, [la, lo]] of Object.entries(ref.stations || {})) L.circleMarker([la, lo], { radius: 4, color: "#1d1a24", weight: 1.5, fillColor: "#fff", fillOpacity: 1 }).addTo(map)
     .bindTooltip(n, { permanent: true, direction: "right", className: "ref-label", offset: [4, 0] });
   for (const [n, ll] of Object.entries(ref.points || {})) place(ll, n === "Municipalidad" ? "Municipalidad de Vicente López" : n, "#6a46b8");
   if (ref.puente) place(ref.puente, "Puente Saavedra", "#b3322d");
   if (ref.cementerio?.[0]) { const c = ref.cementerio[0]; place(c[Math.floor(c.length / 2)], "Cementerio de Olivos", "#4fa35a"); }
+}
+/* mini map in the detail view: same look as the big map, only this listing */
+function renderMiniMap(l) {
+  if (MINI) { MINI.remove(); MINI = null; }
+  const el = $("#minimap");
+  if (!el) return;
+  if (!window.L) { el.innerHTML = `<div class="empty">El mapa necesita conexión a internet.</div>`; return; }
+  setTimeout(() => {
+    if (el !== $("#minimap") || MINI) return;     // re-rendered meanwhile
+    MINI = L.map(el, { zoomControl: true, attributionControl: true, scrollWheelZoom: false }).setView([l.lat, l.lng], 16);
+    baseTiles(MINI); addRefLayers(MINI);
+    const b = band(l.score, l);
+    L.marker([l.lat, l.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${b === "out" ? "lo" : b} on">${Math.round(l.score)}</div>`, iconSize: [28, 28], iconAnchor: [14, 14] }), zIndexOffset: 1000 })
+      .addTo(MINI).bindTooltip(`${usd(l.price_usd)} · ${esc(l.address)}`);
+  }, 60);
+}
+function initMap() {
+  if (MAP || !window.L) return;
+  MAP = L.map("lmap", { zoomControl: true, attributionControl: true }).setView([-34.515, -58.49], 14);
+  baseTiles(MAP);
+  addRefLayers(MAP);
   MARKERS = L.layerGroup().addTo(MAP);
   $("#mapcap").innerHTML = `<span><i style="background:#c9a227;height:4px"></i>Maipú</span><span><i style="background:#e1251b"></i>Subte B</span><span><i style="background:#00a160"></i>Subte D</span><span><i style="background:#b3322d"></i>Mitre</span><span><i style="background:#2e7fa8"></i>Belgrano N.</span><span><i style="background:#6b6578;height:5px"></i>Panamericana / Gral. Paz</span><span><i style="background:#4fa35a"></i>Plazas</span><span><i style="background:#b3322d;opacity:.4"></i>Villa Borges (no)</span><span>Círculos: puntaje (verde 62+, ámbar 50–61, rojo &lt;50)</span>`;
 }
