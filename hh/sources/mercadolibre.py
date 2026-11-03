@@ -28,9 +28,11 @@ def fetch(url):
 
 
 def search_url(kind, zone, offset):
-    s = config.SEARCH
+    """kind: "casas", "ph", or "departamentos" (apartments: exactly 3 ambientes, config.DEPTO's price range)."""
+    s = config.DEPTO if kind == "departamentos" else config.SEARCH
     page = "" if offset == 0 else f"_Desde_{offset + 1}"
-    return f"{BASE}/{kind}/venta/{zone_path(zone)}/{page}_PriceRange_{s['price_min']}USD-{s['price_ceiling']}USD_NoIndex_True"
+    path = "departamentos/venta/3-ambientes" if kind == "departamentos" else f"{kind}/venta"
+    return f"{BASE}/{path}/{zone_path(zone)}/{page}_PriceRange_{s['price_min']}USD-{s['price_ceiling']}USD_NoIndex_True"
 
 
 def _cards(html):
@@ -88,7 +90,8 @@ def _normalize(card, kind, zone):
         "source": "mercadolibre",
         "url": "https://" + meta.get("url", "").replace("\\u002F", "/").split("https://")[-1],
         "title": title,
-        "type": "ph" if kind == "ph" else "casa",
+        "type": {"ph": "ph", "departamentos": "departamento"}.get(kind, "casa"),
+        "kind": "depto" if kind == "departamentos" else "casa",
         "price_usd": price.get("value") if price.get("currency") == "USD" else None,
         "total_m2": _num(r"(\d+(?:,\d+)?)\s*m² totales", texts),
         "covered_m2": _num(r"(\d+(?:,\d+)?)\s*m² cubiertos", texts),
@@ -113,27 +116,29 @@ def _normalize(card, kind, zone):
     }
 
 
-def search(max_pages=6, log=print):
+def search(max_pages=6, log=print, depto_pages=15):
     out, failed = {}, []
-    for kind in ("casas", "ph"):
-        for zone in config.SEARCH["zones"]:
-            slug = zone_path(zone).rsplit("/", 1)[1]
-            for page in range(max_pages):
-                try:
-                    html = fetch(search_url(kind, zone, page * 48)).text
-                except RuntimeError as e:
-                    log(f"mercadolibre {kind}/{slug} p{page + 1}: {e}")
-                    failed.append(f"{kind}/{slug}/{page + 1}")
-                    break
-                cards = [c for c in _cards(html) if c.get("metadata", {}).get("id")] or list(_html_cards(html))
-                for c in cards:
-                    item = _normalize(c, kind, zone)
-                    if zone == "Vicente López" and OTHER_BARRIOS.search(item["address"]):
-                        continue
-                    out[item["id"]] = item
-                log(f"mercadolibre {kind}/{slug} page {page + 1}: {len(cards)} listings")
-                if len(cards) < 48:
-                    break
+    # apartments: ~650 with 3 ambientes in Palermo alone (2026-11-03), so their searches go deeper
+    searches = ([(k, z, max_pages) for k in ("casas", "ph") for z in config.SEARCH["zones"]]
+                + [("departamentos", z, depto_pages) for z in config.DEPTO["zones"]])
+    for kind, zone, pages in searches:
+        slug = zone_path(zone).rsplit("/", 1)[1]
+        for page in range(pages):
+            try:
+                html = fetch(search_url(kind, zone, page * 48)).text
+            except RuntimeError as e:
+                log(f"mercadolibre {kind}/{slug} p{page + 1}: {e}")
+                failed.append(f"{kind}/{slug}/{page + 1}")
+                break
+            cards = [c for c in _cards(html) if c.get("metadata", {}).get("id")] or list(_html_cards(html))
+            for c in cards:
+                item = _normalize(c, kind, zone)
+                if zone == "Vicente López" and OTHER_BARRIOS.search(item["address"]):
+                    continue
+                out[item["id"]] = item
+            log(f"mercadolibre {kind}/{slug} page {page + 1}: {len(cards)} listings")
+            if len(cards) < 48:
+                break
     search.failed_pages = failed
     if not out:
         raise RuntimeError("no Mercado Libre page got through")

@@ -1,6 +1,6 @@
 """The house score: hard filters (discard reasons) + ten weighted components, each 0..1, with a short why."""
 import json, os, re, statistics
-from . import config, text
+from . import config, depto, text
 
 S = config.SEARCH
 
@@ -92,7 +92,7 @@ def building_factor(age, condition=None):
 def implied_land(l, ai=None):
     """USD per m2 of land the asking price implies once the building is taken out at what it's worth, or None."""
     p, cov, lm = l.get("price_usd"), l.get("covered_m2"), land_m2(l)
-    if not (p and cov and lm):
+    if not (p and cov and lm) or depto.is_depto(l):  # an apartment has no land of its own to split off
         return None
     age = house_age(l)
     b = config.BUILD_COST_M2 * cov * building_factor(config.AGE_ASSUMED if age is None else age, (ai or {}).get("condition"))
@@ -215,6 +215,8 @@ def park_value(m):
 
 def hard_filters(l, ai=None):
     """Reasons to discard. Missing data never discards on its own; it's flagged instead."""
+    if depto.is_depto(l):
+        return depto.hard_filters(l, ai)
     r = []
     p = l.get("price_usd")
     if p and p > S["price_ceiling"]:  # no floor: a cheap house is a find, not a red flag
@@ -365,6 +367,8 @@ def components(l, ai=None):
 
 
 def score(l, ai=None):
+    if depto.is_depto(l):
+        return depto.score(l, ai)
     comps = components(l, ai)
     total = sum(config.WEIGHTS[k] * v for k, (v, _) in comps.items())
     flags = []

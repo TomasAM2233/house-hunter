@@ -56,6 +56,18 @@ the hunt, so a listing's area price of land is the median of its 20 nearest hous
 their percentiles. The AI verdict gets the same numbers, does its own investment analysis, and moves its score
 about 3 points per point of its 1–10 investment grade.
 
+## Apartments (since 2026-11-03)
+
+A second hunt next to the houses, with its own rules in `config.DEPTO` and score in `hh/depto.py`; the app switches
+between them with **Casas y PH / Departamentos** at the top. Each listing carries `kind` (`casa` or `depto`), and
+scores, percentiles, alerts and the daily AI quota are kept per kind (the AI reads take turns between the two).
+
+- 3 ambientes in Palermo or Recoleta (Barrio Norte and the Palermos included), 80+ m², same budget (USD 210k, up to 240k with a penalty)
+- Balcony, good view and garage are required; missing data flags a listing, a clear "no" (the text or the AI) discards it
+- Modern or renovated: the AI's photo read grades condition and looks (1–5) and discards anything under 3, and views of a wall or a closed air shaft
+- Score: price 18, investment 16 (USD/m² against the 20 nearest apartments, frozen in `geo/depto_market.json`, plus what keeps it easy to resell), modern 16, view 12, space 12, location 10 (plaza, subte, quiet), balcony 6, garage 4, light 4, apto crédito 2
+- Sources: Argenprop filters garage in the URL (~160, swept daily); Zonaprop has ~1.900 and no garage filter, so its newest page is read on every run and it's swept in full weekly; Mercado Libre is read in full on the full runs. Apartments with no sign of a garage don't get paid item pages or AI reads.
+
 ## Sources
 
 | Source | How | Notes |

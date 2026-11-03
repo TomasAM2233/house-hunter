@@ -69,6 +69,10 @@ button, select, input { font: inherit; color: inherit; }
 .tabs button { flex: 1 0 auto; border: 0; background: transparent; padding: 7px 4px; border-radius: 8px; cursor: pointer; color: var(--muted); font-size: 14px; white-space: nowrap; }
 .tabs button[aria-selected="true"] { background: var(--surface); color: var(--fg); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
 .tabs .n { font: 500 12px var(--font-data); opacity: .8; margin-left: 3px; }
+.kinds { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.kinds button { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; height: 36px; cursor: pointer; font-size: 14px; color: var(--muted); }
+.kinds button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.kinds .n { font: 500 12px var(--font-data); opacity: .85; margin-left: 4px; }
 .tools { display: flex; gap: 8px; }
 .tools input, .tools select { height: 38px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; min-width: 0; }
 .tools input { flex: 1 1 auto; }
@@ -183,6 +187,7 @@ label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted)
 .fact { background: var(--sunk); border-radius: 10px; padding: 8px 12px; min-width: 0; }
 .fact span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .fact b { font: 500 15px var(--font-data); }
+.fact b.t { font: 500 13.5px/1.35 var(--font-body); }
 .actions { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); min-height: 44px; padding: 0 14px; border-radius: 12px; cursor: pointer; text-decoration: none; color: var(--fg); font-weight: 500; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
@@ -279,6 +284,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
   .tools { flex: 1 1 360px; justify-content: flex-end; }
   .tools input { max-width: 420px; }
   .tabs { flex: 1 0 100%; order: 3; }
+  .kinds { flex: 0 0 260px; }
   .tabs button { flex: 1 1 0; }
   .info > * { max-width: 900px; }
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 20px; align-items: start; max-width: 1400px; margin: 0 auto; }
@@ -302,6 +308,10 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
     <h1>House Hunter <small id="sub">cargando…</small></h1>
     <button class="icon" id="mapbtn" aria-pressed="false" aria-label="Mostrar mapa">Mapa</button>
     <button class="icon" id="infobtn" aria-pressed="false" aria-label="Fuentes y puntaje"><span class="dot" id="dot"></span>Info</button>
+  </div>
+  <div class="kinds" id="kinds" role="group" aria-label="Qué buscar">
+    <button data-k="casa" aria-pressed="true">Casas y PH</button>
+    <button data-k="depto" aria-pressed="false">Departamentos</button>
   </div>
   <div class="tabs" role="tablist" id="tabs">
     <button role="tab" data-v="short" aria-selected="true"></button>
@@ -351,9 +361,16 @@ footer { color: var(--muted); font-size: 12px; max-width: 70ch; margin-top: 24px
 <script type="application/json" id="hh-data">__HH_DATA__</script>
 <script>
 const LABELS = { price: "Precio", space: "Espacio", location: "Ubicación", condition: "Estado", patio: "Patio", investment: "Inversión",
-  vertical: "Crecer arriba", credit: "Apto crédito", garage: "Cochera", quiet: "Tranquilidad", light: "Luz" };
+  vertical: "Crecer arriba", credit: "Apto crédito", garage: "Cochera", quiet: "Tranquilidad", light: "Luz",
+  modern: "Moderno", view: "Vista", balcony: "Balcón" };
 const COLORS = { price: "#6a46b8", space: "#8e6fd1", location: "#2e7fa8", condition: "#1f8a6a", patio: "#4fa35a", investment: "#3f6f8f",
-  vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b" };
+  vertical: "#93a83a", credit: "#c9a227", garage: "#c47a2c", quiet: "#a8577e", light: "#d6b56b",
+  modern: "#1f8a6a", view: "#4fa35a", balcony: "#93a83a" };
+const BALCONY = { none: "sin balcón", french: "balcón francés", small: "balcón chico", medium: "balcón mediano", large: "balcón grande" };
+// Two hunts in one app: houses/PH (Vicente López + CABA along Subte B/D) and apartments (Palermo + Recoleta).
+const kindOf = l => l.kind === "depto" || l.type === "departamento" ? "depto" : "casa";
+const isD = l => kindOf(l) === "depto";
+const typeName = l => isD(l) ? "Depto" : l.type === "ph" ? "PH" : "Casa";
 const SRC = { zonaprop: "Zonaprop", mercadolibre: "Mercado Libre", argenprop: "Argenprop", tokko: "Inmobiliarias" };
 const PATIO = { none: "sin patio", small: "patio chico", medium: "patio mediano", large: "patio grande" };
 const TABS = { short: "Bandeja", fav: "★ Favoritas", visited: "Visitadas", mine: "Descartadas", reserved: "Reservadas", out: "Filtradas", all: "Todas" };
@@ -372,7 +389,7 @@ const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-let DATA, view = "short", sel = null, shown = PAGE;
+let DATA, view = "short", sel = null, shown = PAGE, KIND = store.get("hh-kind", "casa");
 let TAGS = store.get("hh-tags", {});           // {id: {fav, visited, dismissed, note, at}}
 let PREFS = "", pctMode = "saved", SETTINGS = { alert_percentile: 90, alert_ai_score: 70 };
 for (const id of store.get("hh-favs", [])) (TAGS[id] ||= {}).fav = true;   // favourites from the first version
@@ -562,9 +579,10 @@ function addQuestions(l, qs) {
 function pctLines(l) {
   const sc = x => x.score_calc ?? x.score;
   const rank = (vals, v) => { const below = vals.filter(x => x < v).length; return Math.round(100 * below / Math.max(1, vals.length)); };
-  const all = DATA.listings.map(sc), pass = DATA.listings.filter(x => !x.discard.length).map(sc);
-  const ai = DATA.listings.filter(x => x.ai_final).map(x => x.ai_final.score);
-  const out = [`Algoritmo <b>${fmt(sc(l))}</b> → percentil <b>${rank(all, sc(l))}</b> de ${all.length} casas puntuadas`];
+  const same = DATA.listings.filter(x => kindOf(x) === kindOf(l)), what = isD(l) ? "deptos" : "casas";
+  const all = same.map(sc), pass = same.filter(x => !x.discard.length).map(sc);
+  const ai = same.filter(x => x.ai_final).map(x => x.ai_final.score);
+  const out = [`Algoritmo <b>${fmt(sc(l))}</b> → percentil <b>${rank(all, sc(l))}</b> de ${all.length} ${what} puntuados`];
   if (!l.discard.length) out.push(`Entre las ${pass.length} que pasan los filtros: percentil <b>${rank(pass, sc(l))}</b>`);
   if (l.ai_final) out.push(`IA <b>${l.ai_final.score}</b> → percentil <b>${rank(ai, l.ai_final.score)}</b> de ${ai.length} evaluadas por la IA`);
   return out.map(x => `<span>${x}</span>`).join("");
@@ -596,11 +614,15 @@ function sideLine(l) {
 }
 
 function recalcPct() {
-  const sc = l => l.score_calc ?? l.score;   // same scale for everyone: the algorithm's score
-  const all = DATA.listings.map(sc).sort((a, b) => a - b);
-  const lo = x => { let a = 0, b = all.length; while (a < b) { const m = (a + b) >> 1; all[m] < x ? a = m + 1 : b = m; } return a; };
-  for (const l of DATA.listings) l.pct_now = Math.round(100 * lo(sc(l)) / all.length);
-  pctMode = "now"; DATA.pct_n_now = all.length;
+  const sc = l => l.score_calc ?? l.score;   // same scale for everyone of a kind: the algorithm's score
+  DATA.pct_n_now = {};
+  for (const k of ["casa", "depto"]) {
+    const ls = DATA.listings.filter(l => kindOf(l) === k), all = ls.map(sc).sort((a, b) => a - b);
+    const lo = x => { let a = 0, b = all.length; while (a < b) { const m = (a + b) >> 1; all[m] < x ? a = m + 1 : b = m; } return a; };
+    for (const l of ls) l.pct_now = Math.round(100 * lo(sc(l)) / all.length);
+    DATA.pct_n_now[k] = all.length;
+  }
+  pctMode = "now";
 }
 
 /* ── filters: two-ended sliders for numbers, chips for the rest ── */
@@ -620,24 +642,25 @@ const RANGES = [
   ["reform", "Reforma estimada por la IA", l => l.ai?.reform_usd, 2500, v => "USD " + Math.round(v / 1000) + "k"],
 ];
 const CHOICES = [
-  ["type", "Tipo", [["casa", "Casa"], ["ph", "PH"]]],
+  ["type", "Tipo (casas)", [["casa", "Casa"], ["ph", "PH"]]],
   ["region", "Zona", [["gba", "Vicente López"], ["caba", "CABA (subte B/D)"]]],
   ["zone", "Barrio", ["Olivos", "Florida", "La Lucila", "Vicente López", "Palermo", "Belgrano", "Núñez", "Colegiales", "Recoleta",
     "Villa Crespo", "Almagro", "Chacarita", "Villa Ortúzar", "Parque Chas", "Villa Urquiza", "Balvanera", "San Nicolás"].map(z => [z, z])],
   ["zoning", "Zona del código urbano", [["R1", "R1"], ["R2", "R2"], ["R3", "R3"], ["C", "Comercial (C)"], ["T", "Torres (T)"], ["I1", "I1"], ["other", "Otra"]]],
   ["src", "Fuente", [["zonaprop", "Zonaprop"], ["argenprop", "Argenprop"], ["mercadolibre", "Mercado Libre"], ["tokko", "Inmobiliarias"]]],
   ["patio", "Patio (según la IA)", [["small", "Chico o más"], ["medium", "Mediano o más"], ["large", "Grande"]]],
-  ["extra", "Tiene que tener", [["garage", "Cochera"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
+  ["extra", "Tiene que tener", [["garage", "Cochera"], ["balcony", "Balcón"], ["view", "Buena vista (IA 4+)"], ["credit", "Apto crédito"], ["ai", "Evaluada por la IA"], ["note", "Mis notas"], ["drop", "Bajó de precio"], ["new", "Nueva (7 días)"], ["exact", "Ubicación exacta"]]],
 ];
 const EXTRA = {
-  garage: l => l.garage > 0, credit: l => l.components?.credit?.value === 1, ai: l => !!l.ai_final, note: l => !!tag(l.id).note,
+  garage: l => l.garage > 0 || l.components?.garage?.value === 1, balcony: l => (l.components?.balcony?.value ?? 0) >= 0.5,
+  view: l => (l.ai?.view ?? 0) >= 4, credit: l => l.components?.credit?.value === 1, ai: l => !!l.ai_final, note: l => !!tag(l.id).note,
   drop: l => { const h = l.price_history || []; return h.length > 1 && h[h.length - 1][1] < h[0][1]; },
   new: l => Date.now() - Date.parse(l.first_seen + "T12:00") < 7 * 864e5, exact: l => !!l.address_exact,
 };
 let BOUNDS = {};
 function calcBounds() {
   for (const [k, , get, step] of RANGES) {
-    const v = DATA.listings.filter(l => l.active !== false && !l.duplicate_of).map(get).filter(x => x != null && isFinite(x)).sort((a, b) => a - b);
+    const v = DATA.listings.filter(l => l.active !== false && !l.duplicate_of && kindOf(l) === KIND).map(get).filter(x => x != null && isFinite(x)).sort((a, b) => a - b);
     if (!v.length) { BOUNDS[k] = [0, step]; continue; }
     const lo = Math.floor(v[0] / step) * step, hi = v[Math.min(v.length - 1, Math.floor(v.length * 0.98))];   // past the 98th percentile is "or more"
     BOUNDS[k] = [lo, Math.max(Math.ceil(hi / step) * step, lo + step)];
@@ -652,7 +675,7 @@ function passF(l) {
     if (f[1] < b && v > f[1]) return false;
   }
   const c = FILT.c;
-  if (c.type?.length && !c.type.includes(l.type)) return false;
+  if (c.type?.length && !isD(l) && !c.type.includes(l.type)) return false;
   if (c.zone?.length && !c.zone.includes(l.zone)) return false;
   if (c.region?.length && !c.region.includes(isCaba(l) ? "caba" : "gba")) return false;
   if (c.src?.length && !c.src.includes(l.source)) return false;
@@ -677,7 +700,7 @@ const nFilt = () => Object.keys(FILT.r).length + Object.values(FILT.c).filter(v 
 // Each house lives in one bucket: the inbox until Tomás processes it, then favourite → visited, or dismissed.
 function bucket(l) { const t = tag(l.id); return t.dismissed ? "mine" : t.visited ? "visited" : t.fav ? "fav" : "short"; }
 function base() {
-  const tagged = DATA.listings.filter(l => !l.duplicate_of && passF(l));
+  const tagged = DATA.listings.filter(l => !l.duplicate_of && kindOf(l) === KIND && passF(l));
   const act = tagged.filter(l => l.active !== false);
   return {
     short: act.filter(l => !l.discard.length && bucket(l) === "short"),
@@ -754,8 +777,18 @@ function badge(l, cls = "") {
 const ZONES_CABA = ["Palermo", "Belgrano", "Núñez", "Colegiales", "Recoleta", "Villa Crespo", "Almagro", "Chacarita", "Villa Ortúzar", "Parque Chas", "Villa Urquiza", "Balvanera", "San Nicolás"];
 const isCaba = l => l.geo ? l.geo.region === "caba" : ZONES_CABA.includes(l.zone);
 const refBlocks = g => g ? (g.ref_blocks ?? g.maipu_blocks) : undefined;
+function floorOf(l) { const f = l.ai?.floor_est; return typeof f === "number" ? f : null; }
 function specs(l) {
   const g = l.geo;
+  if (isD(l)) return `<div class="specs">
+    <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
+    <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
+    ${floorOf(l) != null ? `<span>piso <b class="num">${floorOf(l)}</b></span>` : ""}
+    ${l.ai?.view ? `<span>vista <b class="num">${l.ai.view}</b>/5</span>` : ""}
+    ${l.ai?.balcony ? `<span>${BALCONY[l.ai.balcony] || esc(l.ai.balcony)}</span>` : ""}
+    <span>${esc(l.components?.garage?.why || "")}</span>
+    ${g ? `<span>subte ${esc(g.station.line.slice(-1))} <b class="num">${blk(g.station.blocks)}</b> cdas</span>` : ""}
+  </div>`;
   return `<div class="specs">
     <span><b class="num">${fmt(l.total_m2)}</b> m² tot</span>
     <span><b class="num">${fmt(l.ambientes)}</b> amb</span>
@@ -798,7 +831,7 @@ function card(l, i) {
   return `<div class="card" role="button" tabindex="0" data-id="${l.id}" aria-current="${sel === l.id}">
     <div class="ph" data-sw>
       ${pics.length ? strip(pics) + snav(pics.length) + (pics.length > 1 ? `<span class="count" data-count>1 / ${pics.length}</span>` : "") : ""}
-      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${l.type === "ph" ? "PH" : "Casa"}</span><span class="pill">${esc(srcName(l))}</span>${t.fav && !t.visited && view !== "fav" ? `<span class="pill">★</span>` : ""}${t.visited && view !== "visited" ? `<span class="pill">Visitada</span>` : ""}${t.dismissed && view !== "mine" ? `<span class="pill">Descartada</span>` : ""}${l.active === false && view !== "reserved" ? `<span class="pill">Reservada</span>` : ""}</div>
+      <div class="tl">${l.first_seen === DATA.generated_at?.slice(0, 10) ? `<span class="pill" style="background:var(--accent);color:var(--on-accent)">Nueva</span>` : ""}<span class="pill">${typeName(l)}</span><span class="pill">${esc(srcName(l))}</span>${t.fav && !t.visited && view !== "fav" ? `<span class="pill">★</span>` : ""}${t.visited && view !== "visited" ? `<span class="pill">Visitada</span>` : ""}${t.dismissed && view !== "mine" ? `<span class="pill">Descartada</span>` : ""}${l.active === false && view !== "reserved" ? `<span class="pill">Reservada</span>` : ""}</div>
       ${badge(l)}
       <span class="rank">#${i + 1} · ${esc(l.zone || "")}</span>
     </div>
@@ -815,6 +848,7 @@ function card(l, i) {
 }
 function renderList() {
   const r = rows(), counts = base();
+  kindCounts();
   document.querySelectorAll("#tabs button").forEach(b => { b.innerHTML = `${TABS[b.dataset.v]}<span class="n">${counts[b.dataset.v].length}</span>`; });
   const empty = { short: "Bandeja vacía: procesaste todo. Te aviso cuando entre algo bueno.", fav: "Tocá ★ Me interesa en la bandeja para traerla acá.", visited: "Cuando visiten una favorita, marcala como visitada.", mine: "Las que descartes van a aparecer acá." }[view] || "Nada con estos filtros.";
   $("#list").innerHTML = r.length
@@ -822,7 +856,7 @@ function renderList() {
     : `<div class="empty">${empty}</div>`;
   const m = $("#more"); if (m) m.onclick = e => { e.stopPropagation(); shown += PAGE; renderList(); };
   if (wide.matches && r.length && !r.some(l => l.id === sel)) select(r[0].id, false);
-  if (wide.matches && !r.length) { sel = null; $("#detail").innerHTML = `<div class="dempty">Elegí una casa de la lista para verla acá.</div>`; }
+  if (wide.matches && !r.length) { sel = null; $("#detail").innerHTML = `<div class="dempty">Elegí ${KIND === "depto" ? "un depto" : "una casa"} de la lista para verlo acá.</div>`; }
   if (!$("#map").hidden) renderMap();
 }
 
@@ -852,7 +886,15 @@ function renderDetail(l) {
     <span class="track"><i style="width:${c.value * 100}%;background:${COLORS[k]}"></i></span>
     <span class="pts num">${fmt(c.points)}/${c.max}</span>
     <span class="why">${esc(c.why)}</span>`).join("");
-  const aiBox = a ? `<div class="section ai">
+  const aiBox = a && isD(l) ? `<div class="section ai">
+      <span class="label">Lectura de fotos</span>
+      <p class="num">Estética ${a.modern ?? "?"}/5 · estado ${a.condition}/5 · reforma ~${usd(a.reform_usd)} · ${BALCONY[a.balcony] || esc(a.balcony || "balcón ?")}${a.balcony_m2_est ? ` ~${a.balcony_m2_est} m²` : ""} · vista ${a.view ?? "?"}/5${a.front ? ` (${esc(a.front)})` : ""} · luz ${a.natural_light}/5${a.expensas_ars ? ` · expensas ARS ${Math.round(a.expensas_ars).toLocaleString("es-AR")}` : ""}</p>
+      ${a.view_notes ? `<p>Vista: ${esc(a.view_notes)}</p>` : ""}
+      ${a.reform_notes ? `<p>${esc(a.reform_notes)}</p>` : ""}
+      ${a.amenities?.length ? `<p>Amenities: ${a.amenities.map(esc).join(" · ")}</p>` : ""}
+      ${a.highlights?.length ? `<ul>${a.highlights.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+      ${a.red_flags?.length ? `<ul style="color:var(--bad)">${a.red_flags.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+    </div>` : a ? `<div class="section ai">
       <span class="label">Lectura de fotos</span>
       <p class="num">Estado ${a.condition}/5 · reforma ~${usd(a.reform_usd)} · ${PATIO[a.patio] || esc(a.patio)}${a.patio_m2_est ? ` ~${a.patio_m2_est} m²` : ""}${a.patio_seen === false ? " (no se ve en fotos)" : ""} · luz ${a.natural_light}/5 · tranquilidad ${a.quiet}/5${a.corner ? " · esquina" : ""}</p>
       ${a.reform_notes ? `<p>${esc(a.reform_notes)}</p>` : ""}
@@ -860,11 +902,11 @@ function renderDetail(l) {
       ${a.red_flags?.length ? `<ul style="color:var(--bad)">${a.red_flags.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
     </div>` : "";
   const hist = (l.price_history || []).length > 1 ? `<div class="section"><span class="label">Historial de precio</span><div class="num" style="font-size:13.5px">${l.price_history.map(([d, p]) => `${d}: ${usd(p)}`).join(" → ")}</div></div>` : "";
-  const text = brief(l), p = pct(l), n = pctMode === "now" ? DATA.pct_n_now : l.pct_n;
+  const text = brief(l), p = pct(l), n = pctMode === "now" ? DATA.pct_n_now?.[kindOf(l)] : l.pct_n;
   $("#detail").innerHTML = `
     <div class="dtop">
       <button class="icon close" id="back" aria-label="Volver a la lista">←</button>
-      <div class="t"><b class="num">${usd(l.price_usd)}</b><span>${esc(l.zone || "")} · ${l.type === "ph" ? "PH" : "Casa"} · ${esc(srcName(l))}</span></div>
+      <div class="t"><b class="num">${usd(l.price_usd)}</b><span>${esc(l.zone || "")} · ${typeName(l)} · ${esc(srcName(l))}</span></div>
       ${badge(l)}
     </div>
     ${pics.length ? `<div class="gwrap" data-sw>${strip(pics, "gallery", false)}${snav(pics.length)}<div class="gcount num" data-count>1 / ${pics.length}</div></div>` : ""}
@@ -884,7 +926,20 @@ function renderDetail(l) {
         <span class="saved" id="aistate"></span>
         ${PCTSHOW.has(l.id) ? `<div class="pctout">${pctLines(l)}</div>` : ""}
       </div>
-      <div class="facts">
+      ${isD(l) ? `<div class="facts">
+        <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
+        <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
+        <div class="fact"><span>Cubierta</span><b>${fmt(l.covered_m2)} m²</b></div>
+        <div class="fact"><span>Ambientes</span><b>${fmt(l.ambientes)}</b></div>
+        <div class="fact"><span>Cochera</span><b class="t">${esc(l.components?.garage?.why || "?")}</b></div>
+        <div class="fact"><span>Balcón</span><b class="t">${esc(l.components?.balcony?.why || "?")}</b></div>
+        <div class="fact"><span>Vista</span><b class="t">${esc(l.components?.view?.why || "?")}</b></div>
+        <div class="fact"><span>${g ? `Subte ${esc(g.station.line.slice(-1))} · ${esc(g.station.name)}` : "Subte"}</span><b>${g ? blk(g.station.blocks) + " cdas" : "?"}</b></div>
+        <div class="fact"><span>Percentil</span><b>${p != null ? `${p} <small style="font-size:11px;color:var(--muted)">de ${n}</small>` : "?"}</b></div>
+        <div class="fact"><span>Percentil m² cub.</span><b>${side(l).m2 ?? "?"}</b></div>
+        <div class="fact"><span>Percentil USD/m²</span><b>${side(l).ppm2 ?? "?"} <small style="font-size:11px;color:var(--muted)">más = más barato</small></b></div>
+        <div class="fact"><span>Antigüedad</span><b>${l.age_years != null ? fmt(l.age_years) + " años" : "?"}</b></div>
+      </div>` : `<div class="facts">
         <div class="fact"><span>USD/m² tot</span><b>${fmt(ppm2(l))}</b></div>
         <div class="fact"><span>Total</span><b>${fmt(l.total_m2)} m²</b></div>
         <div class="fact"><span>Cubierta</span><b>${fmt(l.covered_m2)} m²</b></div>
@@ -900,13 +955,13 @@ function renderDetail(l) {
         <div class="fact"><span>Terreno implícito</span><b>${l.land ? `${l.land.implied > 0 ? "USD " + fmt(l.land.implied) + "/m²" : "≤ 0"} <small style="font-size:11px;color:var(--muted)">zona ~${fmt(l.land.market)} · P${side(l).land}</small>` : "?"}</b></div>
         <div class="fact"><span>Valor a 10 años</span><b>${l.land ? `${Math.round(l.land.kept * 100)}% del precio <small style="font-size:11px;color:var(--muted)">P${side(l).kept}</small>` : "?"}</b></div>
         <div class="fact"><span>Por construir</span><b>${l.build_m2 != null ? `~${fmt(l.build_m2)} m² <small style="font-size:11px;color:var(--muted)">P${side(l).build}</small>` : l.type === "ph" ? "PH" : "?"}</b></div>
-      </div>
+      </div>`}
       <div class="actions">
         <a class="btn primary" href="${esc(l.url)}" target="_blank" rel="noopener">Ver aviso ↗</a>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l.lat ? l.lat + "," + l.lng : l.address + (isCaba(l) ? ", CABA" : ", Vicente López"))}" target="_blank" rel="noopener">Maps ↗</a>
         <button class="btn" id="sharebtn" aria-label="Compartir (WhatsApp, etc.)">Compartir</button>
       </div>
-      <div class="section"><textarea class="note" id="note" placeholder="Tus notas sobre esta casa: lo que averigües (patio, estado, expensas…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
+      <div class="section"><textarea class="note" id="note" placeholder="Tus notas: lo que averigües (${isD(l) ? "expensas, cochera, vista, estado del edificio" : "patio, estado, expensas"}…). La IA las toma como datos verificados; tocá Evaluar con IA para que lo haga ya.">${esc(t.note || "")}</textarea><span class="saved" id="saved">${esc(syncState)}</span></div>
       ${visitBox(l, t)}
       ${aiBox}
       <div class="section"><span class="label">Puntaje del algoritmo · ${fmt(l.score_calc ?? l.score)} / 100</span><div class="breakdown">${comp}</div></div>
@@ -993,7 +1048,7 @@ function paintRange(el) {
   fill.style.left = (100 * (lo - a) / (b - a)) + "%"; fill.style.right = (100 - 100 * (hi - a) / (b - a)) + "%"; fill.style.opacity = FILT.r[k] ? 1 : .3;
   const t = el.querySelector(".top b"); t.textContent = rngText(k); t.classList.toggle("any", !FILT.r[k]);
 }
-function filtCount() { const n = rows().length; $("#fapply").textContent = n === 1 ? "Ver 1 casa" : `Ver ${n} casas`; }
+function filtCount() { const n = rows().length, w = KIND === "depto" ? ["depto", "deptos"] : ["casa", "casas"]; $("#fapply").textContent = n === 1 ? `Ver 1 ${w[0]}` : `Ver ${n} ${w[1]}`; }
 let filtFrame = 0;
 function filtChanged() {
   store.set("hh-filters", FILT); fbtnLabel();
@@ -1095,21 +1150,35 @@ function showHere(r) {
 }
 
 /* ── info panel: sources, scoring, preferences, sync ── */
+const weights = () => KIND === "depto" && DATA.weights_depto ? DATA.weights_depto : DATA.weights;
+function kindCounts() {
+  const n = k => DATA.listings.filter(l => kindOf(l) === k && l.active !== false && !l.duplicate_of && !l.discard.length && bucket(l) === "short").length;
+  document.querySelectorAll("#kinds button").forEach(b => {
+    b.setAttribute("aria-pressed", b.dataset.k === KIND);
+    b.innerHTML = `${b.dataset.k === "depto" ? "Departamentos" : "Casas y PH"}<span class="n">${n(b.dataset.k)}</span>`;
+  });
+}
+function setKind(k) {
+  if (k === KIND) return;
+  KIND = k; store.set("hh-kind", k); shown = PAGE; sel = null;
+  if (MAP) MAP._fitted = false;
+  calcBounds(); renderInfo(); renderList(); window.scrollTo({ top: 0 });
+}
 function renderInfo() {
   const S = DATA.search, bad = Object.values(DATA.status || {}).some(s => !s.ok);
   $("#dot").classList.toggle("err", bad);
   $("#sub").textContent = `Actualizado ${DATA.generated_at}`;
   const tok = gh.token();
   $("#info").innerHTML = `
-    <p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k (se aceptan hasta ${(S.price_ceiling || S.price_max) / 1000}k con penalización) y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú (ideal 6) o, en CABA, 1 a 7 cuadras de la estación de subte B o D más cercana (ideal 4).</p>
+    ${KIND === "depto" ? (D => `<p>Departamentos de ${D.min_ambientes} ambientes en ${D.zones.join(" y ")} · hasta USD ${D.price_max / 1000}k (se aceptan hasta ${D.price_ceiling / 1000}k con penalización) · ${D.min_total_m2}+ m² · balcón, buena vista y cochera obligatorios · moderno o reciclado: la IA mira las fotos y descarta lo venido abajo o feo (estado o estética menos de ${D.min_condition}/5) y lo que da a una pared. Zonaprop se revisa en cada corrida (lo más nuevo), Argenprop filtra con cochera y Mercado Libre se lee entero.</p>`)(DATA.search_depto || {zones: ["Palermo", "Recoleta"], min_ambientes: 3, price_max: 210000, price_ceiling: 240000, min_total_m2: 80, min_condition: 3}) : `<p>Casas y PH en ${S.zones.join(", ")} · hasta USD ${S.price_max / 1000}k (se aceptan hasta ${(S.price_ceiling || S.price_max) / 1000}k con penalización) y ${S.ppm2_max.toLocaleString("es-AR")} USD/m² (más barato, mejor) · ${S.min_ambientes}+ amb · ${S.min_total_m2}+ m² · patio obligatorio · 3 a 15 cuadras de Maipú (ideal 6) o, en CABA, 1 a 7 cuadras de la estación de subte B o D más cercana (ideal 4).</p>`}
     <div><span class="label">Fuentes</span><div class="status" style="margin-top:6px">${Object.entries(DATA.status || {}).map(([k, s]) =>
       `<span class="pill ${s.ok ? "ok" : "err"}" title="${esc(s.error || "")}">${SRC[k] || k}: ${s.ok ? s.count + " · " + esc((s.at || "").slice(5)) : "falló " + esc((s.at || "").slice(5))}</span>`).join("")}</div></div>
     <div><span class="label">Cómo puntúa el algoritmo (sobre 100)</span>
-      <div class="wbar">${Object.entries(DATA.weights).map(([k, w]) => `<i style="flex:${w};background:${COLORS[k]}"></i>`).join("")}</div>
-      <div class="wlegend">${Object.entries(DATA.weights).map(([k, w]) => `<span><i style="background:${COLORS[k]}"></i>${LABELS[k]} ${w}</span>`).join("")}</div>
+      <div class="wbar">${Object.entries(weights()).map(([k, w]) => `<i style="flex:${w};background:${COLORS[k]}"></i>`).join("")}</div>
+      <div class="wlegend">${Object.entries(weights()).map(([k, w]) => `<span><i style="background:${COLORS[k]}"></i>${LABELS[k]} ${w}</span>`).join("")}</div>
       <p style="margin-top:8px">Para las mejores candidatas, la IA lee fotos, datos, tus preferencias y tus notas, y su puntaje reemplaza al del algoritmo.</p></div>
     <div class="section"><span class="label">Percentiles</span>
-      <p>${pctMode === "now" ? `Recalculados con las ${DATA.pct_n_now} casas puntuadas hasta hoy.` : "Cada percentil se calculó contra todas las casas puntuadas hasta ese momento."}</p>
+      <p>${pctMode === "now" ? `Recalculados con las ${DATA.pct_n_now?.[KIND]} ${KIND === "depto" ? "deptos" : "casas"} puntuadas hasta hoy.` : "Cada percentil se calculó contra todas las casas puntuadas hasta ese momento."}</p>
       <div class="row2"><button class="btn" id="pctbtn">Recalcular con todos los datos</button>${pctMode === "now" ? `<button class="btn" id="pctback">Volver a los originales</button>` : ""}</div></div>
     <div class="section"><span class="label">Alertas al celular</span>
       <p>Te llega una notificación por cada casa nueva que cumpla al menos una de estas dos condiciones.</p>
@@ -1147,6 +1216,7 @@ function boot(d) {
   sideFallback(); calcBounds(); fbtnLabel();
   renderInfo(); renderList();
   loadShared();
+  $("#kinds").onclick = e => { const b = e.target.closest("button"); if (b) setKind(b.dataset.k); };
   $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return;
     view = b.dataset.v; shown = PAGE; document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
     b.scrollIntoView({ block: "nearest", inline: "nearest" });
@@ -1178,7 +1248,8 @@ function openFromLink() {
   const id = decodeURIComponent((location.hash.match(/^#casa=(.+)$/) || [])[1] || "");
   if (!id) return;
   try { history.replaceState(history.state, "", location.pathname + location.search); } catch {}
-  if (DATA.listings.some(x => x.id === id)) select(id);
+  const hit = DATA.listings.find(x => x.id === id);
+  if (hit) { setKind(kindOf(hit)); select(id); }
   else flash("Esa casa todavía no está en la app: recargá en unos minutos.");
 }
 

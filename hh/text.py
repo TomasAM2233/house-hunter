@@ -83,3 +83,57 @@ def ph_stacked(text):
     t = norm(text)
     return bool(re.search(r"((ph|unidad)[^.]{0,40}(en planta alta|en (el )?primer piso|en (el )?1 ?(er|°|º)? piso|en altura|superpuest)"
                           r"|(se accede|acceso|ingreso)[^.]{0,20}por escalera|ph de altos|ph en pa\b)", t))
+
+
+# ── apartments ──
+def balcony(text):
+    """True when the text says it has a balcony (or a terrace of its own), False when it says it has none, else None."""
+    t = norm(text)
+    if re.search(r"\bsin\s+balcon", t):
+        return False
+    if re.search(r"\b(balcon|balcones|terraza propia|terraza privada|terraza exclusiva|balcon terraza)", t):
+        return True
+    return None
+
+
+def french_balcony(text):
+    return bool(re.search(r"balcon(cito)? frances|balcones franceses", norm(text)))
+
+
+def garage(text):
+    """'fixed' (cochera / cochera fija / cubierta), 'optional' (se vende aparte / opcional), False (sin cochera) or None."""
+    t = norm(text)
+    if re.search(r"\bsin\s+(cochera|garage|garaje)|no\s+(tiene|posee|incluye)\s+(cochera|garage)", t):
+        return False
+    if re.search(r"(cochera|garage|garaje)s?\s+(opcional|aparte|a la venta|en venta|se vende|con valor adicional|adicional|a convenir)"
+                 r"|(opcion|posibilidad) de (comprar |adquirir )?(cochera|garage)|(cochera|garage) por separado", t):
+        return "optional"
+    if re.search(r"\b(cochera|cocheras|garage|garaje)\b", t):
+        return "fixed"
+    return None
+
+
+def floor_number(text):
+    """Floor from the text ('piso 8', '8° piso', 'octavo piso'), or None. Planta baja = 0."""
+    t = norm(text)
+    if re.search(r"\b(planta baja|en pb)\b", t) and not re.search(r"\bpiso\s+\d", t):
+        return 0
+    m = re.search(r"\b(?:piso|p\.)\s*(\d{1,2})\b|\b(\d{1,2})\s*(?:°|º|o|er|do|to|vo|no|mo)?\s*piso\b", t)
+    if m:
+        v = int(m.group(1) or m.group(2))
+        return v if v <= 40 else None
+    words = {"primer": 1, "segundo": 2, "tercer": 3, "cuarto": 4, "quinto": 5, "sexto": 6, "septimo": 7, "octavo": 8,
+             "noveno": 9, "decimo": 10}
+    m = re.search(r"\b(" + "|".join(words) + r")\s+piso\b", t)
+    return words[m.group(1)] if m else None
+
+
+def view_words(text):
+    """+1 for words that promise a view, -1 for ones that rule it out, 0 when it doesn't say."""
+    t = norm(text)
+    if re.search(r"\bcontrafrente\b[^.]{0,30}(pulmon|pared|medianera)|vista a (pared|medianera)|(departamento|depto|unidad) intern[oa]\b", t):
+        return -1
+    if re.search(r"vista (abierta|panoramica|despejada|al (rio|parque|verde|bosque|jardin)|a la ciudad|increible|unica)"
+                 r"|\bpanoramic|piso alto|frente al (parque|bosque|jardin)|sin edificios enfrente|vista al rio", t):
+        return 1
+    return 0
