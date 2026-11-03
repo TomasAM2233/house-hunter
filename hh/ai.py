@@ -44,6 +44,39 @@ obligatorio para ellos: miralo en las fotos con mucho cuidado. Respondé SOLO un
 Sé escéptico con las fotos de inmobiliaria: ángulos abiertos y filtros esconden problemas. Las casas en
 esquina casi nunca tienen patio: si no lo ves en las fotos, poné "patio": "none" y "patio_seen": false."""
 
+# Apartments (config.DEPTO): their own photo read.
+PROMPT_DEPTO = f"""Sos un tasador y arquitecto en CABA. Analizá esta publicación de venta de un DEPARTAMENTO (fotos + texto)
+para una pareja que busca un 3 ambientes en Palermo o Recoleta para mudarse pronto. No quieren nada venido abajo ni
+"medio feo": tiene que ser moderno o estar reciclado/actualizado con buen gusto (cocina, baños, pisos, aberturas).
+Son obligatorios: balcón, buena vista y cochera. Respondé SOLO un JSON con estas claves:
+- "condition": 1-5 (1 = venido abajo, 3 = habitable con arreglos, 5 = impecable / a estrenar)
+- "modern": 1-5 estética y actualización (1 = viejo y feo, sin tocar desde hace décadas; 2 = anticuado; 3 = correcto
+  pero sin gracia; 4 = moderno o reciclado prolijo; 5 = moderno de muy buen diseño o reciclado a nuevo)
+- "reform_usd": estimación en USD de lo necesario para que quede como ellos quieren (moderno, sin lujos)
+- "reform_notes": qué habría que hacer, breve
+- "balcony": "none" | "french" | "small" | "medium" | "large" (french = balcón francés/baranda sin superficie;
+  small < 3 m2, medium 3-8 m2, large > 8 m2 o balcón terraza)
+- "balcony_m2_est": número o null
+- "view": 1-5 (1 = a pared, medianera o pulmón cerrado; 2 = contrafrente o patio interno sin aire; 3 = a la calle,
+  sin altura o con edificios enfrente; 4 = abierta, piso alto o arbolada; 5 = panorámica, verde, río o parque)
+- "view_notes": qué se ve desde el depto, breve
+- "floor_est": piso estimado (número; 0 = planta baja) o null
+- "front": "frente" | "contrafrente" | "lateral" | "interno" | null
+- "garage": true si tiene cochera incluida, "optional" si se vende aparte, false si no tiene, null si no se sabe
+- "amenities": hasta 5 (pileta, SUM, gimnasio, laundry, seguridad...)
+- "expensas_ars": número o null si el aviso las dice
+- "natural_light": 1-5
+- "quiet": 1-5 (según la calle, el piso y el texto; 3 si no se sabe)
+- "apto_credito": true | false | null
+- "highlights": hasta 3 puntos fuertes cortos
+- "red_flags": hasta 3 problemas (humedad, edificio descuidado, ambientes chicos, cocina sin ventilación, etc.)
+- "summary": una frase en castellano rioplatense
+Sé escéptico con las fotos de inmobiliaria: gran angular y filtros esconden problemas, y si no hay foto del balcón o
+de la vista es probable que no valgan la pena."""
+KEYS_DEPTO = ["condition", "modern", "reform_usd", "reform_notes", "balcony", "balcony_m2_est", "view", "view_notes",
+              "floor_est", "front", "garage", "amenities", "expensas_ars", "natural_light", "quiet", "apto_credito",
+              "highlights", "red_flags", "summary"]
+
 KEYS = ["condition", "reform_usd", "reform_notes", "patio", "patio_m2_est", "patio_seen", "terrace", "corner", "ph_stacked",
         "pasillo_ph", "natural_light", "quiet", "vertical_potential", "apto_credito", "highlights", "red_flags", "summary"]
 
@@ -78,7 +111,7 @@ def cached(listing, current=False, note=""):
 
 def save_result(listing_id, result, photos_key, analyst, note=""):
     cache = _load()
-    result = {k: result.get(k) for k in KEYS}
+    result = {k: result.get(k) for k in dict.fromkeys(KEYS + KEYS_DEPTO) if k in result or k in KEYS}
     result.update(photos_key=photos_key, analyst=analyst, analysed_at=time.strftime("%Y-%m-%d"), prompt_version=PROMPT_VERSION,
                   note_key=_note_key(note), ts=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
     cache[listing_id] = result
@@ -143,7 +176,8 @@ Es información verificada y tiene prioridad sobre el aviso y las fotos: si algo
 
 
 def _gemini(listing, note="", max_photos=MAX_PHOTOS):
-    parts = [{"text": PROMPT + "\n\n" + _listing_text(listing) + (f"\n\n{NOTE_PROMPT}\n{note.strip()}" if note.strip() else "")}]
+    prompt = PROMPT_DEPTO if score.depto.is_depto(listing) else PROMPT
+    parts = [{"text": prompt + "\n\n" + _listing_text(listing) + (f"\n\n{NOTE_PROMPT}\n{note.strip()}" if note.strip() else "")}]
     for im in _download(listing["photos"][:max_photos]):
         buf = io.BytesIO()
         im.save(buf, "JPEG", quality=75)
@@ -247,6 +281,54 @@ son datos verificados, usalas para afinar el puntaje y no las vuelvas a pregunta
 pendiente."""
 
 
+FINAL_PROMPT_DEPTO = f"""Sos el asesor inmobiliario de Tomás. Además de casas en Vicente López, busca un DEPARTAMENTO en
+CABA: 3 ambientes en Palermo o Recoleta, 80 m² o más, con balcón, buena vista y cochera, moderno o reciclado (nada
+venido abajo ni "medio feo"), con el mismo presupuesto (USD {config.DEPTO['price_max']:,}, se puede estirar a
+{config.DEPTO['price_ceiling']:,} negociando). Abajo están sus preferencias generales (escritas para las casas: el patio,
+el lote y Maipú NO aplican a un departamento; lo demás sí), sus notas sobre este depto (si las hay), los datos del
+aviso, la lectura de las fotos y el puntaje que calculó nuestro algoritmo con su desglose. Tu evaluación final
+reemplaza a ese puntaje. Sus notas son datos verificados y mandan sobre el aviso, las fotos y el algoritmo.
+Si le falta algo obligatorio (balcón, cochera, vista, estética) bajá mucho el puntaje.
+La inversión pesa casi tanto como el precio. Hacé un análisis razonado: USD/m² contra los deptos de alrededor (te lo
+damos), si paga sobreprecio de "a estrenar" que se pierde en pocos años, calidad y edad del edificio, expensas
+(caras restan valor y compradores), cochera fija (suma ~USD 20-30k de reventa en Palermo/Recoleta), piso alto y
+vista (se pagan al revender), apto crédito, ubicación (cerca de plazas, subte, calle tranquila), y si se podría
+alquilar bien. Usá la misma escala que el algoritmo: entre los que pasan los filtros, 45 es flojo, 55 bueno, 65 muy
+bueno y 75 o más solo para una oportunidad excepcional que tendría que ir a ver hoy. Partí del puntaje calculado y
+movete solo con motivos concretos (cada motivo vale entre 3 y 15 puntos); la nota de inversión (1-10) mueve unos 3
+puntos por punto desde 5. Respondé SOLO un JSON:
+{{"score": 0-100 (entero), "brief": "resumen de {config.BRIEF_MAX_CHARS} caracteres como máximo, en castellano
+rioplatense, con lo que más le importa a Tomás a favor y en contra, con números concretos, sin adjetivos de
+inmobiliaria ni la dirección", "reasons": ["hasta 3 motivos cortos de por qué tu puntaje difiere del calculado"],
+"investment": {{"score": 1-10, "why": "dos o tres oraciones con los números que lo explican", "value_10y_pct": tu
+estimación del valor en {config.HORIZON_YEARS} años como % del precio, en dólares de hoy (entero), "upside": ["hasta 3"],
+"risks": ["hasta 3"]}},
+"questions": [hasta 6 preguntas para la visita o el llamado cuya respuesta cambiaría tu puntaje (expensas, cochera
+fija o rotativa / cubierta, orientación y vista real, piso, estado del edificio y de las instalaciones, humedad,
+ruido, apto crédito, m² del balcón...), las más importantes primero, cada una {{"q": "la pregunta", "impact": "cómo
+movería el puntaje, con puntos"}}],
+"general_questions": [hasta 6 preguntas que igual conviene hacer (papeles, deudas de expensas, reglamento, obras
+previstas en el edificio, por qué venden, si aceptan oferta, etc.), específicas para este depto]}}
+Sus notas pueden tener preguntas de visitas anteriores con su respuesta ("pregunta → respuesta"): usalas y no las
+vuelvas a preguntar."""
+
+
+def _final_text_depto(l, prefs, note):
+    a, g = l.get("ai") or {}, l.get("geo") or {}
+    st, pk = g.get("station") or {}, g.get("park") or {}
+    v, mk = score.depto.ppm2_cov(l), score.depto.market_ppm2(l)
+    inv = (f"USD {v}/m² cubierto contra ~USD {round(mk)} de los deptos de alrededor" if v and mk else
+           "sin referencia de precio de la zona") + f", percentil del puntaje {l.get('pct')}"
+    comps = "; ".join(f"{k}: {c['points']:.1f}/{c['max']} ({c['why']})" for k, c in (l.get("components") or {}).items())
+    return (f"PREFERENCIAS DE TOMÁS:\n{prefs}\n\nNOTAS DE TOMÁS SOBRE ESTE DEPTO: {note or '(ninguna)'}\n\n"
+            f"AVISO ({l.get('source')}):\n" + _listing_text(l) + f"\nCochera (dato del aviso): {l.get('garage')} | "
+            f"Subte {st.get('line', '')[-1:]} {st.get('name')} a {st.get('blocks')} cuadras | Plaza más cercana: "
+            f"{pk.get('name')} a {pk.get('m')} m\n"
+            f"INVERSIÓN: {inv}\n"
+            f"LECTURA DE FOTOS: {json.dumps({k: a.get(k) for k in KEYS_DEPTO if k != 'summary'}, ensure_ascii=False)}\n"
+            f"PUNTAJE CALCULADO: {l.get('score')}/100 — {comps}\nAlertas: {', '.join(l.get('flags') or []) or 'ninguna'}")
+
+
 def calls_today():
     """Gemini calls made since the free quota last reset (midnight Pacific), counted from the two caches' timestamps."""
     pacific = zoneinfo.ZoneInfo("America/Los_Angeles")
@@ -326,8 +408,10 @@ def final(listing, prefs, note="", compute=True, force=False, log=print):
     """The overall AI verdict: score 0-100 that overrides ours, a <=250 char brief and the reasons.
     Cached per listing and keyed by everything it reads, so it reruns only when something changed (or force=True,
     when Tomás asks for it from the app)."""
-    text = _final_text(listing, prefs, note)
-    h = hashlib.sha1((FINAL_PROMPT + text).encode()).hexdigest()[:12]
+    is_depto = score.depto.is_depto(listing)
+    prompt = FINAL_PROMPT_DEPTO if is_depto else FINAL_PROMPT
+    text = (_final_text_depto if is_depto else _final_text)(listing, prefs, note)
+    h = hashlib.sha1((prompt + text).encode()).hexdigest()[:12]
     cache = json.load(open(FINAL)) if os.path.exists(FINAL) else {}
     hit = cache.get(listing["id"])
     if hit and hit.get("input_key") == h and not force:
@@ -336,7 +420,7 @@ def final(listing, prefs, note="", compute=True, force=False, log=print):
     if not compute or not key or (DOWN and not force):
         return hit  # stale verdict is better than none until the next run with a key
     try:
-        res = _call({"contents": [{"parts": [{"text": FINAL_PROMPT + "\n\n" + text}]}],
+        res = _call({"contents": [{"parts": [{"text": prompt + "\n\n" + text}]}],
                      "generationConfig": {"response_mime_type": "application/json", "temperature": 0.2}}, 90)
         brief = str(res.get("brief") or "").strip()
         if len(brief) > config.BRIEF_MAX_CHARS:

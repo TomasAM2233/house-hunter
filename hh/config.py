@@ -18,6 +18,40 @@ SEARCH = {
 }
 SEARCH["zones"] = SEARCH["zones_gba"] + SEARCH["zones_caba"]
 
+# Apartments (Tomás, 2026-11-03): a second hunt, next to the houses, with rules of its own (DEPTO below). Every
+# listing carries "kind": "casa" (houses and PH, everything above) or "depto". Scores, percentiles, alerts and the
+# app's lists are kept apart for each kind.
+DEPTO = {
+    "zones": ["Palermo", "Recoleta"],   # Recoleta includes Barrio Norte; Palermo its sub-barrios (Soho, Hollywood, Chico…)
+    "price_min": 100_000,      # only bounds what the portals return
+    "price_max": 210_000,      # same budget and soft ceiling as the houses
+    "price_ceiling": 240_000,
+    "min_ambientes": 3,
+    "min_total_m2": 80,
+    # required, but missing data never discards on its own: the listing is flagged until the item page or the AI says
+    "balcony": True,
+    "garage": True,
+    "min_condition": 3,        # AI 1-5: below this it's run-down ("hecho mierda")
+    "min_modern": 3,           # AI 1-5: below this it's dated / ugly ("medio feo"); 3 = correct, 4 = modern/renovated
+    "min_view": 2,             # AI 1-5: 1 = a wall or a closed air shaft
+}
+# Weights of the apartment score (add up to 100). Investment stays one of the heaviest, as for the houses.
+WEIGHTS_DEPTO = {
+    "price": 18,        # asking + reform, and USD/m2
+    "investment": 16,   # USD per m2 against the apartments around it (frozen in geo/depto_market.json), age, liquidity
+    "modern": 16,       # AI: modern or renovated, in good condition, not ugly
+    "view": 12,         # AI: open view, high floor, greenery; not a wall or air shaft
+    "space": 12,        # total and covered m2, ambientes
+    "location": 10,     # nearest plaza/park, Subte B/D, quiet street
+    "balcony": 6,       # AI + text: balcony size (a French balcony barely counts)
+    "garage": 4,        # required: fixed/covered spot scores higher than an optional one
+    "light": 4,         # AI + listing tags
+    "credit": 2,        # apto crédito
+}
+assert sum(WEIGHTS_DEPTO.values()) == 100
+DEPTO_NEIGHBOURS = 20         # apartments around a listing that set its area's USD per m2 (score.depto_market)
+DEPTO_MARKET_MIN = 30         # apartments needed before that price gets frozen
+
 # Names the portals use for parts of those barrios (Zonaprop and Mercado Libre go down to sub-barrios).
 CABA_ALIASES = {
     "palermo": "Palermo", "las cañitas": "Palermo", "belgrano": "Belgrano", "barrio chino": "Belgrano",

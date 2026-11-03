@@ -28,6 +28,13 @@ OWN_SEARCH = {"Vicente López": "vicente-lopez-vicente-lopez"}
 CABA_SLUGS = {"Núñez": "nunez", "Villa Ortúzar": "villa-ortuzar", "San Nicolás": "san-nicolas"}
 # Each group gets a full sweep once every EVERY_HOURS (see hh/sweeps.py); the other runs read its newest page.
 EVERY_HOURS = 24
+# Apartments (config.DEPTO): ~1.900 with 3 ambientes in Palermo + Recoleta in the price range (2026-11-03), and Zonaprop's
+# URL ignores garage and m2 filters. So the full sweep (~65 pages) runs once a week, to mark what's gone, and every
+# other run reads the newest page, which is where a new listing shows up.
+DEPTO_SLUG = "palermo-recoleta"
+DEPTO_EVERY_HOURS = 24 * 7
+BANDS_DEPTO = [(None, 150_000), (150_000, 170_000), (170_000, 185_000), (185_000, 200_000), (200_000, 215_000),
+               (215_000, 228_000), (228_000, None)]
 
 
 def _slug(z):
@@ -45,19 +52,25 @@ def zone_groups():
 
 
 def group_zones(slug):
-    """The search zones a group covers, for marking what a complete sweep didn't see as gone."""
+    """The search zones a group covers, for marking what a complete sweep didn't see as gone ("depto:<zone>" for the
+    apartments, which share barrios with the houses)."""
+    if slug == DEPTO_SLUG:
+        return {f"depto:{z}" for z in config.DEPTO["zones"]}
     if slug in OWN_SEARCH.values():
         return {z for z, v in OWN_SEARCH.items() if v == slug}
     return {z for z in config.SEARCH["zones"] if z not in OWN_SEARCH and re.search(rf"(^|-){_slug(z)}(-|$)", slug)}
 
 
 def search_url(page, newest=False, band=(None, None), zones=None):
-    s = config.SEARCH
+    depto = zones == DEPTO_SLUG
+    s = config.DEPTO if depto else config.SEARCH
     lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
     zones = zones or zone_groups()[0][0]
     if lo >= hi:
         raise ValueError(f"empty band {band}")
     suffix = ("-orden-publicado-descendente" if newest else "") + ("" if page == 1 else f"-pagina-{page}")
+    if depto:  # exactly 3 ambientes, as Tomás asked
+        return f"{BASE}/departamentos-venta-{zones}-{s['min_ambientes']}-ambientes-{lo}-{hi}-dolar{suffix}.html"
     return f"{BASE}/casas-ph-venta-{zones}-mas-de-{s['min_ambientes']}-ambientes-{lo}-{hi}-dolar{suffix}.html"
 
 
@@ -100,7 +113,7 @@ def _normalize(p):
         "source": "zonaprop",
         "url": BASE + p["url"],
         "title": p.get("title") or p.get("generatedTitle"),
-        "type": "ph" if rtype == "PH" else "casa" if rtype == "Casas" else rtype.lower(),
+        "type": "ph" if rtype == "PH" else "casa" if rtype == "Casas" else "departamento" if rtype.startswith("Departamento") else rtype.lower(),
         "price_usd": price,
         "total_m2": _feat(p, "CFT100"),
         "covered_m2": _feat(p, "CFT101"),
@@ -192,7 +205,8 @@ def _sweep(zones, band, newest, max_pages, log, out, failed):
             continue
         total_pages = st["paging"]["totalPages"]
         if page == 1 and total_pages > max_pages and not newest:
-            lo, hi = band[0] or config.SEARCH["price_min"], band[1] or config.SEARCH["price_ceiling"]
+            s = config.DEPTO if zones == DEPTO_SLUG else config.SEARCH
+            lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
             if hi - lo >= 10_000:
                 mid = (lo + hi) // 2 // 1000 * 1000
                 log(f"zonaprop {zones[:40]} {band}: {total_pages} pages, splitting at {mid}")
@@ -201,6 +215,8 @@ def _sweep(zones, band, newest, max_pages, log, out, failed):
                 return
             failed.append((zones, band, "overflow"))
         items = [_normalize(p) for p in st["listPostings"] if p.get("postingType") == "PROPERTY"]
+        for it in items:
+            it["kind"] = "depto" if zones == DEPTO_SLUG else "casa"
         out += items
         log(f"zonaprop {zones[:40]} {band} page {page}/{total_pages}: {len(items)} listings")
         page += 1
@@ -212,9 +228,10 @@ def search(max_pages=MAX_PAGES, log=print, newest_only=False):
     if http.API_KEY and not http.ANT_KEY:
         return search_rendered(20 if not newest_only else NEW_PAGES, log, newest_only)
     out, failed, swept, err = [], [], set(), None
-    for zones, bands in zone_groups():
+    groups = zone_groups() + ([(DEPTO_SLUG, BANDS_DEPTO)] if config.DEPTO["zones"] else [])
+    for zones, bands in groups:
         key = f"zonaprop:{zones}"
-        full = not newest_only and sweeps.due(key, EVERY_HOURS)
+        full = not newest_only and sweeps.due(key, DEPTO_EVERY_HOURS if zones == DEPTO_SLUG else EVERY_HOURS)
         before = len(failed)
         for band in bands if full else [(None, None)]:
             try:

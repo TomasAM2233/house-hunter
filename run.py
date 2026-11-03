@@ -6,7 +6,7 @@ python run.py --assess-queue  # AI reads asked for from the app (data/ai_request
 """
 import argparse, bisect, json, os, re, shutil, sys, time, traceback
 import requests
-from hh import ai, config, geo, http, score, text
+from hh import ai, config, depto, geo, http, score, text
 import land_market_build, osm_parks
 from hh.sources import argenprop, zonaprop, mercadolibre, tokko
 
@@ -82,7 +82,7 @@ def _street(l):
 
 
 def _twins(a, b):
-    return (a["id"] != b["id"] and a.get("price_usd") and a["price_usd"] == b.get("price_usd")
+    return (a["id"] != b["id"] and depto.kind(a) == depto.kind(b) and a.get("price_usd") and a["price_usd"] == b.get("price_usd")
             and _close(a.get("total_m2"), b.get("total_m2"))
             and ((a.get("lat") is not None and b.get("lat") is not None
                   and geo.dist_m((a["lat"], a["lng"]), (b["lat"], b["lng"])) < 250)
@@ -107,25 +107,39 @@ def side_percentiles(listings):
     """Percentiles that sit next to the score's (and matter less): covered m2, USD/m2 (cheaper = higher), m2 still
     buildable, USD per m2 of land paid (cheaper = higher) and the value kept at the horizon, each among every
     listing that has the number. Recomputed on every run, unlike the score's."""
-    ls = [l for l in listings if not l.get("duplicate_of")]
-    for l in ls:
+    every = [l for l in listings if not l.get("duplicate_of")]
+    for l in every:
         l["pcts"], l["build_m2"], l["land"] = {}, score.buildable_left(l), score.land_value(l, l.get("ai"))
     lv = lambda k: lambda l: (l["land"] or {}).get(k)
     get = {"m2": lambda l: l.get("covered_m2"), "ppm2": score.ppm2, "build": score.buildable_left,
            "land": lv("implied"), "kept": lv("kept")}
     cheaper = {"ppm2", "land"}
-    for k, f in get.items():
-        vals = sorted(v for v in map(f, ls) if v is not None)
-        for l in ls:
-            v = f(l)
-            below = None if v is None else len(vals) - bisect.bisect_right(vals, v) if k in cheaper else bisect.bisect_left(vals, v)
-            l["pcts"][k] = None if v is None else round(100 * below / max(1, len(vals)))
+    for kind in ("casa", "depto"):  # apartments are ranked among apartments, houses among houses
+        ls = [l for l in every if depto.kind(l) == kind]
+        for k, f in get.items():
+            vals = sorted(v for v in map(f, ls) if v is not None)
+            for l in ls:
+                v = f(l)
+                below = None if v is None else len(vals) - bisect.bisect_right(vals, v) if k in cheaper else bisect.bisect_left(vals, v)
+                l["pcts"][k] = None if v is None else round(100 * below / max(1, len(vals)))
+
+
+def interleave(listings, key):
+    """Houses and apartments, each best first by key, taken in turns (1st house, 1st apartment, 2nd house...), so the
+    daily AI quota and item pages are shared between the two hunts instead of going to whichever scores higher."""
+    by = {k: sorted((l for l in listings if depto.kind(l) == k), key=lambda l: -key(l)) for k in ("casa", "depto")}
+    out = []
+    for i in range(max(map(len, by.values()), default=0)):
+        out += [by[k][i] for k in ("casa", "depto") if i < len(by[k])]
+    return out
 
 
 def big_lot(l):
     """Tomás's standing alert: 300+ m2 (lot, else total) under USD 230k, 4 to 8 cuadras from Maipú (in CABA 2 to 6
     from the nearest Subte B/D station)."""
     r = config.ALERT_BIG_LOT
+    if depto.is_depto(l):
+        return False
     m2, _ = score.lot_m2(l)
     g = l.get("geo") or {}
     rb = score.ref_blocks(g) if g else None
@@ -147,7 +161,7 @@ def alert(new):
         log(f"ALERT summary: {len(extra)} more")
         try:
             requests.post("https://ntfy.sh/", timeout=20, json={
-                "topic": topic, "title": f"{len(extra)} casas nuevas más arriba del umbral",
+                "topic": topic, "title": f"{len(extra)} propiedades nuevas más arriba del umbral",
                 "message": "Están en la app, ordenadas por puntaje. " + ", ".join(sorted({l.get('zone') or '?' for l in extra}))[:300],
                 "click": config.SITE_URL, "priority": 3, "tags": ["house"]})
         except Exception as e:
@@ -156,7 +170,7 @@ def alert(new):
         lot = big_lot(l)
         g = l.get("geo") or {}
         m2, what = score.lot_m2(l)
-        title = (f"{m2:.0f} m² {what} · " if lot else "") + f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
+        title = (f"{m2:.0f} m² {what} · " if lot else "Depto · " if depto.is_depto(l) else "") + f"P{l.get('pct')} · {l['score']:.0f}/100 · USD {l['price_usd'] or 0:,.0f} · {l.get('zone') or ''}"
         body = (brief if (brief := (l.get("ai_final") or {}).get("brief")) else
                 f"{l.get('total_m2') or '?'} m² tot, {l.get('ambientes') or '?'} amb, {score.ref_blocks(g) if g else '?'} cdas a "
                 f"{score.ref_name(g) if g else 'Maipú'}. {l.get('address', '')}")
@@ -236,7 +250,8 @@ def main():
                 # covered completely; a listing elsewhere that wasn't seen is just not on the newest page
                 swept = getattr(fn, "swept", None)
                 for l in listings.values():
-                    if l["source"] == name and l["id"] not in seen and (l.get("zone") in swept if swept is not None else complete):
+                    zkey = l.get("zone") if depto.kind(l) == "casa" else f"depto:{l.get('zone')}"  # same barrios, separate searches
+                    if l["source"] == name and l["id"] not in seen and (zkey in swept if swept is not None else complete):
                         l["active"] = False  # kept for the percentile history; shown as "Reservada"
                         l.setdefault("gone_at", TODAY)
                 listings = merge(listings, fresh)
@@ -262,7 +277,8 @@ def main():
             l["address_exact"] = False
             street = re.sub(r' al ', ' ', (l.get('address') or '').split(',')[0], flags=re.I)
             l["geocode_query"] = l.get("geocode_query") or f"{street}, {config.geocode_suffix(l['zone'])}"
-        if l.get("lat") is None and l.get("geocode_query"):
+        if l.get("lat") is None and l.get("geocode_query") and not (depto.is_depto(l) and depto.hard_filters(l)):
+            # (an apartment already ruled out by its size, price or barrio isn't worth a geocoder call: most 3 ambientes are under 80 m²)
             ll = geo.geocode(l["geocode_query"], l.get("zone"))
             if ll:
                 l["lat"], l["lng"] = ll
@@ -300,7 +316,9 @@ def main():
     else:
         # enrich + AI only for active listings that survive the non-AI filters, best pre-score first
         cands = [l for l in listings.values() if l.get("active") and not score.hard_filters(l)]
-        cands.sort(key=lambda l: -score.score(l)["score"])
+        # an apartment with no sign of a garage isn't worth paid item pages or an AI read (garage is a must)
+        cands = [l for l in cands if not (depto.is_depto(l) and l["source"] in ("zonaprop", "argenprop") and depto.garage(l) is None)]
+        cands = interleave(cands, lambda l: score.score(l)["score"])
         enriched = reads = 0
         for l in cands:
             if not ai_time_left() or ai.DOWN:
@@ -321,6 +339,9 @@ def main():
             reads += not ai.cached(l, current=True, note=note(l))
             ai.analyse(l, note(l), log=log)
 
+    # the apartments' price per m2 around each one, frozen the first time there are enough of them
+    if not os.path.exists(depto.MARKET):
+        depto.build_market(listings.values(), log=log)
     # CABA's price of land is frozen the first time there are enough houses there (land_market_build.py)
     for side in land_market_build.missing():
         if land_market_build.build(listings.values(), sides=(side,), log=log):
@@ -342,7 +363,7 @@ def main():
     # everything, including Tomás's preferences and notes, and its score overrides ours. Skips what he dismissed.
     # A house he asks about from the app gets one even if a filter ruled it out (he wants the visit questions).
     prefs = open(PREFS).read() if os.path.exists(PREFS) else ""
-    for l in sorted(listings.values(), key=lambda l: -l["score"]):
+    for l in interleave(listings.values(), lambda l: l["score"]):
         l["score_calc"] = l["score"]
         asked = requested and l["id"] in requested and l["id"] not in errors
         if not l.get("ai") or (l["discard"] and not asked):
@@ -362,8 +383,10 @@ def main():
     # Percentile of each score among every listing ever scored (listings.json keeps inactive ones too).
     # Frozen the first time a listing gets a score; the app can recompute all of them on demand.
     # Ranked on the algorithm's score, which every listing has on the same scale (the AI verdict covers only the top).
-    hist = sorted(l["score_calc"] for l in listings.values())
+    # Houses and apartments each against their own kind.
+    hists = {k: sorted(l["score_calc"] for l in listings.values() if depto.kind(l) == k) for k in ("casa", "depto")}
     for l in listings.values():
+        hist = hists[depto.kind(l)]
         if l.get("pct") is None or l.get("pct_score") != l["score_calc"]:
             l["pct"] = round(100 * bisect.bisect_left(hist, l["score_calc"]) / max(1, len(hist)))
             l["pct_score"], l["pct_n"] = l["score_calc"], len(hist)
@@ -372,7 +395,7 @@ def main():
         status = {**json.load(open(DATA)).get("status", {}), **status}
     out = sorted(listings.values(), key=lambda l: (not l.get("active"), bool(l["discard"]), -l["score"]))
     payload = {"generated_at": time.strftime("%Y-%m-%d %H:%M"), "status": status, "weights": config.WEIGHTS,
-               "search": config.SEARCH, "reference": geo.reference(), "listings": out}
+               "weights_depto": config.WEIGHTS_DEPTO, "search": config.SEARCH, "search_depto": config.DEPTO, "reference": geo.reference(), "listings": out}
     os.makedirs(os.path.dirname(DATA), exist_ok=True)
     json.dump(payload, open(DATA, "w"), ensure_ascii=False, indent=1)
     shutil.copy(DATA, WEB_DATA)
@@ -389,7 +412,8 @@ def main():
             os.remove(os.path.join(REQUESTS, f))
     shortlist = [l for l in out if l.get("active") and not l["discard"]]
     pending = len([l for l in shortlist if not l.get("ai")])
-    log(f"{len(out)} listings, {len(shortlist)} on the shortlist, {pending} waiting for AI")
+    nd = sum(depto.is_depto(l) for l in shortlist)
+    log(f"{len(out)} listings, {len(shortlist)} on the shortlist ({nd} apartments), {pending} waiting for AI")
 
 
 if __name__ == "__main__":

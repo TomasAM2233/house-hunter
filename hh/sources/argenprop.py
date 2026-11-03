@@ -14,9 +14,10 @@ SLUGS = {"Vicente López": "vicente-lopez-vicente-lopez",  # the barrio; plain "
 
 
 def groups():
-    """[(name, zones)]: Vicente López's barrios in one search, the CABA barrios along Subte B/D in another."""
+    """[(name, zones)]: Vicente López's barrios in one search, the CABA barrios along Subte B/D in another, and the
+    apartments (config.DEPTO) in a third: 3 ambientes with garage, which Argenprop filters in the URL (~160, 2026-11-03)."""
     s = config.SEARCH
-    return [(n, zs) for n, zs in (("gba", s["zones_gba"]), ("caba", s["zones_caba"])) if zs]
+    return [(n, zs) for n, zs in (("gba", s["zones_gba"]), ("caba", s["zones_caba"]), ("depto", config.DEPTO["zones"])) if zs]
 
 
 # The CABA search has ~1.300 listings (64 pages) and Argenprop's deep pages come back empty, so its full sweep goes
@@ -26,11 +27,13 @@ BANDS_CABA = [(None, 140_000), (140_000, 160_000), (160_000, 175_000), (175_000,
 MAX_PAGES = 25
 
 
-def search_url(page, newest=False, zones=None, band=(None, None)):
-    s = config.SEARCH
+def search_url(page, newest=False, zones=None, band=(None, None), depto=False):
+    s = config.DEPTO if depto else config.SEARCH
     zones = "-o-".join(SLUGS.get(z) or z.lower().replace(" ", "-") for z in (zones or s["zones_gba"]))
     lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
     q = (["orden-masnuevos"] if newest else []) + ([f"pagina-{page}"] if page > 1 else [])
+    if depto:  # "3-ambientes" is exactly 3 here, which is what Tomás asked for
+        return f"{BASE}/departamentos/venta/{zones}/3-ambientes/dolares-{lo}-{hi}/con-cochera" + ("?" + "&".join(q) if q else "")
     return f"{BASE}/casas-o-ph/venta/{zones}/dolares-{lo}-{hi}" + ("?" + "&".join(q) if q else "")
 
 
@@ -93,11 +96,11 @@ def _card(it, in_caba=False):
     }
 
 
-def _sweep(zones, in_caba, newest, max_pages, log, out, failed, band=(None, None)):
+def _sweep(zones, in_caba, newest, max_pages, log, out, failed, band=(None, None), depto=False):
     page, last = 1, 1
     while page <= min(last, max_pages):
         try:
-            html = http.get(search_url(page, newest, zones, band), via_api=True).text
+            html = http.get(search_url(page, newest, zones, band, depto), via_api=True).text
         except Exception as e:
             log(f"argenprop {'CABA' if in_caba else 'VL'} page {page}: {e}")
             failed.append(page)
@@ -109,17 +112,20 @@ def _sweep(zones, in_caba, newest, max_pages, log, out, failed, band=(None, None
         if page == 1:
             pages = [int(p) for p in re.findall(r"[?&]pagina-(\d+)", html)]
             last = max(pages, default=1)
-            lo, hi = band[0] or config.SEARCH["price_min"], band[1] or config.SEARCH["price_ceiling"]
+            s = config.DEPTO if depto else config.SEARCH
+            lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
             if last > max_pages and not newest and hi - lo >= 10_000:
                 mid = (lo + hi) // 2 // 1000 * 1000
                 log(f"argenprop {band}: {last} pages, splitting at {mid}")
-                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (band[0], mid))
-                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (mid, band[1]))
+                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (band[0], mid), depto)
+                _sweep(zones, in_caba, newest, max_pages, log, out, failed, (mid, band[1]), depto)
                 return
         items = [c for c in (_card(it, in_caba) for it in s.select("div.listing__item") if not it.find_parent(class_="listing-container--suggested")) if c]
         for c in items:
+            if depto:
+                c["kind"], c["garage"] = "depto", 1  # the search only returns apartments with garage
             out.setdefault(c["id"], c)
-        log(f"argenprop {'CABA' if in_caba else 'VL'} {band if band != (None, None) else ''} page {page}/{last}: {len(items)} listings")
+        log(f"argenprop {'deptos' if depto else 'CABA' if in_caba else 'VL'} {band if band != (None, None) else ''} page {page}/{last}: {len(items)} listings")
         page += 1
 
 
@@ -134,14 +140,15 @@ def search(max_pages=MAX_PAGES, log=print, newest_only=False):
         bands = BANDS_CABA if full and name == "caba" else [(None, None)]
         for band in bands:
             try:
-                _sweep(zones, name == "caba", not full, max_pages if full else NEW_PAGES, log, out, failed, band)
+                _sweep(zones, name != "gba", not full, max_pages if full else 1 if name == "depto" else NEW_PAGES, log, out, failed, band,
+                       name == "depto")
             except Exception as e:
                 failed.append(f"{name}:{band}")
                 err = e
         if full:
             sweeps.done(key)  # even with a failed page: one full sweep a day is what the free credits allow
         if full and len(failed) == before:
-            swept |= set(zones)
+            swept |= {f"depto:{z}" for z in zones} if name == "depto" else set(zones)
     search.failed_pages, search.swept = failed, swept
     if not out and failed:
         raise err or RuntimeError("argenprop: no page got through")
@@ -158,7 +165,8 @@ def enrich(l):
     l["covered_m2"] = _feat(main, r"m² cubierta") or l.get("covered_m2")
     l["lot_m2"] = _feat(main + feats, r"m² terreno|sup\. terreno|superficie del terreno") or l.get("lot_m2")
     l["uncovered_m2"] = _feat(main, r"m² descubierta") or l.get("uncovered_m2")
-    l["garage"] = _feat(feats, r"cocheras") or _feat(main, r"cochera") or 0
+    # an apartment came from the search with garage ("con-cochera"), even when its page doesn't list it
+    l["garage"] = _feat(feats, r"cocheras") or _feat(main, r"cochera") or (l.get("garage") if l.get("kind") == "depto" else 0) or 0
     l["age_years"] = _feat(feats, r"antig") or l.get("age_years")
     l["features_text"] = (main + feats)[:40]
     d = s.select_one(".section-description")
