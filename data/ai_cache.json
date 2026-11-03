@@ -14438,5 +14438,54 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-03T18:15:49Z"
+ },
+ "ml-MLA1969594562": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "No requiere reformas, es un edificio de diseño a estrenar con materiales nobles (hormigón, madera, vidrio).",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 5,
+  "quiet": 2,
+  "vertical_potential": null,
+  "apto_credito": false,
+  "highlights": [
+   "Diseño arquitectónico de vanguardia",
+   "Dúplex con terraza y parrilla propia",
+   "Amenities premium integrados al verde"
+  ],
+  "red_flags": [
+   "Es una obra en pozo/construcción (no es para mudarse pronto)",
+   "El precio de USD 148k es el 'desde' por unidades mínimas, no por el de 142m2",
+   "Ubicación sobre Salguero implica mucho ruido de colectivos y tránsito"
+  ],
+  "summary": "Es un proyecto de pozo con un diseño alucinante, pero no les sirve porque no es para mudarse ya y el precio del 3 ambientes será mucho más alto.",
+  "modern": 5,
+  "balcony": "large",
+  "balcony_m2_est": 20,
+  "view": 4,
+  "view_notes": "Vista urbana abierta en pisos altos; los dúplex tienen terrazas propias parquizadas.",
+  "floor_est": 4,
+  "front": "frente",
+  "garage": true,
+  "amenities": [
+   "pileta in/out",
+   "gimnasio",
+   "SUM",
+   "parrilla",
+   "local gastronómico"
+  ],
+  "expensas_ars": null,
+  "photos_key": "e2c15bf050d8",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-11-03",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-03T19:15:11Z"
  }
 }
