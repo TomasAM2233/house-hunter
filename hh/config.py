@@ -51,6 +51,7 @@ WEIGHTS_DEPTO = {
 assert sum(WEIGHTS_DEPTO.values()) == 100
 DEPTO_NEIGHBOURS = 20         # apartments around a listing that set its area's USD per m2 (score.depto_market)
 DEPTO_MARKET_MIN = 30         # apartments needed before that price gets frozen
+DEPTO_MAX_ENRICH = 40         # item pages for apartments per run, so the first big batch doesn't eat the houses' AI time
 
 # Names the portals use for parts of those barrios (Zonaprop and Mercado Libre go down to sub-barrios).
 CABA_ALIASES = {

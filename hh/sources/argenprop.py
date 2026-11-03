@@ -112,8 +112,8 @@ def _sweep(zones, in_caba, newest, max_pages, log, out, failed, band=(None, None
         if page == 1:
             pages = [int(p) for p in re.findall(r"[?&]pagina-(\d+)", html)]
             last = max(pages, default=1)
-            s = config.DEPTO if depto else config.SEARCH
-            lo, hi = band[0] or s["price_min"], band[1] or s["price_ceiling"]
+            cfg = config.DEPTO if depto else config.SEARCH  # (not "s": that's the parsed page)
+            lo, hi = band[0] or cfg["price_min"], band[1] or cfg["price_ceiling"]
             if last > max_pages and not newest and hi - lo >= 10_000:
                 mid = (lo + hi) // 2 // 1000 * 1000
                 log(f"argenprop {band}: {last} pages, splitting at {mid}")

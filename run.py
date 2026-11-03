@@ -319,13 +319,17 @@ def main():
         # an apartment with no sign of a garage isn't worth paid item pages or an AI read (garage is a must)
         cands = [l for l in cands if not (depto.is_depto(l) and l["source"] in ("zonaprop", "argenprop") and depto.garage(l) is None)]
         cands = interleave(cands, lambda l: score.score(l)["score"])
-        enriched = reads = 0
+        enriched = enriched_d = reads = 0
         for l in cands:
             if not ai_time_left() or ai.DOWN:
                 break
             # item pages for new candidates, and once more for ones stored with only the search card's few photos
             stale = not l.get("enriched") or (l.get("photos_v", 0) < PHOTOS_V and len(l.get("photos") or []) <= 8)
             if hasattr(SOURCES.get(l["source"]), "enrich") and stale and enriched < args.max_enrich:
+                if depto.is_depto(l):
+                    if enriched_d >= config.DEPTO_MAX_ENRICH:
+                        continue  # its turn comes in the next runs
+                    enriched_d += 1
                 enriched += bool(enrich(l))
                 if score.hard_filters(l):  # full data can rule it out before spending an AI read
                     continue
