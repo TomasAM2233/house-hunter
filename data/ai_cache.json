@@ -12965,5 +12965,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-02T21:14:58Z"
+ },
+ "ap-18225015": {
+  "condition": 4,
+  "reform_usd": 0,
+  "reform_notes": "La propiedad tiene solo 4 años de antigüedad y no requiere reformas significativas para entrar a vivir.",
+  "patio": "large",
+  "patio_m2_est": 650,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 5,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio de 900 m2 con gran jardín y pileta",
+   "Construcción moderna de 4 años en una sola planta",
+   "Losa radiante y mesadas de Silestone"
+  ],
+  "red_flags": [
+   "Ubicación muy lejana en San Nicolás (fuera del rango de búsqueda)",
+   "Expensas elevadas de $500.000",
+   "Completamente descartada por localización según nota del comprador"
+  ],
+  "summary": "Aunque la casa está impecable y tiene un parque enorme con pileta, queda lejísimos en San Nicolás y está totalmente descartada.",
+  "photos_key": "b84ff6cd9912",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-03",
+  "prompt_version": 2,
+  "note_key": "92b1728e",
+  "ts": "2026-11-03T00:05:02Z"
  }
 }

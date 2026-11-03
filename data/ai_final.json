@@ -11747,5 +11747,52 @@
   "model": "gemini-flash-lite-latest",
   "at": "2026-11-02",
   "ts": "2026-11-02T21:29:54Z"
+ },
+ "ap-18225015": {
+  "score": 10,
+  "brief": "Casa de 175 m² cubiertos en lote de 900 m² a USD 176.000 con pileta. Pese al precio por m² y el tamaño del terreno, queda descartada por ubicarse en San Nicolás (PBA), fuera de tus zonas de búsqueda, y por expensas de $500.000.",
+  "reasons": [
+   "Ubicación fuera de la zona elegida: está en San Nicolás (PBA) y tus notas la descartan expresamente.",
+   "Incumple la cercanía a Maipú, tren o subte B/D.",
+   "Expensas muy elevadas de $500.000 que encarecen el mantenimiento mensual."
+  ],
+  "investment": {
+   "score": 2,
+   "why": "Aunque el valor de USD 176.000 por 900 m² de terreno y 175 m² construidos parezca atractivo en la cuenta gruesa, la localización en San Nicolás (PBA) y las expensas de $500.000 reducen drásticamente la liquidez y el público comprador.",
+   "value_10y_pct": 110,
+   "upside": [
+    "Lote propio amplio de 900 m² con pileta",
+    "Construcción moderna de 4 años en una planta"
+   ],
+   "risks": [
+    "Ubicación muy alejada de CABA y Zona Norte tradicional",
+    "Expensas de $500.000 mensuales que acotan la reventa",
+    "Dificultad de salida rápida en el mercado inmobiliario"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿Tiene planos aprobados y es apta crédito?",
+    "impact": "Si no es apta crédito -10 puntos; si lo es +0"
+   },
+   {
+    "q": "¿Las expensas de $500.000 incluyen algún servicio o cuota extraordinaria?",
+    "impact": "Si son ordinarias permanentes -5 puntos"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Cuál es el estado dominial y la situación impositiva de la propiedad?",
+    "impact": ""
+   },
+   {
+    "q": "¿Por qué motivo se vende y qué plazos de posesión manejan?",
+    "impact": ""
+   }
+  ],
+  "input_key": "782ef6b1169a",
+  "model": "gemini-3.5-flash",
+  "at": "2026-11-03",
+  "ts": "2026-11-03T00:05:25Z"
  }
 }
