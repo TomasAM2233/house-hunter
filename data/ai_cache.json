@@ -14625,9 +14625,9 @@
   "ts": "2026-11-04T03:23:04Z"
  },
  "zp-59926695": {
-  "condition": 3,
+  "condition": 2,
   "reform_usd": 45000,
-  "reform_notes": "Reciclado total de baños y cocina (no mostrada), pulido/plastificado de pisos, actualización de aberturas y sistema eléctrico.",
+  "reform_notes": "Reciclado total necesario: cocina y baños completos, pulido y plastificado de pisos (están muy dañados), cambio de aberturas para mejorar acústica y pintura general.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14640,28 +14640,28 @@
   "vertical_potential": null,
   "apto_credito": null,
   "highlights": [
-   "Metraje generoso (100m2)",
-   "Cochera propia en Recoleta",
-   "Planta con dependencia anexable"
+   "Ubicación estratégica en Recoleta",
+   "Cochera propia en la zona",
+   "Planta amplia de 100m2"
   ],
   "red_flags": [
-   "Cocina no mostrada (señal de mal estado)",
-   "Estética muy anticuada (baños de los 90)",
-   "Piso bajo sobre calle transitada"
+   "Estética totalmente anticuada",
+   "Sin fotos de la cocina (señal de mal estado)",
+   "Pisos de parquet muy desgastados"
   ],
-  "summary": "Es un departamento con excelente planta y cochera en una ubicación top, pero está detenido en el tiempo y requiere una inversión fuerte para llegar al estándar de modernidad que buscan.",
-  "modern": 2,
-  "balcony": "medium",
-  "balcony_m2_est": 5,
+  "summary": "Es un departamento con buen metraje y cochera, pero está 'detonado' estéticamente y no cumple con el estándar de modernidad que buscan sin una reforma integral.",
+  "modern": 1,
+  "balcony": "small",
+  "balcony_m2_est": 4,
   "view": 3,
-  "view_notes": "Vista urbana a la calle, edificios de enfrente muy cerca y presencia de mucho cableado aéreo.",
+  "view_notes": "Vista urbana a la calle en piso bajo, con contaminación visual de cables y edificios cercanos enfrente.",
   "floor_est": 2,
   "front": "frente",
   "garage": true,
   "amenities": [
-   "baulera",
+   "ascensor",
    "encargado",
-   "ascensor"
+   "baulera"
   ],
   "expensas_ars": null,
   "photos_key": "16358d382959",
@@ -14669,12 +14669,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:23:23Z"
+  "ts": "2026-11-04T03:53:08Z"
  },
  "ml-MLA3968578962": {
   "condition": 2,
-  "reform_usd": 60000,
-  "reform_notes": "Reciclado integral necesario: demolición, instalaciones eléctricas/sanitarias, cocina, 2 baños, pulido/cambio de pisos y aberturas.",
+  "reform_usd": 35000,
+  "reform_notes": "Reciclaje integral: cocina, baños, pisos, instalaciones y pintura.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14682,45 +14682,44 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 3,
-  "quiet": 1,
+  "natural_light": 2,
+  "quiet": 2,
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Ubicación privilegiada",
-   "Metraje cubierto amplio",
-   "Planta con potencial"
+   "Excelente ubicación en Palermo",
+   "Amplia superficie total",
+   "Mucho potencial de reciclaje"
   ],
   "red_flags": [
    "No tiene balcón",
-   "No tiene cochera",
-   "Ruido alto por ser 1er piso sobre avenida"
+   "Primer piso al frente con rejas",
+   "Requiere una reforma completa y costosa"
   ],
-  "summary": "Es un clavo para lo que buscan: no tiene balcón ni cochera, es un primer piso ruidoso y hay que meterle una fortuna para que sea habitable.",
+  "summary": "Para olvidarse, muchachos: es un primer piso sin balcón, oscuro y para hacer todo a nuevo.",
   "modern": 1,
   "balcony": "none",
   "balcony_m2_est": null,
-  "view": 3,
-  "view_notes": "Vista urbana a la Avenida Coronel Díaz, altura de primer piso con rejas, muy expuesto.",
+  "view": 2,
+  "view_notes": "Vista a la calle desde primer piso con rejas, muy baja altura.",
   "floor_est": 1,
   "front": "frente",
   "garage": false,
   "amenities": [
-   "seguridad virtual",
-   "ascensor"
+   "seguridad"
   ],
   "expensas_ars": 370000,
   "photos_key": "aa2abd0a8988",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:23:39Z"
+  "ts": "2026-11-04T03:53:17Z"
  },
  "ml-MLA1797721533": {
   "condition": 3,
-  "reform_usd": 45000,
-  "reform_notes": "Requiere reciclado total de cocina y baños, actualización de instalación eléctrica, pintura integral y pulido de parqué para alcanzar un estándar moderno.",
+  "reform_usd": 25000,
+  "reform_notes": "Actualizar cocina y baños por completo, pulir y plastificar pisos, modernizar instalaciones y pintura general.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14728,45 +14727,134 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 3,
+  "natural_light": 4,
   "quiet": 2,
   "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Excelente metraje y distribución",
-   "Ubicación privilegiada en Recoleta",
-   "Dormitorios amplios con salida al exterior"
+   "Excelente metraje y luminosidad",
+   "Ubicación estratégica en Recoleta cerca del subte",
+   "Apto crédito y apto profesional"
   ],
   "red_flags": [
-   "No tiene cochera (requisito obligatorio del cliente)",
-   "Primer piso sobre calle transitada (ruido y poca privacidad)",
-   "Expensas desproporcionadamente altas para el tipo de edificio"
+   "Primer piso al frente muy ruidoso por la calle",
+   "Estética general muy anticuada que requiere fuerte inversión",
+   "Sin cochera incluida"
   ],
-  "summary": "Es un departamento con mucho potencial por m2, pero es un clavo para ustedes: no tiene cochera, está detenido en el tiempo y las expensas son un delirio.",
+  "summary": "Es un departamento amplio y luminoso en Recoleta, pero al estar en un primer piso al frente y requerir una renovación integral, no cumple con las expectativas de modernidad y tranquilidad de la pareja.",
   "modern": 2,
+  "balcony": "small",
+  "balcony_m2_est": 4,
+  "view": 2,
+  "view_notes": "Vista directa a la calle Marcelo T. de Alvear en primer piso, con bastante tránsito y edificios enfrente.",
+  "floor_est": 1,
+  "front": "frente",
+  "garage": false,
+  "amenities": [],
+  "expensas_ars": 380000,
+  "photos_key": "fc5be310a948",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-11-04",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-04T03:53:25Z"
+ },
+ "ml-MLA4045767814": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baño completo, armar los sanitarios del baño de servicio y pulir/plastificar pisos.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": false,
+  "highlights": [
+   "Excelente ubicación en Palermo a pasos de Av. Santa Fe",
+   "Superficie amplia con dependencia y baulera",
+   "Luminosidad destacable en todos los ambientes"
+  ],
+  "red_flags": [
+   "No tiene cochera (exclusión obligatoria)",
+   "Antigüedad de 69 años con cocina y baños de época",
+   "Vista lateral y balcón chico con vistas a medianera"
+  ],
+  "summary": "Tiene linda superficie y ubicación, pero le falta cochera y hay que invertirle unos buenos mangos para actualizarlo.",
+  "modern": 2,
+  "balcony": "small",
+  "balcony_m2_est": 2,
+  "view": 2,
+  "view_notes": "Vista lateral a pulmón y contrafrente de edificios vecinos.",
+  "floor_est": 2,
+  "front": "lateral",
+  "garage": false,
+  "amenities": [
+   "ascensor",
+   "seguridad",
+   "laundry"
+  ],
+  "expensas_ars": 292000,
+  "photos_key": "bab12705a498",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-11-04",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-04T03:53:35Z"
+ },
+ "ml-MLA4081803138": {
+  "condition": 4,
+  "reform_usd": 12000,
+  "reform_notes": "Actualizar baños, cocina y pintura general para darle una onda más moderna.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": null,
+  "apto_credito": false,
+  "highlights": [
+   "Muy buena superficie y distribución",
+   "Balcón aterrazado al frente",
+   "Excelente ubicación en Recoleta"
+  ],
+  "red_flags": [
+   "No apto crédito",
+   "Primer piso sobre avenida (ruido y poca privacidad)",
+   "No tiene cochera"
+  ],
+  "summary": "Un departamento amplio y bien ubicado pero que, al ser un primer piso al frente y no tener cochera, no encaja del todo con lo que buscan.",
+  "modern": 3,
   "balcony": "medium",
-  "balcony_m2_est": 5,
+  "balcony_m2_est": 11,
   "view": 3,
-  "view_notes": "Vista urbana directa a la calle en un primer piso; se ven los edificios de enfrente y el tránsito constante.",
+  "view_notes": "Avenida Las Heras con arbolado, pero al ser un 1° piso está bastante cerca de la calle.",
   "floor_est": 1,
   "front": "frente",
   "garage": false,
   "amenities": [
-   "patio",
-   "apto profesional"
+   "laundry"
   ],
-  "expensas_ars": 380000,
-  "photos_key": "fc5be310a948",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "expensas_ars": 236000,
+  "photos_key": "13492858a6ac",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:24:27Z"
+  "ts": "2026-11-04T03:53:44Z"
  },
- "ml-MLA4045767814": {
-  "condition": 3,
-  "reform_usd": 40000,
-  "reform_notes": "Reciclado integral necesario: cocina, baños, instalación eléctrica y aberturas para alcanzar el estándar buscado. Pulido y plastificado de pisos.",
+ "ml-MLA3376823028": {
+  "condition": 4,
+  "reform_usd": 0,
+  "reform_notes": "El departamento está reciclado en buen estado, no requiere reformas prioritarias para mudarse.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14779,133 +14867,40 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Metraje cubierto generoso",
-   "Ubicación excelente en Palermo",
-   "Pisos de parquet originales en buen estado"
+   "Excelente ubicación en Recoleta",
+   "Amplios ambientes y pisos de parquet en muy buen estado",
+   "Dos baños completos y dependencia o suite bien lograda"
   ],
   "red_flags": [
-   "No tiene cochera (requisito excluyente)",
-   "Vista muy encerrada a medianera",
-   "Expensas altas para no tener amenities"
+   "No tiene balcón (exigencia de los compradores)",
+   "No tiene cochera (exigencia de los compradores)",
+   "Primer piso al contrafrente con baja luminosidad natural"
   ],
-  "summary": "Es un departamento amplio pero totalmente original y sin la cochera que buscan, con una vista muy pobre para sus exigencias.",
-  "modern": 2,
-  "balcony": "small",
-  "balcony_m2_est": 2,
-  "view": 2,
-  "view_notes": "Vista lateral a medianera y pulmón de manzana muy cercano; poca profundidad visual.",
-  "floor_est": 2,
-  "front": "lateral",
-  "garage": false,
-  "amenities": [
-   "seguridad",
-   "baulera",
-   "lavadero"
-  ],
-  "expensas_ars": 292000,
-  "photos_key": "bab12705a498",
-  "analyst": "gemini:gemini-3-flash-preview",
-  "analysed_at": "2026-11-04",
-  "prompt_version": 2,
-  "note_key": "",
-  "ts": "2026-11-04T03:25:01Z"
- },
- "ml-MLA4081803138": {
-  "condition": 4,
-  "reform_usd": 18000,
-  "reform_notes": "Instalación de aberturas de PVC con DVH (doble vidriado hermético) indispensable por el ruido, actualización estética de cocina y baños para un look más contemporáneo.",
-  "patio": null,
-  "patio_m2_est": null,
-  "patio_seen": null,
-  "terrace": null,
-  "corner": null,
-  "ph_stacked": null,
-  "pasillo_ph": null,
-  "natural_light": 4,
-  "quiet": 1,
-  "vertical_potential": null,
-  "apto_credito": false,
-  "highlights": [
-   "Balcón aterrazado de excelentes dimensiones",
-   "Ubicación privilegiada en lo mejor de Recoleta",
-   "Planta amplia con dependencia de servicio"
-  ],
-  "red_flags": [
-   "No tiene cochera (incumple requisito obligatorio)",
-   "Ruido de tránsito extremo por ser 1er piso sobre avenida",
-   "No es apto crédito"
-  ],
-  "summary": "Es un departamento amplio y bien mantenido, pero el ruido insoportable del primer piso sobre Las Heras y la falta de cochera lo dejan afuera de lo que están buscando.",
-  "modern": 3,
-  "balcony": "large",
-  "balcony_m2_est": 11,
-  "view": 3,
-  "view_notes": "Vista a la copa de los árboles sobre Av. Las Heras; despejada pero a baja altura y con contaminación visual/sonora de colectivos.",
-  "floor_est": 1,
-  "front": "frente",
-  "garage": false,
-  "amenities": [
-   "baulera",
-   "lavadero"
-  ],
-  "expensas_ars": 236000,
-  "photos_key": "13492858a6ac",
-  "analyst": "gemini:gemini-3-flash-preview",
-  "analysed_at": "2026-11-04",
-  "prompt_version": 2,
-  "note_key": "",
-  "ts": "2026-11-04T03:25:30Z"
- },
- "ml-MLA3376823028": {
-  "condition": 4,
-  "reform_usd": 3000,
-  "reform_notes": "El departamento ya está reciclado y en excelente estado; el gasto sería solo para personalización estética o iluminación.",
-  "patio": null,
-  "patio_m2_est": null,
-  "patio_seen": null,
-  "terrace": null,
-  "corner": null,
-  "ph_stacked": null,
-  "pasillo_ph": null,
-  "natural_light": 2,
-  "quiet": 5,
-  "vertical_potential": null,
-  "apto_credito": false,
-  "highlights": [
-   "Reciclado con buen gusto",
-   "90 m2 muy bien distribuidos",
-   "Dormitorio principal en suite"
-  ],
-  "red_flags": [
-   "No tiene balcón (incumple requisito)",
-   "No tiene cochera (incumple requisito)",
-   "Primer piso interno con poca luz"
-  ],
-  "summary": "El depto está impecable y muy bien reciclado, pero te falla en todos tus 'obligatorios': no tiene balcón, no tiene cochera y la vista es de un primer piso al contrafrente.",
+  "summary": "Está lindo y bien reciclado, pero no les sirve porque es un primer piso sin balcón ni cochera.",
   "modern": 4,
   "balcony": "none",
   "balcony_m2_est": null,
   "view": 2,
-  "view_notes": "Al ser un primer piso al contrafrente, la vista es interna al pulmón de manzana, probablemente sombría y limitada.",
+  "view_notes": "Es un primer piso al contrafrente, la vista da a pulmón de manzana sin gran apertura.",
   "floor_est": 1,
   "front": "contrafrente",
   "garage": false,
   "amenities": [
    "seguridad",
-   "lavadero"
+   "laundry"
   ],
   "expensas_ars": 199000,
   "photos_key": "7f1986d6cb78",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:25:47Z"
+  "ts": "2026-11-04T03:53:53Z"
  },
  "ml-MLA4127489640": {
   "condition": 3,
-  "reform_usd": 25000,
-  "reform_notes": "Requiere reciclado total de cocina y baño (originales de 1970). Se recomienda cambio de aberturas a DVH por el ruido de la avenida y pulido de pisos.",
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina completa, refaccionar baño y pulir/plastificar pisos de parquet.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14918,41 +14913,37 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Excelente luminosidad y orientación norte",
-   "Pisos de parquet de buena calidad",
-   "Ubicación estratégica en Palermo Nuevo"
+   "Muy buena superficie y distribución",
+   "Living comedor amplio con pisos de parquet",
+   "Ubicación estratégica en Palermo"
   ],
   "red_flags": [
-   "No tiene cochera (requisito obligatorio del cliente)",
-   "Expensas desproporcionadamente altas",
-   "Estado original de 55 años en áreas húmedas"
+   "Cocina de época muy anticuada",
+   "Expensas elevadas para los amenities que ofrece",
+   "Sin cochera incluida y ruido de avenida"
   ],
-  "summary": "Es un departamento de época bien conservado pero sin las actualizaciones que buscás, y el hecho de no tener cochera lo descarta para tu perfil.",
+  "summary": "Un departamento amplio pero con cocina vieja sobre una avenida ruidosa, ideal si le metés una buena guita en refacciones.",
   "modern": 2,
   "balcony": "medium",
-  "balcony_m2_est": 7.86,
-  "view": 4,
-  "view_notes": "Vista abierta a la Avenida Dorrego, con buena profundidad visual y orientación norte.",
+  "balcony_m2_est": 8.0,
+  "view": 3,
+  "view_notes": "Vista al frente sobre Avenida Dorrego, con edificios enfrente.",
   "floor_est": 5,
   "front": "frente",
   "garage": false,
-  "amenities": [
-   "seguridad",
-   "baulera",
-   "ascensor"
-  ],
+  "amenities": [],
   "expensas_ars": 550000,
   "photos_key": "c19a54fc6e79",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:26:07Z"
+  "ts": "2026-11-04T03:54:01Z"
  },
  "ml-MLA2152374613": {
   "condition": 3,
-  "reform_usd": 35000,
-  "reform_notes": "Requiere reciclado total de cocina, modernización de aberturas, actualización de placards y sistema eléctrico. El baño está reciclado pero con estética básica.",
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baño de servicio, modernizar instalaciones eléctricas y pintura general.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -14960,45 +14951,42 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 2,
-  "quiet": 2,
+  "natural_light": 3,
+  "quiet": 3,
   "vertical_potential": null,
-  "apto_credito": true,
+  "apto_credito": false,
   "highlights": [
-   "Pisos de roble de Eslavonia",
-   "Techos altos",
-   "Ubicación en el corazón de Recoleta"
+   "Pisos de roble de Eslavonia plastificados",
+   "Edificio clásico de estilo Art Decó",
+   "Amplios ambientes con techos altos"
   ],
   "red_flags": [
-   "No tiene cochera ni balcón abierto",
-   "Expensas desproporcionadas para un 1er piso",
-   "Living con vista a aire y luz (poca luz y vista nula)"
+   "Plano invertido con living al aire y luz",
+   "Expensas muy altas para los amenities que ofrece",
+   "Primer piso al frente ruidoso y con poca privacidad"
   ],
-  "summary": "Ni lo miren: es un primer piso oscuro, sin balcón ni cochera, y con expensas delirantes que no cumple con ninguno de sus requisitos.",
+  "summary": "Es un clásico con buenos pisos pero está medio atado con alambre para lo que piden.",
   "modern": 2,
-  "balcony": "none",
-  "balcony_m2_est": null,
+  "balcony": "small",
+  "balcony_m2_est": 2,
   "view": 2,
-  "view_notes": "Primer piso: los dormitorios ven la calle a baja altura y el living da a un aire y luz interno (pulmón de edificio).",
+  "view_notes": "Da al aire y luz del edificio, poca vista.",
   "floor_est": 1,
   "front": "frente",
   "garage": false,
-  "amenities": [
-   "seguridad",
-   "calefacción central"
-  ],
+  "amenities": [],
   "expensas_ars": 450000,
   "photos_key": "d66bc5394c4e",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:26:25Z"
+  "ts": "2026-11-04T03:54:10Z"
  },
  "ml-MLA4075655432": {
   "condition": 2,
-  "reform_usd": 35000,
-  "reform_notes": "Requiere reciclado total: cocina y baños de época, pulido de aberturas, pintura general (hay humedad de cimientos/pared) y actualización de instalación eléctrica.",
+  "reform_usd": 22000,
+  "reform_notes": "Pulido y plastificado de pisos, actualización integral de cocina y baños, pintura general y arreglo de paredes con humedad.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15011,21 +14999,21 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Ubicación estratégica en Palermo",
-   "Orientación Norte",
-   "Semipiso con dependencia/escritorio"
+   "Muy buena superficie total (84 m2)",
+   "Ubicación en zona codiciada de Palermo",
+   "Ambientes amplios con dependencia o estudio"
   ],
   "red_flags": [
-   "No tiene cochera (requisito obligatorio)",
-   "Estado original descuidado con humedad visible",
-   "Vista muy pobre a pulmón de manzana gris"
+   "Falta cochera obligatoria",
+   "Requiere una reforma importante de cocina y baños",
+   "Paredes con daños visibles y humedad en el living"
   ],
-  "summary": "Ni te gastes: está totalmente de época, no tiene la cochera que pedís y la vista es un bajón.",
-  "modern": 1,
-  "balcony": "medium",
+  "summary": "Para reventar plata en refacción y encima sin cochera, este depto en Guemes no va ni a gancho.",
+  "modern": 2,
+  "balcony": "small",
   "balcony_m2_est": 4,
   "view": 2,
-  "view_notes": "Vista a pulmón de manzana con edificios muy próximos y una estructura de hormigón/estacionamiento; nula privacidad.",
+  "view_notes": "Contrafrente a pulmón de manzana con vista a otros edificios y obras cercanas.",
   "floor_est": 3,
   "front": "contrafrente",
   "garage": false,
@@ -15034,16 +15022,16 @@
   ],
   "expensas_ars": 280000,
   "photos_key": "6a4f5482daca",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:26:43Z"
+  "ts": "2026-11-04T03:54:19Z"
  },
  "ml-MLA3206072572": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "No requiere reformas por ser un edificio a estrenar con terminaciones modernas y de calidad.",
+  "reform_notes": "A estrenar, no requiere refacciones.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15051,26 +15039,26 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 4,
-  "quiet": 3,
+  "natural_light": 5,
+  "quiet": 4,
   "vertical_potential": null,
-  "apto_credito": false,
+  "apto_credito": true,
   "highlights": [
-   "Edificio de doble frente con diseño contemporáneo",
-   "Ubicación privilegiada en el corazón de Recoleta",
-   "Amenities de categoría y cocheras en el edificio"
+   "Edificio moderno a estrenar con diseño contemporáneo",
+   "Ubicación premium en Recoleta con excelentes amenities",
+   "Muy buena luminosidad y balcón al frente con vista arbolada"
   ],
   "red_flags": [
-   "Precio 'gancho': los USD 178k no corresponden a la unidad de 128m2 sino a una mucho más chica",
-   "Es una venta de pozo o fideicomiso, no es para mudanza inmediata",
-   "Las fotos son renders, la calidad final puede variar respecto a la imagen digital"
+   "Las cocheras son fijas pero limitadas (31 para todo el edificio)",
+   "Precio de publicación base, la cochera probablemente se venda aparte",
+   "Al ser pozo o a estrenar, pueden demorarse las posesiones o detalles finales"
   ],
-  "summary": "Es un proyecto de pozo muy fachero en una zona bárbara, pero ojo que el precio es de entrada y no se van a poder mudar mañana mismo.",
+  "summary": "Unidades a estrenar de categoría en Recoleta con excelentes amenities, ideales para mudarse sin hacerles nada.",
   "modern": 5,
-  "balcony": "medium",
-  "balcony_m2_est": 8,
-  "view": 3,
-  "view_notes": "Vista urbana a la calle French; en pisos bajos es vista a edificios de enfrente, en pisos muy altos puede ser abierta.",
+  "balcony": "small",
+  "balcony_m2_est": 4,
+  "view": 4,
+  "view_notes": "Vista abierta arbolada a la calle French.",
   "floor_est": null,
   "front": "frente",
   "garage": "optional",
@@ -15083,16 +15071,16 @@
   ],
   "expensas_ars": null,
   "photos_key": "fb37021edc03",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:27:04Z"
+  "ts": "2026-11-04T03:54:29Z"
  },
  "zp-60607982": {
   "condition": 3,
-  "reform_usd": 18000,
-  "reform_notes": "Pintura general, pulido e hidrolaqueado de pisos de madera, actualización estética de cocina y baños, y revisión de instalaciones eléctricas/sanitarias de 40 años.",
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de baños y cocina, pintura general, pulido y plastificado de pisos de parquet, revisión de instalaciones eléctricas y sanitarias.",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -15100,32 +15088,32 @@
   "corner": false,
   "ph_stacked": true,
   "pasillo_ph": false,
-  "natural_light": 3,
+  "natural_light": 4,
   "quiet": 2,
   "vertical_potential": 0,
   "apto_credito": true,
   "highlights": [
-   "Entrada independiente",
-   "Terraza propia de gran tamaño",
-   "Excelente ubicación en Almagro"
+   "Amplia superficie y ambientes cómodos",
+   "Terraza propia con cuartos de guardado",
+   "Entrada independiente sin expensas"
   ],
   "red_flags": [
-   "Es primer piso por escalera (sin jardín)",
-   "Instalaciones originales de 40 años",
-   "Baño principal con azulejos de época"
+   "No tiene patio ni jardín en planta baja",
+   "Ubicación sobre calle transitada con ruido",
+   "Baños y cocina de época que requieren actualización"
   ],
-  "summary": "Es un PH muy amplio y con buena terraza, pero al estar en primer piso no cumple con el requisito excluyente de tener jardín o patio a nivel del suelo.",
+  "summary": "Es un PH amplio al frente con terraza propia y entrada independiente, pero no tiene el patio en planta baja que buscaban.",
   "photos_key": "400f0d14e0e9",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:27:23Z"
+  "ts": "2026-11-04T03:54:57Z"
  },
  "ml-MLA4025126064": {
   "condition": 3,
-  "reform_usd": 25000,
-  "reform_notes": "Requiere reciclado total de cocina y baños para alcanzar el estándar pedido. Pulido de caldén/parquet, cambio de aberturas y retiro de aires de ventana por splits.",
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baños por completo, pulir y plastificar pisos, revisar instalaciones.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15138,39 +15126,40 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Excelente ubicación en lo mejor de Palermo",
-   "Metraje generoso y buena distribución",
-   "Orientación Este con gran entrada de sol"
+   "Muy buena superficie y distribución",
+   "Vista arbolada al frente",
+   "Ubicación en zona codiciada de Palermo"
   ],
   "red_flags": [
-   "No tiene cochera (incumple requisito obligatorio)",
-   "Expensas desproporcionadas para los servicios del edificio",
-   "Estética anticuada y falta de fotos de baños (posible estado original)"
+   "No tiene cochera (excluyente para el comprador)",
+   "No apto crédito",
+   "Cocina y baños de época con necesidad de reforma"
   ],
-  "summary": "Es un departamento con mucho potencial y buena luz, pero está detenido en el tiempo y no cumple con el requisito clave de la cochera.",
+  "summary": "Tiene linda vista y buen metraje en Palermo, pero no tiene cochera y hay que invertirle guita arriba para dejarlo moderno.",
   "modern": 2,
   "balcony": "medium",
   "balcony_m2_est": 8,
   "view": 4,
-  "view_notes": "Vista abierta a la copa de los árboles sobre la calle Honduras, muy agradable y luminosa.",
+  "view_notes": "Vista abierta arbolada al frente sobre la calle Honduras.",
   "floor_est": 5,
   "front": "frente",
   "garage": false,
   "amenities": [
-   "jardín"
+   "jardín",
+   "ascensor"
   ],
   "expensas_ars": 371000,
   "photos_key": "42cd89fc9d0d",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:27:39Z"
+  "ts": "2026-11-04T03:54:38Z"
  },
  "ml-MLA3775746468": {
   "condition": 2,
-  "reform_usd": 45000,
-  "reform_notes": "Reciclado integral necesario: tratamiento de humedad en paredes (visible en fotos), actualización total de cocina y baños, pulido de pisos, cambio de aberturas y renovación de instalación eléctrica/cañerías.",
+  "reform_usd": 25000,
+  "reform_notes": "Reciclar cocina y baños a nuevo, pulir y plastificar pisos, pintar general y reparar marcas de humedad en paredes.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15179,44 +15168,44 @@
   "ph_stacked": null,
   "pasillo_ph": null,
   "natural_light": 4,
-  "quiet": 2,
+  "quiet": 3,
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Sin expensas",
-   "Doble balcón (frente y contrafrente)",
-   "Dimensiones amplias"
+   "Muy buena superficie y luminosidad",
+   "Balcón amplio al frente",
+   "Sin expensas"
   ],
   "red_flags": [
-   "No tiene cochera (incumple requisito obligatorio)",
-   "Acceso por escalera (piso 2)",
-   "Humedad de cimientos o filtraciones muy evidente en paredes"
+   "Marcas evidentes de humedad en paredes",
+   "Antigüedad de 70 años y por escalera",
+   "Falta cochera"
   ],
-  "summary": "Es un PH antiguo con mucho potencial pero está en estado original 'feo' y descuidado; no cumple con la cochera ni con el estado moderno que buscan.",
-  "modern": 1,
-  "balcony": "large",
+  "summary": "Tiene buen metraje y linda luz, pero hay que invertirle bastante plata arriba para dejarlo moderno y emprolijarlo.",
+  "modern": 2,
+  "balcony": "medium",
   "balcony_m2_est": 10,
   "view": 3,
-  "view_notes": "Vista abierta a la calle Gorriti, entorno arbolado pero a baja altura (piso 2).",
+  "view_notes": "Vista al frente sobre la calle Gorriti con edificios enfrente.",
   "floor_est": 2,
   "front": "frente",
   "garage": false,
   "amenities": [
-   "terraza común",
-   "patio común"
+   "laundry",
+   "terraza"
   ],
   "expensas_ars": 0,
   "photos_key": "de124990e4e0",
-  "analyst": "gemini:gemini-3-flash-preview",
+  "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:27:54Z"
+  "ts": "2026-11-04T03:54:46Z"
  },
  "ml-MLA4045646744": {
-  "condition": 2,
+  "condition": 3,
   "reform_usd": 35000,
-  "reform_notes": "Reciclar cocina, baño principal y de servicio, actualizar instalación eléctrica, reparar calefacción central y pintar por completo.",
+  "reform_notes": "Reciclar cocina y baños por completo, actualizar instalaciones de calefacción y pintar.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15229,27 +15218,28 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Excelente ubicación en Palermo",
-   "Detalles de categoría y estilo Tudor histórico",
-   "Pisos originales de roble de Eslavonia y pino"
+   "Excelente ubicación cerca del Jardín Botánico",
+   "Detalles de época originales y boiserie",
+   "Edificio histórico de estilo Tudor"
   ],
   "red_flags": [
    "No tiene cochera propia",
-   "Carece de un balcón real (solo tiene balcón francés)",
-   "Requiere una reforma integral para actualizarlo"
+   "Balcón francés sin superficie",
+   "Calefacción central rota y expensas muy altas"
   ],
-  "summary": "Tiene ubicación soñada y estilo clásico, pero sin cochera ni balcón transitable y con mucho gasto de refacción no va para esta pareja.",
+  "summary": "Es una pena que no tenga cochera ni un balcón real, porque para entrar a vivir así nomás le falta bastante inversión.",
   "modern": 2,
   "balcony": "french",
-  "balcony_m2_est": null,
+  "balcony_m2_est": 0,
   "view": 3,
-  "view_notes": "Vista al frente sobre Avenida Santa Fe, con edificios enfrente y arbolado urbano.",
+  "view_notes": "Vista a la Avenida Santa Fe desde un piso bajo.",
   "floor_est": 2,
   "front": "frente",
   "garage": false,
   "amenities": [
+   "seguridad",
    "laundry",
-   "seguridad"
+   "ascensor"
   ],
   "expensas_ars": 327990,
   "photos_key": "a5c59ecbfe18",
@@ -15257,7 +15247,7 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:28:04Z"
+  "ts": "2026-11-04T03:55:05Z"
  },
  "ml-MLA1384518425": {
   "condition": 5,
@@ -15275,20 +15265,20 @@
   "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Edificio a estrenar con amenities completos",
-   "Excelente ubicación en Palermo",
-   "Balcón y muy buena luminosidad"
+   "Emprendimiento moderno a estrenar en excelente zona de Palermo",
+   "Amenities completos con terraza verde y parrilla",
+   "Balcón amplio con buena vista y luminosidad"
   ],
   "red_flags": [
-   "Cochera optativa (se paga aparte)",
-   "Supuestos renders o fotos genéricas de obra"
+   "Cocheras optativas y se venden aparte",
+   "El precio publicado corresponde a unidades menores o requiere verificar metrajes reales (aviso mixto)"
   ],
-  "summary": "Es un departamento a estrenar moderno y bien ubicado, pero acordate que la cochera se paga aparte.",
+  "summary": "Es un tremendo estreno en Palermo, re moderno y con terraza propia, pero ojo que la cochera se paga aparte.",
   "modern": 5,
   "balcony": "medium",
   "balcony_m2_est": 5,
   "view": 4,
-  "view_notes": "Vista abierta urbana al frente y contrafrente.",
+  "view_notes": "Vista abierta y arbolada hacia la calle desde pisos altos.",
   "floor_est": null,
   "front": "frente",
   "garage": "optional",
@@ -15305,12 +15295,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:28:16Z"
+  "ts": "2026-11-04T03:55:15Z"
  },
  "ml-MLA1742675139": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "Es un emprendimiento en pozo a estrenar con diseño moderno.",
+  "reform_notes": "Es un emprendimiento en pozo a estrenar, no requiere reformas.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15323,30 +15313,30 @@
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Edificio moderno a estrenar con excelentes amenities",
-   "Excelente ubicación en Palermo",
+   "Emprendimiento moderno a estrenar en pozo",
+   "Excelente ubicación en Palermo con gran variedad de amenities",
    "Diseño contemporáneo de doble frente"
   ],
   "red_flags": [
-   "Es un proyecto en pozo, no se mudan pronto",
-   "La cochera se vende aparte",
-   "Orientación y altura exacta a confirmar"
+   "Es en pozo, no se pueden mudar pronto",
+   "Las cocheras se venden por separado",
+   "Enfoque comercial hacia alquiler temporario y estudiantes"
   ],
-  "summary": "Es un pozo moderno en Palermo con muchos amenities, pero ojo que es desde pozo y no se mudan ya.",
+  "summary": "Es un pozo moderno en Palermo con excelentes amenities, pero no se pueden mudar pronto.",
   "modern": 5,
   "balcony": "medium",
   "balcony_m2_est": 5,
   "view": 3,
-  "view_notes": "Vista urbana al frente sobre la calle Bulnes.",
+  "view_notes": "Vista a la calle en zona urbana consolidada de Palermo.",
   "floor_est": null,
   "front": "frente",
   "garage": "optional",
   "amenities": [
-   "pileta",
+   "Gran piscina",
+   "Sector parrilla",
+   "Gym",
    "SUM",
-   "gimnasio",
-   "laundry",
-   "seguridad"
+   "Coworking"
   ],
   "expensas_ars": null,
   "photos_key": "98c3bb55a5b1",
@@ -15354,12 +15344,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:28:29Z"
+  "ts": "2026-11-04T03:55:24Z"
  },
  "ml-MLA2190453069": {
   "condition": 3,
   "reform_usd": 15000,
-  "reform_notes": "Actualizar cocina, pintura general, pulido y plastificado de pisos, revisión de instalaciones.",
+  "reform_notes": "Actualizar cocina, pintura general, pulido y plastificado de pisos, revisar instalaciones y baños secundarios.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15372,21 +15362,21 @@
   "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Ubicación en Palermo sobre calle arbolada",
+   "Excelente ubicación en Palermo",
    "Pisos de parquet antiguo en buen estado",
-   "Muy buena distribución y ambientes amplios"
+   "Buenos espacios y distribución clásica"
   ],
   "red_flags": [
-   "No tiene cochera",
-   "Estética antigua que requiere inversión",
-   "Antigüedad de 70 años sin reciclaje integral a la vista"
+   "No tiene cochera (exclusión obligatoria)",
+   "Requiere inversión y tiempo en refacciones",
+   "Antigüedad alta sin actualización integral"
   ],
-  "summary": "Linda planta racionalista en Palermo con potencial, pero le falta la cochera y hay que poner unos buenos dólares para dejarla moderna.",
+  "summary": "Linda planta de época en Palermo pero no tiene cochera y necesita bastante plata arriba para dejarla moderna como quieren.",
   "modern": 2,
   "balcony": "small",
-  "balcony_m2_est": null,
+  "balcony_m2_est": 2.5,
   "view": 3,
-  "view_notes": "Vista a la calle arbolada desde un segundo piso, con edificios enfrente.",
+  "view_notes": "Vista a la calle Charcas con árboles, edificios enfrente.",
   "floor_est": 2,
   "front": "frente",
   "garage": false,
@@ -15397,12 +15387,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:28:40Z"
+  "ts": "2026-11-04T03:55:38Z"
  },
  "ml-MLA4011984088": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "No requiere refacciones importantes ya que está reciclado a nuevo.",
+  "reform_notes": "El departamento está reciclado a nuevo, no requiere refacciones importantes para mudarse.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15410,26 +15400,26 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 5,
+  "natural_light": 4,
   "quiet": 2,
   "vertical_potential": null,
   "apto_credito": false,
   "highlights": [
-   "Reciclado a nuevo con buen criterio estético",
-   "Excelente luminosidad y vista abierta al frente",
-   "Amplia superficie de 83 m² con cómodo balcón"
+   "Reciclado a nuevo con buenos detalles",
+   "Muy luminoso y al frente con balcón",
+   "Bajas expensas"
   ],
   "red_flags": [
-   "No incluye cochera (se vende aparte en otra cuadra)",
-   "Ubicación sobre avenida ruidosa con mucho tránsito",
-   "Todo eléctrico sin gas natural (servicio reconectable según aviso)"
+   "No incluye cochera (se vende aparte en otra ubicación)",
+   "Es todo eléctrico y requiere reconectar gas si se prefiere",
+   "Ubicación sobre avenida ruidosa en un tercer piso"
   ],
-  "summary": "Hermoso depto reciclado en Palermo pero al estar sobre Charcas y sin cochera propia, hay que evaluar si el ruido de la avenida les molesta.",
+  "summary": "Está lindo y reciclado a nuevo, pero al estar sobre Charcas y sin cochera propia, a ese precio medio que te empoman.",
   "modern": 4,
   "balcony": "medium",
-  "balcony_m2_est": 9.7,
-  "view": 4,
-  "view_notes": "Vista abierta al frente sobre la avenida Charcas, con buena entrada de luz.",
+  "balcony_m2_est": 6.5,
+  "view": 3,
+  "view_notes": "Vista al frente sobre la avenida Charcas, con edificios enfrente.",
   "floor_est": 3,
   "front": "frente",
   "garage": false,
@@ -15442,12 +15432,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:28:51Z"
+  "ts": "2026-11-04T03:55:47Z"
  },
  "ml-MLA2076785485": {
   "condition": 3,
   "reform_usd": 15000,
-  "reform_notes": "Actualizar cocina y baños por completo, pulir y plastificar pisos de parquet, y pintar todo el departamento.",
+  "reform_notes": "Actualizar cocina y baños por completo, pulir y plastificar pisos de parquet, y pintar toda la unidad.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15455,42 +15445,45 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 4,
+  "natural_light": 3,
   "quiet": 4,
   "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Piso alto al contrafrente con buena luz natural",
-   "Amplia superficie de 98 m²",
-   "Ubicación céntrica en Recoleta"
+   "Excelente metraje (98 m2 cubiertos)",
+   "Piso alto al contrafrente luminoso",
+   "Ubicación estratégica en Recoleta"
   ],
   "red_flags": [
-   "No tiene cochera (requisito obligatorio)",
-   "No tiene balcón real (solo ventanal/francés)",
-   "Estética anticuada que requiere inversión fuerte"
+   "No tiene cochera ni balcón real",
+   "Estética antigua sin reciclar",
+   "Expensas muy altas para la zona"
   ],
-  "summary": "Un departamento amplio y luminoso en Recoleta, pero le falta cochera, balcón y una buena actualización.",
+  "summary": "Es un departamento amplio y luminoso en Recoleta pero viejo, sin cochera ni balcón, y pide bastante guita en expensas.",
   "modern": 2,
   "balcony": "french",
   "balcony_m2_est": null,
   "view": 2,
-  "view_notes": "Vista a contrafrente sin gracia, con edificios enfrente.",
+  "view_notes": "Vista a contrafrente sin altura destacada, típico pulmón de manzana.",
   "floor_est": 11,
   "front": "contrafrente",
   "garage": false,
-  "amenities": [],
+  "amenities": [
+   "laundry",
+   "seguridad"
+  ],
   "expensas_ars": 550000,
   "photos_key": "d25a5ec3178a",
   "analyst": "gemini:gemini-flash-lite-latest",
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:29:05Z"
+  "ts": "2026-11-04T03:55:56Z"
  },
  "zp-58322716": {
   "condition": 3,
   "reform_usd": 15000,
-  "reform_notes": "Actualizar cocina y baños por completo, pulir y plastificar pisos, renovar pintura general.",
+  "reform_notes": "Actualizar baños completos y toilette, modernizar cocina (muebles y revestimientos), pulir y plastificar pisos.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15498,26 +15491,26 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 4,
+  "natural_light": 3,
   "quiet": 3,
   "vertical_potential": null,
   "apto_credito": true,
   "highlights": [
-   "Excelente ubicación en Palermo Soho",
-   "Cochera incluida y balcón corrido",
-   "Superficie cómoda con dependencia"
+   "Excelente ubicación en Palermo Soho a metros de Santa Fe y Subte D",
+   "Cochera incluida y amplio balcón corrido al frente",
+   "Muy buena superficie con dependencia utilizable como escritorio"
   ],
   "red_flags": [
-   "Cocina y baños de época con estética muy ochentosa",
-   "Antigüedad de 51 años sin reciclajes visibles",
-   "Dependencia de servicio que resta espacio principal"
+   "Baños y cocina totalmente de época y desactualizados",
+   "Edificio de 51 años de antigüedad que requiere inversión en refacción",
+   "Estética general antigua que no cumple con el estándar moderno buscado"
   ],
-  "summary": "Está bien ubicado y tiene cochera, pero hay que invertirle una buena moneda arriba para dejarlo moderno como buscan.",
+  "summary": "Tiene una ubicación inmejorable y cochera, pero hay que gastar unos buenos dólares en reciclar cocina y baños para dejarlo moderno.",
   "modern": 2,
   "balcony": "medium",
   "balcony_m2_est": 6,
   "view": 3,
-  "view_notes": "Vista al frente a la calle y edificios enfrente, con árboles.",
+  "view_notes": "Vista a la calle y edificios enfrente, con pulmón de manzana medianamente abierto pero bajo.",
   "floor_est": null,
   "front": "frente",
   "garage": true,
@@ -15528,12 +15521,12 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:29:19Z"
+  "ts": "2026-11-04T03:56:07Z"
  },
  "zp-60539485": {
-  "condition": 4,
-  "reform_usd": 8000,
-  "reform_notes": "Actualizar cocina y baños, pulir y laquear pisos de madera, y modernizar escalera.",
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baños por completo, pulir y laquear pisos de madera, remover biblioteca con hogar artificial anticuado.",
   "patio": null,
   "patio_m2_est": null,
   "patio_seen": null,
@@ -15541,26 +15534,26 @@
   "corner": null,
   "ph_stacked": null,
   "pasillo_ph": null,
-  "natural_light": 5,
+  "natural_light": 4,
   "quiet": 3,
   "vertical_potential": null,
   "apto_credito": null,
   "highlights": [
-   "Ubicación excelente en Palermo con cochera múltiple (4 cocheras)",
-   "Gran luminosidad y dos espacios exteriores (balcón y balcón terraza)",
-   "Semipiso en dúplex con buena superficie cubierta"
+   "Ubicación excelente en Palermo",
+   "Incluye cuatro cocheras",
+   "Muy buena luminosidad y balcón terraza"
   ],
   "red_flags": [
-   "Expensas muy altas por incluir 4 cocheras",
-   "Estética general de baños y cocina anticuada",
-   "Edificio sin accesibilidad"
+   "Expensas muy altas por las 4 cocheras",
+   "Estética anticuada que requiere reciclivo",
+   "Distribución en dúplex tipo loft poco funcional"
   ],
-  "summary": "Un cochazo de propiedad en Palermo pero con expensas saladitas y estética para actualizar.",
-  "modern": 3,
-  "balcony": "medium",
+  "summary": "Tiene cuatro cocheras y linda ubicación, pero pide bastante plata de refacción y las expensas te matan.",
+  "modern": 2,
+  "balcony": "large",
   "balcony_m2_est": 17.3,
-  "view": 4,
-  "view_notes": "Vista abierta al frente con pulmón luminoso y edificios enfrente.",
+  "view": 3,
+  "view_notes": "Vista al frente a edificios linderos de Palermo, sin verde destacado.",
   "floor_est": 7,
   "front": "frente",
   "garage": true,
@@ -15573,7 +15566,7 @@
   "analysed_at": "2026-11-04",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-04T03:29:31Z"
+  "ts": "2026-11-04T03:56:16Z"
  },
  "ml-MLA2196738545": {
   "condition": 4,
