@@ -1,34 +1,12 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/19: 30 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
 zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
-zonaprop palermo-recoleta (None, None) page 1/63: 30 listings
-argenprop VL  page 1/22: 20 listings
-argenprop VL  page 2/22: 20 listings
-argenprop CABA  page 1/64: 20 listings
-argenprop CABA  page 2/64: 20 listings
-argenprop deptos  page 1/8: 20 listings
-AI failed for ml-MLA3899677406: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI failed for ml-MLA2213133715: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read zp-59926695: ok in 27s (gemini-3-flash-preview)
-AI read ml-MLA3968578962: ok in 3s (gemini-flash-lite-latest)
-AI read ml-MLA1797721533: ok in 2s (gemini-flash-lite-latest)
-AI read ml-MLA4045767814: ok in 4s (gemini-flash-lite-latest)
-AI read ml-MLA4081803138: ok in 2s (gemini-flash-lite-latest)
-AI read ml-MLA3376823028: ok in 3s (gemini-flash-lite-latest)
-AI read ml-MLA4127489640: ok in 2s (gemini-flash-lite-latest)
-AI read ml-MLA2152374613: ok in 3s (gemini-flash-lite-latest)
-AI read ml-MLA4075655432: ok in 3s (gemini-flash-lite-latest)
-AI read ml-MLA3206072572: ok in 4s (gemini-flash-lite-latest)
-AI read ml-MLA4025126064: ok in 2s (gemini-flash-lite-latest)
-AI read ml-MLA3775746468: ok in 3s (gemini-flash-lite-latest)
-AI read zp-60607982: ok in 4s (gemini-flash-lite-latest)
-AI read ml-MLA4045646744: ok in 2s (gemini-flash-lite-latest)
-AI read ml-MLA1384518425: ok in 4s (gemini-flash-lite-latest)
-AI read ml-MLA1742675139: ok in 4s (gemini-flash-lite-latest)
-AI read ml-MLA2190453069: ok in 8s (gemini-flash-lite-latest)
-AI read ml-MLA4011984088: ok in 3s (gemini-flash-lite-latest)
-AI read ml-MLA2076785485: ok in 3s (gemini-flash-lite-latest)
-AI read zp-58322716: ok in 3s (gemini-flash-lite-latest)
-AI read zp-60539485: ok in 3s (gemini-flash-lite-latest)
+zonaprop palermo-recoleta (None, None) page 1/62: 30 listings
+argenprop VL  page 1/1: 0 listings
+argenprop CABA  page 1/1: 0 listings
+argenprop deptos  page 1/1: 0 listings
+AI failed for ml-MLA3834367432: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI read ml-MLA2051776347: ok in 239s (gemini-flash-lite-latest)
+AI read zp-60022508: ok in 37s (gemini-flash-lite-latest)
 AI time cap reached (10 min): the rest waits for the next run
-8417 listings, 1501 on the shortlist (235 apartments), 1309 waiting for AI
+8454 listings, 1488 on the shortlist (221 apartments), 1294 waiting for AI

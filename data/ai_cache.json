@@ -16136,5 +16136,98 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-04T03:32:43Z"
+ },
+ "ml-MLA2051776347": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baño principal de época, revisar cañerías y pintar en general.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Pisos de parquet en excelente estado",
+   "Muy buena superficie y distribución",
+   "Balcón corrido y dependencia"
+  ],
+  "red_flags": [
+   "Cocina y baño de época",
+   "Sin cochera",
+   "Piso bajo en contrafrente"
+  ],
+  "summary": "Tiene buenos pisos y espacio, pero hay que invertirle unos buenos mangos para actualizarlo porque está enteramente de época.",
+  "modern": 2,
+  "balcony": "medium",
+  "balcony_m2_est": 6,
+  "view": 2,
+  "view_notes": "Contrafrente a pulmón con algo de verde, piso bajo.",
+  "floor_est": 2,
+  "front": "contrafrente",
+  "garage": false,
+  "amenities": [
+   "laundry",
+   "seguridad"
+  ],
+  "expensas_ars": 392000,
+  "photos_key": "d504b55b2d87",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-11-04",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-04T18:25:11Z"
+ },
+ "zp-60022508": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar cocina y baño por completo, pulir y plastificar pisos de parquet.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": null,
+  "apto_credito": null,
+  "highlights": [
+   "Muy buena luminosidad y pisos altos",
+   "Metreadaje generoso y ambientes amplios",
+   "Ubicación privilegiada en Las Cañitas"
+  ],
+  "red_flags": [
+   "Cocina y baño originales de época a reciclar",
+   "No incluye cochera fija (solo de cortesía)",
+   "Antigüedad de 45 años sin actualizaciones recientes"
+  ],
+  "summary": "Es un departamento amplio y luminoso en Las Cañitas pero pide una reforma integral de cocina y baños para dejarlo moderno.",
+  "modern": 2,
+  "balcony": "small",
+  "balcony_m2_est": 3,
+  "view": 3,
+  "view_notes": "Vista urbana a la calle/edificios enfrente, sin verde destacado.",
+  "floor_est": 8,
+  "front": "frente",
+  "garage": false,
+  "amenities": [
+   "seguridad 24hs",
+   "SUM",
+   "terraza"
+  ],
+  "expensas_ars": null,
+  "photos_key": "560075680fee",
+  "analyst": "gemini:gemini-flash-lite-latest",
+  "analysed_at": "2026-11-04",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-04T18:25:54Z"
  }
 }
