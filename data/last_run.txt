@@ -1,10 +1,17 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/18: 30 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
 zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
-zonaprop palermo-recoleta (None, None) page 1/63: 29 listings
+zonaprop palermo-recoleta (None, None) page 1/62: 29 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
 AI failed for ml-MLA4155029478: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 3 times in a row: no more AI reads this run
-8829 listings, 662 on the shortlist (105 apartments), 510 waiting for AI
+AI read zp-60651798: ok in 152s (gemini-3.6-flash)
+AI read ml-MLA3921785862: ok in 18s (gemini-3-flash-preview)
+AI read zp-60649919: ok in 36s (gemini-3-flash-preview)
+AI read zp-60088075: ok in 27s (gemini-3-flash-preview)
+AI read ml-MLA3191162162: ok in 50s (gemini-3-flash-preview)
+AI read ml-MLA2243592133: ok in 7s (gemini-flash-lite-latest)
+AI read zp-59745777: ok in 24s (gemini-flash-lite-latest)
+AI time cap reached (10 min): the rest waits for the next run
+8842 listings, 654 on the shortlist (97 apartments), 501 waiting for AI
