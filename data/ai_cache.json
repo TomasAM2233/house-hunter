@@ -24587,5 +24587,117 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-07T09:27:35Z"
+ },
+ "zp-60359744": {
+  "condition": 2,
+  "reform_usd": 20000,
+  "reform_notes": "Rehacer instalación eléctrica completa (está toda por cañería exterior), actualizar cocina y baño, emprolijar revoques y pintura general.",
+  "patio": "large",
+  "patio_m2_est": 130,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Lote propio de 8,66 x 30 m",
+   "Jardín al frente y amplio espacio descubierto",
+   "Estructura en una sola planta con terraza accesible"
+  ],
+  "red_flags": [
+   "Instalación eléctrica precaria con cañería a la vista",
+   "Cocina y baños muy rústicos a renovar de cero",
+   "70 años de antigüedad con cañerías probablemente originales"
+  ],
+  "summary": "Es una típica casa sobre lote propio en Olivos, habitable pero muy básica, donde el presupuesto de 20 mil dólares va a quedar al límite para dejarla prolija.",
+  "photos_key": "e7e1cfd27250",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-07",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-07T16:43:45Z"
+ },
+ "ml-MLA3372884922": {
+  "condition": 2,
+  "reform_usd": 30000,
+  "reform_notes": "Impermeabilización completa de azotea, picado y rehacer revoques por humedad severa, instalación eléctrica y renovación de cocina.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0.0,
+  "apto_credito": null,
+  "highlights": [
+   "Terraza propia espaciosa",
+   "Sin expensas",
+   "Buena ubicación cercana a subte B"
+  ],
+  "red_flags": [
+   "Humedad generalizada con revoques totalmente degradados",
+   "Ubicado en primer piso sobre un comercio",
+   "Costo de obra supera ampliamente el presupuesto disponible"
+  ],
+  "summary": "Es un PH en primer piso sobre un autoservicio, con una terraza enorme pero en estado crítico de humedad y sin el patio en planta baja que exigen.",
+  "photos_key": "3e568f8e4910",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-07",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-07T16:45:05Z"
+ },
+ "ml-MLA3933157332": {
+  "condition": 4,
+  "reform_usd": 15000,
+  "reform_notes": "Actualizar aberturas a DVH, modernizar el baño completo y toilette (no mostrados), y unificar estética general.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": null,
+  "apto_credito": false,
+  "highlights": [
+   "Cocina integrada moderna con isla",
+   "Pisos de parquet en excelente estado",
+   "Ubicación estratégica a pasos de Santa Fe y Alto Palermo"
+  ],
+  "red_flags": [
+   "No tiene cochera (exclusión directa para el cliente)",
+   "Balcón mínimo casi testimonial",
+   "Contradicción en apto crédito entre título y ficha técnica"
+  ],
+  "summary": "Queda descartado para la pareja porque no tiene cochera y el balcón es diminuto, a pesar de tener una linda cocina reciclada y buena ubicación.",
+  "modern": 3,
+  "balcony": "small",
+  "balcony_m2_est": 2.0,
+  "view": 3,
+  "view_notes": "Vista urbana al frente sobre Billinghurst, con edificios y oficinas directamente enfrente.",
+  "floor_est": 7,
+  "front": "frente",
+  "garage": false,
+  "amenities": [
+   "seguridad fin de semana",
+   "encargado"
+  ],
+  "expensas_ars": 320000,
+  "photos_key": "d251b422362d",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-07",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-07T16:45:41Z"
  }
 }

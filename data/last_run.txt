@@ -1,15 +1,15 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/18: 30 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
 zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
-zonaprop palermo-recoleta (None, None) page 1/62: 29 listings
+zonaprop palermo-recoleta (None, None) page 1/63: 29 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
-AI failed for zp-60359744: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI failed for ml-MLA3372884922: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read ml-MLA2264780975: ok in 38s (gemini-flash-latest)
-AI read ml-MLA2246741353: ok in 81s (gemini-flash-latest)
-AI read ml-MLA1937443163: ok in 77s (gemini-flash-latest)
-AI failed for ml-MLA3933157332: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI read zp-60359744: ok in 73s (gemini-flash-latest)
+AI read ml-MLA3372884922: ok in 69s (gemini-flash-latest)
+AI read ml-MLA3933157332: ok in 26s (gemini-flash-latest)
+AI failed for ml-MLA4136855488: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI failed for ml-MLA4154810812: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+Gemini didn't answer 3 times in a row: no more AI reads this run
 AI time cap reached (10 min): the rest waits for the next run
-8926 listings, 567 on the shortlist (83 apartments), 403 waiting for AI
+8943 listings, 567 on the shortlist (83 apartments), 401 waiting for AI
