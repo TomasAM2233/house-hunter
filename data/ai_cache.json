@@ -27727,5 +27727,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-08T16:52:17Z"
+ },
+ "ml-MLA2146995879": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Actualización completa de baños de época, modernización de la instalación eléctrica (se ven cables exteriores) y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Muy buena superficie y ambientes amplios",
+   "Terraza propia de uso exclusivo",
+   "Pisos de parquet y carpinterías originales en buen estado"
+  ],
+  "red_flags": [
+   "No tiene patio en planta baja (es primer piso por escalera)",
+   "Baños e instalaciones totalmente de época",
+   "Instalación eléctrica a la vista por cañería externa"
+  ],
+  "summary": "Es un PH señorial y luminoso en primer piso con terraza propia, pero queda descartado de cuajo porque no cuenta con patio en planta baja.",
+  "photos_key": "691939dcd6e3",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-08",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-08T21:34:32Z"
  }
 }
