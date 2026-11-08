@@ -27694,5 +27694,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-07T21:14:29Z"
+ },
+ "tk-3474409": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Rehacer instalación de agua caliente en ambos baños (requiere picar y revestir a nuevo), modernizar cocina y pintura general.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación residencial en Olivos",
+   "Distribución práctica con dormitorio en planta baja",
+   "Entrada de auto propia al frente"
+  ],
+  "red_flags": [
+   "Cañerías de agua caliente rotas en ambos baños a rehacer",
+   "Metros descubiertos muy acotados según ficha",
+   "Cocina y revestimientos de época para actualizar"
+  ],
+  "summary": "Típico dúplex ochentoso en linda zona de Olivos; está habitable pero vas a tener que picar los dos baños enteros para rehacer cañerías.",
+  "photos_key": "9daa55b6dcdd",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-08",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-08T16:52:17Z"
  }
 }

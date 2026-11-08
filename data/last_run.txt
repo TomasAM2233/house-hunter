@@ -5,4 +5,8 @@ zonaprop palermo-recoleta (None, None) page 1/62: 29 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
-8982 listings, 314 on the shortlist (60 apartments), 126 waiting for AI
+AI read tk-3474409: ok in 88s (gemini-flash-latest)
+AI failed for ml-MLA1856308713: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI failed for ml-MLA2146995879: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+Gemini didn't answer 3 times in a row: no more AI reads this run
+8986 listings, 314 on the shortlist (60 apartments), 125 waiting for AI
