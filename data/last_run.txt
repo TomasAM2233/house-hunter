@@ -6,8 +6,20 @@ argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
 AI failed for ml-MLA1856308713: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read ml-MLA2146995879: ok in 87s (gemini-flash-latest)
-AI failed for zp-53506392: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI failed for zp-60295723: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 3 times in a row: no more AI reads this run
-8992 listings, 313 on the shortlist (60 apartments), 124 waiting for AI
+AI read zp-56933694: ok in 42s (gemini-3.6-flash)
+AI read zp-53506392: ok in 15s (gemini-3.6-flash)
+AI read zp-60295723: ok in 12s (gemini-3.6-flash)
+AI read zp-60499546: ok in 40s (gemini-3.6-flash)
+AI read ml-MLA3360690354: ok in 12s (gemini-3.6-flash)
+AI read ml-MLA3898470186: ok in 39s (gemini-3.5-flash)
+AI read zp-60070454: ok in 15s (gemini-3.5-flash)
+AI read zp-56765678: ok in 14s (gemini-3.5-flash)
+AI read ml-MLA2810580974: ok in 14s (gemini-3.5-flash)
+AI read zp-59288223: ok in 13s (gemini-3.5-flash)
+AI read zp-59471641: ok in 16s (gemini-3.5-flash)
+AI read zp-60151046: ok in 13s (gemini-3.5-flash)
+AI read zp-60616461: ok in 24s (gemini-3.5-flash)
+AI read zp-60652170: ok in 14s (gemini-3.5-flash)
+AI read zp-60421947: ok in 18s (gemini-3.5-flash)
+AI time cap reached (10 min): the rest waits for the next run
+8993 listings, 302 on the shortlist (60 apartments), 110 waiting for AI
