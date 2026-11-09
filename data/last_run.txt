@@ -6,5 +6,7 @@ argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
 AI failed for ml-MLA1856308713: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 4 times in a row: no more AI reads this run
-9015 listings, 305 on the shortlist (61 apartments), 115 waiting for AI
+AI failed for zp-60660672: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI failed for ml-MLA4028749512: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+Gemini didn't answer 3 times in a row: no more AI reads this run
+9021 listings, 306 on the shortlist (61 apartments), 116 waiting for AI
