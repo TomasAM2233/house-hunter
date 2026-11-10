@@ -30119,5 +30119,104 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-10T05:17:21Z"
+ },
+ "zp-60669782": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Tratamiento de humedad de cimiento/filtraciones, renovación de cocina y baño de época, pintura integral y revisión de instalaciones.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación en zona residencial de Olivos",
+   "Terraza propia de gran tamaño",
+   "Entrada independiente desde la calle"
+  ],
+  "red_flags": [
+   "Descarte inmediato: es en 1° piso por escalera sobre un local y no tiene patio a nivel del suelo",
+   "Humedad y descascaramiento visible en paredes interiores",
+   "Cocina y baño originales de 60 años de antigüedad"
+  ],
+  "summary": "Olvidate de esta propiedad: al estar en un primer piso sobre un local comercial no cuenta con el patio a nivel del suelo que exigen para mudarse.",
+  "photos_key": "fb880517e7ee",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-10",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-10T18:26:54Z"
+ },
+ "ml-MLA4154809702": {
+  "condition": 5,
+  "reform_usd": 0,
+  "reform_notes": "No requiere reformas, se encuentra reciclado a nuevo e impecable para habitar de inmediato.",
+  "patio": "large",
+  "patio_m2_est": 70.9,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": true,
+  "natural_light": 4,
+  "quiet": 5,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Patio propio en planta baja enorme de más de 70 m² con sol orientada al Norte",
+   "Íntegramente reciclado a nuevo con excelentes terminaciones y distribución moderna",
+   "Ubicación privilegiada en Recoleta, súper silencioso por ser contrafrente"
+  ],
+  "red_flags": [
+   "Discrepancia en metros cubiertos (60 m² por ficha inmobiliaria vs 40.7 m² por escritura)",
+   "Medianeras muy altas rodeando el patio que reducen las horas de sol directo en invierno",
+   "Es un PH en consorcio de 2 pisos arriba (paga expensas y no se puede construir en altura)"
+  ],
+  "summary": "Es un PH impecable en Recoleta con un patio descomunal en planta baja, perfecto para mudarse ya mismo sin poner un peso de obra.",
+  "photos_key": "4081dd714b51",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-10",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-10T18:27:36Z"
+ },
+ "zp-60657811": {
+  "condition": 4,
+  "reform_usd": 6000,
+  "reform_notes": "Instalación de aires acondicionados, cambio de luminarias, refuerzo de seguridad en aberturas y posibles detalles de terminación en el sector del lavadero/patio.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Reciclado a nuevo (listo para habitar)",
+   "Entrada independiente desde la calle",
+   "Ubicación estratégica en Olivos residencial"
+  ],
+  "red_flags": [
+   "Patio muy pequeño (funciona más como lavadero/pulmón)",
+   "Planta muy profunda y angosta con ambientes internos",
+   "Discrepancia de metros cubiertos entre título y descripción"
+  ],
+  "summary": "Es un PH reciclado impecable en una zona excelente, pero el patio es apenas un aire y luz que no cumple con la expectativa de un jardín para disfrutar.",
+  "photos_key": "97a4fec79799",
+  "analyst": "gemini:gemini-3-flash-preview",
+  "analysed_at": "2026-11-10",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-10T18:29:11Z"
  }
 }
