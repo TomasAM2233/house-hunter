@@ -1,14 +1,12 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/18: 30 listings
-zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
+zonaprop vicente-lopez-vicente-lopez (None, None) page 1/1: 30 listings
 zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
-zonaprop palermo-recoleta (None, None) page 1/62: 30 listings
+zonaprop palermo-recoleta (None, None) page 1/61: 30 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
 AI failed for tk-3474409: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
 AI failed for zp-60669592: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read zp-60674119: ok in 32s (gemini-3.6-flash)
-enrich failed zp-60674019: GET https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-4-ambientes-en-florida-oeste-con-jardin-60674019.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
-AI read zp-60674019: ok in 15s (gemini-3.6-flash)
-AI time cap reached (10 min): the rest waits for the next run
-9488 listings, 285 on the shortlist (63 apartments), 78 waiting for AI
+Gemini didn't answer 3 times in a row: no more AI reads this run
+ALERT zp-60676146: P90 · 49/100 · USD 120,000 · Olivos
+9516 listings, 291 on the shortlist (64 apartments), 84 waiting for AI
