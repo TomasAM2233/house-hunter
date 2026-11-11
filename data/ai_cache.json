@@ -30218,5 +30218,71 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-10T18:29:11Z"
+ },
+ "zp-60674119": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Reciclado completo de baño y cocina, pintura general, revisión de electricidad e impermeabilización del piso de la terraza.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": true,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Terraza propia de 59 m² con parrilla",
+   "Sin expensas",
+   "Ubicación interna silenciosa al contrafrente"
+  ],
+  "red_flags": [
+   "No tiene patio a nivel del suelo en PB (filtro excluyente)",
+   "Baño y cocina muy de época a renovar",
+   "Falta de mantenimiento general y pintura en muros"
+  ],
+  "summary": "Olvidate, esta propiedad no les sirve porque el espacio exterior es únicamente terraza en planta alta y ellos buscan patio propio en planta baja sí o sí.",
+  "photos_key": "7bb3ff25ef82",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-11",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-11T03:19:07Z"
+ },
+ "zp-60674019": {
+  "condition": 4,
+  "reform_usd": 8000,
+  "reform_notes": "Pintura general, actualización estética de baños y revisión/mantenimiento de los techos de madera.",
+  "patio": "large",
+  "patio_m2_est": 150,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Jardín propio parquizado de gran tamaño a nivel de terreno",
+   "Monoambiente independiente ideal para uso profesional o renta",
+   "Sin expensas y cocina ya refaccionada"
+  ],
+  "red_flags": [
+   "Al estar en 1° piso, el acceso al jardín requiere bajar por escalera",
+   "Ubicación sobre Hipólito Yrigoyen con tránsito moderado a alto",
+   "Mantenimiento constante de la cubierta de madera a dos aguas"
+  ],
+  "summary": "Es un PH en primer piso súper habitable y con un jardín enorme abajo, ideal si precisás verde inmediato y espacio extra, aunque tenés que bajar escaleras para disfrutarlo.",
+  "photos_key": "3d6e95e89c0d",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-11",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-11T03:22:20Z"
  }
 }
