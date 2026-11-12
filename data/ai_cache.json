@@ -32071,5 +32071,137 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-12T04:26:36Z"
+ },
+ "zp-60675993": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura integral, modernización estética de cocina y baños, emprolijado del cerco perimetral y service general de la pileta.",
+  "patio": "large",
+  "patio_m2_est": 50,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Jardín propio al fondo con pileta",
+   "Espacio de estacionamiento para dos autos al frente",
+   "Apto crédito bancario y muy buena ubicación en Olivos"
+  ],
+  "red_flags": [
+   "Estética y terminaciones de fines de los 90 a actualizar",
+   "Potencial mantenimiento en techos de tejas y tirantes de madera",
+   "Distribución en 3 plantas con bastantes escaleras"
+  ],
+  "summary": "Es un tríplex noventoso muy bien conservado en Olivos, con un hermoso jardín con pileta que cumple exacto con lo que buscan y entra comodísimo en su presupuesto de reforma.",
+  "photos_key": "a91cd2ec6586",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T08:58:58Z"
+ },
+ "zp-60458824": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Tratamiento de humedad filtrante en paredes y techos, pintura integral, revisión eléctrica y actualización de cocina y baños.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Excelente ubicación en Villa Crespo",
+   "Sin expensas (complejo de solo 2 unidades)",
+   "Terraza propia con quincho"
+  ],
+  "red_flags": [
+   "No tiene patio propio en planta baja",
+   "Humedades de cimiento y filtraciones visibles en dormitorios",
+   "Metros cubiertos de la terraza no están empadronados en la escritura"
+  ],
+  "summary": "Ojo que no cumple con el requisito excluyente del patio en planta baja (solo tiene terraza arriba) y requiere meterle mano a las humedades antes de habitarlo.",
+  "photos_key": "760991de9388",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T08:59:41Z"
+ },
+ "zp-60300957": {
+  "condition": 3,
+  "reform_usd": 18000,
+  "reform_notes": "Pintura general, plastificado de pisos de parquet, impermeabilización de azotea y actualización de cocina y baños.",
+  "patio": "small",
+  "patio_m2_est": 10,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 1,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Amplia terraza propia con parrilla",
+   "Entrada independiente al frente",
+   "Buena superficie total construida"
+  ],
+  "red_flags": [
+   "Ruido muy elevado por dar directamente a Av. Córdoba",
+   "El patio de planta baja es solo un pulmón de aire y luz pequeño",
+   "Muros exteriores y mampostería con humedad y desgaste visible"
+  ],
+  "summary": "Olvidate del jardín verde y del silencio porque está sobre la avenida Córdoba, pero la terraza arriba paga bastante si tolerás el ruido.",
+  "photos_key": "561714087818",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T09:02:20Z"
+ },
+ "zp-56769579": {
+  "condition": 4,
+  "reform_usd": 3000,
+  "reform_notes": "Revisión preventiva de instalaciones antiguas y retoques de pintura general.",
+  "patio": "small",
+  "patio_m2_est": 14,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Patio propio en PB con techo corredizo de vidrio",
+   "Excelente aprovechamiento del espacio y doble altura",
+   "Muy silencioso por ser contrafrente y sin expensas"
+  ],
+  "red_flags": [
+   "Posible inconsistencia en planos por el entrepiso y cerramiento del patio",
+   "Cañerías e instalaciones que requieren inspección por antigüedad (75 años)",
+   "Calor residual en verano debajo del techo vidriado si no tiene buen solado/toldo"
+  ],
+  "summary": "Es una oportunidad bárbara para mudarse ya mismo en Colegiales con el patio en planta baja que buscan, sin tener que meterse en obras grandes.",
+  "photos_key": "cba5091931ff",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T09:03:08Z"
  }
 }
