@@ -27697,8 +27697,8 @@
  },
  "tk-3474409": {
   "condition": 3,
-  "reform_usd": 18000,
-  "reform_notes": "Actualización de cañerías de agua caliente en ambos baños (urgente), modernización de cocina, pintura general y revisión de instalación eléctrica por antigüedad.",
+  "reform_usd": 12000,
+  "reform_notes": "Instalación nueva de agua caliente en ambos baños, reacondicionamiento de cañerías, actualización de cocina y pintura integral.",
   "patio": "small",
   "patio_m2_est": 10,
   "patio_seen": false,
@@ -27711,22 +27711,22 @@
   "vertical_potential": 0,
   "apto_credito": null,
   "highlights": [
-   "Ubicación premium en Olivos residencial",
-   "Estructura sólida y noble",
-   "Importante rebaja de precio reciente"
+   "Excelente ubicación residencial y tranquila en Olivos",
+   "Precio rebajado con buena relación metros/precio",
+   "Cochera propia al frente"
   ],
   "red_flags": [
-   "Baños con cañerías de agua caliente anuladas/rotas",
-   "Inconsistencia: dice 'gran patio' pero sobran solo 10m2 según ficha",
-   "Falta foto crítica del patio y la parrilla"
+   "No hay fotos reales del patio (rellenaron la publicación con renders de IA)",
+   "Requiere obra inmediata de plomería por falta de agua caliente en baños",
+   "Espacio exterior muy reducido (~10 m2 entre patio y entrada de auto)"
   ],
-  "summary": "Es un dúplex sólido en una zona bárbara, pero el patio es un pañuelo y tenés que meterle mano a los baños de entrada.",
-  "photos_key": "d54e1b230fb5",
-  "analyst": "gemini:gemini-3-flash-preview",
-  "analysed_at": "2026-11-10",
+  "summary": "Es un dúplex en linda zona de Olivos con presupuesto de obra accesible, pero el patio es diminuto y escondieron el exterior metiendo renders ilustrativos.",
+  "photos_key": "660f3d6fe9f0",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-10T05:03:44Z"
+  "ts": "2026-11-12T01:11:31Z"
  },
  "ml-MLA2146995879": {
   "condition": 3,
@@ -30284,5 +30284,127 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-11T03:22:20Z"
+ },
+ "zp-60669592": {
+  "condition": 2,
+  "reform_usd": 30000,
+  "reform_notes": "Reparar cielorraso destruido por humedad, reciclar a nuevo cocina y baño, retirar alfombras, pintar y actualizar aberturas.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": null,
+  "highlights": [
+   "Ubicación muy cotizada sobre Av. del Libertador",
+   "Cochera fija cubierta y baulera",
+   "Metraje exterior amplio con patio y balcón corrido"
+  ],
+  "red_flags": [
+   "Filtración grave en cielorraso con desprendimiento de yeso",
+   "Vista encerrada y poca luz natural por ser un primer piso al contrafrente",
+   "Estética anticuada que no cumple con el criterio de 'listo para mudarse'"
+  ],
+  "summary": "Tiene una ubicación privilegiada y cochera, pero está deslucido, con graves filtraciones en el techo y vista corta, requiriendo una reforma integral antes de habitarlo.",
+  "modern": 2,
+  "balcony": "large",
+  "balcony_m2_est": 13.4,
+  "view": 2,
+  "view_notes": "Vista corta a pulmón bajo de manzana, patio interno y contrafrente de edificios linderos.",
+  "floor_est": 1,
+  "front": "contrafrente",
+  "garage": true,
+  "amenities": [
+   "seguridad",
+   "generador eléctrico"
+  ],
+  "expensas_ars": null,
+  "photos_key": "bbe148289bdb",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T01:11:58Z"
+ },
+ "zp-60676146": {
+  "condition": 2,
+  "reform_usd": 18000,
+  "reform_notes": "Reciclado integral de baño y cocina, recambio completo de cañerías e instalación eléctrica, tratamiento de humedad de cimientos y pintura general.",
+  "patio": "medium",
+  "patio_m2_est": 30,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 1,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación residencial en Olivos",
+   "Patios en planta baja y terraza propia",
+   "Lote de solo dos unidades sin expensas"
+  ],
+  "red_flags": [
+   "Humedad ascendente y filtraciones en techos/paredes",
+   "Instalaciones de agua, gas y electricidad obsoletas",
+   "Cocina y baño para rehacer completamente a nuevo"
+  ],
+  "summary": "Es un PH con gran potencial y el espacio al aire libre que buscan en Olivos, pero requiere una obra sustancial para la cual el presupuesto de USD 20.000 alcanza justo.",
+  "photos_key": "19f40109c43a",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T01:12:29Z"
+ },
+ "zp-60679377": {
+  "condition": 4,
+  "reform_usd": 20000,
+  "reform_notes": "Reciclar cocina y baños completos (omitidos en las fotos) y actualizar aberturas por DVH.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": null,
+  "highlights": [
+   "Incluye cochera en el edificio",
+   "Gran balcón corrido y excelente luminosidad",
+   "Ubicación estratégica en Las Cañitas"
+  ],
+  "red_flags": [
+   "No hay fotos de cocina ni de baños (altísima probabilidad de ser originales/de época)",
+   "Aberturas de aluminio antiguas sin DVH",
+   "40 años de antigüedad que pueden requerir revisión de cañerías"
+  ],
+  "summary": "Muy buena planta con cochera y gran balcón en Las Cañitas, pero la omisión de fotos de cocina y baños anticipa que vas a tener que reciclarlos a nuevo.",
+  "modern": 3,
+  "balcony": "large",
+  "balcony_m2_est": 11,
+  "view": 3,
+  "view_notes": "Pulmón de manzana abierto con vista a contrafrentes de edificios vecinos",
+  "floor_est": 6,
+  "front": "contrafrente",
+  "garage": true,
+  "amenities": [],
+  "expensas_ars": null,
+  "photos_key": "6bfec87b35c2",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T01:13:55Z"
  }
 }
