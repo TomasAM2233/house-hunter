@@ -32203,5 +32203,170 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-12T09:03:08Z"
+ },
+ "zp-60686964": {
+  "condition": 3,
+  "reform_usd": 14000,
+  "reform_notes": "Renovación total de cocina y baño, tratamiento de humedad de cimientos en dormitorios, pintura integral y revisión de instalaciones.",
+  "patio": "medium",
+  "patio_m2_est": 18,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Patio propio en PB y cochera al frente",
+   "Sin expensas y apto crédito",
+   "Buena distribución con luz y ventilación natural"
+  ],
+  "red_flags": [
+   "Humedad de cimiento/capilar visible en dormitorios",
+   "Cocina y baños de época a reciclar",
+   "Patio totalmente embaldosado (sin césped)"
+  ],
+  "summary": "Es un PH al frente muy potable en Florida con patio propio y cochera; con el presupuesto de 20.000 USD te alcanza bárbaro para dejarlo impecable.",
+  "photos_key": "28b2c025c97e",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T18:43:16Z"
+ },
+ "zp-60685061": {
+  "condition": 3,
+  "reform_usd": 15000,
+  "reform_notes": "Modernización de baño y cocina, actualización de instalación eléctrica (hay cableado a la vista), pulido de parquets y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 1,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Gran terraza propia de 90 m² con quincho y parrilla",
+   "Sin expensas y apto crédito",
+   "Pisos de parquet conservados y ambientes amplios"
+  ],
+  "red_flags": [
+   "No cumple el requisito obligatorio: es un 1° piso sin patio en planta baja",
+   "Ubicado justo frente al microestadio/cancha (Movistar Arena / Atlanta), ruidos molestos y embotellamientos constantes",
+   "Instalación eléctrica antigua con cañerías exteriores a la vista"
+  ],
+  "summary": "Descartalo de una: está en un primer piso sin patio en planta baja y encima da de frente al Movistar Arena con todo el quilombo de eventos.",
+  "photos_key": "694d8a583358",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T18:44:03Z"
+ },
+ "zp-60015905": {
+  "condition": 3,
+  "reform_usd": 20000,
+  "reform_notes": "Actualización de instalaciones (electricidad y cañerías), tratamiento de humedad en muros, pintura general y renovación básica de baño y cocina.",
+  "patio": "medium",
+  "patio_m2_est": 28,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 5,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Patio arbolado propio muy silencioso en pleno Chacarita",
+   "Sin expensas y con detalles de época (techos altos de madera y aberturas)",
+   "Gran metraje total en planta baja con buena distribución tipo casa chorizo"
+  ],
+  "red_flags": [
+   "Humedades de cimiento y revoques deteriorados visibles en el patio y muros",
+   "Instalaciones de agua y gas probablemente de época que exigen recambio",
+   "Circulación pasante propia del estilo casa chorizo que requiere adaptación"
+  ],
+  "summary": "Un PH con un encanto bárbaro y un patio divino con quinotero, ideal para la pareja porque entra en el presupuesto ajustando los arreglos a lo básico indispensable.",
+  "photos_key": "655aa687eaf3",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T18:45:47Z"
+ },
+ "ml-MLA3996304990": {
+  "condition": 3,
+  "reform_usd": 5000,
+  "reform_notes": "Reparación de humedad de pared y revoques desprendidos en el nicho del lavadero/termotanque, pintura general e imprevistos menores.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Gran terraza propia de 58 m2 con parrilla",
+   "Excelente ubicación en Belgrano sin expensas",
+   "Buena distribución en dúplex con cocina reciclada"
+  ],
+  "red_flags": [
+   "No cuenta con patio ni jardín en planta baja (condición excluyente)",
+   "Humedad de pared y mampostería saltada en área de termotanque",
+   "Acceso por pasillo común muy angosto y sombrío"
+  ],
+  "summary": "Es un PH muy interesante con una terraza enorme en Belgrano, pero hay que descartarlo de entrada porque no tiene patio en planta baja.",
+  "photos_key": "45f1ae143263",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T18:46:07Z"
+ },
+ "ml-MLA4102980832": {
+  "condition": 2,
+  "reform_usd": 28000,
+  "reform_notes": "Impermeabilización urgente de terraza por filtración grave en dormitorio, reciclado completo de baño y cocina, cañerías de agua/gas, electricidad a nuevo, revoques y pintura general.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación en Palermo Hollywood",
+   "Patio propio en PB y terraza libre",
+   "Sin expensas"
+  ],
+  "red_flags": [
+   "Filtración de techo y humedad severa en dormitorio",
+   "El costo de refacción supera ampliamente el límite de USD 20.000",
+   "Instalaciones de servicios totalmente obsoletas"
+  ],
+  "summary": "Tiene el patio en planta baja que exigen y potencial por la terraza, pero la filtración grave del techo y la reforma integral superan los USD 20.000 de presupuesto.",
+  "photos_key": "9ceb3fb20298",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-11-12",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-12T18:48:00Z"
  }
 }

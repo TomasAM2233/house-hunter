@@ -1,14 +1,16 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/18: 30 listings
-zonaprop vicente-lopez-vicente-lopez (None, None) page 1/2: 30 listings
+zonaprop vicente-lopez-vicente-lopez (None, None) page 1/1: 30 listings
 zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
 zonaprop palermo-recoleta (None, None) page 1/62: 30 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
-AI read zp-60675993: ok in 196s (gemini-3.6-flash)
-AI read zp-60458824: ok in 35s (gemini-3.6-flash)
-AI failed for zp-60015905: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-AI read zp-60300957: ok in 59s (gemini-3.6-flash)
-AI read zp-56769579: ok in 41s (gemini-3.6-flash)
+AI read zp-60686964: ok in 127s (gemini-3.6-flash)
+AI read zp-60685061: ok in 12s (gemini-3.6-flash)
+AI read zp-60015905: ok in 87s (gemini-3.5-flash)
+AI read ml-MLA3996304990: ok in 14s (gemini-3.5-flash)
+AI failed for zp-60480227: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+AI read ml-MLA4102980832: ok in 15s (gemini-3.5-flash)
 AI time cap reached (10 min): the rest waits for the next run
-9584 listings, 233 on the shortlist (59 apartments), 19 waiting for AI
+ALERT zp-60686964: P99 · 63/100 · USD 130,000 · Florida
+9635 listings, 231 on the shortlist (59 apartments), 16 waiting for AI
