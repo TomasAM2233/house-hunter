@@ -32987,5 +32987,81 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-12T19:32:50Z"
+ },
+ "zp-60691546": {
+  "condition": 3,
+  "reform_usd": 20000,
+  "reform_notes": "Reciclado a nuevo de cocina y baño, cambio de amoblamientos, actualización de aberturas y pintura general para modernizar.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Patio/terraza propio de gran tamaño con sector techado",
+   "Espacio guardacoche en Palermo Soho",
+   "Apto crédito bancario"
+  ],
+  "red_flags": [
+   "Sin vista abierta (1er piso contrafrente encerrado)",
+   "Cocina anticuada con termotanque a la vista",
+   "Dormitorio principal muy angosto (2,14 m de ancho)"
+  ],
+  "summary": "Aunque tiene cochera y un patio enorme, no cumple con el requisito de buena vista y necesita reforma en cocina y baño para quedar moderno.",
+  "modern": 2,
+  "balcony": "large",
+  "balcony_m2_est": 27,
+  "view": 2,
+  "view_notes": "Vista a patio interno y muros lindantes de manzana desde un 1er piso.",
+  "floor_est": 1,
+  "front": "contrafrente",
+  "garage": true,
+  "amenities": [],
+  "expensas_ars": null,
+  "photos_key": "1192c9926f8c",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-13",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-13T03:44:31Z"
+ },
+ "zp-60105390": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Pintura general, cambio de luminarias y chequeo de impermeabilización en membrana de la terraza.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": false,
+  "highlights": [
+   "Excelente ubicación en límite Belgrano/Núñez",
+   "Sin expensas",
+   "Gran terraza propia de 48 m2 con parrilla"
+  ],
+  "red_flags": [
+   "No tiene patio propio a nivel de planta baja",
+   "Propiedad NO apto crédito",
+   "Ventanas chicas y altas en la planta baja (iluminación lateral limitada)"
+  ],
+  "summary": "Es un duplex muy lindo y listo para entrar en excelente zona, pero queda descartado al toque porque no cumple con el requisito obligatorio del patio en planta baja.",
+  "photos_key": "56dc18747db7",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-13",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-13T03:45:26Z"
  }
 }
