@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-13 03:54",
+ "generated_at": "2026-11-13 07:27",
  "status": {
   "zonaprop": {
    "ok": true,
    "count": 1975,
    "complete": false,
-   "at": "2026-11-13 03:26",
+   "at": "2026-11-13 07:24",
    "mode": "newest",
    "full_at": "2026-11-11 18:47"
   },
@@ -29,7 +29,7 @@
    "ok": true,
    "count": 0,
    "complete": false,
-   "at": "2026-11-13 03:26",
+   "at": "2026-11-13 07:24",
    "mode": "newest",
    "full_at": "2026-11-12 19:03"
   }
@@ -59297,7 +59297,7 @@
    },
    "credit_pill": true,
    "publisher": "RE/MAX Urbana",
-   "modified": "2026-11-12T10:06:09-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "114 m² tot.",
@@ -68998,7 +68998,7 @@
    },
    "credit_pill": false,
    "publisher": "NAVARRO TORRES BIENES RAÍCES",
-   "modified": "2026-11-12T09:43:33-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "229 m² tot.",
@@ -98653,7 +98653,7 @@
     "Toilette": "1",
     "Antigüedad": "26"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "RE/MAX Encore",
    "modified": "2026-11-11T00:00:00-0500",
    "kind": "casa",
@@ -132542,7 +132542,7 @@
    },
    "credit_pill": true,
    "publisher": "INMOBILIARIA MARTING",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -142648,7 +142648,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX ACTITUD",
-   "modified": "2026-11-12T08:21:03-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -148488,9 +148488,9 @@
     "Toilette": "1",
     "Antigüedad": "40"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -156359,7 +156359,7 @@
    },
    "credit_pill": false,
    "publisher": "L.A PROPIEDADES",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "214 m² tot.",
@@ -169970,7 +169970,7 @@
    },
    "credit_pill": false,
    "publisher": "M.Parrinello Operaciones Inmobiliarias",
-   "modified": "2026-11-12T09:15:46-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -195705,7 +195705,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Parque",
-   "modified": "2026-11-12T20:57:37-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -195715,6 +195715,9 @@
      152900
     ]
    ],
+   "pct": 96,
+   "pct_score": 55.7,
+   "pct_n": 6338,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -195814,10 +195817,7 @@
     "sin análisis IA"
    ],
    "duplicate_of": "zp-60421143",
-   "score_calc": 55.7,
-   "pct": 96,
-   "pct_score": 55.7,
-   "pct_n": 6338
+   "score_calc": 55.7
   },
   {
    "id": "ml-MLA2225374605",
@@ -197555,9 +197555,9 @@
     "Baño": "1",
     "Antigüedad": "66"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "AVA",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -197567,6 +197567,9 @@
      104000
     ]
    ],
+   "pct": 89,
+   "pct_score": 55.6,
+   "pct_n": 3406,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -197663,10 +197666,7 @@
     "balcón sin confirmar"
    ],
    "duplicate_of": "zp-59396574",
-   "score_calc": 55.6,
-   "pct": 89,
-   "pct_score": 55.6,
-   "pct_n": 3406
+   "score_calc": 55.6
   },
   {
    "id": "zp-60483552",
@@ -206959,9 +206959,9 @@
     "Toilette": "1",
     "Antigüedad": "50"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "5411 Estate",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -244253,7 +244253,7 @@
    },
    "credit_pill": true,
    "publisher": "PLATINO 3",
-   "modified": "2026-11-12T21:48:29-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -244263,6 +244263,9 @@
      170000
     ]
    ],
+   "pct": 82,
+   "pct_score": 52.9,
+   "pct_n": 3406,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -244365,10 +244368,7 @@
    },
    "build_m2": null,
    "land": null,
-   "score_calc": 52.9,
-   "pct": 82,
-   "pct_score": 52.9,
-   "pct_n": 3406
+   "score_calc": 52.9
   },
   {
    "id": "zp-59969190",
@@ -249601,7 +249601,7 @@
    },
    "credit_pill": false,
    "publisher": "VREMONT Ricotti",
-   "modified": "2026-11-12T09:10:56-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -250036,7 +250036,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -287737,9 +287737,9 @@
     "Baño": "1",
     "Antigüedad": "58"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Krell Brokers",
-   "modified": "2026-11-12T13:35:35-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -299313,7 +299313,7 @@
    },
    "credit_pill": false,
    "publisher": "Aires Home",
-   "modified": "2026-11-12T08:33:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -317085,6 +317085,167 @@
    "pct_n": 3274
   },
   {
+   "id": "zp-60684972",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-en-recoleta-60684972.html",
+   "title": "Venta Departamento 3 Ambientes en Recoleta",
+   "type": "departamento",
+   "price_usd": 149000,
+   "total_m2": 55.0,
+   "covered_m2": 55.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 40.0,
+   "address": "Azcuenaga al 1500, Recoleta",
+   "zone": "Recoleta",
+   "address_exact": true,
+   "lat": -34.5911006,
+   "lng": -58.3979183,
+   "description": "Venta Departamento 3 ambientes en excelente ubicación en Recoleta. Ubicado en una de las zonas más buscadas de la ciudad, con acceso inmediato a múltiples medios de transporte y rodeado de una amplia oferta comercial, gastronómica y social. Semipiso ubicado en 3er piso al contrafrente con buena luz natural y ventilación. La unidad cuenta con: Living comedor cómodo y amplio. Cocina integrada con espacio de lavadero. Dos dormitorios amplios, ambos con placares empotrados. Baño completo refaccionado a nuevo, con detalles modernos y excelente terminación. En el subsuelo cuenta con baulera de dimensiones estandar. Ideal tanto para vivienda propia como para inversión, por su distribución funcional y su ubicación estratégica en un entorno consolidado y de alta demanda. Todas las operaciones son a cargo del Martillero y Corredor Público Inmobiliario responsable: Gustavo De Simone cucicba 8456 / cmcpsi 7213. La información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra Empresa. Los Gastos expresados (expensas, abll, etc.) se refieren a la última información recabada y deberán confirmarse. Las fotografías no vinculantes ni contractuales. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los Brokers no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del Corredor Público Inmobiliario colegiado, cuyos datos se exhiben en cada publicación de propiedad objeto de comercialización.",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627590.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627500.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627533.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627489.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627504.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627585.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627537.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627577.jpg"
+   ],
+   "tags": {
+    "Disposición": "Contrafrente",
+    "Luminoso": null,
+    "Orientación": "E",
+    "Superficie total": "55",
+    "Superficie cubierta": "55",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Antigüedad": "40"
+   },
+   "credit_pill": true,
+   "publisher": "Gustavo De Simone",
+   "modified": "2026-11-12T00:00:00-0500",
+   "kind": "depto",
+   "features_text": [],
+   "first_seen": "2026-11-12",
+   "price_history": [
+    [
+     "2026-11-12",
+     149000
+    ]
+   ],
+   "pct": 70,
+   "pct_score": 49.9,
+   "pct_n": 3406,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "caba",
+    "ref": "subte Pueyrredón (D)",
+    "ref_blocks": 6.4,
+    "maipu_blocks": null,
+    "puente_blocks": 92.5,
+    "villa_blocks": null,
+    "station": {
+     "name": "Pueyrredón",
+     "line": "Subte D",
+     "blocks": 6.4,
+     "effective_blocks": 6.4
+    },
+    "park": {
+     "name": "Plaza República del Paraguay",
+     "m": 164
+    },
+    "zoning": null
+   },
+   "ai": null,
+   "score": 49.9,
+   "components": {
+    "price": {
+     "value": 0.78,
+     "points": 14.1,
+     "max": 18,
+     "why": "USD 149.000 efectivo, 2.709/m² cub."
+    },
+    "investment": {
+     "value": 0.5,
+     "points": 8.0,
+     "max": 16,
+     "why": "USD 2.709/m² cub. contra ~2.676 de la zona (+1%), reventa normal"
+    },
+    "modern": {
+     "value": 0.5,
+     "points": 8.0,
+     "max": 16,
+     "why": "sin IA; antigüedad 40.0 años, el aviso dice reciclado/moderno"
+    },
+    "view": {
+     "value": 0.37,
+     "points": 4.5,
+     "max": 12,
+     "why": "piso 3"
+    },
+    "space": {
+     "value": 0.12,
+     "points": 1.4,
+     "max": 12,
+     "why": "55 m² tot, 55 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.73,
+     "points": 7.3,
+     "max": 10,
+     "why": "plaza a 2 cdas (Plaza República del Paraguay), subte D a 6 cdas (Pueyrredón)"
+    },
+    "balcony": {
+     "value": 0.3,
+     "points": 1.8,
+     "max": 6,
+     "why": "no menciona balcón"
+    },
+    "garage": {
+     "value": 0.2,
+     "points": 0.8,
+     "max": 4,
+     "why": "no aclara cochera"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 2.0,
+     "max": 4,
+     "why": "sin dato"
+    },
+    "credit": {
+     "value": 1,
+     "points": 2,
+     "max": 2,
+     "why": "apto crédito"
+    }
+   },
+   "discard": [
+    "55 m² (< 80)",
+    "no menciona cochera"
+   ],
+   "flags": [
+    "sin análisis IA",
+    "cochera sin confirmar",
+    "balcón sin confirmar"
+   ],
+   "pcts": {
+    "m2": 24,
+    "ppm2": 30,
+    "build": null,
+    "land": null,
+    "kept": null
+   },
+   "build_m2": null,
+   "land": null,
+   "score_calc": 49.9
+  },
+  {
    "id": "zp-60294463",
    "source": "zonaprop",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-de-3-ambientes-con-dependencia-y-cochera-60294463.html",
@@ -319188,7 +319349,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T14:30:35-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -320489,7 +320650,7 @@
     "Toilette": "1",
     "Antigüedad": "30"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Ruben Mercade Propiedades",
    "modified": "2026-11-10T00:00:00-0500",
    "kind": "casa",
@@ -327182,7 +327343,7 @@
    },
    "credit_pill": false,
    "publisher": "Cortese Propiedades",
-   "modified": "2026-11-12T15:35:52-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -334863,7 +335024,7 @@
    },
    "credit_pill": false,
    "publisher": "BEZ PROPIEDADES  CMSI 2801/4319",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -362849,167 +363010,6 @@
    "score_calc": 48.1
   },
   {
-   "id": "zp-60684972",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-en-recoleta-60684972.html",
-   "title": "Venta Departamento 3 Ambientes en Recoleta",
-   "type": "departamento",
-   "price_usd": 149000,
-   "total_m2": 55.0,
-   "covered_m2": 55.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 40.0,
-   "address": "Azcuenaga al 1500, Recoleta",
-   "zone": "Recoleta",
-   "address_exact": true,
-   "lat": -34.5911006,
-   "lng": -58.3979183,
-   "description": "Venta Departamento 3 ambientes en excelente ubicación en Recoleta. Ubicado en una de las zonas más buscadas de la ciudad, con acceso inmediato a múltiples medios de transporte y rodeado de una amplia oferta comercial, gastronómica y social. Semipiso ubicado en 3er piso al contrafrente con buena luz natural y ventilación. La unidad cuenta con: Living comedor cómodo y amplio. Cocina integrada con espacio de lavadero. Dos dormitorios amplios, ambos con placares empotrados. Baño completo refaccionado a nuevo, con detalles modernos y excelente terminación. En el subsuelo cuenta con baulera de dimensiones estandar. Ideal tanto para vivienda propia como para inversión, por su distribución funcional y su ubicación estratégica en un entorno consolidado y de alta demanda. Todas las operaciones son a cargo del Martillero y Corredor Público Inmobiliario responsable: Gustavo De Simone cucicba 8456 / cmcpsi 7213. La información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra Empresa. Los Gastos expresados (expensas, abll, etc.) se refieren a la última información recabada y deberán confirmarse. Las fotografías no vinculantes ni contractuales. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los Brokers no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del Corredor Público Inmobiliario colegiado, cuyos datos se exhiben en cada publicación de propiedad objeto de comercialización.",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627590.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627500.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627533.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627489.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627504.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627585.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627537.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/49/72/720x532/2091627577.jpg"
-   ],
-   "tags": {
-    "Disposición": "Contrafrente",
-    "Luminoso": null,
-    "Orientación": "E",
-    "Superficie total": "55",
-    "Superficie cubierta": "55",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Antigüedad": "40"
-   },
-   "credit_pill": false,
-   "publisher": "Gustavo De Simone",
-   "modified": "2026-11-12T20:48:07-0500",
-   "kind": "depto",
-   "features_text": [],
-   "first_seen": "2026-11-12",
-   "price_history": [
-    [
-     "2026-11-12",
-     149000
-    ]
-   ],
-   "pct": 62,
-   "pct_score": 48.0,
-   "pct_n": 3377,
-   "last_seen": "2026-11-13",
-   "active": true,
-   "geo": {
-    "region": "caba",
-    "ref": "subte Pueyrredón (D)",
-    "ref_blocks": 6.4,
-    "maipu_blocks": null,
-    "puente_blocks": 92.5,
-    "villa_blocks": null,
-    "station": {
-     "name": "Pueyrredón",
-     "line": "Subte D",
-     "blocks": 6.4,
-     "effective_blocks": 6.4
-    },
-    "park": {
-     "name": "Plaza República del Paraguay",
-     "m": 164
-    },
-    "zoning": null
-   },
-   "ai": null,
-   "score": 48.0,
-   "components": {
-    "price": {
-     "value": 0.78,
-     "points": 14.1,
-     "max": 18,
-     "why": "USD 149.000 efectivo, 2.709/m² cub."
-    },
-    "investment": {
-     "value": 0.46,
-     "points": 7.3,
-     "max": 16,
-     "why": "USD 2.709/m² cub. contra ~2.676 de la zona (+1%), le faltan cosas que pide el comprador"
-    },
-    "modern": {
-     "value": 0.5,
-     "points": 8.0,
-     "max": 16,
-     "why": "sin IA; antigüedad 40.0 años, el aviso dice reciclado/moderno"
-    },
-    "view": {
-     "value": 0.37,
-     "points": 4.5,
-     "max": 12,
-     "why": "piso 3"
-    },
-    "space": {
-     "value": 0.12,
-     "points": 1.4,
-     "max": 12,
-     "why": "55 m² tot, 55 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.73,
-     "points": 7.3,
-     "max": 10,
-     "why": "plaza a 2 cdas (Plaza República del Paraguay), subte D a 6 cdas (Pueyrredón)"
-    },
-    "balcony": {
-     "value": 0.3,
-     "points": 1.8,
-     "max": 6,
-     "why": "no menciona balcón"
-    },
-    "garage": {
-     "value": 0.2,
-     "points": 0.8,
-     "max": 4,
-     "why": "no aclara cochera"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 2.0,
-     "max": 4,
-     "why": "sin dato"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 0.8,
-     "max": 2,
-     "why": "no aclara"
-    }
-   },
-   "discard": [
-    "55 m² (< 80)",
-    "no menciona cochera"
-   ],
-   "flags": [
-    "sin análisis IA",
-    "cochera sin confirmar",
-    "balcón sin confirmar"
-   ],
-   "pcts": {
-    "m2": 24,
-    "ppm2": 30,
-    "build": null,
-    "land": null,
-    "kept": null
-   },
-   "build_m2": null,
-   "land": null,
-   "score_calc": 48.0
-  },
-  {
    "id": "ml-MLA4039867056",
    "source": "mercadolibre",
    "url": "https://inmueble.mercadolibre.com.ar/MLA-4039867056-ph-3-ambs-totalmente-reciclado-en-chacarita-_JM",
@@ -368132,7 +368132,7 @@
    },
    "credit_pill": false,
    "publisher": "AVA",
-   "modified": "2026-11-12T19:21:20-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -368142,6 +368142,9 @@
      145000
     ]
    ],
+   "pct": 62,
+   "pct_score": 47.9,
+   "pct_n": 3406,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -368245,10 +368248,7 @@
    },
    "build_m2": null,
    "land": null,
-   "score_calc": 47.9,
-   "pct": 62,
-   "pct_score": 47.9,
-   "pct_n": 3406
+   "score_calc": 47.9
   },
   {
    "id": "zp-60106616",
@@ -429202,7 +429202,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Urbana",
-   "modified": "2026-11-12T14:21:11-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -446644,7 +446644,7 @@
    },
    "credit_pill": false,
    "publisher": "Carlos Bezruk Inmuebles (CSI 3275 CUCICBA 5952)",
-   "modified": "2026-11-12T17:48:35-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "169 m² tot.",
@@ -446850,7 +446850,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX HARMONY",
-   "modified": "2026-11-12T07:54:41-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -455612,7 +455612,7 @@
    },
    "credit_pill": true,
    "publisher": "Toribio Achával",
-   "modified": "2026-11-12T13:24:11-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -457394,7 +457394,7 @@
    },
    "credit_pill": false,
    "publisher": "RED SUMA",
-   "modified": "2026-11-12T19:08:47-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "278 m² tot.",
@@ -463483,7 +463483,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T14:32:11-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [
     "87 m² tot.",
@@ -466529,7 +466529,7 @@
    },
    "credit_pill": true,
    "publisher": "RE/MAX UNO - San Isidro",
-   "modified": "2026-11-12T13:47:56-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -466991,222 +466991,6 @@
     "age_assumed": false
    },
    "score_calc": 44.4
-  },
-  {
-   "id": "zp-60693752",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-5-amb.-entrada-y-terraza-propia-v.-crespo-60693752.html",
-   "title": "Venta PH 5 Amb. Entrada y Terraza Propia, V. Crespo",
-   "type": "ph",
-   "price_usd": 239000,
-   "total_m2": 210.0,
-   "covered_m2": 125.0,
-   "ambientes": 4.0,
-   "bedrooms": 3.0,
-   "bathrooms": 2.0,
-   "garage": 0,
-   "age_years": 42.0,
-   "address": "Darwin 700, Villa Crespo",
-   "zone": "Villa Crespo",
-   "address_exact": true,
-   "lat": -34.5931803,
-   "lng": -58.4438671,
-   "description": "Corredor Responsable: Raul Hector Merlo CUCICBA 2407 / CMCPSI 5438 -\nContacto: Mariano Javier Bielak\nVENTA PH 5 Ambientes con Entrada y Terraza propia en VILLA CRESPO\nOPORTUNIDAD!!! PH de 200 m2 a la venta en la zona mas buscada de Villa Crespo en EXCELENTE ESTADO!!\nLA PROPIEDAD:\nPLANTA BAJA:\n- Porche techado\n- Living comedor con salida al patio y ventanas al exterior\n- Dos dormitorios\n- Baño completo\n- Toilette\n- Cocina\n- Patio\nPLANTA ALTA:\n- Dos dormitorios actualmente unificados con ventanas al exterior\n- Toilette\n- Lavadero\n- Terraza propia\nSi las características de esta propiedad coinciden con tu búsqueda ¡Contáctanos!\nBENEFICIO EXCLUSIVO PARA CLIENTES REMAX:\nSi te falta hasta un 30 % del valor de esta propiedad Tenemos LENDAR CRÉDITOS HIPOTECARIOS EN UN CLICK ingresa a.ar - Podes hacer la simulación de las cuotas en el link y calcular vos tu préstamo.\nLas superficies expresadas en la presente publicación son estimadas y orientativas. Las superficies exactas del inmueble serán las que resulten de la escritura traslativa de dominio y documentación correspondiente, prevaleciendo estas sobre cualquier otra información publicada.\nRAU S.R.L. no ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios RE/MAX puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que RAU S.R.L. no interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados.\nEl inmueble no es accesible para personas con discapacidades físicas.\nComprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903235.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903216.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903174.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903099.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903162.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903371.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903209.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903088.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903152.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903060.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903113.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903324.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903281.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903226.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903293.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903268.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903127.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903313.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903257.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903140.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903360.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903199.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903249.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903074.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903381.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903190.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903348.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903303.jpg"
-   ],
-   "tags": {
-    "Superficie total": "210",
-    "Superficie cubierta": "125",
-    "Ambientes": "4",
-    "Dormitorios": "3",
-    "Baños": "2",
-    "Toilette": "1",
-    "Antigüedad": "42"
-   },
-   "credit_pill": true,
-   "publisher": "RE/MAX Ayres",
-   "modified": "2026-11-12T20:31:25-0500",
-   "kind": "casa",
-   "features_text": [
-    "210 m² tot.",
-    "125 m² cub.",
-    "4 amb.",
-    "2 baños",
-    "3 dorm.",
-    "1 toilette",
-    "42 años"
-   ],
-   "first_seen": "2026-11-13",
-   "price_history": [
-    [
-     "2026-11-13",
-     239000
-    ]
-   ],
-   "last_seen": "2026-11-13",
-   "active": true,
-   "geo": {
-    "region": "caba",
-    "ref": "subte Dorrego (B)",
-    "ref_blocks": 3.7,
-    "maipu_blocks": null,
-    "puente_blocks": 67.5,
-    "villa_blocks": null,
-    "station": {
-     "name": "Dorrego",
-     "line": "Subte B",
-     "blocks": 3.7,
-     "effective_blocks": 3.7
-    },
-    "park": {
-     "name": "Parque Los Andes",
-     "m": 401
-    },
-    "zoning": null
-   },
-   "enriched": true,
-   "photos_v": 2,
-   "ai": {
-    "condition": 3,
-    "reform_usd": 12000,
-    "reform_notes": "Modernización de baños y cocina de época, actualización de la instalación eléctrica y pintura general.",
-    "patio": "medium",
-    "patio_m2_est": 25,
-    "patio_seen": true,
-    "terrace": true,
-    "corner": false,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 3,
-    "vertical_potential": 0.5,
-    "apto_credito": null,
-    "highlights": [
-     "Entrada independiente al frente",
-     "Patio central propio en PB y terraza en PA",
-     "Excelente distribución tipo casa chorizo muy bien conservada"
-    ],
-    "red_flags": [
-     "Baños y revestimientos antiguos que requieren actualización",
-     "Cerramiento traslúcido en patio central que limita la luz solar directa",
-     "Proximidad al viaducto del Tren San Martín en calle Darwin"
-    ],
-    "summary": "Es una muy buena oportunidad de PH tipo casa chorizo al frente con patio en planta baja y terraza propia, habitable desde el primer día y con reformas cosméticas que entran holgadamente en el presupuesto.",
-    "photos_key": "286e28243b42",
-    "analyst": "gemini:gemini-3.5-flash",
-    "analysed_at": "2026-11-09",
-    "prompt_version": 2,
-    "note_key": "",
-    "ts": "2026-11-09T01:25:41Z"
-   },
-   "score": 44.4,
-   "components": {
-    "price": {
-     "value": 0.34,
-     "points": 6.2,
-     "max": 18,
-     "why": "USD 251.000 efectivo (incl. reforma 12.000), 1.138/m²"
-    },
-    "space": {
-     "value": 0.46,
-     "points": 6.5,
-     "max": 14,
-     "why": "210 m² tot, 125 cub, 4 amb"
-    },
-    "location": {
-     "value": 0.87,
-     "points": 12.2,
-     "max": 14,
-     "why": "4 cuadras al subte (Dorrego, Subte B), plaza a 4 cdas (Parque Los Andes)"
-    },
-    "condition": {
-     "value": 0.62,
-     "points": 6.8,
-     "max": 11,
-     "why": "estado 3/5, reforma ~USD 12.000"
-    },
-    "patio": {
-     "value": 0.65,
-     "points": 5.9,
-     "max": 9,
-     "why": "patio mediano ~25 m²"
-    },
-    "investment": {
-     "value": 0.37,
-     "points": 6.6,
-     "max": 18,
-     "why": "terreno implícito USD 876/m² (zona ~USD 828/m²), en 10 años la construcción pierde ~USD 22.200, valor estimado a 10 años ~87% del precio, PH: lote compartido, estimado"
-    },
-    "vertical": {
-     "value": 0.5,
-     "points": 2.0,
-     "max": 4,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 3,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.66,
-     "points": 1.3,
-     "max": 2,
-     "why": "intermedio"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 0.5,
-     "max": 1,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [
-    "duplicado de zp-60421947"
-   ],
-   "flags": [
-    "sobre presupuesto (USD 239.000)"
-   ],
-   "duplicate_of": "zp-60421947",
-   "score_calc": 44.4,
-   "pct": 82,
-   "pct_score": 44.4,
-   "pct_n": 6338
   },
   {
    "id": "zp-60486084",
@@ -470297,7 +470081,7 @@
    },
    "credit_pill": false,
    "publisher": "GUIMAT PROPIEDADES",
-   "modified": "2026-11-12T08:37:11-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -482938,7 +482722,7 @@
    },
    "credit_pill": true,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T14:32:33-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -504871,7 +504655,7 @@
    },
    "credit_pill": true,
    "publisher": "Remax Duo",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-06T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "109 m² tot.",
@@ -505480,7 +505264,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Premium",
-   "modified": "2026-11-12T19:24:51-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -522686,7 +522470,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Ayres",
-   "modified": "2026-11-12T20:30:20-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -522696,6 +522480,9 @@
      192000
     ]
    ],
+   "pct": 78,
+   "pct_score": 42.7,
+   "pct_n": 6338,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -522795,10 +522582,7 @@
     "sin análisis IA"
    ],
    "duplicate_of": "zp-60429416",
-   "score_calc": 42.7,
-   "pct": 78,
-   "pct_score": 42.7,
-   "pct_n": 6338
+   "score_calc": 42.7
   },
   {
    "id": "zp-60525887",
@@ -530238,7 +530022,7 @@
    },
    "credit_pill": true,
    "publisher": "GUIMAT PROPIEDADES",
-   "modified": "2026-11-12T08:32:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -543738,7 +543522,7 @@
    },
    "credit_pill": false,
    "publisher": "GUIMAT PROPIEDADES",
-   "modified": "2026-11-12T08:39:02-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -543891,9 +543675,9 @@
     "Dormitorios": "2",
     "Baño": "1"
    },
-   "credit_pill": true,
+   "credit_pill": false,
    "publisher": "GOLDEN HAUS Real Estate",
-   "modified": "2026-11-12T20:48:07-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -554427,6 +554211,242 @@
    "score_calc": 41.7
   },
   {
+   "id": "zp-60673380",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-olivos-60673380.html",
+   "title": "PH en Olivos",
+   "type": "ph",
+   "price_usd": 180000,
+   "total_m2": 109.0,
+   "covered_m2": 80.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 1.0,
+   "age_years": 60.0,
+   "address": "Ayacucho al 2100, Olivos",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5216669,
+   "lng": -58.4987024,
+   "description": "PH EN VENTA EN AYACUCHO AL 2100 – DISTRIBUIDO EN PLANTA BAJA, CON JARDÍN Y MÚLTIPLES POSIBILIDADES\nUna propiedad con mucho potencial, ubicada en un barrio residencial tranquilo y agradable, caracterizado por sus casas bajas en un entorno de vecinos.\nSe trata de un PH desarrollado íntegramente en planta baja, con aproximadamente 60 años de antigüedad, que conserva su estilo original y se encuentra en buen estado de mantenimiento. Si bien sus características son de época, todos sus ambientes e instalaciones funcionan correctamente, por lo que se encuentra en condiciones de ingresar a vivir.\nLa propiedad cuenta con orientación Este, lo que permite un muy buen ingreso de luz natural durante la mañana.\nSu distribución actual ofrece:\nDos dormitorios.\nBaño completo.\nToilette de recepcion.\nLiving independiente.\nCocina\nLavadero con cerramiento de aluminio.\nJardín de aproximadamente 20 m², con parrilla grande en perfecto estado.\nUno de sus principales diferenciales es el ambiente destinado originalmente a cochera, que durante muchos años funcionó como peluquería y cuenta con toilette propio. Este espacio ofrece múltiples alternativas según las necesidades de cada comprador: puede recuperarse como cochera, integrarse para ampliar el living o el comedor diario, o transformarse en un dormitorio en suite, entre otras posibilidades.\nUna propiedad versátil, que permite proyectar diferentes configuraciones y adaptarla al gusto y estilo de vida de quien la elija.\nEn cuanto a su ubicación, se encuentra próxima a las líneas de colectivo 343 y 184, a solo dos cuadras de la panaderia La Norma, con comercios y servicios en las inmediaciones.\nUna excelente oportunidad para quienes buscan una propiedad en planta baja, con espacios exteriores, en un entorno residencial tranquilo y con el valor agregado de poder adaptarla a sus propias necesidades.\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330364.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330352.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330357.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330347.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330361.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330350.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330362.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330355.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330338.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330340.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330356.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330342.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330360.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330359.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330351.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330344.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330354.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330341.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330346.jpg"
+   ],
+   "tags": {
+    "Disposición": "Frente",
+    "Luminoso": null,
+    "Orientación": "E",
+    "Superficie total": "109",
+    "Superficie cubierta": "80",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Cochera": "1",
+    "Toilette": "1",
+    "Antigüedad": "60"
+   },
+   "credit_pill": true,
+   "publisher": "Guerrero Propiedades",
+   "modified": "2026-11-10T00:00:00-0500",
+   "kind": "casa",
+   "features_text": [
+    "109 m² tot.",
+    "80 m² cub.",
+    "3 amb.",
+    "1 baño",
+    "1 coch.",
+    "2 dorm.",
+    "1 toilette",
+    "60 años",
+    "Frente",
+    "E"
+   ],
+   "first_seen": "2026-11-10",
+   "price_history": [
+    [
+     "2026-11-10",
+     180000
+    ]
+   ],
+   "enriched": true,
+   "photos_v": 2,
+   "pct": 75,
+   "pct_score": 41.7,
+   "pct_n": 6339,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "gba",
+    "ref": "Maipú",
+    "ref_blocks": 11.4,
+    "maipu_blocks": 11.4,
+    "puente_blocks": 27.6,
+    "villa_blocks": 14.0,
+    "station": {
+     "name": "Doctor Cetrángolo",
+     "line": "Mitre",
+     "blocks": 4.5,
+     "effective_blocks": 4.5
+    },
+    "park": {
+     "name": "Plaza Libertad",
+     "m": 706
+    },
+    "zoning": {
+     "code": "R2",
+     "name": "Residencial media baja densidad",
+     "fos": 0.6,
+     "fot": 1.0,
+     "height_m": 10.5,
+     "edge": null
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 12000,
+    "reform_notes": "Reparar filtración de losa en ex garage/peluquería, sacar machimbres viejos, pintar ambientes y modernizar cocina/instalaciones de época.",
+    "patio": "medium",
+    "patio_m2_est": 20,
+    "patio_seen": false,
+    "terrace": false,
+    "corner": false,
+    "ph_stacked": true,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 3,
+    "vertical_potential": 0,
+    "apto_credito": null,
+    "highlights": [
+     "Jardín propio de 20 m² con parrilla según descripción",
+     "Ubicación en planta baja al frente en zona residencial de Olivos",
+     "Espacio versátil de ex garage/local para ampliar o hacer suite"
+    ],
+    "red_flags": [
+     "Filtración severa con desprendimiento de revoque en el cielorraso del garage",
+     "Falta total de fotos del jardín exterior (solo se ve verde por ventanas)",
+     "Propiedad de 60 años con instalaciones de origen y revestimientos de machimbre"
+    ],
+    "summary": "Es un PH habitable al frente en linda zona de Olivos, pero llamativamente ocultaron las fotos del jardín y tenés que arreglar una filtración en el techo del garage antes de mudarte.",
+    "photos_key": "50e29b8d9947",
+    "analyst": "gemini:gemini-3.6-flash",
+    "analysed_at": "2026-11-12",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-11-12T04:10:16Z"
+   },
+   "score": 41.7,
+   "components": {
+    "price": {
+     "value": 0.46,
+     "points": 8.2,
+     "max": 18,
+     "why": "USD 192.000 efectivo (incl. reforma 12.000), 1.651/m²"
+    },
+    "space": {
+     "value": 0.05,
+     "points": 0.7,
+     "max": 14,
+     "why": "109 m² tot, 80 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.54,
+     "points": 7.6,
+     "max": 14,
+     "why": "11 cuadras a Maipú, 4 a est. Doctor Cetrángolo (Mitre), plaza a 7 cdas (Plaza Libertad)"
+    },
+    "condition": {
+     "value": 0.62,
+     "points": 6.8,
+     "max": 11,
+     "why": "estado 3/5, reforma ~USD 12.000"
+    },
+    "patio": {
+     "value": 0.65,
+     "points": 5.9,
+     "max": 9,
+     "why": "patio mediano ~20 m²"
+    },
+    "investment": {
+     "value": 0.08,
+     "points": 1.5,
+     "max": 18,
+     "why": "terreno implícito USD 1.688/m² (zona ~USD 926/m²), en 10 años la construcción pierde ~USD 3.552, valor estimado a 10 años ~61% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 0.0,
+     "points": 0.0,
+     "max": 4,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 3,
+     "max": 3,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 1.6,
+     "max": 2,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 0.5,
+     "max": 1,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [
+    "PH en altura / superpuesto"
+   ],
+   "flags": [],
+   "pcts": {
+    "m2": 48,
+    "ppm2": 42,
+    "build": null,
+    "land": 21,
+    "kept": 27
+   },
+   "build_m2": null,
+   "land": {
+    "land_m2": 87,
+    "implied": 1688,
+    "market": 926,
+    "building": 33152,
+    "building_h": 29600,
+    "value_h": 110206,
+    "kept": 0.612,
+    "age_assumed": false
+   },
+   "score_calc": 41.7
+  },
+  {
    "id": "ml-MLA2062873585",
    "source": "mercadolibre",
    "url": "https://inmueble.mercadolibre.com.ar/MLA-2062873585-venezuela-2400-balvanera-ph-3amb-u125000-_JM",
@@ -561201,7 +561221,7 @@
    },
    "credit_pill": false,
    "publisher": "Brick Propiedades & Servicios",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -561211,6 +561231,9 @@
      130000
     ]
    ],
+   "pct": 74,
+   "pct_score": 41.5,
+   "pct_n": 6338,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -561326,10 +561349,7 @@
     "kept": 0.919,
     "age_assumed": false
    },
-   "score_calc": 41.5,
-   "pct": 74,
-   "pct_score": 41.5,
-   "pct_n": 6338
+   "score_calc": 41.5
   },
   {
    "id": "zp-59329212",
@@ -575247,7 +575267,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX La Vie",
-   "modified": "2026-11-12T15:54:55-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -578598,7 +578618,7 @@
    },
    "credit_pill": true,
    "publisher": "REMAX Capital",
-   "modified": "2026-11-12T11:28:49-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -578771,9 +578791,9 @@
     "Toilette": "1",
     "Antigüedad": "60"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Cuño Propiedades",
-   "modified": "2026-11-12T14:22:50-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -578786,7 +578806,7 @@
    "pct": 35,
    "pct_score": 40.9,
    "pct_n": 3363,
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "active": true,
    "geo": {
     "region": "caba",
@@ -578925,6 +578945,222 @@
    "flags": [],
    "duplicate_of": "ml-MLA4116212684",
    "score_calc": 40.9
+  },
+  {
+   "id": "zp-60693752",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-5-amb.-entrada-y-terraza-propia-v.-crespo-60693752.html",
+   "title": "Venta PH 5 Amb. Entrada y Terraza Propia, V. Crespo",
+   "type": "ph",
+   "price_usd": 239000,
+   "total_m2": 210.0,
+   "covered_m2": 125.0,
+   "ambientes": 4.0,
+   "bedrooms": 3.0,
+   "bathrooms": 2.0,
+   "garage": 0,
+   "age_years": 42.0,
+   "address": "Darwin 700, Villa Crespo",
+   "zone": "Villa Crespo",
+   "address_exact": true,
+   "lat": -34.5931803,
+   "lng": -58.4438671,
+   "description": "Corredor Responsable: Raul Hector Merlo CUCICBA 2407 / CMCPSI 5438 -\nContacto: Mariano Javier Bielak\nVENTA PH 5 Ambientes con Entrada y Terraza propia en VILLA CRESPO\nOPORTUNIDAD!!! PH de 200 m2 a la venta en la zona mas buscada de Villa Crespo en EXCELENTE ESTADO!!\nLA PROPIEDAD:\nPLANTA BAJA:\n- Porche techado\n- Living comedor con salida al patio y ventanas al exterior\n- Dos dormitorios\n- Baño completo\n- Toilette\n- Cocina\n- Patio\nPLANTA ALTA:\n- Dos dormitorios actualmente unificados con ventanas al exterior\n- Toilette\n- Lavadero\n- Terraza propia\nSi las características de esta propiedad coinciden con tu búsqueda ¡Contáctanos!\nBENEFICIO EXCLUSIVO PARA CLIENTES REMAX:\nSi te falta hasta un 30 % del valor de esta propiedad Tenemos LENDAR CRÉDITOS HIPOTECARIOS EN UN CLICK ingresa a.ar - Podes hacer la simulación de las cuotas en el link y calcular vos tu préstamo.\nLas superficies expresadas en la presente publicación son estimadas y orientativas. Las superficies exactas del inmueble serán las que resulten de la escritura traslativa de dominio y documentación correspondiente, prevaleciendo estas sobre cualquier otra información publicada.\nRAU S.R.L. no ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios RE/MAX puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que RAU S.R.L. no interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados.\nEl inmueble no es accesible para personas con discapacidades físicas.\nComprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar\nLeer descripción completa",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903235.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903216.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903174.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903099.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903162.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903371.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903209.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903088.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903152.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903060.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903113.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903324.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903281.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903226.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903293.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903268.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903127.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903313.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903257.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903140.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903360.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903199.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903249.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903074.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903381.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903190.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903348.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/37/52/720x532/2091903303.jpg"
+   ],
+   "tags": {
+    "Superficie total": "210",
+    "Superficie cubierta": "125",
+    "Ambientes": "4",
+    "Dormitorios": "3",
+    "Baños": "2",
+    "Toilette": "1",
+    "Antigüedad": "42"
+   },
+   "credit_pill": false,
+   "publisher": "RE/MAX Ayres",
+   "modified": "2026-11-12T00:00:00-0500",
+   "kind": "casa",
+   "features_text": [
+    "210 m² tot.",
+    "125 m² cub.",
+    "4 amb.",
+    "2 baños",
+    "3 dorm.",
+    "1 toilette",
+    "42 años"
+   ],
+   "first_seen": "2026-11-13",
+   "price_history": [
+    [
+     "2026-11-13",
+     239000
+    ]
+   ],
+   "enriched": true,
+   "photos_v": 2,
+   "pct": 72,
+   "pct_score": 40.8,
+   "pct_n": 6339,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "caba",
+    "ref": "subte Dorrego (B)",
+    "ref_blocks": 3.7,
+    "maipu_blocks": null,
+    "puente_blocks": 67.5,
+    "villa_blocks": null,
+    "station": {
+     "name": "Dorrego",
+     "line": "Subte B",
+     "blocks": 3.7,
+     "effective_blocks": 3.7
+    },
+    "park": {
+     "name": "Parque Los Andes",
+     "m": 401
+    },
+    "zoning": null
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 12000,
+    "reform_notes": "Modernización de baños y cocina de época, actualización de la instalación eléctrica y pintura general.",
+    "patio": "medium",
+    "patio_m2_est": 25,
+    "patio_seen": true,
+    "terrace": true,
+    "corner": false,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 3,
+    "quiet": 3,
+    "vertical_potential": 0.5,
+    "apto_credito": null,
+    "highlights": [
+     "Entrada independiente al frente",
+     "Patio central propio en PB y terraza en PA",
+     "Excelente distribución tipo casa chorizo muy bien conservada"
+    ],
+    "red_flags": [
+     "Baños y revestimientos antiguos que requieren actualización",
+     "Cerramiento traslúcido en patio central que limita la luz solar directa",
+     "Proximidad al viaducto del Tren San Martín en calle Darwin"
+    ],
+    "summary": "Es una muy buena oportunidad de PH tipo casa chorizo al frente con patio en planta baja y terraza propia, habitable desde el primer día y con reformas cosméticas que entran holgadamente en el presupuesto.",
+    "photos_key": "286e28243b42",
+    "analyst": "gemini:gemini-3.5-flash",
+    "analysed_at": "2026-11-09",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-11-09T01:25:41Z"
+   },
+   "score": 40.8,
+   "components": {
+    "price": {
+     "value": 0.34,
+     "points": 6.2,
+     "max": 18,
+     "why": "USD 251.000 efectivo (incl. reforma 12.000), 1.138/m²"
+    },
+    "space": {
+     "value": 0.46,
+     "points": 6.5,
+     "max": 14,
+     "why": "210 m² tot, 125 cub, 4 amb"
+    },
+    "location": {
+     "value": 0.87,
+     "points": 12.2,
+     "max": 14,
+     "why": "4 cuadras al subte (Dorrego, Subte B), plaza a 4 cdas (Parque Los Andes)"
+    },
+    "condition": {
+     "value": 0.62,
+     "points": 6.8,
+     "max": 11,
+     "why": "estado 3/5, reforma ~USD 12.000"
+    },
+    "patio": {
+     "value": 0.65,
+     "points": 5.9,
+     "max": 9,
+     "why": "patio mediano ~25 m²"
+    },
+    "investment": {
+     "value": 0.37,
+     "points": 6.6,
+     "max": 18,
+     "why": "terreno implícito USD 876/m² (zona ~USD 828/m²), en 10 años la construcción pierde ~USD 22.200, valor estimado a 10 años ~87% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 0.5,
+     "points": 2.0,
+     "max": 4,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 3,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.66,
+     "points": 1.3,
+     "max": 2,
+     "why": "intermedio"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 0.5,
+     "max": 1,
+     "why": "luz 3/5"
+    }
+   },
+   "discard": [
+    "duplicado de zp-60421947"
+   ],
+   "flags": [
+    "sobre presupuesto (USD 239.000)"
+   ],
+   "duplicate_of": "zp-60421947",
+   "score_calc": 40.8
   },
   {
    "id": "zp-59329216",
@@ -601858,7 +602094,7 @@
    },
    "credit_pill": true,
    "publisher": "Viviana Bonelli CPI 7064 adherido al sistema Coldwell Banker SpaceBA",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -602032,7 +602268,7 @@
    },
    "credit_pill": true,
    "publisher": "Viviana Bonelli CPI 7064 adherido al sistema Coldwell Banker SpaceBA",
-   "modified": "2026-11-12T13:59:21-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -603072,7 +603308,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Platino 2",
-   "modified": "2026-11-12T18:34:59-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -606491,7 +606727,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T14:32:35-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -612142,7 +612378,7 @@
     "Cochera": "1",
     "Antigüedad": "60"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Lucia Cabrera",
    "modified": "2026-10-06T00:00:00-0400",
    "kind": "casa",
@@ -619228,7 +619464,7 @@
    },
    "credit_pill": false,
    "publisher": "Senestrari Propiedades",
-   "modified": "2026-11-12T00:14:46-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -623372,7 +623608,7 @@
    },
    "credit_pill": false,
    "publisher": "BERTOLOTTI Inmobiliaria",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "239 m² tot.",
@@ -648474,7 +648710,7 @@
     "Baño": "1",
     "Antigüedad": "45"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Carlos Castaño Propiedades",
    "modified": "2026-11-11T00:00:00-0500",
    "kind": "casa",
@@ -650749,7 +650985,8 @@
     }
    },
    "discard": [
-    "PH en altura / superpuesto"
+    "PH en altura / superpuesto",
+    "duplicado de zp-60673380"
    ],
    "flags": [],
    "pcts": {
@@ -650770,7 +651007,8 @@
     "kept": 0.612,
     "age_assumed": false
    },
-   "score_calc": 38.9
+   "score_calc": 38.9,
+   "duplicate_of": "zp-60673380"
   },
   {
    "id": "ml-MLA3791539212",
@@ -662803,7 +663041,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T14:39:10-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -665777,7 +666015,7 @@
    },
    "credit_pill": false,
    "publisher": "Polo Zentner",
-   "modified": "2026-11-12T17:16:10-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -671727,7 +671965,7 @@
    },
    "credit_pill": false,
    "publisher": "NMera inmuebles",
-   "modified": "2026-11-12T13:09:45-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -675318,226 +675556,6 @@
    "score_calc": 38.2
   },
   {
-   "id": "zp-60673380",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-olivos-60673380.html",
-   "title": "PH en Olivos",
-   "type": "ph",
-   "price_usd": 180000,
-   "total_m2": 109.0,
-   "covered_m2": 80.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 1.0,
-   "age_years": 60.0,
-   "address": "Ayacucho al 2100, Olivos",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5216669,
-   "lng": -58.4987024,
-   "description": "PH EN VENTA EN AYACUCHO AL 2100 – DISTRIBUIDO EN PLANTA BAJA, CON JARDÍN Y MÚLTIPLES POSIBILIDADES\nUna propiedad con mucho potencial, ubicada en un barrio residencial tranquilo y agradable, caracterizado por sus casas bajas en un entorno de vecinos.\nSe trata de un PH desarrollado íntegramente en planta baja, con aproximadamente 60 años de antigüedad, que conserva su estilo original y se encuentra en buen estado de mantenimiento. Si bien sus características son de época, todos sus ambientes e instalaciones funcionan correctamente, por lo que se encuentra en condiciones de ingresar a vivir.\nLa propiedad cuenta con orientación Este, lo que permite un muy buen ingreso de luz natural durante la mañana.\nSu distribución actual ofrece:\nDos dormitorios.\nBaño completo.\nToilette de recepcion.\nLiving independiente.\nCocina\nLavadero con cerramiento de aluminio.\nJardín de aproximadamente 20 m², con parrilla grande en perfecto estado.\nUno de sus principales diferenciales es el ambiente destinado originalmente a cochera, que durante muchos años funcionó como peluquería y cuenta con toilette propio. Este espacio ofrece múltiples alternativas según las necesidades de cada comprador: puede recuperarse como cochera, integrarse para ampliar el living o el comedor diario, o transformarse en un dormitorio en suite, entre otras posibilidades.\nUna propiedad versátil, que permite proyectar diferentes configuraciones y adaptarla al gusto y estilo de vida de quien la elija.\nEn cuanto a su ubicación, se encuentra próxima a las líneas de colectivo 343 y 184, a solo dos cuadras de la panaderia La Norma, con comercios y servicios en las inmediaciones.\nUna excelente oportunidad para quienes buscan una propiedad en planta baja, con espacios exteriores, en un entorno residencial tranquilo y con el valor agregado de poder adaptarla a sus propias necesidades.\nLeer descripción completa",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330364.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330352.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330357.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330347.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330361.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330350.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330362.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330355.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330338.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330340.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330356.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330342.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330360.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330359.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330351.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330344.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330354.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330341.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/67/33/80/720x532/2091330346.jpg"
-   ],
-   "tags": {
-    "Disposición": "Frente",
-    "Luminoso": null,
-    "Orientación": "E",
-    "Superficie total": "109",
-    "Superficie cubierta": "80",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Cochera": "1",
-    "Toilette": "1",
-    "Antigüedad": "60"
-   },
-   "credit_pill": false,
-   "publisher": "Guerrero Propiedades",
-   "modified": "2026-11-10T00:00:00-0500",
-   "kind": "casa",
-   "features_text": [
-    "109 m² tot.",
-    "80 m² cub.",
-    "3 amb.",
-    "1 baño",
-    "1 coch.",
-    "2 dorm.",
-    "1 toilette",
-    "60 años",
-    "Frente",
-    "E"
-   ],
-   "first_seen": "2026-11-10",
-   "price_history": [
-    [
-     "2026-11-10",
-     180000
-    ]
-   ],
-   "enriched": true,
-   "photos_v": 2,
-   "pct": 61,
-   "pct_score": 38.1,
-   "pct_n": 6338,
-   "last_seen": "2026-11-13",
-   "active": true,
-   "geo": {
-    "region": "gba",
-    "ref": "Maipú",
-    "ref_blocks": 11.4,
-    "maipu_blocks": 11.4,
-    "puente_blocks": 27.6,
-    "villa_blocks": 14.0,
-    "station": {
-     "name": "Doctor Cetrángolo",
-     "line": "Mitre",
-     "blocks": 4.5,
-     "effective_blocks": 4.5
-    },
-    "park": {
-     "name": "Plaza Libertad",
-     "m": 706
-    },
-    "zoning": {
-     "code": "R2",
-     "name": "Residencial media baja densidad",
-     "fos": 0.6,
-     "fot": 1.0,
-     "height_m": 10.5,
-     "edge": null
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 12000,
-    "reform_notes": "Reparar filtración de losa en ex garage/peluquería, sacar machimbres viejos, pintar ambientes y modernizar cocina/instalaciones de época.",
-    "patio": "medium",
-    "patio_m2_est": 20,
-    "patio_seen": false,
-    "terrace": false,
-    "corner": false,
-    "ph_stacked": true,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 3,
-    "vertical_potential": 0,
-    "apto_credito": null,
-    "highlights": [
-     "Jardín propio de 20 m² con parrilla según descripción",
-     "Ubicación en planta baja al frente en zona residencial de Olivos",
-     "Espacio versátil de ex garage/local para ampliar o hacer suite"
-    ],
-    "red_flags": [
-     "Filtración severa con desprendimiento de revoque en el cielorraso del garage",
-     "Falta total de fotos del jardín exterior (solo se ve verde por ventanas)",
-     "Propiedad de 60 años con instalaciones de origen y revestimientos de machimbre"
-    ],
-    "summary": "Es un PH habitable al frente en linda zona de Olivos, pero llamativamente ocultaron las fotos del jardín y tenés que arreglar una filtración en el techo del garage antes de mudarte.",
-    "photos_key": "50e29b8d9947",
-    "analyst": "gemini:gemini-3.6-flash",
-    "analysed_at": "2026-11-12",
-    "prompt_version": 2,
-    "note_key": "",
-    "ts": "2026-11-12T04:10:16Z"
-   },
-   "score": 38.1,
-   "components": {
-    "price": {
-     "value": 0.46,
-     "points": 8.2,
-     "max": 18,
-     "why": "USD 192.000 efectivo (incl. reforma 12.000), 1.651/m²"
-    },
-    "space": {
-     "value": 0.05,
-     "points": 0.7,
-     "max": 14,
-     "why": "109 m² tot, 80 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.54,
-     "points": 7.6,
-     "max": 14,
-     "why": "11 cuadras a Maipú, 4 a est. Doctor Cetrángolo (Mitre), plaza a 7 cdas (Plaza Libertad)"
-    },
-    "condition": {
-     "value": 0.62,
-     "points": 6.8,
-     "max": 11,
-     "why": "estado 3/5, reforma ~USD 12.000"
-    },
-    "patio": {
-     "value": 0.65,
-     "points": 5.9,
-     "max": 9,
-     "why": "patio mediano ~20 m²"
-    },
-    "investment": {
-     "value": 0.08,
-     "points": 1.5,
-     "max": 18,
-     "why": "terreno implícito USD 1.688/m² (zona ~USD 926/m²), en 10 años la construcción pierde ~USD 3.552, valor estimado a 10 años ~61% del precio, PH: lote compartido, estimado"
-    },
-    "vertical": {
-     "value": 0.0,
-     "points": 0.0,
-     "max": 4,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 0.4,
-     "points": 2.4,
-     "max": 6,
-     "why": "no aclara"
-    },
-    "garage": {
-     "value": 1,
-     "points": 3,
-     "max": 3,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 1.6,
-     "max": 2,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 0.5,
-     "max": 1,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [
-    "PH en altura / superpuesto",
-    "duplicado de ml-MLA4184428124"
-   ],
-   "flags": [],
-   "duplicate_of": "ml-MLA4184428124",
-   "score_calc": 38.1
-  },
-  {
    "id": "zp-60486002",
    "source": "zonaprop",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphpa-dueno-directo-vende-excelente-ph-en-parque-cha-60486002.html",
@@ -678673,188 +678691,6 @@
    },
    "build_m2": null,
    "land": null,
-   "score_calc": 38.1
-  },
-  {
-   "id": "zp-60683309",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-vta.-ph-3-amb-escritorio-al-fte.-vicente-lopez-60683309.html",
-   "title": "Vta. PH 3 Amb + Escritorio Al Fte. Vicente Lopez",
-   "type": "ph",
-   "price_usd": 158000,
-   "total_m2": 91.0,
-   "covered_m2": 76.0,
-   "ambientes": 3.0,
-   "bedrooms": 2.0,
-   "bathrooms": 1.0,
-   "garage": 0,
-   "age_years": 64.0,
-   "address": "Aristóbulo del Valle 1400, Vicente López",
-   "zone": "Vicente López",
-   "address_exact": true,
-   "lat": -34.535816,
-   "lng": -58.4753577,
-   "description": "Corredor Responsable: Maria Eugenia Blanco cucicba 7834 / Juan Ignacio Bottazzini cmcpsi 6276- Contacto: Mirtha Zencovich. Venta ph Tipo Duplex 3 Ambientes más un Escritorio al Frente en Vicente López. Excelente oportunidad en Vicente López! Ph de 3 ambientes tipo dúplex, con entrada totalmente independiente, ideal para quienes buscan comodidad, funcionalidad y la sensación de vivir en una casa. La propiedad ofrece en Planta Baja un luminoso living-comedor con pisos de cerámica, un Toillete. Cocina con Alacenas superiores e inferiores, Calefón, aparato de cocina; desayunador, comedor diario con ventanal a la calle, En el primer Piso encontramos dos amplios dormitorios con pisos de Parquet y Placares empotrados; un ambiente adicional, ideal como escritorio, home office o tercer dormitorio con Placard. Baño Completo con bañera y lugar de guardado. Un pequeño patio con lavadero. Terraza. Su distribución en dos plantas brinda mayor privacidad y un excelente aprovechamiento de los espacios. Ubicado en una zona residencial de Vicente López, a una cuadra de Avenida Maipú con rápido acceso a medios de transporte, comercios, colegios y espacios verdes. Cinco Cuadras de Avenida Libertador, Cuatro cuadras de la Estación Rivadavia del Tren Línea Mitre Ramal Tigre. Dos cuadras de Av. General Paz. Varias líneas de colectivos. Cerca del Parque de los Niños, Costanera de Vicente López. Ideal para familias, parejas o como inversión. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585462.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585509.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585678.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585620.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585670.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585616.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585691.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585518.jpg"
-   ],
-   "tags": {
-    "Disposición": "Frente",
-    "Luminoso": null,
-    "Superficie total": "91",
-    "Superficie cubierta": "76",
-    "Ambientes": "3",
-    "Dormitorios": "2",
-    "Baño": "1",
-    "Toilette": "1",
-    "Antigüedad": "64"
-   },
-   "credit_pill": true,
-   "publisher": "RE/MAX Advance",
-   "modified": "2026-11-11T00:00:00-0500",
-   "kind": "casa",
-   "features_text": [],
-   "first_seen": "2026-11-12",
-   "price_history": [
-    [
-     "2026-11-12",
-     158000
-    ]
-   ],
-   "pct": 61,
-   "pct_score": 38.1,
-   "pct_n": 6309,
-   "last_seen": "2026-11-13",
-   "active": true,
-   "geo": {
-    "region": "gba",
-    "ref": "Maipú",
-    "ref_blocks": 1.6,
-    "maipu_blocks": 1.6,
-    "puente_blocks": 2.9,
-    "villa_blocks": 40.0,
-    "station": {
-     "name": "Aristóbulo del Valle",
-     "line": "Belgrano Norte",
-     "blocks": 3.1,
-     "effective_blocks": 4.1
-    },
-    "park": {
-     "name": "plaza / parque",
-     "m": 200
-    },
-    "zoning": {
-     "code": "C2",
-     "name": "Comercial local / residencial media alta densidad",
-     "fos": 0.6,
-     "fot": 1.8,
-     "height_m": 12.5,
-     "edge": "R1"
-    }
-   },
-   "ai": null,
-   "score": 38.1,
-   "components": {
-    "price": {
-     "value": 0.61,
-     "points": 10.9,
-     "max": 18,
-     "why": "USD 158.000 efectivo, 1.736/m²"
-    },
-    "space": {
-     "value": 0.02,
-     "points": 0.2,
-     "max": 14,
-     "why": "91 m² tot, 76 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.72,
-     "points": 10.1,
-     "max": 14,
-     "why": "2 cuadras a Maipú, 3 a est. Aristóbulo del Valle (Belgrano Norte), plaza a 2 cdas (plaza / parque)"
-    },
-    "condition": {
-     "value": 0.35,
-     "points": 3.8,
-     "max": 11,
-     "why": "sin IA; antigüedad 64.0 años"
-    },
-    "patio": {
-     "value": 0.4,
-     "points": 3.6,
-     "max": 9,
-     "why": "menciona patio/jardín"
-    },
-    "investment": {
-     "value": 0.07,
-     "points": 1.3,
-     "max": 18,
-     "why": "terreno implícito USD 1.779/m² (zona ~USD 786/m²), en 10 años la construcción pierde ~USD 0, valor estimado a 10 años ~54% del precio, PH: lote compartido, estimado"
-    },
-    "vertical": {
-     "value": 0.15,
-     "points": 0.6,
-     "max": 4,
-     "why": "heurística: PH"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 0,
-     "points": 0,
-     "max": 3,
-     "why": "sin cochera"
-    },
-    "quiet": {
-     "value": 0.38,
-     "points": 0.8,
-     "max": 2,
-     "why": "cerca de avenida"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 0.8,
-     "max": 1,
-     "why": "luminoso según aviso"
-    }
-   },
-   "discard": [
-    "91 m² totales (< 100)",
-    "a 1.6 cuadras de Maipú (muy cerca)",
-    "a 2.9 cuadras de Puente Saavedra"
-   ],
-   "flags": [
-    "sin análisis IA"
-   ],
-   "pcts": {
-    "m2": 44,
-    "ppm2": 36,
-    "build": null,
-    "land": 18,
-    "kept": 16
-   },
-   "build_m2": null,
-   "land": {
-    "land_m2": 73,
-    "implied": 1779,
-    "market": 786,
-    "building": 28120,
-    "building_h": 28120,
-    "value_h": 85462,
-    "kept": 0.541,
-    "age_assumed": false
-   },
    "score_calc": 38.1
   },
   {
@@ -689986,7 +689822,7 @@
    },
    "credit_pill": false,
    "publisher": "Coldwell Banker Seniority",
-   "modified": "2026-11-12T21:05:06-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -699728,7 +699564,7 @@
    },
    "credit_pill": false,
    "publisher": "Punto Real Estate",
-   "modified": "2026-11-12T19:37:46-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -720565,7 +720401,7 @@
    },
    "credit_pill": false,
    "publisher": "DIC PROPIEDADES S.A.",
-   "modified": "2026-11-12T14:48:40-0500",
+   "modified": "2026-10-13T00:00:00-0400",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-10-31",
@@ -735702,9 +735538,9 @@
     "Dormitorios": "2",
     "Baño": "1"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "ROBERTO GIL PROPIEDADES",
-   "modified": "2026-11-12T09:57:01-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -749226,7 +749062,7 @@
    },
    "credit_pill": true,
    "publisher": "Civile Propiedades",
-   "modified": "2026-11-12T13:45:18-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -749515,7 +749351,7 @@
    ],
    "pcts": {
     "m2": 18,
-    "ppm2": 15,
+    "ppm2": 16,
     "build": null,
     "land": 38,
     "kept": 50
@@ -762616,7 +762452,7 @@
    },
    "credit_pill": false,
    "publisher": "GUIMAT PROPIEDADES",
-   "modified": "2026-11-12T08:32:00-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -763342,7 +763178,7 @@
    },
    "credit_pill": false,
    "publisher": "DEMARCO & INSUA Propiedades",
-   "modified": "2026-11-12T09:02:59-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -791442,7 +791278,7 @@
    },
    "credit_pill": false,
    "publisher": "Remax Free",
-   "modified": "2026-11-12T15:36:36-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -797648,6 +797484,188 @@
    "pct_n": 6338
   },
   {
+   "id": "zp-60683309",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-vta.-ph-3-amb-escritorio-al-fte.-vicente-lopez-60683309.html",
+   "title": "Vta. PH 3 Amb + Escritorio Al Fte. Vicente Lopez",
+   "type": "ph",
+   "price_usd": 158000,
+   "total_m2": 91.0,
+   "covered_m2": 76.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 1.0,
+   "garage": 0,
+   "age_years": 64.0,
+   "address": "Aristóbulo del Valle 1400, Vicente López",
+   "zone": "Vicente López",
+   "address_exact": true,
+   "lat": -34.535816,
+   "lng": -58.4753577,
+   "description": "Corredor Responsable: Maria Eugenia Blanco cucicba 7834 / Juan Ignacio Bottazzini cmcpsi 6276- Contacto: Mirtha Zencovich. Venta ph Tipo Duplex 3 Ambientes más un Escritorio al Frente en Vicente López. Excelente oportunidad en Vicente López! Ph de 3 ambientes tipo dúplex, con entrada totalmente independiente, ideal para quienes buscan comodidad, funcionalidad y la sensación de vivir en una casa. La propiedad ofrece en Planta Baja un luminoso living-comedor con pisos de cerámica, un Toillete. Cocina con Alacenas superiores e inferiores, Calefón, aparato de cocina; desayunador, comedor diario con ventanal a la calle, En el primer Piso encontramos dos amplios dormitorios con pisos de Parquet y Placares empotrados; un ambiente adicional, ideal como escritorio, home office o tercer dormitorio con Placard. Baño Completo con bañera y lugar de guardado. Un pequeño patio con lavadero. Terraza. Su distribución en dos plantas brinda mayor privacidad y un excelente aprovechamiento de los espacios. Ubicado en una zona residencial de Vicente López, a una cuadra de Avenida Maipú con rápido acceso a medios de transporte, comercios, colegios y espacios verdes. Cinco Cuadras de Avenida Libertador, Cuatro cuadras de la Estación Rivadavia del Tren Línea Mitre Ramal Tigre. Dos cuadras de Av. General Paz. Varias líneas de colectivos. Cerca del Parque de los Niños, Costanera de Vicente López. Ideal para familias, parejas o como inversión. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585462.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585509.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585678.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585620.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585670.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585616.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585691.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/33/09/720x532/2091585518.jpg"
+   ],
+   "tags": {
+    "Disposición": "Frente",
+    "Luminoso": null,
+    "Superficie total": "91",
+    "Superficie cubierta": "76",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baño": "1",
+    "Toilette": "1",
+    "Antigüedad": "64"
+   },
+   "credit_pill": false,
+   "publisher": "RE/MAX Advance",
+   "modified": "2026-11-11T00:00:00-0500",
+   "kind": "casa",
+   "features_text": [],
+   "first_seen": "2026-11-12",
+   "price_history": [
+    [
+     "2026-11-12",
+     158000
+    ]
+   ],
+   "pct": 43,
+   "pct_score": 34.5,
+   "pct_n": 6339,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "gba",
+    "ref": "Maipú",
+    "ref_blocks": 1.6,
+    "maipu_blocks": 1.6,
+    "puente_blocks": 2.9,
+    "villa_blocks": 40.0,
+    "station": {
+     "name": "Aristóbulo del Valle",
+     "line": "Belgrano Norte",
+     "blocks": 3.1,
+     "effective_blocks": 4.1
+    },
+    "park": {
+     "name": "plaza / parque",
+     "m": 200
+    },
+    "zoning": {
+     "code": "C2",
+     "name": "Comercial local / residencial media alta densidad",
+     "fos": 0.6,
+     "fot": 1.8,
+     "height_m": 12.5,
+     "edge": "R1"
+    }
+   },
+   "ai": null,
+   "score": 34.5,
+   "components": {
+    "price": {
+     "value": 0.61,
+     "points": 10.9,
+     "max": 18,
+     "why": "USD 158.000 efectivo, 1.736/m²"
+    },
+    "space": {
+     "value": 0.02,
+     "points": 0.2,
+     "max": 14,
+     "why": "91 m² tot, 76 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.72,
+     "points": 10.1,
+     "max": 14,
+     "why": "2 cuadras a Maipú, 3 a est. Aristóbulo del Valle (Belgrano Norte), plaza a 2 cdas (plaza / parque)"
+    },
+    "condition": {
+     "value": 0.35,
+     "points": 3.8,
+     "max": 11,
+     "why": "sin IA; antigüedad 64.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 3.6,
+     "max": 9,
+     "why": "menciona patio/jardín"
+    },
+    "investment": {
+     "value": 0.07,
+     "points": 1.3,
+     "max": 18,
+     "why": "terreno implícito USD 1.779/m² (zona ~USD 786/m²), en 10 años la construcción pierde ~USD 0, valor estimado a 10 años ~54% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 0.15,
+     "points": 0.6,
+     "max": 4,
+     "why": "heurística: PH"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 3,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.38,
+     "points": 0.8,
+     "max": 2,
+     "why": "cerca de avenida"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 0.8,
+     "max": 1,
+     "why": "luminoso según aviso"
+    }
+   },
+   "discard": [
+    "91 m² totales (< 100)",
+    "a 1.6 cuadras de Maipú (muy cerca)",
+    "a 2.9 cuadras de Puente Saavedra"
+   ],
+   "flags": [
+    "sin análisis IA"
+   ],
+   "pcts": {
+    "m2": 44,
+    "ppm2": 36,
+    "build": null,
+    "land": 18,
+    "kept": 16
+   },
+   "build_m2": null,
+   "land": {
+    "land_m2": 73,
+    "implied": 1779,
+    "market": 786,
+    "building": 28120,
+    "building_h": 28120,
+    "value_h": 85462,
+    "kept": 0.541,
+    "age_assumed": false
+   },
+   "score_calc": 34.5
+  },
+  {
    "id": "ml-MLA1859774005",
    "source": "mercadolibre",
    "url": "https://casa.mercadolibre.com.ar/MLA-1859774005-qbait-arcos-_JM",
@@ -797914,7 +797932,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Encore",
-   "modified": "2026-11-12T08:11:34-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "105 m² tot.",
@@ -813136,73 +813154,75 @@
    "score_calc": 34.2
   },
   {
-   "id": "zp-60694085",
+   "id": "zp-60694747",
    "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-de-ph-3-ambientes-terraza-villa-urquiza-60694085.html",
-   "title": "Venta de PH 3 Ambientes/terraza – Villa Urquiza",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-2-dorm.-1-bano-86-m-belgrano-60694747.html",
+   "title": "PH en Venta - 2 Dorm. 1 Baño - 86 m - Belgrano",
    "type": "ph",
-   "price_usd": 170000,
-   "total_m2": 95.0,
-   "covered_m2": 72.0,
+   "price_usd": 185000,
+   "total_m2": 86.0,
+   "covered_m2": 69.0,
    "ambientes": 3.0,
    "bedrooms": 2.0,
-   "bathrooms": 2.0,
+   "bathrooms": 1.0,
    "garage": 0,
-   "age_years": 51.0,
-   "address": "Miller 1900, Villa Urquiza",
-   "zone": "Villa Urquiza",
+   "age_years": null,
+   "address": "3 De Febrero e/ Congreso y Manuel Ugarte, Belgrano",
+   "zone": "Belgrano",
    "address_exact": true,
-   "lat": -34.5757209,
-   "lng": -58.4764148,
-   "description": "Corredor Responsable: Silvana Inés Palini cpi 8862 / cmcpm 2955- Contacto: Flavia Bocedi. Excelente ubicación, a pocas cuadras de Av. Triunvirato y Av. De los Incas, con muy buenos accesos y cercanía a comercios, servicios y medios de transporte. Ph de 3 ambientes en planta baja y terraza propia. El ingreso se realiza por un pasillo común. Al acceder a la propiedad, nos encontramos con un patio cubierto, que funciona como un agradable espacio de recepción y conecta con el living-comedor, el cual cuenta con ventana hacia el patio. La unidad dispone de dormitorio, con comunicación directa con el living-comedor y al patio; baño completo con ducha y cocina independiente, equipada con muebles bajo mesada, alacena y campana extractora. Desde el patio se accede, mediante una escalera, a un lavadero, que a su vez comunica con una amplia terraza, ideal para disfrutar del espacio al aire libre. En la terraza se encuentra, además, un cuarto adicional con baño independiente, ofreciendo un espacio versátil que puede destinarse a dormitorio, escritorio, habitación de huéspedes o espacio de guardado. La unidad cuenta con todos los servicios. De manera independiente a la unidad principal, se encuentra otro ambiente contiguo de 17 m2 cubiertos, con entrada propia por pasillo, lo que brinda mayor privacidad y versatilidad. Cuenta con cocina equipada con muebles bajo mesada y espacio para comedor, dormitorio con placard empotrado y baño completo con ducha. Una propiedad con múltiples posibilidades de uso, ideal para quienes buscan vivir en una unidad y disponer de otra de manera independiente, para familiares, huéspedes o renta. Si necesitas vender para adquirir la propiedad que estás buscando, te ayudamos con la operación encadenada. También podes contar con créditos hipotecarios exclusivos para clientes re/max, los cuales te financian hasta el 30% del valor de la propiedad a adquirir, y podes cancelarlo hasta en 5 años, puedes simular tu crédito en lendar, consúltanos y te asesoramos! ¿Sabías que podemos representarte también como comprador? Sea por algunas de las propiedades publicadas en la red remax o también con propiedades publicadas en cualquier otra inmobiliaria por eso. En caso de que esta propiedad no cumpla con tus expectativas, podremos buscarte debido a tus requerimientos, esa propiedad que tanto estas buscando, filtrando en la red propia, externa o en posibles ingresos pendientes de publicación, siempre cuidando muy fuertemente tu operación para que compres y o vendas tranquilo y seguro, contáctanos al número de contacto de esta publicación y te asesoramos personalmente. Todas las medidas publicadas son aproximadas. En cumplimiento de las leyes provinciales vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte de los martilleros y corredores colegiados, cuyos datos se exhiben debajo del nombre de la inmobiliaria. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. El inmueble no es accesible para personas con discapacidades físicas. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
+   "lat": -34.5532341,
+   "lng": -58.4572082,
+   "description": "_ph de 2 Dormitorios 1 Baño en venta ubicado sobre calle 3 De Febrero e/ Congreso y Manuel Ugarte (Belgrano, Capital Federal). Con disposición frente y orientación este. _La propiedad cuenta con 3 ambientes. La misma posee cocina equipada con muebles bajo mesada, living comedor. Luminosa, cuenta con patio y posee muy buena ventilación natural. _La propiedad posee una superficie aproximada de 86mts2 totales, de los cuales 69mts2 son cubiertos. yacoub | Construimos ConfianzaInnovación · Calidad · Sustentabilidad · DiseñoMás de 100. 000 m² construidos y más de 27 torres desarrolladas. Lo que estás buscando lo tenemos: estés donde estés, vendemos en todos lados. financiación para tu próxima propiedadhacé posible tu compra de forma ágil, simple y con el mejor asesoramiento junto a hipotek. Créditos hipotecarios a medida del mercado con gestión integral, transparente y 100% personalizada. Consultanos para más información y te asesoramos al instante. garantías para alquilaralquilá más fácil, rápido y seguro junto a garantix. Proceso 100% online y cotización inmediata con financiación flexible: aboná en 3 cuotas sin interés, hasta 12 cuotas fijas o con descuento especial de contado. La solución más ágil para acceder a tu alquiler. aviso legal: La información gráfica y escrita contenida en el presente aviso es meramente estimativa, orientativa y no contractual. Las medidas, superficies y proporciones definitivas surgirán del respectivo título de propiedad y documentación correspondiente. Los valores consignados (precios, expensas, tasas o impuestos) están sujetos a verificación, disponibilidad y eventuales modificaciones sin previo aviso.",
    "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912940.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913073.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912946.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913014.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912998.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912954.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913056.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912970.jpg"
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931051.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931052.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931059.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931062.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931031.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931054.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931045.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/47/47/720x532/2091931049.jpg"
    ],
    "tags": {
-    "Superficie total": "95",
-    "Superficie cubierta": "72",
+    "Disposición": "Frente",
+    "Luminoso": null,
+    "Orientación": "E",
+    "Superficie total": "86",
+    "Superficie cubierta": "69",
     "Ambientes": "3",
     "Dormitorios": "2",
-    "Baños": "2",
-    "Antigüedad": "51"
+    "Baño": "1"
    },
    "credit_pill": true,
-   "publisher": "RE/MAX Vita RE/MAX Vita",
-   "modified": "2026-11-12T20:42:45-0500",
+   "publisher": "Yacoub",
+   "modified": "2026-11-13T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-13",
    "price_history": [
     [
      "2026-11-13",
-     170000
+     185000
     ]
    ],
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
     "region": "caba",
-    "ref": "subte Echeverría (B)",
-    "ref_blocks": 4.7,
+    "ref": "subte Congreso de Tucumán (D)",
+    "ref_blocks": 5.4,
     "maipu_blocks": null,
-    "puente_blocks": 41.4,
+    "puente_blocks": 24.0,
     "villa_blocks": null,
     "station": {
-     "name": "Echeverría",
-     "line": "Subte B",
-     "blocks": 4.7,
-     "effective_blocks": 4.7
+     "name": "Congreso de Tucumán",
+     "line": "Subte D",
+     "blocks": 5.4,
+     "effective_blocks": 5.4
     },
     "park": {
-     "name": "Plaza Brigadier General Juan Manuel Zapiola",
-     "m": 196
+     "name": "Plaza Alberti",
+     "m": 143
     },
     "zoning": null
    },
@@ -813210,28 +813230,28 @@
    "score": 34.2,
    "components": {
     "price": {
-     "value": 0.52,
-     "points": 9.4,
+     "value": 0.35,
+     "points": 6.4,
      "max": 18,
-     "why": "USD 170.000 efectivo, 1.789/m²"
+     "why": "USD 185.000 efectivo, 2.151/m²"
     },
     "space": {
-     "value": 0.01,
-     "points": 0.1,
+     "value": 0.0,
+     "points": 0.0,
      "max": 14,
-     "why": "95 m² tot, 72 cub, 3 amb"
+     "why": "86 m² tot, 69 cub, 3 amb"
     },
     "location": {
-     "value": 0.89,
-     "points": 12.4,
+     "value": 0.66,
+     "points": 9.3,
      "max": 14,
-     "why": "5 cuadras al subte (Echeverría, Subte B), plaza a 2 cdas (Plaza Brigadier General Juan Manuel Zapiola)"
+     "why": "5 cuadras al subte (Congreso de Tucumán, Subte D), plaza a 1 cdas (Plaza Alberti)"
     },
     "condition": {
      "value": 0.35,
      "points": 3.8,
      "max": 11,
-     "why": "sin IA; antigüedad 51.0 años"
+     "why": "sin IA; antigüedad ? años"
     },
     "patio": {
      "value": 0.4,
@@ -813240,10 +813260,10 @@
      "why": "menciona patio/jardín"
     },
     "investment": {
-     "value": 0.07,
-     "points": 1.3,
+     "value": 0.12,
+     "points": 2.1,
      "max": 18,
-     "why": "terreno implícito USD 1.693/m² (zona ~USD 800/m²), en 10 años la construcción pierde ~USD 12.787, valor estimado a 10 años ~52% del precio, PH: lote compartido, estimado"
+     "why": "terreno implícito USD 1.912/m² (zona ~USD 1.133/m²), en 10 años la construcción pierde ~USD 12.254 (antigüedad supuesta), valor estimado a 10 años ~64% del precio, PH: lote compartido, estimado"
     },
     "vertical": {
      "value": 0.15,
@@ -813264,31 +813284,47 @@
      "why": "sin cochera"
     },
     "quiet": {
-     "value": 0.77,
-     "points": 1.5,
+     "value": 0.8,
+     "points": 1.6,
      "max": 2,
      "why": "lejos de la avenida del subte"
     },
     "light": {
-     "value": 0.5,
-     "points": 0.5,
+     "value": 0.75,
+     "points": 0.8,
      "max": 1,
-     "why": "sin dato"
+     "why": "luminoso según aviso"
     }
    },
    "discard": [
-    "95 m² totales (< 100)",
-    "duplicado de zp-60420427"
+    "86 m² totales (< 100)",
+    "USD 2.151/m² (más de 2.000)"
    ],
    "flags": [
-    "sin análisis IA",
-    "posible pasillo"
+    "sin análisis IA"
    ],
-   "duplicate_of": "zp-60420427",
+   "pcts": {
+    "m2": 33,
+    "ppm2": 15,
+    "build": null,
+    "land": 14,
+    "kept": 33
+   },
+   "build_m2": null,
+   "land": {
+    "land_m2": 69,
+    "implied": 1912,
+    "market": 1133,
+    "building": 53102,
+    "building_h": 40848,
+    "value_h": 119025,
+    "kept": 0.643,
+    "age_assumed": true
+   },
    "score_calc": 34.2,
    "pct": 42,
    "pct_score": 34.2,
-   "pct_n": 6338
+   "pct_n": 6339
   },
   {
    "id": "zp-58223325",
@@ -820600,7 +820636,7 @@
    },
    "credit_pill": false,
    "publisher": "Krell Brokers",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -851640,7 +851676,7 @@
     "Toilette": "1",
     "Antigüedad": "66"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "REMAX 202",
    "modified": "2026-11-09T00:00:00-0500",
    "kind": "casa",
@@ -863897,7 +863933,7 @@
    },
    "credit_pill": true,
    "publisher": "PERSINI PROPIEDADES",
-   "modified": "2026-11-12T16:44:58-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [
     "82 m² tot.",
@@ -882323,7 +882359,7 @@
    },
    "credit_pill": false,
    "publisher": "RG Montes",
-   "modified": "2026-11-12T13:34:52-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -882336,7 +882372,7 @@
    "pct": 13,
    "pct_score": 32.3,
    "pct_n": 3363,
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "active": true,
    "geo": {
     "region": "caba",
@@ -882631,7 +882667,7 @@
    },
    "credit_pill": false,
    "publisher": "Coldwell Banker Lion Team",
-   "modified": "2026-11-12T14:19:09-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -935790,6 +935826,161 @@
    "pct_n": 6338
   },
   {
+   "id": "zp-60694085",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-de-ph-3-ambientes-terraza-villa-urquiza-60694085.html",
+   "title": "Venta de PH 3 Ambientes/terraza – Villa Urquiza",
+   "type": "ph",
+   "price_usd": 170000,
+   "total_m2": 95.0,
+   "covered_m2": 72.0,
+   "ambientes": 3.0,
+   "bedrooms": 2.0,
+   "bathrooms": 2.0,
+   "garage": 0,
+   "age_years": 51.0,
+   "address": "Miller 1900, Villa Urquiza",
+   "zone": "Villa Urquiza",
+   "address_exact": true,
+   "lat": -34.5757209,
+   "lng": -58.4764148,
+   "description": "Corredor Responsable: Silvana Inés Palini cpi 8862 / cmcpm 2955- Contacto: Flavia Bocedi. Excelente ubicación, a pocas cuadras de Av. Triunvirato y Av. De los Incas, con muy buenos accesos y cercanía a comercios, servicios y medios de transporte. Ph de 3 ambientes en planta baja y terraza propia. El ingreso se realiza por un pasillo común. Al acceder a la propiedad, nos encontramos con un patio cubierto, que funciona como un agradable espacio de recepción y conecta con el living-comedor, el cual cuenta con ventana hacia el patio. La unidad dispone de dormitorio, con comunicación directa con el living-comedor y al patio; baño completo con ducha y cocina independiente, equipada con muebles bajo mesada, alacena y campana extractora. Desde el patio se accede, mediante una escalera, a un lavadero, que a su vez comunica con una amplia terraza, ideal para disfrutar del espacio al aire libre. En la terraza se encuentra, además, un cuarto adicional con baño independiente, ofreciendo un espacio versátil que puede destinarse a dormitorio, escritorio, habitación de huéspedes o espacio de guardado. La unidad cuenta con todos los servicios. De manera independiente a la unidad principal, se encuentra otro ambiente contiguo de 17 m2 cubiertos, con entrada propia por pasillo, lo que brinda mayor privacidad y versatilidad. Cuenta con cocina equipada con muebles bajo mesada y espacio para comedor, dormitorio con placard empotrado y baño completo con ducha. Una propiedad con múltiples posibilidades de uso, ideal para quienes buscan vivir en una unidad y disponer de otra de manera independiente, para familiares, huéspedes o renta. Si necesitas vender para adquirir la propiedad que estás buscando, te ayudamos con la operación encadenada. También podes contar con créditos hipotecarios exclusivos para clientes re/max, los cuales te financian hasta el 30% del valor de la propiedad a adquirir, y podes cancelarlo hasta en 5 años, puedes simular tu crédito en lendar, consúltanos y te asesoramos! ¿Sabías que podemos representarte también como comprador? Sea por algunas de las propiedades publicadas en la red remax o también con propiedades publicadas en cualquier otra inmobiliaria por eso. En caso de que esta propiedad no cumpla con tus expectativas, podremos buscarte debido a tus requerimientos, esa propiedad que tanto estas buscando, filtrando en la red propia, externa o en posibles ingresos pendientes de publicación, siempre cuidando muy fuertemente tu operación para que compres y o vendas tranquilo y seguro, contáctanos al número de contacto de esta publicación y te asesoramos personalmente. Todas las medidas publicadas son aproximadas. En cumplimiento de las leyes provinciales vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte de los martilleros y corredores colegiados, cuyos datos se exhiben debajo del nombre de la inmobiliaria. Rau S. R. L. No ejerce el corretaje inmobiliario. El presente sitio web es una plataforma en donde cada oficina inmobiliaria independiente que contrata los servicios re/max puede publicar las propiedades a su cargo. Cada oficina es de propiedad y gestión independiente, por lo que rau S. R. L. No interviene en los datos de la publicación, en la operación inmobiliaria, ni en la confección y/o firma del boleto de compraventa y/o escritura y/o contrato de alquiler. En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25. 028, Ley 22. 802 de Lealtad Comercial, Ley 24. 240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores no ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte del corredor público inmobiliario colegiado a cargo de la publicación, cuyos datos se exhiben en la presente. La presente publicación describe las características esenciales del inmueble, debiéndose consultar al corredor público inmobiliario responsable de la operación por la eventual actualización de las medidas, descripciones arquitectónicas y funcionales, valores de expensas, servicios, impuestos, precios y demás información, cuyos valores son aproximados. El inmueble no es accesible para personas con discapacidades físicas. Comprá la casa que querés! No la que podés. Accedé a un préstamo por hasta el 30% del valor de esta propiedad. Simulá tu cuota en Lendar",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912940.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913073.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912946.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913014.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912998.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912954.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091913056.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/69/40/85/720x532/2091912970.jpg"
+   ],
+   "tags": {
+    "Superficie total": "95",
+    "Superficie cubierta": "72",
+    "Ambientes": "3",
+    "Dormitorios": "2",
+    "Baños": "2",
+    "Antigüedad": "51"
+   },
+   "credit_pill": false,
+   "publisher": "RE/MAX Vita RE/MAX Vita",
+   "modified": "2026-11-12T00:00:00-0500",
+   "kind": "casa",
+   "features_text": [],
+   "first_seen": "2026-11-13",
+   "price_history": [
+    [
+     "2026-11-13",
+     170000
+    ]
+   ],
+   "pct": 25,
+   "pct_score": 30.6,
+   "pct_n": 6339,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "caba",
+    "ref": "subte Echeverría (B)",
+    "ref_blocks": 4.7,
+    "maipu_blocks": null,
+    "puente_blocks": 41.4,
+    "villa_blocks": null,
+    "station": {
+     "name": "Echeverría",
+     "line": "Subte B",
+     "blocks": 4.7,
+     "effective_blocks": 4.7
+    },
+    "park": {
+     "name": "Plaza Brigadier General Juan Manuel Zapiola",
+     "m": 196
+    },
+    "zoning": null
+   },
+   "ai": null,
+   "score": 30.6,
+   "components": {
+    "price": {
+     "value": 0.52,
+     "points": 9.4,
+     "max": 18,
+     "why": "USD 170.000 efectivo, 1.789/m²"
+    },
+    "space": {
+     "value": 0.01,
+     "points": 0.1,
+     "max": 14,
+     "why": "95 m² tot, 72 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.89,
+     "points": 12.4,
+     "max": 14,
+     "why": "5 cuadras al subte (Echeverría, Subte B), plaza a 2 cdas (Plaza Brigadier General Juan Manuel Zapiola)"
+    },
+    "condition": {
+     "value": 0.35,
+     "points": 3.8,
+     "max": 11,
+     "why": "sin IA; antigüedad 51.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 3.6,
+     "max": 9,
+     "why": "menciona patio/jardín"
+    },
+    "investment": {
+     "value": 0.07,
+     "points": 1.3,
+     "max": 18,
+     "why": "terreno implícito USD 1.693/m² (zona ~USD 800/m²), en 10 años la construcción pierde ~USD 12.787, valor estimado a 10 años ~52% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 0.15,
+     "points": 0.6,
+     "max": 4,
+     "why": "heurística: PH"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 0,
+     "points": 0,
+     "max": 3,
+     "why": "sin cochera"
+    },
+    "quiet": {
+     "value": 0.77,
+     "points": 1.5,
+     "max": 2,
+     "why": "lejos de la avenida del subte"
+    },
+    "light": {
+     "value": 0.5,
+     "points": 0.5,
+     "max": 1,
+     "why": "sin dato"
+    }
+   },
+   "discard": [
+    "95 m² totales (< 100)",
+    "duplicado de zp-60420427"
+   ],
+   "flags": [
+    "sin análisis IA",
+    "posible pasillo"
+   ],
+   "duplicate_of": "zp-60420427",
+   "score_calc": 30.6
+  },
+  {
    "id": "zp-60648852",
    "source": "zonaprop",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-chalet-en-venta-de-4-ambientes-en-olivos-con-balcon-60648852.html",
@@ -935833,7 +936024,7 @@
    },
    "credit_pill": false,
    "publisher": "MARTIN PROPIEDADES  C.S.I 4513",
-   "modified": "2026-11-12T17:48:35-0500",
+   "modified": "2026-11-06T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-06",
@@ -939594,7 +939785,7 @@
    },
    "credit_pill": false,
    "publisher": "SD Propiedades",
-   "modified": "2026-11-12T19:36:24-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -939781,7 +939972,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -939890,174 +940081,6 @@
     "sobre presupuesto (USD 221.900)"
    ],
    "duplicate_of": "zp-60339618",
-   "score_calc": 30.6
-  },
-  {
-   "id": "zp-60686279",
-   "source": "zonaprop",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-dorm.-venta-florida-mitre-este-60686279.html",
-   "title": "PH 3 Dorm. Venta - Florida Mitre/este",
-   "type": "ph",
-   "price_usd": 240000,
-   "total_m2": 108.0,
-   "covered_m2": 96.0,
-   "ambientes": 5.0,
-   "bedrooms": 3.0,
-   "bathrooms": 2.0,
-   "garage": 1.0,
-   "age_years": 10.0,
-   "address": "Rosetti al 500, Entre Agustin Alvarez y Lavalle, Florida",
-   "zone": "Florida",
-   "address_exact": true,
-   "lat": -34.5409858,
-   "lng": -58.4958913,
-   "description": "Oportunidad, bajo de valor de U$S 285. 000. - A U$S 240. 000. -Excelente duplex de pocos años de antigüedad súper completo. Unidad al frente desarrollado en dos plantas, orientación Oeste, mucha luz natural. En la primera planta nos encontramos con un hermoso Livingcomedor amplio, toilette y cocina comedor muy bien equipada con amoblamientos de bajo mesada y alacenas. Salimos a la galería transformada en un práctico jardín de invierno con espacio para lavadero. Dede allí podemos desceder y disfrutar del hermoso jardín propio en la planta baja. Al segundo piso accedemos por una escalera totalmente revestida en madera natural y allí encontramos tres dormitorios. El dormitorio principal se encuentra al contrafrente muy luminoso por la mañana, es en suite, con amplios placards y muy buenos interiores, al frente tenemos los otros dos dormitorios con placards que comparten un hermoso baño completo. Cuenta con un equipamiento total. Los pisos del living, escalera y pasillo de distribución de planta alta son de madera natural, los dormitorios cuentan con pisos flotantes simil madera. La cochera tiene un práctico acceso y es cubierta. La ubicación es privilegiada ya que está a pasos de la Panamericana, de la estación de tren, del dot shopping, una conectividad única tanto para la Ciudad Autonóma de Buenos Aires como para Zona Norte. Fue construida por uno de los mejores arquitectos de la Zona con experiencia en decenas de obras en Vicente López. No te la pierdas, visitala te va a encantar. Código de propiedad: dot8256 ho<span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver datos</button></span>Con más de 40 años de experiencia, en dic Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos. Nuestros números avalan nuestro compromiso: • 1. 700 propiedades en comercialización. • 137. 000 tasaciones realizadas con precisión• 950. 000 m2 vendidos con éxito. • 35. 000 unidades de pozo comercializadas. Te esperamos de lunes a sábados en nuestras oficinas de caba y Zona Norte. ___ * * * ___________________________________________________________________________________* * ** * * Información Importante y Aviso Legal * * *La presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, abl, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual. dic propiedades S. A. Actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa. __________________________________________________________________________________Javier Del Coro Igarzabal | cmcpsi Mat. Nº 4499María Amparo Coello | cucicba Mat. Nº 5147dic propiedades S. A. |. ar",
-   "photos": [
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091659416.jpg?isFirstImage=true",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658654.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658577.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658494.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658449.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658627.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658556.jpg",
-    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658686.jpg"
-   ],
-   "tags": {
-    "Disposición": "Frente",
-    "Luminoso": "Muy luminoso",
-    "Orientación": "O",
-    "Superficie total": "108",
-    "Superficie cubierta": "96",
-    "Ambientes": "5",
-    "Dormitorios": "3",
-    "Baños": "2",
-    "Cochera": "1",
-    "Toilette": "1",
-    "Antigüedad": "10"
-   },
-   "credit_pill": true,
-   "publisher": "DIC PROPIEDADES S.A.",
-   "modified": "2026-11-12T09:19:47-0500",
-   "kind": "casa",
-   "features_text": [],
-   "first_seen": "2026-11-12",
-   "price_history": [
-    [
-     "2026-11-12",
-     240000
-    ]
-   ],
-   "pct": 25,
-   "pct_score": 30.6,
-   "pct_n": 6338,
-   "last_seen": "2026-11-13",
-   "active": true,
-   "geo": {
-    "region": "gba",
-    "ref": "Maipú",
-    "ref_blocks": 17.7,
-    "maipu_blocks": 17.7,
-    "puente_blocks": 18.3,
-    "villa_blocks": 30.0,
-    "station": {
-     "name": "Juan B. Justo",
-     "line": "Mitre",
-     "blocks": 2.0,
-     "effective_blocks": 2.0
-    },
-    "park": {
-     "name": "Plaza de las Américas",
-     "m": 443
-    },
-    "zoning": {
-     "code": "R2",
-     "name": "Residencial media baja densidad",
-     "fos": 0.6,
-     "fot": 1.0,
-     "height_m": 10.5,
-     "edge": null
-    }
-   },
-   "ai": null,
-   "score": 30.6,
-   "components": {
-    "price": {
-     "value": 0.05,
-     "points": 1.0,
-     "max": 18,
-     "why": "USD 240.000 efectivo, 2.222/m²"
-    },
-    "space": {
-     "value": 0.22,
-     "points": 3.1,
-     "max": 14,
-     "why": "108 m² tot, 96 cub, 5 amb"
-    },
-    "location": {
-     "value": 0.64,
-     "points": 9.0,
-     "max": 14,
-     "why": "18 cuadras a Maipú, 2 a est. Juan B. Justo (Mitre), plaza a 4 cdas (Plaza de las Américas)"
-    },
-    "condition": {
-     "value": 0.7,
-     "points": 7.7,
-     "max": 11,
-     "why": "sin IA; antigüedad 10.0 años"
-    },
-    "patio": {
-     "value": 0.4,
-     "points": 3.6,
-     "max": 9,
-     "why": "menciona patio/jardín"
-    },
-    "investment": {
-     "value": 0.24,
-     "points": 4.3,
-     "max": 18,
-     "why": "terreno implícito USD 1.337/m² (zona ~USD 852/m²), en 10 años la construcción pierde ~USD 17.049, valor estimado a 10 años ~76% del precio, PH: lote compartido, estimado"
-    },
-    "vertical": {
-     "value": 0.15,
-     "points": 0.6,
-     "max": 4,
-     "why": "heurística: PH"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 1,
-     "points": 3,
-     "max": 3,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.8,
-     "points": 1.6,
-     "max": 2,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.75,
-     "points": 0.8,
-     "max": 1,
-     "why": "luminoso según aviso"
-    }
-   },
-   "discard": [
-    "USD 2.222/m² (más de 2.000)",
-    "a 17.7 cuadras de Maipú (muy lejos)",
-    "duplicado de tk-7647445"
-   ],
-   "flags": [
-    "sin análisis IA",
-    "sobre presupuesto (USD 240.000)"
-   ],
-   "duplicate_of": "tk-7647445",
    "score_calc": 30.6
   },
   {
@@ -977207,7 +977230,7 @@
    },
    "credit_pill": false,
    "publisher": "TOVADO PROPIEDADES",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -988164,7 +988187,7 @@
    },
    "credit_pill": false,
    "publisher": "DIC PROPIEDADES S.A.",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -994192,7 +994215,7 @@
    },
    "credit_pill": false,
    "publisher": "REMAX Platino",
-   "modified": "2026-11-12T09:13:32-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-10-31",
@@ -1003159,7 +1003182,8 @@
    },
    "discard": [
     "86 m² totales (< 100)",
-    "USD 2.139/m² (más de 2.000)"
+    "USD 2.139/m² (más de 2.000)",
+    "duplicado de zp-60694747"
    ],
    "flags": [
     "sin análisis IA"
@@ -1003182,7 +1003206,8 @@
     "kept": 0.643,
     "age_assumed": true
    },
-   "score_calc": 28.2
+   "score_calc": 28.2,
+   "duplicate_of": "zp-60694747"
   },
   {
    "id": "ml-MLA2158067171",
@@ -1008145,7 +1008170,7 @@
    },
    "credit_pill": false,
    "publisher": "NUEVOS AYRES NEGOCIOS INMOBILIARIOS",
-   "modified": "2026-11-12T13:40:03-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [
     "94 m² tot.",
@@ -1030243,6 +1030268,174 @@
    "score_calc": 27.1
   },
   {
+   "id": "zp-60686279",
+   "source": "zonaprop",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-dorm.-venta-florida-mitre-este-60686279.html",
+   "title": "PH 3 Dorm. Venta - Florida Mitre/este",
+   "type": "ph",
+   "price_usd": 240000,
+   "total_m2": 108.0,
+   "covered_m2": 96.0,
+   "ambientes": 5.0,
+   "bedrooms": 3.0,
+   "bathrooms": 2.0,
+   "garage": 1.0,
+   "age_years": 10.0,
+   "address": "Rosetti al 500, Entre Agustin Alvarez y Lavalle, Florida",
+   "zone": "Florida",
+   "address_exact": true,
+   "lat": -34.5409858,
+   "lng": -58.4958913,
+   "description": "Oportunidad, bajo de valor de U$S 285. 000. - A U$S 240. 000. -Excelente duplex de pocos años de antigüedad súper completo. Unidad al frente desarrollado en dos plantas, orientación Oeste, mucha luz natural. En la primera planta nos encontramos con un hermoso Livingcomedor amplio, toilette y cocina comedor muy bien equipada con amoblamientos de bajo mesada y alacenas. Salimos a la galería transformada en un práctico jardín de invierno con espacio para lavadero. Dede allí podemos desceder y disfrutar del hermoso jardín propio en la planta baja. Al segundo piso accedemos por una escalera totalmente revestida en madera natural y allí encontramos tres dormitorios. El dormitorio principal se encuentra al contrafrente muy luminoso por la mañana, es en suite, con amplios placards y muy buenos interiores, al frente tenemos los otros dos dormitorios con placards que comparten un hermoso baño completo. Cuenta con un equipamiento total. Los pisos del living, escalera y pasillo de distribución de planta alta son de madera natural, los dormitorios cuentan con pisos flotantes simil madera. La cochera tiene un práctico acceso y es cubierta. La ubicación es privilegiada ya que está a pasos de la Panamericana, de la estación de tren, del dot shopping, una conectividad única tanto para la Ciudad Autonóma de Buenos Aires como para Zona Norte. Fue construida por uno de los mejores arquitectos de la Zona con experiencia en decenas de obras en Vicente López. No te la pierdas, visitala te va a encantar. Código de propiedad: dot8256 ho<span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver datos</button></span>Con más de 40 años de experiencia, en dic Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos. Nuestros números avalan nuestro compromiso: • 1. 700 propiedades en comercialización. • 137. 000 tasaciones realizadas con precisión• 950. 000 m2 vendidos con éxito. • 35. 000 unidades de pozo comercializadas. Te esperamos de lunes a sábados en nuestras oficinas de caba y Zona Norte. ___ * * * ___________________________________________________________________________________* * ** * * Información Importante y Aviso Legal * * *La presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, abl, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual. dic propiedades S. A. Actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa. __________________________________________________________________________________Javier Del Coro Igarzabal | cmcpsi Mat. Nº 4499María Amparo Coello | cucicba Mat. Nº 5147dic propiedades S. A. |. ar",
+   "photos": [
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091659416.jpg?isFirstImage=true",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658654.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658577.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658494.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658449.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658627.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658556.jpg",
+    "https://imgar.zonapropcdn.com/avisos/1/00/60/68/62/79/720x532/2091658686.jpg"
+   ],
+   "tags": {
+    "Disposición": "Frente",
+    "Luminoso": "Muy luminoso",
+    "Orientación": "O",
+    "Superficie total": "108",
+    "Superficie cubierta": "96",
+    "Ambientes": "5",
+    "Dormitorios": "3",
+    "Baños": "2",
+    "Cochera": "1",
+    "Toilette": "1",
+    "Antigüedad": "10"
+   },
+   "credit_pill": false,
+   "publisher": "DIC PROPIEDADES S.A.",
+   "modified": "2026-11-12T00:00:00-0500",
+   "kind": "casa",
+   "features_text": [],
+   "first_seen": "2026-11-12",
+   "price_history": [
+    [
+     "2026-11-12",
+     240000
+    ]
+   ],
+   "pct": 14,
+   "pct_score": 27.0,
+   "pct_n": 6339,
+   "last_seen": "2026-11-13",
+   "active": true,
+   "geo": {
+    "region": "gba",
+    "ref": "Maipú",
+    "ref_blocks": 17.7,
+    "maipu_blocks": 17.7,
+    "puente_blocks": 18.3,
+    "villa_blocks": 30.0,
+    "station": {
+     "name": "Juan B. Justo",
+     "line": "Mitre",
+     "blocks": 2.0,
+     "effective_blocks": 2.0
+    },
+    "park": {
+     "name": "Plaza de las Américas",
+     "m": 443
+    },
+    "zoning": {
+     "code": "R2",
+     "name": "Residencial media baja densidad",
+     "fos": 0.6,
+     "fot": 1.0,
+     "height_m": 10.5,
+     "edge": null
+    }
+   },
+   "ai": null,
+   "score": 27.0,
+   "components": {
+    "price": {
+     "value": 0.05,
+     "points": 1.0,
+     "max": 18,
+     "why": "USD 240.000 efectivo, 2.222/m²"
+    },
+    "space": {
+     "value": 0.22,
+     "points": 3.1,
+     "max": 14,
+     "why": "108 m² tot, 96 cub, 5 amb"
+    },
+    "location": {
+     "value": 0.64,
+     "points": 9.0,
+     "max": 14,
+     "why": "18 cuadras a Maipú, 2 a est. Juan B. Justo (Mitre), plaza a 4 cdas (Plaza de las Américas)"
+    },
+    "condition": {
+     "value": 0.7,
+     "points": 7.7,
+     "max": 11,
+     "why": "sin IA; antigüedad 10.0 años"
+    },
+    "patio": {
+     "value": 0.4,
+     "points": 3.6,
+     "max": 9,
+     "why": "menciona patio/jardín"
+    },
+    "investment": {
+     "value": 0.24,
+     "points": 4.3,
+     "max": 18,
+     "why": "terreno implícito USD 1.337/m² (zona ~USD 852/m²), en 10 años la construcción pierde ~USD 17.049, valor estimado a 10 años ~76% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 0.15,
+     "points": 0.6,
+     "max": 4,
+     "why": "heurística: PH"
+    },
+    "credit": {
+     "value": 0.4,
+     "points": 2.4,
+     "max": 6,
+     "why": "no aclara"
+    },
+    "garage": {
+     "value": 1,
+     "points": 3,
+     "max": 3,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 1.6,
+     "max": 2,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 0.8,
+     "max": 1,
+     "why": "luminoso según aviso"
+    }
+   },
+   "discard": [
+    "USD 2.222/m² (más de 2.000)",
+    "a 17.7 cuadras de Maipú (muy lejos)",
+    "duplicado de tk-7647445"
+   ],
+   "flags": [
+    "sin análisis IA",
+    "sobre presupuesto (USD 240.000)"
+   ],
+   "duplicate_of": "tk-7647445",
+   "score_calc": 27.0
+  },
+  {
    "id": "ml-MLA3078571014",
    "source": "mercadolibre",
    "url": "https://inmueble.mercadolibre.com.ar/MLA-3078571014-ph-4-ambientes-con-patio-y-parrilla-en-villa-urquiza-_JM",
@@ -1032907,9 +1033100,9 @@
     "Baño": "1",
     "Antigüedad": "50"
    },
-   "credit_pill": false,
+   "credit_pill": true,
    "publisher": "Sumatres Proposito Inmobiliario",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -1073467,7 +1073660,7 @@
    },
    "credit_pill": false,
    "publisher": "Levy Amón Propiedades",
-   "modified": "2026-11-12T15:44:33-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "depto",
    "features_text": [
     "80 m² tot.",
@@ -1084150,13 +1084343,13 @@
    "discard": [
     "86 m² totales (< 100)",
     "USD 2.151/m² (más de 2.000)",
-    "duplicado de ml-MLA4179942792"
+    "duplicado de zp-60694747"
    ],
    "flags": [
     "sin análisis IA",
     "posible pasillo"
    ],
-   "duplicate_of": "ml-MLA4179942792",
+   "duplicate_of": "zp-60694747",
    "score_calc": 23.6
   },
   {
@@ -1087235,7 +1087428,7 @@
    },
    "credit_pill": false,
    "publisher": "Remax Class II - Vila Terra",
-   "modified": "2026-11-12T09:17:07-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -1089792,7 +1089985,7 @@
    },
    "credit_pill": false,
    "publisher": "Remax Class II - Vila Terra",
-   "modified": "2026-11-12T09:17:07-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -1093050,7 +1093243,7 @@
    },
    "credit_pill": false,
    "publisher": "RE/MAX Ayres",
-   "modified": "2026-11-12T20:24:58-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-13",
@@ -1093060,6 +1093253,9 @@
      195000
     ]
    ],
+   "pct": 7,
+   "pct_score": 23.0,
+   "pct_n": 6338,
    "last_seen": "2026-11-13",
    "active": true,
    "geo": {
@@ -1093162,10 +1093358,7 @@
     "sin análisis IA"
    ],
    "duplicate_of": "zp-60427919",
-   "score_calc": 23.0,
-   "pct": 7,
-   "pct_score": 23.0,
-   "pct_n": 6338
+   "score_calc": 23.0
   },
   {
    "id": "ml-MLA3158191476",
@@ -1094860,13 +1095053,13 @@
    "discard": [
     "86 m² totales (< 100)",
     "USD 2.151/m² (más de 2.000)",
-    "duplicado de ml-MLA4179942792"
+    "duplicado de zp-60694747"
    ],
    "flags": [
     "sin análisis IA",
     "posible pasillo"
    ],
-   "duplicate_of": "ml-MLA4179942792",
+   "duplicate_of": "zp-60694747",
    "score_calc": 22.9
   },
   {
@@ -1125827,7 +1126020,7 @@
    },
    "credit_pill": false,
    "publisher": "PASTORI PROPIEDADES",
-   "modified": "2026-11-12T20:48:07-0500",
+   "modified": "2026-11-07T00:00:00-0500",
    "kind": "casa",
    "features_text": [
     "128 m² tot.",
@@ -1135557,7 +1135750,7 @@
    },
    "credit_pill": false,
    "publisher": "MARTIN PROPIEDADES  C.S.I 4513",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-06T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-06",
@@ -1156984,7 +1157177,7 @@
    },
    "credit_pill": false,
    "publisher": "ASEMPRO",
-   "modified": "2026-11-12T20:48:15-0500",
+   "modified": "2026-11-12T00:00:00-0500",
    "kind": "casa",
    "features_text": [],
    "first_seen": "2026-11-12",
@@ -1715736,7 +1715929,7 @@
    ],
    "pcts": {
     "m2": 90,
-    "ppm2": 15,
+    "ppm2": 16,
     "build": 0,
     "land": 23,
     "kept": 18
