@@ -33440,5 +33440,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-14T03:35:33Z"
+ },
+ "zp-58673765": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Pintura integral, pulido e hidrolaqueado de pinotea, mantenimiento de carpinterías y revisión de impermeabilización en terraza.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente metraje con 150 m² cubiertos",
+   "Pisos de pinotea y aberturas antiguas conservadas",
+   "Gran terraza propia de unos 85 m²"
+  ],
+  "red_flags": [
+   "Segundo piso por escalera sin ascensor",
+   "Sin patio en planta baja (incompatible con el requisito excluyente)",
+   "Humedad visible en revoques de zona cocina/comedor"
+  ],
+  "summary": "Queda descartado de plano para ustedes porque es un segundo piso por escalera con terraza alta y no tiene ni un metro de patio a nivel del suelo.",
+  "photos_key": "a1fd252e9fa7",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-14",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-14T21:51:16Z"
  }
 }

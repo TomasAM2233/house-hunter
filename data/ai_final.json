@@ -15382,72 +15382,68 @@
   "ts": "2026-11-07T21:24:17Z"
  },
  "zp-60569571": {
-  "score": 68,
-  "brief": "Oportunidad en Villa Ortúzar: PH con entrada independiente y garage a 2 cuadras del Subte B. El precio por m² (USD 870) es imbatible para la zona. Lo malo: el patio de abajo es chico y hay humedad visible; la terraza con quincho compensa.",
+  "score": 59,
+  "brief": "Gran precio (USD 870/m² tot) y ubicación a 150 m del Subte B. Entrada independiente, garage y terraza con quincho. En contra: los patios en PB son chicos (pulmón de aire) y requiere modernizar cocina, baños y cañerías.",
   "reasons": [
-   "Ubicación estratégica a 150m del Subte B, cumpliendo con creces la prioridad de transporte.",
-   "Precio por m² total muy por debajo del promedio de Villa Ortúzar (USD 870 vs +USD 1.200).",
-   "Tipología premium: entrada independiente, garage propio y sin expensas, lo más buscado."
+   "Ubicación y tipología premium: casa/PH al frente con garage a pasos de Tronador por USD 200.000 (+5 pts).",
+   "Patios en PB chicos (aprox. 12 m² entre ambos), no compensados del todo por la terraza según tus prioridades (-2 pts).",
+   "Margen de revalorización alto: admite modernización estética y de servicios dentro de tu presupuesto de reforma (+3 pts)."
   ],
   "investment": {
-   "score": 9,
-   "why": "El valor del terreno implícito (USD 557/m²) está muy por debajo de los USD 747/m² de la zona. Al ser entrada independiente en una zona de baja densidad pero alta demanda, el valor se sostiene casi como una casa individual.",
-   "value_10y_pct": 105,
+   "score": 7,
+   "why": "Se compra a USD 1.250/m² cubierto en Villa Ortúzar a metros del Subte B. Con una inversión de USD 15.000 a 20.000 para actualizar interiores y cañerías, una propiedad independiente con garage y quincho en esta zona cotiza por encima de USD 260.000.",
+   "value_10y_pct": 108,
    "upside": [
-    "Ubicación en zona de derrame de Belgrano con alta valorización",
-    "Posibilidad de modernizar y capturar un margen de USD 400/m²",
-    "Garage propio en zona donde el estacionamiento es escaso"
+    "Precio por m² sensiblemente inferior al promedio barrial de Villa Ortúzar",
+    "Entrada independiente, garage y terraza propia sin expensas",
+    "Ubicación con altísima demanda de alquiler y reventa (a 150 m de Subte B)"
    ],
    "risks": [
-    "Humedad visible que puede indicar problemas estructurales o de filtración",
-    "Instalaciones de 50 años que requieren renovación total",
-    "Si el quincho no figura en planos, complica la venta con crédito"
+    "Ampliaciones en planta alta (quincho/depósito) que podrían no estar en planos",
+    "Patios en PB reducidos que limitan al comprador que busca jardín verde",
+    "Instalaciones de agua, gas y electricidad con 49 años de antigüedad"
    ]
   },
   "questions": [
    {
-    "q": "¿El quincho y la superficie de planta alta figuran en el plano aprobado?",
-    "impact": "Si no están declarados, el valor de reventa baja y no es apto crédito -10"
+    "q": "¿El quincho y las construcciones de la terraza figuran en plano aprobado?",
+    "impact": "Si están en plano +3; si son clandestinos o antirreglamentarios -6 (dificulta venta y crédito)."
    },
    {
-    "q": "¿Cuál es el origen de la humedad que se ve en los techos de la cocina?",
-    "impact": "Si es filtración de terraza es fácil; si es cañería interna o cimientos -8"
+    "q": "¿Cuáles son las medidas exactas de los dos patios de planta baja y qué luz reciben?",
+    "impact": "Si alguno permite armar un espacio verde cómodo +4; si son solo pozos de aire y luz chicos -4."
    },
    {
-    "q": "¿Las instalaciones de gas y agua fueron renovadas alguna vez?",
-    "impact": "Si son originales de hace 49 años, la reforma costará USD 5.000 más -5"
+    "q": "¿El techo de la planta alta y los cielorrasos tienen filtraciones o humedad activa?",
+    "impact": "Si están secos y con membrana al día +2; si hay que rehacer impermeabilización o techos -5."
    },
    {
-    "q": "¿El patio de planta baja tiene buena luz o queda muy encerrado?",
-    "impact": "Si es luminoso suma +4; si es un pulmón oscuro no cumple el deseo de Tomás -6"
+    "q": "¿Las cañerías de agua y la instalación de gas fueron renovadas o son originales de hace 49 años?",
+    "impact": "Si son nuevas +4; si son de plomo/hierro original -5 (requiere romper todo)."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Hace cuánto está a la venta y por qué venden?",
+    "q": "¿Cuántas unidades funcionales integran el PH y cómo se distribuyen en el lote?",
     "impact": ""
    },
    {
-    "q": "¿Cómo es la relación con el vecino del PH del fondo?",
+    "q": "¿Por qué motivo venden y qué plazo necesitan para escriturar y entregar la posesión?",
     "impact": ""
    },
    {
-    "q": "¿Aceptan una oferta agresiva por pago contado?",
+    "q": "¿Tienen planos de subdivisión y reglamento de copropiedad al día para revisar?",
     "impact": ""
    },
    {
-    "q": "¿El garage es apto para una camioneta grande?",
-    "impact": ""
-   },
-   {
-    "q": "¿En qué estado se encuentra la membrana de la terraza?",
+    "q": "¿La propiedad cuenta con servicio de gas habilitado y medidor funcionando?",
     "impact": ""
    }
   ],
-  "input_key": "773323e5dea2",
-  "model": "gemini-3-flash-preview",
-  "at": "2026-11-13",
-  "ts": "2026-11-13T03:47:19Z"
+  "input_key": "3122af83c9fb",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-14",
+  "ts": "2026-11-14T21:54:09Z"
  },
  "zp-59522598": {
   "score": 52,
