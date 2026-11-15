@@ -11689,80 +11689,76 @@
   "ts": "2026-11-02T08:33:10Z"
  },
  "zp-60513019": {
-  "score": 68,
-  "brief": "Casa propia de 334 m² en Chacarita a USD 205.000 (USD 614/m²), 3 cuadras del subte B. Excelente precio por metro y metraje, patio con parrilla y cochera, con detalles a actualizar.",
+  "score": 73,
+  "brief": "Metraje descomunal (334 m²) por USD 205.000 (USD 614/m²) a menos de 3 cuadras del subte B. Tiene patio en PB, terraza y garaje para 2 autos, pero son 3 plantas con aire central roto y altos costos de mantenimiento.",
   "reasons": [
-   "El valor por metro cuadrado es sumamente bajo para la zona (USD 614/m²), lo que potencia fuertemente la nota de inversión.",
-   "El metraje total cubierto de 334 m² supera ampliamente las expectativas de espacio por este precio.",
-   "Tiene múltiples niveles (subsuelo, PB, 1er piso y terraza) y aire central roto, lo que requiere mayor inversión inicial en refacciones."
+   "Precio por metro cuadrado insólito (USD 614/m²) para una casa en Chacarita a pasos del subte B.",
+   "El metraje real de lote es menor al estimado por el cálculo (está construida en 3 plantas), y requiere climatización completa.",
+   "Excelente potencial de revalorización en un barrio en auge comercial y residencial."
   ],
   "investment": {
-   "score": 9,
-   "why": "El precio de venta (USD 205.000) por 334 m² cubiertos en lote propio representa un costo por metro sumamente deprimido frente al promedio de la zona (aprox. USD 800+ el m² de incidencia de tierra), ofreciendo una excelente relación de valor presente y reventa a 10 años.",
-   "value_10y_pct": 202,
+   "score": 8,
+   "why": "Comprar a USD 614/m² cubierto en Chacarita está muy por debajo del costo de reposición (~USD 1.480/m²). El lote propio a 2,5 cuadras de Lacroze garantiza demanda sostenida, aunque el tamaño grande limita el público a familias o inversores.",
+   "value_10y_pct": 145,
    "upside": [
-    "Precio muy por debajo del costo de reposición y del mercado de la zona",
-    "Gran superficie propia (334 m²) con cochera y patio en Chacarita",
-    "Posibilidad de valorización mediante actualización cosmética"
+    "Precio de entrada excepcionalmente bajo por m² en un barrio consolidado de CABA",
+    "Posibilidad de dividir o refuncionalizar niveles por su escala y doble acceso",
+    "Proximidad inmediata a polo gastronómico y nodo de transporte (Subte B y tren)"
    ],
    "risks": [
-    "Sistema de aire central fuera de servicio que requiere reemplazo costoso",
-    "Antigüedad de 50 años en instalaciones, cocina y baños",
-    "Propiedad en múltiples niveles que puede achicar el pool de compradores futuros"
+    "El mercado para casas de más de 300 m² en 3 plantas es más acotado que para departamentos o PH chicos",
+    "Costo de climatizar y mantener 334 m² cubiertos con instalaciones de 50 años",
+    "Cercanía a la terminal de trenes Lacroze y ex Playón Fraga que puede generar ruidos o reparos en reventa"
    ]
   },
   "questions": [
    {
-    "q": "¿Los planos están al día y aprobados sin m² clandestinos?",
-    "impact": "si hay superficies no declaradas -5; si está todo en regla +3"
+    "q": "¿Los 334 m² están totalmente declarados en planos y la propiedad es apta crédito?",
+    "impact": "Si no tiene planos al día o no es apta crédito -8 puntos; si está todo en regla +3 puntos."
    },
    {
-    "q": "¿Es apta para crédito hipotecario?",
-    "impact": "si no es apta -5; si es apta +3"
+    "q": "¿Qué dimensiones exactas tiene el patio de planta baja y qué luz recibe durante el día?",
+    "impact": "Si tiene menos de 20 m² o es un pozo de aire oscuro -6 puntos; si supera los 35 m² con buen sol +3 puntos."
    },
    {
-    "q": "¿Cuál es el estado real de cañerías, instalaciones eléctricas y techos?",
-    "impact": "si requiere renovación total de instalaciones -10; si se hicieron a nuevo recientemente +4"
+    "q": "¿Cuál es el diagnóstico y costo estimado para cambiar o reparar la climatización central?",
+    "impact": "Si la instalación requiere rehacer ductos o supera USD 10.000 -4 puntos; si se resuelve fácil con splits independientes neutro."
    },
    {
-    "q": "¿El subsuelo (cochera/playroom) sufre problemas de humedad o napas?",
-    "impact": "si hay humedad de cimientos -8; si está seco y ventilado +2"
+    "q": "¿Hay problemas de humedad de cimientos o filtraciones en el subsuelo (cochera/playroom)?",
+    "impact": "Si el subsuelo presenta humedad activa -7 puntos; si está completamente seco +2 puntos."
    },
    {
-    "q": "¿Qué tan ruidosa es la cuadra sobre Teodoro García?",
-    "impact": "si es muy transitada y ruidosa -4; si es una calle residencial tranquila +2"
+    "q": "¿Cómo es el nivel de ruido en la cuadra por la cercanía a Corrientes y la estación Lacroze?",
+    "impact": "Si el tránsito o tren se siente fuerte dentro de la casa -5 puntos; si es una cuadra silenciosa +3 puntos."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo se mudan los propietarios actuales?",
+    "q": "¿Cuáles son las medidas exactas del terreno (frente y fondo)?",
     "impact": ""
    },
    {
-    "q": "¿Se escuchan ruidos molestos de vecinos colindantes?",
+    "q": "¿Cuánto se paga actualmente de ABL y AySA por semejante metraje?",
     "impact": ""
    },
    {
-    "q": "¿Qué elementos o artefactos quedan fijos en la propiedad al momento de la venta?",
+    "q": "¿Cuál es el motivo de venta y qué plazo de entrega manejan los dueños?",
     "impact": ""
    },
    {
-    "q": "¿Hay margenes para negociar el precio de oferta?",
+    "q": "¿El estado de cañerías de agua, gas y tablero eléctrico fue renovado o es el original de 50 años?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los montos aproximados de ABL y expensas (si las hubiera)?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cuáles son los plazos previstos para la escritura y la entrega de la posesión?",
+    "q": "¿Aceptan una oferta agresiva por debajo de los USD 205.000?",
     "impact": ""
    }
   ],
-  "input_key": "f0e30c3ff324",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-04",
-  "ts": "2026-11-04T03:44:52Z"
+  "input_key": "2a0cac7603b2",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T17:32:42Z"
  },
  "zp-59437717": {
   "score": 58,
@@ -20522,76 +20518,72 @@
   "ts": "2026-11-12T19:41:22Z"
  },
  "zp-60686964": {
-  "score": 74,
-  "brief": "Oportunidad real en Florida por USD 130.000. Es un PH al frente, sin pasillo, con cochera y patio propio. Está para refaccionar (humedad visible), pero el precio por m2 (USD 1.140) es bajísimo para la zona y deja margen para dejarla a nuevo.",
+  "score": 71,
+  "brief": "Gran oportunidad en Florida: PH al frente en PB con cochera y patio por USD 130.000 (USD 1.140/m²). A 7 cuadras de Maipú y apto crédito. Requiere USD 15.000 en arreglos (humedad y cocina/baño), pero el número total cierra perfecto.",
   "reasons": [
-   "Precio de venta muy por debajo del mercado para un PH al frente en Florida",
-   "Excelente relación terreno implícito vs. valor de zona (USD 428 vs USD 786)",
-   "Alta liquidez por ser apto crédito, sin expensas y con cochera propia"
+   "Precio de compra excepcional (USD 130.000) que con USD 15.000 de reforma queda en USD 145.000, muy por debajo de los USD 170.000+ que vale un 3 amb con cochera en la zona (+8)",
+   "Tipología óptima que el algoritmo castigó de más en espacio: PB al frente, independiente, cochera propia, sin expensas y ventilación cruzada en 85 m² cubiertos (+4)",
+   "Inversión defensiva excelente: ticket bajo, alta demanda para reventa o alquiler en Florida y apto crédito (+3)"
   ],
   "investment": {
    "score": 8,
-   "why": "El valor del terreno implícito es casi la mitad que el de los lotes linderos, lo que ofrece un 'colchón' de seguridad enorme. Incluso sumando USD 15.000 de reforma, el costo final queda muy por debajo de los USD 180.000 que valdría una unidad similar reciclada.",
-   "value_10y_pct": 113,
+   "why": "Comprás a USD 1.140/m² en Florida PB al frente con cochera. Con una reforma de USD 15.000 a USD 20.000 la ponés en valor por menos de USD 150.000 totales, en un segmento donde propiedades listas cotizan entre USD 175.000 y USD 190.000.",
+   "value_10y_pct": 92,
    "upside": [
-    "Precio de entrada muy bajo que asegura ganancia post-reforma",
-    "Zona R2 con potencial de revalorización por demanda sostenida",
-    "Unidad al frente con entrada independiente (valor de casa)"
+    "Ticket total post reforma (<USD 150.000) en el rango de mayor liquidez y demanda de Vicente López",
+    "Cochera propia y entrada al frente en PB sin expensas, formato muy buscado para reventa",
+    "Margen para ganar valor reciclando cocina, baños y tratando humedades por debajo del precio de mercado"
    ],
    "risks": [
-    "Humedad de cimientos que podría requerir una inversión mayor a la estimada",
-    "Limitación de crecimiento vertical por ser PH (requiere acuerdo)",
-    "Superficie cubierta al límite de lo solicitado (85 m2)"
+    "Humedad de cimientos en dormitorios que puede demandar obras invasivas de impermeabilización",
+    "Imposibilidad o dificultad de construir en altura al ser PH compartido (FOT no aprovechable individualmente)",
+    "Patio chico/embaldosado que compite en desventaja contra casas con jardín verde"
    ]
   },
   "questions": [
    {
-    "q": "¿Cuál es el origen de la humedad en los dormitorios y si se hizo algún tratamiento previo?",
-    "impact": "Si es humedad de cimientos grave -8; si es solo falta de ventilación +2"
+    "q": "¿Qué origen tiene la humedad en los dormitorios y si ya se impermeabilizaron cimientos?",
+    "impact": "Si requiere picar y rehacer capas aisladoras en todo el perímetro -5; si es superficial de condensación o fácil arreglo +2"
    },
    {
-    "q": "¿Los 85 m2 cubiertos están totalmente declarados en el plano de subdivisión?",
-    "impact": "Si hay m2 sin declarar que traben el crédito -15; si está en regla +5"
+    "q": "¿Cuáles son las medidas exactas del patio libre descontando la cochera?",
+    "impact": "Si el patio libre al fondo tiene más de 20 m² utilizables +3; si tiene menos de 12 m² o es sólo pulmón -6"
    },
    {
-    "q": "¿En qué estado se encuentra el techo? ¿Es losa o chapa/teja?",
-    "impact": "Si hay que hacer techo nuevo -10; si es losa en buen estado +5"
+    "q": "¿Los 85 m² cubiertos y la cochera están 100% declarados en el plano de subdivisión?",
+    "impact": "Si hay metros no declarados que traben el crédito o la venta -8; si el plano y reglamento están impecables +3"
    },
    {
-    "q": "¿Cómo es la relación con el vecino del fondo y cómo se reparten las decisiones de mantenimiento?",
-    "impact": "Si hay conflictos o falta de mantenimiento en áreas comunes -5"
+    "q": "¿Qué tipo de techo tiene (losa o chapa) y en qué estado se encuentra la cubierta?",
+    "impact": "Si hay que rehacer membrana o techo -5; si la cubierta está sana +2"
    },
    {
-    "q": "¿Las instalaciones de agua, luz y gas fueron renovadas en los últimos 20 años?",
-    "impact": "Si son originales de hace 50 años -7; si están actualizadas +4"
+    "q": "¿Las cañerías de agua, gas y la instalación eléctrica son originales de hace 70 años o se renovaron?",
+    "impact": "Si están para cambiar de punta a punta -4 (sube costo de reforma); si fueron renovadas +3"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Tienen los planos de obra y de subdivisión disponibles para enviar?",
+    "q": "¿Cuántas unidades funcionales integran el PH y cómo se dividen los gastos comunes si no hay expensas?",
     "impact": ""
    },
    {
-    "q": "¿El reglamento de copropiedad permite construir en planta alta?",
+    "q": "¿La propiedad está desocupada y lista para escriturar o está condicionada a reubicación de los dueños?",
     "impact": ""
    },
    {
-    "q": "¿Por qué motivo decidieron poner la propiedad en venta ahora?",
+    "q": "¿El reglamento de copropiedad permite modificaciones en fachada o aberturas?",
     "impact": ""
    },
    {
-    "q": "¿La propiedad está deshabitada o hay que coordinar plazos de entrega?",
-    "impact": ""
-   },
-   {
-    "q": "¿Aceptan una oferta agresiva de contado considerando el estado de refacción?",
+    "q": "¿Qué nivel de ruido llega desde el entorno barrial durante el día y la noche?",
     "impact": ""
    }
   ],
-  "input_key": "5cf0d9454513",
-  "model": "gemini-3-flash-preview",
-  "at": "2026-11-13",
-  "ts": "2026-11-13T03:46:17Z"
+  "input_key": "81349b286772",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T17:34:26Z"
  },
  "ml-MLA4193071492": {
   "score": 39,
