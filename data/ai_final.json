@@ -6808,76 +6808,63 @@
   "ts": "2026-11-02T03:06:52Z"
  },
  "zp-60475725": {
-  "score": 46,
-  "brief": "Casa en una planta en Olivos a USD 220.000, un poco arriba del tope. Tiene 192 m² totales, 112 cubiertos, jardín de 50 m², cochera y 4 ambientes. A 11 cuadras de Maipú. Cocina y baños noventosos y techo de tejas sin losa (sin potencial vertical).",
+  "score": 43,
+  "brief": "Supera el tope ideal de USD 210k (USD 220k + USD 15k de reforma). Buen lote de 192 m² y 112 m² cubiertos, pero a 10,6 cuadras de Maipú. El techo de tejas impide construir arriba y no mostraron fotos del jardín.",
   "reasons": [
-   "El precio de USD 220.000 supera ligeramente el límite obligatorio de USD 210.000 y requiere una negociación o estirarse.",
-   "El techo de tejas sin losa limita por completo la posibilidad de construir hacia arriba, un aspecto clave de inversión.",
-   "No hay fotos del jardín y el precio por m² de terreno implícito (USD 904) está un poco arriba del promedio de la zona (~USD 780)."
+   "Precio de oferta en USD 220.000 excede el presupuesto base de USD 210.000 y requiere USD 15.000 de actualización.",
+   "Techo de tejas sin losa imposibilita la construcción en altura sin una obra estructural mayor.",
+   "Terreno implícito a USD 904/m² está sobrevaluado respecto a los USD 780/m² de la zona."
   ],
   "investment": {
-   "score": 6,
-   "why": "El terreno implícito cotiza levemente por encima de la zona y el techo de tejas impide ampliar en altura, limitando el recupero futuro. Aun así, el lote propio de 192 m² sostiene razonablemente bien el valor a largo plazo.",
+   "score": 4,
+   "why": "El terreno implícito a USD 904/m² paga un sobreprecio frente al promedio de la zona (~USD 780/m²). La falta de losa encarece cualquier proyecto de expansión vertical. Se estima que en 10 años la propiedad valdrá un 87% de su precio actual.",
    "value_10y_pct": 87,
    "upside": [
-    "Lote propio de 192 m² en zona R2 con buena superficie de terreno.",
-    "Distribución práctica en una planta con cochera y jardín.",
-    "Margen de USD 15.000 para modernizar cocina y baños a gusto."
+    "Lote propio de 192 m² con FOT 1.0 que permite construir m² adicionales en PB",
+    "Distribución funcional en una sola planta con cochera"
    ],
    "risks": [
-    "Precio por encima del tope de Tomás (USD 220.000 vs 210.000).",
-    "Techo de tejas sin losa que anula la posibilidad de construir hacia arriba.",
-    "Terreno implícito algo caro frente al promedio de la zona."
+    "Valor del terreno implícito por encima de la media del mercado local",
+    "Estructura de techo de tejas que anula el potencial vertical sencillo",
+    "Falta de registro fotográfico del jardín, posible vicio oculto o mala orientación real"
    ]
   },
   "questions": [
    {
-    "q": "¿El precio se puede bajar a USD 210.000 para entrar en presupuesto?",
-    "impact": "si aceptan bajarlo +4; si es inflexible -6"
+    "q": "¿Es apta crédito y tiene los planos totalmente aprobados (incluyendo depósito y parrilla)?",
+    "impact": "Si no es apta crédito o tiene m² no declarados, -8 puntos."
    },
    {
-    "q": "¿Los planos están aprobados y al día, y es apta crédito hipotecario?",
-    "impact": "si tiene todo al día y es apta crédito +3; si hay planos flojos o no es apta -8"
+    "q": "¿Cuál es el estado y metraje real del jardín al fondo que no figura en las fotos?",
+    "impact": "Si el jardín está en mal estado o es más chico de lo publicado, -6 puntos."
    },
    {
-    "q": "¿El techo es de tejas sobre estructura de madera o tiene alguna losa parcial?",
-    "impact": "si confirma que no hay losa y es imposible construir arriba 0; si permite alguna variante +2"
+    "q": "¿En qué estado se encuentran las cañerías, la instalación eléctrica y el techo de tejas?",
+    "impact": "Si requiere rehacer techos o caños desde cero, sube la reforma y baja -8 puntos."
    },
    {
-    "q": "¿Cuál es el estado real del jardín y se puede visitar para verlo?",
-    "impact": "si el jardín está impecable y mide ~50 m² +2; si está descuidado o es menor -3"
-   },
-   {
-    "q": "¿Cómo está el estado general de cañerías, instalación eléctrica y humedades?",
-    "impact": "si requiere recambio total -5; si está reciclado o sano +3"
+    "q": "¿Existe posibilidad real de negociación cercana a los USD 195.000-200.000?",
+    "impact": "Si aceptan oferta dentro del presupuesto ideal de Tomás, +7 puntos."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo actual están vendiendo la propiedad?",
+    "q": "¿Cuál es el motivo de venta y qué plazos manejan para la entrega de la propiedad?",
     "impact": ""
    },
    {
-    "q": "¿Qué equipamiento o artefactos quedan en la casa al momento de la venta?",
+    "q": "¿A cuánto ascienden las tasas municipales (ABL) y ARBA?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los montos aproximados de ABL y ARBA?",
-    "impact": ""
-   },
-   {
-    "q": "¿Se aceptan ofertas de contado y cuáles son los plazos previstos para escriturar?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la tranquilidad de la cuadra y el perfil de los vecinos linderos?",
+    "q": "¿Qué artefactos o equipos de aire acondicionado quedan en la casa?",
     "impact": ""
    }
   ],
-  "input_key": "0f40f2d0eab1",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-14",
-  "ts": "2026-11-14T03:38:31Z"
+  "input_key": "026716517366",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:16:17Z"
  },
  "zp-45673293": {
   "score": 42,
@@ -15156,84 +15143,68 @@
   "ts": "2026-11-07T21:23:41Z"
  },
  "ml-MLA1919328505": {
-  "score": 52,
-  "brief": "PH 4 amb en Urquiza R a USD 225.000 (pasa los USD 210.000 de presupuesto), con 246 m² tot (103 cub), jardín, cochera y terraza. Estado regular (70 años, requiere USD 20.000 en refacciones urgentes por humedad e instalaciones). A 4.6 cuadras del…",
+  "score": 50,
+  "brief": "PH al frente de 246 m² total con cochera y 4 amb a 4,6 cdas del Subte B. Piden USD 225.000 (supera el techo de USD 210.000). Requiere USD 20.000 de reforma por humedad y techos. No hay fotos del jardín.",
   "reasons": [
-   "El precio de USD 225.000 supera el límite obligatorio de USD 210.000 de Tomás, restando puntos en el criterio principal.",
-   "El estado general requiere una inversión fuerte de USD 20.000 para arreglar techos, humedad e instalaciones de 70 años de antigüedad.",
-   "La inversión es justa ya que el valor estimado a 10 años ronda el 101% del precio actual, sin un margen de ganancia excepcional."
+   "El precio publicado (USD 225.000) supera el objetivo de USD 210.000 de Tomás, restando puntos.",
+   "Deterioro severo por infiltraciones en techos e instalaciones de 70 años que consumirá el tope de reformas.",
+   "Falta de fotos del jardín en planta baja, lo que exige verificar su estado y sol luz real."
   ],
   "investment": {
-   "score": 5,
-   "why": "Con un precio de USD 225.000 y un valor de terreno implícito alineado con la zona (USD 963/m²), la propiedad retiene su valor pero ofrece poco margen de apreciación. En 10 años se estima que valdrá unos USD 226.440 (101% del precio actual), por lo que actúa más como resguardo de valor que como una gran inversión inmobiliaria.",
-   "value_10y_pct": 101,
+   "score": 6,
+   "why": "Paga USD 915 por m² total en Villa Urquiza, lo cual es una entrada barata por m² de terreno e inmueble. La construcción está amortizada y requiere inversión para no perder valor frente al mercado.",
+   "value_10y_pct": 102,
    "upside": [
-    "Excelente ubicación en Villa Urquiza R con buena superficie total de lote",
-    "Cochera cubierta propia y sin expensas",
-    "Combinación de jardín en PB y gran terraza con SUM"
+    "Excelente precio por m² total (USD 915/m²) en zona demandada de CABA",
+    "Gran metraje descubierto en PB y terraza con potencial de valorización",
+    "Ubicación estratégica a menos de 5 cuadras del Subte B y del tren"
    ],
    "risks": [
-    "Antigüedad de 70 años con instalaciones originales que demandan recambio inmediato",
-    "Precio por encima del presupuesto estipulado por el comprador",
-    "PH de lote compartido que puede limitar desarrollos futuros o decisiones independientes"
+    "Costo de obra puede superar los USD 20.000 si hay fallas en losas o caños viejos",
+    "Sobreprecio de entrada respecto al presupuesto pretendido de USD 210.000",
+    "Liquidez acotada si los metros de planta alta no figuran en plano"
    ]
   },
   "questions": [
    {
-    "q": "¿El precio de USD 225.000 es negociable o aceptan ofertas de contado por debajo?",
-    "impact": "si aceptan bajar a USD 210.000 o menos +5; si es precio cerrado -3"
+    "q": "¿Es apto crédito hipotecario y están los planos 100% al día con la terraza y recintos?",
+    "impact": "Si no es apto crédito o hay m² sin declarar -8; si está todo en regla +4"
    },
    {
-    "q": "¿Cuál es el estado real del jardín en planta baja y por qué no hay fotos publicadas?",
-    "impact": "si el jardín está descuidado o es un pulmón muy sombrío -4; si está en buen estado +2"
+    "q": "¿Cuál es el estado del jardín de PB y por qué no figura en las fotos?",
+    "impact": "Si es un jardín verde y aprovechable +5; si es un pulmón sombrío o ciego -6"
    },
    {
-    "q": "¿Tiene problemas de humedad de cimientos o filtraciones activas en los techos de los dormitorios?",
-    "impact": "si hay humedad estructural severa -10; si está seco +3"
+    "q": "¿El origen de la humedad de techo proviene de la impermeabilización de la terraza o de cañerías?",
+    "impact": "Si requiere solo membrana/pintura +3; si hay daño estructural en la losa -8"
    },
    {
-    "q": "¿Los planos están totalmente aprobados y la propiedad es apta crédito hipotecario?",
-    "impact": "si es apto crédito y planos al día +4; si hay metros sin declarar -6"
-   },
-   {
-    "q": "¿Cómo es la conexión de gas y electricidad tras 70 años de antigüedad?",
-    "impact": "si requiere hacer toda la instalación a nuevo -5; si fue parcialmente actualizada +2"
-   },
-   {
-    "q": "¿Se comparte el lote con muchas unidades y cómo se toman las decisiones de mantenimiento?",
-    "impact": "si hay conflictos o muchos copropietarios -4; si son pocos PH independientes +2"
+    "q": "¿El propietario acepta una contraoferta en la franja de USD 200.000 a 210.000?",
+    "impact": "Si aceptan USD 205.000 o menos +8; si se plantan en USD 225.000 -4"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué razón se mudan los actuales propietarios y cuánto tiempo llevan en venta?",
+    "q": "¿Cuáles son los gastos fijos mensuales de ABL y AySA al no pagar expensas?",
     "impact": ""
    },
    {
-    "q": "¿Qué se queda en la propiedad al momento de la venta (aires acondicionados, luminarias, etc.)?",
+    "q": "¿El PH tiene servicios (agua/gas/luz) totalmente independientes?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los gastos aproximados de ABL y AYSA mensuales?",
+    "q": "¿Cuál es el motivo de venta y qué plazos manejan para la entrega?",
     "impact": ""
    },
    {
-    "q": "¿Existe algún saldo pendiente de expensas o tasas municipales que deba regularizarse?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cuáles son los plazos estimados para la firma del boleto y la escritura traslada de dominio?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la convivencia con los vecinos de las unidades linderas?",
+    "q": "¿Existen restricciones en el reglamento de copropiedad para construir en la terraza?",
     "impact": ""
    }
   ],
-  "input_key": "723b14897ca5",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-10",
-  "ts": "2026-11-10T05:19:14Z"
+  "input_key": "3ce27bd382bc",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:15:41Z"
  },
  "ml-MLA2268429195": {
   "score": 42,
@@ -15443,83 +15414,67 @@
  },
  "zp-59522598": {
   "score": 52,
-  "brief": "Casa de 128 m² tot. (100 cub.) a USD 150.000 (USD 1.172/m²). Lote propio, 4 ambientes y a 2 cuadras del subte B. Pide USD 18.500 de refacción por humedad y pisos, y está cerca de las vías con ruido.",
+  "brief": "Lote propio en Chacarita a USD 150.000 (USD 1.172/m²). Excelente precio a 1,5 cuadras del Subte B. Requiere USD 18.500 de reforma por humedad y estado general. El patio es muy chico (~12 m²) y está pegado al tren.",
   "reasons": [
-   "El precio de USD 150.000 más los USD 18.500 de refacción da un total competitivo de USD 1.172/m².",
-   "El estado general requiere una inversión fuerte (2/5) con humedad y pisos dañados que restan confort inmediato.",
-   "La cercanía a las vías del tren castiga la tranquilidad esperada por Tomás."
+   "Excelente precio total en lote propio que deja margen holgado para la reforma de USD 18.500.",
+   "Ubicación estratégica a 1,5 cuadras del Subte B Lacroze, aunque afectada por ruido de trenes.",
+   "Patio muy reducido (~12 m²) y necesidad de refacción integral de techos e instalaciones."
   ],
   "investment": {
-   "score": 6,
-   "why": "El terreno implícito está alineado con la zona y la baja inversión inicial permite captar plusvalía tras las refacciones. Sin embargo, la antigüedad de 80 años y la cercanía a las vías limitan un mayor despegue del valor en 10 años.",
-   "value_10y_pct": 93,
+   "score": 7,
+   "why": "El valor de lote propio en Chacarita a USD 1.172/m² es muy competitivo. Al sumar USD 18.500 de obra, el costo total queda en USD 168.500, muy por debajo de los valores promedio de la zona para casas reciclabiles.",
+   "value_10y_pct": 105,
    "upside": [
-    "Precio de entrada bajo (USD 1.172/m² total)",
-    "Lote propio de 128 m² en ubicación conectada",
-    "Margen para reformar por debajo del valor de mercado"
+    "Lote propio con potencial de ampliación en altura según código.",
+    "Ubicación hiperconectada a metros de Subte B y tren.",
+    "Precio de compra bajo que permite ganar valor con refacción."
    ],
    "risks": [
-    "80 años de antigüedad con posibles vicios ocultos en cañerías",
-    "Cercanía a las vías del tren (afecta reventa y tranquilidad)",
-    "Necesidad de desembolsar USD 18.500 de entrada"
+    "Proximidad a las vías del tren que puede limitar el perfil de compradores.",
+    "Costo de refacción por humedad de cimientos y techos que podría desviarse.",
+    "Patio pequeño que resta atractivo como casa familiar tradicional."
    ]
   },
   "questions": [
    {
-    "q": "¿Tiene problemas estructurales o humedad de cimientos en muros portantes?",
-    "impact": "si hay humedad de cimientos -12; si está seca +3"
+    "q": "¿Los planos están aprobados con los 100 m² cubiertos y la casa es apta crédito?",
+    "impact": "Si es apta crédito +8 puntos; si no tiene planos al día -5 puntos."
    },
    {
-    "q": "¿Los planos están totalmente aprobados y coinciden con los 100 m² cubiertos y 128 m² totales?",
-    "impact": "si hay m² sin declarar o planos rechazados -10; si está todo al día +4"
+    "q": "¿Hay humedad de cimientos o problemas estructurales graves en techos y muros?",
+    "impact": "Si requiere rehacer capa aisladora o techos de cero -10 puntos; si es solo revoque +3 puntos."
    },
    {
-    "q": "¿Cuál es el nivel real de ruido por el paso del tren y los colectivos en la cuadra?",
-    "impact": "si el ruido es molesto dentro de la casa -8; si es una calle silenciosa +2"
+    "q": "¿Cuál es el nivel real de ruido y vibración adentro de la casa por el tren Lacroze?",
+    "impact": "Si el ruido es insoportable -12 puntos; si está bien aislada +4 puntos."
    },
    {
-    "q": "¿El techo (azotea) fue impermeabilizado recientemente o tiene filtraciones activas?",
-    "impact": "si hay filtraciones activas -7; si está en buen estado +2"
-   },
-   {
-    "q": "¿La propiedad es apta crédito hipotecario actualmente?",
-    "impact": "si no es apta crédito -6; si es apta +3"
-   },
-   {
-    "q": "¿El espacio mencionado como posible garaje está escriturado o entra un auto cómodo?",
-    "impact": "si no entra un auto o no está autorizado -4; si funciona perfecto +2"
+    "q": "¿La terraza soporta construcción en planta alta sin reforzar estructura?",
+    "impact": "Si permite construir arriba sin refuerzo +6 puntos; si exige consolidación -4 puntos."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo se mudan los propietarios actuales?",
+    "q": "¿Cuál es el motivo de venta y hace cuánto está en el mercado?",
     "impact": ""
    },
    {
-    "q": "¿Qué artefactos, muebles o aires acondicionados quedan en la propiedad?",
+    "q": "¿Es venta directa o requiere reubicación de los dueños?",
     "impact": ""
    },
    {
-    "q": "¿Hay deudas de ABL, AYSA o servicios que deban descontarse al escriturar?",
+    "q": "¿Están al día todos los impuestos y servicios?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los plazos estimados para la escrituración y la entrega de la posesión?",
-    "impact": ""
-   },
-   {
-    "q": "¿Los dueños están dispuestos a escuchar ofertas por debajo del precio publicado?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la convivencia con los vecinos linderos en el día a día?",
+    "q": "¿El valor del precio es negociable ante pago contado rápido?",
     "impact": ""
    }
   ],
-  "input_key": "eeace7a95eda",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-14",
-  "ts": "2026-11-14T03:37:57Z"
+  "input_key": "1f83636af824",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:16:31Z"
  },
  "zp-59874449": {
   "score": 57,
@@ -15937,76 +15892,71 @@
   "ts": "2026-11-12T04:28:59Z"
  },
  "zp-54571528": {
-  "score": 52,
-  "brief": "Casa PH en planta baja en Olivos a USD 123.000 (820 USD/m²). Tiene 100 m² cubiertos, 150 m² totales con jardín al frente y fondo de 30 m², y losa apta para ampliar. En contra: 15 cuadras a Maipú y baños/cocina de época.",
+  "score": 60,
+  "brief": "Excelente precio de USD 123.000 (USD 820/m²) en Olivos con 150 m² totales, losa para construir arriba y fondo de 30 m². Lo contra: a 14,7 cuadras de Maipú y requiere USD 12.000 de reforma en cocina y baño de época.",
   "reasons": [
-   "Excelente relación precio por m² (USD 820) muy por debajo del tope de Tomás, compensando parcialmente la distancia a Av. Maipú.",
-   "El potencial constructivo en planta alta (losa) suma valor futuro al ser una unidad en planta baja con terreno propio.",
-   "La ubicación a 15 cuadras de Maipú queda al límite de sus preferencias y resta puntos en movilidad."
+   "Precio de compra muy bajo (USD 820/m² total) que deja excelente margen para renovar sin pasarse del presupuesto (+5 pts).",
+   "Techo de losa con FOT 1.5 que permite construir segunda planta y sumar metros aprovechables (+4 pts)."
   ],
   "investment": {
    "score": 6,
-   "why": "El precio de entrada es muy atractivo (USD 123.000 por 150 m² totales) y el valor del terreno implícito está alineado con la zona. Permite una mejora moderada con los USD 12.000 estimados de refacción y conserva buen potencial de valorización por la opción de construir arriba.",
+   "why": "El precio de USD 123.000 está muy accesible para Olivos, permitiendo entrar barato y revalorizar sumando m² sobre la losa o haciendo entrada de auto. El valor proyectado a 10 años ronda el 83% del actual debido al desgaste de la edificación de 40 años y la división del lote en PH.",
    "value_10y_pct": 83,
    "upside": [
-    "Precio de compra bajo por m² con respecto al mercado de Olivos",
-    "Losa apta para construir una planta alta y ganar metros cuadrados",
-    "Jardín al frente y fondo propio que sostienen alta demanda de reventa"
+    "Techo de losa que permite construir una segunda planta",
+    "Espacio al frente para consolidar cochera propia",
+    "Precio por m² inicial de USD 820, muy competitivo"
    ],
    "risks": [
-    "Al ser un PH (lote compartido), la reventa puede ser un poco más lenta que una casa al frente independiente",
-    "Antigüedad de 40-50 años que requiere inspección profunda de cañerías y desagües",
-    "Distancia de 15 cuadras al tren y a Av. Maipú"
+    "Instalaciones de 40 años que requerirán recambio de cañerías",
+    "A 14,7 cuadras de Maipú/tren, lo que frena el techo de reventa",
+    "Formato PH que divide la propiedad del terreno"
    ]
   },
   "questions": [
    {
-    "q": "¿Está redactado el reglamento de copropiedad y los planos están al día para permitir crédito hipotecario y futura ampliación en planta alta?",
-    "impact": "si no es apto crédito o hay metros sin declarar -5; si está todo en regla y es apto crédito +4"
+    "q": "¿Es apta crédito bancario y los planos están al día con la losa y la edificación actual?",
+    "impact": "Si no es apto crédito o hay m² no declarados -8; si está 100% en regla +4"
    },
    {
-    "q": "¿Cómo es el régimen de expensas o gastos compartidos con la otra unidad del PH?",
-    "impact": "si hay expensas altas o conflictos con el vecino -4; si es PH sin expensas +2"
+    "q": "¿Cuál es el estado de las cañerías de agua, gas y el cableado eléctrico?",
+    "impact": "Si exige cambio total de instalaciones -5; si fueron renovadas recientemente +3"
    },
    {
-    "q": "¿Se cambiaron las cañerías de agua, gas y electricidad en los últimos años?",
-    "impact": "si hay que hacer cañerías de cero -8; si están actualizadas +3"
+    "q": "¿El jardín al frente permite habilitar legalmente la entrada de auto en el municipio?",
+    "impact": "Si es factible hacer cochera +4; si no se permite 0"
    },
    {
-    "q": "¿El jardín al frente cuenta con espacio real para garaje vehicular escriturado o de uso exclusivo?",
-    "impact": "si no se puede usar como cochera -2; si está aprobado como cochera +2"
+    "q": "¿Presenta problemas de humedad de cimiento o filtraciones en la losa?",
+    "impact": "Si hay humedad estructural -7; si está seca +2"
+   },
+   {
+    "q": "¿La entrada desde la calle es totalmente independiente y sin pasillo común?",
+    "impact": "Si comparte acceso -10; si es 100% independiente +2"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué razón se mudan los propietarios actuales?",
+    "q": "¿Paga expensas o hay gastos comunes con las otras unidades del PH?",
     "impact": ""
    },
    {
-    "q": "¿El precio de USD 123.000 es libre de gastos para El vendedor o escuchan ofertas por pago contado?",
+    "q": "¿Qué orientación solar tienen el fondo y el frente?",
     "impact": ""
    },
    {
-    "q": "¿Qué artefactos o equipos de aire acondicionado quedan en la propiedad?",
+    "q": "¿Cuál es la situación dominial y los plazos de escrituración y entrega?",
     "impact": ""
    },
    {
-    "q": "¿Cómo es la convivencia con los vecinos de la otra unidad funcional?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cuáles son los impuestos municipales (ABL) y ARBA aproximados que paga la propiedad?",
-    "impact": ""
-   },
-   {
-    "q": "¿Hay filtraciones o humedad en los cimientos o en los techos de losa?",
+    "q": "¿Aceptan ofertas por debajo del precio publicado?",
     "impact": ""
    }
   ],
-  "input_key": "046420a638ee",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-10",
-  "ts": "2026-11-10T05:19:54Z"
+  "input_key": "6ff7bc2845a4",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:15:59Z"
  },
  "zp-60236497": {
   "score": 45,
@@ -21897,76 +21847,66 @@
   "ts": "2026-11-14T03:38:53Z"
  },
  "zp-60640882": {
-  "score": 38,
-  "brief": "Dúplex de 4 amb en Olivos a USD 190.000 ($1.532/m²). Tiene 124 m² totales (77 cubiertos), cochera y patio chico de 10 m². Está por debajo del presupuesto y cerca de Maipú, pero es un PH compartido con sobreprecio de terreno y techos inclinados.",
+  "score": 46,
+  "brief": "Dúplex al frente en Olivos a 5,4 cuadras de Maipú. Tiene patio chico (10 m²) con parrilla y cochera. Requiere USD 12.000 en reformas y un dormitorio es muy reducido por techo inclinado. Buena ubicación pero terreno implícito caro.",
   "reasons": [
-   "El precio total (USD 190.000) y por m² ($1.532) cumplen cómodamente con los filtros de Tomás y dejan margen para la reforma de USD 12.000.",
-   "La inversión es floja porque paga un terreno implícito alto para la zona y es un PH compartido, limitando el potencial futuro.",
-   "El espacio cubierto es chico para 4 ambientes (77 m²) y uno de los dormitorios tiene techos inclinados muy bajos."
+   "Frente a calle con entrada independiente y cochera, sin pasillo ni expensas.",
+   "Patio trasero muy reducido (10 m²); gran parte del m² descubierto es el espacio de cochera al frente.",
+   "Bajo atractivo como inversión: terreno implícito sobrevaluado (USD 1.390/m² vs USD 856/m² zonal) y un dormitorio poco aprovechable."
   ],
   "investment": {
-   "score": 4,
-   "why": "El terreno implícito estimado está caro respecto al promedio de la zona (USD 1.390 vs USD 856 por m²) y al ser una unidad funcional compartida en lote, la incidencia real del terreno se diluye y no permite construir hacia arriba.",
+   "score": 3,
+   "why": "Al ser un dúplex con lote compartido, el terreno implícito es elevado (USD 1.390/m²) en comparación con la zona. En 10 años la construcción envejece y el valor estimado cae al 65% del precio actual.",
    "value_10y_pct": 65,
    "upside": [
-    "Precio de entrada competitivo de USD 190.000",
-    "Ubicación en zona residencial consolidada de Olivos",
-    "Incluye cochera descubierta al frente"
+    "Ubicación residencial consolidada a 5 cuadras de Av. Maipú",
+    "Entrada independiente al frente con espacio guardacoches"
    ],
    "risks": [
-    "Terreno implícito sobrepreciado frente al mercado de la zona",
-    "PH en lote compartido sin posibilidad de expansión vertical",
-    "Depreciación de la construcción existente de 45 años"
+    "Lote compartido que limita el desarrollo futuro",
+    "Distribución en planta alta con techo inclinado que reduce la demanda de compradores"
    ]
   },
   "questions": [
    {
-    "q": "¿Es apto crédito hipotecario y los planos están totalmente aprobados sin metros sin declarar?",
-    "impact": "si no es apto crédito -6; si está todo en regla +2"
+    "q": "¿Es apto crédito bancario con planos aprobados al día?",
+    "impact": "Si no es apto crédito -10; si está todo en regla +2"
    },
    {
-    "q": "¿Tiene alguna afectación o reglamento de copropiedad que limite modificaciones o expensas comunes?",
-    "impact": "si hay expensas altas o restricciones -4"
+    "q": "¿Los 77 m² cubiertos y los 124 m² totales coinciden exactamente con la escritura y plano de subdivisión?",
+    "impact": "Si hay m² sin declarar o discrepancias -8; si coincide +3"
    },
    {
-    "q": "¿Cuál es el estado real de los techos inclinados de la planta alta y si tienen problemas de filtraciones o humedad?",
-    "impact": "si hay filtraciones graves -5; si está en buen estado +2"
+    "q": "¿Hay problemas de humedad de cimientos en planta baja o filtraciones en los techos de planta alta?",
+    "impact": "Si hay humedad o filtraciones -8; si los techos están impecables +3"
    },
    {
-    "q": "¿El patio de 10 m² es de uso exclusivo por escritura o es espacio común?",
-    "impact": "si no es de uso exclusivo -8"
+    "q": "¿Cuál es el estado de las instalaciones de gas, electricidad y cañerías de agua?",
+    "impact": "Si hay que cambiar cañerías/cableado completo -7; si están actualizadas +4"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo venden la propiedad y cuánto tiempo llevan cotizando en el mercado?",
+    "q": "¿Paga expensas o gastos compartidos con la unidad contigua?",
     "impact": ""
    },
    {
-    "q": "¿Qué se queda en la propiedad al momento de la venta (luminarias, aires acondicionados)?",
+    "q": "¿Cuál es el motivo de venta y qué plazos de posesión manejan?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los gastos aproximados de mantenimiento mensual (ABL, ARBA)?",
+    "q": "¿Aceptan ofertas razonables por debajo del valor publicado?",
     "impact": ""
    },
    {
-    "q": "¿Los propietarios escuchan ofertas de contado por debajo del precio publicado?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la convivencia con la otra unidad funcional del lote?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cuáles son los plazos estimados para la escrituración y la entrega de posesión?",
+    "q": "¿Qué orientación exacta tiene el patio trasero y cuánta luz directa recibe?",
     "impact": ""
    }
   ],
-  "input_key": "5ec36411784b",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-13",
-  "ts": "2026-11-13T03:53:42Z"
+  "input_key": "5c1b9c9ec3a1",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:16:46Z"
  },
  "zp-58323636": {
   "score": 38,
@@ -22615,76 +22555,72 @@
   "ts": "2026-11-14T03:39:00Z"
  },
  "zp-60471191": {
-  "score": 38,
-  "brief": "PH de 3 amb, 133 m² tot (95 cub), jardín de 50 m² y cochera en Olivos. Precio de USD 220.000 (excede su tope) y sobreprecio notable como terreno implícito (USD 1.338/m² vs USD 693 de la zona).",
+  "score": 48,
+  "brief": "PH en 2 plantas con excelente jardín propio de 50 m², cochera y 133 m² tot. Piden USD 220.000 (supera los 210k pretendidos) y requiere USD 15.000 en reformas. Está a 12,4 cuadras de Maipú. Buena distribución pero cara para reciclar.",
   "reasons": [
-   "El precio de USD 220.000 supera el presupuesto obligatorio de USD 210.000.",
-   "El análisis de inversión muestra un terreno implícito muy caro frente a la media de la zona, penalizando la nota de inversión.",
-   "Está a 12.4 cuadras de Maipú, cerca del límite de su preferencia (15 cuadras)."
+   "El excelente jardín de 50 m² en planta baja compensa parcialmente la lejanía de Maipú y eleva el atractivo del inmueble.",
+   "Piden USD 220.000, superando el objetivo de 210.000, sumado a USD 15.000 estimados para refaccionar cocina y baños.",
+   "El valor implícito del terreno en el PH resulta elevado para la zona, limitando el potencial de apreciación a futuro."
   ],
   "investment": {
-   "score": 3,
-   "why": "Se paga un terreno implícito muy elevado (USD 1.338/m²) en comparación con los valores de la zona (~USD 693/m²), lo que castiga fuertemente la retención de valor a largo plazo. Además, al tratarse de un PH con lote compartido, el potencial de desarrollo se reduce.",
-   "value_10y_pct": 61,
+   "score": 4,
+   "why": "Paga sobreprecio por m² cubierto que requiere actualización total (USD 15.000 de obra). Al ser PH, la fracción de lote propio es acotada y el terreno implícito está por encima de la media de Olivos.",
+   "value_10y_pct": 68,
    "upside": [
-    "Gran jardín propio de 50 m² que tracciona demanda en Olivos",
-    "Cochera propia y terraza con parrilla",
-    "Posibilidad de reciclar cocina y baños para agregar valor"
+    "Jardín propio arbolado que retiene valor defensivo en Olivos",
+    "Posibilidad de valorizar modernizando cocina, baños y terraza",
+    "Incluye cochera propia, muy demandada en la zona"
    ],
    "risks": [
-    "Sobreprecio inicial importante en el valor del terreno implícito",
-    "PH interno o compartido que limita la independencia del terreno",
-    "Antigüedad de 37 años con instalaciones que requieren actualización completa"
+    "Precio inicial alto (USD 220.000) más costo de refacción",
+    "Ubicación a 12 cuadras del centro comercial/transporte de Maipú",
+    "Dificultad de reventa si no es apto crédito o posee metros no declarados"
    ]
   },
   "questions": [
    {
-    "q": "¿El PH es totalmente independiente o comparte acceso/pasillo con otra unidad?",
-    "impact": "si es por pasillo -15; si es totalmente independiente y al frente +5"
+    "q": "¿Es apto crédito bancario y tiene planos de ambas plantas al día?",
+    "impact": "Si es apto crédito +5 puntos; si no lo es -5 puntos."
    },
    {
-    "q": "¿Cuál es el valor real de las expensas mensuales?",
-    "impact": "si son altas (más de USD 50) -5; si no tiene expensas +3"
+    "q": "¿Es entrada totalmente independiente o comparte pasillo de acceso?",
+    "impact": "Si es 100% independiente +4 puntos; si tiene pasillo compartido -8 puntos."
    },
    {
-    "q": "¿Los planos y la superficie cubierta están 100% aprobados y listos para escriturar?",
-    "impact": "si hay metros sin declarar -10; si es apto crédito real +5"
+    "q": "¿Los m² de la planta alta y terraza están declarados en plano?",
+    "impact": "Si está todo en regla +3 puntos; si hay m² no declarados -6 puntos."
    },
    {
-    "q": "¿Cuál es el estado de cañerías, instalaciones eléctricas y techos?",
-    "impact": "si hay que hacer todo a nuevo -8; si están recicladas recientemente +5"
+    "q": "¿Cuál es el estado de cañerías e instalaciones eléctricas?",
+    "impact": "Si están renovadas +4 puntos; si hay que cambiarlas a nuevo -5 puntos."
    },
    {
-    "q": "¿Existe margen de negociación sobre el precio de publicación de USD 220.000?",
-    "impact": "si aceptan bajar a USD 210.000 +6; si no bajan 0"
+    "q": "¿Tiene humedad de cimientos en la planta baja o recepción?",
+    "impact": "Si está seco +3 puntos; si requiere capa aisladora -7 puntos."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo actual deciden vender la propiedad?",
+    "q": "¿Paga expensas o gastos comunes con otras unidades?",
     "impact": ""
    },
    {
-    "q": "¿Qué elementos o mobiliario quedan fijos en la propiedad al momento de la venta?",
+    "q": "¿Por qué motivo venden y qué margen de negociación existe sobre los USD 220.000?",
     "impact": ""
    },
    {
-    "q": "¿Cuáles son los plazos estimados para la escrituración y la entrega de posesión?",
+    "q": "¿Qué plazos manejan para la escritura y entrega de la posesión?",
     "impact": ""
    },
    {
-    "q": "¿Cómo es la convivencia y la relación con los vecinos de las unidades linderas?",
-    "impact": ""
-   },
-   {
-    "q": "¿A cuanto ascienden aproximadamente los impuestos municipales y ARBA?",
+    "q": "¿Qué artefactos o aires acondicionados quedan en la propiedad?",
     "impact": ""
    }
   ],
-  "input_key": "fff8f00d502b",
-  "model": "gemini-flash-lite-latest",
-  "at": "2026-11-14",
-  "ts": "2026-11-14T03:39:15Z"
+  "input_key": "a44c0d4de640",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:17:22Z"
  },
  "ml-MLA4090980250": {
   "score": 32,
@@ -24545,5 +24481,137 @@
   "model": "gemini-flash-lite-latest",
   "at": "2026-11-14",
   "ts": "2026-11-14T03:38:11Z"
+ },
+ "zp-60708177": {
+  "score": 40,
+  "brief": "Supera el presupuesto (USD 230.000 + USD 18.000 en reformas), aunque cumple con 149 m² t., patio al frente y 6,9 cdas a Maipú. Es apta crédito e independiente, pero es mala inversión por sobreprecio en terreno implícito.",
+  "reasons": [
+   "Precio de USD 230.000 excede el tope deseado de USD 210.000 y requiere USD 18.000 en reformas.",
+   "Terreno implícito sobrevaluado a USD 1.306/m² frente a USD 910/m² de la zona.",
+   "Patio al frente expuesto a la calle sin privacidad."
+  ],
+  "investment": {
+   "score": 3,
+   "why": "El terreno implícito cotiza a USD 1.306/m², un 43% por encima de los USD 910/m² promedio de la zona en Olivos. Al ser una construcción de 50 años que requiere USD 18.000 de reforma y no permitir mayor desarrollo vertical por ser PH, el valor proyectado a 10 años retiene solo el 70% de la inversión.",
+   "value_10y_pct": 70,
+   "upside": [
+    "Entrada 100% independiente sin expensas",
+    "Apta crédito bancario facilitando la reventa",
+    "Buena iluminación natural por disposición en esquina"
+   ],
+   "risks": [
+    "Sobreprecio inicial de la construcción respecto al valor real del suelo",
+    "Depreciación acelerada de edificación de 50 años sin reciclar",
+    "Patio al frente expuesto y sin posibilidad de ampliación de m²"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿Las grietas visibles entre pared y techo en el living son estructurales o de asentamiento?",
+    "impact": "Si requieren trabajo consolidatorio grave -12; si son grietas superficiales +3"
+   },
+   {
+    "q": "¿Los 126 m² cubiertos y el lavadero están 100% regularizados en el plano de mensura?",
+    "impact": "Si hay metros no declarados que traben el crédito -15; si el plano coincide +3"
+   },
+   {
+    "q": "¿Cuál es el estado de las cañerías de agua, gas y el cableado eléctrico?",
+    "impact": "Si hay que cambiar instalaciones completas -7; si fueron renovadas recientemente +4"
+   },
+   {
+    "q": "¿Se permite instalar un cerramiento perimetral ciego en el patio frontal para ganar privacidad?",
+    "impact": "Si el reglamento y la municipalidad lo permiten +4; si no se puede modificar -3"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Aceptan ofertas en el rango del presupuesto de Tomás (USD 200.000 - 210.000)?",
+    "impact": ""
+   },
+   {
+    "q": "¿Qué porcentaje de indiviso del terreno le corresponde a este PH según reglamento?",
+    "impact": ""
+   },
+   {
+    "q": "¿La propiedad registra deudas de ARBA, ABL o servicios?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuál es el motivo de la venta y cuáles son los plazos de entrega y escritura?",
+    "impact": ""
+   }
+  ],
+  "input_key": "4d4c2135310f",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:17:05Z"
+ },
+ "zp-60704766": {
+  "score": 26,
+  "brief": "Supera los USD 210.000 ideales (piden USD 230.000). Tiene 114 m² construidos no declarados (224 m² reales vs 110 m² por escritura), lo que imposibilita crédito hipotecario. El patio de 30 m² queda chico ocupado por la cochera. A 13 cuadras de Maipú.",
+  "reasons": [
+   "Grave discrepancia de metraje: 224 m² construidos reales contra 110 m² cubiertos en escritura dificultan la reventa y el crédito.",
+   "Precio inicial de USD 230.000 supera el presupuesto ideal de USD 210.000 y el total con reformas llega a USD 250.000.",
+   "Mala inversión: el terreno implícito cuesta USD 1.275/m² frente a USD 702/m² promedio de la zona R2."
+  ],
+  "investment": {
+   "score": 2,
+   "why": "El terreno implícito es de USD 1.275/m², muy superior a los USD 702/m² promedio de la zona. Posee 114 m² construidos sin declarar que impiden el acceso a crédito hipotecario y reducen drásticamente la demanda en la reventa. La proyección a 10 años estima conservar apenas el 60% del valor actual.",
+   "value_10y_pct": 60,
+   "upside": [
+    "Ubicación en sector residencial consolidado de Olivos",
+    "Cochera cubierta para dos vehículos",
+    "Buena luminosidad gracias a la orientación Norte"
+   ],
+   "risks": [
+    "114 m² construidos fuera de planos impiden crédito hipotecario y generan riesgo de multas",
+    "Terreno implícito fuertemente sobrevaluado respecto a la zona",
+    "Patio de 30 m² reducido significativamente por lavadero y cochera"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿Están los planos aprobados o regularizados por los 224 m² construidos reales?",
+    "impact": "Si no hay planos ni regularización -10 pts; si están en regla o tramitados +5 pts"
+   },
+   {
+    "q": "¿La propiedad es apta para crédito hipotecario bancario?",
+    "impact": "Si no es apta crédito -5 pts; si es apta crédito +5 pts"
+   },
+   {
+    "q": "¿En qué estado se encuentran las cañerías e instalaciones eléctricas de 57 años?",
+    "impact": "Si requieren recambio total -5 pts; si fueron renovadas recientemente +5 pts"
+   },
+   {
+    "q": "¿Qué superficie útil al aire libre queda libre en el patio descontando cochera y lavadero?",
+    "impact": "Si el patio libre es menor a 20 m² -5 pts; si el espacio libre es amplio +3 pts"
+   },
+   {
+    "q": "¿El vendedor acepta ofertas en el rango de USD 200.000 a USD 210.000?",
+    "impact": "Si aceptan bajar al presupuesto ideal +10 pts; si el precio es inflexible -5 pts"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Cuáles son los montos mensuales de ABL, ARBA y servicios?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuál es el motivo de venta y qué plazo de entrega y escritura manejan?",
+    "impact": ""
+   },
+   {
+    "q": "¿Los techos de madera del playroom sufrieron alguna vez filtraciones o plagas?",
+    "impact": ""
+   },
+   {
+    "q": "¿Se incluyen aires acondicionados o apliques fijos en la venta?",
+    "impact": ""
+   }
+  ],
+  "input_key": "48f22fc229a1",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-15",
+  "ts": "2026-11-15T22:17:41Z"
  }
 }
