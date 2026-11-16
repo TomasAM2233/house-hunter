@@ -33473,5 +33473,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-14T21:51:16Z"
+ },
+ "ml-MLA2200146283": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de muebles y revestimientos de cocina, modernización de baño, pintura general y puesta a punto de instalación eléctrica/gas.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Terraza amplia y soleada con quincho y parrilla",
+   "Excelente orientación norte con gran luminosidad",
+   "Ubicación estratégica a pasos del Subte B y sin expensas"
+  ],
+  "red_flags": [
+   "Es en primer piso por escalera, no cuenta con patio a nivel de suelo",
+   "Sobre avenida con bastante tránsito y ruido",
+   "Cocina y terminaciones de época que requieren modernización"
+  ],
+  "summary": "Es un PH en primer piso muy luminoso y con excelente terraza con quincho, pero queda descartado de plano para la pareja porque no tiene patio en planta baja.",
+  "photos_key": "01df8ca8ac9a",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-16",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-16T02:28:02Z"
  }
 }
