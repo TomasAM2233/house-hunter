@@ -33658,5 +33658,51 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-16T21:23:55Z"
+ },
+ "zp-59915752": {
+  "condition": 3,
+  "reform_usd": 30000,
+  "reform_notes": "Reciclado integral de cocina y baños, cambio de aberturas/cerramientos por DVH, pintura general, actualización de placares e instalación eléctrica.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Ubicación cotizada en Palermo frente al Botánico",
+   "Piso alto contrafrente, muy luminoso y silencioso",
+   "Edificio en torre sólido con seguridad 24 hs"
+  ],
+  "red_flags": [
+   "La cochera NO está incluida en el precio (piden USD 40.000 extra)",
+   "Cocina y baños totalmente anticuados que exigen obra",
+   "Balcón chico de apenas 3 m2"
+  ],
+  "summary": "Tiene una planta excelente en una torre muy buena de Palermo, pero vas a tener que meterle una reforma fuerte de estética y sumar 40k verdaderos si querés la cochera.",
+  "modern": 2,
+  "balcony": "small",
+  "balcony_m2_est": 3.0,
+  "view": 4,
+  "view_notes": "Vista abierta de pulmón de manzana y techos de la ciudad por ser piso muy alto al contrafrente.",
+  "floor_est": 15,
+  "front": "contrafrente",
+  "garage": "optional",
+  "amenities": [
+   "seguridad 24hs",
+   "grupo electrógeno"
+  ],
+  "expensas_ars": null,
+  "photos_key": "4d8dcf9e5672",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-17",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-17T05:50:51Z"
  }
 }
