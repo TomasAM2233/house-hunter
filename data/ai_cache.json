@@ -33840,5 +33840,51 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-17T19:31:37Z"
+ },
+ "ml-MLA4193086826": {
+  "condition": 3,
+  "reform_usd": 30000,
+  "reform_notes": "Reciclado integral de cocina y baños, modernización de carpinterías, adecuación eléctrica y puesta en valor de los patios.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "30 m2 de patio propio",
+   "Pisos de parquet en buen estado",
+   "Excelente ubicación en Recoleta"
+  ],
+  "red_flags": [
+   "No cumple con cochera, balcón ni vista abierta",
+   "Cocina y baños de época a reciclar a nuevo",
+   "Primer piso oscuro encerrado entre medianeras"
+  ],
+  "summary": "Descartalo de plano: es un primer piso a pulmón sin cochera, sin balcón y con cocina vieja, incumpliendo los tres requisitos indispensables de la pareja.",
+  "modern": 2,
+  "balcony": "none",
+  "balcony_m2_est": null,
+  "view": 1,
+  "view_notes": "Vista encajonada a muros medianeros y ventanas de vecinos en pulmón de manzana.",
+  "floor_est": 1,
+  "front": "contrafrente",
+  "garage": false,
+  "amenities": [
+   "Seguridad nocturna",
+   "Encargado"
+  ],
+  "expensas_ars": 400000,
+  "photos_key": "3e44ff170b16",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-18",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-18T02:00:41Z"
  }
 }
