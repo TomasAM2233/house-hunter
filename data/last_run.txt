@@ -1,11 +1,16 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/17: 30 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/1: 27 listings
-zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
+zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/42: 30 listings
 zonaprop palermo-recoleta (None, None) page 1/62: 29 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
+AI failed for zp-60751947: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
 AI failed for zp-58604333: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
 AI failed for ml-MLA2300782923: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 4 times in a row: no more AI reads this run
-10437 listings, 240 on the shortlist (72 apartments), 20 waiting for AI
+Gemini didn't answer 6 times in a row: no more AI reads this run
+AI time cap reached (10 min): the rest waits for the next run
+ALERT zp-60751947: P98 · 62/100 · USD 210,000 · Florida
+ALERT zp-60753341: P91 · 50/100 · USD 189,000 · Villa Urquiza
+ALERT zp-60749904: P91 · 50/100 · USD 195,000 · Parque Chas
+10477 listings, 247 on the shortlist (72 apartments), 27 waiting for AI
