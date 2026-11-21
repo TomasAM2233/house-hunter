@@ -26358,80 +26358,72 @@
   "ts": "2026-11-21T04:32:20Z"
  },
  "zp-60743618": {
-  "score": 42,
-  "brief": "PH tipo casita con un jardín de 50 m2 envidiable en Olivos. Está pasado de precio (USD 220.000) para lo que hay que invertir (USD 15.000+) y la ubicación es al límite (12 cuadras de Maipú). Es interno, pero con entrada independiente.",
+  "score": 38,
+  "brief": "PH de 133 m² (95 cub) con jardín de 50 m² y cochera. Piden USD 220.000 (excede el presupuesto de 210k) y requiere USD 15.000 en reformas. Está a 12,4 cuadras de Maipú. Mala relación precio/m² para inversión.",
   "reasons": [
-   "El jardín y la cochera son activos muy valiosos que el algoritmo subestima en esta zona",
-   "La inversión es floja: el valor del terreno implícito duplica el de la zona por ser un PH interno",
-   "Supera el presupuesto ideal de USD 210.000 y requiere una reforma integral de baños y cocina"
+   "El precio de USD 220.000 excede el presupuesto preferido de USD 210.000 y requiere USD 15.000 de reforma.",
+   "Ubicación a 12,4 cuadras de Av. Maipú, alejada de la franja ideal caminable.",
+   "Jardín propio de 50 m² y cochera suman valor habitacional pero el terreno implícito está muy sobrevaluado."
   ],
   "investment": {
    "score": 3,
-   "why": "Pagás USD 1.654/m2 por una construcción de 37 años que requiere inversión inmediata. El valor del terreno está muy inflado respecto a los lotes linderos y, al ser PH, el potencial de apreciación por tierra es limitado.",
-   "value_10y_pct": 65,
+   "why": "Con un terreno implícito de USD 1.338/m² frente a los USD 693/m² promedio de la zona, se paga un sobreprecio importante por el lote. La edificación de 37 años irá perdiendo valor y en 10 años retendrá cerca del 61% de la inversión inicial a dólares de hoy.",
+   "value_10y_pct": 61,
    "upside": [
-    "El jardín propio en Olivos es un producto con demanda permanente",
-    "Posibilidad de modernizar y ganar valor de reventa (flipping parcial)",
-    "Cochera propia en zona residencial"
+    "Jardín propio con verde de 50 m² en zona R2 de Olivos",
+    "Cuenta con cochera propia",
+    "Dispone de terraza propia con parrilla"
    ],
    "risks": [
-    "Precio de entrada alto para el estado general de la propiedad",
-    "Depreciación acelerada de la construcción si no se recicla a fondo",
-    "Dificultad de reventa futura si no es apto crédito"
+    "Precio inicial por encima de los USD 210.000 deseados",
+    "Distribución poco convencional (living y cocina en planta alta)",
+    "Requiere USD 15.000 en refacciones inmediatas de cocina y baños"
    ]
   },
   "questions": [
    {
-    "q": "¿Es entrada independiente o se comparte pasillo con otras unidades?",
-    "impact": "Si tiene pasillo largo -15 puntos; si es entrada directa +5"
+    "q": "¿Es apto crédito bancario y están todos los m² declarados en plano?",
+    "impact": "Si no es apto crédito o hay m² sin declarar -8; si está todo 100% en regla +4"
    },
    {
-    "q": "¿Los 95 m2 cubiertos están totalmente declarados en el plano?",
-    "impact": "Si hay m2 sin declarar -10 puntos por riesgo en crédito y multas"
+    "q": "¿El jardín en planta baja es de uso exclusivo según reglamento de copropiedad?",
+    "impact": "Si el jardín se comparte o no es exclusivo -15 (descarte); si es 100% exclusivo +3"
    },
    {
-    "q": "¿Cuál es el estado real de los techos y las instalaciones de agua y gas?",
-    "impact": "Si hay que cambiar cañerías -8 puntos; si están renovadas +5"
+    "q": "¿Cuál es el estado de conservación de cañerías e instalaciones de servicios?",
+    "impact": "Si hay que cambiar cañerías o rehacer instalación eléctrica -8; si está funcional +3"
    },
    {
-    "q": "¿Es realmente apto crédito bancario?",
-    "impact": "Si no es apto -7 puntos (es prioridad 7 de Tomás)"
+    "q": "¿Existen expensas comunes entre las unidades del PH?",
+    "impact": "Si tiene expensas altas (>USD 50/mes) -4; si son nulas o mínimas +2"
    },
    {
-    "q": "¿Qué hay en los lotes linderos al jardín? ¿Hay edificios altos?",
-    "impact": "Si hay edificios que quiten sol y privacidad -10 puntos"
+    "q": "¿Qué orientación tiene el jardín y cuánta luz directa recibe?",
+    "impact": "Si tiene sombra constante o mala orientación -5; si es muy luminoso +3"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué motivo decidieron vender la propiedad?",
+    "q": "¿Cuál es el margen real de negociación sobre los USD 220.000?",
     "impact": ""
    },
    {
-    "q": "¿Tienen ya reubicación o la venta está supeditada a otra compra?",
+    "q": "¿Qué plazos estiman para la escritura y entrega de la propiedad?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el costo mensual de ARBA y tasas municipales?",
+    "q": "¿La silla salvaescaleras y los aires acondicionados quedan en la venta?",
     "impact": ""
    },
    {
-    "q": "¿Aceptan una oferta agresiva considerando el presupuesto de reforma?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la relación con los otros vecinos del PH?",
-    "impact": ""
-   },
-   {
-    "q": "¿La silla salvaescaleras se queda o la retiran?",
+    "q": "¿Cuánto se paga actualmente de ABL e impuesto inmobiliario?",
     "impact": ""
    }
   ],
-  "input_key": "4ad78ea22225",
-  "model": "gemini-3-flash-preview",
+  "input_key": "64b41676dd85",
+  "model": "gemini-3.6-flash",
   "at": "2026-11-21",
-  "ts": "2026-11-21T04:32:36Z"
+  "ts": "2026-11-21T18:18:45Z"
  },
  "ml-MLA2268835311": {
   "score": 34,
@@ -26770,79 +26762,82 @@
  },
  "zp-60691032": {
   "score": 42,
-  "brief": "Depto reciclado con cochera y parrilla, pero en una ubicación muy ruidosa sobre Av. Córdoba. Las expensas de $360.000 son altísimas para el segmento y no se informan los m², lo que impide validar si es una oportunidad o un clavo.",
+  "brief": "Con USD 218.000 supera el presupuesto base y faltan los m² en la publicación. A favor: cochera, balcón con parrilla y subte D a 4 cuadras. En contra: vista encajonada sobre la ruidosa Av. Córdoba y expensas muy altas ($360.000).",
   "reasons": [
-   "Expensas desproporcionadas ($360.000) que castigan el valor de reventa y la rentabilidad.",
-   "Ubicación sobre avenida con mucho ruido y vista encajonada, incumpliendo tus requisitos de tranquilidad y vista.",
-   "Falta de información crítica sobre los m² totales, lo que genera incertidumbre sobre el valor real."
+   "Incumple el requisito de buena vista: da a un frente encajonado y muy ruidoso sobre Av. Córdoba.",
+   "Falta información de m² totales, imposibilitando verificar el filtro obligatorio de 80 m².",
+   "Expensas de $360.000 que restan atractivo tanto para vivienda como para alquiler."
   ],
   "investment": {
-   "score": 4,
-   "why": "El costo de mantenimiento es excesivo para un 3 ambientes, lo que ahuyenta compradores. Estar sobre una avenida ruidosa limita la apreciación frente a unidades en calles transversales de Recoleta.",
-   "value_10y_pct": 95,
+   "score": 5,
+   "why": "Al no informarse los metros cuadrados no se puede calcular el valor por m² real. La ubicación sobre la avenida Córdoba suma ruidos que frenan la revalorización, y las expensas de $360.000 castigan la rentabilidad neta.",
+   "value_10y_pct": 98,
    "upside": [
-    "Cochera fija en zona de alta demanda",
-    "Cercanía a facultades y subte D",
-    "Parrilla propia en balcón"
+    "Cochera propia en Recoleta, activo escaso y buscado",
+    "Zona universitaria y cercanía a Subte D garantizan demanda locativa"
    ],
    "risks": [
-    "Expensas que superan el promedio del mercado",
-    "Contaminación sonora constante",
-    "Dificultad de reventa por ubicación sobre avenida"
+    "Polución sonora constante sobre Av. Córdoba",
+    "Expensas elevadas que dificultan la reventa",
+    "Riesgo de m² reales por debajo de los 80 m² requeridos"
    ]
   },
   "questions": [
    {
-    "q": "¿Cuántos m² cubiertos y totales figuran exactamente en la escritura?",
-    "impact": "Si tiene menos de 80 m², el puntaje cae 15 puntos por no cumplir el filtro."
+    "q": "¿Cuántos m² cubiertos, descubiertos y totales figuran exactamente en el título de propiedad?",
+    "impact": "Si tiene menos de 80 m² totales descarta la propiedad (-15 pts); si supera 85 m² suma +5 pts."
    },
    {
-    "q": "¿A qué se deben las expensas de $360.000 y qué servicios incluyen?",
-    "impact": "Si son extraordinarias, el puntaje sube 5; si son ordinarias, es un punto muy negativo."
+    "q": "¿En qué piso se encuentra y las aberturas cuentan con DVH para aislar el ruido de la avenida?",
+    "impact": "Piso bajo y ruidoso resta -8 pts; piso alto con buen aislamiento acústico suma +4 pts."
    },
    {
-    "q": "¿La cochera es fija y cubierta?",
-    "impact": "Si es móvil o descubierta, el valor de reventa baja y el puntaje cae 8 puntos."
+    "q": "¿La cochera es fija, cubierta y de fácil maniobra?",
+    "impact": "Si es móvil, rotativa o incómoda resta -6 pts."
    },
    {
-    "q": "¿Las aberturas tienen Doble Vidriado Hermético (DVH) para el ruido?",
-    "impact": "Sin DVH, vivir sobre Córdoba es inviable; si tiene, suma 7 puntos."
+    "q": "¿El departamento es apto crédito bancario?",
+    "impact": "Si es apto crédito suma +4 pts."
    },
    {
-    "q": "¿Es apto crédito hipotecario?",
-    "impact": "Si no lo es, resta 5 puntos por limitar el universo de compradores."
+    "q": "¿Qué rubros justifican las expensas de $360.000 y si existen expensas extraordinarias?",
+    "impact": "Si incluyen servicios centrales (calefacción/agua) compensa (+3 pts); si hay obras pendientes resta -5 pts."
    },
    {
-    "q": "¿En qué piso está y qué orientación tiene?",
-    "impact": "Un piso bajo sobre la avenida es mucho más ruidoso y oscuro; restaría 10 puntos."
+    "q": "¿Cuál es la orientación exacta del departamento y cuántas horas de luz natural recibe al día?",
+    "impact": "Orientación norte/este luminosidad buena suma +3 pts; si es oscuro resta -5 pts."
    }
   ],
   "general_questions": [
    {
-    "q": "¿Hay obras grandes previstas en el edificio (fachada, gas, ascensores)?",
+    "q": "¿El departamento o el reglamento permiten uso apto profesional?",
     "impact": ""
    },
    {
-    "q": "¿El reglamento de copropiedad permite uso profesional o alquiler temporario?",
+    "q": "¿El edificio realizó la adecuación de la instalación de gas y renovación de cañerías?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el motivo de la venta?",
+    "q": "¿La baulera está delimitada en el subsuelo y es de uso exclusivo?",
     "impact": ""
    },
    {
-    "q": "¿Aceptan permuta o solo efectivo?",
+    "q": "¿Hay obras o expensas extraordinarias proyectadas en la última asamblea de consorcio?",
     "impact": ""
    },
    {
-    "q": "¿El edificio cuenta con seguridad o tótem las 24 hs?",
+    "q": "¿Cuál es el motivo de la venta y qué margen de negociación existe sobre el precio de publicación?",
+    "impact": ""
+   },
+   {
+    "q": "¿El edificio cuenta con encargado permanente o tótem de seguridad?",
     "impact": ""
    }
   ],
-  "input_key": "10c1d3080b55",
-  "model": "gemini-3-flash-preview",
+  "input_key": "a732e6b0784a",
+  "model": "gemini-3.6-flash",
   "at": "2026-11-21",
-  "ts": "2026-11-21T04:31:15Z"
+  "ts": "2026-11-21T18:17:38Z"
  },
  "zp-60760961": {
   "score": 62,
@@ -26983,5 +26978,68 @@
   "model": "gemini-3-flash-preview",
   "at": "2026-11-21",
   "ts": "2026-11-21T04:32:55Z"
+ },
+ "ml-MLA2303314319": {
+  "score": 42,
+  "brief": "Dúplex de 135 m² (115 cub) con 4 amb, cochera y jardín de 45 m². A 3,8 cdas del tren Cetrángolo. Piden USD 230.000 (supera tus USD 210.000 ideales) y requiere USD 15.000 de reforma. Mala inversión: terreno caro y FOT agotado.",
+  "reasons": [
+   "+5 pts: Excelente distribución familiar con jardín propio de 45 m² al fondo y cochera cubierta.",
+   "+3 pts: Ubicación conveniente a menos de 4 cuadras de la estación Cetrángolo del tren Mitre.",
+   "Sin cambios bruscos: El precio pide USD 230.000 (por encima del objetivo) y el terreno implícito está sobrevaluado respecto a la zona."
+  ],
+  "investment": {
+   "score": 3,
+   "why": "El terreno implícito cotiza a USD 1.199/m² frente a los ~USD 840/m² de promedio en la zona. Al estar en zona R1 (FOT 0,8) los m² construidos ya agotaron la capacidad del lote, impidiendo ampliaciones. En 10 años su valor relativo caerá a ~USD 161.000 (70% del precio actual).",
+   "value_10y_pct": 70,
+   "upside": [
+    "Ubicación residencial consolidada y buscada en Florida cerca del colegio LaSalle",
+    "Tipología de dúplex de 5 m de frente con cochera y jardín, muy demandada para alquiler o reventa familiar"
+   ],
+   "risks": [
+    "Sobreprecio de entrada al pagar el m² de lote por encima del mercado de la zona",
+    "Imposibilidad de sumar m² cubiertos por restricciones de código R1 (FOT 0,8)",
+    "Depreciación acelerada de 115 m² de edificación con 50 años de antigüedad sin reciclar"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿Es apto crédito bancario y tiene el plano municipal al día con todos los m² declarados?",
+    "impact": "Si es apto crédito +5 pts; si tiene m² sin declarar o no califica -10 pts"
+   },
+   {
+    "q": "¿Hay problemas de humedad de cimientos o filtraciones en los techos?",
+    "impact": "Si tiene humedad grave -8 pts (requiere más presupuesto); si está sano estructuralmente +3 pts"
+   },
+   {
+    "q": "¿En qué estado se encuentran los caños de agua, gas y el tablero eléctrico?",
+    "impact": "Si hay que cambiar cañerías y electricidad completas -5 pts"
+   },
+   {
+    "q": "¿Cuál es la orientación exacta y cómo entra la luz en el living en planta baja?",
+    "impact": "Si es muy oscuro por la profundidad de planta baja -3 pts; si ingresa buena luz +2 pts"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Cuál es el motivo de la venta y qué margen real de negociación tiene el precio de publicación?",
+    "impact": ""
+   },
+   {
+    "q": "¿La propiedad se encuentra desocupada y lista para escriturar de inmediato?",
+    "impact": ""
+   },
+   {
+    "q": "¿Qué tipo de calefacción y agua caliente posee actualmente?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuáles son los costos fijos mensuales (ARBA, ABL, servicios)?",
+    "impact": ""
+   }
+  ],
+  "input_key": "ba86ad25dbee",
+  "model": "gemini-3.6-flash",
+  "at": "2026-11-21",
+  "ts": "2026-11-21T18:19:56Z"
  }
 }
