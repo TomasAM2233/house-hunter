@@ -35270,5 +35270,85 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-21T01:08:17Z"
+ },
+ "zp-60691032": {
+  "condition": 4,
+  "reform_usd": 10000,
+  "reform_notes": "Modernizar frentes e interiores de placares, actualizar aberturas para aislar el ruido de la avenida y unificar detalles de terminación.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 3,
+  "quiet": 1,
+  "vertical_potential": null,
+  "apto_credito": null,
+  "highlights": [
+   "Cochera fija incluida en el edificio",
+   "Parrilla propia en el balcón",
+   "Cocina y baño reciclados a nuevo"
+  ],
+  "red_flags": [
+   "Ubicación muy ruidosa sobre Av. Córdoba",
+   "Vista encajonada contra edificios enfrente",
+   "Edificio antiguo con reciclado de departamentos heterogéneo"
+  ],
+  "summary": "Tiene la cochera y la parrilla que piden con cocina y baño ya hechos, pero la vista es floja y el ruido constante de Avenida Córdoba no es para cualquiera.",
+  "modern": 3,
+  "balcony": "medium",
+  "balcony_m2_est": 5.0,
+  "view": 2,
+  "view_notes": "Vista urbana ajustada hacia el edificio de enfrente sobre la avenida.",
+  "floor_est": null,
+  "front": "frente",
+  "garage": true,
+  "amenities": [
+   "parrilla",
+   "baulera",
+   "encargado"
+  ],
+  "expensas_ars": 360000,
+  "photos_key": "300df0c01fa0",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-21",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-21T04:18:40Z"
+ },
+ "zp-60761832": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Reparación de humedad de filtración en cielorraso de dormitorio, pintura general, sellado del cerramiento vidriado del patio y actualización cosmética de baño/cocina.",
+  "patio": "medium",
+  "patio_m2_est": 22,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Gran terraza propia con quincho y parrilla",
+   "Sin expensas en lote de solo 2 unidades",
+   "Excelente luminosidad gracias al techo vidriado del patio"
+  ],
+  "red_flags": [
+   "Humedad de filtración/moho visible en cielorraso de un dormitorio",
+   "El patio de planta baja está totalmente techado (sin tierra ni espacio descubierto en PB)",
+   "Planta tipo chorizo con ambientes que dependen del patio interno para circular"
+  ],
+  "summary": "Es un PH chorizo en PB con gran terraza en Villa Ortúzar que entra holgado en el presupuesto de reforma, pero ojo que el patio de abajo está techado con cerramiento vidriado.",
+  "photos_key": "e6ac7c64f14a",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-21",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-21T04:22:01Z"
  }
 }
