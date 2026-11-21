@@ -1,11 +1,10 @@
 zonaprop olivos-florida-la-lucila (None, None) page 1/17: 30 listings
 zonaprop vicente-lopez-vicente-lopez (None, None) page 1/1: 26 listings
-zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/40: 30 listings
-zonaprop palermo-recoleta (None, None) page 1: GET https://www.zonaprop.com.ar/departamentos-venta-palermo-recoleta-3-ambientes-100000-240000-dolar-orden-publicado-descendente.html failed: HTTP 423 from api.scrapingant.com; HTTP 423 from api.scrapingant.com; HTTP 500 from api.scraperapi.com; HTTP 500 from api.scraperapi.com
-zonaprop: pages [('palermo-recoleta', (None, None), 1)] failed; their listings keep their previous state
+zonaprop palermo-belgrano-nunez-colegiales-recole (None, None) page 1/41: 30 listings
+zonaprop palermo-recoleta (None, None) page 1/62: 30 listings
 argenprop VL  page 1/1: 0 listings
 argenprop CABA  page 1/1: 0 listings
 argenprop deptos  page 1/1: 0 listings
 AI failed for ml-MLA2303776891: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
-Gemini didn't answer 5 times in a row: no more AI reads this run
-10675 listings, 229 on the shortlist (68 apartments), 2 waiting for AI
+final verdict failed for zp-60691032: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)
+10682 listings, 229 on the shortlist (68 apartments), 2 waiting for AI
