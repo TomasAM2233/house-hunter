@@ -35492,5 +35492,81 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-22T03:45:00Z"
+ },
+ "zp-50521926": {
+  "condition": 3,
+  "reform_usd": 7000,
+  "reform_notes": "Pintura integral, impermeabilización de muros del patio, emprolijamiento de terminaciones y revisión de filtraciones.",
+  "patio": "medium",
+  "patio_m2_est": 24,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Patio propio en PB en damero y amplia terraza",
+   "Excelente metraje y cantidad de ambientes en Recoleta",
+   "Muy silencioso al ser interno y alejado de la calle"
+  ],
+  "red_flags": [
+   "Humedad de cimientos/manchas en muros perimetrales del patio",
+   "Calidad de reciclado y terminaciones rústicas/irregulares",
+   "Posible falta de actualización de planos por ampliaciones en planta alta"
+  ],
+  "summary": "Es una opción bárbara en Recoleta con el patio en planta baja que exigen, habitable desde el primer día y con presupuesto de sobra para dejarlo a punto.",
+  "photos_key": "43ad14586852",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-22",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-22T18:55:34Z"
+ },
+ "ml-MLA4226650160": {
+  "condition": 3,
+  "reform_usd": 35000,
+  "reform_notes": "Reciclado completo de cocina y baños, cambio de aberturas, actualización eléctrica y pulido/plastificado de parquet.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 2,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Planta amplia de 103 m² cubiertos",
+   "Silencioso al ser contrafrente sobre una avenida transitada",
+   "Apto crédito bancario"
+  ],
+  "red_flags": [
+   "No tiene balcón ni cochera (requisitos excluyentes del cliente)",
+   "Primer piso oscuro con poca luz natural",
+   "Estética anticuada que requiere inversión importante en reforma"
+  ],
+  "summary": "Descartalo de una porque le faltan dos requisitos excluyentes (balcón y cochera), es un primer piso bastante oscuro y hay que meterle una buena reforma arriba.",
+  "modern": 2,
+  "balcony": "none",
+  "balcony_m2_est": null,
+  "view": 2,
+  "view_notes": "Piso 1 al contrafrente con vista a pulmón de manzana/aire y luz cerrado.",
+  "floor_est": 1,
+  "front": "contrafrente",
+  "garage": false,
+  "amenities": [],
+  "expensas_ars": 300000,
+  "photos_key": "b59d5af1abe2",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-22",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-22T18:56:22Z"
  }
 }
