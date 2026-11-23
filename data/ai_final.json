@@ -26308,76 +26308,63 @@
   "ts": "2026-11-21T04:32:20Z"
  },
  "zp-60743618": {
-  "score": 38,
-  "brief": "PH con jardín de 50m² y cochera en Olivos. Precio (220k) arriba del ideal y lejos de Maipú (12 cdas). Living en planta alta y requiere 15k en reformas. Pésima inversión: el terreno implícito duplica el valor de mercado de la zona.",
+  "score": 36,
+  "brief": "Supera el presupuesto inicial de USD 210k (USD 220k + USD 15k en reformas). A favor: 133 m² totales, gran jardín con verde de 50 m², terraza y cochera propia en Olivos. En contra: mala inversión por lote implícito caro y distribución interna.",
   "reasons": [
-   "Inversión muy floja: el valor del terreno implícito (USD 1.338/m²) casi duplica el promedio de la zona (USD 693/m²).",
-   "Ubicación al límite: a 12 cuadras de Maipú y 16 del tren, lejos del ideal de 6 cuadras que busca Tomás.",
-   "Distribución poco práctica: tener el living en planta alta y los dormitorios lejos del jardín le quita puntos de comodidad."
+   "El jardín verde de 50 m² más terraza aporta un valor de uso superior al estimado por el algoritmo (+5 pts)",
+   "Dispone de cochera propia cubierta en una zona donde suma mucha liquidez (+3 pts)",
+   "Supera el tope de USD 210.000 deseado y requiere USD 15.000 de actualización (-2 pts)"
   ],
   "investment": {
    "score": 3,
-   "why": "Pagás un sobreprecio enorme por la estructura existente; el terreno implícito vale USD 1.338/m² contra USD 693/m² de mercado. En 10 años, con la construcción depreciada, la propiedad apenas retendría el 61% de su valor actual.",
+   "why": "El terreno implícito resulta de USD 1.338/m², casi el doble del promedio de lote en la zona (USD 693/m²), pagando sobreprecio por m² construido viejo. La proyección a 10 años muestra una retención de valor de apenas el 61% respecto al precio de compra.",
    "value_10y_pct": 61,
    "upside": [
-    "Jardín de 50m² con verde real, muy buscado en Olivos",
-    "Cochera propia que suma valor de reventa",
-    "Potencial de valorización si se modernizan baños y cocina"
+    "Jardín propio de 50 m² muy buscado en la zona de Olivos",
+    "Cuenta con cochera propia en lote residencial"
    ],
    "risks": [
-    "Sobreprecio inicial por m² de lote",
-    "Baja liquidez por ser un PH con living en planta alta",
-    "No ser apto crédito limita drásticamente el universo de compradores"
+    "Precio por encima del valor de mercado de terreno en PH",
+    "No ser apto crédito limita drásticamente la demanda de reventa",
+    "Requiere inversión de reforma que no se recupera al 100% al vender"
    ]
   },
   "questions": [
    {
-    "q": "¿Hay otra unidad funcional debajo de la planta alta o la unidad es total de PB a techo?",
-    "impact": "Si hay alguien abajo es un descarte obligatorio por tus filtros -30; si es unidad única +5"
+    "q": "¿Es apto crédito bancario y cuenta con reglamento y planos de subdivisión al día?",
+    "impact": "Si es apto crédito +7 puntos por liquidez de reventa; si no, mantiene puntaje bajo"
    },
    {
-    "q": "¿Los 95m² cubiertos están 100% declarados en el plano municipal?",
-    "impact": "Si hay m² sin declarar, el riesgo legal y de reventa baja el puntaje -10"
+    "q": "¿Cuál es el estado de cañerías de agua, gas y electricidad de hace 37 años?",
+    "impact": "Si requiere cambio completo de cañerías -5 puntos; si fue reciclado de caños +3 puntos"
    },
    {
-    "q": "¿Es entrada directa desde la calle o se comparte pasillo con otras unidades?",
-    "impact": "Si es por pasillo común, es un descarte según tus preferencias -20"
+    "q": "¿El PH tiene expensas o gastos comunes compartidos?",
+    "impact": "Si paga más de USD 50 de expensas -3 puntos"
    },
    {
-    "q": "¿Cuál es el estado real de las cañerías y el techo?",
-    "impact": "Si hay que cambiar instalaciones, el presupuesto de reforma sube y el puntaje baja -8"
-   },
-   {
-    "q": "¿Es apto crédito bancario realmente?",
-    "impact": "Si lo es, mejora mucho la liquidez de reventa y la facilidad de compra +10"
+    "q": "¿La terraza de planta alta soporta edificación para sumar un 3er dormitorio en planos?",
+    "impact": "Si permite ampliar metros cubiertos aprobados +5 puntos"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué se vende la propiedad?",
+    "q": "¿Por qué motivo venden la propiedad y qué plazos manejan para escriturar?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el costo mensual de ABL y ARBA?",
+    "q": "¿Aceptan ofertas en el rango de los USD 190.000 - 200.000?",
     "impact": ""
    },
    {
-    "q": "¿Tienen el estado parcelario actualizado para escriturar?",
-    "impact": ""
-   },
-   {
-    "q": "¿Qué antigüedad real tienen las instalaciones de gas y electricidad?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la relación con los otros vecinos del PH?",
+    "q": "¿Cómo es el acceso de entrada desde la calle al ser un PH interno?",
     "impact": ""
    }
   ],
-  "input_key": "529615cefb24",
-  "model": "gemini-3-flash-preview",
+  "input_key": "4ad78ea22225",
+  "model": "gemini-3.6-flash",
   "at": "2026-11-23",
-  "ts": "2026-11-23T04:05:47Z"
+  "ts": "2026-11-23T08:23:58Z"
  },
  "ml-MLA2268835311": {
   "score": 34,
@@ -26934,72 +26921,63 @@
   "ts": "2026-11-21T04:32:55Z"
  },
  "ml-MLA2303314319": {
-  "score": 42,
-  "brief": "Dúplex con jardín de 45m² y cochera, a 4 cuadras del tren. El precio de USD 230.000 es alto: está original de hace 50 años y el terreno implícito es caro para la zona. Es una casa cómoda pero financieramente poco atractiva hoy.",
+  "score": 40,
+  "brief": "Buen jardín de 45 m² y a 4 cuadras del tren Cetrángolo. Pide USD 230.000 y requiere USD 15.000 de reforma, superando el límite con obra. Mala inversión: terreno implícito inflado y FOT agotado.",
   "reasons": [
-   "El precio de USD 230.000 supera tu objetivo de USD 210.000 y requiere USD 15.000 extra en reformas inmediatas.",
-   "La inversión es floja: pagás el m² de terreno un 40% más caro que el promedio de Florida y no podés sumar m².",
-   "Puntaje traccionado por la ubicación (4 cuadras del tren) y el jardín propio, que cumplen tus requisitos principales."
+   "Excelente jardín de 45 m² al fondo, cochera propia y calle tranquila cerca de colegios.",
+   "Muy buena ubicación a 3,8 cuadras del tren Cetrángolo (Mitre).",
+   "El precio pide fuerte negociación: sumando USD 15.000 de reformas excede el tope deseado."
   ],
   "investment": {
-   "score": 4,
-   "why": "El valor del terreno implícito es de USD 1.199/m², muy por encima de los USD 840/m² de la zona. Al ser un dúplex con el FOT ya excedido (0.8), no hay potencial de valorización por metros extra.",
+   "score": 3,
+   "why": "Paga USD 1.199/m² de terreno implícito frente a los USD 840/m² promedio de la zona. Con 50 años de antigüedad y FOT 0.8 totalmente agotado, la construcción se deprecia sin posibilidad de sumar m².",
    "value_10y_pct": 70,
    "upside": [
-    "Ubicación residencial premium cerca del LaSalle",
-    "Jardín de buen tamaño para la tipología",
-    "Cochera cubierta propia"
+    "Barrio residencial consolidado con alta demanda familiar en Florida",
+    "Jardín consolidado de 9x5 m que sostiene atractivo de reventa"
    ],
    "risks": [
-    "Sobreprecio inicial respecto al valor de mercado",
-    "Construcción de 50 años con instalaciones originales",
-    "FOT agotado que impide ampliar m² cubiertos"
+    "Terreno implícito 40% más caro que el lote promedio de la zona",
+    "Sobreprecio de entrada sumado a USD 15.000-20.000 de reciclado necesario",
+    "Imposibilidad de ampliar superficie por tope de FOT (R1)"
    ]
   },
   "questions": [
    {
-    "q": "¿Es apto crédito y tiene los planos de los 115 m² cubiertos aprobados?",
-    "impact": "Si no es apto crédito o faltan planos -15; si está todo en regla +5"
+    "q": "¿La propiedad es apta crédito y tiene los planos 100% aprobados y al día?",
+    "impact": "Si no es apta crédito -8; si tiene todo en regla +3"
    },
    {
-    "q": "¿Cómo están los techos y las cañerías de cocina y baños (originales de 50 años)?",
-    "impact": "Si hay filtraciones o caños de plomo/hierro -8; si fueron renovados +10"
+    "q": "¿El vendedor acepta una contraoferta en el eje de USD 195.000 a 200.000?",
+    "impact": "Si aceptan en ese rango +12; si no bajan de 230k -5"
    },
    {
-    "q": "¿Hay humedad de cimientos en la planta baja o en el sector de la despensa?",
-    "impact": "Si hay humedad de cimientos -10; si las paredes están secas +3"
+    "q": "¿Cuál es el estado real de cañerías (agua/gas) y del sistema eléctrico?",
+    "impact": "Si hay que hacer instalaciones desde cero -6; si fueron recicladas +5"
    },
    {
-    "q": "¿Qué tan ruidosa es la cuadra por la cercanía al colegio LaSalle y el flujo de autos?",
-    "impact": "Si es muy ruidosa -5; si es tranquila como parece +3"
+    "q": "¿Hay rastros de humedad de cimientos o en techos de planta alta?",
+    "impact": "Si requiere tratamiento de humedad grave -8; si está seca +3"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Por qué está desocupada la propiedad actualmente?",
+    "q": "¿Cuáles son los montos exactos de ARBA y tasa municipal (Abl)?",
     "impact": ""
    },
    {
-    "q": "¿Aceptan una oferta agresiva considerando que el precio está por encima del mercado?",
+    "q": "¿La propiedad se encuentra efectivamente desocupada para escriturar rápido?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el costo de mantenimiento mensual (ABL, servicios)?",
-    "impact": ""
-   },
-   {
-    "q": "¿Cómo es la seguridad de la cuadra a la noche?",
-    "impact": ""
-   },
-   {
-    "q": "¿Los vecinos de los otros dúplex son propietarios o inquilinos?",
+    "q": "¿Qué muebles o artefactos quedan instalados con la venta?",
     "impact": ""
    }
   ],
-  "input_key": "099d5f4ce4a1",
-  "model": "gemini-3-flash-preview",
+  "input_key": "d35d65a363df",
+  "model": "gemini-3.6-flash",
   "at": "2026-11-23",
-  "ts": "2026-11-23T04:05:05Z"
+  "ts": "2026-11-23T08:23:32Z"
  },
  "zp-60772321": {
   "score": 65,
