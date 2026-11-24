@@ -35568,5 +35568,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-22T18:56:22Z"
+ },
+ "ml-MLA2121186663": {
+  "condition": 4,
+  "reform_usd": 4000,
+  "reform_notes": "Pintura general para neutralizar colores intensos y mantenimiento menor en aberturas y baños.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Ambientes amplios de estilo antiguo con techos altos",
+   "Pisos de madera conservados",
+   "Excelente conectividad de transporte"
+  ],
+  "red_flags": [
+   "Segundo piso por escalera sin ascensor",
+   "Sin ningún espacio descubierto ni patio",
+   "Zona de alto tránsito y ruidosa"
+  ],
+  "summary": "Descartalo de plano porque es un segundo piso por escalera 100% cubierto y no cumple con el requisito obligatorio del patio.",
+  "photos_key": "d33fca274691",
+  "analyst": "gemini:gemini-3.5-flash",
+  "analysed_at": "2026-11-24",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-24T06:36:17Z"
  }
 }
