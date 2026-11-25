@@ -35843,7 +35843,7 @@
  "zp-60784907": {
   "condition": 5,
   "reform_usd": 0,
-  "reform_notes": "Ninguna necesaria; está reciclado a nuevo listo para habitar.",
+  "reform_notes": "No requiere reformas por estar completamente reciclado a nuevo.",
   "patio": "none",
   "patio_m2_est": null,
   "patio_seen": false,
@@ -35856,21 +35856,68 @@
   "vertical_potential": 0,
   "apto_credito": true,
   "highlights": [
-   "Reciclado a nuevo impecable, listo para mudarse",
-   "Espectacular terraza propia de 75 m2",
-   "Apto crédito y sin expensas"
+   "Reciclado a nuevo de gran calidad visual",
+   "Terraza propia de 75 m2",
+   "Sin expensas y apto crédito"
   ],
   "red_flags": [
-   "No tiene patio en planta baja (requisito obligatorio no cumplido)",
-   "Acceso por escalera en primer piso",
-   "Propiedad superpuesta en PH con entrada compartida"
+   "No tiene patio en planta baja a nivel del suelo (filtro excluyente)",
+   "Acceso exclusivamente por escalera a primer piso",
+   "PH superpuesto con unidades en planta baja"
   ],
-  "summary": "El PH está impecable y la terraza es genial, pero descartalo porque está en primer piso y no tiene el patio a nivel del suelo que necesitás.",
-  "photos_key": "1e5b6a789ba3",
+  "summary": "Está impecable y la terraza es genial, pero al ser un primer piso por escalera no tiene el patio propio en planta baja que piden sí o sí.",
+  "photos_key": "4d8c18171162",
   "analyst": "gemini:gemini-3.6-flash",
-  "analysed_at": "2026-11-24",
+  "analysed_at": "2026-11-25",
   "prompt_version": 2,
   "note_key": "",
-  "ts": "2026-11-24T21:36:59Z"
+  "ts": "2026-11-25T04:43:01Z"
+ },
+ "zp-60784151": {
+  "condition": 3,
+  "reform_usd": 25000,
+  "reform_notes": "Reciclado integral de cocina y baños, modernización de aberturas, actualización de instalación eléctrica y pintura general.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Cochera fija cubierta y baulera en inmejorable zona de Recoleta",
+   "Pisos de parquet en muy buen estado",
+   "Ambientes amplios y silencioso por ser contrafrente"
+  ],
+  "red_flags": [
+   "Falta total de fotos de cocina y baños (muy sospechoso)",
+   "El balcón sólo tiene acceso por el dormitorio principal, no desde el living",
+   "Estética muy antigua y aberturas de época que restan confort térmico/acústico"
+  ],
+  "summary": "Tiene la cochera y la planta que buscan en Recoleta, pero está quedado en el tiempo y van a tener que gatillar una buena reforma para dejarlo moderno.",
+  "modern": 2,
+  "balcony": "medium",
+  "balcony_m2_est": 4.0,
+  "view": 3,
+  "view_notes": "Pulmón de manzana abierto con luz aceptable, pero la vista es hacia contrafrentes y medianeras vecinas.",
+  "floor_est": 6,
+  "front": "contrafrente",
+  "garage": true,
+  "amenities": [
+   "seguridad 24 hs",
+   "encargado",
+   "baulera"
+  ],
+  "expensas_ars": null,
+  "photos_key": "5a223c2159d5",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-25T04:41:37Z"
  }
 }

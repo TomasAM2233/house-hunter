@@ -27540,75 +27540,66 @@
  },
  "ml-MLA4235780988": {
   "score": 48,
-  "brief": "Excelente ubicación en Palermo, piso 11 al frente muy luminoso (96 m²) y reciclado a nuevo por USD 220.000. Pero NO tiene cochera, que es obligatoria para vos. Además se pasa USD 10k de tu presupuesto base.",
+  "brief": "No tiene cochera (requisito obligatorio), el algoritmo se la contó por error. Aunque tiene 96 m² en piso 11 al frente Norte, reciclado y a 3,5 cdas del subte D por USD 220.000, la falta de cochera y estar en obra lo penalizan fuerte.",
   "reasons": [
-   "No tiene cochera, incumpliendo un requisito obligatorio (el algoritmo la sumó por error).",
-   "El precio pedido es USD 220.000, superando el presupuesto ideal de USD 210.000.",
-   "Está en obra y no hay fotos del interior terminado para verificar calidad de materiales."
+   "El algoritmo sumó 4 puntos por cochera cuando el aviso confirma que NO tiene (0 cocheras).",
+   "La falta de cochera es un requisito obligatorio incumplido para departamentos.",
+   "El depto se encuentra en obra sin fotos finales finalizadas, lo que genera incertidumbre."
   ],
   "investment": {
    "score": 6,
-   "why": "A USD 2.418/m² cubierto cotiza un 5% por debajo del promedio de la zona (USD 2.542/m²). La ubicación a 4 cuadras del subte D retiene valor, pero no tener cochera frena la liquidez de reventa en Palermo.",
+   "why": "A USD 2.418/m² cubierto en Palermo cotiza un 5% por debajo del promedio zonal. No obstante, en este segmento de precio (USD 220.000) la ausencia de cochera limita la revalorización y la liquidez de reventa.",
    "value_10y_pct": 105,
    "upside": [
-    "Ubicación estratégica en Palermo a metros de Subte D y plazas",
-    "Piso 11 al frente con orientación Norte y luz excelente",
-    "Unidad a estrenar post-reciclado integral"
+    "Ubicación codiciada a 3,5 cuadras del subte D",
+    "Piso 11 al frente con orientación Norte y vista abierta",
+    "Unidad reciclada a nuevo sin gasto de reforma"
    ],
    "risks": [
-    "Dificultad de reventa o alquiler por falta de cochera en la zona",
-    "Incertidumbre en calidad final de terminaciones por estar en obra",
-    "Expensas altas sin definir que reduzcan rentabilidad"
+    "Falta de cochera reduce drásticamente el público comprador",
+    "Incertidumbre sobre la calidad final de los acabados de obra"
    ]
   },
   "questions": [
    {
-    "q": "¿Existe la posibilidad de alquilar o comprar una cochera fija en el mismo edificio o a menos de 100 metros?",
-    "impact": "Si hay opción concreta de cochera cercana sube 12 puntos"
+    "q": "¿Hay posibilidad de alquilar o comprar una cochera fija en el propio edificio o a menos de 50 metros?",
+    "impact": "+8 a +12 puntos si existe opción directa accesible"
    },
    {
-    "q": "¿A cuánto ascienden las expensas mensuales del departamento?",
-    "impact": "Si superan los $250.000 resta 5 puntos"
+    "q": "¿A cuánto ascienden las expensas mensuales actuales del edificio?",
+    "impact": "-5 a +5 puntos según el costo fijo"
    },
    {
-    "q": "¿Es apto crédito bancario real con la documentación y planos al día?",
-    "impact": "Si no es apto crédito resta 5 puntos"
+    "q": "¿Cómo se distribuyen exactos los m² entre el balcón al frente y el patio mencionado?",
+    "impact": "-3 a +3 puntos según el aprovechamiento real del espacio"
    },
    {
-    "q": "¿Cuál es la fecha exacta de entrega de la obra y qué garantía ofrecen sobre las instalaciones?",
-    "impact": "Si se retrasa más de 2 meses resta 4 puntos"
-   },
-   {
-    "q": "¿El balcón piso 11 tiene vista 100% abierta o hay edificios que tapan el frente?",
-    "impact": "Si la vista es completamente abierta suma 3 puntos"
+    "q": "¿Cuál es la fecha exacta de finalización y entrega de la obra?",
+    "impact": "-5 puntos si la entrega se posterga más de 60 días"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Aceptan una contraoferta firme de USD 210.000 al contado?",
+    "q": "¿Está apto crédito con la documentación y planos actualizados tras la reforma?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el motivo de la venta?",
+    "q": "¿Se renovaron integralmente las cañerías (agua/gas) y la instalación eléctrica interna?",
     "impact": ""
    },
    {
-    "q": "¿El edificio realizó recientemente la adecuación de gas o tiene expensas extraordinarias aprobadas?",
+    "q": "¿El reglamento del edificio permite alquileres temporarios?",
     "impact": ""
    },
    {
-    "q": "¿El reglamento permite alquileres temporarios o uso profesional?",
-    "impact": ""
-   },
-   {
-    "q": "¿Están todos los títulos y la escritura listos para transferir?",
+    "q": "¿Hay expensas extraordinarias o trabajos aprobados para el edificio?",
     "impact": ""
    }
   ],
-  "input_key": "63c259e39530",
+  "input_key": "c998b8a39774",
   "model": "gemini-3.6-flash",
-  "at": "2026-11-24",
-  "ts": "2026-11-24T21:38:40Z"
+  "at": "2026-11-25",
+  "ts": "2026-11-25T04:43:51Z"
  },
  "zp-60361311": {
   "score": 68,
