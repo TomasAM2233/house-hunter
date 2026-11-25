@@ -35965,5 +35965,104 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-25T05:53:34Z"
+ },
+ "zp-60743731": {
+  "condition": 3,
+  "reform_usd": 20000,
+  "reform_notes": "Modernización de cocina y baño, actualización de instalación eléctrica y de gas, desmantelar el local al frente para cochera o living, y pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 2,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente metraje cubierto en Almagro",
+   "Entrada independiente con local o potencial cochera",
+   "Pisos calcáreos y aberturas de época con valor arquitectónico"
+  ],
+  "red_flags": [
+   "No tiene patio descubierto: el patio central está totalmente techado con claraboya",
+   "Ubicado sobre avenida Díaz Vélez, con alto tránsito y ruido constante",
+   "Instalaciones sanitarias y eléctricas de más de 50 años a renovar"
+  ],
+  "summary": "Es un típico PH tipo casa chorizo en planta baja con unidad arriba, pero queda descartado de entrada porque no tiene patio al descubierto y da a una avenida muy transitada.",
+  "photos_key": "f16701c10991",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-25T20:48:23Z"
+ },
+ "ml-MLA4240578538": {
+  "condition": 4,
+  "reform_usd": 2000,
+  "reform_notes": "Pintura general y detalles estéticos menores; la propiedad ya fue reciclada integralmente en 2021.",
+  "patio": "small",
+  "patio_m2_est": 12,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0.2,
+  "apto_credito": null,
+  "highlights": [
+   "Reciclado a nuevo en 2021 con cañerías y electricidad",
+   "Terraza propia amplia y sin expensas",
+   "Solo dos unidades en el lote"
+  ],
+  "red_flags": [
+   "Patio en PB no exhibido en fotos (solo muestran la terraza)",
+   "Escalera caracol angosta e incómoda para subir al 3er ambiente/terraza",
+   "Un único baño completo para toda la propiedad"
+  ],
+  "summary": "Un PH al fondo reciclado y súper habitable con una terraza divina, pero ojo que el patio en planta baja parece chico y no lo muestran de frente.",
+  "photos_key": "85d779bf5afa",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-25T20:49:08Z"
+ },
+ "ml-MLA4171193720": {
+  "condition": 2,
+  "reform_usd": 35000,
+  "reform_notes": "Humedad de cimientos generalizada y revoques caídos; renovación total de baño y cocina, instalación eléctrica a nuevo y pintura integral de más de 200 m2.",
+  "patio": "small",
+  "patio_m2_est": 15,
+  "patio_seen": true,
+  "terrace": false,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 2,
+  "quiet": 2,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Gran metraje (219 m2) con techos altos y pisos de pinotea",
+   "Entrada independiente y sin expensas",
+   "Excelente ubicación en Almagro con conectividad de transporte"
+  ],
+  "red_flags": [
+   "Humedad ascendente severa en paredes interiores",
+   "Superficie enorme que pulveriza el presupuesto de USD 20k",
+   "Construcción superpuesta en planta alta que quita luz y aire"
+  ],
+  "summary": "Es un caserón enorme y con carácter pero está detonado de humedad e instalaciones, y con 20.000 dólares no llegás ni a la mitad de lo que pide para entrar a vivir.",
+  "photos_key": "82d1b7258c25",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-25T20:50:37Z"
  }
 }
