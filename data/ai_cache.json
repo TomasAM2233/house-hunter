@@ -35919,5 +35919,51 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-25T04:41:37Z"
+ },
+ "ml-MLA4236549526": {
+  "condition": 3,
+  "reform_usd": 30000,
+  "reform_notes": "Reciclado a nuevo de cocina, baños y lavadero, reemplazo de cerramientos/aberturas antiguas y modernización de palier privado.",
+  "patio": null,
+  "patio_m2_est": null,
+  "patio_seen": null,
+  "terrace": null,
+  "corner": null,
+  "ph_stacked": null,
+  "pasillo_ph": null,
+  "natural_light": 4,
+  "quiet": 4,
+  "vertical_potential": null,
+  "apto_credito": true,
+  "highlights": [
+   "Excelente ubicación en Palermo cerca de la botánica y subte",
+   "Piso alto al contrafrente, muy luminoso y silencioso",
+   "Palier privado y pisos de parquet en espiga en buen estado"
+  ],
+  "red_flags": [
+   "Cochera no incluida en la unidad (opcional afuera)",
+   "Balcón muy chico (solo 2,5 m²)",
+   "Detalles y lavadero de 60 años de antigüedad sin reciclar"
+  ],
+  "summary": "Aunque la ubicación y la luz son muy buenas, el depto está anticuado, el balcón es minúsculo y la cochera hay que comprarla o alquilarla al lado, por lo que requiere una inversión grande para dejarlo como buscan.",
+  "modern": 2,
+  "balcony": "small",
+  "balcony_m2_est": 2.5,
+  "view": 3,
+  "view_notes": "Vista urbana abierta a pulmón de manzana desde un piso 7",
+  "floor_est": 7,
+  "front": "contrafrente",
+  "garage": "optional",
+  "amenities": [
+   "seguridad diurna",
+   "baulera"
+  ],
+  "expensas_ars": 250000,
+  "photos_key": "2eb6912b7927",
+  "analyst": "gemini:gemini-3.6-flash",
+  "analysed_at": "2026-11-25",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-25T05:53:34Z"
  }
 }
