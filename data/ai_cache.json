@@ -36532,5 +36532,38 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-27T05:28:42Z"
+ },
+ "zp-60814819": {
+  "condition": 3,
+  "reform_usd": 14000,
+  "reform_notes": "Adecuación y matriculado para reconexión de gas cortado, modernización de baño principal vintage y cocina, pintura general.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": true,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación en Almagro cerca de Av. Corrientes y subte B",
+   "Terraza propia y sin expensas",
+   "Metraje generoso distribuido en dos plantas"
+  ],
+  "red_flags": [
+   "No cuenta con patio propio en planta baja (solo terraza y patio techado en PA)",
+   "Servicio de gas cortado (trámite complejo y posible adecuación costosa de cañerías)",
+   "Distribución incómoda con cocina en planta alta y living ciego en planta baja"
+  ],
+  "summary": "Queda descartado para esta pareja porque no tiene patio a nivel del suelo, además de tener el gas cortado y una distribución atípica con la cocina arriba.",
+  "photos_key": "7e3023089f31",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-27",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-27T19:45:04Z"
  }
 }
