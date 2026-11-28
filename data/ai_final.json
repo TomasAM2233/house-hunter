@@ -27365,71 +27365,71 @@
  },
  "zp-60779267": {
   "score": 38,
-  "brief": "Tríplex reciclado a nuevo, listo para entrar. El precio de USD 185k es muy competitivo, pero el 'patio' es solo un aire y luz de 8m² y no cumple tu requisito de jardín. Son 3 plantas de escaleras, lo que complica la funcionalidad y la reventa.",
+  "brief": "Tríplex reciclado a USD 185.000 a 7 cuadras del tren, pero el espacio exterior en planta baja es apenas un patio interno de 8 m² (la terraza arriba no lo compensa) y se distribuye en 3 pisos por escalera con nulo potencial de ampliación.",
   "reasons": [
-   "El patio es un pulmón interno de 8m², no es el espacio verde a nivel de suelo que exigís como obligatorio.",
-   "La estructura de tríplex fragmenta mucho los ambientes y el uso de escaleras achica el mercado de compradores futuros.",
-   "Al ser un PH en complejo, el potencial de expansión es nulo y el valor del terreno está muy diluido."
+   "El único patio a nivel suelo es un aire y luz de 8 m², lo que incumple el espíritu de su búsqueda de patio/jardín real",
+   "Es un tríplex en complejo con huella de lote chica (~35 m² de pisada) y sin margen para construir hacia arriba",
+   "Distribución en tres plantas con muchas escaleras que achica el público comprador frente a casas con jardín en Florida"
   ],
   "investment": {
-   "score": 6,
-   "why": "El precio por m² es muy atractivo para Florida (USD 1.423) y te ahorrás la reforma. Sin embargo, los tríplex se deprecian más rápido que las casas bajas porque comprás mayormente construcción y poca incidencia de tierra.",
-   "value_10y_pct": 92,
+   "score": 4,
+   "why": "Al ser tríplex en PH la pisada de terreno es mínima (~35-40 m² y no 130 m²), por lo que casi todo el valor es construcción que se deprecia. Con 40 años y FOT agotado en 3 plantas, no permite sumar m² vendibles.",
+   "value_10y_pct": 90,
    "upside": [
-    "Reciclado moderno de calidad (ahorro de USD 20.000 en obras)",
-    "Ubicación con demanda sostenida en Florida",
-    "Precio total de salida por debajo de los USD 200.000"
+    "Precio por m² total razonable (USD 1.423/m²) para Florida",
+    "Estado impecable, casi sin gasto inicial de reforma",
+    "Buena conectividad: 7 cuadras a estación Florida Mitre"
    ],
    "risks": [
-    "Mercado de reventa limitado por la cantidad de escaleras",
-    "Baja relación terreno/construcción comparado con una casa",
-    "Posibles m² en la terraza o tercera planta no declarados en planos"
+    "Poco terreno propio al ser parte de un complejo de tríplex",
+    "Demanda acotada en reventa: familias en Zona Norte buscan jardín al suelo, no 3 pisos por escalera",
+    "FOT y altura agotados: cero potencial de crecimiento"
    ]
   },
   "questions": [
    {
-    "q": "¿El patio de PB tiene espacio para una mesa o es solo un pulmón de ventilación?",
-    "impact": "Si es inutilizable -12; si se puede estar +3"
+    "q": "¿Qué medidas exactas y qué uso real tiene el patio de PB?",
+    "impact": "Si tiene menos de 10 m² utilizables resta 6 puntos; si tiene espacio verde real suma 5"
    },
    {
-    "q": "¿Están todos los metros y las tres plantas declarados en el plano original?",
-    "impact": "Si no coinciden -15 (no apto crédito); si está en regla +5"
+    "q": "¿Cuántas unidades componen el complejo y cuánto pagan de expensas?",
+    "impact": "Si pagan expensas altas (>USD 80) resta 5 puntos; si no hay expensas suma 2"
    },
    {
-    "q": "¿Paga expensas o algún gasto compartido de mantenimiento con las otras unidades?",
-    "impact": "Si tiene expensas altas -5; si es independiente +3"
+    "q": "¿La terraza y el escritorio del 3° piso están declarados en plano de PH?",
+    "impact": "Si hay metros cubiertos antirreglamentarios resta 8 puntos y complica crédito; si está 100% en regla suma 3"
    },
    {
-    "q": "¿Cómo es la luz natural en la planta baja dado que el patio es interno?",
-    "impact": "Si es oscura -5; si es luminosa +3"
+    "q": "¿Es apto crédito bancario con planos y reglamento al día?",
+    "impact": "Si no es apto crédito resta 5 puntos"
    }
   ],
   "general_questions": [
    {
-    "q": "¿Cuántas unidades comparten el lote total?",
+    "q": "¿Hay reglamento de copropiedad que limite el uso o modificaciones en la terraza?",
     "impact": ""
    },
    {
-    "q": "¿Hace cuánto se terminaron las reformas de cocina y baños?",
+    "q": "¿Tiene cochera asignada o posibilidad de alquilar en el complejo?",
     "impact": ""
    },
    {
-    "q": "¿Por qué se vende una propiedad recién reciclada?",
+    "q": "¿Por qué motivo vende el propietario y qué plazo de entrega manejan?",
     "impact": ""
    },
    {
-    "q": "¿Aceptan permuta o solo efectivo?",
+    "q": "¿Se renovaron cañerías e instalación eléctrica durante el reciclado?",
     "impact": ""
    },
    {
-    "q": "¿Cómo es la seguridad del complejo?",
+    "q": "¿Aceptan oferta agresiva por debajo de los USD 180.000?",
     "impact": ""
    }
   ],
-  "input_key": "35190dbeb3cd",
-  "model": "gemini-3-flash-preview",
-  "at": "2026-11-24",
-  "ts": "2026-11-24T07:30:25Z"
+  "input_key": "10845a1cf1d2",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-28",
+  "ts": "2026-11-28T02:20:52Z"
  },
  "zp-60760741": {
   "score": 45,
@@ -28678,61 +28678,60 @@
  },
  "ml-MLA2328352063": {
   "score": 38,
-  "brief": "Impecable reciclado de 81 m² en Palermo Soho, pero NO tiene cochera (filtro obligatorio) ni vista despejada (1° piso). Piden USD 229.000 (supera el base de 210k) y paga $260.000 de expensas. La falta de cochera castiga fuerte la nota.",
+  "brief": "Reciclado impecable de 81 m² con balcón y patio en Palermo Soho, a USD 229.000. Pero no tiene cochera (filtro excluyente), es un 1° piso ruidoso sin vista abierta y queda a 10 cuadras del subte.",
   "reasons": [
-   "Falta cochera (requisito obligatorio); el algoritmo otorgó puntaje de cochera por error.",
-   "Primer piso al frente en esquina transitada: vista baja (3/5) y posible ruidos nocturnos.",
-   "Precio pedido (USD 229.000) por encima del ideal de USD 210.000 con expensas altas ($260k) sin amenities."
+   "No tiene cochera (requisito obligatorio de Tomás) y el algoritmo erróneamente le sumó puntos por garage (-12 puntos)",
+   "Piso 1 al frente en esquina concurrida: no cumple con 'buena vista' y penaliza por ruido urbano (-5 puntos)"
   ],
   "investment": {
-   "score": 5,
-   "why": "A USD 2.827/m² está en valor de mercado (-5% vs zona), pero la falta de cochera resta entre USD 20.000 y 30.000 de valor de reventa en Palermo. Además, las expensas de $260.000 para un 1° piso sin amenities reducen la rentabilidad neta de alquiler.",
-   "value_10y_pct": 105,
+   "score": 6,
+   "why": "A USD 2.827/m² está en precio para Palermo Soho reciclado a nuevo, pero al ser un primer piso sin cochera ni amenities sufre techo de reventa para compradores del segmento.",
+   "value_10y_pct": 110,
    "upside": [
-    "Ubicación demandada en Palermo Soho ideal para alquiler temporal si el reglamento lo permite",
-    "Calidad de refacción total que evita desembolsar USD 20.000 en reformas"
+    "Alta demanda de alquiler temporario o tradicional en Soho",
+    "Calidad constructiva interior con cero gasto de reforma"
    ],
    "risks": [
-    "Expensas elevadas que ahuyentan compradores y reducen el retorno de alquiler",
-    "Dificultad para revender por ser 1° piso al frente y no incluir cochera"
+    "Falta de cochera fija en zona con estacionamiento crítico",
+    "Ruido de tránsito y bares por ser primer piso al frente"
    ]
   },
   "questions": [
    {
-    "q": "¿Hay posibilidad de alquilar o comprar una cochera fija en el mismo edificio o en la misma cuadra?",
-    "impact": "Si se resuelve la cochera fija a poca distancia, el puntaje sube +8 puntos."
+    "q": "¿Hay posibilidad real de alquilar o comprar una cochera fija en el mismo edificio?",
+    "impact": "Si existe cochera disponible para anexar, sube 8 puntos; si no hay ninguna opción en el edificio, queda descartado"
    },
    {
-    "q": "¿Cuál es la superficie cubierta exacta por escritura descontando el balcón de 9 m² y el patio de 12 m²?",
-    "impact": "Si la superficie cubierta interior es menor a 60 m², resta -5 puntos."
+    "q": "¿Cómo es el nivel de ruido real en dormitorios y living en hora pico y noche de fin de semana?",
+    "impact": "Si el DVH aísla completamente el bullicio de Honduras/Acuña, sube 3 puntos; si vibra o filtra, baja 4 puntos"
    },
    {
-    "q": "¿El reglamento de copropiedad permite el alquiler temporario (Airbnb)?",
-    "impact": "Si lo permite, al ser reciclado a nuevo en Palermo Soho, mejora el perfil de inversión (+5 puntos)."
-   },
-   {
-    "q": "¿El aislamiento con DVH neutraliza del todo el ruido de tránsito y movimiento nocturno del 1° piso?",
-    "impact": "Si el departamento es totalmente silencioso pese a estar en 1° piso, suma +3 puntos."
+    "q": "¿Los 81 m² incluyen el patio o son cubiertos reales según escritura?",
+    "impact": "Si los 81 m² son cubiertos más patio y balcón aparte, sube 4 puntos; si los 81 m² incluyen el patio de 12 m², baja 5 puntos"
    }
   ],
   "general_questions": [
    {
-    "q": "¿A qué responde el valor de $260.000 de expensas sin tener amenities ni encargado con vivienda?",
+    "q": "¿El patio interno es de uso exclusivo por reglamento o figura como común?",
     "impact": ""
    },
    {
-    "q": "¿Está la documentación al día y los planos de refacción/patio regularizados para apto crédito?",
+    "q": "¿Hay cocheras comerciales con abono mensual a menos de 100 metros?",
     "impact": ""
    },
    {
-    "q": "¿Cuál es el margen real de negociación sobre los USD 229.000 para acercarse a los USD 210.000?",
+    "q": "¿Cuál es el margen de negociación sobre los USD 229.000 para una oferta de contado?",
+    "impact": ""
+   },
+   {
+    "q": "¿El edificio cuenta con gas o es 100% eléctrico tras la reforma?",
     "impact": ""
    }
   ],
-  "input_key": "077155168b21",
-  "model": "gemini-3.6-flash",
-  "at": "2026-11-27",
-  "ts": "2026-11-27T20:17:33Z"
+  "input_key": "fec9500b95a2",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-28",
+  "ts": "2026-11-28T02:20:25Z"
  },
  "zp-60765842": {
   "score": 58,
@@ -28792,5 +28791,69 @@
   "model": "gemini-3.6-flash",
   "at": "2026-11-27",
   "ts": "2026-11-27T20:18:18Z"
+ },
+ "zp-60820003": {
+  "score": 38,
+  "brief": "PH al frente con cochera y patio en PB de 28 m² en Olivos Oeste. Bien distribuido (4 amb, 99 m² cub), pero caro para la zona (USD 230k + USD 12k de obra en alfombras/humedad excede el presupuesto ideal) y a 11 cuadras de Maipú.",
+  "reasons": [
+   "Cumple todos los requisitos funcionales: entrada al frente independiente, patio en PB de 28 m², cochera y solo 2 unidades.",
+   "El precio de USD 230.000 está por encima del tope deseado (USD 210k) y suma USD 12.000 de reformas, dejándolo al límite negociable.",
+   "Para estar a 11 cuadras de Maipú (Olivos Oeste), USD 2.323/m² cubierto es caro y castiga su valor de reventa."
+  ],
+  "investment": {
+   "score": 4,
+   "why": "A USD 230.000 en Olivos Oeste, el m² cubierto roza los USD 2.320 en una unidad de 20 años que requiere USD 12.000 de obra inmediata. Al ser PH en lote compartido, no captura la plusvalía del terreno y el precio actual ya absorbe el techo de la zona.",
+   "value_10y_pct": 70,
+   "upside": [
+    "Solo dos unidades en el lote, sin expensas y con entrada propia",
+    "Espacio descubierto dual: patio cómodo en PB más terraza propia",
+    "Tipología buscada por familias (3 dormitorios y cochera)"
+   ],
+   "risks": [
+    "Sobreprecio de entrada para la altura de Pelliza/Salk",
+    "Humedad visible en muros que puede ocultar vicios mayores",
+    "Depreciación de la construcción sin posibilidad de ampliación vertical independiente"
+   ]
+  },
+  "questions": [
+   {
+    "q": "¿Cuál es el origen de la humedad visible en la pared del dormitorio y qué tipo de techo tiene?",
+    "impact": "Si es filtración de cubierta o cimientos costosa -8; si es condensación menor ya resuelta +2"
+   },
+   {
+    "q": "¿Es apto crédito y están los 99 m² cubiertos totalmente aprobados en plano de subdivisión?",
+    "impact": "Si no es apto crédito o hay m² sin declarar -6; si los papeles están 100% impecables +3"
+   },
+   {
+    "q": "¿Cómo está dividida la parcela y qué relación o servidumbre hay con la otra unidad?",
+    "impact": "Si hay partes comunes conflictivas o pasajes -5; si la independencia es total +2"
+   },
+   {
+    "q": "¿Qué margen real de negociación tiene el precio de USD 230.000?",
+    "impact": "Si aceptan oferta cercana a USD 205.000-210.000 +8; si están firmes -4"
+   }
+  ],
+  "general_questions": [
+   {
+    "q": "¿Qué antigüedad real tienen las cañerías de agua, gas y la instalación eléctrica?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuál es el motivo de la venta y qué plazos de posesión y escrituración manejan?",
+    "impact": ""
+   },
+   {
+    "q": "¿Cuánto abonan de ARBA y tasas municipales de Vicente López?",
+    "impact": ""
+   },
+   {
+    "q": "¿Quién habita la otra unidad del PH y cómo se maneja el mantenimiento de fachada/medianeras?",
+    "impact": ""
+   }
+  ],
+  "input_key": "6a67e6634faa",
+  "model": "gemini-flash-latest",
+  "at": "2026-11-28",
+  "ts": "2026-11-28T02:21:33Z"
  }
 }

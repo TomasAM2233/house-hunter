@@ -36608,5 +36608,104 @@
   "prompt_version": 2,
   "note_key": "",
   "ts": "2026-11-27T20:15:08Z"
+ },
+ "zp-60819811": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Actualización de cocina y baño, chequeo y adecuación de instalación eléctrica de época, pintura general e impermeabilización de azotea.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 4,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Excelente ubicación residencial a pasos de Av. Maipú",
+   "Gran terraza propia transitable de 66 m2",
+   "Sin expensas y muy luminoso al frente"
+  ],
+  "red_flags": [
+   "Cero patio en planta baja (es primer piso por escalera)",
+   "Antigüedad de 60 años con instalaciones originales",
+   "Acceso con escaleras empinadas que complican la accesibilidad"
+  ],
+  "summary": "Descartalo de plano porque es un PH en planta alta con terraza arriba y no tiene absolutamente nada de patio en planta baja.",
+  "photos_key": "78a92643d216",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-28",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-28T02:17:49Z"
+ },
+ "zp-60820003": {
+  "condition": 3,
+  "reform_usd": 12000,
+  "reform_notes": "Retirar alfombras viejas en living y dormitorios para colocar pisos nuevos, reparar revoques con humedad en dormitorio y pintura integral.",
+  "patio": "medium",
+  "patio_m2_est": 28,
+  "patio_seen": true,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": false,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 3,
+  "vertical_potential": 0,
+  "apto_credito": null,
+  "highlights": [
+   "Entrada al frente con patio en PB y terraza propia",
+   "Distribución funcional en dos plantas en solo dos unidades",
+   "Buena ubicación residencial en Olivos"
+  ],
+  "red_flags": [
+   "Alfombras viejas en mal estado en living y dormitorios",
+   "Humedad visible en muro de dormitorio principal",
+   "Techo de chapa con aislación y mantenimiento a revisar"
+  ],
+  "summary": "PH al frente con patio y terraza en buena zona de Olivos; está habitable pero requiere urgente sacar alfombras y tratar humedad, entrando bien dentro del presupuesto de reforma.",
+  "photos_key": "b1f7abb76a1f",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-28",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-28T02:18:35Z"
+ },
+ "zp-60819532": {
+  "condition": 3,
+  "reform_usd": 14000,
+  "reform_notes": "Actualización de cocina (revestimientos, mesada y mueble), emprolijar sector termotanque, pintura integral e impermeabilización/revoques en muros de terraza.",
+  "patio": "none",
+  "patio_m2_est": null,
+  "patio_seen": false,
+  "terrace": true,
+  "corner": false,
+  "ph_stacked": true,
+  "pasillo_ph": false,
+  "natural_light": 3,
+  "quiet": 4,
+  "vertical_potential": 0,
+  "apto_credito": true,
+  "highlights": [
+   "Terraza propia de 35 m² con parrilla",
+   "Entrada independiente y sin expensas",
+   "Excelente ubicación residencial en Colegiales"
+  ],
+  "red_flags": [
+   "Sin patio ni jardín en planta baja (único exterior en terraza)",
+   "Cocina e instalaciones sanitarias/gas de época a revisar",
+   "Humedad y revoques descascarados en muros exteriores de terraza"
+  ],
+  "summary": "Es un lindo PH de época con una terraza bárbara en Colegiales, pero no cumple con el requisito excluyente de tener patio a nivel de suelo.",
+  "photos_key": "40a58d9dc215",
+  "analyst": "gemini:gemini-flash-latest",
+  "analysed_at": "2026-11-28",
+  "prompt_version": 2,
+  "note_key": "",
+  "ts": "2026-11-28T02:19:27Z"
  }
 }
