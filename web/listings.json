@@ -1,13 +1,10 @@
 {
- "generated_at": "2026-11-28 05:22",
+ "generated_at": "2026-11-28 11:07",
  "status": {
   "zonaprop": {
-   "ok": true,
-   "count": 1945,
-   "complete": false,
-   "at": "2026-11-28 04:58",
-   "mode": "partial",
-   "full_at": "2026-11-27 05:08"
+   "ok": false,
+   "error": "GET https://www.zonaprop.com.ar/departamentos-venta-palermo-recoleta-3-ambientes-100000-240000-dolar-orden-publicado-descendente.html failed: api.scrapingant.com: Failed to perform, curl: (60) SSL cer",
+   "at": "2026-11-28 11:00"
   },
   "tokko": {
    "ok": true,
@@ -28,9 +25,9 @@
   "argenprop": {
    "ok": true,
    "count": 0,
-   "complete": true,
-   "at": "2026-11-28 04:58",
-   "mode": "full",
+   "complete": false,
+   "at": "2026-11-28 11:00",
+   "mode": "newest",
    "full_at": "2026-11-28 04:58"
   }
  },
@@ -144336,6 +144333,244 @@
    "score_calc": 60.7
   },
   {
+   "id": "tk-8513417",
+   "source": "tokko",
+   "url": "https://ficha.info/p/eJSTlcWHr08ua",
+   "title": "Casa 2 dormitorios Venta - Olivos-Maipu/Uzal",
+   "type": "casa",
+   "price_usd": 170000,
+   "total_m2": 170.0,
+   "covered_m2": 72.45,
+   "uncovered_m2": 233.35,
+   "ambientes": 3,
+   "bedrooms": 2,
+   "bathrooms": 1,
+   "garage": 1,
+   "age_years": 48,
+   "address": "España  al 3200, esquina Borges, Olivos-Maipu/Uzal",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5122997,
+   "lng": -58.5040121,
+   "description": "                Oportunidad ! Antes estaba en u$s 180.000 ahora esta en u$s 170.000.-\n\nPH tipo casa totalmente independiente, desarrollado íntegramente en una planta con jardín, cochera y potencial para ampliaciones!\n\n\nAl ingresar encontramos un cómodo living con pisos de parquet, que se conecta con la cocina a través de una doble circulación. La cocina es amplia, cuenta con comedor diario y artefactos a gas, logrando un espacio muy funcional para el día a día.\nUn hall distribuye los dos dormitorios y el baño completo con ducha, manteniendo bien diferenciada el área social del sector de descanso.\nAl fondo se abre un lindo jardín, con una galería y sector patio que invitan a disfrutar del exterior durante todo el año. Entrada de servicio y garage semicubierto. Además, dispone de lavadero independiente, y un cuarto de guardado que aporta un plus de funcionalidad.\nLa propiedad también cuenta con acceso a una terraza de losa perteneciente a su propio polígono, ofreciendo la posibilidad de proyectar una futura ampliación si se busca ganar metros sin resignar el espacio verde.\nUna propiedad ideal para quienes buscan la comodidad de vivir como en una casa, con independencia, jardín y el potencial de seguir creciendo, en pleno barrio Olivos.\nEscribinos para coordinar una visita!\n                \n\n            \n\n            \n\n            \r\n\r\n            \n\nCódigo de propiedad: DHO8513417\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
+   "photos": [
+    "https://static.tokkobroker.com/pictures/8513417_33864771136889400590062244520884912617794009120634248358688397782450977125130.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_108241087411311197081204319680535627637687375329452852853633290221214161210859.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_37316606145926035717070183449408152363140711219230171907603638053542564733656.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_23416736376912064823611406755551343513886421251729528471687976233430124541443.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_2360398260301547644297180258229937211005679846874500227595596238873664361511.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_41281435346085123210939955254397554170399787888487651455121801465628113085172.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_44807364800611137666668942755746474790706500674279030810391071135434443965101.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_52120617479166286766145569610059299119507692087280716184559314041708180401877.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_69940169117338874386744091372555807022913538585466424852113364842049920055482.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_111141366795753847168302680575528276787681355633005758289135886292100846851513.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_70510117524190444395835218628939982825394669843685610436545296932141193927984.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_5725915400597966863121508755031743531837320115285493420337871545547346349973.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_61900244250351025056792419608824203990058446896928553146071515217648779547859.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_13905975799754497154659669947160377557940807803701751216506858842166775948813.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_9734167411889245301078856228999367691646836548045265104884047118130911459471.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_46998437338906153089994510457914396280876067843121292193995610814268706761648.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_49189337850596911964179986669824952653661406947644534506458523636797121738861.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_2440552964256293132436730197242902812487486056641277381133678917652345036895.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_33595064049744947621676695836097021715055487290207279074314282879666914329949.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_10233241709836602129749320860204446106463037955301283847514550598850256070803.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_91870150820046419958399634544826465449121768664610487877526671752349234232481.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_78132125723470668841404778028507359398921771783203300713138723315387148152569.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_62514411412454720917159124505908173678810689830074993079539457250775956422512.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_62611986480680801561397181960196233650171906055323434131153918573502729084451.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_89898696126587650641046820934607333270835573652707856062046279994514734494049.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_62914871882143393407377731015384114168046841520068458307329467580407079773578.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_69737707857256208371994007590434586309175567419924100399341831554330951720522.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_42605387271554326300656676344619113115532003724397684579192541742413093943098.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_100870114938326062359355827551918481178299389355533139979084869059446655253612.jpg",
+    "https://static.tokkobroker.com/pictures/8513417_106704001407599320473267647676846846520714777327729716866471433969674230579888.jpg"
+   ],
+   "tags": {
+    "Agua Corriente": true,
+    "Cloaca": true,
+    "Gas Natural": true,
+    "Electricidad": true,
+    "Pavimento": true,
+    "Cocina": true,
+    "Comedor diario": true,
+    "Hall": true,
+    "Jardín": true,
+    "Lavadero": true,
+    "Patio": true,
+    "Terraza": true,
+    "Calefacción": true,
+    "Apto mascotas": true,
+    "Termo de gas": true,
+    "Luminoso": true,
+    "Baño de servicio": true,
+    "Calefacción individual": true,
+    "Galería": true,
+    "Estufas TB": true,
+    "Cochera fija": true,
+    "Entrada de servicio": true,
+    "Agua caliente individual": true,
+    "Termotanque Individual": true,
+    "Techo de losa": true
+   },
+   "features_text": [
+    "Bueno",
+    "Frente",
+    "Oeste"
+   ],
+   "credit_pill": true,
+   "apto_credito_field": true,
+   "publisher": "DIC Propiedades",
+   "modified": "2026-07-24T17:20:40",
+   "enriched": true,
+   "first_seen": "2026-10-24",
+   "price_history": [
+    [
+     "2026-10-24",
+     170000
+    ]
+   ],
+   "pct": 98,
+   "pct_score": 60.7,
+   "pct_n": 7191,
+   "last_seen": "2026-11-28",
+   "active": true,
+   "geo": {
+    "region": "gba",
+    "ref": "Maipú",
+    "ref_blocks": 11.7,
+    "maipu_blocks": 11.7,
+    "puente_blocks": 38.4,
+    "villa_blocks": 9.9,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 13.9,
+     "effective_blocks": 13.9
+    },
+    "park": {
+     "name": "San Héctor Valdivieso Sáez",
+     "m": 283
+    },
+    "zoning": {
+     "code": "R2",
+     "name": "Residencial media baja densidad",
+     "fos": 0.6,
+     "fot": 1.0,
+     "height_m": 10.5,
+     "edge": null
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Actualización completa de baño y cocina (originales de hace 48 años), revisión de instalaciones de agua y luz, retiro de revestimientos plásticos en paredes, pulido de parquet y pintura general.",
+    "patio": "medium",
+    "patio_m2_est": 70,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": true,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 3,
+    "vertical_potential": 1,
+    "apto_credito": null,
+    "highlights": [
+     "Ubicación estratégica en Olivos",
+     "Lote propio/PH independiente sin expensas",
+     "Gran potencial de crecimiento sobre la losa"
+    ],
+    "red_flags": [
+     "No hay fotos del jardín (omisión sospechosa en inmobiliarias)",
+     "Baño y cocina totalmente obsoletos",
+     "Revestimiento tipo piedra en living suele ocultar humedad de cimiento"
+    ],
+    "summary": "Es una casa sólida con potencial de ampliación, pero el jardín es un misterio total porque no lo muestran en las fotos.",
+    "photos_key": "c8fef9157ca2",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-29",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-10-29T01:48:44Z"
+   },
+   "score": 60.7,
+   "components": {
+    "price": {
+     "value": 0.74,
+     "points": 13.3,
+     "max": 18,
+     "why": "USD 188.000 efectivo (incl. reforma 18.000), 1.000/m²"
+    },
+    "space": {
+     "value": 0.16,
+     "points": 2.3,
+     "max": 14,
+     "why": "170 m² tot, 72 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.47,
+     "points": 6.6,
+     "max": 14,
+     "why": "12 cuadras a Maipú, 14 a est. Bartolomé Mitre (Mitre), plaza a 3 cdas (San Héctor Valdivieso Sáez)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 5.6,
+     "max": 11,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 9,
+     "max": 9,
+     "why": "patio mediano ~70 m²"
+    },
+    "investment": {
+     "value": 0.47,
+     "points": 8.5,
+     "max": 18,
+     "why": "terreno implícito USD 733/m² (zona ~USD 634/m²), en 10 años la construcción pierde ~USD 12.867, valor estimado a 10 años ~82% del precio, ~98 m² por construir (zona R2, FOT 1)"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 4.0,
+     "max": 4,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 3,
+     "max": 3,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 1.6,
+     "max": 2,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 0.8,
+     "max": 1,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [
+    "esquina sin patio visible en las fotos",
+    "duplicado de zp-60420856"
+   ],
+   "flags": [],
+   "duplicate_of": "zp-60420856",
+   "score_calc": 60.7
+  },
+  {
    "id": "zp-59632007",
    "source": "zonaprop",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-6-ambientes-villa-crespo-59632007.html",
@@ -158086,244 +158321,6 @@
    "pct": 95,
    "pct_score": 59.0,
    "pct_n": 3919
-  },
-  {
-   "id": "tk-8513417",
-   "source": "tokko",
-   "url": "https://ficha.info/p/eJSTlcWHr08ua",
-   "title": "Casa 2 dormitorios Venta - Olivos-Maipu/Uzal",
-   "type": "casa",
-   "price_usd": 170000,
-   "total_m2": 170.0,
-   "covered_m2": 72.45,
-   "uncovered_m2": 233.35,
-   "ambientes": 3,
-   "bedrooms": 2,
-   "bathrooms": 1,
-   "garage": 1,
-   "age_years": 48,
-   "address": "España  al 3200, esquina Borges, Olivos-Maipu/Uzal",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5122997,
-   "lng": -58.5040121,
-   "description": "                Oportunidad ! Antes estaba en u$s 180.000 ahora esta en u$s 170.000.-\n\nPH tipo casa totalmente independiente, desarrollado íntegramente en una planta con jardín, cochera y potencial para ampliaciones!\n\n\nAl ingresar encontramos un cómodo living con pisos de parquet, que se conecta con la cocina a través de una doble circulación. La cocina es amplia, cuenta con comedor diario y artefactos a gas, logrando un espacio muy funcional para el día a día.\nUn hall distribuye los dos dormitorios y el baño completo con ducha, manteniendo bien diferenciada el área social del sector de descanso.\nAl fondo se abre un lindo jardín, con una galería y sector patio que invitan a disfrutar del exterior durante todo el año. Entrada de servicio y garage semicubierto. Además, dispone de lavadero independiente, y un cuarto de guardado que aporta un plus de funcionalidad.\nLa propiedad también cuenta con acceso a una terraza de losa perteneciente a su propio polígono, ofreciendo la posibilidad de proyectar una futura ampliación si se busca ganar metros sin resignar el espacio verde.\nUna propiedad ideal para quienes buscan la comodidad de vivir como en una casa, con independencia, jardín y el potencial de seguir creciendo, en pleno barrio Olivos.\nEscribinos para coordinar una visita!\n                \n\n            \n\n            \n\n            \r\n\r\n            \n\nCódigo de propiedad: DHO8513417\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
-   "photos": [
-    "https://static.tokkobroker.com/pictures/8513417_33864771136889400590062244520884912617794009120634248358688397782450977125130.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_108241087411311197081204319680535627637687375329452852853633290221214161210859.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_37316606145926035717070183449408152363140711219230171907603638053542564733656.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_23416736376912064823611406755551343513886421251729528471687976233430124541443.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_2360398260301547644297180258229937211005679846874500227595596238873664361511.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_41281435346085123210939955254397554170399787888487651455121801465628113085172.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_44807364800611137666668942755746474790706500674279030810391071135434443965101.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_52120617479166286766145569610059299119507692087280716184559314041708180401877.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_69940169117338874386744091372555807022913538585466424852113364842049920055482.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_111141366795753847168302680575528276787681355633005758289135886292100846851513.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_70510117524190444395835218628939982825394669843685610436545296932141193927984.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_5725915400597966863121508755031743531837320115285493420337871545547346349973.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_61900244250351025056792419608824203990058446896928553146071515217648779547859.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_13905975799754497154659669947160377557940807803701751216506858842166775948813.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_9734167411889245301078856228999367691646836548045265104884047118130911459471.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_46998437338906153089994510457914396280876067843121292193995610814268706761648.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_49189337850596911964179986669824952653661406947644534506458523636797121738861.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_2440552964256293132436730197242902812487486056641277381133678917652345036895.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_33595064049744947621676695836097021715055487290207279074314282879666914329949.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_10233241709836602129749320860204446106463037955301283847514550598850256070803.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_91870150820046419958399634544826465449121768664610487877526671752349234232481.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_78132125723470668841404778028507359398921771783203300713138723315387148152569.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_62514411412454720917159124505908173678810689830074993079539457250775956422512.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_62611986480680801561397181960196233650171906055323434131153918573502729084451.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_89898696126587650641046820934607333270835573652707856062046279994514734494049.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_62914871882143393407377731015384114168046841520068458307329467580407079773578.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_69737707857256208371994007590434586309175567419924100399341831554330951720522.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_42605387271554326300656676344619113115532003724397684579192541742413093943098.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_100870114938326062359355827551918481178299389355533139979084869059446655253612.jpg",
-    "https://static.tokkobroker.com/pictures/8513417_106704001407599320473267647676846846520714777327729716866471433969674230579888.jpg"
-   ],
-   "tags": {
-    "Agua Corriente": true,
-    "Cloaca": true,
-    "Gas Natural": true,
-    "Electricidad": true,
-    "Pavimento": true,
-    "Cocina": true,
-    "Comedor diario": true,
-    "Hall": true,
-    "Jardín": true,
-    "Lavadero": true,
-    "Patio": true,
-    "Terraza": true,
-    "Calefacción": true,
-    "Apto mascotas": true,
-    "Termo de gas": true,
-    "Luminoso": true,
-    "Baño de servicio": true,
-    "Calefacción individual": true,
-    "Galería": true,
-    "Estufas TB": true,
-    "Cochera fija": true,
-    "Entrada de servicio": true,
-    "Agua caliente individual": true,
-    "Termotanque Individual": true,
-    "Techo de losa": true
-   },
-   "features_text": [
-    "Bueno",
-    "Frente",
-    "Oeste"
-   ],
-   "credit_pill": true,
-   "apto_credito_field": true,
-   "publisher": "DIC Propiedades",
-   "modified": "2026-07-24T17:20:40",
-   "enriched": true,
-   "first_seen": "2026-10-24",
-   "price_history": [
-    [
-     "2026-10-24",
-     170000
-    ]
-   ],
-   "pct": 97,
-   "pct_score": 58.9,
-   "pct_n": 7148,
-   "last_seen": "2026-11-28",
-   "active": true,
-   "geo": {
-    "region": "gba",
-    "ref": "Maipú",
-    "ref_blocks": 11.7,
-    "maipu_blocks": 11.7,
-    "puente_blocks": 38.4,
-    "villa_blocks": 9.9,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 13.9,
-     "effective_blocks": 13.9
-    },
-    "park": {
-     "name": "San Héctor Valdivieso Sáez",
-     "m": 283
-    },
-    "zoning": {
-     "code": "R2",
-     "name": "Residencial media baja densidad",
-     "fos": 0.6,
-     "fot": 1.0,
-     "height_m": 10.5,
-     "edge": null
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 12000,
-    "reform_notes": "Actualización de instalaciones (cañerías y electricidad de 48 años), pintura general, refacción de cocina y baño, y puesta a punto de los pisos.",
-    "patio": "medium",
-    "patio_m2_est": 25,
-    "patio_seen": false,
-    "terrace": true,
-    "corner": true,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 2,
-    "vertical_potential": 1,
-    "apto_credito": false,
-    "highlights": [
-     "Jardín y terraza propia",
-     "Cochera semicubierta",
-     "Independencia sin expensas"
-    ],
-    "red_flags": [
-     "Ubicación en esquina (menor privacidad y más ruido)",
-     "Instalaciones originales de 48 años de antigüedad",
-     "Falta de fotos reales del jardín"
-    ],
-    "summary": "Una esquina con potencial y verde propio, pero ojo con los arreglos ocultos y el presupuesto.",
-    "photos_key": "d0273b6aae03",
-    "analyst": "gemini:gemini-flash-lite-latest",
-    "analysed_at": "2026-10-29",
-    "prompt_version": 2,
-    "note_key": "",
-    "ts": "2026-10-29T02:09:35Z"
-   },
-   "score": 58.9,
-   "components": {
-    "price": {
-     "value": 0.77,
-     "points": 13.9,
-     "max": 18,
-     "why": "USD 182.000 efectivo (incl. reforma 12.000), 1.000/m²"
-    },
-    "space": {
-     "value": 0.16,
-     "points": 2.3,
-     "max": 14,
-     "why": "170 m² tot, 72 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.47,
-     "points": 6.6,
-     "max": 14,
-     "why": "12 cuadras a Maipú, 14 a est. Bartolomé Mitre (Mitre), plaza a 3 cdas (San Héctor Valdivieso Sáez)"
-    },
-    "condition": {
-     "value": 0.62,
-     "points": 6.8,
-     "max": 11,
-     "why": "estado 3/5, reforma ~USD 12.000"
-    },
-    "patio": {
-     "value": 0.65,
-     "points": 5.9,
-     "max": 9,
-     "why": "patio mediano ~25 m²"
-    },
-    "investment": {
-     "value": 0.47,
-     "points": 8.5,
-     "max": 18,
-     "why": "terreno implícito USD 733/m² (zona ~USD 634/m²), en 10 años la construcción pierde ~USD 12.867, valor estimado a 10 años ~82% del precio, ~98 m² por construir (zona R2, FOT 1)"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 4.0,
-     "max": 4,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 1,
-     "points": 3,
-     "max": 3,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.7,
-     "points": 1.4,
-     "max": 2,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 0.5,
-     "max": 1,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [
-    "esquina sin patio visible en las fotos",
-    "duplicado de zp-60420856"
-   ],
-   "flags": [],
-   "duplicate_of": "zp-60420856",
-   "score_calc": 58.9
   },
   {
    "id": "ml-MLA4045767814",
@@ -182510,6 +182507,244 @@
    },
    "build_m2": null,
    "land": null,
+   "score_calc": 56.5
+  },
+  {
+   "id": "tk-8513578",
+   "source": "tokko",
+   "url": "https://ficha.info/p/eJSVWcWHr09Ma",
+   "title": "PH 2 dormitorios Venta - Olivos-Maipu/Uzal",
+   "type": "ph",
+   "price_usd": 170000,
+   "total_m2": 170.0,
+   "covered_m2": 72.45,
+   "uncovered_m2": 233.35,
+   "ambientes": 3,
+   "bedrooms": 2,
+   "bathrooms": 1,
+   "garage": 1,
+   "age_years": 48,
+   "address": "España  al 3200, esquina Borges, Olivos-Maipu/Uzal",
+   "zone": "Olivos",
+   "address_exact": true,
+   "lat": -34.5122997,
+   "lng": -58.5040121,
+   "description": "                                Oportunidad ! Antes estaba en u$s 180.000 ahora esta en u$s 170.000.-\n\n\nPH tipo casa totalmente independiente, desarrollado íntegramente en una planta con jardín, cochera y potencial para ampliaciones!\n\n\nAl ingresar encontramos un cómodo living con pisos de parquet, que se conecta con la cocina a través de una doble circulación. La cocina es amplia, cuenta con comedor diario y artefactos a gas, logrando un espacio muy funcional para el día a día.\nUn hall distribuye los dos dormitorios y el baño completo con ducha, manteniendo bien diferenciada el área social del sector de descanso.\nAl fondo se abre un lindo jardín, con una galería y sector patio que invitan a disfrutar del exterior durante todo el año. Entrada de servicio y garage semicubierto. Además, dispone de lavadero independiente, y un cuarto de guardado que aporta un plus de funcionalidad.\nLa propiedad también cuenta con acceso a una terraza de losa perteneciente a su propio polígono, ofreciendo la posibilidad de proyectar una futura ampliación si se busca ganar metros sin resignar el espacio verde.\nUna propiedad ideal para quienes buscan la comodidad de vivir como en una casa, con independencia, jardín y el potencial de seguir creciendo, en pleno barrio Olivos.\nEscribinos para coordinar una visita!\n                \n\n            \n\n\n            \r\n\r\n            \n\nCódigo de propiedad: DOT8115 HO8513578\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
+   "photos": [
+    "https://static.tokkobroker.com/pictures/8513578_18280207639358842750419313511660320798240596651489877176601001518227353579036.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_68485759446534694412875508948676926236896089085514220354280967296282568418136.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_114027428875577680184312286315828672672806698438230679213302382767240346843175.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_111529100876615210701445768772901284361081211547102861304777940896061778397257.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_9428801915518707274619383178286490420685897679628230390835235987721656634811.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_72427495062110728021136822604575538366543434437905880508078818348493279857453.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_32542317534992093501034663487461791588256414850254244496986237014107802133061.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_75672831741792483856448718628397271085694816918262060521312666083604532336285.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_107096305261209445061251954538512950862872924480198704888097143672243569884934.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_57655775128509076413563935724018368005954613207019883836534801753126314932477.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_94406364104294578900043183734327364143126294801610230076474392126370010822800.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_50463533262338531625970547168497785385485608172242252213639991505744979735029.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_94967142047489001343204277852317152913837304265728246539128556390556313803765.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_13491435967580811645524460100775054090451813571688791329084755171258828995274.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_50802143745545723611993616314888697290366988189559690289791953363870725212149.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_7917188316777061593907892868921748287385637621886890646443098622233265215949.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_20124401113827334313527852054882176107082470679877366358275748539875951585458.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_100439218339371904434589553363737997909882716595511963251278036835109589053264.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_102069924761252092435978046666295825159453307208034403156914212709689691635642.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_76300548564387468236253438294069319901455614292086416117223585702930628542684.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_22704828438282918592233188206024721336050082386261873912872599997274104849664.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_7940677458764548361233329787238689889070949207353909453311047808643921181172.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_103223388083096505709195410962005580544559051921823841379615890509095710761129.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_89859701654689407813527219773679859358805684068066753439761745594715699310979.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_64620074006583830002370577363171824182805310950245621863511399552891621071541.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_89342039091961047144843870629130795592763158878627435135312139590305088125906.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_60478529661538585222576981341117143269888511697760093816433138117877858823483.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_27430614420806021114782322143073150202824532561464091915323618288267013048084.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_26046390300798061501698309371648954623554388896318983236169706606397755224394.jpg",
+    "https://static.tokkobroker.com/pictures/8513578_36347108898139762811110144219586076009412031804672208483752532142954330011183.jpg"
+   ],
+   "tags": {
+    "Agua Corriente": true,
+    "Cloaca": true,
+    "Gas Natural": true,
+    "Electricidad": true,
+    "Pavimento": true,
+    "Cocina": true,
+    "Comedor diario": true,
+    "Hall": true,
+    "Jardín": true,
+    "Lavadero": true,
+    "Patio": true,
+    "Terraza": true,
+    "Calefacción": true,
+    "Apto mascotas": true,
+    "Termo de gas": true,
+    "Luminoso": true,
+    "Baño de servicio": true,
+    "Calefacción individual": true,
+    "Galería": true,
+    "Estufas TB": true,
+    "Cochera fija": true,
+    "Entrada de servicio": true,
+    "Agua caliente individual": true,
+    "Termotanque Individual": true,
+    "Techo de losa": true
+   },
+   "features_text": [
+    "Bueno",
+    "Frente",
+    "Oeste"
+   ],
+   "credit_pill": true,
+   "apto_credito_field": true,
+   "publisher": "DIC Propiedades",
+   "modified": "2026-07-24T17:55:38",
+   "enriched": true,
+   "first_seen": "2026-10-23",
+   "price_history": [
+    [
+     "2026-10-23",
+     170000
+    ]
+   ],
+   "pct": 96,
+   "pct_score": 56.5,
+   "pct_n": 7191,
+   "last_seen": "2026-11-28",
+   "active": true,
+   "geo": {
+    "region": "gba",
+    "ref": "Maipú",
+    "ref_blocks": 11.7,
+    "maipu_blocks": 11.7,
+    "puente_blocks": 38.4,
+    "villa_blocks": 9.9,
+    "station": {
+     "name": "Bartolomé Mitre",
+     "line": "Mitre",
+     "blocks": 13.9,
+     "effective_blocks": 13.9
+    },
+    "park": {
+     "name": "San Héctor Valdivieso Sáez",
+     "m": 283
+    },
+    "zoning": {
+     "code": "R2",
+     "name": "Residencial media baja densidad",
+     "fos": 0.6,
+     "fot": 1.0,
+     "height_m": 10.5,
+     "edge": null
+    }
+   },
+   "ai": {
+    "condition": 3,
+    "reform_usd": 18000,
+    "reform_notes": "Actualización completa de baño y cocina (originales de hace 48 años), revisión de instalaciones de agua y luz, retiro de revestimientos plásticos en paredes, pulido de parquet y pintura general.",
+    "patio": "medium",
+    "patio_m2_est": 70,
+    "patio_seen": false,
+    "terrace": true,
+    "corner": true,
+    "ph_stacked": false,
+    "pasillo_ph": false,
+    "natural_light": 4,
+    "quiet": 3,
+    "vertical_potential": 1,
+    "apto_credito": null,
+    "highlights": [
+     "Ubicación estratégica en Olivos",
+     "Lote propio/PH independiente sin expensas",
+     "Gran potencial de crecimiento sobre la losa"
+    ],
+    "red_flags": [
+     "No hay fotos del jardín (omisión sospechosa en inmobiliarias)",
+     "Baño y cocina totalmente obsoletos",
+     "Revestimiento tipo piedra en living suele ocultar humedad de cimiento"
+    ],
+    "summary": "Es una casa sólida con potencial de ampliación, pero el jardín es un misterio total porque no lo muestran en las fotos.",
+    "photos_key": "c8fef9157ca2",
+    "analyst": "gemini:gemini-3-flash-preview",
+    "analysed_at": "2026-10-29",
+    "prompt_version": 2,
+    "note_key": "",
+    "ts": "2026-10-29T01:48:44Z"
+   },
+   "score": 56.5,
+   "components": {
+    "price": {
+     "value": 0.74,
+     "points": 13.3,
+     "max": 18,
+     "why": "USD 188.000 efectivo (incl. reforma 18.000), 1.000/m²"
+    },
+    "space": {
+     "value": 0.16,
+     "points": 2.3,
+     "max": 14,
+     "why": "170 m² tot, 72 cub, 3 amb"
+    },
+    "location": {
+     "value": 0.47,
+     "points": 6.6,
+     "max": 14,
+     "why": "12 cuadras a Maipú, 14 a est. Bartolomé Mitre (Mitre), plaza a 3 cdas (San Héctor Valdivieso Sáez)"
+    },
+    "condition": {
+     "value": 0.51,
+     "points": 5.6,
+     "max": 11,
+     "why": "estado 3/5, reforma ~USD 18.000"
+    },
+    "patio": {
+     "value": 1,
+     "points": 9,
+     "max": 9,
+     "why": "patio mediano ~70 m²"
+    },
+    "investment": {
+     "value": 0.24,
+     "points": 4.3,
+     "max": 18,
+     "why": "terreno implícito USD 916/m² (zona ~USD 708/m²), en 10 años la construcción pierde ~USD 12.867, valor estimado a 10 años ~76% del precio, PH: lote compartido, estimado"
+    },
+    "vertical": {
+     "value": 1.0,
+     "points": 4.0,
+     "max": 4,
+     "why": "según IA"
+    },
+    "credit": {
+     "value": 1,
+     "points": 6,
+     "max": 6,
+     "why": "apto crédito"
+    },
+    "garage": {
+     "value": 1,
+     "points": 3,
+     "max": 3,
+     "why": "1 cochera"
+    },
+    "quiet": {
+     "value": 0.8,
+     "points": 1.6,
+     "max": 2,
+     "why": "lejos de Maipú"
+    },
+    "light": {
+     "value": 0.75,
+     "points": 0.8,
+     "max": 1,
+     "why": "luz 4/5"
+    }
+   },
+   "discard": [
+    "esquina sin patio visible en las fotos",
+    "duplicado de zp-60420856"
+   ],
+   "flags": [],
+   "duplicate_of": "zp-60420856",
    "score_calc": 56.5
   },
   {
@@ -208736,244 +208971,6 @@
     "kept": 1.136,
     "age_assumed": false
    },
-   "score_calc": 54.7
-  },
-  {
-   "id": "tk-8513578",
-   "source": "tokko",
-   "url": "https://ficha.info/p/eJSVWcWHr09Ma",
-   "title": "PH 2 dormitorios Venta - Olivos-Maipu/Uzal",
-   "type": "ph",
-   "price_usd": 170000,
-   "total_m2": 170.0,
-   "covered_m2": 72.45,
-   "uncovered_m2": 233.35,
-   "ambientes": 3,
-   "bedrooms": 2,
-   "bathrooms": 1,
-   "garage": 1,
-   "age_years": 48,
-   "address": "España  al 3200, esquina Borges, Olivos-Maipu/Uzal",
-   "zone": "Olivos",
-   "address_exact": true,
-   "lat": -34.5122997,
-   "lng": -58.5040121,
-   "description": "                                Oportunidad ! Antes estaba en u$s 180.000 ahora esta en u$s 170.000.-\n\n\nPH tipo casa totalmente independiente, desarrollado íntegramente en una planta con jardín, cochera y potencial para ampliaciones!\n\n\nAl ingresar encontramos un cómodo living con pisos de parquet, que se conecta con la cocina a través de una doble circulación. La cocina es amplia, cuenta con comedor diario y artefactos a gas, logrando un espacio muy funcional para el día a día.\nUn hall distribuye los dos dormitorios y el baño completo con ducha, manteniendo bien diferenciada el área social del sector de descanso.\nAl fondo se abre un lindo jardín, con una galería y sector patio que invitan a disfrutar del exterior durante todo el año. Entrada de servicio y garage semicubierto. Además, dispone de lavadero independiente, y un cuarto de guardado que aporta un plus de funcionalidad.\nLa propiedad también cuenta con acceso a una terraza de losa perteneciente a su propio polígono, ofreciendo la posibilidad de proyectar una futura ampliación si se busca ganar metros sin resignar el espacio verde.\nUna propiedad ideal para quienes buscan la comodidad de vivir como en una casa, con independencia, jardín y el potencial de seguir creciendo, en pleno barrio Olivos.\nEscribinos para coordinar una visita!\n                \n\n            \n\n\n            \r\n\r\n            \n\nCódigo de propiedad: DOT8115 HO8513578\nCon más de 40 años de experiencia, en DIC Propiedades entendemos el valor de tu búsqueda. Somos una empresa familiar liderada por sus dueños y respaldada por un equipo multidisciplinario de profesionales dedicados a concretar tus objetivos.\n\nNuestros números avalan nuestro compromiso:\n•\t1.700 propiedades en comercialización.\n•\t137.000 tasaciones realizadas con precisión\n•\t950.000 m2 vendidos con éxito.\n•\t35.000 unidades de pozo comercializadas.              \n\n Te esperamos de lunes a sábados en nuestras oficinas de CABA y Zona Norte.___ \n\n* * * ___________________________________________________________________________________* * *\n\n* * * Información Importante y Aviso Legal * * *\n\nLa presente publicación es de carácter orientativo. Se deja constancia que toda la información, las medidas (totales y parciales), superficies (m²), antigüedad y valores de expensas consignados son aproximados y están sujetos a verificación, ajuste y/o ratificación con la documentación pertinente. El precio del inmueble y su disponibilidad pueden ser modificados sin previo aviso. Inmuebles en Construcción: Los detalles de terminación y fechas de entrega están sujetos a revisión técnica y contractual. Terrenos: La información sobre metros construibles es meramente orientativa; el interesado deberá realizar las consultas pertinentes ante los organismos correspondientes. Documentación: Los gastos expresados (expensas, ABL, impuestos) refieren a la última información recabada y deben ser confirmados antes de cualquier operación. Material Gráfico: Las fotografías, planos y renders son de carácter ilustrativo, no vinculante ni contractual.\nDIC PROPIEDADES S.A. actúa exclusivamente en carácter de comercializadora de los inmuebles ofrecidos. La información provista no compromete contractualmente a la empresa.\n\n__________________________________________________________________________________\nJavier Del Coro Igarzabal | CMCPSI Mat. Nº 4499\nMaría Amparo Coello | CUCICBA Mat. Nº 5147\nDIC PROPIEDADES S.A. | www.dicpropiedades.com.ar",
-   "photos": [
-    "https://static.tokkobroker.com/pictures/8513578_18280207639358842750419313511660320798240596651489877176601001518227353579036.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_68485759446534694412875508948676926236896089085514220354280967296282568418136.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_114027428875577680184312286315828672672806698438230679213302382767240346843175.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_111529100876615210701445768772901284361081211547102861304777940896061778397257.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_9428801915518707274619383178286490420685897679628230390835235987721656634811.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_72427495062110728021136822604575538366543434437905880508078818348493279857453.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_32542317534992093501034663487461791588256414850254244496986237014107802133061.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_75672831741792483856448718628397271085694816918262060521312666083604532336285.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_107096305261209445061251954538512950862872924480198704888097143672243569884934.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_57655775128509076413563935724018368005954613207019883836534801753126314932477.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_94406364104294578900043183734327364143126294801610230076474392126370010822800.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_50463533262338531625970547168497785385485608172242252213639991505744979735029.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_94967142047489001343204277852317152913837304265728246539128556390556313803765.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_13491435967580811645524460100775054090451813571688791329084755171258828995274.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_50802143745545723611993616314888697290366988189559690289791953363870725212149.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_7917188316777061593907892868921748287385637621886890646443098622233265215949.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_20124401113827334313527852054882176107082470679877366358275748539875951585458.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_100439218339371904434589553363737997909882716595511963251278036835109589053264.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_102069924761252092435978046666295825159453307208034403156914212709689691635642.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_76300548564387468236253438294069319901455614292086416117223585702930628542684.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_22704828438282918592233188206024721336050082386261873912872599997274104849664.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_7940677458764548361233329787238689889070949207353909453311047808643921181172.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_103223388083096505709195410962005580544559051921823841379615890509095710761129.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_89859701654689407813527219773679859358805684068066753439761745594715699310979.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_64620074006583830002370577363171824182805310950245621863511399552891621071541.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_89342039091961047144843870629130795592763158878627435135312139590305088125906.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_60478529661538585222576981341117143269888511697760093816433138117877858823483.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_27430614420806021114782322143073150202824532561464091915323618288267013048084.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_26046390300798061501698309371648954623554388896318983236169706606397755224394.jpg",
-    "https://static.tokkobroker.com/pictures/8513578_36347108898139762811110144219586076009412031804672208483752532142954330011183.jpg"
-   ],
-   "tags": {
-    "Agua Corriente": true,
-    "Cloaca": true,
-    "Gas Natural": true,
-    "Electricidad": true,
-    "Pavimento": true,
-    "Cocina": true,
-    "Comedor diario": true,
-    "Hall": true,
-    "Jardín": true,
-    "Lavadero": true,
-    "Patio": true,
-    "Terraza": true,
-    "Calefacción": true,
-    "Apto mascotas": true,
-    "Termo de gas": true,
-    "Luminoso": true,
-    "Baño de servicio": true,
-    "Calefacción individual": true,
-    "Galería": true,
-    "Estufas TB": true,
-    "Cochera fija": true,
-    "Entrada de servicio": true,
-    "Agua caliente individual": true,
-    "Termotanque Individual": true,
-    "Techo de losa": true
-   },
-   "features_text": [
-    "Bueno",
-    "Frente",
-    "Oeste"
-   ],
-   "credit_pill": true,
-   "apto_credito_field": true,
-   "publisher": "DIC Propiedades",
-   "modified": "2026-07-24T17:55:38",
-   "enriched": true,
-   "first_seen": "2026-10-23",
-   "price_history": [
-    [
-     "2026-10-23",
-     170000
-    ]
-   ],
-   "pct": 95,
-   "pct_score": 54.7,
-   "pct_n": 7148,
-   "last_seen": "2026-11-28",
-   "active": true,
-   "geo": {
-    "region": "gba",
-    "ref": "Maipú",
-    "ref_blocks": 11.7,
-    "maipu_blocks": 11.7,
-    "puente_blocks": 38.4,
-    "villa_blocks": 9.9,
-    "station": {
-     "name": "Bartolomé Mitre",
-     "line": "Mitre",
-     "blocks": 13.9,
-     "effective_blocks": 13.9
-    },
-    "park": {
-     "name": "San Héctor Valdivieso Sáez",
-     "m": 283
-    },
-    "zoning": {
-     "code": "R2",
-     "name": "Residencial media baja densidad",
-     "fos": 0.6,
-     "fot": 1.0,
-     "height_m": 10.5,
-     "edge": null
-    }
-   },
-   "ai": {
-    "condition": 3,
-    "reform_usd": 12000,
-    "reform_notes": "Actualización de instalaciones (cañerías y electricidad de 48 años), pintura general, refacción de cocina y baño, y puesta a punto de los pisos.",
-    "patio": "medium",
-    "patio_m2_est": 25,
-    "patio_seen": false,
-    "terrace": true,
-    "corner": true,
-    "ph_stacked": false,
-    "pasillo_ph": false,
-    "natural_light": 3,
-    "quiet": 2,
-    "vertical_potential": 1,
-    "apto_credito": false,
-    "highlights": [
-     "Jardín y terraza propia",
-     "Cochera semicubierta",
-     "Independencia sin expensas"
-    ],
-    "red_flags": [
-     "Ubicación en esquina (menor privacidad y más ruido)",
-     "Instalaciones originales de 48 años de antigüedad",
-     "Falta de fotos reales del jardín"
-    ],
-    "summary": "Una esquina con potencial y verde propio, pero ojo con los arreglos ocultos y el presupuesto.",
-    "photos_key": "d0273b6aae03",
-    "analyst": "gemini:gemini-flash-lite-latest",
-    "analysed_at": "2026-10-29",
-    "prompt_version": 2,
-    "note_key": "",
-    "ts": "2026-10-29T02:09:35Z"
-   },
-   "score": 54.7,
-   "components": {
-    "price": {
-     "value": 0.77,
-     "points": 13.9,
-     "max": 18,
-     "why": "USD 182.000 efectivo (incl. reforma 12.000), 1.000/m²"
-    },
-    "space": {
-     "value": 0.16,
-     "points": 2.3,
-     "max": 14,
-     "why": "170 m² tot, 72 cub, 3 amb"
-    },
-    "location": {
-     "value": 0.47,
-     "points": 6.6,
-     "max": 14,
-     "why": "12 cuadras a Maipú, 14 a est. Bartolomé Mitre (Mitre), plaza a 3 cdas (San Héctor Valdivieso Sáez)"
-    },
-    "condition": {
-     "value": 0.62,
-     "points": 6.8,
-     "max": 11,
-     "why": "estado 3/5, reforma ~USD 12.000"
-    },
-    "patio": {
-     "value": 0.65,
-     "points": 5.9,
-     "max": 9,
-     "why": "patio mediano ~25 m²"
-    },
-    "investment": {
-     "value": 0.24,
-     "points": 4.3,
-     "max": 18,
-     "why": "terreno implícito USD 916/m² (zona ~USD 708/m²), en 10 años la construcción pierde ~USD 12.867, valor estimado a 10 años ~76% del precio, PH: lote compartido, estimado"
-    },
-    "vertical": {
-     "value": 1.0,
-     "points": 4.0,
-     "max": 4,
-     "why": "según IA"
-    },
-    "credit": {
-     "value": 1,
-     "points": 6,
-     "max": 6,
-     "why": "apto crédito"
-    },
-    "garage": {
-     "value": 1,
-     "points": 3,
-     "max": 3,
-     "why": "1 cochera"
-    },
-    "quiet": {
-     "value": 0.7,
-     "points": 1.4,
-     "max": 2,
-     "why": "lejos de Maipú"
-    },
-    "light": {
-     "value": 0.5,
-     "points": 0.5,
-     "max": 1,
-     "why": "luz 3/5"
-    }
-   },
-   "discard": [
-    "esquina sin patio visible en las fotos",
-    "duplicado de zp-60420856"
-   ],
-   "flags": [],
-   "duplicate_of": "zp-60420856",
    "score_calc": 54.7
   },
   {
